@@ -9,20 +9,8 @@ namespace KYS.Library.Extensions
     public static class DataTableExtensions
     {
         public static bool IsNullOrEmpty(this DataTable dataTable)
-        {
-            return dataTable.IsNull()
+            => dataTable.IsNull()
                 || dataTable.IsEmpty();
-        }
-
-        private static bool IsNull(this DataTable dataTable)
-        {
-            return dataTable == null;
-        }
-
-        private static bool IsEmpty(this DataTable dataTable)
-        {
-            return dataTable.Rows.Count == 0;
-        }
 
         public static IList<T> ToList<T>(this DataTable dataTable)
         {
@@ -41,6 +29,13 @@ namespace KYS.Library.Extensions
 
             return list;
         }
+
+        #region Private Methods
+        private static bool IsNull(this DataTable dataTable)
+            => dataTable == null;
+
+        private static bool IsEmpty(this DataTable dataTable)
+            => dataTable.Rows.Count == 0;
 
         private static T GetItem<T>(DataRow row)
         {
@@ -65,5 +60,6 @@ namespace KYS.Library.Extensions
 
             return obj;
         }
+        #endregion
     }
 }

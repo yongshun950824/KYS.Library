@@ -8,9 +8,7 @@ namespace KYS.Library.Extensions
         public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary,
             TKey key,
             TValue value)
-        {
-            return dictionary.Upsert(key, () => value);
-        }
+            => dictionary.Upsert(key, () => value);
 
         public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary,
             TKey key,
