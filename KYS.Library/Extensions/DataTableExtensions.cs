@@ -45,7 +45,7 @@ namespace KYS.Library.Extensions
 
             foreach (DataColumn column in row.Table.Columns)
             {
-                PropertyInfo prop = propertyInfos.FirstOrDefault(x => x.ToDescription() == column.ColumnName);
+                PropertyInfo prop = propertyInfos.FirstOrDefault(x => x.ToName() == column.ColumnName);
                 if (prop == null)
                     continue;
 

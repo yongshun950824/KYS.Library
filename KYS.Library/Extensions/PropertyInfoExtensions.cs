@@ -5,7 +5,7 @@ namespace KYS.Library.Extensions
 {
     public static class PropertyInfoExtensions
     {
-        public static string ToDescription(this PropertyInfo propertyInfo)
+        public static string ToName(this PropertyInfo propertyInfo)
         {
             try
             {
