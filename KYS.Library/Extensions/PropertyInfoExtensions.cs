@@ -11,10 +11,11 @@ namespace KYS.Library.Extensions
             {
                 object[] attributes = propertyInfo.GetCustomAttributes(typeof(DisplayAttribute), false);
 
-                // Or
+                #region Alternate
                 // IEnumerable<DisplayAttribute> attributes = propertyInfo.GetCustomAttributes<DisplayAttribute>(false);
+                #endregion
 
-                if (attributes.IsNullOrEmpty())
+                if (!attributes.IsNullOrEmpty())
                     return ((DisplayAttribute)attributes[0]).Name;
 
                 return propertyInfo.Name;
