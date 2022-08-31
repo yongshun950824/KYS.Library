@@ -3,24 +3,24 @@ using System.ComponentModel.DataAnnotations;
 
 namespace KYS.Library.Validations
 {
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
-    public class RequireIfAttribute : ValidationAttribute
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class RequiredIfAttribute : ValidationAttribute
     {
-        string otherPropertyValue;
-        string triggerValue;
+        readonly string _otherPropertyName;
+        readonly string _matchedValue;
 
-        public RequireIfAttribute(string otherPropertyValue, string triggerValue)
+        public RequiredIfAttribute(string otherPropertyName, string matchedValue)
             : base()
         {
-            this.otherPropertyValue = otherPropertyValue;
-            this.triggerValue = triggerValue;
+            this._otherPropertyName = otherPropertyName;
+            this._matchedValue = matchedValue;
         }
 
-        public RequireIfAttribute(string otherPropertyValue, string triggerValue, string errorMessage)
+        public RequiredIfAttribute(string otherPropertyName, string matchedValue, string errorMessage)
             : base(errorMessage)
         {
-            this.otherPropertyValue = otherPropertyValue;
-            this.triggerValue = triggerValue;
+            this._otherPropertyName = otherPropertyName;
+            this._matchedValue = matchedValue;
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -30,10 +30,10 @@ namespace KYS.Library.Validations
             try
             {
                 // Using reflection to get a reference to the other property
-                var otherPropertyInfo = validationContext.ObjectType.GetProperty(this.otherPropertyValue);
+                var otherPropertyInfo = validationContext.ObjectType.GetProperty(this._otherPropertyName);
                 string referencePropertyValue = (string)otherPropertyInfo.GetValue(validationContext.ObjectInstance, null);
 
-                if (String.Equals(triggerValue, referencePropertyValue))
+                if (String.Equals(_matchedValue, referencePropertyValue))
                 {
                     if (String.IsNullOrEmpty((string)value))
                         validationResult = new ValidationResult(null);
