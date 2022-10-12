@@ -24,47 +24,6 @@ namespace KYS.Library.Extensions
         public static bool HasDuplicates<T>(this IEnumerable<T> enumerable)
             => enumerable.Distinct().Count() != enumerable.Count();
 
-        /// <summary>
-        /// An extension method to concat <c>IEnumerable</c> into <c>string</c> value for displaying.
-        /// <br />
-        /// Use case(s):
-        /// <para />
-        /// 1. <c>enumerable.ToString(',', true, true)</c>
-        /// <para />
-        /// 2. <c>enumerable.ToString&lt;T&gt;()</c>
-        /// <para />
-        /// 3. <c>IEnumerable.ToString(enumerable, ',', true, true)</c>
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="enumerable"></param>
-        /// <param name="separator">Separator. (Optional)</param>
-        /// <param name="hasWhiteSpaceAfterSeparator">To add whitespace after separator. (Optional) </param>
-        /// <param name="removeEmptyItem">Remove item which is null. For `string` value, remove null or empty string.(Optional) </param>
-        /// <returns></returns>
-        public static string ToString<T>(this IEnumerable<T> enumerable,
-            char separator = ',',
-            bool hasWhiteSpaceAfterSeparator = true,
-            bool removeEmptyItem = false)
-        {
-            if (enumerable.IsNullOrEmpty())
-                return String.Empty;
-
-            string separatorString = separator.ToString();
-            if (hasWhiteSpaceAfterSeparator)
-                separatorString += " ";
-
-            if (removeEmptyItem)
-            {
-                Type type = typeof(T);
-                if (type == typeof(string))
-                    enumerable = enumerable.Where(x => !String.IsNullOrEmpty(x.ToString()));
-                else
-                    enumerable = enumerable.Where(x => x != null);
-            }
-
-            return String.Join(separator, enumerable);
-        }
-
         #region Paging Methods
         public static IEnumerable<T> Paging<T>(this IEnumerable<T> enumerable, 
             int pageNumber, int pageSize, bool isZeroBasedPageNumber = false)
