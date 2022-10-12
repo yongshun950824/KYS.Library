@@ -57,7 +57,7 @@ namespace KYS.Library.Extensions
             {
                 Type type = typeof(T);
                 if (type == typeof(string))
-                    enumerable = enumerable.Where(x => !String.IsNullOrEmpty(x.ToString()));
+                    enumerable = enumerable.Where(x => !String.IsNullOrEmpty(x?.ToString()));
                 else
                     enumerable = enumerable.Where(x => x != null);
             }
