@@ -62,7 +62,7 @@ namespace KYS.Library.Extensions
                     enumerable = enumerable.Where(x => x != null);
             }
 
-            return String.Join(separator, enumerable);
+            return String.Join(separatorString, enumerable);
         }
 
         #region Paging Methods
