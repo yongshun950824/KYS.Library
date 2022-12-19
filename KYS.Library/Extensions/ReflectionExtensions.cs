@@ -104,5 +104,28 @@ namespace KYS.Library.Extensions
 
             return null;
         }
+
+        /// <summary>
+        /// Approach 2: To retrieve the value of <c>DisplayAttribute</c>/<c>DisplayNameAttribute</c> from a property of the class. 
+        /// <br /><br />
+        /// Usage: 
+        /// <br />
+        /// <c>ReflectionExtensions.GetPropertyDisplayName2&#x3c;Class&#x3e;(x =&#x3e; x.Property)</c>
+        /// <br /><br />
+        /// Reference: <a href="https://stackoverflow.com/a/74846301/8017690">get the value of DisplayName attribute</a>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="propertyExpression"></param>
+        /// <returns></returns>
+        public static string GetPropertyDisplayName2<T, P>(Expression<Func<T, P>> propertyExpression)
+            where T : new()
+        {
+            MemberExpression memberExpr = propertyExpression.Body as MemberExpression;
+            if (memberExpr == null)
+                return null;
+
+            return (memberExpr.Member as PropertyInfo)
+                .ToName();
+        }
     }
 }
