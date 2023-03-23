@@ -8,18 +8,20 @@ namespace KYS.Library.Extensions
 {
     public static class EnumExtensions
     {
-        public static IEnumerable<T> GetEnumValues<T>() where T : Enum
+        public static IEnumerable<TEnum> GetEnumValues<TEnum>() 
+            where TEnum : Enum
         {
-            T valueType = default(T);
+            TEnum valueType = default(TEnum);
 
-            return typeof(T).GetFields()
-                .Select(fieldInfo => (T)fieldInfo.GetValue(valueType))
+            return typeof(TEnum).GetFields()
+                .Select(fieldInfo => (TEnum)fieldInfo.GetValue(valueType))
                 .Distinct();
         }
 
-        public static IEnumerable<string> GetEnumNames<T>() where T : Enum
+        public static IEnumerable<string> GetEnumNames<TEnum>() 
+            where TEnum : Enum
         {
-            return typeof(T).GetFields()
+            return typeof(TEnum).GetFields()
                 .Select(fieldInfo => fieldInfo.Attributes.ToDescription())
                 .Distinct();
         }
@@ -31,6 +33,14 @@ namespace KYS.Library.Extensions
                 return value.ToString();
 
             return attribute.Description;
+        }
+
+        public static Dictionary<TEnum, string> ToDictionary<TEnum>()
+            where TEnum : Enum
+        {
+            return Enum.GetValues(typeof(TEnum))
+                 .Cast<TEnum>()
+                 .ToDictionary(k => k, v => v.ToDescription());
         }
 
         #region Private Methods
