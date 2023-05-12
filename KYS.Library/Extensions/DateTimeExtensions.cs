@@ -23,7 +23,9 @@ namespace KYS.Library.Extensions
 
         public static DateTime GetLastDateOfMonth(this DateTime dt)
         {
-            return dt.AddMonths(1).AddDays(-1);
+            return new DateTime(dt.Year, dt.Month, 1)
+                .AddMonths(1)
+                .AddDays(-1);
         }
 
         public static DateTime GetFirstDateOfYear(this DateTime dt)
