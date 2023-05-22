@@ -9,6 +9,7 @@ using iText.Layout.Properties;
 using KYS.Library.Extensions;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -62,12 +63,25 @@ namespace KYS.Library.Helpers
             string sheetName,
             bool printHeaders = true,
             ExcelHeaderStyle headerStyle = default,
+            Dictionary<string, string> columnNameDict = null,
+            List<ExcelColumnFormat> excelColumnFormats = null,
             LicenseContext license = LicenseContext.NonCommercial)
         {
             ExcelPackage.LicenseContext = license;
 
             const int START_ROW = 1;
             const int START_COL = 1;
+
+            #region Rename DataTable Header column name
+            if (columnNameDict != null)
+            {
+                foreach (DataColumn col in dt.Columns)
+                {
+                    if (columnNameDict.TryGetValue(col.ColumnName, out string replacedColumnName))
+                        col.ColumnName = replacedColumnName;
+                }
+            }
+            #endregion
 
             using MemoryStream ms = new MemoryStream();
             using ExcelPackage package = new ExcelPackage(ms);
@@ -85,6 +99,26 @@ namespace KYS.Library.Helpers
             #endregion
 
             sheet.Cells[START_ROW, START_COL].LoadFromDataTable(dt, printHeaders);
+
+            #region Set column format
+            int totalRow = dt.Rows.Count;
+            if (!excelColumnFormats.IsNullOrEmpty()
+                && totalRow > 0)
+            {
+                foreach (var excelColumnFormat in excelColumnFormats)
+                {
+                    foreach (int column in excelColumnFormat.Columns)
+                    {
+                        if (!String.IsNullOrEmpty(excelColumnFormat.Format))
+                            sheet.Cells[2, column, totalRow + 1, column].Style.Numberformat.Format = excelColumnFormat.Format;
+
+                        if (excelColumnFormat.HorizontalAlignment != null)
+                            sheet.Cells[2, column, totalRow + 1, column].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
+                    }
+                }
+            }
+            #endregion
+
             package.Save();
 
             ms.Position = 0;
@@ -221,6 +255,16 @@ namespace KYS.Library.Helpers
             public bool Bold { get; set; } = true;
             public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.Solid;
             public Color BackgroundColor { get; set; } = Color.LightGray;
+        }
+
+        /// <summary>
+        /// A setting class to define the displayed format/pattern for Excel columns
+        /// </summary>
+        public class ExcelColumnFormat
+        {
+            public string Format { get; set; }
+            public int[] Columns { get; set; }
+            public ExcelHorizontalAlignment? HorizontalAlignment { get; set; }
         }
     }
 }
