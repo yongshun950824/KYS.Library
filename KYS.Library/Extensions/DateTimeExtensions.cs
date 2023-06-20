@@ -39,5 +39,12 @@ namespace KYS.Library.Extensions
                 .AddYears(1)
                 .AddDays(-1);
         }
+
+        public static DateTime ConvertToThaiBuddhistDateTime(this DateTime dt)
+        {
+            ThaiBuddhistCalendar cal = new ThaiBuddhistCalendar();
+
+            return new DateTime(cal.GetYear(dt), cal.GetMonth(dt), dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Millisecond);
+        }
     }
 }
