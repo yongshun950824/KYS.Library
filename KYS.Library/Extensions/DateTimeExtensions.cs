@@ -46,5 +46,15 @@ namespace KYS.Library.Extensions
 
             return new DateTime(cal.GetYear(dt), cal.GetMonth(dt), dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Millisecond);
         }
+
+        public static int GetAge(this DateTime dob, DateTime? calculatedDate = null)
+        {
+            calculatedDate ??= DateTime.Now;
+
+            int a = (calculatedDate.Value.Year * 100 + calculatedDate.Value.Month) * 100 + calculatedDate.Value.Day;
+            int b = (dob.Year * 100 + dob.Month) * 100 + dob.Day;
+
+            return (a - b) / 10000;
+        }
     }
 }
