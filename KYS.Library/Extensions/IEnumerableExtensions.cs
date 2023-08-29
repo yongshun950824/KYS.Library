@@ -100,6 +100,31 @@ namespace KYS.Library.Extensions
         }
         #endregion
 
+        /// <summary>
+        /// Order the <c>IEnumerable</c> based on another <c>IEnumerable</c>. <br/>
+        /// <a href="https://stackoverflow.com/a/15275682/8017690">Sort a list from another list IDs</a>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="order"></param>
+        /// <param name="valueSelector"></param>
+        /// <returns></returns>
+        public static IEnumerable<T> OrderBySequence<T, TValue>(
+           this IEnumerable<T> source,
+           IEnumerable<TValue> order,
+           Func<T, TValue> valueSelector)
+        {
+            var lookup = source.ToLookup(valueSelector, t => t);
+            foreach (var value in order)
+            {
+                foreach (var t in lookup[value])
+                {
+                    yield return t;
+                }
+            }
+        }
+
         #region Private Methods
         private static bool IsNull<T>(this IEnumerable<T> enumerable)
             => enumerable == null;
