@@ -101,7 +101,12 @@ namespace KYS.Library.Extensions
         #endregion
 
         /// <summary>
-        /// Order the <c>IEnumerable</c> based on another <c>IEnumerable</c>. <br/>
+        /// Order the <c>IEnumerable</c> based on another <c>IEnumerable</c>. 
+        /// <br />
+        /// <br />
+        /// Note: If the element's value from <c>source</c> doesn't existed in the <c>order</c>, the element will not be shown after ordered.
+        /// <br />
+        /// <br />
         /// <a href="https://stackoverflow.com/a/15275682/8017690">Sort a list from another list IDs</a>
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -110,8 +115,7 @@ namespace KYS.Library.Extensions
         /// <param name="order"></param>
         /// <param name="valueSelector"></param>
         /// <returns></returns>
-        public static IEnumerable<T> OrderBySequence<T, TValue>(
-           this IEnumerable<T> source,
+        public static IEnumerable<T> OrderBySequence<T, TValue>(this IEnumerable<T> source,
            IEnumerable<TValue> order,
            Func<T, TValue> valueSelector)
         {
@@ -123,6 +127,49 @@ namespace KYS.Library.Extensions
                     yield return t;
                 }
             }
+        }
+
+        /// <summary>
+        /// Order the <c>IEnumerable</c> based on another <c>IEnumerable</c>. 
+        /// <br />
+        /// <br />
+        /// Idea from <c>OrderBySequence&lt;T, TValue&gt;</c> method and include returning element(s) which is not existed in the <c>order</c>.
+        /// <br />
+        /// The non-existent element(s) will be sorted at last.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="valueSelector"></param>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        public static IEnumerable<T> OrderBy<T, TValue>(this IEnumerable<T> source,
+            Func<T, TValue> valueSelector,
+            IEnumerable<TValue> order)
+        {
+            var lookup = source.ToLookup(valueSelector, t => t);
+            foreach (var value in order)
+            {
+                foreach (var t in lookup[value])
+                {
+                    yield return t;
+                }
+            }
+
+            #region Return the element(s) which is not in order at last (result in sorted by ASCII)
+            var elementsNotInOrder = lookup
+                .Where(x => !order.Contains(x.Key))
+                .Select(x => x.Key)
+                .ToList();
+
+            foreach (var value in elementsNotInOrder)
+            {
+                foreach (var t in lookup[value])
+                {
+                    yield return t;
+                }
+            }
+            #endregion
         }
 
         #region Private Methods
