@@ -207,7 +207,7 @@ namespace KYS.Library.Services
                             CultureName = culture.Name,
                             Resources = new Dictionary<string, Dictionary<string, string>> 
                             { 
-                                { _resourceManager.ResourceSetType.ToString(), resource } 
+                                { _resourceManager.BaseName, resource } 
                             }
                         });
                     }
