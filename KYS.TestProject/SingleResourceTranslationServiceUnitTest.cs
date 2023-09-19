@@ -216,7 +216,7 @@ namespace KYS.TestProject
             );
             string input = "Spouse";
             //string expectedValue = "คู่สมรส";
-            string expectedValue = GetTranslatedText(input, resourceType, cultureInfo);
+            string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
             string actualValue = translationService.Translate(input);
@@ -256,7 +256,7 @@ namespace KYS.TestProject
             );
             string input = "Spouse";
             //string expectedValue = "คู่สมรส";
-            string expectedValue = GetTranslatedText(input, resourceType, cultureInfo);
+            string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
             string actualValue = translationService.Translate(input, culture: cultureInfo);
@@ -302,13 +302,47 @@ namespace KYS.TestProject
             Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
         }
 
-        private string GetTranslatedText(string input, Type resourceType, CultureInfo cultureInfo)
+        [Test]
+        public void TranslateSpouseWithSpecificResourceAndThrowNotSupportException()
         {
-            ResourceManager resourceManager = new ResourceManager(resourceType);
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(Resource);
+            ITranslationService translationService = new SingleResourceTranslationService(
+                resourceType,
+                cultureInfo
+            );
+            string input = "unknown";
+            NotSupportedException expectedEx = new NotSupportedException($"Translate with specified resource is not supported in {nameof(SingleResourceTranslationService)}");
 
-            ResourceSet rs = resourceManager.GetResourceSet(cultureInfo, true, false);
+            // Act
+            var ex = Assert.Throws<NotSupportedException>(() => translationService.Translate(input, resourceType));
 
-            return rs.GetObject(input)?.ToString();
+            // Assert
+            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+        }
+
+        [Test]
+        public void TranslateSpouseIgnoreCase()
+        {
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(Resource);
+            ITranslationService translationService = new SingleResourceTranslationService(
+                resourceType,
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
+            );
+            string input = "spouse";
+            string resourceKey = "Spouse";
+            //string expectedValue = "คู่สมรส";
+            string expectedValue = Helpers.GetTranslatedText(resourceKey, resourceType, cultureInfo) ?? input;
+
+            // Act
+            string actualValue = translationService.Translate(input);
+
+            // Assert
+            Assert.AreEqual(expectedValue, actualValue);
         }
     }
 }

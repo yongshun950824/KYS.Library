@@ -26,6 +26,7 @@ namespace KYS.Library.Services
         string Translate(string input, bool isReturnedOriginalValue = true);
         string Translate(string input, bool isReturnedOriginalValue = true, string cultureName = null);
         string Translate(string input, bool isReturnedOriginalValue = true, CultureInfo culture = null);
+        string Translate(string input, Type resourceType, bool isReturnedOriginalValue = true, CultureInfo culture = null);
     }
 
     public abstract class BaseTranslationService : IBaseTranslationService
@@ -187,7 +188,7 @@ namespace KYS.Library.Services
                 .SelectMany(x => x.Value.ToList())?
                 .ToList();
 
-            string translatedText = langKvps?.FirstOrDefault(x => x.Key == input).Value;
+            string translatedText = langKvps?.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase)).Value;
             if (String.IsNullOrEmpty(translatedText) && !isReturnedOriginalValue)
             {
                 throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");
@@ -197,6 +198,11 @@ namespace KYS.Library.Services
                 ? translatedText
                 : input;
 
+        }
+
+        public string Translate(string input, Type resourceType, bool isReturnedOriginalValue = true, CultureInfo culture = null)
+        {
+            throw new NotSupportedException($"Translate with specified resource is not supported in {nameof(SingleResourceTranslationService)}");
         }
 
         /// <summary>
@@ -336,7 +342,7 @@ namespace KYS.Library.Services
                 .SelectMany(x => x.Value.ToList())?
                 .ToList();
 
-            string translatedText = langKvps?.FirstOrDefault(x => x.Key == input).Value;
+            string translatedText = langKvps?.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase)).Value;
             if (String.IsNullOrEmpty(translatedText) && !isReturnedOriginalValue)
             {
                 throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");
@@ -347,9 +353,26 @@ namespace KYS.Library.Services
                 : input;
         }
 
+        /// <summary>
+        /// Translate to selected language for <b>specified resource</b> and provided <c>culture</c>. By default, translate to current/initialized language.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="resourceType"></param>
+        /// <param name="isReturnedOriginalValue"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public string Translate(string input, Type resourceType, bool isReturnedOriginalValue = true, CultureInfo culture = null)
         {
             culture ??= _currentCulture;
+
+            bool isResourceExisted = _resourceLanguages.SelectMany(x => x.Resources)
+                .Any(x => x.Key == resourceType.FullName);
+            if (!isResourceExisted)
+            {
+                throw new ArgumentException($"{resourceType.FullName} resource does not existed.");
+            }
 
             List<KeyValuePair<string, string>> langKvps = _resourceLanguages
                 .Where(x => x.CultureName == culture.Name)?
@@ -358,7 +381,7 @@ namespace KYS.Library.Services
                 .SelectMany(x => x.Value.ToList())?
                 .ToList();
 
-            string translatedText = langKvps?.FirstOrDefault(x => x.Key == input).Value;
+            string translatedText = langKvps?.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase)).Value;
             if (String.IsNullOrEmpty(translatedText) && !isReturnedOriginalValue)
             {
                 throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");

@@ -222,7 +222,7 @@ namespace KYS.TestProject
             );
             string input = "Spouse";
             //string expectedValue = "คู่สมรส";
-            string expectedValue = GetTranslatedText(input, resourceType, cultureInfo);
+            string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
             string actualValue = translationService.Translate(input);
@@ -264,7 +264,7 @@ namespace KYS.TestProject
             );
             string input = "Spouse";
             //string expectedValue = "คู่สมรส";
-            string expectedValue = GetTranslatedText(input, resourceType, culture);
+            string expectedValue = Helpers.GetTranslatedText(input, resourceType, culture) ?? input;
 
             // Act
             string actualValue = translationService.Translate(input, culture: culture);
@@ -313,13 +313,70 @@ namespace KYS.TestProject
             Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
         }
 
-        private string GetTranslatedText(string input, Type resourceType, CultureInfo cultureInfo)
+        [Test]
+        public void TranslateSpouseWithSpecificResource()
         {
-            ResourceManager resourceManager = new ResourceManager(resourceType);
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(Resource);
+            ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
+            );
+            string input = "spouse";
+            //string expectedValue = "คู่สมรส";
+            string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
-            ResourceSet rs = resourceManager.GetResourceSet(cultureInfo, true, false);
+            // Act
+            string actualValue = translationService.Translate(input, resourceType);
 
-            return rs.GetObject(input)?.ToString();
+            // Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [Test]
+        public void TranslateSpouseWithInvalidResource()
+        {
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(string);     // Invalid resource
+            ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
+            );
+            string input = "Spouse";
+            ArgumentException expectedEx = new ArgumentException($"{resourceType.FullName} resource does not existed.");
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => translationService.Translate(input, resourceType));
+
+            // Assert
+            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+        }
+
+        [Test]
+        public void TranslateSpouseIgnoreCase()
+        {
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(Resource);
+            ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
+            );
+            string input = "spouse";
+            string resourceKey = "Spouse";
+            //string expectedValue = "คู่สมรส";
+            string expectedValue = Helpers.GetTranslatedText(resourceKey, resourceType, cultureInfo) ?? input;
+
+            // Act
+            string actualValue = translationService.Translate(input, resourceType);
+
+            // Assert
+            Assert.AreEqual(expectedValue, actualValue);
         }
     }
 }
