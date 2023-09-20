@@ -33,6 +33,7 @@ namespace KYS.Library.Services
     {
         protected readonly List<CultureInfo> _cultures = new List<CultureInfo>();
         protected readonly CultureInfo _currentCulture;
+        private bool disposed;
 
         public BaseTranslationService(CultureInfo currentCulture = null, List<CultureInfo> cultures = null)
         {
@@ -82,7 +83,23 @@ namespace KYS.Library.Services
 
         public void Dispose()
         {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
+        private void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    // TO-DO Dispose managed resources here
+                }
+
+                // TO-DO Dispose unmanaged resources here
+            }
+
+            disposed = true;
         }
     }
 
@@ -174,7 +191,7 @@ namespace KYS.Library.Services
             //var obj = rs?.GetObject(input);
             //if (obj == null && !isReturnedOriginalValue)
             //{
-            //    throw new ArgumentNullException($"Provided {input} doesn't support for language translation.");
+            //    throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");
             //}
 
             //return !String.IsNullOrEmpty(obj?.ToString())

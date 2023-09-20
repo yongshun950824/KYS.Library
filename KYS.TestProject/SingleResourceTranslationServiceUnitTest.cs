@@ -23,7 +23,7 @@ namespace KYS.TestProject
         public void NotInitializeCurrentCulture()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource)
             );
             CultureInfo expectedValue = CultureInfo.CurrentCulture;
@@ -40,7 +40,7 @@ namespace KYS.TestProject
         {
             // Arrange
             CultureInfo expectedValue = new CultureInfo("th-TH");
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 expectedValue
             );
@@ -56,7 +56,7 @@ namespace KYS.TestProject
         public void NotInitializeCultureInfos()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -76,7 +76,7 @@ namespace KYS.TestProject
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -95,7 +95,7 @@ namespace KYS.TestProject
         public void GetLanguagesWithSecondConstructor()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -124,7 +124,7 @@ namespace KYS.TestProject
         public void GetLanguagesWithThirdConstructor()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource).FullName,
                 Assembly.GetExecutingAssembly(),
                 new CultureInfo("th-TH")
@@ -154,7 +154,7 @@ namespace KYS.TestProject
         public void TranslateForChildInEnglish()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -172,7 +172,7 @@ namespace KYS.TestProject
         public void TranslateUnknownInEnglishAndReturnOriginalValue()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -190,7 +190,7 @@ namespace KYS.TestProject
         public void TranslateUnknownInEnglishAndThrowException()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -210,7 +210,7 @@ namespace KYS.TestProject
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 resourceType,
                 cultureInfo
             );
@@ -229,7 +229,7 @@ namespace KYS.TestProject
         public void TranslateSpouseToUnsupportedCultureAndReturnOriginalValue()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -251,7 +251,7 @@ namespace KYS.TestProject
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
 
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 resourceType
             );
             string input = "Spouse";
@@ -269,7 +269,7 @@ namespace KYS.TestProject
         public void TranslateSpouseToDefaultCultureAndReturnOriginalValue()
         {
             // Arrange
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -288,7 +288,7 @@ namespace KYS.TestProject
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 cultureInfo
             );
@@ -308,7 +308,7 @@ namespace KYS.TestProject
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 resourceType,
                 cultureInfo
             );
@@ -328,7 +328,7 @@ namespace KYS.TestProject
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            ITranslationService translationService = new SingleResourceTranslationService(
+            using ITranslationService translationService = new SingleResourceTranslationService(
                 resourceType,
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
