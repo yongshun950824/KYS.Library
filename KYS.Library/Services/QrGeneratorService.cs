@@ -5,19 +5,28 @@ using ZXing;
 using ZXing.Common;
 using ZXing.QrCode.Internal;
 
-namespace KYS.Library.Helpers
+namespace KYS.Library.Services
 {
-    public class QrHelper
+    public interface IQrGeneratorService
+    {
+        SKBitmap Draw();
+        MemoryStream DrawAndToMemoryStream();
+        string DrawAndToBase64();
+        string DrawAndToDataUri();
+        void DrawAndToFile(string filePath);
+    }
+
+    public class QrGeneratorService : IQrGeneratorService
     {
         private SKBitmap _bitmap;
         private readonly string _value;
         private readonly int _width;
         private readonly int _height;
-        private readonly string? _logoPath;
+        private readonly string _logoPath;
         private readonly int? _logoWidth;
         private readonly int? _logoHeight;
 
-        public QrHelper(string value)
+        public QrGeneratorService(string value)
         {
             if (String.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value));
@@ -31,14 +40,14 @@ namespace KYS.Library.Helpers
                 _height = 200;
         }
 
-        public QrHelper(string value, int width, int height)
+        public QrGeneratorService(string value, int width, int height)
             : this(value)
         {
             _width = width;
             _height = height;
         }
 
-        public QrHelper(string value, int width, int height, string logoPath)
+        public QrGeneratorService(string value, int width, int height, string logoPath)
             : this(value, width, height)
         {
             if (String.IsNullOrEmpty(logoPath))
@@ -52,7 +61,7 @@ namespace KYS.Library.Helpers
             _logoHeight = height / 5;
         }
 
-        public QrHelper(string value, int width, int height, string logoPath, int logoWidth, int logoHeight)
+        public QrGeneratorService(string value, int width, int height, string logoPath, int logoWidth, int logoHeight)
             : this(value, width, height, logoPath)
         {
             if (width <= logoWidth)
@@ -61,10 +70,9 @@ namespace KYS.Library.Helpers
             if (height <= logoHeight)
                 throw new ArgumentException("Provided logo height must be smaller than QR code height.");
 
-            if ((width * height) <= (logoWidth * logoHeight))
+            if (width * height <= logoWidth * logoHeight)
                 throw new ArgumentException("Provided logo area must be smaller than QR code area.");
 
-            _logoPath = logoPath;
             _logoWidth = logoWidth;
             _logoHeight = logoHeight;
         }
@@ -95,6 +103,7 @@ namespace KYS.Library.Helpers
 
             var barcodeBitmap = writer.Write(_value);
 
+            #region Add logo into QR
             if (!String.IsNullOrEmpty(_logoPath))
             {
                 var logo = SKImage.FromEncodedData(_logoPath);
@@ -109,6 +118,7 @@ namespace KYS.Library.Helpers
                 using var canvas = new SKCanvas(barcodeBitmap);
                 canvas.DrawBitmap(overlay, new SKPoint(deltaWidth / 2, deltaHeigth / 2));
             }
+            #endregion
 
             _bitmap = barcodeBitmap;
             return barcodeBitmap;
@@ -126,15 +136,23 @@ namespace KYS.Library.Helpers
             return ms;
         }
 
-        public string DrawAndToDataUri()
+        public string DrawAndToBase64()
         {
             using MemoryStream ms = DrawAndToMemoryStream();
 
-            return $"data:image/png;base64, {Convert.ToBase64String(ms.ToArray())}";
+            return Convert.ToBase64String(ms.ToArray());
+        }
+
+        public string DrawAndToDataUri()
+        {
+            return $"data:image/png;base64, {DrawAndToBase64()}";
         }
 
         public void DrawAndToFile(string filePath)
         {
+            if (String.IsNullOrEmpty(filePath))
+                throw new ArgumentNullException(nameof(filePath));
+
             if (!filePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
                 filePath += ".png";
 
