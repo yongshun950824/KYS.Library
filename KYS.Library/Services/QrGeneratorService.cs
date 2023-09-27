@@ -18,7 +18,6 @@ namespace KYS.Library.Services
 
     public class QrGeneratorService : IQrGeneratorService
     {
-        private SKBitmap _bitmap;
         private readonly string _value;
         private readonly int _width;
         private readonly int _height;
@@ -81,12 +80,12 @@ namespace KYS.Library.Services
         public int Width { get { return _width; } }
         public int Height { get { return _height; } }
 
-        public SKBitmap QRCode { get { return _bitmap; } }
+        public SKBitmap QRCode { get; private set; }
 
         public SKBitmap Draw()
         {
-            if (_bitmap != null)
-                return _bitmap;
+            if (QRCode != null)
+                return QRCode;
 
             var encodingOptions = new EncodingOptions
             {
@@ -120,7 +119,7 @@ namespace KYS.Library.Services
             }
             #endregion
 
-            _bitmap = barcodeBitmap;
+            QRCode = barcodeBitmap;
             return barcodeBitmap;
         }
 
