@@ -111,11 +111,11 @@ namespace KYS.Library.Services
                 SKBitmap overlay = logoBitmap.Resize(new SKImageInfo(_logoWidth.Value, _logoHeight.Value),
                     SKFilterQuality.High);
 
-                int deltaHeigth = barcodeBitmap.Height - overlay.Height;
+                int deltaHeight = barcodeBitmap.Height - overlay.Height;
                 int deltaWidth = barcodeBitmap.Width - overlay.Width;
 
                 using var canvas = new SKCanvas(barcodeBitmap);
-                canvas.DrawBitmap(overlay, new SKPoint(deltaWidth / 2, deltaHeigth / 2));
+                canvas.DrawBitmap(overlay, new SKPoint(deltaWidth / 2, deltaHeight / 2));
             }
             #endregion
 
