@@ -24,30 +24,30 @@ namespace KYS.Library.Services
         private readonly string _logoPath;
         private readonly int? _logoWidth;
         private readonly int? _logoHeight;
+        private readonly int _margin;
 
-        public QrGeneratorService(string value)
+        public QrGeneratorService(string value, int? width = null, int? height = null, int? margin = null)
         {
             if (String.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value));
 
+            if (width.HasValue && width.Value <= 0)
+                throw new ArgumentException($"Invalid {nameof(width)}.");
+
+            if (height.HasValue && height.Value <= 0)
+                throw new ArgumentException($"Invalid {nameof(height)}.");
+
+            if (margin.HasValue && margin.Value <= 0)
+                throw new ArgumentException($"Invalid {nameof(margin)}.");
+
             _value = value;
-
-            if (_width == default)
-                _width = 200;
-
-            if (_height == default)
-                _height = 200;
+            _width = width ?? 200;
+            _height = height ?? 200;
+            _margin = margin ?? 0;
         }
 
-        public QrGeneratorService(string value, int width, int height)
-            : this(value)
-        {
-            _width = width;
-            _height = height;
-        }
-
-        public QrGeneratorService(string value, int width, int height, string logoPath)
-            : this(value, width, height)
+        public QrGeneratorService(string value, string logoPath, int? width = null, int? height = null, int? margin = null)
+            : this(value, width, height, margin)
         {
             if (String.IsNullOrEmpty(logoPath))
                 throw new ArgumentNullException(nameof(logoPath));
@@ -56,12 +56,12 @@ namespace KYS.Library.Services
                 throw new FileNotFoundException(nameof(logoPath));
 
             _logoPath = logoPath;
-            _logoWidth = width / 5;
-            _logoHeight = height / 5;
+            _logoWidth = _width / 5;
+            _logoHeight = _height / 5;
         }
 
-        public QrGeneratorService(string value, int width, int height, string logoPath, int logoWidth, int logoHeight)
-            : this(value, width, height, logoPath)
+        public QrGeneratorService(string value, int width, int height, string logoPath, int logoWidth, int logoHeight, int? margin = null)
+            : this(value, logoPath, width, height, margin)
         {
             if (width <= logoWidth)
                 throw new ArgumentException("Provided logo width must be smaller than QR code width.");
@@ -79,6 +79,10 @@ namespace KYS.Library.Services
         public string Value { get { return _value; } }
         public int Width { get { return _width; } }
         public int Height { get { return _height; } }
+        public string? LogoPath { get { return _logoPath; } }
+        public int? LogoWidth { get { return _logoWidth; } }
+        public int? LogoHeight { get { return _logoHeight; } }
+        public int Margin { get { return _margin; } }
 
         public SKBitmap QRCode { get; private set; }
 
@@ -91,7 +95,8 @@ namespace KYS.Library.Services
             {
                 Width = _width,
                 Height = _height,
-                Hints = { { EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H } }
+                Hints = { { EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H } },
+                Margin = _margin
             };
 
             var writer = new ZXing.SkiaSharp.BarcodeWriter()
