@@ -27,5 +27,12 @@ namespace KYS.Library.Extensions
 
             return str;
         }
+
+        public static bool IsValidBase64(this string str)
+        {
+            Span<byte> buffer = new Span<byte>(new byte[str.Length]);
+
+            return Convert.TryFromBase64String(str, buffer, out _);
+        }
     }
 }
