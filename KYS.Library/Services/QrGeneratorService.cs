@@ -26,27 +26,44 @@ namespace KYS.Library.Services
         private readonly int? _logoHeight;
         private readonly int _margin;
 
-        public QrGeneratorService(string value, int? width = null, int? height = null, int? margin = null)
+        private static readonly int _defaultWidth = 200;
+        private static readonly int _defaultHeight = 200;
+        private static readonly int _defaultMargin = 0;
+        private static readonly int _defaultLogoRatio = 5;
+
+        public QrGeneratorService(string value)
+            : this(value, _defaultWidth, _defaultHeight, _defaultMargin)
+        { }
+
+        public QrGeneratorService(string value, int width, int height, int margin)
         {
             if (String.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value));
 
-            if (width.HasValue && width.Value <= 0)
+            if (width <= 0)
                 throw new ArgumentException($"Invalid {nameof(width)}.");
 
-            if (height.HasValue && height.Value <= 0)
+            if (height <= 0)
                 throw new ArgumentException($"Invalid {nameof(height)}.");
 
-            if (margin.HasValue && margin.Value <= 0)
+            if (margin < 0)
                 throw new ArgumentException($"Invalid {nameof(margin)}.");
 
             _value = value;
-            _width = width ?? 200;
-            _height = height ?? 200;
-            _margin = margin ?? 0;
+            _width = width;
+            _height = height;
+            _margin = margin;
         }
 
-        public QrGeneratorService(string value, string logoPath, int? width = null, int? height = null, int? margin = null)
+        public QrGeneratorService(string value, string logoPath)
+            : this(value, logoPath, _defaultWidth, _defaultHeight, _defaultMargin)
+        { }
+
+        public QrGeneratorService(string value, string logoPath, int width, int height, int margin)
+            : this(value, logoPath, width, height, margin, width / _defaultLogoRatio, height / _defaultLogoRatio)
+        { }
+
+        public QrGeneratorService(string value, string logoPath, int width, int height, int margin, int logoWidth, int logoHeight)
             : this(value, width, height, margin)
         {
             if (String.IsNullOrEmpty(logoPath))
@@ -55,14 +72,6 @@ namespace KYS.Library.Services
             if (!File.Exists(logoPath))
                 throw new FileNotFoundException(nameof(logoPath));
 
-            _logoPath = logoPath;
-            _logoWidth = _width / 5;
-            _logoHeight = _height / 5;
-        }
-
-        public QrGeneratorService(string value, int width, int height, string logoPath, int logoWidth, int logoHeight, int? margin = null)
-            : this(value, logoPath, width, height, margin)
-        {
             if (width <= logoWidth)
                 throw new ArgumentException("Provided logo width must be smaller than QR code width.");
 
@@ -72,6 +81,7 @@ namespace KYS.Library.Services
             if (width * height <= logoWidth * logoHeight)
                 throw new ArgumentException("Provided logo area must be smaller than QR code area.");
 
+            _logoPath = logoPath;
             _logoWidth = logoWidth;
             _logoHeight = logoHeight;
         }
