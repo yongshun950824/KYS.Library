@@ -59,7 +59,7 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, width: -10);
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, -10, _defaultHeight, _defaultMargin);
             });
 
             // Assert
@@ -75,7 +75,7 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, height: -10);
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _defaultWidth, -10, _defaultMargin);
             });
 
             // Assert
@@ -91,7 +91,7 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, margin: -10);
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _defaultWidth, _defaultHeight, -10);
             });
 
             // Assert
@@ -166,8 +166,8 @@ namespace KYS.TestProject
             int margin = 1;
 
             // Act
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _defaultWidth, _defaultHeight,
-                _logoPath, logoWidth, logoHeight, margin);
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
+                _defaultWidth, _defaultHeight, margin, logoWidth, logoHeight);
             qrGeneratorService.Draw();
 
             // Assert
@@ -192,8 +192,8 @@ namespace KYS.TestProject
             int margin = 1;
 
             // Act
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, width, height,
-                _logoPath, logoWidth, logoHeight, margin);
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
+                width, height, margin, logoWidth, logoHeight);
             qrGeneratorService.Draw();
 
             // Assert
@@ -254,8 +254,8 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, width, height,
-                    _logoPath, logoWidth, logoHeight);
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath, 
+                    width, height, _defaultMargin, logoWidth, logoHeight);
             });
 
             // Assert
@@ -276,8 +276,8 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, width, height,
-                    _logoPath, logoWidth, logoHeight);
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath, 
+                    width, height, _defaultMargin, logoWidth, logoHeight);
             });
 
             // Assert
