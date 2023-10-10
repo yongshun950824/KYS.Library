@@ -4,6 +4,7 @@ using KYS.Library.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace KYS.Library.Services
 {
@@ -153,11 +154,18 @@ namespace KYS.Library.Services
 
             Directory.CreateDirectory(destDirPath);
 
-            FileName = Path.GetFileName(srcFilePath);
-
             fastZip.ExtractZip(srcFilePath, destDirPath, null);
 
-            // TO-DO Load FileItems from destDirPath
+            #region Load zip file info
+            FileName = Path.GetFileName(srcFilePath);
+            FileItems = Directory.GetFiles(destDirPath)
+                .Select(x => new ZipFileItem
+                {
+                    Name = Path.GetFileName(x),
+                    Contents = FileHelper.LoadFileToMemoryStream(x).ToArray()
+                })
+                .ToList();
+            #endregion
         }
 
         public class ZipFileItem

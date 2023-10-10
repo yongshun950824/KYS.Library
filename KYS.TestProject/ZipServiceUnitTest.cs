@@ -1,4 +1,5 @@
 ﻿using ICSharpCode.SharpZipLib.Zip;
+using KYS.Library.Helpers;
 using KYS.Library.Services;
 using NUnit.Framework;
 using System;
@@ -23,11 +24,7 @@ namespace KYS.TestProject
             string[] resourceFileNames = new string[] { "logo.png", "sample.txt" };
             foreach (string fileName in resourceFileNames)
             {
-                using FileStream fs = new FileStream(_resourcePath, FileMode.Open, FileAccess.Read);
-                fs.Position = 0;
-
-                using MemoryStream ms = new MemoryStream();
-                fs.CopyTo(ms);
+                using MemoryStream ms = FileHelper.LoadFileToMemoryStream(_resourcePath);
 
                 _fileItems.Add(new ZipService.ZipFileItem
                 {
@@ -173,7 +170,6 @@ namespace KYS.TestProject
             Assert.AreEqual(password, zipService.Password);
         }
 
-
         [Test]
         public void ZipSingleFileAndWriteFile()
         {
@@ -272,54 +268,91 @@ namespace KYS.TestProject
         public void UnzipUnencryptedZipFile()
         {
             // Arrange
-            string fileName = "Sample zip_20231009_1622.zip";
-            string unzipDirPath = Path.Combine(_outDirectoryPath, fileName.Replace(".zip", ""));
-            string password = "abc1234";
+            string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
+            var fileItems = new List<ZipService.ZipFileItem> { _fileItems[0] };
 
-            // Act
+            string unzipDirPath = Path.Combine(_outDirectoryPath, zipFileName.Replace(".zip", ""));
+
+            #region Generate zip file for unencrypted later
             ZipService zipService = new ZipService
             {
-                Password = password
+                FileName = zipFileName,
+                FileItems = fileItems,
             };
-            zipService.Unzip(Path.Combine(_outDirectoryPath, fileName), unzipDirPath);
+            zipService.ZipAndToFile(_outDirectoryPath);
+            #endregion
+
+            // Act
+            ZipService unzipService = new ZipService();
+            unzipService.Unzip(Path.Combine(_outDirectoryPath, zipFileName), unzipDirPath);
 
             // Assert
             Assert.IsTrue(Directory.Exists(unzipDirPath));
+            Assert.AreEqual(zipFileName, unzipService.FileName);
+            Assert.AreEqual(fileItems.Count, unzipService.FileItems.Count);
         }
 
         [Test]
         public void UnzipEncryptedFile()
         {
             // Arrange
-            string fileName = "Sample zip_20231009_1622.zip";
-            string unzipDirPath = Path.Combine(_outDirectoryPath, fileName.Replace(".zip", ""));
+            string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
+            var fileItems = new List<ZipService.ZipFileItem> { _fileItems[0] };
             string password = "abc1234";
 
-            // Act
+            string unzipDirPath = Path.Combine(_outDirectoryPath, zipFileName.Replace(".zip", ""));
+
+            #region Generate zip file for unencrypted later
             ZipService zipService = new ZipService
+            {
+                FileName = zipFileName,
+                FileItems = fileItems,
+                Password = password
+            };
+            zipService.ZipAndToFile(_outDirectoryPath);
+            #endregion
+
+            // Act
+            ZipService unzipService = new ZipService
             {
                 Password = password
             };
-            zipService.Unzip(Path.Combine(_outDirectoryPath, fileName), unzipDirPath);
+            unzipService.Unzip(Path.Combine(_outDirectoryPath, zipFileName), unzipDirPath);
 
             // Assert
             Assert.IsTrue(Directory.Exists(unzipDirPath));
+            Assert.AreEqual(zipFileName, unzipService.FileName);
+            Assert.AreEqual(fileItems.Count, unzipService.FileItems.Count);
         }
 
         [Test]
         public void UnzipEncryptedFileWithoutPasswordAndFail()
         {
             // Arrange
-            string fileName = "Sample zip_20231009_1622.zip";
             var expectedEx = new ZipException("No password available for encrypted stream");
+
+            string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
+            var fileItems = new List<ZipService.ZipFileItem> { _fileItems[0] };
+            string password = "abc1234";
+
+            string unzipDirPath = Path.Combine(_outDirectoryPath, zipFileName.Replace(".zip", ""));
+
+            #region Generate zip file for unencrypted later
+            ZipService zipService = new ZipService
+            {
+                FileName = zipFileName,
+                FileItems = fileItems,
+                Password = password
+            };
+            zipService.ZipAndToFile(_outDirectoryPath);
+            #endregion
 
             // Act
             var ex = Assert.Throws<ZipException>(() =>
             {
                 ZipService zipService = new ZipService();
 
-                zipService.Unzip(Path.Combine(_outDirectoryPath, fileName),
-                    Path.Combine(_outDirectoryPath, fileName.Replace(".zip", "")));
+                zipService.Unzip(Path.Combine(_outDirectoryPath, zipFileName), unzipDirPath);
             });
 
             // Assert
