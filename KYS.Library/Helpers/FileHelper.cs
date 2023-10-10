@@ -39,5 +39,23 @@ namespace KYS.Library.Helpers
             using MemoryStream ms = ToMemoryStream(bytes);
             WriteFile(ms, fileName);
         }
+
+        public static MemoryStream LoadFileToMemoryStream(string filePath)
+        {
+            if (!File.Exists(filePath))
+            {
+                throw new FileNotFoundException(filePath);
+            }
+
+            using FileStream fs = File.OpenRead(filePath);
+            fs.Position = 0;
+
+            MemoryStream ms = new MemoryStream();
+            fs.CopyTo(ms);
+
+            ms.Position = 0;
+
+            return ms;
+        }
     }
 }

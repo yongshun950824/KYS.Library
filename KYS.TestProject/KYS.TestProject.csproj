@@ -8,10 +8,14 @@
 
   <ItemGroup>
     <None Remove="Resources\logo.png" />
+    <None Remove="Resources\sample.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sample.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
