@@ -8,7 +8,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Resources;
 
 namespace KYS.TestProject
 {
