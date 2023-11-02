@@ -28,8 +28,6 @@ namespace KYS.Library.Helpers
             where T : class, new()
         {
             using StringWriter sw = new StringWriter();
-
-            XmlWriterSettings settings = new XmlWriterSettings();
             using XmlTextWriter xmlTextWriter = new XmlTextWriter(sw) { Formatting = formatting };
 
             XmlSerializer serializer = new XmlSerializer(typeof(T));
