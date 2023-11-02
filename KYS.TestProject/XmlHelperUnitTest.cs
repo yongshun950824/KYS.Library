@@ -123,7 +123,7 @@ namespace KYS.TestProject
         public void XmlDocumentSerializeToFile()
         {
             // Arrange
-            string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now.ToString("yyyyMMddHHmm")}.xml");
+            string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now:yyyyMMddHHmm}.xml");
             XmlDocument inputObj = new XmlDocument();
             inputObj.LoadXml(_personXml);
 
@@ -138,7 +138,7 @@ namespace KYS.TestProject
         public void XDocumentSerializeToFile()
         {
             // Arrange
-            string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now.ToString("yyyyMMddHHmm")}.xml");
+            string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now:yyyyMMddHHmm}.xml");
             XDocument inputObj = _personXDoc;
 
             // Act
@@ -152,7 +152,7 @@ namespace KYS.TestProject
         public void ObjectToXmlSerializeToFile()
         {
             // Arrange
-            string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now.ToString("yyyyMMddHHmm")}.xml");
+            string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now:yyyyMMddHHmm}.xml");
             Person inputObj = _person;
 
             // Act
@@ -216,7 +216,7 @@ namespace KYS.TestProject
             Person expectedResult = _person;
 
             // Act
-            Person result = XmlHelper.Deserialize< Person>(_personXDoc);
+            Person result = XmlHelper.Deserialize<Person>(xDocument);
 
             // Assert
             Assert.IsNotNull(result);
