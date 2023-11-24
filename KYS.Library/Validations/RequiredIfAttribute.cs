@@ -12,15 +12,15 @@ namespace KYS.Library.Validations
         public RequiredIfAttribute(string otherPropertyName, string matchedValue)
             : base()
         {
-            this._otherPropertyName = otherPropertyName;
-            this._matchedValue = matchedValue;
+            _otherPropertyName = otherPropertyName;
+            _matchedValue = matchedValue;
         }
 
         public RequiredIfAttribute(string otherPropertyName, string matchedValue, string errorMessage)
             : base(errorMessage)
         {
-            this._otherPropertyName = otherPropertyName;
-            this._matchedValue = matchedValue;
+            _otherPropertyName = otherPropertyName;
+            _matchedValue = matchedValue;
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -39,7 +39,7 @@ namespace KYS.Library.Validations
                         validationResult = new ValidationResult(null);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
