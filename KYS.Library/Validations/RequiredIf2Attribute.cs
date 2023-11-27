@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KYS.Library.Extensions;
+using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
@@ -26,17 +28,19 @@ namespace KYS.Library.Validations
         readonly string _otherPropertyName;
         readonly object _matchedValue;
         readonly CompareOperator.CompareOperatorConstants _operator = CompareOperator.CompareOperatorConstants.Equal;
+        readonly string _errorMessage;
 
         public RequiredIf2Attribute(string otherPropertyName, object matchedValue) : base()
         {
-            this._otherPropertyName = otherPropertyName;
-            this._matchedValue = matchedValue;
+            _otherPropertyName = otherPropertyName;
+            _matchedValue = matchedValue;
         }
 
         public RequiredIf2Attribute(string otherPropertyName, object matchedValue, string errorMessage) : base(errorMessage)
         {
-            this._otherPropertyName = otherPropertyName;
-            this._matchedValue = matchedValue;
+            _otherPropertyName = otherPropertyName;
+            _matchedValue = matchedValue;
+            _errorMessage = errorMessage;
         }
 
         public RequiredIf2Attribute(
@@ -44,9 +48,9 @@ namespace KYS.Library.Validations
             object matchedValue,
             CompareOperator.CompareOperatorConstants @operator) : base()
         {
-            this._otherPropertyName = otherPropertyName;
-            this._matchedValue = matchedValue;
-            this._operator = @operator;
+            _otherPropertyName = otherPropertyName;
+            _matchedValue = matchedValue;
+            _operator = @operator;
         }
 
         public RequiredIf2Attribute(
@@ -55,9 +59,10 @@ namespace KYS.Library.Validations
             CompareOperator.CompareOperatorConstants @operator,
             string errorMessage) : base(errorMessage)
         {
-            this._otherPropertyName = otherPropertyName;
-            this._matchedValue = matchedValue;
-            this._operator = @operator;
+            _otherPropertyName = otherPropertyName;
+            _matchedValue = matchedValue;
+            _operator = @operator;
+            _errorMessage = errorMessage;
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -75,12 +80,9 @@ namespace KYS.Library.Validations
 
                 var referencePropertyValue = Convert.ChangeType(otherPropertyInfo.GetValue(validationContext.ObjectInstance, null), otherPropertyType);
 
+                bool isValid = false;
+                #region Approach 1
                 /*
-				MethodInfo operatorFunc = typeof(CompareOperator)
-					.GetMethod(nameof(CompareOperator.GetOperatorFunc))
-					.MakeGenericMethod(otherPropertyType);
-				*/
-
                 MethodInfo operatorFunc = typeof(CompareOperator)
                     .GetMethods()
                     .Where(x => x.IsGenericMethod
@@ -88,21 +90,37 @@ namespace KYS.Library.Validations
                     .First()
                     .MakeGenericMethod(otherPropertyType);
 
-                // TO-DO: Work with GetCompareOperatorFunc (third method)
+                isValid = (bool)operatorFunc.Invoke(this, new[] { _operator, referencePropertyValue, _matchedValue });
+                */
+                #endregion
 
-                if ((bool)operatorFunc.Invoke(this, new[] { (object)_operator, referencePropertyValue, _matchedValue }))
+                #region Approach 2
+                Func<IComparable, IComparable, bool> operatorFunc = CompareOperator.GetCompareOperatorFunc(_operator);
+                isValid = operatorFunc.Invoke((IComparable)referencePropertyValue, (IComparable)_matchedValue);
+                #endregion
+
+                if (isValid)
                 {
                     if (value == null
-                        || value == default)
+                        || value.ToString() == Activator.CreateInstance(value.GetType()).ToString())
                         validationResult = new ValidationResult(null, new string[] { validationContext.MemberName });
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
 
             return validationResult;
+        }
+
+        public override string FormatErrorMessage(string name)
+        {
+            if (!String.IsNullOrEmpty(_errorMessage))
+                return _errorMessage;
+
+            // Default Error Message: "{Current Property} must be provided when {Other Property} is {operator desc} {value}."
+            return $"{name} must be provided when {_otherPropertyName} is {_operator.ToDescription().ToLower()} {_matchedValue}.";
         }
     }
 
@@ -110,11 +128,17 @@ namespace KYS.Library.Validations
     {
         public enum CompareOperatorConstants
         {
+            [Description("Equal to")]
             Equal,
+            [Description("Not equal to")]
             NotEqual,
-            LesserThan,
-            LesserThanOrEqual,
+            [Description("Less than")]
+            LessThan,
+            [Description("Less than or equal to")]
+            LessThanOrEqual,
+            [Description("Greater than")]
             GreaterThan,
+            [Description("Greater than or equal to")]
             GreaterThanOrEqual
         }
 
@@ -128,10 +152,10 @@ namespace KYS.Library.Validations
                 case CompareOperatorConstants.NotEqual:
                     return !a.Equals(b);
 
-                case CompareOperatorConstants.LesserThan:
+                case CompareOperatorConstants.LessThan:
                     return a.CompareTo(b) == -1;
 
-                case CompareOperatorConstants.LesserThanOrEqual:
+                case CompareOperatorConstants.LessThanOrEqual:
                     return a.CompareTo(b) == -1
                         || a.CompareTo(b) == 0;
 
@@ -157,10 +181,10 @@ namespace KYS.Library.Validations
                 case CompareOperatorConstants.NotEqual:
                     return !a.Equals(b);
 
-                case CompareOperatorConstants.LesserThan:
+                case CompareOperatorConstants.LessThan:
                     return a.CompareTo(b) == -1;
 
-                case CompareOperatorConstants.LesserThanOrEqual:
+                case CompareOperatorConstants.LessThanOrEqual:
                     return a.CompareTo(b) == -1
                         || a.CompareTo(b) == 0;
 
@@ -176,42 +200,38 @@ namespace KYS.Library.Validations
             }
         }
 
-        #region Unsupported methods
         /// <summary>
-        /// TO-DO: Migrate RequiredIf2Attribute to support run Func from reflection.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="operator"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        //public static Func<T, T, bool> GetCompareOperatorFunc<T>(CompareOperatorConstants @operator) where T : IComparable, IComparable<T>
-        //{
-        //	switch (@operator)
-        //	{
-        //		case CompareOperatorConstants.Equal:
-        //			return (a, b) => a.Equals(b);
+        public static Func<IComparable, IComparable, bool> GetCompareOperatorFunc(CompareOperatorConstants @operator)
+        {
+            switch (@operator)
+            {
+                case CompareOperatorConstants.Equal:
+                    return (a, b) => a.Equals(b);
 
-        //		case CompareOperatorConstants.NotEqual:
-        //			return (a, b) => !a.Equals(b);
+                case CompareOperatorConstants.NotEqual:
+                    return (a, b) => !a.Equals(b);
 
-        //		case CompareOperatorConstants.LesserThan:
-        //			return (a, b) => a.CompareTo(b) == -1;
+                case CompareOperatorConstants.LessThan:
+                    return (a, b) => a.CompareTo(b) == -1;
 
-        //		case CompareOperatorConstants.LesserThanOrEqual:
-        //			return (a, b) => a.CompareTo(b) == -1
-        //				|| a.CompareTo(b) == 0;
+                case CompareOperatorConstants.LessThanOrEqual:
+                    return (a, b) => a.CompareTo(b) == -1
+                        || a.CompareTo(b) == 0;
 
-        //		case CompareOperatorConstants.GreaterThan:
-        //			return (a, b) => a.CompareTo(b) == 1;
+                case CompareOperatorConstants.GreaterThan:
+                    return (a, b) => a.CompareTo(b) == 1;
 
-        //		case CompareOperatorConstants.GreaterThanOrEqual:
-        //			return (a, b) => a.CompareTo(b) == 1
-        //				|| a.CompareTo(b) == 0;
+                case CompareOperatorConstants.GreaterThanOrEqual:
+                    return (a, b) => a.CompareTo(b) == 1
+                        || a.CompareTo(b) == 0;
 
-        //		default:
-        //			throw new Exception("Invalid operator");
-        //	}
-        //}
-        #endregion
+                default:
+                    throw new Exception("Invalid operator");
+            }
+        }
     }
 }
