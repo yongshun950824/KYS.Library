@@ -18,11 +18,18 @@ namespace KYS.Library.Helpers
 
             BinaryExpression combineExpression = BuildAndExpression(binaryExpressions);
 
-            LambdaExpression lambda = combineExpression != null
+            Expression<Func<T, bool>> lambda = combineExpression != null
                 ? Expression.Lambda<Func<T, bool>>(combineExpression, param)
                 : Expression.Lambda<Func<T, bool>>(Expression.Constant(true), param);
 
-            return (Expression<Func<T, bool>>)lambda;
+            return lambda;
+        }
+
+        public static Func<T, bool> CompileAndExpression<T>(List<FilterCriteria<T>> filterCriterias)
+            where T : IComparable
+        {
+            return BuildAndExpression(filterCriterias)
+                .CompileExpression();
         }
 
         public static Expression<Func<T, bool>> BuildOrExpression<T>(List<FilterCriteria<T>> filterCriterias)
@@ -34,11 +41,24 @@ namespace KYS.Library.Helpers
 
             BinaryExpression combineExpression = BuildOrExpression(binaryExpressions);
 
-            LambdaExpression lambda = combineExpression != null
+            Expression<Func<T, bool>> lambda = combineExpression != null
                 ? Expression.Lambda<Func<T, bool>>(combineExpression, param)
                 : Expression.Lambda<Func<T, bool>>(Expression.Constant(true), param);
 
-            return (Expression<Func<T, bool>>)lambda;
+            return lambda;
+        }
+
+        public static Func<T, bool> CompileOrExpression<T>(List<FilterCriteria<T>> filterCriterias)
+            where T : IComparable
+        {
+            return BuildOrExpression(filterCriterias)
+                .CompileExpression();
+        }
+
+        public static Func<T, bool> CompileExpression<T>(this Expression<Func<T, bool>> lambda)
+            where T : IComparable
+        {
+            return lambda.Compile();
         }
 
         private static BinaryExpression BuildAndExpression(params BinaryExpression[] expressions)
