@@ -164,6 +164,56 @@ namespace KYS.Library.Helpers
             return ms.ToArray();
         }
 
+        /// <summary>
+        /// Read CSV from file into DataTable.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static DataTable ReadCSV(string filePath)
+        {
+            using StreamReader sr = new StreamReader(filePath);
+
+            return ReadCSV(sr);
+        }
+
+        /// <summary>
+        /// Read CSV from Stream into DataTable.
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static DataTable ReadCSV(Stream stream)
+        {
+            using StreamReader sr = new StreamReader(stream);
+
+            return ReadCSV(sr);
+        }
+
+        private static DataTable ReadCSV(StreamReader sr)
+        {
+            DataTable dt = new DataTable();
+
+            string[] headers = sr.ReadLine().Split(',');
+            foreach (string header in headers)
+            {
+                dt.Columns.Add(header);
+            }
+
+            while (!sr.EndOfStream)
+            {
+                string[] cols = sr.ReadLine().Split(",");
+                DataRow dtRow = dt.NewRow();
+
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    dtRow[i] = cols[i];
+                }
+
+                dt.Rows.Add(dtRow);
+            }
+
+            return dt;
+        }
+
         private static string DataTableToCSV(
             DataTable dt,
             bool printHeaders = true,
