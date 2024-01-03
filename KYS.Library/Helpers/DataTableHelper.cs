@@ -7,6 +7,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using KYS.Library.Extensions;
+using Newtonsoft.Json;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
@@ -159,6 +160,30 @@ namespace KYS.Library.Helpers
                 document.Add(DataTableToPdfTable(dt, printHeaders, tableHeaderStyle, tableBodyStyle));
 
             document.Close();
+
+            ms.Position = 0;
+            return ms.ToArray();
+        }
+
+        /// <summary>
+        /// Write DataTable into JSON file.
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="isIndented"></param>
+        /// <returns></returns>
+        public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)
+        {
+            Formatting formatting = isIndented switch
+            {
+                true => Formatting.Indented,
+                _ => Formatting.None
+            };
+
+            string jsonString = JsonConvert.SerializeObject(dt, formatting);
+
+            Stream stream = StreamHelper.ReadStringIntoStream(jsonString);
+            using MemoryStream ms = new MemoryStream();
+            stream.CopyTo(ms);
 
             ms.Position = 0;
             return ms.ToArray();
