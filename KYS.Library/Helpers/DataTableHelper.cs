@@ -7,6 +7,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using KYS.Library.Extensions;
+using Newtonsoft.Json;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
@@ -162,6 +163,80 @@ namespace KYS.Library.Helpers
 
             ms.Position = 0;
             return ms.ToArray();
+        }
+
+        /// <summary>
+        /// Write DataTable into JSON file.
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="isIndented"></param>
+        /// <returns></returns>
+        public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)
+        {
+            Formatting formatting = isIndented switch
+            {
+                true => Formatting.Indented,
+                _ => Formatting.None
+            };
+
+            string jsonString = JsonConvert.SerializeObject(dt, formatting);
+
+            Stream stream = StreamHelper.ReadStringIntoStream(jsonString);
+            using MemoryStream ms = new MemoryStream();
+            stream.CopyTo(ms);
+
+            ms.Position = 0;
+            return ms.ToArray();
+        }
+
+        /// <summary>
+        /// Read CSV from file into DataTable.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static DataTable ReadCSV(string filePath)
+        {
+            using StreamReader sr = new StreamReader(filePath);
+
+            return ReadCSV(sr);
+        }
+
+        /// <summary>
+        /// Read CSV from Stream into DataTable.
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static DataTable ReadCSV(Stream stream)
+        {
+            using StreamReader sr = new StreamReader(stream);
+
+            return ReadCSV(sr);
+        }
+
+        private static DataTable ReadCSV(StreamReader sr)
+        {
+            DataTable dt = new DataTable();
+
+            string[] headers = sr.ReadLine().Split(',');
+            foreach (string header in headers)
+            {
+                dt.Columns.Add(header);
+            }
+
+            while (!sr.EndOfStream)
+            {
+                string[] cols = sr.ReadLine().Split(",");
+                DataRow dtRow = dt.NewRow();
+
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    dtRow[i] = cols[i];
+                }
+
+                dt.Rows.Add(dtRow);
+            }
+
+            return dt;
         }
 
         private static string DataTableToCSV(
