@@ -86,6 +86,18 @@ namespace KYS.Library.Extensions
             throw new ArgumentException($"{value} is not found.");
         }
 
+        public static TEnum GetValueByDescriptionAttribute<TEnum>(string value)
+            where TEnum : Enum
+        {
+            var enumDict = Enum.GetValues(typeof(TEnum))
+                .Cast<TEnum>()
+                .ToDictionary(k => k, v => v.ToDescription());
+
+            return enumDict
+                .Single(x => x.Value == value)
+                .Key;
+        }
+
         #region Private Methods
         private static T GetAttribute<T>(this Enum value) where T : Attribute
         {
