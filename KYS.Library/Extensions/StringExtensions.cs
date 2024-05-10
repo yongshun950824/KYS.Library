@@ -115,5 +115,22 @@ namespace KYS.Library.Extensions
                 ? f.ToString(null, CultureInfo.InvariantCulture)
                 : value.ToString();
         }
+
+        /// <summary>
+        /// Truncate the <see cref="string" /> value with provided character length.
+        /// </summary>
+        /// <param name="str">The <see cref="string" /> instance this method extends.</param>
+        /// <param name="length">The number of characters to be extracted. Must be positive value and more than zero.</param>
+        /// <returns>Truncated string.</returns>
+        public static string Truncate(this string str, int length)
+        {
+            if (length <= 0)
+                throw new ArgumentException("The length must be positive value and more than zero.", nameof(length));
+
+            if (String.IsNullOrEmpty(str))
+                return str;
+
+            return str[..Math.Min(str.Length, length)];
+        }
     }
 }

@@ -2,6 +2,8 @@
 using NUnit.Framework;
 using System;
 using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace KYS.TestProject.HelpersUnitTests
 {
@@ -173,6 +175,37 @@ namespace KYS.TestProject.HelpersUnitTests
             // Act & Assert
             Assert.Throws<FormatException>(() =>
                 StreamHelper.ReadBase64StringToByteArray(invalidBase64));
+        }
+
+        [Test]
+        public async Task ToBase64Async_WithNullValue_ShouldThrowException()
+        {
+            // Arrange
+            Stream stream = null;
+            ArgumentNullException expectedEx = new ArgumentNullException(nameof(stream));
+
+            // Act
+            var ex = Assert.CatchAsync<ArgumentException>(() => StreamHelper.ToBase64Async(stream));
+
+            // Assert
+            Assert.IsInstanceOf<ArgumentException>(ex);
+            Assert.AreEqual(expectedEx.Message, ex.Message);
+        }
+
+        [Test]
+        public async Task ToBase64Async_WithStream_ShouldReturnBase64()
+        {
+            // Arrange
+            var value = "Hello World!";
+            var bytes = Encoding.UTF8.GetBytes(value);
+            var expectedBase64 = Convert.ToBase64String(bytes);
+            using var stream = new MemoryStream(bytes);
+
+            // Act
+            var result = await StreamHelper.ToBase64Async(stream);
+
+            // Assert
+            Assert.AreEqual(expectedBase64, result);
         }
     }
 }
