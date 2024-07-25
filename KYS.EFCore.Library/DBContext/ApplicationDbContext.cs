@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace KYS.Library.DBContext
+namespace KYS.EFCore.Library.DBContext
 {
     public partial class ApplicationDbContext : DbContext
     {

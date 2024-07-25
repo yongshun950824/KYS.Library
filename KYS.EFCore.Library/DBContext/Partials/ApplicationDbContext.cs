@@ -1,4 +1,4 @@
-﻿using KYS.Library.DBContext.Partials;
+﻿using KYS.EFCore.Library.DBContext.Partials;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using static KYS.Library.Helpers.FormattingHelper;
 
-namespace KYS.Library.DBContext
+namespace KYS.EFCore.Library.DBContext
 {
     public partial class ApplicationDbContext
     {

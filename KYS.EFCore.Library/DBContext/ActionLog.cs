@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KYS.Library.DBContext
+namespace KYS.EFCore.Library.DBContext
 {
     public partial class ActionLog
     {
