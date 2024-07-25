@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 
-namespace KYS.Library.Helpers
+namespace KYS.EFCore.Library.Helpers
 {
     public static class EFCoreHelper
     {
