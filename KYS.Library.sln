@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.Library", "KYS.Library\KYS.Library.csproj", "{0FC2F35B-8216-42F4-8856-64081C38332A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KYS.TestProject", "KYS.TestProject\KYS.TestProject.csproj", "{78737BA8-E8D2-4337-8335-ACBDDC3E8A0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.TestProject", "KYS.TestProject\KYS.TestProject.csproj", "{78737BA8-E8D2-4337-8335-ACBDDC3E8A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KYS.AspNetCore.Library", "KYS.AspNetCore.Library\KYS.AspNetCore.Library.csproj", "{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{78737BA8-E8D2-4337-8335-ACBDDC3E8A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78737BA8-E8D2-4337-8335-ACBDDC3E8A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78737BA8-E8D2-4337-8335-ACBDDC3E8A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
