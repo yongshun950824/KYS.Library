@@ -28,6 +28,26 @@ namespace KYS.TestProject
                         null
                     },
                     #endregion
+                    #region Valid with empty string / null case
+                    new List<object>
+                    {
+                        new ValidationWithAllowNullOrEmptyModel { Prop = null },
+                        true,
+                        null
+                    },
+                    new List<object>
+                    {
+                        new ValidationWithAllowNullOrEmptyModel { Prop = "" },
+                        true,
+                        null
+                    },
+                    new List<object>
+                    {
+                        new ValidationWithAllowNullOrEmptyModel { Prop = JsonConvert.SerializeObject(new { PropOne = "Value 1", PropTwo = 2 }) },
+                        true,
+                        null
+                    },
+                    #endregion
                     #region Invalid JSON / Invalid JSON object case
                     new List<object>
                     {
@@ -49,18 +69,24 @@ namespace KYS.TestProject
                     },
                     new List<object>
                     {
-                        new ValidationModelWithMessage { Prop = "{ \"PropOne\": \"Missing comma\" \"PropTwo\": null }" },
+                        new ValidationWithMessageModel { Prop = "" },
                         false,
                         $"Prop is invalid JSON object. Please provide a valid JSON object."
                     },
                     new List<object>
                     {
-                        new ValidationModelWithMessage
+                        new ValidationWithMessageModel { Prop = "{ \"PropOne\": \"Missing comma\" \"PropTwo\": null }" },
+                        false,
+                        $"Prop is invalid JSON object. Please provide a valid JSON object."
+                    },
+                    new List<object>
+                    {
+                        new ValidationWithMessageModel
                         {
                             Prop = JsonConvert.SerializeObject(
-                                new List<ValidationModelWithMessage>
+                                new List<ValidationWithMessageModel>
                                 {
-                                    new ValidationModelWithMessage { Prop = JsonConvert.SerializeObject(new { PropOne = "Value 1", PropTwo = 2 }) }
+                                    new ValidationWithMessageModel { Prop = JsonConvert.SerializeObject(new { PropOne = "Value 1", PropTwo = 2 }) }
                                 })
                         },
                         false,
@@ -106,9 +132,16 @@ namespace KYS.TestProject
             public string Prop { get; set; }
         }
 
-        public class ValidationModelWithMessage
+        public class ValidationWithAllowNullOrEmptyModel
         {
-            [JsonObject(ErrorMessage = "Prop is invalid JSON object. Please provide a valid JSON object.")]
+            [JsonObject(IsAllowNullOrEmpty = true)]
+            public string Prop { get; set; }
+        }
+
+
+        public class ValidationWithMessageModel
+        {
+            [JsonObject(IsAllowNullOrEmpty = false, ErrorMessage = "Prop is invalid JSON object. Please provide a valid JSON object.")]
             public string Prop { get; set; }
         }
     }
