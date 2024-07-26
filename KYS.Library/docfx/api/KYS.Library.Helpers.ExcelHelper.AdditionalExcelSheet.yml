@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: AdditionalExcelSheet
     path: ../Helpers/ExcelHelper.cs
     startLine: 247
@@ -56,8 +56,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DataTable
     path: ../Helpers/ExcelHelper.cs
     startLine: 253
@@ -87,8 +87,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ExcelColumnFormats
     path: ../Helpers/ExcelHelper.cs
     startLine: 269
@@ -118,8 +118,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: HeaderRowStyle
     path: ../Helpers/ExcelHelper.cs
     startLine: 273
@@ -149,8 +149,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: SummaryRowStyle
     path: ../Helpers/ExcelHelper.cs
     startLine: 277

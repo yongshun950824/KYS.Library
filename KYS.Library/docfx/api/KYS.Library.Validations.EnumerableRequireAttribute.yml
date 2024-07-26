@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/EnumerableRequireAttribute.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: EnumerableRequireAttribute
     path: ../Validations/EnumerableRequireAttribute.cs
     startLine: 10
@@ -114,8 +114,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/EnumerableRequireAttribute.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Validations/EnumerableRequireAttribute.cs
     startLine: 16
@@ -145,8 +145,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/EnumerableRequireAttribute.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Validations/EnumerableRequireAttribute.cs
     startLine: 25
@@ -180,8 +180,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/EnumerableRequireAttribute.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IsValid
     path: ../Validations/EnumerableRequireAttribute.cs
     startLine: 35

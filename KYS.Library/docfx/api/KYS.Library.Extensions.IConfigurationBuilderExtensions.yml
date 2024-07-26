@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IConfigurationBuilderExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IConfigurationBuilderExtensions
     path: ../Extensions/IConfigurationBuilderExtensions.cs
     startLine: 15
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IConfigurationBuilderExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Bind
     path: ../Extensions/IConfigurationBuilderExtensions.cs
     startLine: 35

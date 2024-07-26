@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IZipService
     path: ../Services/ZipService.cs
     startLine: 14
@@ -45,8 +45,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Zip
     path: ../Services/ZipService.cs
     startLine: 20
@@ -76,8 +76,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ZipAndToFile
     path: ../Services/ZipService.cs
     startLine: 25
@@ -111,8 +111,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Unzip
     path: ../Services/ZipService.cs
     startLine: 31

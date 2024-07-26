@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: FlattenFormat
     path: ../Helpers/JsonHelper.cs
     startLine: 148
@@ -48,8 +48,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: JsonPath
     path: ../Helpers/JsonHelper.cs
     startLine: 150
@@ -74,8 +74,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DotNet
     path: ../Helpers/JsonHelper.cs
     startLine: 151
@@ -100,8 +100,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: JS
     path: ../Helpers/JsonHelper.cs
     startLine: 152

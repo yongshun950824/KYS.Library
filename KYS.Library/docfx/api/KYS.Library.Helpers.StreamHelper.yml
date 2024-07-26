@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: StreamHelper
     path: ../Helpers/StreamHelper.cs
     startLine: 8
@@ -56,8 +56,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: WriteStringIntoStream
     path: ../Helpers/StreamHelper.cs
     startLine: 15
@@ -94,8 +94,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ToMemoryStream
     path: ../Helpers/StreamHelper.cs
     startLine: 31
@@ -132,8 +132,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ToByteArray
     path: ../Helpers/StreamHelper.cs
     startLine: 45
@@ -167,8 +167,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ReadBase64StringToByteArray
     path: ../Helpers/StreamHelper.cs
     startLine: 57

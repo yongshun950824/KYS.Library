@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: CompareOperatorConstants
     path: ../Helpers/CompareOperator.cs
     startLine: 17
@@ -51,8 +51,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Equal
     path: ../Helpers/CompareOperator.cs
     startLine: 22
@@ -79,8 +79,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: NotEqual
     path: ../Helpers/CompareOperator.cs
     startLine: 27
@@ -107,8 +107,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: LessThan
     path: ../Helpers/CompareOperator.cs
     startLine: 32
@@ -135,8 +135,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: LessThanOrEqual
     path: ../Helpers/CompareOperator.cs
     startLine: 37
@@ -163,8 +163,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GreaterThan
     path: ../Helpers/CompareOperator.cs
     startLine: 42
@@ -191,8 +191,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GreaterThanOrEqual
     path: ../Helpers/CompareOperator.cs
     startLine: 47

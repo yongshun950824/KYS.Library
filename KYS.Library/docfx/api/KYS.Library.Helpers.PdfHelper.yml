@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/PdfHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: PdfHelper
     path: ../Helpers/PdfHelper.cs
     startLine: 17
@@ -57,8 +57,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/PdfHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ConvertHtmlToPdf
     path: ../Helpers/PdfHelper.cs
     startLine: 33
@@ -115,8 +115,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/PdfHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IsPasswordProtected
     path: ../Helpers/PdfHelper.cs
     startLine: 62
@@ -153,8 +153,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/PdfHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IsPasswordProtected
     path: ../Helpers/PdfHelper.cs
     startLine: 75
@@ -188,8 +188,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/PdfHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: UnlockPdfDocument
     path: ../Helpers/PdfHelper.cs
     startLine: 98
@@ -236,8 +236,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/PdfHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: LockPdfDocument
     path: ../Helpers/PdfHelper.cs
     startLine: 130

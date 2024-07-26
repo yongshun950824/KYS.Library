@@ -23,8 +23,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: SingleResourceTranslationService
     path: ../Services/TranslationService.cs
     startLine: 151
@@ -65,8 +65,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Services/TranslationService.cs
     startLine: 163
@@ -106,8 +106,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Services/TranslationService.cs
     startLine: 178
@@ -150,8 +150,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetLanguages
     path: ../Services/TranslationService.cs
     startLine: 188
@@ -183,8 +183,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Translate
     path: ../Services/TranslationService.cs
     startLine: 200
@@ -229,8 +229,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Translate
     path: ../Services/TranslationService.cs
     startLine: 218
@@ -275,8 +275,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Translate
     path: ../Services/TranslationService.cs
     startLine: 249
@@ -328,8 +328,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: TranslateToEnglish
     path: ../Services/TranslationService.cs
     startLine: 260
@@ -371,8 +371,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: LoadLanguages
     path: ../Services/TranslationService.cs
     startLine: 278

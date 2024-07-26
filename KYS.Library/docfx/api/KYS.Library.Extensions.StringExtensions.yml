@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: StringExtensions
     path: ../Extensions/StringExtensions.cs
     startLine: 10
@@ -58,8 +58,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: RemovePostFix
     path: ../Extensions/StringExtensions.cs
     startLine: 19
@@ -103,8 +103,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: RemovePreFix
     path: ../Extensions/StringExtensions.cs
     startLine: 42
@@ -148,8 +148,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IsValidBase64
     path: ../Extensions/StringExtensions.cs
     startLine: 63
@@ -187,8 +187,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Join
     path: ../Extensions/StringExtensions.cs
     startLine: 78
@@ -235,8 +235,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Join
     path: ../Extensions/StringExtensions.cs
     startLine: 97

@@ -154,6 +154,9 @@ items:
   - uid: KYS.Library.Validations.EnumerableRequireAttribute
     name: EnumerableRequireAttribute
     type: Class
+  - uid: KYS.Library.Validations.JsonObjectAttribute
+    name: JsonObjectAttribute
+    type: Class
   - uid: KYS.Library.Validations.RequiredIfAttribute
     name: RequiredIfAttribute
     type: Class

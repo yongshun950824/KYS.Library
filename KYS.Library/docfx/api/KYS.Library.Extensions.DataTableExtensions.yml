@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DataTableExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DataTableExtensions
     path: ../Extensions/DataTableExtensions.cs
     startLine: 11
@@ -55,8 +55,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DataTableExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IsNullOrEmpty
     path: ../Extensions/DataTableExtensions.cs
     startLine: 18
@@ -91,8 +91,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DataTableExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ToList
     path: ../Extensions/DataTableExtensions.cs
     startLine: 28
