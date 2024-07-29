@@ -323,7 +323,7 @@ namespace KYS.TestProject
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-            string input = "spouse";
+            string input = "Spouse";
             //string expectedValue = "คู่สมรส";
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
