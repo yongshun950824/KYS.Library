@@ -27,6 +27,10 @@ jobs:
       # Restore & Build .NET Framework project
       - name: Restore NuGet Packages (.NET Framework)
         run: nuget restore KYS.Library/KYS.Library.csproj -SolutionDirectory .
-
+        
       - name: Build .NET Framework Project
         run: msbuild KYS.Library/KYS.Library.csproj /p:Configuration=Debug
+
+      - name: Build and Test KYS.TestProject
+        run: |
+          msbuild KYS.TestProject/KYS.TestProject.csproj /p:Configuration=Release
