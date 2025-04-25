@@ -1,0 +1,32 @@
+name: CI - Build KYS.Library (.NET)
+
+on:
+  workflow_dispatch:    # Allows manual trigger
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-2019
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Setup MSBuild for .NET Framework project
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
+        
+      # Restore & Build .NET Framework project
+      - name: Restore NuGet Packages (.NET Framework)
+        run: nuget restore KYS.Library/KYS.Library.csproj -SolutionDirectory .
+
+      - name: Build .NET Framework Project
+        run: msbuild KYS.Library/KYS.Library.csproj /p:Configuration=Debug
