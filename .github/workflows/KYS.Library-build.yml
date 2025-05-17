@@ -1,4 +1,4 @@
-name: CI - Build KYS.Library (.NET)
+name: CI - Build KYS.Library
 
 on:
   workflow_dispatch:    # Allows manual trigger
