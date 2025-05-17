@@ -11,26 +11,27 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Setup MSBuild for .NET Framework project
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
-        
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.5
-        
-      # Restore & Build .NET Framework project
-      - name: Restore NuGet Packages (.NET Framework)
-        run: nuget restore KYS.Library/KYS.Library.csproj -SolutionDirectory .
-        
-      - name: Build .NET Framework Project
-        run: msbuild KYS.Library/KYS.Library.csproj /p:Configuration=Debug
+       # Setup .NET SDK for .NET Core project
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '5.0.x'
 
-      - name: Build and Test KYS.TestProject
+      # Restore & Build .NET Core project
+      - name: Restore & Build KYS.Library
         run: |
-          msbuild KYS.TestProject/KYS.TestProject.csproj /p:Configuration=Release
+          dotnet restore KYS.Library/KYS.Library.csproj
+          dotnet build KYS.Library/KYS.Library.csproj -c Debug
+
+        # Restore & Build .NET Core project
+      - name: Restore, Build, and Test KYS.TestProject
+        run: |
+          dotnet restore KYS.TestProject/KYS.TestProject.csproj
+          dotnet build KYS.TestProject/KYS.TestProject.csproj -c Debug
+          dotnet test KYS.TestProject/KYS.TestProject.csproj -c Debug --no-build --no-restore
