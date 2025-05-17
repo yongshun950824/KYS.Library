@@ -1,0 +1,31 @@
+name: CI - Build KYS.EFCore Library
+
+on:
+  workflow_dispatch:    # Allows manual trigger
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+       # Setup .NET SDK for .NET Core project
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '5.0.x'
+
+      # Restore & Build .NET Core project
+      - name: Restore & Build .NET Core Project
+        run: |
+          dotnet restore KYS.EFCore.Library/KYS.EFCore.Library.csproj
+          dotnet build KYS.EFCore.Library/KYS.EFCore.Library.csproj -c Debug
+          dotnet test KYS.EFCore.Library/KYS.EFCore.Library.csproj -c Debug --no-build --no-restore
