@@ -34,5 +34,13 @@ namespace KYS.Library.Extensions
 
             return Convert.TryFromBase64String(str, buffer, out _);
         }
+
+        public static string Truncate(this string str, int length)
+        {
+            if (String.IsNullOrEmpty(str))
+                return str;
+
+            return str.Substring(0, Math.Min(str.Length, length));
+        }
     }
 }
