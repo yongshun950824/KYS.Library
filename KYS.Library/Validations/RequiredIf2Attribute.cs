@@ -102,8 +102,16 @@ namespace KYS.Library.Validations
 
                 if (isValid)
                 {
-                    if (value == null
-                        || value.ToString() == Activator.CreateInstance(value.GetType()).ToString())
+                    bool isNull = value == null;
+                    bool isEmptyString = value is string str && String.IsNullOrEmpty(str);
+                    bool isValueTypeWithDefault = value != null
+                        && value.GetType().IsValueType
+                        && value.Equals(Activator.CreateInstance(value.GetType()));
+                    bool hasParameterlessConstructor = value?.GetType().GetConstructor(Type.EmptyTypes) != null;
+                    bool matchesDefaultInstance = hasParameterlessConstructor
+                        && value.ToString() == Activator.CreateInstance(value.GetType()).ToString();
+
+                    if (isNull || isEmptyString || isValueTypeWithDefault || (!isValueTypeWithDefault && matchesDefaultInstance))
                         validationResult = new ValidationResult(null, new string[] { validationContext.MemberName });
                 }
             }
