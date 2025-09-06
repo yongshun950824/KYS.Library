@@ -1,12 +1,28 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using KYS.Library.Extensions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace KYS.Library.Helpers
 {
     public static class JsonHelper
     {
+        private static readonly JsonSerializer DefaultSerializer = JsonSerializer.Create(
+            new JsonSerializerSettings
+            {
+                DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind,
+                DateParseHandling = DateParseHandling.DateTime,
+                DateFormatString = "o", // ISO 8601
+                Culture = CultureInfo.InvariantCulture,
+                Converters = { new IsoDateTimeConverter() }
+            });
+
         /// <summary>
         /// Flatten object with dot notation property name.
         /// <br />
@@ -14,51 +30,88 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
+        /// <param name="flattenFormat"></param>
         /// <returns></returns>
-        public static Dictionary<string, object> FlattenObject<T>(T source)
+        public static Dictionary<string, object?> FlattenObject<T>(T source,
+            FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : class, new()
         {
-            return JObject.FromObject(source)
+            return JObject.FromObject(source, DefaultSerializer)
                 .Descendants()
                 .OfType<JValue>()
-                .ToDictionary(k => k.Path, v => v.Value<object>());
+                .ToDictionary(k => ConstructFlattenKeyByFormat(k.Path, flattenFormat),
+                    v => v.Value<object?>());
         }
 
-        public static Dictionary<string, object> FlattenArray<T>(T source)
+        public static Dictionary<string, object?> FlattenArray<T>(T source,
+            FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : JToken
         {
-            JObject jObj = new JObject();
-            var jTokens = JToken.FromObject(source)
-                .Children()
-                .OfType<JToken>()
-                .ToDictionary(k => k.Path, v => Flatten(v.Value<JToken>()));
+            var dict = new Dictionary<string, object?>();
 
-            var flattenedTokens = jTokens
-                .SelectMany(jToken => jToken.Value.Select(kvp => new { Key = $"{jToken.Key}.{kvp.Key}", Value = kvp.Value }));
-
-            foreach (var token in flattenedTokens)
+            foreach (var jToken in JToken.FromObject(source, DefaultSerializer).Children())
             {
-                jObj.Add(token.Key, JToken.FromObject(token.Value));
+                if (jToken is JObject childObj)
+                {
+                    foreach (var kvp in FlattenObject(childObj, flattenFormat))
+                        AddFlattenEntry(dict, $"{jToken.Path}.{kvp.Key}", kvp.Value, flattenFormat);
+                }
+                else if (jToken is JArray childArr)
+                {
+                    foreach (var kvp in FlattenArray(childArr, flattenFormat))
+                        AddFlattenEntry(dict, $"{jToken.Path}{kvp.Key}", kvp.Value, flattenFormat);
+                }
+                else
+                {
+                    AddFlattenEntry(dict, jToken.Path, jToken.Value<JToken>(), flattenFormat);
+                }
             }
 
-            return jObj.ToObject<Dictionary<string, object>>();
+            return dict;
         }
 
-        public static Dictionary<string, object> Flatten<T>(T source)
-            where T : JToken
+        public static Dictionary<string, object?> Flatten(JToken token,
+            FlattenFormat flattenFormat = FlattenFormat.JsonPath)
         {
-            JToken token = JToken.FromObject(source);
-
             if (token.Type == JTokenType.Object)
             {
-                return FlattenObject(JObject.FromObject(source));
+                return FlattenObject(token.ToObject<JObject>(), flattenFormat);
             }
             else if (token.Type == JTokenType.Array)
             {
-                return FlattenArray(token);
+                return FlattenArray(token, flattenFormat);
             }
 
-            throw new ApplicationException($"Provided {nameof(source)} is neither a valid JSON object nor array.");
+            throw new ApplicationException($"Provided {nameof(token)} is neither a valid JSON object nor array.");
+        }
+
+        private static void AddFlattenEntry(Dictionary<string, object> dict, string key, object? value, FlattenFormat flattenFormat)
+        {
+            key = ConstructFlattenKeyByFormat(key, flattenFormat);
+
+            dict.Add(key, value);
+        }
+
+        private static string ConstructFlattenKeyByFormat(string key, FlattenFormat flattenFormat)
+        {
+            return flattenFormat switch
+            {
+                FlattenFormat.DotNet =>
+                    Regex.Replace(key, @"\[(\d+)\]", ":$1")
+                        .Replace(".", ":")
+                        .RemovePreFix(":"),
+                FlattenFormat.JS =>
+                    Regex.Replace(key, @"\[(\d+)\]", ".$1")
+                        .RemovePreFix("."),
+                _ => key
+            };
+        }
+
+        public enum FlattenFormat
+        {
+            JsonPath,
+            DotNet,
+            JS
         }
     }
 }
