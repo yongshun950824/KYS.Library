@@ -10,6 +10,7 @@
 		<PackageReference Include="itext7" Version="7.2.5" />
 		<PackageReference Include="itext7.pdfhtml" Version="4.0.5" />
 		<PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.0" />
 		<PackageReference Include="SharpZipLib" Version="1.4.2" />
 		<PackageReference Include="SkiaSharp" Version="2.88.6" />
 		<PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.6" />
