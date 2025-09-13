@@ -1,4 +1,7 @@
 name: CI - Build KYS.Library
+permissions:
+  contents: read
+  pull-requests: read
 
 on:
   workflow_dispatch:    # Allows manual trigger
@@ -11,7 +14,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
