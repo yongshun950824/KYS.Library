@@ -1,8 +1,4 @@
 name: SonarQube
-permissions:
-  contents: read
-  pull-requests: read
-
 on:
   push:
     branches:
@@ -46,7 +42,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          Write-Host "Token length: $($env:SONAR_TOKEN.Length)"
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"yongshun950824_kys-library" /o:"yongshun950824" /d:sonar.token=$env:SONAR_TOKEN
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"yongshun950824_kys-library" /o:"yongshun950824" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
           dotnet build
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token=$env:SONAR_TOKEN
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
