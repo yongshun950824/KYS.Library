@@ -27,7 +27,7 @@ namespace KYS.Library.Services
         string Translate(string input, Type resourceType, bool isReturnedOriginalValue = true, CultureInfo culture = null);
     }
 
-    public abstract class BaseTranslationService : IBaseTranslationService, IDisposable
+    public abstract class BaseTranslationService : IBaseTranslationService
     {
         protected readonly List<CultureInfo> _cultures = new List<CultureInfo>();
         protected readonly CultureInfo _currentCulture;

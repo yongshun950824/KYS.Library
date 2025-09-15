@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace KYS.EFCore.Library
 {
-    public class DbContextUnitOfWork<TDbContext> : IUnitOfWork, IDisposable
+    public class DbContextUnitOfWork<TDbContext> : IUnitOfWork
         where TDbContext : DbContext
     {
         private readonly bool _explicitTransaction;
