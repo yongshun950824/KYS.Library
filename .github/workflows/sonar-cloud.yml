@@ -71,8 +71,13 @@ jobs:
             /p:CoverletOutputFormat=opencover
         shell: powershell
 
+      - name: Debug coverage files
+        run: Get-ChildItem -Recurse -Filter coverage.opencover.xml | ForEach-Object { $_.FullName }
+        shell: powershell
+
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
             .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+        shell: powershell
