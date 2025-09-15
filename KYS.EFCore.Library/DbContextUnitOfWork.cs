@@ -71,14 +71,19 @@ namespace KYS.EFCore.Library
 
             if (disposing)
             {
-                if (transaction != null)
-                {
-                    transaction.RollbackAsync().GetAwaiter().GetResult();
-                    transaction = null;
-                }
+                DisposeTransaction();
             }
 
             _disposed = true;
+        }
+
+        private void DisposeTransaction()
+        {
+            if (transaction == null)
+                return;
+
+            transaction.Rollback();
+            transaction = null;
         }
 
         ~DbContextUnitOfWork()

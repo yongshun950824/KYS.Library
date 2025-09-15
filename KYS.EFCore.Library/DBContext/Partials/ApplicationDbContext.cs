@@ -55,7 +55,7 @@ namespace KYS.EFCore.Library.DBContext
             }
             catch (Exception ex)
             {
-                _logger.LogError($"[{nameof(OnBeforeSaveChanges)}] Exception: {0}", ex);
+                _logger.LogError(ex, "[{Method}] Exception", nameof(OnBeforeSaveChanges));
 
                 return new List<AuditEntry>();
             }
@@ -89,16 +89,16 @@ namespace KYS.EFCore.Library.DBContext
             }
             catch (Exception ex)
             {
-                _logger.LogError($"[{nameof(OnAfterSaveChangesAsync)}] Exception: {0}", ex);
+                _logger.LogError(ex, "[{Method}] Exception", nameof(OnAfterSaveChangesAsync));
             }
         }
 
-        private bool ShouldAuditEntry(EntityEntry entry)
+        private static bool ShouldAuditEntry(EntityEntry entry)
             => !(entry.Entity is ActionLog
                 || entry.State == EntityState.Detached
                 || entry.State == EntityState.Unchanged);
 
-        private void ProcessProperty(EntityEntry entry, PropertyEntry property, AuditEntry auditEntry)
+        private static void ProcessProperty(EntityEntry entry, PropertyEntry property, AuditEntry auditEntry)
         {
             if (property.IsTemporary)
             {
@@ -116,7 +116,7 @@ namespace KYS.EFCore.Library.DBContext
             ApplyStateChange(entry, property, auditEntry, propertyName);
         }
 
-        private void ApplyStateChange(EntityEntry entry, PropertyEntry property, AuditEntry auditEntry, string propertyName)
+        private static void ApplyStateChange(EntityEntry entry, PropertyEntry property, AuditEntry auditEntry, string propertyName)
         {
             switch (entry.State)
             {

@@ -85,7 +85,7 @@ namespace KYS.Library.Services
             GC.SuppressFinalize(this);
         }
 
-        private void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
             if (!disposed)
                 return;
@@ -98,6 +98,11 @@ namespace KYS.Library.Services
             // TO-DO Dispose unmanaged resources here
 
             disposed = true;
+        }
+
+        ~BaseTranslationService()
+        {
+            Dispose(false);
         }
     }
 
