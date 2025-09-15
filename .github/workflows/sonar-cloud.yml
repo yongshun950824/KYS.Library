@@ -55,7 +55,7 @@ jobs:
             /k:"yongshun950824_kys-library" `
             /o:"yongshun950824" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-            /d:sonar.coverageReportPaths="**/coverage.cobertura.xml" `
+            /d:sonar.coverageReportPaths="**/TestResults/coverage.cobertura.xml" `
             /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
             /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
             /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -66,12 +66,13 @@ jobs:
       - name: Run tests with coverage
         run: |
             dotnet test `
-            --collect:"XPlat Code Coverage" `
-            --results-directory TestResults `
+            /p:CollectCoverage=true `
+            /p:CoverletOutput=TestResults/coverage.cobertura.xml `
+            /p:CoverletOutputFormat=cobertura
         shell: powershell
 
       - name: Debug coverage files
-        run: Get-ChildItem -Recurse -Include coverage.opencover.xml,coverage.cobertura.xml | ForEach-Object { $_.FullName }
+        run: Get-ChildItem -Recurse -Include *.xml | ForEach-Object { $_.FullName }
         shell: powershell
 
       - name: End Sonar analysis
