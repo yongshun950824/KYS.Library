@@ -22,20 +22,18 @@ namespace KYS.Library.Services
     {
         List<LanguageResources> GetLanguages();
         string TranslateToEnglish(string input, bool isReturnedOriginalValue = true);
-        string Translate(string input);
-        string Translate(string input, bool isReturnedOriginalValue = true);
-        string Translate(string input, bool isReturnedOriginalValue = true, string cultureName = null);
+        string Translate(string input, string cultureName, bool isReturnedOriginalValue = true);
         string Translate(string input, bool isReturnedOriginalValue = true, CultureInfo culture = null);
         string Translate(string input, Type resourceType, bool isReturnedOriginalValue = true, CultureInfo culture = null);
     }
 
-    public abstract class BaseTranslationService : IBaseTranslationService
+    public abstract class BaseTranslationService : IBaseTranslationService, IDisposable
     {
         protected readonly List<CultureInfo> _cultures = new List<CultureInfo>();
         protected readonly CultureInfo _currentCulture;
         private bool disposed;
 
-        public BaseTranslationService(CultureInfo currentCulture = null, List<CultureInfo> cultures = null)
+        protected BaseTranslationService(CultureInfo currentCulture = null, List<CultureInfo> cultures = null)
         {
             _cultures = InitCultureInfos(cultures);
             _currentCulture = InitCurrentCulture(currentCulture);
@@ -56,7 +54,7 @@ namespace KYS.Library.Services
         /// </summary>
         /// <param name="currentCulture"></param>
         /// <returns></returns>
-        protected CultureInfo InitCurrentCulture(CultureInfo currentCulture)
+        protected static CultureInfo InitCurrentCulture(CultureInfo currentCulture)
         {
             return currentCulture ?? CultureInfo.CurrentCulture;
         }
@@ -90,20 +88,20 @@ namespace KYS.Library.Services
         private void Dispose(bool disposing)
         {
             if (!disposed)
-            {
-                if (disposing)
-                {
-                    // TO-DO Dispose managed resources here
-                }
+                return;
 
-                // TO-DO Dispose unmanaged resources here
+            if (disposing)
+            {
+                // TO-DO Dispose managed resources here
             }
+
+            // TO-DO Dispose unmanaged resources here
 
             disposed = true;
         }
     }
 
-    public class SingleResourceTranslationService : BaseTranslationService, ITranslationService
+    public sealed class SingleResourceTranslationService : BaseTranslationService, ITranslationService
     {
         private readonly List<LanguageResources> _resourceLanguages = new List<LanguageResources>();
         private readonly ResourceManager _resourceManager;
@@ -135,34 +133,13 @@ namespace KYS.Library.Services
         }
 
         /// <summary>
-        /// Translate to current/initialized language.
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public string Translate(string input)
-        {
-            return Translate(input, true, _currentCulture);
-        }
-
-        /// <summary>
-        /// Translate to current/initialized language.
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="isReturnedOriginalValue">If <c>false</c>, <c>ArgumentNullException</c> thrown if unable to translate.</param>
-        /// <returns></returns>
-        public string Translate(string input, bool isReturnedOriginalValue = true)
-        {
-            return Translate(input, isReturnedOriginalValue, _currentCulture);
-        }
-
-        /// <summary>
         /// Translate to selected language for provided <c>cultureName</c>. By default, translate to current/initialized language.
         /// </summary>
         /// <param name="input"></param>
         /// <param name="isReturnedOriginalValue">If <c>false</c>, <c>ArgumentNullException</c> thrown if unable to translate.</param>
         /// <param name="cultureName"></param>
         /// <returns></returns>
-        public string Translate(string input, bool isReturnedOriginalValue = true, string cultureName = null)
+        public string Translate(string input, string cultureName, bool isReturnedOriginalValue = true)
         {
             CultureInfo culture = null;
             if (!String.IsNullOrEmpty(cultureName))
@@ -185,27 +162,14 @@ namespace KYS.Library.Services
         {
             culture ??= _currentCulture;
 
-            #region Retrive value from ResourceManager
-            //ResourceSet rs = _resourceManager.GetResourceSet(culture, true, false);
-
-            //var obj = rs?.GetObject(input);
-            //if (obj == null && !isReturnedOriginalValue)
-            //{
-            //    throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");
-            //}
-
-            //return !String.IsNullOrEmpty(obj?.ToString())
-            //    ? obj.ToString()
-            //    : input;
-            #endregion
-
             List<KeyValuePair<string, string>> langKvps = _resourceLanguages
-                .Where(x => x.CultureName == culture.Name)?
+                .Where(x => x.CultureName == culture.Name)
                 .SelectMany(x => x.Resources)
-                .SelectMany(x => x.Value.ToList())?
+                .SelectMany(x => x.Value.ToList())
                 .ToList();
 
-            string translatedText = langKvps?.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase)).Value;
+            string translatedText = langKvps.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase))
+                .Value;
             if (String.IsNullOrEmpty(translatedText) && !isReturnedOriginalValue)
             {
                 throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");
@@ -246,7 +210,7 @@ namespace KYS.Library.Services
                 : input;
         }
 
-        protected override List<LanguageResources> LoadLanguages(Assembly assembly = null)
+        protected sealed override List<LanguageResources> LoadLanguages(Assembly assembly = null)
         {
             List<LanguageResources> languageValues = new List<LanguageResources>();
 
@@ -272,7 +236,7 @@ namespace KYS.Library.Services
                 }
                 catch (CultureNotFoundException)
                 {
-
+                    // Safe to ignore CultureNotFoundException
                 }
             }
 
@@ -280,7 +244,7 @@ namespace KYS.Library.Services
         }
     }
 
-    public class MultiResourcesTranslationService : BaseTranslationService, ITranslationService
+    public sealed class MultiResourcesTranslationService : BaseTranslationService, ITranslationService
     {
         private readonly List<LanguageResources> _resourceLanguages = new List<LanguageResources>();
 
@@ -303,34 +267,13 @@ namespace KYS.Library.Services
         }
 
         /// <summary>
-        /// Translate to current/initialized language.
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public string Translate(string input)
-        {
-            return Translate(input, true, _currentCulture);
-        }
-
-        /// <summary>
-        /// Translate to current/initialized language.
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="isReturnedOriginalValue">If <c>false</c>, <c>ArgumentNullException</c> thrown if unable to translate.</param>
-        /// <returns></returns>
-        public string Translate(string input, bool isReturnedOriginalValue = true)
-        {
-            return Translate(input, isReturnedOriginalValue, _currentCulture);
-        }
-
-        /// <summary>
         /// Translate to selected language for provided <c>cultureName</c>. By default, translate to current/initialized language.
         /// </summary>
         /// <param name="input"></param>
         /// <param name="isReturnedOriginalValue">If <c>false</c>, <c>ArgumentNullException</c> thrown if unable to translate.</param>
         /// <param name="cultureName"></param>
         /// <returns></returns>
-        public string Translate(string input, bool isReturnedOriginalValue = true, string cultureName = null)
+        public string Translate(string input, string cultureName, bool isReturnedOriginalValue = true)
         {
             CultureInfo culture = null;
             if (!String.IsNullOrEmpty(cultureName))
@@ -392,13 +335,14 @@ namespace KYS.Library.Services
             }
 
             List<KeyValuePair<string, string>> langKvps = _resourceLanguages
-                .Where(x => x.CultureName == culture.Name)?
+                .Where(x => x.CultureName == culture.Name)
                 .SelectMany(x => x.Resources)
                 .Where(x => x.Key == resourceType.FullName)
-                .SelectMany(x => x.Value.ToList())?
+                .SelectMany(x => x.Value.ToList())
                 .ToList();
 
-            string translatedText = langKvps?.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase)).Value;
+            string translatedText = langKvps.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase))
+                .Value;
             if (String.IsNullOrEmpty(translatedText) && !isReturnedOriginalValue)
             {
                 throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");
@@ -434,7 +378,7 @@ namespace KYS.Library.Services
                 : input;
         }
 
-        protected override List<LanguageResources> LoadLanguages(Assembly assembly)
+        protected sealed override List<LanguageResources> LoadLanguages(Assembly assembly = null)
         {
             List<LanguageResources> languageValues = new List<LanguageResources>();
 
@@ -464,7 +408,7 @@ namespace KYS.Library.Services
                     }
                     catch (CultureNotFoundException)
                     {
-
+                        // Safe to ignore CultureNotFoundException
                     }
                 }
 

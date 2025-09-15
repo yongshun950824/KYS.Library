@@ -1,17 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Logging;
 
 namespace KYS.EFCore.Library.DBContext
 {
     public partial class ApplicationDbContext : DbContext
     {
+        private readonly ILogger<ApplicationDbContext> _logger;
+
         public ApplicationDbContext()
         {
         }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
+            ILogger<ApplicationDbContext> logger)
             : base(options)
         {
+            _logger = logger;
         }
 
         public virtual DbSet<ActionLog> ActionLog { get; set; }
@@ -24,8 +29,8 @@ namespace KYS.EFCore.Library.DBContext
             {
                 entity.ToTable("action_log");
 
-                //entity.HasIndex(e => e.ReferenceTable)
-                //    .HasName("idx_reference_table");
+                entity.HasIndex(e => e.ReferenceTable)
+                    .HasDatabaseName("idx_reference_table");
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")

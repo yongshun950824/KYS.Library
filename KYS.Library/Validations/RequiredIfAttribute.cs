@@ -33,10 +33,10 @@ namespace KYS.Library.Validations
                 var otherPropertyInfo = validationContext.ObjectType.GetProperty(this._otherPropertyName);
                 string referencePropertyValue = (string)otherPropertyInfo.GetValue(validationContext.ObjectInstance, null);
 
-                if (String.Equals(_matchedValue, referencePropertyValue))
+                if (String.Equals(_matchedValue, referencePropertyValue)
+                    && String.IsNullOrEmpty((string)value))
                 {
-                    if (String.IsNullOrEmpty((string)value))
-                        validationResult = new ValidationResult(null);
+                    validationResult = new ValidationResult(null);
                 }
             }
             catch

@@ -16,8 +16,6 @@ namespace KYS.AspNetCore.Library.TagHelpers
     [HtmlTargetElement("json-to-html", Attributes = "json", TagStructure = TagStructure.NormalOrSelfClosing)]
     public class JsonToHtmlTagHelper : TagHelper
     {
-        private readonly IHtmlHelper _htmlHelper;
-
         [HtmlAttributeName("json")]
         public string Json { get; set; }
 
@@ -26,12 +24,6 @@ namespace KYS.AspNetCore.Library.TagHelpers
 
         [HtmlAttributeName("asBootstrapGrid")]
         public bool AsBootstrapGrid { get; set; }
-
-
-        public JsonToHtmlTagHelper(IHtmlHelper htmlHelper)
-        {
-            _htmlHelper = htmlHelper;
-        }
 
         public async override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {

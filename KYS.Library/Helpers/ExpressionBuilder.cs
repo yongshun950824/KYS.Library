@@ -103,7 +103,7 @@ namespace KYS.Library.Helpers
                 CompareOperatorConstants.LessThanOrEqual => Expression.LessThanOrEqual(param, constant),
                 CompareOperatorConstants.GreaterThan => Expression.GreaterThan(param, constant),
                 CompareOperatorConstants.GreaterThanOrEqual => Expression.GreaterThanOrEqual(param, constant),
-                _ => throw new Exception("Operation is not supported"),
+                _ => throw new ArgumentException("Operation is not supported"),
             };
 
             return binaryExpression;

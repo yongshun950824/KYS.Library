@@ -89,7 +89,7 @@ namespace KYS.Library.Services
         public string Value { get { return _value; } }
         public int Width { get { return _width; } }
         public int Height { get { return _height; } }
-        public string? LogoPath { get { return _logoPath; } }
+        public string LogoPath { get { return _logoPath; } }
         public int? LogoWidth { get { return _logoWidth; } }
         public int? LogoHeight { get { return _logoHeight; } }
         public int Margin { get { return _margin; } }

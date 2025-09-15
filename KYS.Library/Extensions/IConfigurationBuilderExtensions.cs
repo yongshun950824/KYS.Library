@@ -32,7 +32,7 @@ namespace KYS.Library.Extensions
         /// <param name="obj"></param>
         public static void Bind<T>(this IConfigurationBuilder configurationBuilder, string key, T obj)
         {
-            var dict = new Dictionary<string, string?>(StringComparer.OrdinalIgnoreCase);
+            var dict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             if (obj is string s)
             {
@@ -68,13 +68,13 @@ namespace KYS.Library.Extensions
         {
             t = Nullable.GetUnderlyingType(t) ?? t;
             return t.IsPrimitive
-                   || t.IsEnum
-                   || t == typeof(decimal)
-                   || t == typeof(Guid)
-                   || t == typeof(DateTime)
-                   || t == typeof(DateTimeOffset)
-                   || t == typeof(TimeSpan)
-                   || t == typeof(Uri);
+                || t.IsEnum
+                || t == typeof(decimal)
+                || t == typeof(Guid)
+                || t == typeof(DateTime)
+                || t == typeof(DateTimeOffset)
+                || t == typeof(TimeSpan)
+                || t == typeof(Uri);
         }
     }
 }

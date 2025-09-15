@@ -10,8 +10,11 @@ using System.Text.RegularExpressions;
 
 namespace KYS.Library.Helpers
 {
-    public static class JsonHelper
+    public static partial class JsonHelper
     {
+        [GeneratedRegex(@"\[(\d+)\]", RegexOptions.None, matchTimeoutMilliseconds: 1000)]
+        private static partial Regex DigitJsonPathReplacementRegex();
+
         private static readonly JsonSerializer DefaultSerializer = JsonSerializer.Create(
             new JsonSerializerSettings
             {
@@ -32,7 +35,7 @@ namespace KYS.Library.Helpers
         /// <param name="source"></param>
         /// <param name="flattenFormat"></param>
         /// <returns></returns>
-        public static Dictionary<string, object?> FlattenObject<T>(T source,
+        public static Dictionary<string, object> FlattenObject<T>(T source,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : class, new()
         {
@@ -40,14 +43,14 @@ namespace KYS.Library.Helpers
                 .Descendants()
                 .OfType<JValue>()
                 .ToDictionary(k => ConstructFlattenKeyByFormat(k.Path, flattenFormat),
-                    v => v.Value<object?>());
+                    v => v.Value<object>());
         }
 
-        public static Dictionary<string, object?> FlattenArray<T>(T source,
+        public static Dictionary<string, object> FlattenArray<T>(T source,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : JToken
         {
-            var dict = new Dictionary<string, object?>();
+            var dict = new Dictionary<string, object>();
 
             foreach (var jToken in JToken.FromObject(source, DefaultSerializer).Children())
             {
@@ -70,7 +73,7 @@ namespace KYS.Library.Helpers
             return dict;
         }
 
-        public static Dictionary<string, object?> Flatten(JToken token,
+        public static Dictionary<string, object> Flatten(JToken token,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
         {
             if (token.Type == JTokenType.Object)
@@ -82,10 +85,10 @@ namespace KYS.Library.Helpers
                 return FlattenArray(token, flattenFormat);
             }
 
-            throw new ApplicationException($"Provided {nameof(token)} is neither a valid JSON object nor array.");
+            throw new ArgumentException($"Provided {nameof(token)} is neither a valid JSON object nor array.");
         }
 
-        private static void AddFlattenEntry(Dictionary<string, object> dict, string key, object? value, FlattenFormat flattenFormat)
+        private static void AddFlattenEntry(Dictionary<string, object> dict, string key, object value, FlattenFormat flattenFormat)
         {
             key = ConstructFlattenKeyByFormat(key, flattenFormat);
 
@@ -97,11 +100,11 @@ namespace KYS.Library.Helpers
             return flattenFormat switch
             {
                 FlattenFormat.DotNet =>
-                    Regex.Replace(key, @"\[(\d+)\]", ":$1")
+                    DigitJsonPathReplacementRegex().Replace(key, ":$1")
                         .Replace(".", ":")
                         .RemovePreFix(":"),
                 FlattenFormat.JS =>
-                    Regex.Replace(key, @"\[(\d+)\]", ".$1")
+                    DigitJsonPathReplacementRegex().Replace(key, ".$1")
                         .RemovePreFix("."),
                 _ => key
             };

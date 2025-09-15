@@ -81,24 +81,8 @@ namespace KYS.Library.Validations
 
                 var referencePropertyValue = Convert.ChangeType(otherPropertyInfo.GetValue(validationContext.ObjectInstance, null), otherPropertyType);
 
-                bool isValid = false;
-                #region Approach 1
-                /*
-                MethodInfo operatorFunc = typeof(CompareOperator)
-                    .GetMethods()
-                    .Where(x => x.IsGenericMethod
-                        && x.Name == nameof(CompareOperator.Compare))
-                    .First()
-                    .MakeGenericMethod(otherPropertyType);
-
-                isValid = (bool)operatorFunc.Invoke(this, new[] { _operator, referencePropertyValue, _matchedValue });
-                */
-                #endregion
-
-                #region Approach 2
                 Func<IComparable, IComparable, bool> operatorFunc = CompareOperator.GetCompareOperatorFunc(_operator);
-                isValid = operatorFunc.Invoke((IComparable)referencePropertyValue, (IComparable)_matchedValue);
-                #endregion
+                bool isValid = operatorFunc.Invoke((IComparable)referencePropertyValue, (IComparable)_matchedValue);
 
                 if (isValid)
                 {
@@ -111,7 +95,7 @@ namespace KYS.Library.Validations
                     bool matchesDefaultInstance = hasParameterlessConstructor
                         && value.ToString() == Activator.CreateInstance(value.GetType()).ToString();
 
-                    if (isNull || isEmptyString || isValueTypeWithDefault || (!isValueTypeWithDefault && matchesDefaultInstance))
+                    if (isNull || isEmptyString || isValueTypeWithDefault || matchesDefaultInstance)
                         validationResult = new ValidationResult(null, new string[] { validationContext.MemberName });
                 }
             }

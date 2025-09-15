@@ -27,13 +27,13 @@ namespace KYS.Library.Helpers
             };
 
             if (String.IsNullOrEmpty(subject))
-                throw new ApplicationException("Must provide the Subject.");
+                throw new ArgumentException("Must provide the Subject.");
 
             if (String.IsNullOrEmpty(body))
-                throw new ApplicationException("Must provide the Body.");
+                throw new ArgumentException("Must provide the Body.");
 
             if (toEmailAddresses.IsNullOrEmpty())
-                throw new ApplicationException("Must provide at least 1 Recipient(s).");
+                throw new ArgumentException("Must provide at least 1 Recipient(s).");
 
             if (!ccEmailAddresses.IsNullOrEmpty())
             {

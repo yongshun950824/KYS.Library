@@ -14,11 +14,11 @@ namespace KYS.AspNetCore.Library.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
-            context.Response.Headers.Add("Content-Security-Policy", new StringValues("default-src 'self'"));
-            context.Response.Headers.Add("X-Content-Type-Options", new StringValues("nosniff"));
-            context.Response.Headers.Add("X-Frame-Options", new StringValues("SAMEORIGIN"));
-            context.Response.Headers.Add("X-XSS-Protection", new StringValues("1; mode=block"));
-            context.Response.Headers.Add("Strict-Transport-Security", new StringValues("max-age=31536000; includeSubDomains"));
+            context.Response.Headers.Append("Content-Security-Policy", new StringValues("default-src 'self'"));
+            context.Response.Headers.Append("X-Content-Type-Options", new StringValues("nosniff"));
+            context.Response.Headers.Append("X-Frame-Options", new StringValues("SAMEORIGIN"));
+            context.Response.Headers.Append("X-XSS-Protection", new StringValues("1; mode=block"));
+            context.Response.Headers.Append("Strict-Transport-Security", new StringValues("max-age=31536000; includeSubDomains"));
 
             await _next(context);
         }

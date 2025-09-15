@@ -132,45 +132,53 @@ namespace KYS.Library.Helpers
             int totalColumn = dt.Columns.Count;
             if (totalRow > 0)
             {
-                #region Set column format
-                if (excelColumnFormats?.Any() ?? false)
-                {
-                    int columnIndex = 1;
-                    foreach (var excelColumnFormat in excelColumnFormats)
-                    {
-                        int totalRowIndex = totalRow + 1;
-                        if (excelColumnFormat.HasSumColumn)
-                        {
-                            totalRowIndex += 1;
-                            string sumColumnName = dt.Columns[columnIndex - 1].ColumnName;
-                            object total = dt.Compute($"SUM([{sumColumnName}])", null);
-                            worksheet.Cells[totalRowIndex, columnIndex].Value = total;
-
-                            #region Styling for summary row
-                            worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Color.SetColor(summaryRowStyle.FontColor);
-                            worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Bold = summaryRowStyle.Bold;
-
-                            if (summaryRowStyle.PatternType != ExcelFillStyle.None)
-                            {
-                                worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.PatternType = summaryRowStyle.PatternType;
-                                worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.BackgroundColor.SetColor(summaryRowStyle.BackgroundColor);
-                            }
-                            #endregion
-                        }
-
-                        if (!String.IsNullOrEmpty(excelColumnFormat.Format))
-                            worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.Numberformat.Format = excelColumnFormat.Format;
-
-                        if (excelColumnFormat.HorizontalAlignment != null)
-                            worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
-
-                        columnIndex++;
-                    }
-                }
-                #endregion
+                ApplyColumnFormats(worksheet, dt, excelColumnFormats, summaryRowStyle, totalRow, totalColumn);
             }
 
             worksheet.Cells.AutoFitColumns();
+        }
+
+        private static void ApplyColumnFormats(ExcelWorksheet worksheet,
+            DataTable dt,
+            List<ExcelColumnFormat> excelColumnFormats,
+            ExcelRowStyle summaryRowStyle,
+            int totalRow,
+            int totalColumn)
+        {
+            if (excelColumnFormats == null || excelColumnFormats.Count == 0)
+                return;
+
+            int columnIndex = 1;
+            foreach (var excelColumnFormat in excelColumnFormats)
+            {
+                int totalRowIndex = totalRow + 1;
+                if (excelColumnFormat.HasSumColumn)
+                {
+                    totalRowIndex += 1;
+                    string sumColumnName = dt.Columns[columnIndex - 1].ColumnName;
+                    object total = dt.Compute($"SUM([{sumColumnName}])", null);
+                    worksheet.Cells[totalRowIndex, columnIndex].Value = total;
+
+                    #region Styling for summary row
+                    worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Color.SetColor(summaryRowStyle.FontColor);
+                    worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Bold = summaryRowStyle.Bold;
+
+                    if (summaryRowStyle.PatternType != ExcelFillStyle.None)
+                    {
+                        worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.PatternType = summaryRowStyle.PatternType;
+                        worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.BackgroundColor.SetColor(summaryRowStyle.BackgroundColor);
+                    }
+                    #endregion
+                }
+
+                if (!String.IsNullOrEmpty(excelColumnFormat.Format))
+                    worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.Numberformat.Format = excelColumnFormat.Format;
+
+                if (excelColumnFormat.HorizontalAlignment != null)
+                    worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
+
+                columnIndex++;
+            }
         }
 
         public class ExcelColumnFormat

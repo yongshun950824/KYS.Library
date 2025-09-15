@@ -62,7 +62,7 @@ namespace KYS.Library.Extensions
             return Convert.TryFromBase64String(str, buffer, out _);
         }
 
-        public static string Join(this IEnumerable<string?> values, string separator, bool isRemoveNullOrEmptyString = true)
+        public static string Join(this IEnumerable<string> values, string separator, bool isRemoveNullOrEmptyString = true)
         {
             if (isRemoveNullOrEmptyString)
                 values = values.Where(x => !String.IsNullOrEmpty(x));
@@ -70,12 +70,12 @@ namespace KYS.Library.Extensions
             return String.Join(separator, values);
         }
 
-        public static string Join(string separator, bool isRemoveNullOrEmptyString = true, params string?[] values)
+        public static string Join(string separator, bool isRemoveNullOrEmptyString = true, params string[] values)
         {
             return values.Join(separator, isRemoveNullOrEmptyString);
         }
 
-        public static string ToInvariantString(this object? value)
+        public static string ToInvariantString(this object value)
         {
             if (value is null)
                 return null;

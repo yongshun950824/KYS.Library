@@ -1,15 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace KYS.EFCore.Library
 {
-    public class DbContextUnitOfWork<TDbContext> : IUnitOfWork
+    public class DbContextUnitOfWork<TDbContext> : IUnitOfWork, IDisposable
         where TDbContext : DbContext
     {
         private readonly bool _explicitTransaction;
         private readonly TDbContext _context;
         private DbTransaction transaction;
+        private bool _disposed = false;
 
         public DbContextUnitOfWork(TDbContext context) : this(context, false) { }
 
@@ -50,20 +52,38 @@ namespace KYS.EFCore.Library
 
         public void Dispose()
         {
-            if (transaction != null)
-            {
-                transaction.RollbackAsync().GetAwaiter().GetResult();
-                transaction = null;
-            }
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
 
-        public async ValueTask DisposeAsync()
+        public ValueTask DisposeAsync()
         {
-            if (transaction != null)
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+
+            return ValueTask.CompletedTask;
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
             {
-                await transaction.RollbackAsync();
-                transaction = null;
+                if (transaction != null)
+                {
+                    transaction.RollbackAsync().GetAwaiter().GetResult();
+                    transaction = null;
+                }
             }
+
+            _disposed = true;
+        }
+
+        ~DbContextUnitOfWork()
+        {
+            Dispose(disposing: false);
         }
     }
 }
