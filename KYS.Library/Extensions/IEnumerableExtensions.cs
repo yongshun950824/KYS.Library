@@ -198,11 +198,11 @@ namespace KYS.Library.Extensions
         private static bool IsNull<T>(this IEnumerable<T> enumerable)
             => enumerable == null;
 
-        private static bool IsEmpty<T>(this IEnumerable<T> enumerable)
-            => !enumerable.Any();
-
         private static bool IsNull(this IEnumerable enumerable)
             => enumerable == null;
+
+        private static bool IsEmpty<T>(this IEnumerable<T> enumerable)
+            => !enumerable.Any();
         #endregion
     }
 }

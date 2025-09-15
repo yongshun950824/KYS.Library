@@ -3,7 +3,6 @@ using iText.Html2pdf.Resolver.Font;
 using iText.IO.Source;
 using iText.Kernel.Exceptions;
 using iText.Kernel.Pdf;
-using iText.Layout.Font;
 using KYS.Library.Extensions;
 using System;
 using System.Collections.Generic;
@@ -15,6 +14,18 @@ namespace KYS.Library.Helpers
 {
     public static class PdfHelper
     {
+        /// <summary>
+        /// Convert HTML to PDF supported with importing custom font family. <br />
+        /// <br />
+        /// To use custom font family only: <br />
+        /// <c>ConvertHtmlToPdf(htmlContent, false, false, false, importCustomFontFamilyFilePaths);</c>
+        /// </summary>
+        /// <param name="htmlContent"></param>
+        /// <param name="registerStandardPdfFonts"></param>
+        /// <param name="registerShippedFonts"></param>
+        /// <param name="registerSystemFonts"></param>
+        /// <param name="importCustomFontFamilyFilePaths"></param>
+        /// <returns></returns>
         public static MemoryStream ConvertHtmlToPdf(string htmlContent,
             bool registerStandardPdfFonts = true,
             bool registerShippedFonts = true,
@@ -160,9 +171,6 @@ namespace KYS.Library.Helpers
                 fontProvider = new DefaultFontProvider();
             else
                 fontProvider = new DefaultFontProvider(registerStandardPdfFonts, registerShippedFonts, registerSystemFonts);
-
-            // Use only imported font files
-            //FontProvider provider = new DefaultFontProvider(false, false, false);
 
             foreach (string font in importCustomFontFilePaths.Where(x => File.Exists(x)))
             {

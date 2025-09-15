@@ -42,16 +42,14 @@ namespace KYS.Library.Extensions
                     .ToArray();
 
                 if (!displayAttributes.IsNullOrEmpty())
-                    return displayAttributes.First()
-                        .Name;
+                    return displayAttributes[0].Name;
 
                 DisplayNameAttribute[] displayNameAttributes = memberInfo
                     .GetCustomAttributes<DisplayNameAttribute>()
                     .ToArray();
 
                 if (!displayNameAttributes.IsNullOrEmpty())
-                    return displayNameAttributes.First()
-                        .DisplayName;
+                    return displayNameAttributes[0].DisplayName;
 
                 return memberInfo.Name;
             }
