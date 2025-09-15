@@ -71,7 +71,7 @@ jobs:
         shell: powershell
 
       - name: Debug coverage files
-        run: Get-ChildItem -Recurse -Filter coverage.opencover.xml,coverage.cobertura.xml | ForEach-Object { $_.FullName }
+        run: Get-ChildItem -Recurse -Include coverage.opencover.xml,coverage.cobertura.xml | ForEach-Object { $_.FullName }
         shell: powershell
 
       - name: End Sonar analysis
