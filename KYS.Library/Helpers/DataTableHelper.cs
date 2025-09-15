@@ -93,24 +93,7 @@ namespace KYS.Library.Helpers
 
             sheet.Cells[START_ROW, START_COL].LoadFromDataTable(dt, printHeaders);
 
-            #region Set column format
-            int totalRow = dt.Rows.Count;
-            if (!excelColumnFormats.IsNullOrEmpty()
-                && totalRow > 0)
-            {
-                foreach (var excelColumnFormat in excelColumnFormats)
-                {
-                    foreach (int column in excelColumnFormat.Columns)
-                    {
-                        if (!String.IsNullOrEmpty(excelColumnFormat.Format))
-                            sheet.Cells[2, column, totalRow + 1, column].Style.Numberformat.Format = excelColumnFormat.Format;
-
-                        if (excelColumnFormat.HorizontalAlignment != null)
-                            sheet.Cells[2, column, totalRow + 1, column].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
-                    }
-                }
-            }
-            #endregion
+            ApplyColumnsFormat(sheet, dt, excelColumnFormats);
 
             package.Save();
 
