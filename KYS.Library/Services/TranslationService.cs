@@ -108,7 +108,7 @@ namespace KYS.Library.Services
 
     public sealed class SingleResourceTranslationService : BaseTranslationService, ITranslationService
     {
-        private readonly List<LanguageResources> _resourceLanguages = new List<LanguageResources>();
+        private readonly List<LanguageResources> _resourceLanguages;
         private readonly ResourceManager _resourceManager;
 
         #region Constructors
@@ -251,7 +251,7 @@ namespace KYS.Library.Services
 
     public sealed class MultiResourcesTranslationService : BaseTranslationService, ITranslationService
     {
-        private readonly List<LanguageResources> _resourceLanguages = new List<LanguageResources>();
+        private readonly List<LanguageResources> _resourceLanguages;
 
         public MultiResourcesTranslationService(CultureInfo currentCulture = null,
             List<CultureInfo> cultures = null) : base(currentCulture, cultures)

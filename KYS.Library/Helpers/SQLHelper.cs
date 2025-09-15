@@ -67,7 +67,7 @@ namespace KYS.Library.Helpers
             dt.Columns.Add(tableTypeColumnName, typeof(T));
 
             foreach (var @value in values)
-                dt.Rows.Add([@value]);
+                dt.Rows.Add(new object[] { @value });
 
             return new SqlParameter(parameterName, SqlDbType.Structured)
             {
