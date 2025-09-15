@@ -69,39 +69,33 @@ namespace KYS.Library.Validations
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             ValidationResult validationResult = ValidationResult.Success;
-            try
+
+            // Using reflection to get a reference to the other property
+            var otherPropertyInfo = validationContext.ObjectType.GetProperty(this._otherPropertyName);
+            Type otherPropertyType = otherPropertyInfo.PropertyType;
+
+            // Return Validation.Success for unmatched type
+            if (_matchedValue.GetType() != otherPropertyType)
+                return validationResult;
+
+            var referencePropertyValue = Convert.ChangeType(otherPropertyInfo.GetValue(validationContext.ObjectInstance, null), otherPropertyType);
+
+            Func<IComparable, IComparable, bool> operatorFunc = CompareOperator.GetCompareOperatorFunc(_operator);
+            bool isValid = operatorFunc.Invoke((IComparable)referencePropertyValue, (IComparable)_matchedValue);
+
+            if (isValid)
             {
-                // Using reflection to get a reference to the other property
-                var otherPropertyInfo = validationContext.ObjectType.GetProperty(this._otherPropertyName);
-                Type otherPropertyType = otherPropertyInfo.PropertyType;
+                bool isNull = value == null;
+                bool isEmptyString = value is string str && String.IsNullOrEmpty(str);
+                bool isValueTypeWithDefault = value != null
+                    && value.GetType().IsValueType
+                    && value.Equals(Activator.CreateInstance(value.GetType()));
+                bool hasParameterlessConstructor = value?.GetType().GetConstructor(Type.EmptyTypes) != null;
+                bool matchesDefaultInstance = hasParameterlessConstructor
+                    && value.ToString() == Activator.CreateInstance(value.GetType()).ToString();
 
-                // Return Validation.Success for unmatched type
-                if (_matchedValue.GetType() != otherPropertyType)
-                    return validationResult;
-
-                var referencePropertyValue = Convert.ChangeType(otherPropertyInfo.GetValue(validationContext.ObjectInstance, null), otherPropertyType);
-
-                Func<IComparable, IComparable, bool> operatorFunc = CompareOperator.GetCompareOperatorFunc(_operator);
-                bool isValid = operatorFunc.Invoke((IComparable)referencePropertyValue, (IComparable)_matchedValue);
-
-                if (isValid)
-                {
-                    bool isNull = value == null;
-                    bool isEmptyString = value is string str && String.IsNullOrEmpty(str);
-                    bool isValueTypeWithDefault = value != null
-                        && value.GetType().IsValueType
-                        && value.Equals(Activator.CreateInstance(value.GetType()));
-                    bool hasParameterlessConstructor = value?.GetType().GetConstructor(Type.EmptyTypes) != null;
-                    bool matchesDefaultInstance = hasParameterlessConstructor
-                        && value.ToString() == Activator.CreateInstance(value.GetType()).ToString();
-
-                    if (isNull || isEmptyString || isValueTypeWithDefault || matchesDefaultInstance)
-                        validationResult = new ValidationResult(null, new string[] { validationContext.MemberName });
-                }
-            }
-            catch
-            {
-                throw;
+                if (isNull || isEmptyString || isValueTypeWithDefault || matchesDefaultInstance)
+                    validationResult = new ValidationResult(null, new string[] { validationContext.MemberName });
             }
 
             return validationResult;

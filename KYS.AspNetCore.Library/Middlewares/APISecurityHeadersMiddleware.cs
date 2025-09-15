@@ -3,7 +3,7 @@ using Microsoft.Extensions.Primitives;
 
 namespace KYS.AspNetCore.Library.Middlewares
 {
-    public class APISecurityHeadersMiddleware
+    public class ApiSecurityHeadersMiddleware
     {
         private readonly RequestDelegate _next;
 
@@ -16,7 +16,7 @@ namespace KYS.AspNetCore.Library.Middlewares
             { "Strict-Transport-Security", "max-age=31536000; includeSubDomains" }
         };
 
-        public APISecurityHeadersMiddleware(RequestDelegate next)
+        public ApiSecurityHeadersMiddleware(RequestDelegate next)
         {
             _next = next;
         }

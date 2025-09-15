@@ -106,7 +106,7 @@ namespace KYS.Library.Services
                 }
                 catch
                 {
-                    continue;
+                    // Safe ignore exception
                 }
             }
 

@@ -6,14 +6,14 @@ using System.ComponentModel.DataAnnotations;
 namespace KYS.Library.Validations
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class IEnumerableRequireAttribute : ValidationAttribute
+    public class EnumerableRequireAttribute : ValidationAttribute
     {
-        public IEnumerableRequireAttribute()
+        public EnumerableRequireAttribute()
         {
 
         }
 
-        public IEnumerableRequireAttribute(string errorMessage) : base(errorMessage)
+        public EnumerableRequireAttribute(string errorMessage) : base(errorMessage)
         {
 
         }

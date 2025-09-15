@@ -27,21 +27,14 @@ namespace KYS.Library.Validations
         {
             ValidationResult validationResult = ValidationResult.Success;
 
-            try
-            {
-                // Using reflection to get a reference to the other property
-                var otherPropertyInfo = validationContext.ObjectType.GetProperty(this._otherPropertyName);
-                string referencePropertyValue = (string)otherPropertyInfo.GetValue(validationContext.ObjectInstance, null);
+            // Using reflection to get a reference to the other property
+            var otherPropertyInfo = validationContext.ObjectType.GetProperty(this._otherPropertyName);
+            string referencePropertyValue = (string)otherPropertyInfo.GetValue(validationContext.ObjectInstance, null);
 
-                if (String.Equals(_matchedValue, referencePropertyValue)
-                    && String.IsNullOrEmpty((string)value))
-                {
-                    validationResult = new ValidationResult(null);
-                }
-            }
-            catch
+            if (String.Equals(_matchedValue, referencePropertyValue)
+                && String.IsNullOrEmpty((string)value))
             {
-                throw;
+                validationResult = new ValidationResult(null);
             }
 
             return validationResult;

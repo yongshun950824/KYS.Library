@@ -25,9 +25,9 @@ namespace KYS.EFCore.Library.DBContext.Partials
         public Dictionary<string, object> OldValues { get; } = new Dictionary<string, object>();
         public Dictionary<string, object> NewValues { get; } = new Dictionary<string, object>();
         public List<PropertyEntry> TemporaryProperties { get; } = new List<PropertyEntry>();
-        public bool HasTemporaryProperties => TemporaryProperties.Count > 0;
+        public bool HasTemporaryProperties => TemporaryProperties.Any();
 
-        public ActionLog ToActionLog(FormattingEnum formatting = FormattingEnum.SnakeCase)
+        public ActionLog ToActionLog(KYS.Library.Helpers.FormattingHelper.Formatting formatting = KYS.Library.Helpers.FormattingHelper.Formatting.SnakeCase)
         {
             var auditLog = new ActionLog
             {

@@ -29,7 +29,7 @@ namespace KYS.Library.Services
 
     public abstract class BaseTranslationService : IBaseTranslationService
     {
-        protected readonly List<CultureInfo> _cultures = new List<CultureInfo>();
+        protected readonly List<CultureInfo> _cultures;
         protected readonly CultureInfo _currentCulture;
         private bool disposed;
 
@@ -64,7 +64,7 @@ namespace KYS.Library.Services
         /// </summary>
         /// <param name="cultures"></param>
         /// <returns></returns>
-        protected List<CultureInfo> InitCultureInfos(List<CultureInfo> cultures)
+        protected static List<CultureInfo> InitCultureInfos(List<CultureInfo> cultures)
         {
             if (cultures.IsNullOrEmpty())
             {
@@ -302,12 +302,12 @@ namespace KYS.Library.Services
             culture ??= _currentCulture;
 
             List<KeyValuePair<string, string>> langKvps = _resourceLanguages
-                .Where(x => x.CultureName == culture.Name)?
+                .Where(x => x.CultureName == culture.Name)
                 .SelectMany(x => x.Resources)
-                .SelectMany(x => x.Value.ToList())?
+                .SelectMany(x => x.Value.ToList())
                 .ToList();
 
-            string translatedText = langKvps?.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase)).Value;
+            string translatedText = langKvps.FirstOrDefault(x => x.Key.Equals(input, StringComparison.OrdinalIgnoreCase)).Value;
             if (String.IsNullOrEmpty(translatedText) && !isReturnedOriginalValue)
             {
                 throw new ArgumentNullException($"Provided {input} doesn't support for {culture.Name} language translation.");

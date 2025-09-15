@@ -13,6 +13,7 @@ using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -73,16 +74,7 @@ namespace KYS.Library.Helpers
             const int START_ROW = 1;
             const int START_COL = 1;
 
-            #region Rename DataTable Header column name
-            if (columnNameDict != null)
-            {
-                foreach (DataColumn col in dt.Columns)
-                {
-                    if (columnNameDict.TryGetValue(col.ColumnName, out string replacedColumnName))
-                        col.ColumnName = replacedColumnName;
-                }
-            }
-            #endregion
+            RenameDataTableHeaderColumn(dt, columnNameDict);
 
             using MemoryStream ms = new MemoryStream();
             using ExcelPackage package = new ExcelPackage(ms);
@@ -239,8 +231,7 @@ namespace KYS.Library.Helpers
             return dt;
         }
 
-        private static string DataTableToCSV(
-            DataTable dt,
+        private static string DataTableToCSV(DataTable dt,
             bool printHeaders = true,
             string delimiter = ";",
             CultureInfo cultureInfo = null)
@@ -323,6 +314,48 @@ namespace KYS.Library.Helpers
             #endregion
 
             return table;
+        }
+
+        private static void RenameDataTableHeaderColumn(DataTable dt, Dictionary<string, string> columnNameDict)
+        {
+            if (columnNameDict == null)
+                return;
+
+            foreach (DataColumn col in dt.Columns)
+            {
+                if (columnNameDict.TryGetValue(col.ColumnName, out string replacedColumnName))
+                    col.ColumnName = replacedColumnName;
+            }
+        }
+
+        private static void ApplyColumnsFormat(ExcelWorksheet sheet, 
+            DataTable dt, 
+            List<ExcelColumnFormat> excelColumnFormats)
+        {
+            int totalRow = dt.Rows.Count;
+
+            if (excelColumnFormats.IsNullOrEmpty() || totalRow == 0)
+                return;
+
+            foreach (var excelColumnFormat in excelColumnFormats)
+            {
+                foreach (int column in excelColumnFormat.Columns)
+                {
+                    ApplyColumnFormat(sheet, excelColumnFormat, totalRow, column);
+                }
+            }
+        }
+
+        private static void ApplyColumnFormat(ExcelWorksheet sheet, 
+            ExcelColumnFormat excelColumnFormat,
+            int totalRow,
+            int column)
+        {
+            if (!String.IsNullOrEmpty(excelColumnFormat.Format))
+                sheet.Cells[2, column, totalRow + 1, column].Style.Numberformat.Format = excelColumnFormat.Format;
+
+            if (excelColumnFormat.HorizontalAlignment != null)
+                sheet.Cells[2, column, totalRow + 1, column].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
         }
 
         public class ExcelHeaderStyle

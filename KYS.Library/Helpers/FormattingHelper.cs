@@ -8,12 +8,12 @@ namespace KYS.Library.Helpers
         [GeneratedRegex(@"([A-Z])", RegexOptions.None, matchTimeoutMilliseconds: 1000)]
         private static partial Regex UppercaseReplacementRegex();
 
-        public enum FormattingEnum
+        public enum Formatting
         {
             SnakeCase
         }
 
-        public static string Convert(this string value, FormattingEnum format)
+        public static string Convert(this string value, Formatting format)
         {
             if (String.IsNullOrEmpty(value))
             {
@@ -22,7 +22,7 @@ namespace KYS.Library.Helpers
 
             switch (format)
             {
-                case FormattingEnum.SnakeCase:
+                case Formatting.SnakeCase:
                     return ConvertToSnakeCase(value);
 
                 default:
