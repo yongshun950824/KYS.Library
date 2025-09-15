@@ -46,7 +46,7 @@ namespace KYS.Library.Extensions
             {
                 JToken jToken = JArray.FromObject(seq, _DefaultSerializer);
                 dict = Flatten(jToken, FlattenFormat.DotNet)
-                    .Select(x => new KeyValuePair<string, string?>(
+                    .Select(x => new KeyValuePair<string, string>(
                         $"{key}:{x.Key}",
                         x.Value?.ToString()))
                     .ToDictionary();
@@ -55,7 +55,7 @@ namespace KYS.Library.Extensions
             {
                 JToken jToken = JObject.FromObject(obj, _DefaultSerializer);
                 dict = Flatten(jToken, FlattenFormat.DotNet)
-                    .Select(x => new KeyValuePair<string, string?>(
+                    .Select(x => new KeyValuePair<string, string>(
                         $"{key}:{x.Key}",
                         x.Value?.ToString()))
                     .ToDictionary();

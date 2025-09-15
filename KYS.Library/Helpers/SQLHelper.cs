@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace KYS.Library.Helpers
 {
-    public static class SQLHelper
+    public static class SqlHelper
     {
         public static DataSet GetDataSet(string connectionString, CommandType commandType, string commandText,
             params SqlParameter[] sqlParameters)
@@ -67,7 +67,7 @@ namespace KYS.Library.Helpers
             dt.Columns.Add(tableTypeColumnName, typeof(T));
 
             foreach (var @value in values)
-                dt.Rows.Add(@value);
+                dt.Rows.Add([@value]);
 
             return new SqlParameter(parameterName, SqlDbType.Structured)
             {

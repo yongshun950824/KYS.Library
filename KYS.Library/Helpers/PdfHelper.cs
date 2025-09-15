@@ -8,6 +8,7 @@ using KYS.Library.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace KYS.Library.Helpers
@@ -163,10 +164,9 @@ namespace KYS.Library.Helpers
             // Use only imported font files
             //FontProvider provider = new DefaultFontProvider(false, false, false);
 
-            foreach (string font in importCustomFontFilePaths)
+            foreach (string font in importCustomFontFilePaths.Where(x => File.Exists(x)))
             {
-                if (File.Exists(font))
-                    fontProvider.AddFont(font);
+                fontProvider.AddFont(font);
             }
 
             ConverterProperties converterProperties = new ConverterProperties();

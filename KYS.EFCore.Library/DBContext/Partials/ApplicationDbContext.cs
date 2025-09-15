@@ -13,7 +13,7 @@ namespace KYS.EFCore.Library.DBContext
     public partial class ApplicationDbContext
     {
         public async Task<int> SaveChangesWithAuditAsync(Guid? actionBy = null
-            , FormattingEnum formatting = FormattingEnum.SnakeCase)
+            , Formatting formatting = Formatting.SnakeCase)
         {
             ChangeTracker.DetectChanges();
             var auditEntries = OnBeforeSaveChanges(actionBy, formatting);
@@ -22,7 +22,7 @@ namespace KYS.EFCore.Library.DBContext
             return result;
         }
 
-        private List<AuditEntry> OnBeforeSaveChanges(Guid? actionBy, FormattingEnum formatting)
+        private List<AuditEntry> OnBeforeSaveChanges(Guid? actionBy, Formatting formatting)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace KYS.EFCore.Library.DBContext
             }
         }
 
-        private async Task OnAfterSaveChangesAsync(List<AuditEntry> auditEntries, FormattingEnum formatting)
+        private async Task OnAfterSaveChangesAsync(List<AuditEntry> auditEntries, Formatting formatting)
         {
             try
             {

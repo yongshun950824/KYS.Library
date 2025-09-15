@@ -7,7 +7,7 @@ namespace KYS.Library.Extensions
 {
     public static class IEnumerableExtensions
     {
-        public static bool IsNullOrEmpty<T>(this IEnumerable<T> enumerable) 
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> enumerable)
             => enumerable.IsNull()
                 || enumerable.IsEmpty();
 
@@ -45,6 +45,7 @@ namespace KYS.Library.Extensions
             char separator = ',',
             bool hasWhiteSpaceAfterSeparator = true,
             bool removeEmptyItem = false)
+            where T : class
         {
             if (enumerable.IsNullOrEmpty())
                 return String.Empty;
@@ -65,8 +66,29 @@ namespace KYS.Library.Extensions
             return String.Join(separatorString, enumerable);
         }
 
+        public static string ToString<T>(this IEnumerable<T?> enumerable,
+            char separator = ',',
+            bool hasWhiteSpaceAfterSeparator = true,
+            bool removeEmptyItem = false)
+            where T : struct
+        {
+            if (enumerable.IsNullOrEmpty())
+                return String.Empty;
+
+            string separatorString = separator.ToString();
+            if (hasWhiteSpaceAfterSeparator)
+                separatorString += " ";
+
+            if (removeEmptyItem)
+            {
+                enumerable = enumerable.Where(x => x.HasValue);
+            }
+
+            return String.Join(separatorString, enumerable);
+        }
+
         #region Paging Methods
-        public static IEnumerable<T> Paging<T>(this IEnumerable<T> enumerable, 
+        public static IEnumerable<T> Paging<T>(this IEnumerable<T> enumerable,
             int pageNumber, int pageSize, bool isZeroBasedPageNumber = false)
             => enumerable.Paging(pageNumber, pageSize, isZeroBasedPageNumber, out _);
 
@@ -74,7 +96,7 @@ namespace KYS.Library.Extensions
             int pageNumber, int pageSize, out int totalCount)
             => enumerable.Paging(pageNumber, pageSize, false, out totalCount);
 
-        public static IEnumerable<T> Paging<T>(this IEnumerable<T> enumerable, 
+        public static IEnumerable<T> Paging<T>(this IEnumerable<T> enumerable,
             int pageNumber, int pageSize, bool isZeroBasedPageNumber, out int totalCount)
         {
             totalCount = 0;
@@ -176,7 +198,7 @@ namespace KYS.Library.Extensions
         private static bool IsNull<T>(this IEnumerable<T> enumerable)
             => enumerable == null;
 
-        private static bool IsEmpty<T>(this IEnumerable<T> enumerable) 
+        private static bool IsEmpty<T>(this IEnumerable<T> enumerable)
             => !enumerable.Any();
 
         private static bool IsNull(this IEnumerable enumerable)

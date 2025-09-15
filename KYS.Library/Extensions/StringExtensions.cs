@@ -22,10 +22,9 @@ namespace KYS.Library.Extensions
             if (postFixes.IsNullOrEmpty())
                 return str;
 
-            foreach (var postFix in postFixes)
+            foreach (var postFix in postFixes.Where(x => str.EndsWith(x)))
             {
-                if (str.EndsWith(postFix))
-                    str = str.Substring(0, str.Length - postFix.Length);
+                str = str.Substring(0, str.Length - postFix.Length);
             }
 
             return str;
@@ -46,10 +45,9 @@ namespace KYS.Library.Extensions
             if (preFixes.IsNullOrEmpty())
                 return str;
 
-            foreach (var preFix in preFixes)
+            foreach (var preFix in preFixes.Where(x => str.StartsWith(x)))
             {
-                if (str.StartsWith(preFix))
-                    str = str.Substring(1, str.Length - preFix.Length);
+                str = str.Substring(1, str.Length - preFix.Length);
             }
 
             return str;

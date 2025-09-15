@@ -27,7 +27,7 @@ namespace KYS.EFCore.Library.DBContext.Partials
         public List<PropertyEntry> TemporaryProperties { get; } = new List<PropertyEntry>();
         public bool HasTemporaryProperties => TemporaryProperties.Count > 0;
 
-        public ActionLog ToActionLog(FormattingEnum formatting = FormattingEnum.SnakeCase)
+        public ActionLog ToActionLog(KYS.Library.Helpers.FormattingHelper.Formatting formatting = KYS.Library.Helpers.FormattingHelper.Formatting.SnakeCase)
         {
             var auditLog = new ActionLog
             {
