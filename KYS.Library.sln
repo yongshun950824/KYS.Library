@@ -7,9 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.Library", "KYS.Library\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.TestProject", "KYS.TestProject\KYS.TestProject.csproj", "{78737BA8-E8D2-4337-8335-ACBDDC3E8A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KYS.EFCore.Library", "KYS.EFCore.Library\KYS.EFCore.Library.csproj", "{4B70526D-E624-42DC-929B-8E19E22F50D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.EFCore.Library", "KYS.EFCore.Library\KYS.EFCore.Library.csproj", "{4B70526D-E624-42DC-929B-8E19E22F50D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KYS.AspNetCore.Library", "KYS.AspNetCore.Library\KYS.AspNetCore.Library.csproj", "{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.AspNetCore.Library", "KYS.AspNetCore.Library\KYS.AspNetCore.Library.csproj", "{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{74630313-7C30-451D-95A3-95AF183F4AC9}"
+	ProjectSection(SolutionItems) = preProject
+		sonar-project.properties = sonar-project.properties
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
