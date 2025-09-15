@@ -41,7 +41,7 @@ namespace KYS.Library.Extensions
         /// <param name="hasWhiteSpaceAfterSeparator">To add whitespace after separator. (Optional) </param>
         /// <param name="removeEmptyItem">Remove item which is null. For `string` value, remove null or empty string.(Optional) </param>
         /// <returns></returns>
-        public static string ToString<T>(this IEnumerable<T?> enumerable,
+        public static string ToString<T>(this IEnumerable<T> enumerable,
             char separator = ',',
             bool hasWhiteSpaceAfterSeparator = true,
             bool removeEmptyItem = false)
