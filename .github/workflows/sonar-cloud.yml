@@ -55,7 +55,7 @@ jobs:
             /k:"yongshun950824_kys-library" `
             /o:"yongshun950824" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-            /d:sonar.coverageReportPaths="TestResults/coverage.opencover.xml" `
+            /d:sonar.coverageReportPaths="**/TestResults/coverage.opencover.xml" `
             /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
             /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
             /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -67,7 +67,7 @@ jobs:
         run: |
             dotnet test `
             /p:CollectCoverage=true `
-            /p:CoverletOutput=../TestResults/coverage.opencover.xml `
+            /p:CoverletOutput=./TestResults/coverage.opencover.xml `
             /p:CoverletOutputFormat=opencover
         shell: powershell
 
