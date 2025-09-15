@@ -36,7 +36,7 @@ namespace KYS.Library.Helpers
             CultureInfo cultureInfo = null)
         {
             using MemoryStream ms = new MemoryStream();
-            using TextWriter writer = new StreamWriter(ms);
+            using StreamWriter writer = new StreamWriter(ms);
 
             string csvString = null;
 

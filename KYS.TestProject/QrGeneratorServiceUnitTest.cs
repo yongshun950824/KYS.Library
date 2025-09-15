@@ -288,7 +288,9 @@ namespace KYS.TestProject
         public void GenerateQRAndToMemoryStream()
         {
             // Arrange
+#pragma warning disable S3242
             IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+#pragma warning restore S3242
 
             // Act
             MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
@@ -303,7 +305,9 @@ namespace KYS.TestProject
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
+#pragma warning disable S3242
             IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+#pragma warning restore S3242
 
             // Act
             qrGeneratorService.DrawAndToFile(filePath);
@@ -317,7 +321,9 @@ namespace KYS.TestProject
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
+#pragma warning disable S3242
             IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
+#pragma warning restore S3242
 
             // Act
             qrGeneratorService.DrawAndToFile(filePath);
@@ -330,7 +336,9 @@ namespace KYS.TestProject
         public void GenerateQRAndToBase64()
         {
             // Arrange
+#pragma warning disable S3242
             IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+#pragma warning restore S3242
             using MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
             string expectedBase64String = Convert.ToBase64String(ms.ToArray());
 
@@ -349,7 +357,9 @@ namespace KYS.TestProject
         {
             // Arrange
             string dataUriPrefix = "data:image/png;base64, ";
+#pragma warning disable S3242
             IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+#pragma warning restore S3242
             string base64String = qrGeneratorService.DrawAndToBase64();
             string expectedDataUri = dataUriPrefix + base64String;
 

@@ -3,8 +3,11 @@ using System.Text.RegularExpressions;
 
 namespace KYS.Library.Helpers
 {
-    public static class FormattingHelper
+    public static partial class FormattingHelper
     {
+        [GeneratedRegex(@"([A-Z])", RegexOptions.None, matchTimeoutMilliseconds: 1000)]
+        private static partial Regex UppercaseReplacementRegex();
+
         public enum FormattingEnum
         {
             SnakeCase
@@ -35,10 +38,12 @@ namespace KYS.Library.Helpers
             }
 
             // Add an underscore before each uppercase letter (excluding the first one).
-            string snakeCase = Regex.Replace(value, @"([A-Z])", "_$1").ToLower();
+            string snakeCase = UppercaseReplacementRegex()
+                .Replace(value, "_$1")
+                .ToLower();
 
             // If the string starts with an underscore (because the first letter was uppercase), remove it.
-            if (snakeCase.StartsWith("_"))
+            if (snakeCase.StartsWith('_'))
             {
                 snakeCase = snakeCase.Substring(1);
             }

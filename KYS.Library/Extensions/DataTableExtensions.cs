@@ -14,13 +14,10 @@ namespace KYS.Library.Extensions
 
         public static IList<T> ToList<T>(this DataTable dataTable)
         {
-            if (dataTable.IsNull())
-                return null;
-
-            if (dataTable.IsEmpty())
+            if (dataTable.IsNull() || dataTable.IsEmpty())
                 return default;
 
-            IList<T> list = new List<T>();
+            List<T> list = new List<T>();
             foreach (DataRow row in dataTable.Rows)
             {
                 T item = GetItem<T>(row);

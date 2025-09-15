@@ -23,7 +23,7 @@ namespace KYS.TestProject
         private const string Cultures = "Cultures";
         private const string Users = "Users";
 
-        private IConfiguration LoadConfiguration()
+        private static IConfiguration LoadConfiguration()
         {
             return new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)

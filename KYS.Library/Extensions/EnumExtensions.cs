@@ -9,7 +9,7 @@ namespace KYS.Library.Extensions
 {
     public static class EnumExtensions
     {
-        public static IEnumerable<TEnum> GetEnumValues<TEnum>() 
+        public static IEnumerable<TEnum> GetEnumValues<TEnum>()
             where TEnum : Enum
         {
             TEnum valueType = default(TEnum);
@@ -19,7 +19,7 @@ namespace KYS.Library.Extensions
                 .Distinct();
         }
 
-        public static IEnumerable<string> GetEnumNames<TEnum>() 
+        public static IEnumerable<string> GetEnumNames<TEnum>()
             where TEnum : Enum
         {
             return typeof(TEnum).GetFields()
@@ -62,7 +62,6 @@ namespace KYS.Library.Extensions
 
             if (enumMemberValue == null)
                 return @enum.ToString();
-                //throw new ArgumentException($"Enum {@enum.GetType().Name} with member {@enum} not applies the {nameof(EnumMemberAttribute)} attribute.");
 
             return enumMemberValue;
         }
@@ -72,11 +71,10 @@ namespace KYS.Library.Extensions
         {
             foreach (var field in typeof(TEnum).GetFields())
             {
-                if (Attribute.GetCustomAttribute(field,
-                    typeof(EnumMemberAttribute)) is EnumMemberAttribute attribute)
+                if (Attribute.GetCustomAttribute(field, typeof(EnumMemberAttribute)) 
+                    is EnumMemberAttribute attribute && attribute.Value == value)
                 {
-                    if (attribute.Value == value)
-                        return (TEnum)field.GetValue(null);
+                    return (TEnum)field.GetValue(null);
                 }
 
                 if (field.Name == value)

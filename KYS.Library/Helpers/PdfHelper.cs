@@ -12,7 +12,7 @@ using System.Text;
 
 namespace KYS.Library.Helpers
 {
-    public class PdfHelper
+    public static class PdfHelper
     {
         public static MemoryStream ConvertHtmlToPdf(string htmlContent,
             bool registerStandardPdfFonts = true,
@@ -154,7 +154,7 @@ namespace KYS.Library.Helpers
                 && importCustomFontFilePaths.IsNullOrEmpty())
                 return null;
 
-            FontProvider fontProvider = null;
+            DefaultFontProvider fontProvider;
             if (registerStandardPdfFonts && registerShippedFonts && registerSystemFonts)
                 fontProvider = new DefaultFontProvider();
             else

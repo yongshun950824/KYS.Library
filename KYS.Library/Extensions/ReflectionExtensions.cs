@@ -15,10 +15,6 @@ namespace KYS.Library.Extensions
             {
                 object[] attributes = propertyInfo.GetCustomAttributes(typeof(DisplayAttribute), false);
 
-                #region Alternate
-                // IEnumerable<DisplayAttribute> attributes = propertyInfo.GetCustomAttributes<DisplayAttribute>(false);
-                #endregion
-
                 if (!attributes.IsNullOrEmpty())
                     return ((DisplayAttribute)attributes[0]).Name;
 
@@ -82,7 +78,7 @@ namespace KYS.Library.Extensions
         {
             var memberInfo = GetPropertyInformation(propertyExpression.Body);
             if (memberInfo == null)
-                throw new ArgumentException("No property reference expression was found.", "propertyExpression");
+                throw new ArgumentException("No property reference expression was found.", nameof(propertyExpression));
 
             return memberInfo.ToName();
         }

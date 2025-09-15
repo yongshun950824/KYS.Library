@@ -18,24 +18,24 @@ namespace KYS.Library.Extensions
 
         public static DateTime GetFirstDateOfMonth(this DateTime dt)
         {
-            return new DateTime(dt.Year, dt.Month, 1);
+            return new DateTime(dt.Year, dt.Month, 1, 0, 0, 0, DateTimeKind.Unspecified);
         }
 
         public static DateTime GetLastDateOfMonth(this DateTime dt)
         {
-            return new DateTime(dt.Year, dt.Month, 1)
+            return new DateTime(dt.Year, dt.Month, 1, 0, 0, 0, DateTimeKind.Unspecified)
                 .AddMonths(1)
                 .AddDays(-1);
         }
 
         public static DateTime GetFirstDateOfYear(this DateTime dt)
         {
-            return new DateTime(dt.Year, 1, 1);
+            return new DateTime(dt.Year, 1, 1, 0, 0, 0, DateTimeKind.Unspecified);
         }
 
         public static DateTime GetLastDateOfYear(this DateTime dt)
         {
-            return new DateTime(dt.Year, 1, 1)
+            return new DateTime(dt.Year, 1, 1, 0, 0, 0, DateTimeKind.Unspecified)
                 .AddYears(1)
                 .AddDays(-1);
         }
@@ -44,7 +44,7 @@ namespace KYS.Library.Extensions
         {
             ThaiBuddhistCalendar cal = new ThaiBuddhistCalendar();
 
-            return new DateTime(cal.GetYear(dt), cal.GetMonth(dt), dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Millisecond);
+            return new DateTime(cal.GetYear(dt), cal.GetMonth(dt), dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Millisecond, DateTimeKind.Unspecified);
         }
 
         public static int GetAge(this DateTime dob, DateTime? calculatedDate = null)

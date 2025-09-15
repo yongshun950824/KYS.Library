@@ -96,7 +96,7 @@ namespace KYS.Library.Helpers
                 CompareOperatorConstants.GreaterThan => (a, b) => a.CompareTo(b) == 1,
                 CompareOperatorConstants.GreaterThanOrEqual => (a, b) => a.CompareTo(b) == 1
                     || a.CompareTo(b) == 0,
-                _ => throw new Exception("Invalid operator"),
+                _ => throw new ArgumentException("Invalid operator"),
             };
         }
     }
