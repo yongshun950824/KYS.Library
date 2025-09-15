@@ -51,7 +51,14 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-            .\.sonar\scanner\dotnet-sonarscanner begin /k:"yongshun950824_kys-library" /o:"yongshun950824" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+            .\.sonar\scanner\dotnet-sonarscanner begin `
+            /k:"yongshun950824_kys-library" `
+            /o:"yongshun950824" `
+            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
+            /d:sonar.coverageReportPaths="**/coverage.opencover.xml" `
+            /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
+            /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
+            /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
 
       - name: Build
         run: dotnet build --no-incremental
