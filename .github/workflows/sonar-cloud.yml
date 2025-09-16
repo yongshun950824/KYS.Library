@@ -67,9 +67,18 @@ jobs:
         run: |
             dotnet test `
               /p:CollectCoverage=true `
-              /p:CoverletOutput=./TestResults/coverage `
-              /p:CoverletOutputFormat=cobertura
-        shell: powershell
+              /p:CoverletOutputFormat=cobertura `
+              /p:CoverletOutput=./TestResults/
+
+            # Find the generated file (inside GUID folder) and move it
+            $file = Get-ChildItem -Recurse -Filter coverage.cobertura.xml | Select-Object -First 1
+            if (-not $file) {
+              Write-Error "Coverage file not found!"
+              exit 1
+            }
+            Write-Host "Found coverage at $($file.FullName)"
+            Move-Item $file.FullName ./TestResults/coverage.cobertura.xml -Force
+        shell: pwsh
     
       - name: End Sonar analysis
         env:
