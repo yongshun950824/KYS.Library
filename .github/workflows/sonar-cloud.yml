@@ -65,19 +65,20 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-            dotnet test `
-              /p:CollectCoverage=true `
-              /p:CoverletOutput=./TestResults/coverage.opencover.xml `
-              /p:CoverletOutputFormat=opencover
+          dotnet test `
+            /p:CollectCoverage=true `
+            /p:CoverletOutput=coverage.opencover.xml `
+            /p:CoverletOutputFormat=opencover
 
-            # Find the generated file (inside GUID folder) and move it
-            $file = Get-ChildItem -Recurse -Filter coverage.opencover.xml | Select-Object -First 1
-            if (-not $file) {
-              Write-Error "Coverage file not found!"
-              exit 1
-            }
-            Write-Host "Found coverage at $($file.FullName)"
-            Move-Item $file.FullName ./TestResults/coverage.opencover.xml -Force
+          # Find the coverage file (inside TestResults/**/ folder)
+          $file = Get-ChildItem -Recurse -Filter coverage.opencover.xml | Select-Object -First 1
+          if (-not $file) {
+            Write-Error "Coverage file not found!"
+            exit 1
+          }
+          Write-Host "Found coverage at $($file.FullName)"
+          New-Item -ItemType Directory -Force -Path ./TestResults | Out-Null
+          Move-Item $file.FullName ./TestResults/coverage.opencover.xml -Force
         shell: pwsh
     
       - name: End Sonar analysis
