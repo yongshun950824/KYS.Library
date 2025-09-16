@@ -55,7 +55,7 @@ jobs:
               /k:"yongshun950824_kys-library" `
               /o:"yongshun950824" `
               /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-              /d:sonar.coverageReportPaths="TestResults/coverage.opencover.xml" `
+              /d:sonar.coverageReportPaths="TestResults/coverage.cobertura.xml" `
               /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
               /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
               /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -66,19 +66,18 @@ jobs:
       - name: Run tests with coverage
         run: |
           dotnet test `
-            /p:CollectCoverage=true `
-            /p:CoverletOutput=TestResults\ `
-            /p:CoverletOutputFormat=opencover
+            --collect:"XPlat Code Coverage" `
+            --results-directory TestResults
 
           # Locate coverage file
-          $file = Get-ChildItem -Recurse -Filter coverage.opencover.xml | Select-Object -First 1
+          $file = Get-ChildItem -Recurse -Filter coverage.cobertura.xml | Select-Object -First 1
           if (-not $file) {
             Write-Error "Coverage file not found!"
             exit 1
           }
           Write-Host "Found coverage at $($file.FullName)"
           New-Item -ItemType Directory -Force -Path ./TestResults | Out-Null
-          Copy-Item $file.FullName ./TestResults/coverage.opencover.xml -Force
+          Copy-Item $file.FullName ./TestResults/coverage.cobertura.xml -Force
         shell: pwsh    
 
       - name: End Sonar analysis
