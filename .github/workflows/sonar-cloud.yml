@@ -55,7 +55,7 @@ jobs:
               /k:"yongshun950824_kys-library" `
               /o:"yongshun950824" `
               /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-              /d:sonar.coverageReportPaths="TestResults\coverage.cobertura.xml" `
+              /d:sonar.coverageReportPaths="TestResults/coverage.cobertura.xml" `
               /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
               /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
               /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -65,29 +65,30 @@ jobs:
         
       - name: Run tests with coverage
         run: |
-          # Ensure your KYS.Library.runsettings file is in the root of your repository
-          $runSettingsFile = "KYS.Library.runsettings" 
+          $runSettingsFile = "KYS.Library.runsettings"
 
           if (-not (Test-Path $runSettingsFile)) {
-            Write-Error "The settings file '$runSettingsFile' could not be found in the repository root."
+            Write-Error "The settings file '$runSettingsFile' could not be found!"
             exit 1
           }
 
           Write-Host "Running tests with coverage using settings file: $runSettingsFile"
-          dotnet test `
-            --settings $runSettingsFile `
-            --results-directory TestResults
+          dotnet test KYS.TestProject --settings $runSettingsFile
 
-          # The coverage file should now be at TestResults\coverage.cobertura.xml
-          $coverageFilePath = Join-Path $PWD "TestResults\coverage.cobertura.xml"
-          
-          if (-not (Test-Path $coverageFilePath)) {
-            Write-Error "Coverage file not found at the expected location: $coverageFilePath"
+          # Find coverage file under KYS.TestProject\TestResults
+          $coverage = Get-ChildItem -Recurse -Path "KYS.TestProject\TestResults" -Filter coverage.cobertura.xml | Select-Object -First 1
+
+          if (-not $coverage) {
+            Write-Error "Coverage file not found!"
+            Get-ChildItem -Recurse -Path "KYS.TestProject\TestResults" | ForEach-Object { Write-Host "Found: $($_.FullName)" }
             exit 1
           }
-          
-          Write-Host "Found coverage at $coverageFilePath"
-          # No explicit copy needed if it's already in TestResults/
+
+          Write-Host "Found coverage at $($coverage.FullName)"
+
+          # Move it to root TestResults for Sonar to pick up
+          New-Item -ItemType Directory -Path "TestResults" -Force | Out-Null
+          Copy-Item $coverage.FullName "TestResults/coverage.cobertura.xml" -Force
         shell: pwsh
 
       - name: End Sonar analysis
