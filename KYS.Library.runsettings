@@ -6,7 +6,7 @@
 				<Configuration>
 					<Format>opencover</Format>
 					<OutputDirectory>TestResults</OutputDirectory>
-					<OutputName>coverage</OutputName>
+					<OutputName>coverage.opencover</OutputName>
 				</Configuration>
 			</DataCollector>
 		</DataCollectors>
