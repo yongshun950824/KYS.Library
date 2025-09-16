@@ -66,7 +66,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           # Ensure your KYS.Library.runsettings file is in the root of your repository
-          $runSettingsFile = "KYS.Library\KYS.Library.runsettings" 
+          $runSettingsFile = "KYS.Library.runsettings" 
 
           if (-not (Test-Path $runSettingsFile)) {
             Write-Error "The settings file '$runSettingsFile' could not be found in the repository root."

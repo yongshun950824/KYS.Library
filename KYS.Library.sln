@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.AspNetCore.Library", "K
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C03D583-2880-4A85-9B65-EE95B80612D7}"
 	ProjectSection(SolutionItems) = preProject
-		KYS.Library.runsettings.xml = KYS.Library.runsettings.xml
+		KYS.Library.runsettings = KYS.Library.runsettings
 	EndProjectSection
 EndProject
 Global
