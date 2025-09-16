@@ -4,7 +4,7 @@
 		<DataCollectors>
 			<DataCollector friendlyName="XPlat code coverage">
 				<Configuration>
-					<Format>cobertura</Format>
+					<Format>opencover</Format>
 					<OutputDirectory>TestResults</OutputDirectory>
 					<OutputName>coverage</OutputName>
 				</Configuration>

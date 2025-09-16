@@ -55,7 +55,7 @@ jobs:
               /k:"yongshun950824_kys-library" `
               /o:"yongshun950824" `
               /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-              /d:sonar.coverageReportPaths="TestResults/coverage.cobertura.xml" `
+              /d:sonar.coverageReportPaths="TestResults/coverage.opencover.xml" `
               /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
               /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
               /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -76,7 +76,7 @@ jobs:
           dotnet test KYS.TestProject --settings $runSettingsFile
 
           # Find coverage file under KYS.TestProject\TestResults
-          $coverage = Get-ChildItem -Recurse -Path "KYS.TestProject\TestResults" -Filter coverage.cobertura.xml | Select-Object -First 1
+          $coverage = Get-ChildItem -Recurse -Path "KYS.TestProject\TestResults" -Filter coverage.opencover.xml | Select-Object -First 1
 
           if (-not $coverage) {
             Write-Error "Coverage file not found!"
@@ -88,7 +88,7 @@ jobs:
 
           # Move it to root TestResults for Sonar to pick up
           New-Item -ItemType Directory -Path "TestResults" -Force | Out-Null
-          Copy-Item $coverage.FullName "TestResults/coverage.cobertura.xml" -Force
+          Copy-Item $coverage.FullName "TestResults/coverage.opencover.xml" -Force
         shell: pwsh
 
       - name: End Sonar analysis
