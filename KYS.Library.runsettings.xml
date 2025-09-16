@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
+	<RunConfiguration>
+		<ResultsDirectory>.\TestResults</ResultsDirectory>
+	</RunConfiguration>
 	<DataCollectionRunSettings>
 		<DataCollectors>
 			<DataCollector friendlyName="Code Coverage" uri="datacollection://microsoft/codecoverage/v2"
@@ -11,6 +14,9 @@
 						<FriendlyNames>true</FriendlyNames>
 						<UseSourceLink>true</UseSourceLink>
 					</CodeCoverage>
+					<CodeCoverageTool>
+						<ToolPath>C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Team Tools\Instrumentation\CodeCoverage.exe</ToolPath>
+					</CodeCoverageTool>
 				</Configuration>
 			</DataCollector>
 		</DataCollectors>
