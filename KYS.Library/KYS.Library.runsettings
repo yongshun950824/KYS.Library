@@ -10,6 +10,8 @@
 				<Configuration>
 					<CodeCoverage>
 						<Format>Cobertura</Format>
+						<OutputDirectory>TestResults</OutputDirectory>
+						<OutputName>coverage</OutputName>
 						<IncludeTestSources>true</IncludeTestSources>
 						<FriendlyNames>true</FriendlyNames>
 						<UseSourceLink>true</UseSourceLink>
