@@ -4,6 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+	<CollectCoverage>true</CollectCoverage>
+	<CoverletOutputFormat>cobertura</CoverletOutputFormat>
+	<CoverletOutput>TestResults/coverage.cobertura.xml</CoverletOutput>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -61,5 +66,4 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
 </Project>

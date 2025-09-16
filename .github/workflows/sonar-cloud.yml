@@ -45,29 +45,7 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
-        
-      - name: Build
-        run: dotnet build --no-incremental
-        
-      - name: Run tests with coverage
-        run: |
-          dotnet tool install coverlet.console --global --version 3.2.0 # Use an appropriate version
-          dotnet test `
-            --settings KYS.Library.runsettings `
-            --collect:"XPlat Code Coverage" `
-            --results-directory TestResults
-
-          # Locate coverage file
-          $file = Get-ChildItem -Recurse -Filter coverage.cobertura.xml | Select-Object -First 1
-          if (-not $file) {
-            Write-Error "Coverage file not found!"
-            exit 1
-          }
-          Write-Host "Found coverage at $($file.FullName)"
-          New-Item -ItemType Directory -Force -Path ./TestResults | Out-Null
-          Copy-Item $file.FullName ./TestResults/coverage.cobertura.xml -Force
-        shell: pwsh
-
+ 
       - name: Begin Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -77,10 +55,40 @@ jobs:
               /k:"yongshun950824_kys-library" `
               /o:"yongshun950824" `
               /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-              /d:sonar.coverageReportPaths="TestResults/coverage.cobertura.xml" `
+              /d:sonar.coverageReportPaths="$coverageReportPath" `
               /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
               /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
               /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
+
+      - name: Build
+        run: dotnet build --no-incremental
+        
+      - name: Run tests with coverage
+        run: |
+          # Ensure your KYS.Library.runsettings file is in the root of your repository
+          $runSettingsFile = "KYS.Library.runsettings" 
+
+          if (-not (Test-Path $runSettingsFile)) {
+            Write-Error "The settings file '$runSettingsFile' could not be found in the repository root."
+            exit 1
+          }
+
+          Write-Host "Running tests with coverage using settings file: $runSettingsFile"
+          dotnet test `
+            --settings $runSettingsFile `
+            --results-directory TestResults
+
+          # The coverage file should now be at TestResults\coverage.cobertura.xml
+          $coverageFilePath = Join-Path $PWD "TestResults\coverage.cobertura.xml"
+          
+          if (-not (Test-Path $coverageFilePath)) {
+            Write-Error "Coverage file not found at the expected location: $coverageFilePath"
+            exit 1
+          }
+          
+          Write-Host "Found coverage at $coverageFilePath"
+          # No explicit copy needed if it's already in TestResults/
+        shell: pwsh
 
       - name: End Sonar analysis
         env:
