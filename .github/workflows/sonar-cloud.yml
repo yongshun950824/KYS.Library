@@ -55,7 +55,7 @@ jobs:
             /k:"yongshun950824_kys-library" `
             /o:"yongshun950824" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-            /d:sonar.coverageReportPaths="KYS.TestProject/TestResults/*/coverage.cobertura.xml" `
+            /d:sonar.coverageReportPaths="${{ env.COVERAGE_PATH }}" `
             /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
             /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
             /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -71,9 +71,21 @@ jobs:
         shell: powershell
 
       - name: Debug coverage files
-        run: Get-ChildItem -Recurse -Include coverage.cobertura.xml | ForEach-Object { $_.FullName }
-        shell: powershell
+        run: echo "Coverage path resolved to $env:COVERAGE_PATH"
+        shell: pwsh
 
+      - name: Find coverage file
+        id: coverage
+        shell: pwsh
+        run: |
+          $coverage = Get-ChildItem -Recurse -Filter coverage.cobertura.xml | Select-Object -First 1
+          if (-not $coverage) {
+            Write-Error "Coverage file not found!"
+            exit 1
+          }
+          echo "Found coverage: $($coverage.FullName)"
+          echo "COVERAGE_PATH=$($coverage.FullName)" >> $env:GITHUB_ENV
+    
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
