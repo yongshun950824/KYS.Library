@@ -11,6 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.EFCore.Library", "KYS.E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KYS.AspNetCore.Library", "KYS.AspNetCore.Library\KYS.AspNetCore.Library.csproj", "{EA3A523B-49D7-4D1D-934C-CD8FBA4843EA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C03D583-2880-4A85-9B65-EE95B80612D7}"
+	ProjectSection(SolutionItems) = preProject
+		KYS.Library.runsettings.xml = KYS.Library.runsettings.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

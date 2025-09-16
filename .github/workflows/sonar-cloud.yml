@@ -62,10 +62,12 @@ jobs:
 
       - name: Build
         run: dotnet build --no-incremental
-
+        
       - name: Run tests with coverage
         run: |
+          dotnet tool install coverlet.console --global --version 3.2.0 # Use an appropriate version
           dotnet test `
+            --settings KYS.Library.runsettings `
             --collect:"XPlat Code Coverage" `
             --results-directory TestResults
 
@@ -78,12 +80,12 @@ jobs:
           Write-Host "Found coverage at $($file.FullName)"
           New-Item -ItemType Directory -Force -Path ./TestResults | Out-Null
           Copy-Item $file.FullName ./TestResults/coverage.cobertura.xml -Force
-        shell: pwsh    
+        shell: pwsh
 
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
             .\.sonar\scanner\dotnet-sonarscanner end `
-              /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
+              /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
         shell: powershell
