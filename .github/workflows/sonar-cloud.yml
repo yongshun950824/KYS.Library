@@ -55,7 +55,7 @@ jobs:
             /k:"yongshun950824_kys-library" `
             /o:"yongshun950824" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-            /d:sonar.coverageReportPaths="**/TestResults/*/coverage.cobertura.xml" `
+            /d:sonar.coverageReportPaths="KYS.TestProject/TestResults/*/coverage.cobertura.xml" `
             /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
             /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
             /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -71,7 +71,7 @@ jobs:
         shell: powershell
 
       - name: Debug coverage files
-        run: Get-ChildItem -Recurse -Include *.xml | ForEach-Object { $_.FullName }
+        run: Get-ChildItem -Recurse -Include coverage.cobertura.xml | ForEach-Object { $_.FullName }
         shell: powershell
 
       - name: End Sonar analysis
