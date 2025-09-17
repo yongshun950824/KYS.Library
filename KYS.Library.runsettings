@@ -7,7 +7,7 @@
     <DataCollectors>
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
-          <Format>cobertura</Format>
+          <Format>Cobertura</Format>
         </Configuration>
       </DataCollector>
     </DataCollectors>
