@@ -66,28 +66,23 @@ jobs:
       - name: Run tests with coverage
         run: |
           $runSettingsFile = "KYS.Library.runsettings"
-
           if (-not (Test-Path $runSettingsFile)) {
             Write-Error "The settings file '$runSettingsFile' could not be found!"
             exit 1
           }
-
+      
           Write-Host "Running tests with coverage using settings file: $runSettingsFile"
-          dotnet test KYS.TestProject --settings $runSettingsFile --results-directory TestResults 
-
-          # Find coverage file under KYS.TestProject\TestResults
-          $coverage = Get-ChildItem -Recurse -Path "KYS.TestProject\TestResults" -Filter coverage.cobertura.xml | Select-Object -First 1
-
+          dotnet test KYS.TestProject --settings $runSettingsFile --results-directory TestResults
+      
+          # Search anywhere under TestResults
+          $coverage = Get-ChildItem -Recurse -Path "TestResults" -Filter coverage.cobertura.xml | Select-Object -First 1
           if (-not $coverage) {
             Write-Error "Coverage file not found!"
-            Get-ChildItem -Recurse -Path "KYS.TestProject\TestResults" | ForEach-Object { Write-Host "Found: $($_.FullName)" }
+            Get-ChildItem -Recurse -Path "TestResults" | ForEach-Object { Write-Host "Found: $($_.FullName)" }
             exit 1
           }
-
+      
           Write-Host "Found coverage at $($coverage.FullName)"
-
-          # Move it to root TestResults for Sonar to pick up
-          New-Item -ItemType Directory -Path "TestResults" -Force | Out-Null
           Copy-Item $coverage.FullName "TestResults/coverage.cobertura.xml" -Force
         shell: pwsh
 
