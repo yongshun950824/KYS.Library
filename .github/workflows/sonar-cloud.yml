@@ -86,19 +86,19 @@ jobs:
           Copy-Item $coverage.FullName "TestResults/coverage.cobertura.xml" -Force
         shell: pwsh
 
-      - name: Fix Cobertura report for SonarCloud
+      - name: Install ReportGenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      - name: Convert coverage to Sonar-compatible Cobertura
         shell: pwsh
         run: |
-          $coverageFile = "TestResults/coverage.cobertura.xml"
-          if (Test-Path $coverageFile) {
-            (Get-Content $coverageFile) -replace 'version="1.[0-9]+"', 'version="1"' |
-              Set-Content $coverageFile -Encoding UTF8
-            Write-Host "Patched Cobertura report version to 1 for SonarCloud."
-          } else {
-            Write-Error "Coverage file not found at $coverageFile"
-            exit 1
-          }
-    
+          reportgenerator `
+            -reports:TestResults/coverage.cobertura.xml `
+            -targetdir:TestResults/sonar `
+            -reporttypes:Cobertura
+          Copy-Item TestResults/sonar/Cobertura.xml TestResults/coverage.cobertura.xml -Force
+          Write-Host "Converted coverage report to Sonar-compatible Cobertura format."
+
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
