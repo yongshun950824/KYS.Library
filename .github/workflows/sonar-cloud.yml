@@ -98,7 +98,21 @@ jobs:
             -reporttypes:Cobertura
           Copy-Item TestResults/sonar/Cobertura.xml TestResults/coverage.cobertura.xml -Force
           Write-Host "Converted coverage report to Sonar-compatible Cobertura format."
-
+          
+      - name: Patch Cobertura report for SonarCloud
+        shell: pwsh
+        run: |
+          $report = "TestResults/coverage.cobertura.xml"
+          if (Test-Path $report) {
+            (Get-Content $report) `
+              -replace 'version="0"', 'version="1"' `
+              | Set-Content $report -Encoding UTF8
+            Write-Host "Patched Cobertura report version to 1 for SonarCloud."
+          } else {
+            Write-Error "Cobertura report not found to patch!"
+            exit 1
+          }
+          
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
