@@ -112,6 +112,20 @@ jobs:
             Write-Error "Cobertura report not found to patch!"
             exit 1
           }
+
+      - name: Clean Cobertura report for SonarCloud
+        shell: pwsh
+        run: |
+          $report = "TestResults/coverage.cobertura.xml"
+          if (Test-Path $report) {
+            $content = Get-Content $report
+            $clean = $content | Where-Object {$_ -notmatch "^\s*<sources>|^\s*<source>|^\s*</sources>"}
+            $clean | Set-Content $report -Encoding UTF8
+            Write-Host "Removed <sources> section from Cobertura report."
+          } else {
+            Write-Error "Cobertura report not found to clean!"
+            exit 1
+          }
           
       - name: End Sonar analysis
         env:
