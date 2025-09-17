@@ -83,6 +83,12 @@ jobs:
           }
       
           Write-Host "Found coverage at $($coverage.FullName)"
+
+          # Print the first 20 lines for debugging
+          Write-Host "----- coverage.cobertura.xml (head) -----"
+          Get-Content $coverage.FullName -Head 20 | ForEach-Object { Write-Host $_ }
+          Write-Host "----- end head -----"
+    
           Copy-Item $coverage.FullName "TestResults/coverage.cobertura.xml" -Force
         shell: pwsh
 
