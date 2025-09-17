@@ -73,7 +73,7 @@ jobs:
           }
 
           Write-Host "Running tests with coverage using settings file: $runSettingsFile"
-          dotnet test KYS.TestProject --settings $runSettingsFile
+          dotnet test KYS.TestProject --settings $runSettingsFile --results-directory TestResults 
 
           # Find coverage file under KYS.TestProject\TestResults
           $coverage = Get-ChildItem -Recurse -Path "KYS.TestProject\TestResults" -Filter coverage.cobertura.xml | Select-Object -First 1
