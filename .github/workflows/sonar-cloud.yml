@@ -91,9 +91,9 @@ jobs:
         run: |
           $coverageFile = "TestResults/coverage.cobertura.xml"
           if (Test-Path $coverageFile) {
-            (Get-Content $coverageFile) -replace 'version="1.9"', 'version="1.0"' |
+            (Get-Content $coverageFile) -replace 'version="1.[0-9]+"', 'version="1"' |
               Set-Content $coverageFile -Encoding UTF8
-            Write-Host "Patched Cobertura report for SonarCloud."
+            Write-Host "Patched Cobertura report version to 1 for SonarCloud."
           } else {
             Write-Error "Coverage file not found at $coverageFile"
             exit 1
