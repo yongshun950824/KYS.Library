@@ -86,6 +86,19 @@ jobs:
           Copy-Item $coverage.FullName "TestResults/coverage.cobertura.xml" -Force
         shell: pwsh
 
+      - name: Fix Cobertura report for SonarCloud
+        shell: pwsh
+        run: |
+          $coverageFile = "TestResults/coverage.cobertura.xml"
+          if (Test-Path $coverageFile) {
+            (Get-Content $coverageFile) -replace 'version="1.9"', 'version="1.0"' |
+              Set-Content $coverageFile -Encoding UTF8
+            Write-Host "Patched Cobertura report for SonarCloud."
+          } else {
+            Write-Error "Coverage file not found at $coverageFile"
+            exit 1
+          }
+    
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
