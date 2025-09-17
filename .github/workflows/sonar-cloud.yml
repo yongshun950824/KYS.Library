@@ -106,10 +106,9 @@ jobs:
       - name: Patch Cobertura report for SonarCloud
         shell: pwsh
         run: |
-          $report = "TestResults/coverage.cobertura.xml"
+          $report = "TestResults/sonar/Cobertura.xml"
           if (Test-Path $report) {
-            (Get-Content $report) `
-              -replace 'version="0"', 'version="1"' `
+            (Get-Content $report) -replace 'version="[^"]+"', 'version="1"' `
               | Set-Content $report -Encoding UTF8
             Write-Host "Patched Cobertura report version to 1 for SonarCloud."
           } else {
