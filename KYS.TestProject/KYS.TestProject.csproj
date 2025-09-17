@@ -6,8 +6,8 @@
     <IsPackable>false</IsPackable>
 
 	<CollectCoverage>true</CollectCoverage>
-	<CoverletOutputFormat>opencover</CoverletOutputFormat>
-	<CoverletOutput>TestResults/coverage.opencover.xml</CoverletOutput>
+	<CoverletOutputFormat>cobertura</CoverletOutputFormat>
+	<CoverletOutput>TestResults/coverage.cobertura.xml</CoverletOutput>
 
   </PropertyGroup>
 
