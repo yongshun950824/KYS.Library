@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
   <RunConfiguration>
-    <ResultsDirectory>.\TestResults</ResultsDirectory>
+    <ResultsDirectory>TestResults</ResultsDirectory>
   </RunConfiguration>
   <DataCollectionRunSettings>
     <DataCollectors>
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
           <Format>cobertura</Format>
-          <OutputDirectory>.\TestResults</OutputDirectory>
-          <OutputName>coverage</OutputName>
         </Configuration>
       </DataCollector>
     </DataCollectors>
