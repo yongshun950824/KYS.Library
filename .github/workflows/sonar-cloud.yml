@@ -12,20 +12,42 @@ jobs:
     name: Build and analyze
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
+          
+      - name: Restore dependencies
+        run: dotnet restore
+        
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+        
+      - name: Run unit tests
+        run: dotnet test KYS.TestProject --no-build --configuration Release
+        
+  coverage:
+    name: Run coverage analysis
+    needs: build
+    if: ${{ vars.ENABLE_COVERAGE == 'true' }}
+    runs-on: windows-latest
+    steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
       - name: Cache SonarQube Cloud packages
         uses: actions/cache@v4
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+
       - name: Cache SonarQube Cloud scanner
         id: cache-sonar-scanner
         uses: actions/cache@v4
@@ -33,17 +55,112 @@ jobs:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
+
       - name: Install SonarQube Cloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-        shell: powershell
+        shell: pwsh
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
-      - name: Build and analyze
+ 
+      - name: Begin Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        shell: powershell
+        shell: pwsh
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"yongshun950824_kys-library" /o:"yongshun950824" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-          dotnet build
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+            .\.sonar\scanner\dotnet-sonarscanner begin `
+              /k:"yongshun950824_kys-library" `
+              /o:"yongshun950824" `
+              /d:sonar.token="${{ env.SONAR_TOKEN }}" `
+              /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
+              /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
+              /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
+              /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
+        
+      - name: Run tests with coverage (OpenCover)
+        run: |
+          dotnet test KYS.TestProject --results-directory TestResults `
+            --collect:"XPlat Code Coverage" `
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        shell: pwsh
+
+      - name: Install ReportGenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      - name: Convert OpenCover to Cobertura
+        run: |
+          reportgenerator -reports:TestResults/**/coverage.opencover.xml `
+            -targetdir:TestResults/sonar -reporttypes:Cobertura
+          Write-Host "Converted OpenCover -> Cobertura"
+
+      - name: Print raw Cobertura XML
+        shell: pwsh
+        run: |
+          $report = "TestResults/sonar/Cobertura.xml"
+          if (Test-Path $report) {
+            Write-Host "=== RAW Cobertura Report Start ==="
+            Get-Content $report | ForEach-Object { Write-Host $_ }
+            Write-Host "=== RAW Cobertura Report End ==="
+          } else {
+            Write-Error "Cobertura report not found!"
+            exit 1
+          }
+
+      - name: Transform Cobertura report to Sonar-compatible format
+        shell: pwsh
+        run: |
+          $input = "TestResults/sonar/Cobertura.xml"
+          $output = "TestResults/sonar/Cobertura.Sonar.xml"
+
+          if (-not (Test-Path $input)) {
+            Write-Error "Cobertura report not found: $input"
+            exit 1
+          }
+
+          [xml]$xml = Get-Content $input
+
+          # Create new XML document with expected structure
+          $newXml = New-Object System.Xml.XmlDocument
+          $decl = $newXml.CreateXmlDeclaration("1.0","UTF-8",$null)
+          $newXml.AppendChild($decl) | Out-Null
+          $root = $newXml.CreateElement("coverage")
+          $root.SetAttribute("version", "1")
+          $newXml.AppendChild($root) | Out-Null
+
+          foreach ($class in $xml.coverage.packages.package.classes.class) {
+            $fileNode = $newXml.CreateElement("file")
+            $fileNode.SetAttribute("path", $class.filename)
+
+            foreach ($line in $class.methods.method.lines.line) {
+              $lineNode = $newXml.CreateElement("lineToCover")
+              $lineNode.SetAttribute("lineNumber", $line.number)
+              $lineNode.SetAttribute("covered", $(if ($line.hits -gt 0) { "true" } else { "false" }))
+              $fileNode.AppendChild($lineNode) | Out-Null
+            }
+
+            $root.AppendChild($fileNode) | Out-Null
+          }
+
+          $newXml.Save($output)
+          Write-Host "Transformed Cobertura report into Sonar-compatible format: $output"
+
+      - name: Print transformed Cobertura XML
+        shell: pwsh
+        run: |
+          $report = "TestResults/sonar/Cobertura.Sonar.xml"
+          if (Test-Path $report) {
+            Write-Host "=== Transformed Cobertura Report Start ==="
+            Get-Content $report | ForEach-Object { Write-Host $_ }
+            Write-Host "=== Transformed Cobertura Report End ==="
+          } else {
+            Write-Error "Transformed report not found!"
+            exit 1
+          }
+          
+      - name: End Sonar analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+            .\.sonar\scanner\dotnet-sonarscanner end `
+              /d:sonar.token="${{ env.SONAR_TOKEN }}"
+        shell: pwsh
