@@ -78,7 +78,22 @@ jobs:
           reportgenerator -reports:TestResults/**/coverage.opencover.xml `
             -targetdir:TestResults/sonar -reporttypes:Cobertura
           Write-Host "Converted OpenCover -> Cobertura"
-
+          
+      - name: Patch Cobertura report for SonarCloud
+        shell: pwsh
+        run: |
+          $report = "TestResults/sonar/Cobertura.xml"
+          if (Test-Path $report) {
+            (Get-Content $report) -replace 'version="[^"]+"', 'version="1"' `
+              | Set-Content $report -Encoding UTF8
+            Write-Host "✅ Patched Cobertura report version to 1 for SonarCloud."
+            Write-Host "First 5 lines of patched report:"
+            Get-Content $report -TotalCount 5 | ForEach-Object { Write-Host $_ }
+          } else {
+            Write-Error "❌ Cobertura report not found to patch!"
+            exit 1
+          }
+          
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
