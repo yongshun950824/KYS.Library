@@ -34,7 +34,7 @@ jobs:
   coverage:
     name: Run coverage analysis
     needs: build
-    if: env.ENABLE_COVERAGE == 'true'
+    if: ${{ vars.ENABLE_COVERAGE == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
