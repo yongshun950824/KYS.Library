@@ -52,7 +52,7 @@ jobs:
               /k:"yongshun950824_kys-library" `
               /o:"yongshun950824" `
               /d:sonar.login="${{ env.SONAR_TOKEN }}" `
-              /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.xml" `
+              /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
               /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
               /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
               /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
@@ -78,19 +78,68 @@ jobs:
           reportgenerator -reports:TestResults/**/coverage.opencover.xml `
             -targetdir:TestResults/sonar -reporttypes:Cobertura
           Write-Host "Converted OpenCover -> Cobertura"
-          
-      - name: Patch Cobertura report for SonarCloud
+
+      - name: Print raw Cobertura XML
         shell: pwsh
         run: |
           $report = "TestResults/sonar/Cobertura.xml"
           if (Test-Path $report) {
-            (Get-Content $report) -replace 'version="[^"]+"', 'version="1"' `
-              | Set-Content $report -Encoding UTF8
-            Write-Host "✅ Patched Cobertura report version to 1 for SonarCloud."
-            Write-Host "First 5 lines of patched report:"
-            Get-Content $report -TotalCount 5 | ForEach-Object { Write-Host $_ }
+            Write-Host "=== RAW Cobertura Report Start ==="
+            Get-Content $report | ForEach-Object { Write-Host $_ }
+            Write-Host "=== RAW Cobertura Report End ==="
           } else {
-            Write-Error "❌ Cobertura report not found to patch!"
+            Write-Error "Cobertura report not found!"
+            exit 1
+          }
+
+      - name: Transform Cobertura report to Sonar-compatible format
+        shell: pwsh
+        run: |
+          $input = "TestResults/sonar/Cobertura.xml"
+          $output = "TestResults/sonar/Cobertura.Sonar.xml"
+
+          if (-not (Test-Path $input)) {
+            Write-Error "Cobertura report not found: $input"
+            exit 1
+          }
+
+          [xml]$xml = Get-Content $input
+
+          # Create new XML document with expected structure
+          $newXml = New-Object System.Xml.XmlDocument
+          $decl = $newXml.CreateXmlDeclaration("1.0","UTF-8",$null)
+          $newXml.AppendChild($decl) | Out-Null
+          $root = $newXml.CreateElement("coverage")
+          $root.SetAttribute("version", "1")
+          $newXml.AppendChild($root) | Out-Null
+
+          foreach ($class in $xml.coverage.packages.package.classes.class) {
+            $fileNode = $newXml.CreateElement("file")
+            $fileNode.SetAttribute("path", $class.filename)
+
+            foreach ($line in $class.methods.method.lines.line) {
+              $lineNode = $newXml.CreateElement("lineToCover")
+              $lineNode.SetAttribute("lineNumber", $line.number)
+              $lineNode.SetAttribute("covered", $(if ($line.hits -gt 0) { "true" } else { "false" }))
+              $fileNode.AppendChild($lineNode) | Out-Null
+            }
+
+            $root.AppendChild($fileNode) | Out-Null
+          }
+
+          $newXml.Save($output)
+          Write-Host "Transformed Cobertura report into Sonar-compatible format: $output"
+
+      - name: Print transformed Cobertura XML
+        shell: pwsh
+        run: |
+          $report = "TestResults/sonar/Cobertura.Sonar.xml"
+          if (Test-Path $report) {
+            Write-Host "=== Transformed Cobertura Report Start ==="
+            Get-Content $report | ForEach-Object { Write-Host $_ }
+            Write-Host "=== Transformed Cobertura Report End ==="
+          } else {
+            Write-Error "Transformed report not found!"
             exit 1
           }
           
