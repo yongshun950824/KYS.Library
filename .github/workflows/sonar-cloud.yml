@@ -38,102 +38,51 @@ jobs:
 
       - name: Install SonarQube Cloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-        shell: powershell
+        shell: pwsh
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
-
-      - name: Restore dependencies
-        run: dotnet restore
  
       - name: Begin Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        shell: powershell
+        shell: pwsh
         run: |
             .\.sonar\scanner\dotnet-sonarscanner begin `
               /k:"yongshun950824_kys-library" `
               /o:"yongshun950824" `
-              /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
+              /d:sonar.login="${{ env.SONAR_TOKEN }}" `
               /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.xml" `
               /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
               /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
               /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
 
-      - name: Build
-        run: dotnet build --no-incremental
+      - name: Restore dependencies
+        run: dotnet restore
         
-      - name: Run tests with coverage
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+        
+      - name: Run tests with coverage (OpenCover)
         run: |
-          $runSettingsFile = "KYS.Library.runsettings"
-          if (-not (Test-Path $runSettingsFile)) {
-            Write-Error "The settings file '$runSettingsFile' could not be found!"
-            exit 1
-          }
-      
-          Write-Host "Running tests with coverage using settings file: $runSettingsFile"
-          dotnet test KYS.TestProject --settings $runSettingsFile --results-directory TestResults
-      
-          # Search anywhere under TestResults
-          $coverage = Get-ChildItem -Recurse -Path "TestResults" -Filter coverage.cobertura.xml | Select-Object -First 1
-          if (-not $coverage) {
-            Write-Error "Coverage file not found!"
-            Get-ChildItem -Recurse -Path "TestResults" | ForEach-Object { Write-Host "Found: $($_.FullName)" }
-            exit 1
-          }
-      
-          Write-Host "Found coverage at $($coverage.FullName)"
-
-          # Print the first 20 lines for debugging
-          Write-Host "----- coverage.cobertura.xml (head) -----"
-          Get-Content $coverage.FullName -Head 20 | ForEach-Object { Write-Host $_ }
-          Write-Host "----- end head -----"
-    
-          Copy-Item $coverage.FullName "TestResults/coverage.cobertura.xml" -Force
+          dotnet test KYS.TestProject --results-directory TestResults `
+            --collect:"XPlat Code Coverage" `
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
         shell: pwsh
 
       - name: Install ReportGenerator
         run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
-      - name: Convert coverage to Sonar-compatible Cobertura
-        shell: pwsh
+      - name: Convert OpenCover to Cobertura
         run: |
-          reportgenerator `
-            -reports:TestResults/coverage.cobertura.xml `
-            -targetdir:TestResults/sonar `
-            -reporttypes:Cobertura
-          
-      - name: Patch Cobertura report for SonarCloud
-        shell: pwsh
-        run: |
-          $report = "TestResults/sonar/Cobertura.xml"
-          if (Test-Path $report) {
-            (Get-Content $report) -replace 'version="[^"]+"', 'version="1"' `
-              | Set-Content $report -Encoding UTF8
-            Write-Host "Patched Cobertura report version to 1 for SonarCloud."
-          } else {
-            Write-Error "Cobertura report not found to patch!"
-            exit 1
-          }
+          reportgenerator -reports:TestResults/**/coverage.opencover.xml `
+            -targetdir:TestResults/sonar -reporttypes:Cobertura
+          Write-Host "Converted OpenCover -> Cobertura"
 
-      - name: Clean Cobertura report for SonarCloud
-        shell: pwsh
-        run: |
-          $report = "TestResults/coverage.cobertura.xml"
-          if (Test-Path $report) {
-            $content = Get-Content $report
-            $clean = $content | Where-Object {$_ -notmatch "^\s*<sources>|^\s*<source>|^\s*</sources>"}
-            $clean | Set-Content $report -Encoding UTF8
-            Write-Host "Removed <sources> section from Cobertura report."
-          } else {
-            Write-Error "Cobertura report not found to clean!"
-            exit 1
-          }
-          
       - name: End Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
             .\.sonar\scanner\dotnet-sonarscanner end `
-              /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-        shell: powershell
+              /d:sonar.login="${{ env.SONAR_TOKEN }}"
+        shell: pwsh
