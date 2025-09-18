@@ -51,7 +51,7 @@ jobs:
             .\.sonar\scanner\dotnet-sonarscanner begin `
               /k:"yongshun950824_kys-library" `
               /o:"yongshun950824" `
-              /d:sonar.login="${{ env.SONAR_TOKEN }}" `
+              /d:sonar.token="${{ env.SONAR_TOKEN }}" `
               /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
               /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
               /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
@@ -148,5 +148,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
             .\.sonar\scanner\dotnet-sonarscanner end `
-              /d:sonar.login="${{ env.SONAR_TOKEN }}"
+              /d:sonar.token="${{ env.SONAR_TOKEN }}"
         shell: pwsh
