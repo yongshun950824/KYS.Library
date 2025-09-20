@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
 namespace KYS.TestProject.ValidationsUnitTests
 {
@@ -30,7 +29,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(true, isValid);
+            Assert.IsTrue(isValid);
             Assert.AreEqual(0, results.Count);
         }
 
@@ -50,7 +49,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(false, isValid);
+            Assert.IsFalse(isValid);
             Assert.AreEqual(1, results.Count);
         }
 
@@ -70,7 +69,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(false, isValid);
+            Assert.IsFalse(isValid);
             Assert.AreEqual(1, results.Count);
         }
 
@@ -90,7 +89,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(false, isValid);
+            Assert.IsFalse(isValid);
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual($"{nameof(EnumerableWithErrorMessageModel.List)} is mandatory.", results[0].ErrorMessage);
         }

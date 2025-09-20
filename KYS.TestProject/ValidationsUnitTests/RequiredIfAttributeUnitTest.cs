@@ -53,7 +53,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(false, isValid);
+            Assert.IsFalse(isValid);
             Assert.AreEqual(1, results.Count);
         }
 
@@ -74,7 +74,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(false, isValid);
+            Assert.IsFalse(isValid);
             Assert.AreEqual(1, results.Count);
         }
 
@@ -95,10 +95,9 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(true, isValid);
+            Assert.IsTrue(isValid);
             Assert.AreEqual(0, results.Count);
         }
-
 
         [Test]
         public void ValidateRequiredIfTrueWithNullValueAndFailWithErrorMessage()
@@ -117,7 +116,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(false, isValid);
+            Assert.IsFalse(isValid);
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual($"{nameof(RequiredWithErrorMessageModel.Value)} is mandatory when {nameof(RequiredWithErrorMessageModel.IsRequired)} is true.",
                 results.FirstOrDefault()?.ErrorMessage);
