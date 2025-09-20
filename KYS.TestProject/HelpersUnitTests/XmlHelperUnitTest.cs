@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.HelpersUnitTests
 {
     internal class XmlHelperUnitTest
     {
@@ -72,7 +72,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void BeautifyXmlDocument()
+        public void Beautify_WithXmlDocument_ShouldBeautify()
         {
             // Arrange
             string inputXml = _personXml;
@@ -81,7 +81,7 @@ namespace KYS.TestProject
             xmlDoc.LoadXml(inputXml);
 
             // Act
-            string xml = XmlHelper.Beautify(xmlDoc);
+            string xml = xmlDoc.Beautify();
 
             // Assert
             Assert.IsNotNull(xml);
@@ -90,13 +90,13 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void BeautifyXDocument()
+        public void Beautify_WithXDocument_ShouldBeautify()
         {
             // Arrange
             XDocument inputXDoc = _personXDoc;
 
             // Act
-            string xml = XmlHelper.Beautify(inputXDoc);
+            string xml = inputXDoc.Beautify();
 
             // Assert
             Assert.IsNotNull(xml);
@@ -105,7 +105,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void XmlSerialize()
+        public void Serialize_ShouldSerializeToXmlString()
         {
             // Arrange
             Person inputObj = _person;
@@ -120,7 +120,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void XmlDocumentSerializeToFile()
+        public void WriteFile_WithXmlDocument_ShouldGenerateXmlFile()
         {
             // Arrange
             string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now:yyyyMMddHHmm}.xml");
@@ -135,7 +135,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void XDocumentSerializeToFile()
+        public void WriteFile_WithXDocument_ShouldGenerateXmlFile()
         {
             // Arrange
             string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now:yyyyMMddHHmm}.xml");
@@ -149,7 +149,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void ObjectToXmlSerializeToFile()
+        public void WriteFile_WithObject_ShouldGenerateXmlFile()
         {
             // Arrange
             string filePath = Path.Combine(_outputDir, $"Result-{DateTime.Now:yyyyMMddHHmm}.xml");
@@ -163,7 +163,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void XmlDocumentToXDocument()
+        public void ToXDocument_FromXmlDocument_ShouldConvertToXDocument()
         {
             // Arrange
             XmlDocument xmlDocument = new XmlDocument();
@@ -178,7 +178,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void XDocumentToXmlDocument()
+        public void ToXmlDocument_FromXDocument_ShouldConvertToXmlDocument()
         {
             // Arrange
             XDocument xDocument = _personXDoc;
@@ -192,7 +192,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void DeserializeFromXmlDocument()
+        public void Deserialize_FromXmlDocument_ShouldDeserializeToClass()
         {
             // Arrange
             XmlDocument xmlDocument = new XmlDocument();
@@ -209,7 +209,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void DeserializeFromXDocument()
+        public void Deserialize_FromXDocument_ShouldDeserializeToClass()
         {
             // Arrange
             XDocument xDocument = _personXDoc;

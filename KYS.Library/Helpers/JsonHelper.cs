@@ -4,6 +4,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -42,8 +43,8 @@ namespace KYS.Library.Helpers
             return JObject.FromObject(source, DefaultSerializer)
                 .Descendants()
                 .OfType<JValue>()
-                .ToDictionary(k => ConstructFlattenKeyByFormat(k.Path, flattenFormat),
-                    v => v.Value<object>());
+                .ToDictionary(k => ConstructFlattenKey(k.Path, flattenFormat),
+                    v => v.Value);
         }
 
         public static Dictionary<string, object> FlattenArray<T>(T source,
@@ -66,7 +67,7 @@ namespace KYS.Library.Helpers
                 }
                 else
                 {
-                    AddFlattenEntry(dict, jToken.Path, jToken.Value<JToken>(), flattenFormat);
+                    AddFlattenEntry(dict, jToken.Path, ((JValue)jToken).Value, flattenFormat);
                 }
             }
 
@@ -90,12 +91,12 @@ namespace KYS.Library.Helpers
 
         private static void AddFlattenEntry(Dictionary<string, object> dict, string key, object value, FlattenFormat flattenFormat)
         {
-            key = ConstructFlattenKeyByFormat(key, flattenFormat);
+            key = ConstructFlattenKey(key, flattenFormat);
 
             dict.Add(key, value);
         }
 
-        private static string ConstructFlattenKeyByFormat(string key, FlattenFormat flattenFormat)
+        public static string ConstructFlattenKey(string key, FlattenFormat flattenFormat)
         {
             return flattenFormat switch
             {
@@ -106,7 +107,8 @@ namespace KYS.Library.Helpers
                 FlattenFormat.JS =>
                     DigitJsonPathReplacementRegex().Replace(key, ".$1")
                         .RemovePreFix("."),
-                _ => key
+                FlattenFormat.JsonPath => key,
+                _ => throw new InvalidEnumArgumentException(nameof(flattenFormat), (int)flattenFormat, typeof(FlattenFormat))
             };
         }
 
