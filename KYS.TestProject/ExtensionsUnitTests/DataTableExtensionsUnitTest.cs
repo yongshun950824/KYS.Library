@@ -112,6 +112,12 @@ namespace KYS.TestProject.ExtensionsUnitTests
             Assert.AreEqual(dt.Rows[0][nameof(Model.Description)], list[0].Description);
         }
 
-        private record Model(string Name, string Description);
+        private record Model(string Name, string Description)
+        {
+            public Model(): this(null, null)
+            {
+
+            }
+        };
     }
 }
