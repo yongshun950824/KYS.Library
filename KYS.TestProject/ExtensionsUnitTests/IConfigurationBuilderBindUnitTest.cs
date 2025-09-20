@@ -11,7 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ExtensionsUnitTests
 {
     internal class IConfigurationBuilderBindUnitTest
     {
@@ -194,7 +194,7 @@ namespace KYS.TestProject
             {
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
                 DateParseHandling = DateParseHandling.DateTime,
-                Culture = System.Globalization.CultureInfo.InvariantCulture,
+                Culture = CultureInfo.InvariantCulture,
                 Converters = { new IsoDateTimeConverter() }
             };
             Assert.AreEqual(

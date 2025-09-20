@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ValidationsUnitTests
 {
     internal class RequiredIf2AttributeUnitTest
     {

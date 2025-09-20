@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using static KYS.Library.Helpers.CompareOperator;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.HelpersUnitTests
 {
     internal class ExpressionBuilderUnitTest
     {
@@ -32,7 +32,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -113,7 +113,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -140,7 +140,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -167,7 +167,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -194,7 +194,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -227,7 +227,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -260,7 +260,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -293,7 +293,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -326,7 +326,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -359,7 +359,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -392,7 +392,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -425,7 +425,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -458,7 +458,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -491,7 +491,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -524,7 +524,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -563,7 +563,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -602,7 +602,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -641,7 +641,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -680,7 +680,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -719,7 +719,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -758,7 +758,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -797,7 +797,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -836,7 +836,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -875,7 +875,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
 
         [Test]
@@ -914,7 +914,7 @@ namespace KYS.TestProject
 
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
-            Assert.IsTrue(Enumerable.SequenceEqual(expectedTestResult, result));
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
         }
     }
 }

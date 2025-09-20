@@ -1,4 +1,5 @@
-﻿using KYS.Library.Services;
+﻿using iText.Commons.Actions;
+using KYS.Library.Services;
 using KYS.TestProject.Resources;
 using NUnit.Framework;
 using System;
@@ -9,9 +10,9 @@ using System.Reflection;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ServicesUnitTests
 {
-    public class SingleResourceTranslationServiceUnitTest
+    public class MultiResourcesTranslationServiceUnitTest
     {
         private static readonly JsonSerializerOptions _serializerOptions = new JsonSerializerOptions
         {
@@ -29,8 +30,8 @@ namespace KYS.TestProject
         {
             // Arrange
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource)
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly()
             );
 #pragma warning restore S3242
             CultureInfo expectedValue = CultureInfo.CurrentCulture;
@@ -46,10 +47,9 @@ namespace KYS.TestProject
         public void InitializeThaiCulture()
         {
             // Arrange
-#pragma warning disable S3242
             CultureInfo expectedValue = new CultureInfo("th-TH");
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
+#pragma warning disable S3242
+            using ITranslationService translationService = new MultiResourcesTranslationService(
                 expectedValue
             );
 #pragma warning restore S3242
@@ -66,8 +66,7 @@ namespace KYS.TestProject
         {
             // Arrange
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
+            using ITranslationService translationService = new MultiResourcesTranslationService(
                 new CultureInfo("th-TH")
             );
 #pragma warning restore S3242
@@ -89,8 +88,7 @@ namespace KYS.TestProject
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
+            using ITranslationService translationService = new MultiResourcesTranslationService(
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
@@ -107,13 +105,14 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GetLanguagesWithSecondConstructor()
+        public void GetLanguagesWithFirstConstructor()
         {
             // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
-                new CultureInfo("th-TH")
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
@@ -131,14 +130,14 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GetLanguagesWithThirdConstructor()
+        public void GetLanguagesWithSecondConstructor()
         {
             // Arrange
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource).FullName,
+            using ITranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
-                new CultureInfo("th-TH")
+                new CultureInfo("th-TH"),
+                new List<CultureInfo> { new CultureInfo("th-TH"), new CultureInfo("zh-CN") }
             );
 #pragma warning restore S3242
 
@@ -153,16 +152,19 @@ namespace KYS.TestProject
             Assert.IsNotNull(languages);
             Assert.AreNotEqual(notExpectedValue, serializedLanguageObj);
             Assert.IsNotNull(languages.FirstOrDefault(x => x.CultureName == "th-TH"));
+            Assert.IsNotNull(languages.FirstOrDefault(x => x.CultureName == "zh-CN"));
         }
 
         [Test]
         public void TranslateForChildInEnglish()
         {
             // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
-                new CultureInfo("th-TH")
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
@@ -180,10 +182,12 @@ namespace KYS.TestProject
         public void TranslateUnknownInEnglishAndReturnOriginalValue()
         {
             // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
-                new CultureInfo("th-TH")
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
@@ -201,10 +205,12 @@ namespace KYS.TestProject
         public void TranslateUnknownInEnglishAndThrowException()
         {
             // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
-                new CultureInfo("th-TH")
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
@@ -223,11 +229,12 @@ namespace KYS.TestProject
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            Type resourceType = typeof(Resource);
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                resourceType,
-                cultureInfo
+            Type resourceType = typeof(Resource);
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
@@ -246,10 +253,12 @@ namespace KYS.TestProject
         public void TranslateSpouseToUnsupportedCultureAndReturnOriginalValue()
         {
             // Arrange
+            CultureInfo culture = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
-                new CultureInfo("th-TH")
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                culture,
+                new List<CultureInfo> { culture }
             );
 #pragma warning restore S3242
 
@@ -258,7 +267,7 @@ namespace KYS.TestProject
             string expectedValue = "Spouse";
 
             // Act
-            string actualValue = translationService.Translate(input, cultureName: cultureName);
+            string actualValue = translationService.Translate(input, cultureName);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
@@ -268,21 +277,21 @@ namespace KYS.TestProject
         public void TranslateSpouseToSpecificCulture()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            Type resourceType = typeof(Resource);
-
+            CultureInfo culture = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                resourceType
+            Type resourceType = typeof(Resource);
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultures: new List<CultureInfo> { culture }
             );
 #pragma warning restore S3242
 
             string input = "Spouse";
             //string expectedValue = "คู่สมรส";
-            string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
+            string expectedValue = Helpers.GetTranslatedText(input, resourceType, culture) ?? input;
 
             // Act
-            string actualValue = translationService.Translate(input, culture: cultureInfo);
+            string actualValue = translationService.Translate(input, culture: culture);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
@@ -292,10 +301,12 @@ namespace KYS.TestProject
         public void TranslateSpouseToDefaultCultureAndReturnOriginalValue()
         {
             // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
-                new CultureInfo("th-TH")
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                currentCulture: cultureInfo,
+                cultures: new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
@@ -315,9 +326,10 @@ namespace KYS.TestProject
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                typeof(Resource),
-                cultureInfo
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                currentCulture: cultureInfo,
+                cultures: new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
@@ -332,23 +344,49 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseWithSpecificResourceAndThrowNotSupportException()
+        public void TranslateSpouseWithSpecificResource()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                resourceType,
-                cultureInfo
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
             );
 #pragma warning restore S3242
 
-            string input = "unknown";
-            NotSupportedException expectedEx = new NotSupportedException($"Translate with specified resource is not supported in {nameof(SingleResourceTranslationService)}");
+            string input = "Spouse";
+            //string expectedValue = "คู่สมรส";
+            string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
-            var ex = Assert.Throws<NotSupportedException>(() => translationService.Translate(input, resourceType));
+            string actualValue = translationService.Translate(input, resourceType);
+
+            // Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+        [Test]
+        public void TranslateSpouseWithInvalidResource()
+        {
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(string);     // Invalid resource
+#pragma warning disable S3242
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
+            );
+#pragma warning restore S3242
+
+            string input = "Spouse";
+            ArgumentException expectedEx = new ArgumentException($"{resourceType.FullName} resource does not existed.");
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => translationService.Translate(input, resourceType));
 
             // Assert
             Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
@@ -361,8 +399,8 @@ namespace KYS.TestProject
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
 #pragma warning disable S3242
-            using ITranslationService translationService = new SingleResourceTranslationService(
-                resourceType,
+            using ITranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
@@ -374,7 +412,7 @@ namespace KYS.TestProject
             string expectedValue = Helpers.GetTranslatedText(resourceKey, resourceType, cultureInfo) ?? input;
 
             // Act
-            string actualValue = translationService.Translate(input);
+            string actualValue = translationService.Translate(input, resourceType);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);

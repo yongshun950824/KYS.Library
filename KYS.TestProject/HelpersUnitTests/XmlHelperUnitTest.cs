@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.HelpersUnitTests
 {
     internal class XmlHelperUnitTest
     {
@@ -81,7 +81,7 @@ namespace KYS.TestProject
             xmlDoc.LoadXml(inputXml);
 
             // Act
-            string xml = XmlHelper.Beautify(xmlDoc);
+            string xml = xmlDoc.Beautify();
 
             // Assert
             Assert.IsNotNull(xml);
@@ -96,7 +96,7 @@ namespace KYS.TestProject
             XDocument inputXDoc = _personXDoc;
 
             // Act
-            string xml = XmlHelper.Beautify(inputXDoc);
+            string xml = inputXDoc.Beautify();
 
             // Assert
             Assert.IsNotNull(xml);
