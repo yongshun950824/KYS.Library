@@ -4,7 +4,7 @@ using NUnit.Framework;
 using System;
 using System.IO;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ServicesUnitTests
 {
     public class QrGeneratorServiceUnitTest
     {
@@ -254,7 +254,7 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath, 
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
                     width, height, _defaultMargin, logoWidth, logoHeight);
             });
 
@@ -276,7 +276,7 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath, 
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
                     width, height, _defaultMargin, logoWidth, logoHeight);
             });
 

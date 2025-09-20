@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ServicesUnitTests
 {
     internal class ZipServiceUnitTest
     {
@@ -99,7 +99,7 @@ namespace KYS.TestProject
                 {
                     FileName = "Sample.zip",
                     FileItems = _fileItems,
-                    Password = String.Empty
+                    Password = string.Empty
                 };
                 zipService.Zip();
             });
