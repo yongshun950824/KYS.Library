@@ -288,9 +288,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void GenerateQRAndToMemoryStream()
         {
             // Arrange
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
 
             // Act
             MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
@@ -301,13 +299,28 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
+        public void GenerateQRAndWriteToFileWithoutFilePathAndFailed()
+        {
+            // Arrange
+            string filePath = null;
+            ArgumentNullException expectedEx = new ArgumentNullException(nameof(filePath));
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+
+            // Act
+            var ex = Assert.Throws<ArgumentNullException>(
+                () => qrGeneratorService.DrawAndToFile(filePath)
+            );
+
+            // Assert
+            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+        }
+
+        [Test]
         public void GenerateQRAndWriteToFile()
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
 
             // Act
             qrGeneratorService.DrawAndToFile(filePath);
@@ -317,13 +330,25 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
+        public void GenerateQRAndWriteToFileWithFilePathNoExtension()
+        {
+            // Arrange
+            string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}");
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+
+            // Act
+            qrGeneratorService.DrawAndToFile(filePath);
+
+            // Assert
+            Assert.IsTrue(File.Exists(filePath + ".png"));
+        }
+
+        [Test]
         public void GenerateQRWithLogoAndWriteToFile()
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
 
             // Act
             qrGeneratorService.DrawAndToFile(filePath);
@@ -336,9 +361,8 @@ namespace KYS.TestProject.ServicesUnitTests
         public void GenerateQRAndToBase64()
         {
             // Arrange
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+
             using MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
             string expectedBase64String = Convert.ToBase64String(ms.ToArray());
 
@@ -357,9 +381,8 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             string dataUriPrefix = "data:image/png;base64, ";
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+ 
             string base64String = qrGeneratorService.DrawAndToBase64();
             string expectedDataUri = dataUriPrefix + base64String;
 

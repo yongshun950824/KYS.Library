@@ -32,7 +32,7 @@ namespace KYS.TestProject.ValidationsUnitTests
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
 
             // Assert
-            Assert.AreEqual(true, isValid);
+            Assert.IsTrue(isValid);
             Assert.AreEqual(0, results.Count);
         }
 

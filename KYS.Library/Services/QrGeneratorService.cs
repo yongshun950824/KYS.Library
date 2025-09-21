@@ -78,9 +78,6 @@ namespace KYS.Library.Services
             if (height <= logoHeight)
                 throw new ArgumentException("Provided logo height must be smaller than QR code height.");
 
-            if (width * height <= logoWidth * logoHeight)
-                throw new ArgumentException("Provided logo area must be smaller than QR code area.");
-
             _logoPath = logoPath;
             _logoWidth = logoWidth;
             _logoHeight = logoHeight;

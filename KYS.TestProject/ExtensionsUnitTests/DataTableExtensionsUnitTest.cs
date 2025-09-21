@@ -1,5 +1,6 @@
 ﻿using KYS.Library.Extensions;
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -90,7 +91,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ConvertDataTableToListWithDataTable()
+        public void ConvertDataTableToList()
         {
             // Arrange
             DataTable dt = new DataTable();
@@ -112,12 +113,57 @@ namespace KYS.TestProject.ExtensionsUnitTests
             Assert.AreEqual(dt.Rows[0][nameof(Model.Description)], list[0].Description);
         }
 
+        [Test]
+        public void ConvertDataTableToListWithUnknownProperty()
+        {
+            // Arrange
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Description", typeof(string));
+            dt.Columns.Add("UnknownKey", typeof(string));
+
+            var row = dt.NewRow();
+            row["Name"] = "Test";
+            row["Description"] = "This is a description.";
+            row["UnknownKey"] = "Unknown value";
+
+            dt.Rows.Add(row);
+
+            // Act
+            IList<Model> list = dt.ToList<Model>();
+
+            // Assert
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(dt.Rows[0][nameof(Model.Name)], list[0].Name);
+            Assert.AreEqual(dt.Rows[0][nameof(Model.Description)], list[0].Description);
+        }
+
+        [Test]
+        public void ConvertDataTableToListWithDBNullValue()
+        {
+            // Arrange
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Description", typeof(string));
+
+            var row = dt.NewRow();
+            row["Name"] = "Test";
+            row["Description"] = DBNull.Value;
+
+            dt.Rows.Add(row);
+
+            // Act
+            IList<Model> list = dt.ToList<Model>();
+
+            // Assert
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(dt.Rows[0][nameof(Model.Name)], list[0].Name);
+            Assert.AreEqual(null, list[0].Description);
+        }
+
         private record Model(string Name, string Description)
         {
-            public Model(): this(null, null)
-            {
-
-            }
+            public Model(): this(null, null) { }
         };
     }
 }
