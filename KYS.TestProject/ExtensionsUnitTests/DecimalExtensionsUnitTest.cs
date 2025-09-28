@@ -12,7 +12,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RoundUpToZeroDecimalPlaces()
+        public void Round_WithAnyValues_ShouldReturnDecimalRoundUpToZeroDecimalPlace()
         {
             // Arrange
             decimal input1 = 100;
@@ -31,7 +31,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RoundUpToTwoDecimalPlaces()
+        public void Round_WithAnyValues_ShouldReturnDecimalRoundUpToTwoDecimalPlaces()
         {
             // Arrange
             decimal input1 = 100;
@@ -50,7 +50,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RoundUpToThreeDecimalPlaces()
+        public void Round_WithAnyValues_ShouldReturnDecimalRoundUpToThreeDecimalPlaces()
         {
             // Arrange
             decimal input1 = 100;

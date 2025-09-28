@@ -15,6 +15,7 @@ namespace KYS.Library.Extensions
             TEnum valueType = default(TEnum);
 
             return typeof(TEnum).GetFields()
+                .Where(fieldInfo => fieldInfo.IsLiteral)
                 .Select(fieldInfo => (TEnum)fieldInfo.GetValue(valueType))
                 .Distinct();
         }
@@ -22,8 +23,11 @@ namespace KYS.Library.Extensions
         public static IEnumerable<string> GetEnumNames<TEnum>()
             where TEnum : Enum
         {
+            TEnum valueType = default(TEnum);
+
             return typeof(TEnum).GetFields()
-                .Select(fieldInfo => fieldInfo.Attributes.ToDescription())
+                .Where(fieldInfo => fieldInfo.IsLiteral)
+                .Select(fieldInfo => ToDescription((Enum)fieldInfo.GetValue(valueType)))
                 .Distinct();
         }
 
@@ -81,10 +85,10 @@ namespace KYS.Library.Extensions
                     return (TEnum)field.GetValue(null);
             }
 
-            throw new ArgumentException($"{value} is not found.");
+            throw new KeyNotFoundException($"{value} is not found.");
         }
 
-        public static TEnum GetValueByDescriptionAttribute<TEnum>(string value)
+        public static TEnum GetValueByDescription<TEnum>(string value)
             where TEnum : Enum
         {
             var enumDict = Enum.GetValues(typeof(TEnum))

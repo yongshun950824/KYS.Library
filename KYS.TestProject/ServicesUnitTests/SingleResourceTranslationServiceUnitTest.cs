@@ -25,7 +25,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void NotInitializeCurrentCulture()
+        public void Constructor_WithoutInitializeCulture_ShouldReturnCurrentCulture()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -41,7 +41,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void InitializeThaiCulture()
+        public void Constructor_WithInitializeThaiCulture_ShouldGetCorrectCulture()
         {
             // Arrange
             CultureInfo expectedValue = new CultureInfo("th-TH");
@@ -58,7 +58,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void NotInitializeCultureInfos()
+        public void Constructor_WithoutInitializeCultureInfos_ShouldGetAllCultures()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -77,7 +77,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void InitializeCultureInfos()
+        public void Constructor_WithInitializeCultureInfos_ShouldGetCurrentCutures()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
@@ -97,7 +97,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void GetLanguagesWithSecondConstructor()
+        public void Constructor_WithSecondConstructor_ShouldGetLanguages()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -118,7 +118,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void GetLanguagesWithThirdConstructor()
+        public void Constructor_WithThirdConstructor_ShouldGetLanguages()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -140,7 +140,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateForChildInEnglish()
+        public void TranslateToEnglish_ShouldReturnTranslatedEnglishText()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -158,7 +158,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateUnknownInEnglishAndReturnOriginalValue()
+        public void TranslateToEnglish_WithUnknown_ShouldReturnOriginalValue()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -176,7 +176,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateUnknownInEnglishAndThrowException()
+        public void TranslateToEnglish_WithUnknownAndDisableReturnedOriginalValue_ShouldThrowException()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -194,7 +194,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateSpouseToDefaultCulture()
+        public void Translate_WithoutCulture_ShouldReturnDefaultCultureText()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
@@ -204,7 +204,7 @@ namespace KYS.TestProject.ServicesUnitTests
                 cultureInfo
             );
             string input = "Spouse";
-            //string expectedValue = "คู่สมรส";
+            // คู่สมรส
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
@@ -215,7 +215,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateSpouseToUnsupportedCultureAndReturnOriginalValue()
+        public void Translate_ToUnsupportedCulture_ShouldReturnOriginalValue()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -234,7 +234,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateSpouseToSpecificCulture()
+        public void Translate_ToSpecificCulture_ShouldReturnTranslatedText()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
@@ -243,7 +243,7 @@ namespace KYS.TestProject.ServicesUnitTests
                 resourceType
             );
             string input = "Spouse";
-            //string expectedValue = "คู่สมรส";
+            // คู่สมรส
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
@@ -254,7 +254,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateSpouseToDefaultCultureAndReturnOriginalValue()
+        public void Translate_ToDefaultCulture_ShouldReturnOriginalValue()
         {
             // Arrange
             using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
@@ -272,7 +272,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateSpouseToDefaultCultureAndThrowException()
+        public void Translate_WithDisabledReturnedOriginalValueAndToDefaultCulture_ShouldThrowException()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
@@ -291,7 +291,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateSpouseWithSpecificResourceAndThrowNotSupportException()
+        public void Translate_WithSpecificResource_ShouldThrowException()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
@@ -311,7 +311,7 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
-        public void TranslateSpouseIgnoreCase()
+        public void Translate_IgnoreCase_ShouldReturnTranslatedText()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");

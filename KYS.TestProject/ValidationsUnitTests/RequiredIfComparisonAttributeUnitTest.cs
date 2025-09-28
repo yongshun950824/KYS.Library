@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace KYS.TestProject.ValidationsUnitTests
 {
-    internal class RequiredIf2AttributeUnitTest
+    internal class RequiredIfComparisonAttributeUnitTest
     {
         [SetUp]
         public void SetUp()
@@ -238,7 +238,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [TestCaseSource("TestCases")]
-        public void Validate(
+        public void RequiredIfComparisonAttribute_WithTestCase_ShouldProcessValidationCorrectly(
             dynamic testInput,
             bool expectedResult,
             int expectedErrorCount,
@@ -263,7 +263,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 1,
                 @operator: CompareOperator.CompareOperatorConstants.Equal,
                 errorMessage: "Prop2 must be provided when Prop1 is 1.")]
@@ -274,7 +274,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 1,
                 @operator: CompareOperator.CompareOperatorConstants.Equal)]
             public string Prop2 { get; set; }
@@ -286,7 +286,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThan,
                 errorMessage: "Prop2 must be provided when Prop1 is less than 0.")]
@@ -297,7 +297,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThan)]
             public string Prop2 { get; set; }
@@ -309,7 +309,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThanOrEqual,
                 errorMessage: "Prop2 must be provided when Prop1 is less than or equal to 0.")]
@@ -320,7 +320,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThanOrEqual)]
             public string Prop2 { get; set; }
@@ -332,7 +332,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThan,
                 errorMessage: "Prop2 must be provided when Prop1 is greater than 100.")]
@@ -343,7 +343,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThan)]
             public string Prop2 { get; set; }
@@ -355,7 +355,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThanOrEqual,
                 errorMessage: "Prop2 must be provided when Prop1 is greater than or equal to 100.")]
@@ -366,7 +366,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThanOrEqual)]
             public string Prop2 { get; set; }
@@ -378,7 +378,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public bool Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: false,
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual,
                 errorMessage: "Prop2 must be provided when Prop1 is not false.")]
@@ -389,7 +389,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public bool Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: false,
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual)]
             public string Prop2 { get; set; }
@@ -399,7 +399,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public bool Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: false,
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual)]
             public string Prop2 { get; set; }
@@ -409,7 +409,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public string Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: "Yes",
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual)]
             public int Prop2 { get; set; }

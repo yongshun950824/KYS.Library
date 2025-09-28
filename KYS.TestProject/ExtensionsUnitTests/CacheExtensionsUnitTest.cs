@@ -9,7 +9,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
     internal class CacheExtensionsUnitTest
     {
         [Test]
-        public void MemoryCacheAddEntryWithExpirySeconds()
+        public void Add_WithKeyAndExpirySeconds_ShouldStoreValueInCache()
         {
             // Arrange
             string key = "myKey";
@@ -37,7 +37,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void MemoryCacheAddEntryWithExpiryTimeSpan()
+        public void Add_WithKeyAndExpiryTimeSpan_ShouldStoreValueInCache()
         {
             // Arrange
             string key = "myKey";
@@ -65,7 +65,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void MemoryCacheGetNonExistentEntry()
+        public void Get_WithNonExistentEntry_ShouldReturnsFalse()
         {
             // Arrange
             string key = "myKey";
@@ -85,7 +85,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void MemoryCacheGetExistingEntry()
+        public void Get_WithExistingEntry_ShouldReturnsTrue()
         {
             // Arrange
             string key = "myKey";

@@ -14,7 +14,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateEnumerableRequireAndPass()
+        public void EnumerableRequireAttribute_WithNonEmptyList_ShouldPassValidation()
         {
             // Arrange
             EnumerableModel testInput = new EnumerableModel
@@ -34,7 +34,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateEnumerableRequireAndFail()
+        public void EnumerableRequireAttribute_WithEmptyList_ShouldFailValidation()
         {
             // Arrange
             EnumerableModel testInput = new EnumerableModel
@@ -54,7 +54,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateEnumerableRequireWithNullAndFail()
+        public void EnumerableRequireAttribute_WithNullList_ShouldFailValidation()
         {
             // Arrange
             EnumerableModel testInput = new EnumerableModel
@@ -74,7 +74,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateEnumerableRequireAndFailWithErrorMessage()
+        public void EnumerableRequireAttribute_WithEmptyList_ShouldFailValidationWithErrorMessage()
         {
             // Arrange
             EnumerableWithErrorMessageModel testInput = new EnumerableWithErrorMessageModel

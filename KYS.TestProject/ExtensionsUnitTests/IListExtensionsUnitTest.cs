@@ -15,7 +15,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ConvertListToDataTable()
+        public void ToDataTable_WithList_ShouldReturnDataTable()
         {
             // Arrange
             #region Initialize People List

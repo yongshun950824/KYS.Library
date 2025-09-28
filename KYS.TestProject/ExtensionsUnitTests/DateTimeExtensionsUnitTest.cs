@@ -13,7 +13,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GenerateDateInIso8601Format()
+        public void ToIso8601String_WithAnyDate_ShouldReturnIso8601Format()
         {
             // Arrange
             DateTime date = new DateTime(2025, 09, 10, 10, 50, 00, DateTimeKind.Unspecified);
@@ -27,7 +27,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetFirstDateOfMonth()
+        public void GetFirstDateOfMonth_WithAnyDate_ShouldReturnFirstDateOfMonth()
         {
             // Arrange
             DateTime date = new DateTime(2025, 09, 10, 10, 50, 00, DateTimeKind.Unspecified);
@@ -41,7 +41,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetLastDateOfMonth()
+        public void GetLastDateOfMonth_WithAnyDate_ShouldReturnLastDateOfMonth()
         {
             // Arrange
             DateTime dateForJan = new DateTime(2025, 01, 01, 00, 00, 00, DateTimeKind.Unspecified);
@@ -64,7 +64,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetFirstDateOfYear()
+        public void GetFirstDateOfYear_WithAnyDate_ShouldReturnFirstDateOfYear()
         {
             // Arrange
             DateTime date = new DateTime(2025, 09, 10, 10, 50, 00, DateTimeKind.Unspecified);
@@ -78,7 +78,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetLastDateOfYear()
+        public void GetLastDateOfYear_WithAnyDate_ShouldReturnLastDateOfYear()
         {
             // Arrange
             DateTime date = new DateTime(2025, 09, 10, 10, 50, 00, DateTimeKind.Unspecified);
@@ -92,7 +92,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetThaiBuddhistDate()
+        public void ConvertToThaiBuddhistDateTime_WithAnyDate_ShouldReturnDateInThaiBuddhistCalendar()
         {
             // Arrange
             DateTime date = new DateTime(2025, 09, 21, 00, 00, 00, DateTimeKind.Unspecified);
@@ -106,7 +106,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetCurrentAgeFromToday()
+        public void GetAge_FromToday_ShouldReturnAge()
         {
             // Arrange
             DateTime dob = new DateTime(1990, 09, 21, 00, 00, 00, DateTimeKind.Unspecified);
@@ -120,7 +120,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetCurrentAgeFromCalculatedDate()
+        public void GetAge_FromCalculatedDate_ShouldReturnAge()
         {
             // Arrange
             DateTime calculatedDate = new DateTime(2025, 01, 01, 00, 00, 00, DateTimeKind.Unspecified);

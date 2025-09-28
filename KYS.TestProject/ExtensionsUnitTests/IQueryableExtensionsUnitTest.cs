@@ -21,7 +21,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetVehiclesWhereIfPredicateFalse()
+        public void WhereIf_WithPredicateIsFalse_ShouldReturnFullList()
         {
             // Arrange
             bool isCarOnly = false;
@@ -36,7 +36,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void GetVehiclesWhereIfPredicateTrue()
+        public void WhereIf_WithPredicateIsTrue_ShouldReturnFilteredList()
         {
             // Arrange
             bool isCarOnly = true;

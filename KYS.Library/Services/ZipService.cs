@@ -26,10 +26,7 @@ namespace KYS.Library.Services
             get { return _fileName; }
             set
             {
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException($"{nameof(FileName)} must be provided.");
-                }
+                ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(FileName));
 
                 if (!value.EndsWith(".zip"))
                     value += ".zip";
@@ -43,10 +40,7 @@ namespace KYS.Library.Services
             get { return _password; }
             set
             {
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException($"{nameof(Password)} must be provided.");
-                }
+                ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(Password));
 
                 _password = value;
             }
@@ -58,9 +52,7 @@ namespace KYS.Library.Services
             set
             {
                 if (value.IsNullOrEmpty())
-                {
                     throw new ArgumentException($"{nameof(FileItems)} must be provided with at least 1 file.");
-                }
 
                 _fileItems = value;
             }
@@ -127,10 +119,7 @@ namespace KYS.Library.Services
         /// <param name="destDirPath"></param>
         public void ZipAndToFile(string destDirPath)
         {
-            if (String.IsNullOrEmpty(destDirPath))
-            {
-                throw new ArgumentException($"{nameof(destDirPath)} must be provided.");
-            }
+            ArgumentException.ThrowIfNullOrWhiteSpace(destDirPath);
 
             MemoryStream ms = new MemoryStream(Zip());
             ms.Seek(0, SeekOrigin.Begin);

@@ -16,7 +16,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithoutCriteria()
+        public void CompileAndExpression_WithoutCriteria_ShouldReturnAll()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -36,7 +36,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithEqual()
+        public void CompileAndExpression_WithEqual_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -63,7 +63,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithNotEqual()
+        public void CompileAndExpression_WithNotEqual_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -90,7 +90,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithLessThan()
+        public void CompileAndExpression_WithLessThan_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -117,7 +117,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithLessThanOrEqual()
+        public void CompileAndExpression_WithLessThanOrEqual_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -144,7 +144,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithGreaterThan()
+        public void CompileAndExpression_WithGreaterThan_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -171,7 +171,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithGreaterThanOrEqual()
+        public void CompileAndExpression_WithGreaterThanOrEqual_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -198,7 +198,27 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoOptionalCriterias1()
+        public void CompileOrExpression_WithoutCriteria_ShouldReturnAll()
+        {
+            // Arrange
+            var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            var filters = new List<FilterCriteria<int>> { };
+            var expectedTestResult = input.Where(x => true)
+                .ToArray();
+
+            // Act
+            Func<int, bool> compileExpr = ExpressionBuilder.CompileOrExpression(filters);
+            var result = input
+                .Where(compileExpr)
+                .ToArray();
+
+            // Assert
+            Assert.AreEqual(expectedTestResult.Length, result.Length);
+            Assert.IsTrue(expectedTestResult.SequenceEqual(result));
+        }
+
+        [Test]
+        public void CompileOrExpression_WithTwoOptionalCriteriasOne_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -231,7 +251,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoOptionalCriterias2()
+        public void CompileOrExpression_WithTwoOptionalCriteriasTwo_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -264,7 +284,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoOptionalCriterias3()
+        public void CompileOrExpression_WithTwoOptionalCriteriasThree_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -297,7 +317,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoOptionalCriterias4()
+        public void CompileOrExpression_WithTwoOptionalCriteriasFour_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -330,7 +350,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoOptionalCriterias5()
+        public void CompileOrExpression_WithTwoOptionalCriteriasFive_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -363,7 +383,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoCriterias1()
+        public void CompileAndExpression_WithTwoCriteriasOne_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -396,7 +416,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoCriterias2()
+        public void CompileAndExpression_WithTwoCriteriasTwo_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -429,7 +449,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoCriterias3()
+        public void CompileAndExpression_WithTwoCriteriasThree_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -462,7 +482,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoCriterias4()
+        public void CompileAndExpression_WithTwoCriteriasFour_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -495,7 +515,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithTwoCriterias5()
+        public void CompileAndExpression_WithTwoCriteriasFive_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -528,7 +548,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleOptionalCriterias1()
+        public void CompileOrExpression_WithMultipleCriteriasOne_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -567,7 +587,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleOptionalCriterias2()
+        public void CompileOrExpression_WithMultipleCriteriasTwo_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -606,7 +626,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleOptionalCriterias3()
+        public void CompileOrExpression_WithMultipleCriteriasThree_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -645,7 +665,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleOptionalCriterias4()
+        public void CompileOrExpression_WithMultipleCriteriasFour_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -684,7 +704,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleOptionalCriterias5()
+        public void CompileOrExpression_WithMultipleCriteriasFive_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -723,7 +743,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleCriterias1()
+        public void CompileAndExpression_WithMultipleCriteriasOne_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -762,7 +782,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleCriterias2()
+        public void CompileAndExpression_WithMultipleCriteriasTwo_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -801,7 +821,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleCriterias3()
+        public void CompileAndExpression_WithMultipleCriteriasThree_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -840,7 +860,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleCriterias4()
+        public void CompileAndExpression_WithMultipleCriteriasFour_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -879,7 +899,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void FilterArrayWithMultipleCriterias5()
+        public void CompileAndExpression_WithMultipleCriteriasFive_ShouldReturnFilteredElements()
         {
             // Arrange
             var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };

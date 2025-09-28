@@ -37,8 +37,7 @@ namespace KYS.Library.Services
 
         public QrGeneratorService(string value, int width, int height, int margin)
         {
-            if (String.IsNullOrEmpty(value))
-                throw new ArgumentNullException(nameof(value));
+            ArgumentException.ThrowIfNullOrWhiteSpace(value);
 
             if (width <= 0)
                 throw new ArgumentException($"Invalid {nameof(width)}.");
@@ -66,8 +65,7 @@ namespace KYS.Library.Services
         public QrGeneratorService(string value, string logoPath, int width, int height, int margin, int logoWidth, int logoHeight)
             : this(value, width, height, margin)
         {
-            if (String.IsNullOrEmpty(logoPath))
-                throw new ArgumentNullException(nameof(logoPath));
+            ArgumentException.ThrowIfNullOrWhiteSpace(logoPath);
 
             if (!File.Exists(logoPath))
                 throw new FileNotFoundException(nameof(logoPath));
@@ -161,8 +159,7 @@ namespace KYS.Library.Services
 
         public void DrawAndToFile(string filePath)
         {
-            if (String.IsNullOrEmpty(filePath))
-                throw new ArgumentNullException(nameof(filePath));
+            ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
 
             if (!filePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
                 filePath += ".png";

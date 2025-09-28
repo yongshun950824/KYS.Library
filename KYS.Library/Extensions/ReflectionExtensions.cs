@@ -13,17 +13,18 @@ namespace KYS.Library.Extensions
         {
             try
             {
-                object[] attributes = propertyInfo.GetCustomAttributes(typeof(DisplayAttribute), false);
+                DisplayAttribute[] attributes = propertyInfo.GetCustomAttributes<DisplayAttribute>(false)
+                   .ToArray();
 
                 if (!attributes.IsNullOrEmpty())
-                    return ((DisplayAttribute)attributes[0]).Name;
+                    return attributes[0].Name;
 
-                object[] displayNameAttributes = propertyInfo
-                    .GetCustomAttributes(typeof(DisplayNameAttribute), false)
+                DisplayNameAttribute[] displayNameAttributes = propertyInfo
+                    .GetCustomAttributes<DisplayNameAttribute>(false)
                     .ToArray();
 
                 if (!displayNameAttributes.IsNullOrEmpty())
-                    return ((DisplayNameAttribute)attributes[0]).DisplayName;
+                    return displayNameAttributes[0].DisplayName;
 
                 return propertyInfo.Name;
             }
@@ -64,62 +65,21 @@ namespace KYS.Library.Extensions
         /// <br /><br />
         /// Usage: 
         /// <br />
-        /// <c>ReflectionExtensions.GetPropertyDisplayName&#x3c;Class&#x3e;(x =&#x3e; x.Property)</c>
-        /// <br /><br />
-        /// Reference: <a href="https://stackoverflow.com/a/5015911">get the value of DisplayName attribute</a>
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="propertyExpression"></param>
-        /// <returns></returns>
-        public static string GetPropertyDisplayName<T>(Expression<Func<T, object>> propertyExpression)
-            where T : new()
-        {
-            var memberInfo = GetPropertyInformation(propertyExpression.Body);
-            if (memberInfo == null)
-                throw new ArgumentException("No property reference expression was found.", nameof(propertyExpression));
-
-            return memberInfo.ToName();
-        }
-
-        public static MemberInfo GetPropertyInformation(Expression propertyExpression)
-        {
-            MemberExpression memberExpr = propertyExpression as MemberExpression;
-            if (memberExpr == null)
-            {
-                UnaryExpression unaryExpr = propertyExpression as UnaryExpression;
-                if (unaryExpr != null
-                    && unaryExpr.NodeType == ExpressionType.Convert)
-                    memberExpr = unaryExpr.Operand as MemberExpression;
-            }
-
-            if (memberExpr != null
-                && memberExpr.Member.MemberType == MemberTypes.Property)
-                return memberExpr.Member;
-
-            return null;
-        }
-
-        /// <summary>
-        /// Approach 2: To retrieve the value of <c>DisplayAttribute</c>/<c>DisplayNameAttribute</c> from a property of the class. 
-        /// <br /><br />
-        /// Usage: 
-        /// <br />
-        /// <c>ReflectionExtensions.GetPropertyDisplayName2&#x3c;Class&#x3e;(x =&#x3e; x.Property)</c>
+        /// <c>ReflectionExtensions.GetPropertyDisplayName((Class x) =&#x3e; x.Property)</c>
         /// <br /><br />
         /// Reference: <a href="https://stackoverflow.com/a/74846301/8017690">get the value of DisplayName attribute</a>
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="propertyExpression"></param>
         /// <returns></returns>
-        public static string GetPropertyDisplayName2<T, P>(Expression<Func<T, P>> propertyExpression)
+        public static string GetPropertyDisplayName<T, P>(Expression<Func<T, P>> propertyExpression)
             where T : new()
         {
-            MemberExpression memberExpr = propertyExpression.Body as MemberExpression;
-            if (memberExpr == null)
-                return null;
+            if (propertyExpression.Body is MemberExpression memberExpr
+                && memberExpr.Member is PropertyInfo propInfo)
+                return propInfo.ToName();
 
-            return (memberExpr.Member as PropertyInfo)
-                .ToName();
+            return null;
         }
     }
 }

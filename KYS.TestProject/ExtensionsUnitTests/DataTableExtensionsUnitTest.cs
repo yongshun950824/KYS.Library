@@ -16,35 +16,35 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void TestIsNullOrEmptyWithNull()
+        public void IsNullOrEmpty_WithNull_ShouldReturnTrue()
         {
             // Arrange
             DataTable dt = null;
 
             // Act
-            bool isNullEmptyOrEmpty = dt.IsNullOrEmpty();
+            bool isNullOrEmpty = dt.IsNullOrEmpty();
 
             // Assert
-            Assert.IsTrue(isNullEmptyOrEmpty);
+            Assert.IsTrue(isNullOrEmpty);
             Assert.IsNull(dt);
         }
 
         [Test]
-        public void TestIsNullOrEmptyWithEmptyDataTable()
+        public void IsNullOrEmpty_WithEmptyDataTable_ShouldReturnTrue()
         {
             // Arrange
             DataTable dt = new DataTable();
 
             // Act
-            bool isNullEmptyOrEmpty = dt.IsNullOrEmpty();
+            bool isNullOrEmpty = dt.IsNullOrEmpty();
 
             // Assert
-            Assert.IsTrue(isNullEmptyOrEmpty);
+            Assert.IsTrue(isNullOrEmpty);
             Assert.AreEqual(0, dt.Rows.Count);
         }
 
         [Test]
-        public void TestIsNullOrEmptyWithDataTable()
+        public void IsNullOrEmpty_WithNonEmptyDataTable_ShouldReturnFalse()
         {
             // Arrange
             DataTable dt = new DataTable();
@@ -54,16 +54,16 @@ namespace KYS.TestProject.ExtensionsUnitTests
             dt.Rows.Add(row);
 
             // Act
-            bool isNullEmptyOrEmpty = dt.IsNullOrEmpty();
+            bool isNullOrEmpty = dt.IsNullOrEmpty();
 
             // Assert
-            Assert.IsFalse(isNullEmptyOrEmpty);
+            Assert.IsFalse(isNullOrEmpty);
             Assert.AreEqual(1, dt.Rows.Count);
             Assert.AreEqual("Test", dt.Rows[0]["Name"]);
         }
 
         [Test]
-        public void ConvertDataTableToListWithNull()
+        public void ToList_WithNull_ShouldReturnEmptyList()
         {
             // Arrange
             DataTable dt = null;
@@ -76,7 +76,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ConvertDataTableToListWithEmptyDataTable()
+        public void ToList_WithEmptyDataTable_ShouldReturnEmptyList()
         {
             // Arrange
             DataTable dt = new DataTable();
@@ -91,7 +91,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ConvertDataTableToList()
+        public void ToList_WithNonEmptyDataTable_ShouldReturnListWithMappedValues()
         {
             // Arrange
             DataTable dt = new DataTable();
@@ -114,7 +114,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ConvertDataTableToListWithUnknownProperty()
+        public void ToList_WithUnknownProperty_ShouldReturnListWithMappedValues()
         {
             // Arrange
             DataTable dt = new DataTable();
@@ -139,7 +139,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ConvertDataTableToListWithDBNullValue()
+        public void ToList_WithDBNullValue_ShouldReturnListWithMappedValues()
         {
             // Arrange
             DataTable dt = new DataTable();

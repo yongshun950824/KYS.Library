@@ -16,7 +16,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateRequiredIfFalseAndPass()
+        public void RequiredIfAttribute_WithNonMandatoryAndNullValue_ShouldPassValidation()
         {
             // Arrange
             RequiredIfModel testInput = new RequiredIfModel
@@ -37,7 +37,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateRequiredIfTrueWithNullValueAndFail()
+        public void RequiredIfAttribute_WithMandatoryAndNullValue_ShouldFailValidation()
         {
             // Arrange
             RequiredIfModel testInput = new RequiredIfModel
@@ -58,7 +58,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateRequiredIfTrueWithEmptyValueAndFail()
+        public void RequiredIfAttribute_WithMandatoryAndEmptyValue_ShouldFailValidation()
         {
             // Arrange
             RequiredIfModel testInput = new RequiredIfModel
@@ -79,7 +79,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateRequiredIfTrueWithValueAndPass()
+        public void RequiredIfAttribute_WithMandatoryAndValue_ShouldPassValidation()
         {
             // Arrange
             RequiredIfModel testInput = new RequiredIfModel
@@ -100,7 +100,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateRequiredIfTrueWithNullValueAndFailWithErrorMessage()
+        public void RequiredIfAttribute_WithMandatoryAndNullValue_ShouldFailValidationWithErrorMessage()
         {
             // Arrange
             RequiredWithErrorMessageModel testInput = new RequiredWithErrorMessageModel
@@ -134,8 +134,9 @@ namespace KYS.TestProject.ValidationsUnitTests
         {
             public string IsRequired { get; set; }
 
-            [RequiredIf(nameof(IsRequired), "true",
-                ErrorMessage = $"{nameof(Value)} is mandatory when {nameof(IsRequired)} is true.")]
+            [RequiredIf(otherPropertyName: nameof(IsRequired),
+                matchedValue: "true",
+                errorMessage: $"{nameof(Value)} is mandatory when {nameof(IsRequired)} is true.")]
             public string Value { get; set; }
         }
     }

@@ -18,7 +18,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void UpsertDictionaryByAddingKey()
+        public void Upsert_WithNewKey_ShouldInsertCorrectly()
         {
             // Arrange
             string newKey = "NewKey";
@@ -34,7 +34,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void UpsertDictionaryByUpdatingKey()
+        public void Upsert_WithExisingKey_ShouldUpdateCorrectly()
         {
             // Arrange
             string key = "Key";
@@ -50,7 +50,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void UpsertDictionaryByAddingKeyFunc()
+        public void Upsert_WithNewKeyAsFunc_ShouldInsertCorrectly()
         {
             // Arrange
             string newKey = "NewKey";
@@ -66,7 +66,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void UpsertDictionaryByUpdatingKeyFunc()
+        public void Upsert_WithExistingKeyAsFunc_ShouldUpdateCorrectly()
         {
             // Arrange
             string key = "Key";

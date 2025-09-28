@@ -13,35 +13,35 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RemovePostFixWithNullString()
+        public void RemovePostFix_WithNull_ShouldReturnNull()
         {
             // Arrange
             string input = null;
             string expectedValue = input;
 
             // Act
-            string actualValue = StringExtensions.RemovePostFix(input, new string[] { "," });
+            string actualValue = StringExtensions.RemovePostFix(input, [","]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
 
         [Test]
-        public void RemovePostFixWithEmptyString()
+        public void RemovePostFix_WithEmptyString_ShouldReturnEmptyString()
         {
             // Arrange
             string input = String.Empty;
             string expectedValue = input;
 
             // Act
-            string actualValue = StringExtensions.RemovePostFix(input, new string[] { "," });
+            string actualValue = StringExtensions.RemovePostFix(input, [","]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
 
         [Test]
-        public void RemovePostFixWithoutProvidingPostfixes()
+        public void RemovePostFix_WithoutPostfixes_ShouoldReturnOriginalString()
         {
             // Arrange
             string input = "test";
@@ -55,21 +55,21 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RemovePostFixWithEmptyPostfixes()
+        public void RemovePostFix_WithEmptyPostfix_ShouldReturnOriginalString()
         {
             // Arrange
             string input = "test";
             string expectedValue = input;
 
             // Act
-            string actualValue = StringExtensions.RemovePostFix(input, new string[] { });
+            string actualValue = StringExtensions.RemovePostFix(input, Array.Empty<string>());
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
 
         [Test]
-        public void RemovePostFixWithUnmatchedPostfix()
+        public void RemovePostFix_WithUnmatchedPostfix_ShouldReturnOriginalString()
         {
             // Arrange
             string input = ",test,";
@@ -83,7 +83,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RemovePostFixWithSinglePostfix()
+        public void RemovePostFix_WithSinglePostfix_ShouldReturnRemovedPostfixString()
         {
             // Arrange
             string input = ",test,";
@@ -97,48 +97,48 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RemovePostFixWithMultiplePostfixes()
+        public void RemovePostFix_WithMultiplePostfixes_ShouldReturnRemovedPostfixesString()
         {
             // Arrange
             string input = "!@test@!";
             string expectedValue = "!@test";
 
             // Act
-            string actualValue = StringExtensions.RemovePostFix(input, new string[] { "!", "@" });
+            string actualValue = StringExtensions.RemovePostFix(input, [ "!", "@" ]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
         [Test]
-        public void RemovePreFixWithNullString()
+        public void RemovePreFix_WithNull_ShouldReturnNull()
         {
             // Arrange
             string input = null;
             string expectedValue = input;
 
             // Act
-            string actualValue = StringExtensions.RemovePreFix(input, new string[] { "," });
+            string actualValue = StringExtensions.RemovePreFix(input, [ "," ]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
 
         [Test]
-        public void RemovePreFixWithEmptyString()
+        public void RemovePreFix_WithEmptyString_ShouldReturnEmptyString()
         {
             // Arrange
             string input = String.Empty;
             string expectedValue = input;
 
             // Act
-            string actualValue = StringExtensions.RemovePreFix(input, new string[] { "," });
+            string actualValue = StringExtensions.RemovePreFix(input, [","]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
 
         [Test]
-        public void RemovePreFixWithoutProvidingPrefixes()
+        public void RemovePreFix_WithoutPrefixes_ShouldReturnOriginalString()
         {
             // Arrange
             string input = "test";
@@ -152,21 +152,21 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RemovePreFixWithEmptyPrefixes()
+        public void RemovePreFix_WithEmptyPrefix_ShouldReturnOriginalString()
         {
             // Arrange
             string input = "test";
             string expectedValue = input;
 
             // Act
-            string actualValue = StringExtensions.RemovePreFix(input, new string[] { });
+            string actualValue = StringExtensions.RemovePreFix(input, Array.Empty<string>());
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
 
         [Test]
-        public void RemovePreFixWithUnmatchedPrefix()
+        public void RemovePreFix_WithUnmatchedPrefix_ShouldReturnOriginalString()
         {
             // Arrange
             string input = ",test,";
@@ -180,7 +180,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RemovePreFixWithSinglePostfix()
+        public void RemovePreFix_WithSinglePostfix_ShouldReturnRemovedPrefixString()
         {
             // Arrange
             string input = ",test,";
@@ -194,21 +194,21 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void RemovePreFixWithMultiplePostfixes()
+        public void RemovePreFix_WithMultiplePostfixes_ShouldReturnRemovedPostfixesString()
         {
             // Arrange
             string input = "!@test@!";
             string expectedValue = "test@!";
 
             // Act
-            string actualValue = StringExtensions.RemovePreFix(input, new string[] { "!", "@" });
+            string actualValue = StringExtensions.RemovePreFix(input, ["!", "@"]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
 
         [Test]
-        public void StringJoin()
+        public void StringJoin_WithArray_ShouldReturnJoinedString()
         {
             // Arrange
             string[] inputs = new string[] { "a", "b", "c" };
@@ -222,7 +222,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void StringJoinWithArrayIsNull()
+        public void StringJoin_WithNull_ShouldThrowArgumentNullException()
         {
             // Arrange
             string[] inputs = null;
@@ -236,7 +236,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void StringJoinWithSeparatorIsNull()
+        public void StringJoin_WithNullAsSeparator_ShouldThrowArgumentNullException()
         {
             // Arrange
             string[] inputs = new string[] { "a", "b", null, "c", null };
@@ -250,7 +250,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void StringJoinByRemovingEmptyEntries()
+        public void StringJoin_WithNullEntry_ShouldRemoveEmptyEntriesAndReturnJoinedString()
         {
             // Arrange
             string[] inputs = new string[] { "a", "b", null, "c", null };
@@ -264,7 +264,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ToInvariantString_Null_ReturnsNull()
+        public void ToInvariantString_WithNull_ShouldReturnNull()
         {
             // Arrange
             object value = null;
@@ -274,7 +274,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ToInvariantString_Number_UsesInvariantCulture()
+        public void ToInvariantString_WithNumberAndUsesInvariantCulture_ShouldReturnString()
         {
             // Arrange
             double value = 1234.56;
@@ -288,7 +288,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         }
 
         [Test]
-        public void ToInvariantString_NonFormattable_UsesToString()
+        public void ToInvariantString_WithNonFormattable_ShouldReturnString()
         {
             // Arrage
             string input = "test";

@@ -14,7 +14,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateBooleanRequireAndPass()
+        public void BooleanRequire_WithTrueValue_ShouldPassValidation()
         {
             // Arrange
             IsEnabledMandatoryModel testInput = new IsEnabledMandatoryModel
@@ -34,7 +34,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateBooleanRequireAndFail()
+        public void BooleanRequire_WithFalseValue_ShouldFailValidation()
         {
             // Arrange
             IsEnabledMandatoryModel testInput = new IsEnabledMandatoryModel
@@ -54,7 +54,7 @@ namespace KYS.TestProject.ValidationsUnitTests
         }
 
         [Test]
-        public void ValidateBooleanRequireAndFailWithErrorMessage()
+        public void BooleanRequire_WithFalseValue_ShouldFailValidationWithErrorMessage()
         {
             // Arrange
             IsEnabledMandatoryWithErrorMessageModel testInput = new IsEnabledMandatoryWithErrorMessageModel
