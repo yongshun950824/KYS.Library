@@ -314,7 +314,7 @@ public class ExcelHelperUnitTest
         AssertExcel(result, _dt, summaryRowStyle: summaryRowStyle);
     }
 
-    private void AssertExcel(byte[] bytes,
+    private static void AssertExcel(byte[] bytes,
         DataTable dt,
         int sheetIndex = 0,
         List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,

@@ -177,9 +177,7 @@ namespace KYS.Library.Helpers
         private static void ApplyColumnFormats(ExcelWorksheet worksheet,
             DataTable dt,
             List<ExcelColumnFormat> excelColumnFormats,
-            ExcelRowStyle summaryRowStyle,
             int totalRow,
-            int totalColumn,
             bool hasHeader = true)
         {
             if (excelColumnFormats == null || excelColumnFormats.Count == 0)

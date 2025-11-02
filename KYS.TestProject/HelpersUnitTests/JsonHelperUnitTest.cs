@@ -152,7 +152,8 @@ namespace KYS.TestProject.HelpersUnitTests
         public void Flatten_JArrayToken_CallsFlattenArray()
         {
             // Arrange
-            var source = JArray.FromObject(new string[] { "a", "b" });
+            string[] input = ["a", "b"];
+            var source = JArray.FromObject(input);
             var token = source;
 
             // Act
@@ -252,7 +253,7 @@ namespace KYS.TestProject.HelpersUnitTests
             public SimpleObject Detail { get; set; }
             public List<string> Tags { get; set; } = new List<string>();
             public Dictionary<string, object> Metadata { get; set; }
-            public int[] Counts { get; set; } = new int[0];
+            public int[] Counts { get; set; } = Array.Empty<int>();
             public bool? IsActive { get; set; }
             public object NullValue { get; set; }
         }
