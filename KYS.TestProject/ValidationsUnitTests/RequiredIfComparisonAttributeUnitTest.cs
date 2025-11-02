@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ValidationsUnitTests
 {
-    internal class RequiredIf2AttributeUnitTest
+    internal class RequiredIfComparisonAttributeUnitTest
     {
         [SetUp]
         public void SetUp()
@@ -238,7 +238,7 @@ namespace KYS.TestProject
         }
 
         [TestCaseSource("TestCases")]
-        public void Validate(
+        public void RequiredIfComparisonAttribute_WithTestCase_ShouldProcessValidationCorrectly(
             dynamic testInput,
             bool expectedResult,
             int expectedErrorCount,
@@ -258,12 +258,78 @@ namespace KYS.TestProject
             Assert.AreEqual(expectedErrorMessage, results.FirstOrDefault()?.ErrorMessage);
         }
 
+        [Test]
+        public void RequiredIfComparisonAttribute_WithNotMatchedOtherPropertyType_ShouldPassValidation()
+        {
+            // Arrange
+            var testInput = new NotMatchedProp1ValueTypeTestModel { Prop1 = "1", Prop2 = "Provided" };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void RequiredIfComparisonAttribute_WithSecondConstructorAndValidData_ShouldPassValidation()
+        {
+            // Arrange
+            var testInput = new EqualTestModel3 { Prop1 = 1, Prop2 = "Provided" };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void RequiredIfComparisonAttribute_WithThirdConstructorAndValidData_ShouldPassValidation()
+        {
+            // Arrange
+            var testInput = new EqualTestModel4 { Prop1 = 1, Prop2 = "Provided" };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void RequiredIfComparisonAttribute_WithThirdConstructorAndInvalidData_ShouldFailValidation()
+        {
+            // Arrange
+            var testInput = new EqualTestModel4 { Prop1 = 1, Prop2 = null };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsFalse(isValid);
+            Assert.AreEqual(1, results.Count);
+            Assert.AreEqual("Prop2 must be provided when Prop1 is 1.", results.FirstOrDefault()?.ErrorMessage);
+        }
+
         #region Equal Models
         private class EqualTestModel
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 1,
                 @operator: CompareOperator.CompareOperatorConstants.Equal,
                 errorMessage: "Prop2 must be provided when Prop1 is 1.")]
@@ -274,11 +340,41 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 1,
                 @operator: CompareOperator.CompareOperatorConstants.Equal)]
             public string Prop2 { get; set; }
         }
+
+        private class NotMatchedProp1ValueTypeTestModel
+        {
+            public string Prop1 { get; set; }
+
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
+                matchedValue: 1,
+                @operator: CompareOperator.CompareOperatorConstants.Equal)]
+            public string Prop2 { get; set; }
+        }
+
+        private class EqualTestModel3
+        {
+            public int Prop1 { get; set; }
+
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
+                matchedValue: 1)]
+            public string Prop2 { get; set; }
+        }
+
+        private class EqualTestModel4
+        {
+            public int Prop1 { get; set; }
+
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
+                matchedValue: 1,
+                errorMessage: "Prop2 must be provided when Prop1 is 1.")]
+            public string Prop2 { get; set; }
+        }
+
         #endregion Equal Models
 
         #region Less Than Models
@@ -286,7 +382,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThan,
                 errorMessage: "Prop2 must be provided when Prop1 is less than 0.")]
@@ -297,7 +393,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThan)]
             public string Prop2 { get; set; }
@@ -309,7 +405,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThanOrEqual,
                 errorMessage: "Prop2 must be provided when Prop1 is less than or equal to 0.")]
@@ -320,7 +416,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 0,
                 @operator: CompareOperator.CompareOperatorConstants.LessThanOrEqual)]
             public string Prop2 { get; set; }
@@ -332,7 +428,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThan,
                 errorMessage: "Prop2 must be provided when Prop1 is greater than 100.")]
@@ -343,7 +439,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThan)]
             public string Prop2 { get; set; }
@@ -355,7 +451,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThanOrEqual,
                 errorMessage: "Prop2 must be provided when Prop1 is greater than or equal to 100.")]
@@ -366,7 +462,7 @@ namespace KYS.TestProject
         {
             public int Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: 100,
                 @operator: CompareOperator.CompareOperatorConstants.GreaterThanOrEqual)]
             public string Prop2 { get; set; }
@@ -378,7 +474,7 @@ namespace KYS.TestProject
         {
             public bool Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: false,
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual,
                 errorMessage: "Prop2 must be provided when Prop1 is not false.")]
@@ -389,7 +485,7 @@ namespace KYS.TestProject
         {
             public bool Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: false,
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual)]
             public string Prop2 { get; set; }
@@ -399,7 +495,7 @@ namespace KYS.TestProject
         {
             public bool Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: false,
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual)]
             public string Prop2 { get; set; }
@@ -409,7 +505,7 @@ namespace KYS.TestProject
         {
             public string Prop1 { get; set; }
 
-            [RequiredIf2(otherPropertyName: nameof(Prop1),
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
                 matchedValue: "Yes",
                 @operator: CompareOperator.CompareOperatorConstants.NotEqual)]
             public int Prop2 { get; set; }

@@ -13,6 +13,7 @@ namespace KYS.Library.Extensions
                 || dataTable.IsEmpty();
 
         public static IList<T> ToList<T>(this DataTable dataTable)
+            where T : class, new()
         {
             if (dataTable.IsNull() || dataTable.IsEmpty())
                 return new List<T>();

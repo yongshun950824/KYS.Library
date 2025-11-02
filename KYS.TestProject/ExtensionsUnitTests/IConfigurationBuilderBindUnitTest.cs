@@ -6,12 +6,8 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ExtensionsUnitTests
 {
     internal class IConfigurationBuilderBindUnitTest
     {
@@ -37,7 +33,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CanBindScalarValues()
+        public void Bind_WithScalarValues_ShouldBindCorrectly()
         {
             // Arrange
             var oldAppName = _configuration[AppName];
@@ -69,7 +65,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CanBindObject()
+        public void Bind_WithObject_ShouldBindCorrectly()
         {
             // Arrange
             var oldFeatures = _configuration.GetSection(Features).Get<FeaturesConfig>();
@@ -98,7 +94,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CanBindArray()
+        public void Bind_WithArray_ShouldBindCorrectly()
         {
             // Arrange
             var oldCultures = _configuration.GetSection(Cultures).Get<List<string>>();
@@ -121,7 +117,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CanBindArrayOfObjects()
+        public void Bind_WithArrayOfObjects_ShouldBindCorrectly()
         {
             // Arrange
             var oldUsers = _configuration.GetSection(Users).Get<List<UserConfig>>();
@@ -153,7 +149,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CanBindArrayOfObjectsAndSetEmploymentInfo()
+        public void Bind_WithArrayOfObjectsAndSetEmploymentInfo_ShouldBindCorrectly()
         {
             // Arrange
             var oldUsers = _configuration.GetSection(Users).Get<List<UserConfig>>();
@@ -194,7 +190,7 @@ namespace KYS.TestProject
             {
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
                 DateParseHandling = DateParseHandling.DateTime,
-                Culture = System.Globalization.CultureInfo.InvariantCulture,
+                Culture = CultureInfo.InvariantCulture,
                 Converters = { new IsoDateTimeConverter() }
             };
             Assert.AreEqual(
@@ -206,7 +202,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CanBindArrayOfObjectsAndAddContacts()
+        public void Bind_WithArrayOfObjectsAndAddContacts_ShouldBindCorrectly()
         {
             // Arrange
             var oldUsers = _configuration.GetSection(Users).Get<List<UserConfig>>();

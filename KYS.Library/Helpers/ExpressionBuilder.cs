@@ -1,6 +1,7 @@
 ﻿using KYS.Library.Extensions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using static KYS.Library.Helpers.CompareOperator;
@@ -103,7 +104,7 @@ namespace KYS.Library.Helpers
                 CompareOperatorConstants.LessThanOrEqual => Expression.LessThanOrEqual(param, constant),
                 CompareOperatorConstants.GreaterThan => Expression.GreaterThan(param, constant),
                 CompareOperatorConstants.GreaterThanOrEqual => Expression.GreaterThanOrEqual(param, constant),
-                _ => throw new ArgumentException("Operation is not supported"),
+                _ => throw new InvalidEnumArgumentException(nameof(filterCriteria.Operator), (int)filterCriteria.Operator, typeof(CompareOperatorConstants)),
             };
 
             return binaryExpression;

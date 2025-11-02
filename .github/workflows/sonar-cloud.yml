@@ -73,8 +73,8 @@ jobs:
               /o:"yongshun950824" `
               /d:sonar.token="${{ env.SONAR_TOKEN }}" `
               /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
-              /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/** `
-              /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**" `
+              /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/** `
+              /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**,**/Generated/**" `
               /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
         
       - name: Run tests with coverage (OpenCover)
