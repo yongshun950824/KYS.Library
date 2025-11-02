@@ -49,7 +49,11 @@ namespace KYS.TestProject.HelpersUnitTests
             // Arrange
             byte[] data = [1, 2, 3];
             using MemoryStream ms = new MemoryStream(data);
-            string invalidPath = "?:\\invalid\\path.txt";
+            string invalidPath = Environment.OSVersion.Platform switch
+            {
+                PlatformID.Win32NT => "?:\\invalid\\path.txt",  // Invalid on Windows
+                _ => "/invalid_dir/\\invalid_path.txt"          // Invalid on Linux/macOS
+            };
 
             // Act & Assert
             Assert.Throws<DirectoryNotFoundException>(() => FileHelper.WriteFile(ms, invalidPath));
@@ -106,7 +110,7 @@ namespace KYS.TestProject.HelpersUnitTests
         }
 
         [Test]
-        public void LoadFileToMemoryStream_WithValidFilePath_ShouldThrowException()
+        public void LoadFileToMemoryStream_WithValidFilePath_ShouldReturnMemoryStream()
         {
             // Arrange
             string filePath = Directory.GetCurrentDirectory() + "\\Resources\\sample.txt";
