@@ -158,7 +158,7 @@ namespace KYS.Library.Helpers
             #region Styling for summary row
             if (summaryRowStyle != null)
             {
-                int summaryRowIndex = totalRow + (hasHeader ? 1 : 0) + 1;
+                int summaryRowIndex = CalculateSummaryRowIndex(totalRow, hasHeader);
 
                 worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Font.Color.SetColor(summaryRowStyle.FontColor);
                 worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Font.Bold = summaryRowStyle.Bold;
@@ -186,7 +186,7 @@ namespace KYS.Library.Helpers
                 return;
 
             int columnIndex = 1;
-            int summaryRowIndex = (hasHeader ? 1 : 0) + totalRow + 1;
+            int summaryRowIndex = CalculateSummaryRowIndex(totalRow, hasHeader);
             foreach (var excelColumnFormat in excelColumnFormats)
             {
                 if (excelColumnFormat.HasSumColumn)
@@ -204,6 +204,11 @@ namespace KYS.Library.Helpers
 
                 columnIndex++;
             }
+        }
+
+        private static int CalculateSummaryRowIndex(int totalRow, bool hasHeader)
+        {
+            return totalRow + (hasHeader ? 1 : 0) + 1;
         }
 
         public class ExcelColumnFormat
