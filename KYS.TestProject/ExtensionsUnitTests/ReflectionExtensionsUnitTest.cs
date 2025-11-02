@@ -165,7 +165,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
 
         private class DisplayModel
         {
-            public string Field;
+            public string Field = String.Empty;
 
             [Display(Name = "Custom Display Name")]
             public string PropertyWithDisplay { get; set; }
@@ -180,7 +180,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
         private class PlainModel
         {
             public string PlainProperty { get; set; }
-            public void PlainMethod() { }
+            public static void PlainMethod() { }
         }
     }
 }

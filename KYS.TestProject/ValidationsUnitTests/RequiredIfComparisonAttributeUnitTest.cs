@@ -258,6 +258,72 @@ namespace KYS.TestProject.ValidationsUnitTests
             Assert.AreEqual(expectedErrorMessage, results.FirstOrDefault()?.ErrorMessage);
         }
 
+        [Test]
+        public void RequiredIfComparisonAttribute_WithNotMatchedOtherPropertyType_ShouldPassValidation()
+        {
+            // Arrange
+            var testInput = new NotMatchedProp1ValueTypeTestModel { Prop1 = "1", Prop2 = "Provided" };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void RequiredIfComparisonAttribute_WithSecondConstructorAndValidData_ShouldPassValidation()
+        {
+            // Arrange
+            var testInput = new EqualTestModel3 { Prop1 = 1, Prop2 = "Provided" };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void RequiredIfComparisonAttribute_WithThirdConstructorAndValidData_ShouldPassValidation()
+        {
+            // Arrange
+            var testInput = new EqualTestModel4 { Prop1 = 1, Prop2 = "Provided" };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsTrue(isValid);
+        }
+
+        [Test]
+        public void RequiredIfComparisonAttribute_WithThirdConstructorAndInvalidData_ShouldFailValidation()
+        {
+            // Arrange
+            var testInput = new EqualTestModel4 { Prop1 = 1, Prop2 = null };
+
+            ValidationContext validationContext = new ValidationContext(testInput);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            // Act
+            bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
+
+            // Assert
+            Assert.IsFalse(isValid);
+            Assert.AreEqual(1, results.Count);
+            Assert.AreEqual("Prop2 must be provided when Prop1 is 1.", results.FirstOrDefault()?.ErrorMessage);
+        }
+
         #region Equal Models
         private class EqualTestModel
         {
@@ -279,6 +345,36 @@ namespace KYS.TestProject.ValidationsUnitTests
                 @operator: CompareOperator.CompareOperatorConstants.Equal)]
             public string Prop2 { get; set; }
         }
+
+        private class NotMatchedProp1ValueTypeTestModel
+        {
+            public string Prop1 { get; set; }
+
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
+                matchedValue: 1,
+                @operator: CompareOperator.CompareOperatorConstants.Equal)]
+            public string Prop2 { get; set; }
+        }
+
+        private class EqualTestModel3
+        {
+            public int Prop1 { get; set; }
+
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
+                matchedValue: 1)]
+            public string Prop2 { get; set; }
+        }
+
+        private class EqualTestModel4
+        {
+            public int Prop1 { get; set; }
+
+            [RequiredIfComparison(otherPropertyName: nameof(Prop1),
+                matchedValue: 1,
+                errorMessage: "Prop2 must be provided when Prop1 is 1.")]
+            public string Prop2 { get; set; }
+        }
+
         #endregion Equal Models
 
         #region Less Than Models

@@ -28,7 +28,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Constructor_WithoutInitializeCulture_ShouldGetCurrentCulture()
         {
             // Arrange
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly()
             );
             CultureInfo expectedValue = CultureInfo.CurrentCulture;
@@ -45,7 +45,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo expectedValue = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 expectedValue
             );
 
@@ -60,7 +60,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Constructor_WithoutInitializeCultureInfos_ShouldGetAllCultures()
         {
             // Arrange
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 new CultureInfo("th-TH")
             );
 
@@ -80,7 +80,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
@@ -100,7 +100,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
@@ -122,7 +122,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Constructor_WithSecondConstructor_ShouldGetLanguages()
         {
             // Arrange
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 new CultureInfo("th-TH"),
                 new List<CultureInfo> { new CultureInfo("th-TH"), new CultureInfo("zh-CN") }
@@ -147,7 +147,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -168,7 +168,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -189,7 +189,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -211,7 +211,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -233,7 +233,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo culture = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 culture,
                 new List<CultureInfo> { culture }
@@ -256,7 +256,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo culture = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultures: new List<CultureInfo> { culture }
             );
@@ -277,7 +277,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 currentCulture: cultureInfo,
                 cultures: new List<CultureInfo> { cultureInfo }
@@ -298,7 +298,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 currentCulture: cultureInfo,
                 cultures: new List<CultureInfo> { cultureInfo }
@@ -320,7 +320,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -343,7 +343,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(string);     // Invalid resource
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -360,12 +360,35 @@ namespace KYS.TestProject.ServicesUnitTests
         }
 
         [Test]
+        public void Translate_WithResourceAndDisabledReturnedOriginalValue_ShouldThrowException()
+        {
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(Resource);
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
+            );
+
+            string input = "unknown";
+            ArgumentNullException expectedEx = new ArgumentNullException($"Provided {input} doesn't support for {cultureInfo.Name} language translation.");
+
+            // Act
+            var ex = Assert.Throws<ArgumentNullException>(() => translationService.Translate(input, resourceType, false));
+
+            // Assert
+            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+        }
+
+
+        [Test]
         public void Translate_IgnoreCase_ShouldReturnTranslatedText()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }

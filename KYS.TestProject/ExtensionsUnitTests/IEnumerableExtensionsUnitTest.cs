@@ -267,37 +267,46 @@ namespace KYS.TestProject.ExtensionsUnitTests
         [Test]
         public void Paging_FirstPage_ShouldReturnCorrectItemsAndTotalCount()
         {
+            // Arrange
+            int[] expectedResult = [1, 2, 3];
+
             // Act
             var result = _numbers.Paging(1, 3, out int totalCount)
                 .ToList();
 
             // Assert
             Assert.AreEqual(_numbers.Count, totalCount);
-            CollectionAssert.AreEqual(new[] { 1, 2, 3 }, result);
+            CollectionAssert.AreEqual(expectedResult, result);
         }
 
         [Test]
         public void Paging_SecondPage_ShouldReturnCorrectItems()
         {
+            // Arrange
+            int[] expectedResult = [4, 5, 6];
+
             // Act
             var result = _numbers.Paging(2, 3, out int totalCount)
                 .ToList();
 
             // Assert
             Assert.AreEqual(_numbers.Count, totalCount);
-            CollectionAssert.AreEqual(new[] { 4, 5, 6 }, result);
+            CollectionAssert.AreEqual(expectedResult, result);
         }
 
         [Test]
         public void Paging_ZeroBasedPageNumber_ShouldStartAtIndexZero()
         {
+            // Arrange
+            int[] expectedResult = [1, 2, 3, 4];
+
             // Act
             var result = _numbers.Paging(0, 4, true, out int totalCount)
                 .ToList();
 
             // Assert
             Assert.AreEqual(_numbers.Count, totalCount);
-            CollectionAssert.AreEqual(new[] { 1, 2, 3, 4 }, result);
+            CollectionAssert.AreEqual(expectedResult, result);
         }
 
         [Test]

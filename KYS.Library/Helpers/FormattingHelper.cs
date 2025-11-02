@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 
 namespace KYS.Library.Helpers
@@ -16,27 +17,17 @@ namespace KYS.Library.Helpers
         public static string Convert(this string value, Formatting format)
         {
             if (String.IsNullOrEmpty(value))
-            {
                 return value;
-            }
 
-            switch (format)
+            return format switch
             {
-                case Formatting.SnakeCase:
-                    return ConvertToSnakeCase(value);
-
-                default:
-                    return value;
-            }
+                Formatting.SnakeCase => ConvertToSnakeCase(value),
+                _ => throw new InvalidEnumArgumentException(nameof(format), (int)format, typeof(Formatting)),
+            };
         }
 
-        public static string ConvertToSnakeCase(string value)
+        private static string ConvertToSnakeCase(string value)
         {
-            if (String.IsNullOrEmpty(value))
-            {
-                return value;
-            }
-
             // Add an underscore before each uppercase letter (excluding the first one).
             string snakeCase = UppercaseReplacementRegex()
                 .Replace(value, "_$1")
@@ -44,9 +35,7 @@ namespace KYS.Library.Helpers
 
             // If the string starts with an underscore (because the first letter was uppercase), remove it.
             if (snakeCase.StartsWith('_'))
-            {
                 snakeCase = snakeCase.Substring(1);
-            }
 
             return snakeCase;
         }

@@ -3,6 +3,7 @@ using KYS.Library.Extensions;
 using KYS.Library.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 
@@ -26,7 +27,7 @@ namespace KYS.Library.Services
             get { return _fileName; }
             set
             {
-                ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(FileName));
+                ValidateFileName(value);
 
                 if (!value.EndsWith(".zip"))
                     value += ".zip";
@@ -40,7 +41,7 @@ namespace KYS.Library.Services
             get { return _password; }
             set
             {
-                ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(Password));
+                ValidatePassword(value);
 
                 _password = value;
             }
@@ -92,14 +93,7 @@ namespace KYS.Library.Services
                 ZipEntry entry = new ZipEntry(item.Name);
                 zipOStream.PutNextEntry(entry);
 
-                try
-                {
-                    zipOStream.Write(item.Contents, 0, item.Contents.Length);
-                }
-                catch
-                {
-                    // Safe ignore exception
-                }
+                zipOStream.Write(item.Contents, 0, item.Contents.Length);
             }
 
             zipOStream.Finish();
@@ -156,6 +150,22 @@ namespace KYS.Library.Services
                 .ToList();
             #endregion
         }
+
+        #region Helper methods
+        [SuppressMessage("Usage", "S3236:Caller information parameters should not be explicitly provided",
+            Justification = "Property setters always pass 'value', so nameof(FileName) is clearer.")]
+        private static void ValidateFileName(string value)
+        {
+            ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(FileName));  //NOSONAR
+        }
+
+        [SuppressMessage("Usage", "S3236:Caller information parameters should not be explicitly provided",
+            Justification = "Property setters always pass 'value', so nameof(Password) is clearer.")]
+        private static void ValidatePassword(string value)
+        {
+            ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(Password));  //NOSONAR
+        }
+        #endregion
 
         public class ZipFileItem
         {

@@ -21,18 +21,13 @@ namespace KYS.Library.Helpers
             GreaterThanOrEqual
         }
 
-        public static bool Compare(CompareOperatorConstants @operator, IComparable a, IComparable b) => 
+        public static bool Compare(CompareOperatorConstants @operator, IComparable a, IComparable b) =>
             GetCompareOperatorFunc(@operator)(a, b);
 
-        public static bool Compare<T>(CompareOperatorConstants @operator, T a, T b) 
-            where T : IComparable, IComparable<T> => 
+        public static bool Compare<T>(CompareOperatorConstants @operator, T a, T b)
+            where T : IComparable, IComparable<T> =>
             GetCompareOperatorFunc(@operator)(a, b);
 
-        /// <summary>
-        /// </summary>
-        /// <param name="operator"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
         public static Func<IComparable, IComparable, bool> GetCompareOperatorFunc(CompareOperatorConstants @operator)
         {
             return @operator switch
@@ -45,7 +40,7 @@ namespace KYS.Library.Helpers
                 CompareOperatorConstants.GreaterThan => (a, b) => a.CompareTo(b) == 1,
                 CompareOperatorConstants.GreaterThanOrEqual => (a, b) => a.CompareTo(b) == 1
                     || a.CompareTo(b) == 0,
-                _ => throw new NotImplementedException($"Unsupported operator: {@operator}")
+                _ => throw new InvalidEnumArgumentException(nameof(@operator), (int)@operator, typeof(CompareOperatorConstants))
             };
         }
     }

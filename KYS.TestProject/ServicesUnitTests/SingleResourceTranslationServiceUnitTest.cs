@@ -28,7 +28,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Constructor_WithoutInitializeCulture_ShouldReturnCurrentCulture()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource)
             );
             CultureInfo expectedValue = CultureInfo.CurrentCulture;
@@ -45,7 +45,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo expectedValue = new CultureInfo("th-TH");
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 expectedValue
             );
@@ -61,7 +61,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Constructor_WithoutInitializeCultureInfos_ShouldGetAllCultures()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -81,7 +81,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
@@ -100,7 +100,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Constructor_WithSecondConstructor_ShouldGetLanguages()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -121,7 +121,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Constructor_WithThirdConstructor_ShouldGetLanguages()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource).FullName,
                 Assembly.GetExecutingAssembly(),
                 new CultureInfo("th-TH")
@@ -143,7 +143,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void TranslateToEnglish_ShouldReturnTranslatedEnglishText()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -161,7 +161,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void TranslateToEnglish_WithUnknown_ShouldReturnOriginalValue()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -179,7 +179,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void TranslateToEnglish_WithUnknownAndDisableReturnedOriginalValue_ShouldThrowException()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -199,7 +199,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 resourceType,
                 cultureInfo
             );
@@ -218,7 +218,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Translate_ToUnsupportedCulture_ShouldReturnOriginalValue()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -239,7 +239,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 resourceType
             );
             string input = "Spouse";
@@ -257,7 +257,7 @@ namespace KYS.TestProject.ServicesUnitTests
         public void Translate_ToDefaultCulture_ShouldReturnOriginalValue()
         {
             // Arrange
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 new CultureInfo("th-TH")
             );
@@ -276,7 +276,7 @@ namespace KYS.TestProject.ServicesUnitTests
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 typeof(Resource),
                 cultureInfo
             );
@@ -296,7 +296,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 resourceType,
                 cultureInfo
             );
@@ -316,7 +316,7 @@ namespace KYS.TestProject.ServicesUnitTests
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-            using SingleResourceTranslationService translationService = new SingleResourceTranslationService(
+            SingleResourceTranslationService translationService = new SingleResourceTranslationService(
                 resourceType,
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }

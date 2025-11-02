@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using static KYS.Library.Helpers.CompareOperator;
 
@@ -33,6 +34,29 @@ namespace KYS.TestProject.HelpersUnitTests
             // Assert
             Assert.AreEqual(expectedTestResult.Length, result.Length);
             Assert.IsTrue(expectedTestResult.SequenceEqual(result));
+        }
+
+        [Test]
+        public void CompileAndExpression_WithCompareOperatorConstants_ShouldThrowException()
+        {
+            // Arrange
+            var input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            var filters = new List<FilterCriteria<int>>
+            {
+                new FilterCriteria<int>
+                {
+                    Operator = (CompareOperatorConstants)999,
+                    Value = 9
+                }
+            };
+            var expectedEx = new InvalidEnumArgumentException("Operator", (int)filters[0].Operator, typeof(CompareOperatorConstants));
+
+            // Act
+            var ex = Assert.Catch<InvalidEnumArgumentException>(() => ExpressionBuilder.CompileAndExpression(filters));
+
+            // Assert
+            Assert.IsInstanceOf<InvalidEnumArgumentException>(ex);
+            Assert.AreEqual(expectedEx.Message, ex.Message);
         }
 
         [Test]

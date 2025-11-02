@@ -20,20 +20,28 @@ namespace KYS.Library.Helpers
         /// <param name="headerRowStyle"></param>
         /// <param name="summaryRowStyle"></param>
         /// <param name="additionalExcelSheets"></param>
+        /// <param name="license"></param>
         /// <returns></returns>
         public static byte[] CreateExcelBook(DataSet ds,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
-            List<AdditionalExcelSheet> additionalExcelSheets = null)
+            List<AdditionalExcelSheet> additionalExcelSheets = null,
+            LicenseContext license = LicenseContext.NonCommercial)
         {
+            ArgumentNullException.ThrowIfNull(ds);
+
             MemoryStream outputStream = new MemoryStream();
 
+            ExcelPackage.LicenseContext = license;
             using ExcelPackage package = new ExcelPackage(outputStream);
             foreach (DataTable dt in ds.Tables)
             {
+                // Avoid updating original source datatable
+                DataTable copiedDt = dt.Copy();
+
                 CreateExcelWorksheet(package,
-                    dt,
+                    copiedDt,
                     excelColumnFormats,
                     headerRowStyle,
                     summaryRowStyle);
@@ -43,8 +51,11 @@ namespace KYS.Library.Helpers
             {
                 foreach (AdditionalExcelSheet sheet in additionalExcelSheets)
                 {
+                    // Avoid updating original source datatable
+                    DataTable copiedDt = sheet.DataTable.Copy();
+
                     CreateExcelWorksheet(package,
-                        sheet.DataTable,
+                        copiedDt,
                         sheet.ExcelColumnFormats,
                         sheet.HeaderRowStyle,
                         sheet.SummaryRowStyle);
@@ -65,21 +76,29 @@ namespace KYS.Library.Helpers
         /// <param name="headerRowStyle"></param>
         /// <param name="summaryRowStyle"></param>
         /// <param name="additionalExcelSheets"></param>
+        /// <param name="license"></param>
         /// <returns></returns>
         public static byte[] CreateExcelBook(DataTable dt,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
-            List<AdditionalExcelSheet> additionalExcelSheets = null)
+            List<AdditionalExcelSheet> additionalExcelSheets = null,
+            LicenseContext license = LicenseContext.NonCommercial)
         {
+            ArgumentNullException.ThrowIfNull(dt);
+
+            // Avoid updating original source datatable
+            DataTable copiedDt = dt.Copy();
+
             DataSet ds = new DataSet();
-            ds.Tables.Add(dt);
+            ds.Tables.Add(copiedDt);
 
             return CreateExcelBook(ds,
                 excelColumnFormats,
                 headerRowStyle,
                 summaryRowStyle,
-                additionalExcelSheets);
+                additionalExcelSheets,
+                license);
         }
 
         private static void CreateExcelWorksheet(ExcelPackage package,
@@ -88,8 +107,9 @@ namespace KYS.Library.Helpers
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null)
         {
+            bool hasHeader = true;
+
             headerRowStyle ??= ExcelRowStyle.DefaultHeaderRowStyle;
-            summaryRowStyle ??= ExcelRowStyle.DefaultSummaryRowStyle;
 
             #region Rearrange & Rename Data Column
             if (!excelColumnFormats.IsNullOrEmpty())
@@ -132,8 +152,24 @@ namespace KYS.Library.Helpers
             int totalColumn = dt.Columns.Count;
             if (totalRow > 0)
             {
-                ApplyColumnFormats(worksheet, dt, excelColumnFormats, summaryRowStyle, totalRow, totalColumn);
+                ApplyColumnFormats(worksheet, dt, excelColumnFormats, summaryRowStyle, totalRow, totalColumn, hasHeader);
             }
+
+            #region Styling for summary row
+            if (summaryRowStyle != null)
+            {
+                int summaryRowIndex = totalRow + (hasHeader ? 1 : 0) + 1;
+
+                worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Font.Color.SetColor(summaryRowStyle.FontColor);
+                worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Font.Bold = summaryRowStyle.Bold;
+
+                if (summaryRowStyle.PatternType != ExcelFillStyle.None)
+                {
+                    worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Fill.PatternType = summaryRowStyle.PatternType;
+                    worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Fill.BackgroundColor.SetColor(summaryRowStyle.BackgroundColor);
+                }
+            }
+            #endregion
 
             worksheet.Cells.AutoFitColumns();
         }
@@ -143,39 +179,28 @@ namespace KYS.Library.Helpers
             List<ExcelColumnFormat> excelColumnFormats,
             ExcelRowStyle summaryRowStyle,
             int totalRow,
-            int totalColumn)
+            int totalColumn,
+            bool hasHeader = true)
         {
             if (excelColumnFormats == null || excelColumnFormats.Count == 0)
                 return;
 
             int columnIndex = 1;
+            int summaryRowIndex = (hasHeader ? 1 : 0) + totalRow + 1;
             foreach (var excelColumnFormat in excelColumnFormats)
             {
-                int totalRowIndex = totalRow + 1;
                 if (excelColumnFormat.HasSumColumn)
                 {
-                    totalRowIndex += 1;
                     string sumColumnName = dt.Columns[columnIndex - 1].ColumnName;
                     object total = dt.Compute($"SUM([{sumColumnName}])", null);
-                    worksheet.Cells[totalRowIndex, columnIndex].Value = total;
-
-                    #region Styling for summary row
-                    worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Color.SetColor(summaryRowStyle.FontColor);
-                    worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Bold = summaryRowStyle.Bold;
-
-                    if (summaryRowStyle.PatternType != ExcelFillStyle.None)
-                    {
-                        worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.PatternType = summaryRowStyle.PatternType;
-                        worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.BackgroundColor.SetColor(summaryRowStyle.BackgroundColor);
-                    }
-                    #endregion
+                    worksheet.Cells[summaryRowIndex, columnIndex].Value = total;
                 }
 
                 if (!String.IsNullOrEmpty(excelColumnFormat.Format))
-                    worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.Numberformat.Format = excelColumnFormat.Format;
+                    worksheet.Cells[2, columnIndex, summaryRowIndex, columnIndex].Style.Numberformat.Format = excelColumnFormat.Format;
 
                 if (excelColumnFormat.HorizontalAlignment != null)
-                    worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
+                    worksheet.Cells[2, columnIndex, summaryRowIndex, columnIndex].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
 
                 columnIndex++;
             }
@@ -192,10 +217,23 @@ namespace KYS.Library.Helpers
 
         public class AdditionalExcelSheet
         {
-            public DataTable DataTable { get; set; }
+            private DataTable _dataTable;
+            public DataTable DataTable
+            {
+                get
+                {
+                    return _dataTable;
+                }
+                set
+                {
+                    ArgumentNullException.ThrowIfNull(value);
+
+                    _dataTable = value;
+                }
+            }
             public List<ExcelColumnFormat> ExcelColumnFormats { get; set; } = null;
             public ExcelRowStyle HeaderRowStyle { get; set; } = ExcelRowStyle.DefaultHeaderRowStyle;
-            public ExcelRowStyle SummaryRowStyle { get; set; } = ExcelRowStyle.DefaultSummaryRowStyle;
+            public ExcelRowStyle SummaryRowStyle { get; set; } = null;
         }
 
         public class ExcelRowStyle
@@ -203,7 +241,7 @@ namespace KYS.Library.Helpers
             public ExcelHorizontalAlignment HorizontalAlignment { get; set; } = ExcelHorizontalAlignment.Center;
             public bool Bold { get; set; } = true;
             public Color FontColor { get; set; } = Color.Black;
-            public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.None;
+            public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.Solid;
             public Color BackgroundColor { get; set; } = Color.Empty;
             /// <summary>
             /// Apply Auto Filter to Excel columns. (For header row only)

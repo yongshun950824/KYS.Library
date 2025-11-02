@@ -61,7 +61,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
                 .ToArray();
 
             // Assert
-            Assert.AreEqual(expectedValues.Count(), actualValues.Count());
+            Assert.AreEqual(expectedValues.Length, actualValues.Length);
             Assert.IsTrue(expectedValues.SequenceEqual(actualValues));
         }
 
