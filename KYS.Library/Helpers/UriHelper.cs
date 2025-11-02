@@ -26,7 +26,7 @@ namespace KYS.Library.Helpers
                 if (index > 0)
                     sb.Append('&');
 
-                sb.Append($"{kvp.Key}={HttpUtility.UrlEncode(kvp.Value?.ToString())}");
+                sb.Append($"{kvp.Key}={HttpUtility.UrlEncode(kvp.Value)}");
 
                 index++;
             }

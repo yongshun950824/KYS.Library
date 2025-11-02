@@ -91,6 +91,8 @@ namespace KYS.Library.Helpers
         /// <returns></returns>
         public static byte[] UnlockPdfDocument(byte[] source, string ownerPass)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(ownerPass);
+
             if (!IsPasswordProtected(source))
                 return source;
 
@@ -119,6 +121,8 @@ namespace KYS.Library.Helpers
         /// <returns></returns>
         public static byte[] LockPdfDocument(byte[] source, string ownerPass, string userPass = null)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(ownerPass);
+
             if (String.IsNullOrEmpty(userPass))
                 userPass = ownerPass;
 
@@ -165,6 +169,8 @@ namespace KYS.Library.Helpers
                 && registerSystemFonts
                 && importCustomFontFilePaths.IsNullOrEmpty())
                 return null;
+
+            importCustomFontFilePaths ??= new List<string>();
 
             DefaultFontProvider fontProvider;
             if (registerStandardPdfFonts && registerShippedFonts && registerSystemFonts)

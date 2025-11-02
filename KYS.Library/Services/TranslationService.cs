@@ -10,7 +10,7 @@ using System.Resources;
 
 namespace KYS.Library.Services
 {
-    public interface IBaseTranslationService : IDisposable
+    public interface IBaseTranslationService
     {
         #region Properties
         CultureInfo CurrentCulture { get; }
@@ -31,7 +31,6 @@ namespace KYS.Library.Services
     {
         protected readonly List<CultureInfo> _cultures;
         protected readonly CultureInfo _currentCulture;
-        private bool disposed;
 
         protected BaseTranslationService(CultureInfo currentCulture = null, List<CultureInfo> cultures = null)
         {
@@ -78,32 +77,6 @@ namespace KYS.Library.Services
         }
 
         protected abstract List<LanguageResources> LoadLanguages(Assembly assembly = null);
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposed)
-                return;
-
-            if (disposing)
-            {
-                // TO-DO Dispose managed resources here
-            }
-
-            // TO-DO Dispose unmanaged resources here
-
-            disposed = true;
-        }
-
-        ~BaseTranslationService()
-        {
-            Dispose(false);
-        }
     }
 
     public sealed class SingleResourceTranslationService : BaseTranslationService, ITranslationService
@@ -112,8 +85,6 @@ namespace KYS.Library.Services
         private readonly ResourceManager _resourceManager;
 
         #region Constructors
-        public SingleResourceTranslationService() : base() { }
-
         public SingleResourceTranslationService(Type resourceType,
             CultureInfo currentCulture = null,
             List<CultureInfo> cultures = null) : base(currentCulture, cultures)

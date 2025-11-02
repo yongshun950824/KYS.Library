@@ -1,3 +1,11 @@
 # KYS.Library
 
-[![SonarQube Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=alert_status)](https://sonarcloud.io/dashboard?id=yongshun950824_kys-library)
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library)
+
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library)
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=coverage)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library) 
+
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=yongshun950824_kys-library)

@@ -39,5 +39,10 @@ namespace KYS.TestProject
 
             return stringWriter.ToString();
         }
+
+        public static DateTime ParseDateFromIso8601(string dateString)
+        {
+            return DateTime.Parse(dateString,  CultureInfo.InvariantCulture,  DateTimeStyles.RoundtripKind);
+        }
     }
 }

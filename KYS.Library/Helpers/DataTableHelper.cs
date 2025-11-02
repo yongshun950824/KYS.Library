@@ -9,12 +9,9 @@ using iText.Layout.Properties;
 using KYS.Library.Extensions;
 using Newtonsoft.Json;
 using OfficeOpenXml;
-using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -36,17 +33,14 @@ namespace KYS.Library.Helpers
             string delimiter = ";",
             CultureInfo cultureInfo = null)
         {
-            using MemoryStream ms = new MemoryStream();
-            using StreamWriter writer = new StreamWriter(ms);
-
             string csvString = null;
 
             if (!dt.IsNullOrEmpty())
                 csvString = DataTableToCSV(dt, printHeaders, delimiter, cultureInfo);
 
-            writer.Write(csvString);
-
-            writer.Flush();
+            using Stream stream = StreamHelper.WriteStringIntoStream(csvString);
+            using MemoryStream ms = new MemoryStream();
+            stream.CopyTo(ms);
 
             ms.Position = 0;
             return ms.ToArray();
@@ -56,49 +50,17 @@ namespace KYS.Library.Helpers
         /// Write DataTable into Excel file.
         /// </summary>
         /// <param name="dt"></param>
-        /// <param name="sheetName"></param>
-        /// <param name="printHeaders"></param>
-        /// <param name="headerStyle"></param>
+        /// <param name="headerRowStyle"></param>
         /// <param name="license"></param>
         /// <returns></returns>
         public static byte[] WriteToExcelFile(DataTable dt,
-            string sheetName,
-            bool printHeaders = true,
-            ExcelHeaderStyle headerStyle = default,
-            Dictionary<string, string> columnNameDict = null,
-            List<ExcelColumnFormat> excelColumnFormats = null,
+            ExcelHelper.ExcelRowStyle headerRowStyle = null,
+            List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
             LicenseContext license = LicenseContext.NonCommercial)
         {
-            ExcelPackage.LicenseContext = license;
+            ArgumentNullException.ThrowIfNull(dt);
 
-            const int START_ROW = 1;
-            const int START_COL = 1;
-
-            RenameDataTableHeaderColumn(dt, columnNameDict);
-
-            using MemoryStream ms = new MemoryStream();
-            using ExcelPackage package = new ExcelPackage(ms);
-
-            ExcelWorksheet sheet = package.Workbook.Worksheets.Add(sheetName);
-
-            #region Set header style
-            if (headerStyle == null)
-                headerStyle = new ExcelHeaderStyle();
-
-            using var range = sheet.Cells[START_ROW, START_COL, START_ROW, dt.Columns.Count];
-            range.Style.Font.Bold = headerStyle.Bold;
-            range.Style.Fill.PatternType = headerStyle.PatternType;
-            range.Style.Fill.BackgroundColor.SetColor(headerStyle.BackgroundColor);
-            #endregion
-
-            sheet.Cells[START_ROW, START_COL].LoadFromDataTable(dt, printHeaders);
-
-            ApplyColumnsFormat(sheet, dt, excelColumnFormats);
-
-            package.Save();
-
-            ms.Position = 0;
-            return ms.ToArray();
+            return ExcelHelper.CreateExcelBook(dt, excelColumnFormats, headerRowStyle, license: license);
         }
 
         /// <summary>
@@ -114,8 +76,11 @@ namespace KYS.Library.Helpers
             Style tableHeaderStyle = null,
             Style tableBodyStyle = null)
         {
+            ArgumentNullException.ThrowIfNull(dt);
+
             using MemoryStream ms = new MemoryStream();
             using PdfWriter pdfWriter = new PdfWriter(ms);
+            pdfWriter.SetCloseStream(false);
 
             PdfDocument pdfDoc = new PdfDocument(pdfWriter);
             Document document = new Document(pdfDoc);
@@ -156,7 +121,7 @@ namespace KYS.Library.Helpers
 
             string jsonString = JsonConvert.SerializeObject(dt, formatting);
 
-            Stream stream = StreamHelper.ReadStringIntoStream(jsonString);
+            using Stream stream = StreamHelper.WriteStringIntoStream(jsonString);
             using MemoryStream ms = new MemoryStream();
             stream.CopyTo(ms);
 
@@ -171,6 +136,13 @@ namespace KYS.Library.Helpers
         /// <returns></returns>
         public static DataTable ReadCSV(string filePath)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+
+            if (!filePath.EndsWith(".csv"))
+            {
+                throw new ArgumentException($"Provided {nameof(filePath)} must be a CSV file.");
+            }
+
             using StreamReader sr = new StreamReader(filePath);
 
             return ReadCSV(sr);
@@ -183,6 +155,8 @@ namespace KYS.Library.Helpers
         /// <returns></returns>
         public static DataTable ReadCSV(Stream stream)
         {
+            ArgumentNullException.ThrowIfNull(stream);
+
             using StreamReader sr = new StreamReader(stream);
 
             return ReadCSV(sr);
@@ -286,7 +260,7 @@ namespace KYS.Library.Helpers
                 foreach (string columnName in columnNames)
                 {
                     var cell = new Cell()
-                        .Add(new Paragraph(dtRow[columnName]?.ToString()));
+                        .Add(new Paragraph(dtRow[columnName].ToString()));
 
                     if (bodyStyle != null)
                         cell.AddStyle(bodyStyle);
@@ -297,65 +271,6 @@ namespace KYS.Library.Helpers
             #endregion
 
             return table;
-        }
-
-        private static void RenameDataTableHeaderColumn(DataTable dt, Dictionary<string, string> columnNameDict)
-        {
-            if (columnNameDict == null)
-                return;
-
-            foreach (DataColumn col in dt.Columns)
-            {
-                if (columnNameDict.TryGetValue(col.ColumnName, out string replacedColumnName))
-                    col.ColumnName = replacedColumnName;
-            }
-        }
-
-        private static void ApplyColumnsFormat(ExcelWorksheet sheet, 
-            DataTable dt, 
-            List<ExcelColumnFormat> excelColumnFormats)
-        {
-            int totalRow = dt.Rows.Count;
-
-            if (excelColumnFormats.IsNullOrEmpty() || totalRow == 0)
-                return;
-
-            foreach (var excelColumnFormat in excelColumnFormats)
-            {
-                foreach (int column in excelColumnFormat.Columns)
-                {
-                    ApplyColumnFormat(sheet, excelColumnFormat, totalRow, column);
-                }
-            }
-        }
-
-        private static void ApplyColumnFormat(ExcelWorksheet sheet, 
-            ExcelColumnFormat excelColumnFormat,
-            int totalRow,
-            int column)
-        {
-            if (!String.IsNullOrEmpty(excelColumnFormat.Format))
-                sheet.Cells[2, column, totalRow + 1, column].Style.Numberformat.Format = excelColumnFormat.Format;
-
-            if (excelColumnFormat.HorizontalAlignment != null)
-                sheet.Cells[2, column, totalRow + 1, column].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
-        }
-
-        public class ExcelHeaderStyle
-        {
-            public bool Bold { get; set; } = true;
-            public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.Solid;
-            public Color BackgroundColor { get; set; } = Color.LightGray;
-        }
-
-        /// <summary>
-        /// A setting class to define the displayed format/pattern for Excel columns
-        /// </summary>
-        public class ExcelColumnFormat
-        {
-            public string Format { get; set; }
-            public int[] Columns { get; set; }
-            public ExcelHorizontalAlignment? HorizontalAlignment { get; set; }
         }
     }
 }

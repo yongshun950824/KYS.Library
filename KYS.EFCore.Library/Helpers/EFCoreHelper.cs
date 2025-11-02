@@ -22,7 +22,7 @@ namespace KYS.EFCore.Library.Helpers
             return new ValueConverter<TEnum, string>
             (
                 v => v.ToDescription(),
-                v => EnumExtensions.GetValueByDescriptionAttribute<TEnum>(v)
+                v => EnumExtensions.GetValueByDescription<TEnum>(v)
             );
         }
 

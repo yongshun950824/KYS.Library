@@ -44,7 +44,7 @@ namespace KYS.Library.Extensions
         {
             ThaiBuddhistCalendar cal = new ThaiBuddhistCalendar();
 
-            return new DateTime(cal.GetYear(dt), cal.GetMonth(dt), dt.Day, dt.Hour, dt.Minute, dt.Second, dt.Millisecond, DateTimeKind.Unspecified);
+            return new DateTime(cal.GetYear(dt), cal.GetMonth(dt), cal.GetDayOfMonth(dt), dt.Hour, dt.Minute, dt.Second, dt.Millisecond, DateTimeKind.Unspecified);
         }
 
         public static int GetAge(this DateTime dob, DateTime? calculatedDate = null)

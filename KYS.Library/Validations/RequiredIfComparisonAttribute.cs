@@ -1,20 +1,17 @@
 ﻿using KYS.Library.Extensions;
 using KYS.Library.Helpers;
 using System;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection;
 
 namespace KYS.Library.Validations
 {
     /// <summary>
-    /// RequiredIf attribute v2 supported for compare operators. (Temporarily named as: `RequiredIf2`)
+    /// RequiredIf attribute v2 supported for compare operators.
     /// <br /> <br />
     /// <remarks>
     /// Usage:  <br />
     /// <c>
-    /// [RequiredIf2(    <br />
+    /// [RequiredIfComparison(    <br />
 	///	otherPropertyName: nameof(PropertyOne),     <br />
 	///	matchedValue: 1,    <br />
 	///	operator: CompareOperator.CompareOperatorConstants.NotEqual)]   <br />
@@ -24,27 +21,27 @@ namespace KYS.Library.Validations
     /// </remarks>
     /// </summary>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
-    public class RequiredIf2Attribute : ValidationAttribute
+    public class RequiredIfComparisonAttribute : ValidationAttribute
     {
         readonly string _otherPropertyName;
         readonly object _matchedValue;
         readonly CompareOperator.CompareOperatorConstants _operator = CompareOperator.CompareOperatorConstants.Equal;
         readonly string _errorMessage;
 
-        public RequiredIf2Attribute(string otherPropertyName, object matchedValue) : base()
+        public RequiredIfComparisonAttribute(string otherPropertyName, object matchedValue) : base()
         {
             _otherPropertyName = otherPropertyName;
             _matchedValue = matchedValue;
         }
 
-        public RequiredIf2Attribute(string otherPropertyName, object matchedValue, string errorMessage) : base(errorMessage)
+        public RequiredIfComparisonAttribute(string otherPropertyName, object matchedValue, string errorMessage) : base(errorMessage)
         {
             _otherPropertyName = otherPropertyName;
             _matchedValue = matchedValue;
             _errorMessage = errorMessage;
         }
 
-        public RequiredIf2Attribute(
+        public RequiredIfComparisonAttribute(
             string otherPropertyName,
             object matchedValue,
             CompareOperator.CompareOperatorConstants @operator) : base()
@@ -54,7 +51,7 @@ namespace KYS.Library.Validations
             _operator = @operator;
         }
 
-        public RequiredIf2Attribute(
+        public RequiredIfComparisonAttribute(
             string otherPropertyName,
             object matchedValue,
             CompareOperator.CompareOperatorConstants @operator,

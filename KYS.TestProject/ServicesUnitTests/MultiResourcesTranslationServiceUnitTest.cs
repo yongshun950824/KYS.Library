@@ -1,5 +1,4 @@
-﻿using iText.Commons.Actions;
-using KYS.Library.Services;
+﻿using KYS.Library.Services;
 using KYS.TestProject.Resources;
 using NUnit.Framework;
 using System;
@@ -10,7 +9,7 @@ using System.Reflection;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ServicesUnitTests
 {
     public class MultiResourcesTranslationServiceUnitTest
     {
@@ -26,14 +25,12 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void NotInitializeCurrentCulture()
+        public void Constructor_WithoutInitializeCulture_ShouldGetCurrentCulture()
         {
             // Arrange
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly()
             );
-#pragma warning restore S3242
             CultureInfo expectedValue = CultureInfo.CurrentCulture;
 
             // Act
@@ -44,15 +41,13 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void InitializeThaiCulture()
+        public void Constructor_WithInitializeThaiCulture_ShouldGetCorrectCulture()
         {
             // Arrange
             CultureInfo expectedValue = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 expectedValue
             );
-#pragma warning restore S3242
 
             // Act
             var actualValue = translationService.CurrentCulture;
@@ -62,14 +57,12 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void NotInitializeCultureInfos()
+        public void Constructor_WithoutInitializeCultureInfos_ShouldGetAllCultures()
         {
             // Arrange
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 new CultureInfo("th-TH")
             );
-#pragma warning restore S3242
 
             var expectedValue = CultureInfo.GetCultures(CultureTypes.AllCultures)
                 .ToList();
@@ -83,16 +76,14 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void InitializeCultureInfos()
+        public void Constructor_WithInitializeCultureInfos_ShouldGetCurrentCutures()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             var expectedValue = new List<CultureInfo> { CultureInfo.InvariantCulture, cultureInfo };
 
@@ -105,16 +96,14 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GetLanguagesWithFirstConstructor()
+        public void Constructor_WithFirstConstructor_ShouldGetLanguages()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string notExpectedValue = JsonSerializer.Serialize(new { }, _serializerOptions);   // Empty object
 
@@ -130,16 +119,14 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GetLanguagesWithSecondConstructor()
+        public void Constructor_WithSecondConstructor_ShouldGetLanguages()
         {
             // Arrange
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 new CultureInfo("th-TH"),
                 new List<CultureInfo> { new CultureInfo("th-TH"), new CultureInfo("zh-CN") }
             );
-#pragma warning restore S3242
 
             string notExpectedValue = JsonSerializer.Serialize(new { }, _serializerOptions);   // Empty object
 
@@ -156,17 +143,15 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateForChildInEnglish()
+        public void TranslateToEnglish_ShouldReturnTranslatedEnglishText()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "เด็ก";
             string expectedValue = "Child";
@@ -179,17 +164,15 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateUnknownInEnglishAndReturnOriginalValue()
+        public void TranslateToEnglish_WithUnknown_ShouldReturnOriginalValue()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "unknown";
             string expectedValue = "unknown";
@@ -202,17 +185,15 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateUnknownInEnglishAndThrowException()
+        public void TranslateToEnglish_WithUnknownAndDisableReturnedOriginalValue_ShouldThrowException()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "unknown";
             ArgumentNullException expectedEx = new ArgumentNullException($"Provided {input} doesn't support for English language translation.");
@@ -225,21 +206,19 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseToDefaultCulture()
+        public void Translate_WithoutCulture_ShouldReturnDefaultCultureText()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
             Type resourceType = typeof(Resource);
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "Spouse";
-            //string expectedValue = "คู่สมรส";
+            // "คู่สมรส"
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
@@ -250,17 +229,15 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseToUnsupportedCultureAndReturnOriginalValue()
+        public void Translate_ToUnsupportedCulture_ShouldReturnOriginalValue()
         {
             // Arrange
             CultureInfo culture = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 culture,
                 new List<CultureInfo> { culture }
             );
-#pragma warning restore S3242
 
             string input = "Spouse";
             string cultureName = "en-MY";
@@ -274,20 +251,18 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseToSpecificCulture()
+        public void Translate_ToSpecificCulture_ShouldReturnTranslatedText()
         {
             // Arrange
             CultureInfo culture = new CultureInfo("th-TH");
-#pragma warning disable S3242
             Type resourceType = typeof(Resource);
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultures: new List<CultureInfo> { culture }
             );
-#pragma warning restore S3242
 
             string input = "Spouse";
-            //string expectedValue = "คู่สมรส";
+            // "คู่สมรส"
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, culture) ?? input;
 
             // Act
@@ -298,17 +273,15 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseToDefaultCultureAndReturnOriginalValue()
+        public void Translate_ToDefaultCulture_ShouldReturnOriginalValue()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 currentCulture: cultureInfo,
                 cultures: new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "unknown";
             string expectedValue = "unknown";
@@ -321,17 +294,15 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseToDefaultCultureAndThrowException()
+        public void Translate_WithDisabledReturnedOriginalValueAndToDefaultCulture_ShouldThrowException()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 currentCulture: cultureInfo,
                 cultures: new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "unknown";
             ArgumentNullException expectedEx = new ArgumentNullException($"Provided {input} doesn't support for {cultureInfo.Name} language translation.");
@@ -344,21 +315,19 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseWithSpecificResource()
+        public void Translate_WithSpecificResource_ShouldReturnTranslatedText()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "Spouse";
-            //string expectedValue = "คู่สมรส";
+            // คู่สมรส
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
@@ -369,18 +338,16 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseWithInvalidResource()
+        public void Translate_WithInvalidResource_ShouldThrowException()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(string);     // Invalid resource
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
 
             string input = "Spouse";
             ArgumentException expectedEx = new ArgumentException($"{resourceType.FullName} resource does not existed.");
@@ -393,22 +360,43 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void TranslateSpouseIgnoreCase()
+        public void Translate_WithResourceAndDisabledReturnedOriginalValue_ShouldThrowException()
         {
             // Arrange
             CultureInfo cultureInfo = new CultureInfo("th-TH");
             Type resourceType = typeof(Resource);
-#pragma warning disable S3242
-            using ITranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
                 new List<CultureInfo> { cultureInfo }
             );
-#pragma warning restore S3242
+
+            string input = "unknown";
+            ArgumentNullException expectedEx = new ArgumentNullException($"Provided {input} doesn't support for {cultureInfo.Name} language translation.");
+
+            // Act
+            var ex = Assert.Throws<ArgumentNullException>(() => translationService.Translate(input, resourceType, false));
+
+            // Assert
+            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+        }
+
+
+        [Test]
+        public void Translate_IgnoreCase_ShouldReturnTranslatedText()
+        {
+            // Arrange
+            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            Type resourceType = typeof(Resource);
+            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                new List<CultureInfo> { cultureInfo }
+            );
 
             string input = "spouse";
             string resourceKey = "Spouse";
-            //string expectedValue = "คู่สมรส";
+            // คู่สมรส
             string expectedValue = Helpers.GetTranslatedText(resourceKey, resourceType, cultureInfo) ?? input;
 
             // Act

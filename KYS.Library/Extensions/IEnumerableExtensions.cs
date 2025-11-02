@@ -56,9 +56,8 @@ namespace KYS.Library.Extensions
 
             if (removeEmptyItem)
             {
-                Type type = typeof(T);
-                if (type == typeof(string))
-                    enumerable = enumerable.Where(x => !String.IsNullOrEmpty(x?.ToString()));
+                if (enumerable is IEnumerable<string> stringEnumerable)
+                    enumerable = (IEnumerable<T>)stringEnumerable.Where(x => !String.IsNullOrEmpty(x));
                 else
                     enumerable = enumerable.Where(x => x != null);
             }
@@ -134,12 +133,12 @@ namespace KYS.Library.Extensions
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="TValue"></typeparam>
         /// <param name="source"></param>
-        /// <param name="order"></param>
         /// <param name="valueSelector"></param>
+        /// <param name="order"></param>
         /// <returns></returns>
         public static IEnumerable<T> OrderBySequence<T, TValue>(this IEnumerable<T> source,
-           IEnumerable<TValue> order,
-           Func<T, TValue> valueSelector)
+           Func<T, TValue> valueSelector,
+           IEnumerable<TValue> order)
         {
             var lookup = source.ToLookup(valueSelector, t => t);
             foreach (var value in order)
@@ -184,7 +183,7 @@ namespace KYS.Library.Extensions
                 .Select(x => x.Key)
                 .ToList();
 
-            foreach (var value in elementsNotInOrder)
+            foreach (var value in elementsNotInOrder.OrderBy(x => x))
             {
                 foreach (var t in lookup[value])
                 {

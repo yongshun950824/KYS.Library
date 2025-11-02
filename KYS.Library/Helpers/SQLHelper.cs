@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -9,6 +10,9 @@ namespace KYS.Library.Helpers
         public static DataSet GetDataSet(string connectionString, CommandType commandType, string commandText,
             params SqlParameter[] sqlParameters)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
+            ArgumentException.ThrowIfNullOrWhiteSpace(commandText);
+
             using SqlConnection con = new SqlConnection(connectionString);
             using SqlCommand command = new SqlCommand(commandText, con);
             con.Open();
@@ -25,6 +29,9 @@ namespace KYS.Library.Helpers
         public static DataTable GetDataTable(string connectionString, CommandType commandType, string commandText,
             params SqlParameter[] sqlParameters)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
+            ArgumentException.ThrowIfNullOrWhiteSpace(commandText);
+
             using SqlConnection con = new SqlConnection(connectionString);
             using SqlCommand command = new SqlCommand(commandText, con);
             con.Open();
@@ -60,9 +67,13 @@ namespace KYS.Library.Helpers
         ///     StackOverflow: ADO.NET - Query with <c>IN ()</c>
         ///    </a>
         /// </remarks>
-        public static SqlParameter BuildStructuredSqlParameter<T>(string tableTypeName, string tableTypeColumnName, 
+        public static SqlParameter BuildStructuredSqlParameter<T>(string tableTypeName, string tableTypeColumnName,
             string parameterName, IEnumerable<T> values)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(tableTypeName);
+            ArgumentException.ThrowIfNullOrWhiteSpace(tableTypeColumnName);
+            ArgumentException.ThrowIfNullOrWhiteSpace(parameterName);
+
             DataTable dt = new DataTable();
             dt.Columns.Add(tableTypeColumnName, typeof(T));
 

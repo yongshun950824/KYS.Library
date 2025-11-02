@@ -4,7 +4,7 @@ using NUnit.Framework;
 using System;
 using System.IO;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ServicesUnitTests
 {
     public class QrGeneratorServiceUnitTest
     {
@@ -35,7 +35,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithoutValueAndFailed()
+        public void Constructor_WithNull_ShouldThrowException()
         {
             // Arrange
             ArgumentNullException expectedEx = new ArgumentNullException("value");
@@ -51,7 +51,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithInvalidWidthAndFailed()
+        public void Constructor_WithInvalidWidth_ShouldThrowException()
         {
             // Arrange
             ArgumentException expectedEx = new ArgumentException("Invalid width.");
@@ -67,7 +67,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithInvalidHeightAndFailed()
+        public void Constructor_WithInvalidHeight_ShouldThrowException()
         {
             // Arrange
             ArgumentException expectedEx = new ArgumentException("Invalid height.");
@@ -83,7 +83,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithInvalidMarginAndFailed()
+        public void Constructor_WithInvalidMargin_ShouldThrowException()
         {
             // Arrange
             ArgumentException expectedEx = new ArgumentException("Invalid margin.");
@@ -99,7 +99,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithDefaultSize()
+        public void Draw_WithDefaultSize_ShouldGenerateQR()
         {
             // Act
             QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
@@ -117,7 +117,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithSpecifiedSize()
+        public void Draw_WithSpecifiedSize_ShouldGenerateQR()
         {
             // Arrange
             int width = 100;
@@ -140,7 +140,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithDefaultSizeLogo()
+        public void Draw_WithDefaultSizeLogo_ShouldGenerateQR()
         {
             // Act
             QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
@@ -158,7 +158,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithSpecifiedSizeLogo()
+        public void Draw_WithSpecifiedSizeLogo_ShouldGenerateQR()
         {
             // Arrange
             int logoWidth = 25;
@@ -182,7 +182,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithSpecifiedSizeQRandLogo()
+        public void Draw_WithSpecifiedSizeQRandLogo_ShouldGenerateQR()
         {
             // Arrange
             int width = 100;
@@ -208,7 +208,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithLogoButNotProvideLogoPathAndFailed()
+        public void Constructor_WithNullLogoPath_ShouldThrowException()
         {
             // Arrange
             ArgumentNullException expectedEx = new ArgumentNullException("logoPath");
@@ -224,7 +224,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithLogoButProvideInvalidLogoPath()
+        public void Constructor_WithInvalidLogoPath_ShouldThrowException()
         {
             // Arrange
             FileNotFoundException expectedEx = new FileNotFoundException("logoPath");
@@ -241,7 +241,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithLogoWidthIsLargerAndFailed()
+        public void Constructor_WithLogoWidthIsLarger_ShouldThrowException()
         {
             // Arrange
             int width = 100;
@@ -254,7 +254,7 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath, 
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
                     width, height, _defaultMargin, logoWidth, logoHeight);
             });
 
@@ -263,7 +263,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithLogoHeightIsLargerAndFailed()
+        public void Constructor_WithLogoHeightIsLarger_ShouldThrowException()
         {
             // Arrange
             int width = 100;
@@ -276,7 +276,7 @@ namespace KYS.TestProject
             // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath, 
+                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
                     width, height, _defaultMargin, logoWidth, logoHeight);
             });
 
@@ -285,12 +285,10 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRAndToMemoryStream()
+        public void DrawAndToMemoryStream_ShouldWriteIntoMS()
         {
             // Arrange
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
 
             // Act
             MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
@@ -301,13 +299,28 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRAndWriteToFile()
+        public void DrawAndToFile_WithoutFilePath_ShouldThrowException()
+        {
+            // Arrange
+            string filePath = null;
+            ArgumentNullException expectedEx = new ArgumentNullException(nameof(filePath));
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+
+            // Act
+            var ex = Assert.Throws<ArgumentNullException>(
+                () => qrGeneratorService.DrawAndToFile(filePath)
+            );
+
+            // Assert
+            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+        }
+
+        [Test]
+        public void DrawAndToFile_ShouldGenerateQRToFile()
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
 
             // Act
             qrGeneratorService.DrawAndToFile(filePath);
@@ -317,13 +330,25 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRWithLogoAndWriteToFile()
+        public void DrawAndToFile_WithFilePathNoExtension_ShouldGenerateQRToFile()
+        {
+            // Arrange
+            string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}");
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+
+            // Act
+            qrGeneratorService.DrawAndToFile(filePath);
+
+            // Assert
+            Assert.IsTrue(File.Exists(filePath + ".png"));
+        }
+
+        [Test]
+        public void DrawAndToFile_WithLogo_ShouldGenerateQRToFile()
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
 
             // Act
             qrGeneratorService.DrawAndToFile(filePath);
@@ -333,12 +358,11 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRAndToBase64()
+        public void DrawAndToBase64_ShouldGenerateQRToBase64()
         {
             // Arrange
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+
             using MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
             string expectedBase64String = Convert.ToBase64String(ms.ToArray());
 
@@ -353,13 +377,12 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void GenerateQRAndToDataUri()
+        public void DrawAndToDataUri_ShouldGenerateQRToDataUri()
         {
             // Arrange
             string dataUriPrefix = "data:image/png;base64, ";
-#pragma warning disable S3242
-            IQrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
-#pragma warning restore S3242
+            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+ 
             string base64String = qrGeneratorService.DrawAndToBase64();
             string expectedDataUri = dataUriPrefix + base64String;
 

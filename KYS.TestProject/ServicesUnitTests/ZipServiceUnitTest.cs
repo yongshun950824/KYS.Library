@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace KYS.TestProject
+namespace KYS.TestProject.ServicesUnitTests
 {
     internal class ZipServiceUnitTest
     {
@@ -35,10 +35,9 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void ZipWithInvalidFileName()
+        public void Zip_WithInvalidFileName_ShouldThrowException()
         {
-            ArgumentException expectedEx = new ArgumentException("FileName must be provided.");
-
+            // Arrange
             var ex = Assert.Throws<ArgumentException>(() =>
             {
                 ZipService zipService = new ZipService
@@ -49,14 +48,33 @@ namespace KYS.TestProject
                 zipService.Zip();
             });
 
-            Assert.That(expectedEx.Message, Is.EqualTo(ex.Message));
+            // Assert
+            Assert.IsInstanceOf<ArgumentException>(ex);
+            Assert.That(nameof(ZipService.FileName), Is.EqualTo(ex.ParamName));
         }
 
         [Test]
-        public void ZipWithEmptyFileItemsAndFail()
+        public void ZipService_WithFileNameWithoutExtension_ShouldAppendFileExtension()
         {
+            // Arrange & Act
+            string fileName = "test";
+            ZipService zipService = new ZipService
+            {
+                FileName = fileName,
+                FileItems = _fileItems,
+            };
+
+            // Assert
+            Assert.That(fileName + ".zip", Is.EqualTo(zipService.FileName));
+        }
+
+        [Test]
+        public void Zip_WithEmptyFileItems_ShouldThrowException()
+        {
+            // Arrange
             ArgumentException expectedEx = new ArgumentException("FileItems must be provided with at least 1 file.");
 
+            // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
                 ZipService zipService = new ZipService
@@ -67,14 +85,18 @@ namespace KYS.TestProject
                 zipService.Zip();
             });
 
+            // Assert
+            Assert.IsInstanceOf<ArgumentException>(ex);
             Assert.That(expectedEx.Message, Is.EqualTo(ex.Message));
         }
 
         [Test]
-        public void ZipWithNullFileItemsAndFail()
+        public void Zip_WithNullFileItems_ShouldThrowException()
         {
+            // Arrange
             ArgumentException expectedEx = new ArgumentException("FileItems must be provided with at least 1 file.");
 
+            // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
                 ZipService zipService = new ZipService
@@ -85,30 +107,33 @@ namespace KYS.TestProject
                 zipService.Zip();
             });
 
+            // Assert
+            Assert.IsInstanceOf<ArgumentException>(ex);
             Assert.That(expectedEx.Message, Is.EqualTo(ex.Message));
         }
 
         [Test]
-        public void ZipWithInvalidPasswordAndFail()
+        public void Zip_WithInvalidPassword_ShouldThrowException()
         {
-            ArgumentException expectedEx = new ArgumentException("Password must be provided.");
-
+            // Act
             var ex = Assert.Throws<ArgumentException>(() =>
             {
                 ZipService zipService = new ZipService
                 {
                     FileName = "Sample.zip",
                     FileItems = _fileItems,
-                    Password = String.Empty
+                    Password = string.Empty
                 };
                 zipService.Zip();
             });
 
-            Assert.That(expectedEx.Message, Is.EqualTo(ex.Message));
+            // Assert
+            Assert.IsInstanceOf<ArgumentException>(ex);
+            Assert.That(nameof(ZipService.Password), Is.EqualTo(ex.ParamName));
         }
 
         [Test]
-        public void CreateZipWriterServiceInstanceWithFirstConstructor()
+        public void Constructor_WithNoArgument_ShouldCreateInstance()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -130,18 +155,14 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CreateZipWriterServiceInstanceWithSecondConstructor()
+        public void Constructor_WithSecondConstructor_ShouldCreateInstance()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
             var fileItems = new List<ZipService.ZipFileItem> { _fileItems[0] };
 
             // Act
-            ZipService zipService = new ZipService
-            {
-                FileName = zipFileName,
-                FileItems = fileItems
-            };
+            ZipService zipService = new ZipService(zipFileName, fileItems);
 
             // Assert
             Assert.AreEqual(zipFileName, zipService.FileName);
@@ -149,7 +170,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void CreateZipWriterServiceInstanceWithThirdConstructor()
+        public void Constructor_WithThirdConstructor_ShouldCreateInstance()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -157,12 +178,7 @@ namespace KYS.TestProject
             var fileItems = new List<ZipService.ZipFileItem> { _fileItems[0] };
 
             // Act
-            ZipService zipService = new ZipService
-            {
-                FileName = zipFileName,
-                FileItems = fileItems,
-                Password = password
-            };
+            ZipService zipService = new ZipService(zipFileName, fileItems, password);
 
             // Assert
             Assert.AreEqual(zipFileName, zipService.FileName);
@@ -171,7 +187,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void ZipSingleFileAndWriteFile()
+        public void ZipAndToFile_WithSingleFile_ShouldZipToFile()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -193,7 +209,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void ZipSingleFileWithPasswordAndWriteFile()
+        public void ZipAndToFile_WithSingleFileAndPassword_ShouldZipToFile()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -218,7 +234,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void ZipMultipleFilesAndWriteFile()
+        public void ZipAndToFile_WithMultipleFiles_ShouldZipToFile()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -240,7 +256,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void ZipMultipleFilesWithPasswordAndWriteFile()
+        public void ZipAndToFile_WithMultipleFilesAndPassword_ShouldZipToFile()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -265,7 +281,29 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void UnzipUnencryptedZipFile()
+        public void Unzip_WithNonExistentFile_ShouldThrowException()
+        {
+            // Arrange
+            string zipFileName = $"invalid.zip";
+            string zipFileDirPath = Path.Combine(_outDirectoryPath, zipFileName);
+            string unzipDirPath = Path.Combine(_outDirectoryPath, zipFileName.Replace(".zip", ""));
+
+            // Act
+            var ex = Assert.Throws<FileNotFoundException>(() =>
+            {
+                ZipService unzipService = new ZipService();
+                unzipService.Unzip(zipFileDirPath, unzipDirPath);
+            });
+
+            // Assert
+            Assert.IsFalse(File.Exists(zipFileDirPath));
+            Assert.IsFalse(Directory.Exists(unzipDirPath));
+            Assert.IsNotNull(ex);
+            Assert.IsInstanceOf<FileNotFoundException>(ex);
+        }
+
+        [Test]
+        public void Unzip_WithUnencryptedZipFile_ShouldUnzipToDir()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -293,7 +331,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void UnzipEncryptedFile()
+        public void Unzip_WithEncryptedZipFile_ShouldUnzipToDir()
         {
             // Arrange
             string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";
@@ -326,7 +364,7 @@ namespace KYS.TestProject
         }
 
         [Test]
-        public void UnzipEncryptedFileWithoutPasswordAndFail()
+        public void Unzip_WithEncryptedZipFileAndNoPassword_ShouldThrowException()
         {
             // Arrange
             var expectedEx = new ZipException("No password available for encrypted stream");
@@ -356,6 +394,7 @@ namespace KYS.TestProject
             });
 
             // Assert
+            Assert.IsInstanceOf<ZipException>(ex);
             Assert.That(expectedEx.Message, Is.EqualTo(ex.Message));
         }
     }

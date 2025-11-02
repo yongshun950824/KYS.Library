@@ -62,6 +62,10 @@ namespace KYS.Library.Extensions
 
         public static string Join(this IEnumerable<string> values, string separator, bool isRemoveNullOrEmptyString = true)
         {
+            ArgumentNullException.ThrowIfNull(values);
+
+            ArgumentNullException.ThrowIfNull(separator);
+
             if (isRemoveNullOrEmptyString)
                 values = values.Where(x => !String.IsNullOrEmpty(x));
 
