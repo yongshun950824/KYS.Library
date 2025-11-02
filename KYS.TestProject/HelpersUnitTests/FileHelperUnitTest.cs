@@ -113,7 +113,7 @@ namespace KYS.TestProject.HelpersUnitTests
         public void LoadFileToMemoryStream_WithValidFilePath_ShouldReturnMemoryStream()
         {
             // Arrange
-            string filePath = Directory.GetCurrentDirectory() + "\\Resources\\sample.txt";
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "sample.txt");
 
             // Act
             using MemoryStream result = FileHelper.LoadFileToMemoryStream(filePath);
@@ -135,7 +135,11 @@ namespace KYS.TestProject.HelpersUnitTests
         public void LoadFileToMemoryStream_WithInvalidFilePath_ShouldThrowException()
         {
             // Arrange
-            string invalidPath = "?:\\invalid\\path.txt";
+            string invalidPath = Environment.OSVersion.Platform switch
+            {
+                PlatformID.Win32NT => "?:\\invalid\\path.txt",  // Invalid on Windows
+                _ => "/invalid_dir/\\invalid_path.txt"          // Invalid on Linux/macOS
+            };
 
             // Act & Assert
             Assert.Throws<FileNotFoundException>(() => FileHelper.LoadFileToMemoryStream(invalidPath));
