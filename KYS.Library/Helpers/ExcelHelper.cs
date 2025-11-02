@@ -152,7 +152,7 @@ namespace KYS.Library.Helpers
             int totalColumn = dt.Columns.Count;
             if (totalRow > 0)
             {
-                ApplyColumnFormats(worksheet, dt, excelColumnFormats, summaryRowStyle, totalRow, totalColumn, hasHeader);
+                ApplyColumnFormats(worksheet, dt, excelColumnFormats, totalRow, hasHeader);
             }
 
             #region Styling for summary row
