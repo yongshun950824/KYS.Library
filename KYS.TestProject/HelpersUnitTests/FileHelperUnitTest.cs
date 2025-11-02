@@ -95,7 +95,11 @@ namespace KYS.TestProject.HelpersUnitTests
         {
             // Arrange
             byte[] data = [1, 2, 3];
-            string invalidPath = "?:\\invalid\\path.txt";
+            string invalidPath = Environment.OSVersion.Platform switch
+            {
+                PlatformID.Win32NT => "?:\\invalid\\path.txt",  // Invalid on Windows
+                _ => "/invalid_dir/\\invalid_path.txt"          // Invalid on Linux/macOS
+            };
 
             // Act & Assert
             Assert.Throws<DirectoryNotFoundException>(() => FileHelper.WriteFile(data, invalidPath));
