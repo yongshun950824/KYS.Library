@@ -1,0 +1,38 @@
+name: Build and Publish KYS.Library DocFX
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
+
+      - name: Build Documentation
+        working-directory: KYS.Library/docfx
+        run: |
+          docfx metadata
+          docfx build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./KYS.Library/docfx/_site
+          destination_dir: kys-library
