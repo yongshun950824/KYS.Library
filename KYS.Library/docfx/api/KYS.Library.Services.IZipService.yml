@@ -1,0 +1,227 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.IZipService
+  commentId: T:KYS.Library.Services.IZipService
+  id: IZipService
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.IZipService.Unzip(System.String,System.String)
+  - KYS.Library.Services.IZipService.Zip
+  - KYS.Library.Services.IZipService.ZipAndToFile(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IZipService
+  nameWithType: IZipService
+  fullName: KYS.Library.Services.IZipService
+  type: Interface
+  source:
+    remote:
+      path: KYS.Library/Services/ZipService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IZipService
+    path: ../Services/ZipService.cs
+    startLine: 14
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Define a contract for zipping/unzipping item.
+  example: []
+  syntax:
+    content: public interface IZipService
+    content.vb: Public Interface IZipService
+- uid: KYS.Library.Services.IZipService.Zip
+  commentId: M:KYS.Library.Services.IZipService.Zip
+  id: Zip
+  parent: KYS.Library.Services.IZipService
+  langs:
+  - csharp
+  - vb
+  name: Zip()
+  nameWithType: IZipService.Zip()
+  fullName: KYS.Library.Services.IZipService.Zip()
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/ZipService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Zip
+    path: ../Services/ZipService.cs
+    startLine: 20
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Zip item(s).
+  example: []
+  syntax:
+    content: byte[] Zip()
+    return:
+      type: System.Byte[]
+      description: The byte array containing the zipped file.
+    content.vb: Function Zip() As Byte()
+  overload: KYS.Library.Services.IZipService.Zip*
+- uid: KYS.Library.Services.IZipService.ZipAndToFile(System.String)
+  commentId: M:KYS.Library.Services.IZipService.ZipAndToFile(System.String)
+  id: ZipAndToFile(System.String)
+  parent: KYS.Library.Services.IZipService
+  langs:
+  - csharp
+  - vb
+  name: ZipAndToFile(string)
+  nameWithType: IZipService.ZipAndToFile(string)
+  fullName: KYS.Library.Services.IZipService.ZipAndToFile(string)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/ZipService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ZipAndToFile
+    path: ../Services/ZipService.cs
+    startLine: 25
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Zip item(s) and save the zipped file in the provided location.
+  example: []
+  syntax:
+    content: void ZipAndToFile(string destDirPath)
+    parameters:
+    - id: destDirPath
+      type: System.String
+      description: The directory path where the zipped file will be saved.
+    content.vb: Sub ZipAndToFile(destDirPath As String)
+  overload: KYS.Library.Services.IZipService.ZipAndToFile*
+  nameWithType.vb: IZipService.ZipAndToFile(String)
+  fullName.vb: KYS.Library.Services.IZipService.ZipAndToFile(String)
+  name.vb: ZipAndToFile(String)
+- uid: KYS.Library.Services.IZipService.Unzip(System.String,System.String)
+  commentId: M:KYS.Library.Services.IZipService.Unzip(System.String,System.String)
+  id: Unzip(System.String,System.String)
+  parent: KYS.Library.Services.IZipService
+  langs:
+  - csharp
+  - vb
+  name: Unzip(string, string)
+  nameWithType: IZipService.Unzip(string, string)
+  fullName: KYS.Library.Services.IZipService.Unzip(string, string)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/ZipService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Unzip
+    path: ../Services/ZipService.cs
+    startLine: 31
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Unzip the zipped file and save in the provided location.
+  example: []
+  syntax:
+    content: void Unzip(string srcFilePath, string destDirPath)
+    parameters:
+    - id: srcFilePath
+      type: System.String
+      description: The source file path of the zipped file.
+    - id: destDirPath
+      type: System.String
+      description: The directory path where the unzipped files will be saved.
+    content.vb: Sub Unzip(srcFilePath As String, destDirPath As String)
+  overload: KYS.Library.Services.IZipService.Unzip*
+  nameWithType.vb: IZipService.Unzip(String, String)
+  fullName.vb: KYS.Library.Services.IZipService.Unzip(String, String)
+  name.vb: Unzip(String, String)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: KYS.Library.Services.IZipService.Zip*
+  commentId: Overload:KYS.Library.Services.IZipService.Zip
+  href: KYS.Library.Services.IZipService.html#KYS_Library_Services_IZipService_Zip
+  name: Zip
+  nameWithType: IZipService.Zip
+  fullName: KYS.Library.Services.IZipService.Zip
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: KYS.Library.Services.IZipService.ZipAndToFile*
+  commentId: Overload:KYS.Library.Services.IZipService.ZipAndToFile
+  href: KYS.Library.Services.IZipService.html#KYS_Library_Services_IZipService_ZipAndToFile_System_String_
+  name: ZipAndToFile
+  nameWithType: IZipService.ZipAndToFile
+  fullName: KYS.Library.Services.IZipService.ZipAndToFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Services.IZipService.Unzip*
+  commentId: Overload:KYS.Library.Services.IZipService.Unzip
+  href: KYS.Library.Services.IZipService.html#KYS_Library_Services_IZipService_Unzip_System_String_System_String_
+  name: Unzip
+  nameWithType: IZipService.Unzip
+  fullName: KYS.Library.Services.IZipService.Unzip

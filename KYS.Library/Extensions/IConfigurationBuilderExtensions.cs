@@ -10,6 +10,9 @@ using static KYS.Library.Helpers.JsonHelper;
 
 namespace KYS.Library.Extensions
 {
+    /// <summary>
+    /// Provides extension methods for working with <see cref="IConfigurationBuilder" />.
+    /// </summary>
     public static class IConfigurationBuilderExtensions
     {
         private static readonly JsonSerializer _DefaultSerializer = JsonSerializer.Create(new JsonSerializerSettings
@@ -26,10 +29,10 @@ namespace KYS.Library.Extensions
         /// <br /><br />
         /// Inspired from <a href="https://stackoverflow.com/a/79752367/8017690">IConfiguration Bind doesn't work with arrays</a>.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="configurationBuilder"></param>
-        /// <param name="key"></param>
-        /// <param name="obj"></param>
+        /// <typeparam name="T">The type of <c>obj</c>.</typeparam>
+        /// <param name="configurationBuilder">The <see cref="IConfigurationBuilder" /> instance this method extends.</param>
+        /// <param name="key">The key of the entry to set.</param>
+        /// <param name="obj">The value to associate with the key.</param>
         public static void Bind<T>(this IConfigurationBuilder configurationBuilder, string key, T obj)
         {
             var dict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);

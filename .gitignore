@@ -366,3 +366,5 @@ FodyWeavers.xsd
 # Coverage report
 lcov.info
 covstats/
+
+*/docfx/_site/

@@ -1,0 +1,323 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.IQrGeneratorService
+  commentId: T:KYS.Library.Services.IQrGeneratorService
+  id: IQrGeneratorService
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.IQrGeneratorService.Draw
+  - KYS.Library.Services.IQrGeneratorService.DrawAndToBase64
+  - KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri
+  - KYS.Library.Services.IQrGeneratorService.DrawAndToFile(System.String)
+  - KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream
+  langs:
+  - csharp
+  - vb
+  name: IQrGeneratorService
+  nameWithType: IQrGeneratorService
+  fullName: KYS.Library.Services.IQrGeneratorService
+  type: Interface
+  source:
+    remote:
+      path: KYS.Library/Services/QrGeneratorService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IQrGeneratorService
+    path: ../Services/QrGeneratorService.cs
+    startLine: 12
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Defines a contract for generating QR code.
+  example: []
+  syntax:
+    content: public interface IQrGeneratorService
+    content.vb: Public Interface IQrGeneratorService
+- uid: KYS.Library.Services.IQrGeneratorService.Draw
+  commentId: M:KYS.Library.Services.IQrGeneratorService.Draw
+  id: Draw
+  parent: KYS.Library.Services.IQrGeneratorService
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: IQrGeneratorService.Draw()
+  fullName: KYS.Library.Services.IQrGeneratorService.Draw()
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/QrGeneratorService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Draw
+    path: ../Services/QrGeneratorService.cs
+    startLine: 18
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw QR code.
+  example: []
+  syntax:
+    content: SKBitmap Draw()
+    return:
+      type: SkiaSharp.SKBitmap
+      description: A <xref href="SkiaSharp.SKBitmap" data-throw-if-not-resolved="false"></xref>instance for the QR code.
+    content.vb: Function Draw() As SKBitmap
+  overload: KYS.Library.Services.IQrGeneratorService.Draw*
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream
+  commentId: M:KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream
+  id: DrawAndToMemoryStream
+  parent: KYS.Library.Services.IQrGeneratorService
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToMemoryStream()
+  nameWithType: IQrGeneratorService.DrawAndToMemoryStream()
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream()
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/QrGeneratorService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToMemoryStream
+    path: ../Services/QrGeneratorService.cs
+    startLine: 23
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw QR code into a <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: MemoryStream DrawAndToMemoryStream()
+    return:
+      type: System.IO.MemoryStream
+      description: A <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance containing the QR code.
+    content.vb: Function DrawAndToMemoryStream() As MemoryStream
+  overload: KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream*
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToBase64
+  commentId: M:KYS.Library.Services.IQrGeneratorService.DrawAndToBase64
+  id: DrawAndToBase64
+  parent: KYS.Library.Services.IQrGeneratorService
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToBase64()
+  nameWithType: IQrGeneratorService.DrawAndToBase64()
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToBase64()
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/QrGeneratorService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToBase64
+    path: ../Services/QrGeneratorService.cs
+    startLine: 28
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and generate a Base64 string.
+  example: []
+  syntax:
+    content: string DrawAndToBase64()
+    return:
+      type: System.String
+      description: A Base64 string for the QR code.
+    content.vb: Function DrawAndToBase64() As String
+  overload: KYS.Library.Services.IQrGeneratorService.DrawAndToBase64*
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri
+  commentId: M:KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri
+  id: DrawAndToDataUri
+  parent: KYS.Library.Services.IQrGeneratorService
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToDataUri()
+  nameWithType: IQrGeneratorService.DrawAndToDataUri()
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri()
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/QrGeneratorService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToDataUri
+    path: ../Services/QrGeneratorService.cs
+    startLine: 33
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and generate a data URI string.
+  example: []
+  syntax:
+    content: string DrawAndToDataUri()
+    return:
+      type: System.String
+      description: A data URI string for the QR code.
+    content.vb: Function DrawAndToDataUri() As String
+  overload: KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri*
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToFile(System.String)
+  commentId: M:KYS.Library.Services.IQrGeneratorService.DrawAndToFile(System.String)
+  id: DrawAndToFile(System.String)
+  parent: KYS.Library.Services.IQrGeneratorService
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToFile(string)
+  nameWithType: IQrGeneratorService.DrawAndToFile(string)
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToFile(string)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/QrGeneratorService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToFile
+    path: ../Services/QrGeneratorService.cs
+    startLine: 38
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and save it as a file.
+  example: []
+  syntax:
+    content: void DrawAndToFile(string filePath)
+    parameters:
+    - id: filePath
+      type: System.String
+      description: The path for the QR code to be saved.
+    content.vb: Sub DrawAndToFile(filePath As String)
+  overload: KYS.Library.Services.IQrGeneratorService.DrawAndToFile*
+  nameWithType.vb: IQrGeneratorService.DrawAndToFile(String)
+  fullName.vb: KYS.Library.Services.IQrGeneratorService.DrawAndToFile(String)
+  name.vb: DrawAndToFile(String)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: SkiaSharp.SKBitmap
+  commentId: T:SkiaSharp.SKBitmap
+  parent: SkiaSharp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  name: SKBitmap
+  nameWithType: SKBitmap
+  fullName: SkiaSharp.SKBitmap
+- uid: KYS.Library.Services.IQrGeneratorService.Draw*
+  commentId: Overload:KYS.Library.Services.IQrGeneratorService.Draw
+  href: KYS.Library.Services.IQrGeneratorService.html#KYS_Library_Services_IQrGeneratorService_Draw
+  name: Draw
+  nameWithType: IQrGeneratorService.Draw
+  fullName: KYS.Library.Services.IQrGeneratorService.Draw
+- uid: SkiaSharp
+  commentId: N:SkiaSharp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/skiasharp
+  name: SkiaSharp
+  nameWithType: SkiaSharp
+  fullName: SkiaSharp
+- uid: System.IO.MemoryStream
+  commentId: T:System.IO.MemoryStream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  name: MemoryStream
+  nameWithType: MemoryStream
+  fullName: System.IO.MemoryStream
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream*
+  commentId: Overload:KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream
+  href: KYS.Library.Services.IQrGeneratorService.html#KYS_Library_Services_IQrGeneratorService_DrawAndToMemoryStream
+  name: DrawAndToMemoryStream
+  nameWithType: IQrGeneratorService.DrawAndToMemoryStream
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToBase64*
+  commentId: Overload:KYS.Library.Services.IQrGeneratorService.DrawAndToBase64
+  href: KYS.Library.Services.IQrGeneratorService.html#KYS_Library_Services_IQrGeneratorService_DrawAndToBase64
+  name: DrawAndToBase64
+  nameWithType: IQrGeneratorService.DrawAndToBase64
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToBase64
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri*
+  commentId: Overload:KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri
+  href: KYS.Library.Services.IQrGeneratorService.html#KYS_Library_Services_IQrGeneratorService_DrawAndToDataUri
+  name: DrawAndToDataUri
+  nameWithType: IQrGeneratorService.DrawAndToDataUri
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri
+- uid: KYS.Library.Services.IQrGeneratorService.DrawAndToFile*
+  commentId: Overload:KYS.Library.Services.IQrGeneratorService.DrawAndToFile
+  href: KYS.Library.Services.IQrGeneratorService.html#KYS_Library_Services_IQrGeneratorService_DrawAndToFile_System_String_
+  name: DrawAndToFile
+  nameWithType: IQrGeneratorService.DrawAndToFile
+  fullName: KYS.Library.Services.IQrGeneratorService.DrawAndToFile

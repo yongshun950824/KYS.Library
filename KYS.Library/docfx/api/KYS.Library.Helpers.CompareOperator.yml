@@ -1,0 +1,643 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.CompareOperator
+  commentId: T:KYS.Library.Helpers.CompareOperator
+  id: CompareOperator
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.CompareOperator.Compare(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,System.IComparable,System.IComparable)
+  - KYS.Library.Helpers.CompareOperator.Compare``1(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,``0,``0)
+  - KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+  langs:
+  - csharp
+  - vb
+  name: CompareOperator
+  nameWithType: CompareOperator
+  fullName: KYS.Library.Helpers.CompareOperator
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CompareOperator
+    path: ../Helpers/CompareOperator.cs
+    startLine: 12
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Provides a set of comparison operations that can be applied to values implementing <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref>.
+  remarks: >-
+    This class defines common comparison operators (e.g., equal, greater than, less than)
+
+    and utility methods to perform comparisons in a type-safe and extensible way.
+  example: []
+  syntax:
+    content: public static class CompareOperator
+    content.vb: Public Module CompareOperator
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Helpers.CompareOperator.Compare(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,System.IComparable,System.IComparable)
+  commentId: M:KYS.Library.Helpers.CompareOperator.Compare(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,System.IComparable,System.IComparable)
+  id: Compare(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,System.IComparable,System.IComparable)
+  parent: KYS.Library.Helpers.CompareOperator
+  langs:
+  - csharp
+  - vb
+  name: Compare(CompareOperatorConstants, IComparable, IComparable)
+  nameWithType: CompareOperator.Compare(CompareOperator.CompareOperatorConstants, IComparable, IComparable)
+  fullName: KYS.Library.Helpers.CompareOperator.Compare(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants, System.IComparable, System.IComparable)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Compare
+    path: ../Helpers/CompareOperator.cs
+    startLine: 58
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Compares two <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref> values using the specified comparison operator.
+  example: []
+  syntax:
+    content: public static bool Compare(CompareOperator.CompareOperatorConstants @operator, IComparable a, IComparable b)
+    parameters:
+    - id: operator
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+      description: The comparison operator to apply.
+    - id: a
+      type: System.IComparable
+      description: The first value to compare.
+    - id: b
+      type: System.IComparable
+      description: The second value to compare.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the comparison condition is satisfied; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Shared Function Compare([operator] As CompareOperator.CompareOperatorConstants, a As IComparable, b As IComparable) As Boolean
+  overload: KYS.Library.Helpers.CompareOperator.Compare*
+- uid: KYS.Library.Helpers.CompareOperator.Compare``1(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,``0,``0)
+  commentId: M:KYS.Library.Helpers.CompareOperator.Compare``1(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,``0,``0)
+  id: Compare``1(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants,``0,``0)
+  parent: KYS.Library.Helpers.CompareOperator
+  langs:
+  - csharp
+  - vb
+  name: Compare<T>(CompareOperatorConstants, T, T)
+  nameWithType: CompareOperator.Compare<T>(CompareOperator.CompareOperatorConstants, T, T)
+  fullName: KYS.Library.Helpers.CompareOperator.Compare<T>(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants, T, T)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Compare
+    path: ../Helpers/CompareOperator.cs
+    startLine: 69
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Compares two values of type <code class="typeparamref">T</code> using the specified comparison operator.
+  example: []
+  syntax:
+    content: 'public static bool Compare<T>(CompareOperator.CompareOperatorConstants @operator, T a, T b) where T : IComparable, IComparable<T>'
+    parameters:
+    - id: operator
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+      description: The comparison operator to apply.
+    - id: a
+      type: '{T}'
+      description: The first value to compare.
+    - id: b
+      type: '{T}'
+      description: The second value to compare.
+    typeParameters:
+    - id: T
+      description: The type of the objects being compared. Must implement <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref> and <xref href="System.IComparable%601" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the comparison condition is satisfied; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Shared Function Compare(Of T As {IComparable, IComparable(Of T)})([operator] As CompareOperator.CompareOperatorConstants, a As T, b As T) As Boolean
+  overload: KYS.Library.Helpers.CompareOperator.Compare*
+  nameWithType.vb: CompareOperator.Compare(Of T)(CompareOperator.CompareOperatorConstants, T, T)
+  fullName.vb: KYS.Library.Helpers.CompareOperator.Compare(Of T)(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants, T, T)
+  name.vb: Compare(Of T)(CompareOperatorConstants, T, T)
+- uid: KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+  commentId: M:KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+  id: GetCompareOperatorFunc(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+  parent: KYS.Library.Helpers.CompareOperator
+  langs:
+  - csharp
+  - vb
+  name: GetCompareOperatorFunc(CompareOperatorConstants)
+  nameWithType: CompareOperator.GetCompareOperatorFunc(CompareOperator.CompareOperatorConstants)
+  fullName: KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: GetCompareOperatorFunc
+    path: ../Helpers/CompareOperator.cs
+    startLine: 82
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Returns a delegate function that performs the comparison corresponding to the specified operator.
+  example: []
+  syntax:
+    content: public static Func<IComparable, IComparable, bool> GetCompareOperatorFunc(CompareOperator.CompareOperatorConstants @operator)
+    parameters:
+    - id: operator
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+      description: The comparison operator to retrieve.
+    return:
+      type: System.Func{System.IComparable,System.IComparable,System.Boolean}
+      description: >-
+        A <xref href="System.Func%603" data-throw-if-not-resolved="false"></xref> that accepts two <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref> values and returns
+
+        <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the comparison condition is met; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Shared Function GetCompareOperatorFunc([operator] As CompareOperator.CompareOperatorConstants) As Func(Of IComparable, IComparable, Boolean)
+  overload: KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc*
+  exceptions:
+  - type: System.ComponentModel.InvalidEnumArgumentException
+    commentId: T:System.ComponentModel.InvalidEnumArgumentException
+    description: ''
+references:
+- uid: System.IComparable
+  commentId: T:System.IComparable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  name: IComparable
+  nameWithType: IComparable
+  fullName: System.IComparable
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Helpers.CompareOperator.Compare*
+  commentId: Overload:KYS.Library.Helpers.CompareOperator.Compare
+  href: KYS.Library.Helpers.CompareOperator.html#KYS_Library_Helpers_CompareOperator_Compare_KYS_Library_Helpers_CompareOperator_CompareOperatorConstants_System_IComparable_System_IComparable_
+  name: Compare
+  nameWithType: CompareOperator.Compare
+  fullName: KYS.Library.Helpers.CompareOperator.Compare
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  commentId: T:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.CompareOperator.html
+  name: CompareOperator.CompareOperatorConstants
+  nameWithType: CompareOperator.CompareOperatorConstants
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  spec.csharp:
+  - uid: KYS.Library.Helpers.CompareOperator
+    name: CompareOperator
+    href: KYS.Library.Helpers.CompareOperator.html
+  - name: .
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.CompareOperator
+    name: CompareOperator
+    href: KYS.Library.Helpers.CompareOperator.html
+  - name: .
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.IComparable`1
+  commentId: T:System.IComparable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  name: IComparable<T>
+  nameWithType: IComparable<T>
+  fullName: System.IComparable<T>
+  nameWithType.vb: IComparable(Of T)
+  fullName.vb: System.IComparable(Of T)
+  name.vb: IComparable(Of T)
+  spec.csharp:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IComparable`1
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.ComponentModel.InvalidEnumArgumentException
+  commentId: T:System.ComponentModel.InvalidEnumArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.invalidenumargumentexception
+  name: InvalidEnumArgumentException
+  nameWithType: InvalidEnumArgumentException
+  fullName: System.ComponentModel.InvalidEnumArgumentException
+- uid: KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc*
+  commentId: Overload:KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc
+  href: KYS.Library.Helpers.CompareOperator.html#KYS_Library_Helpers_CompareOperator_GetCompareOperatorFunc_KYS_Library_Helpers_CompareOperator_CompareOperatorConstants_
+  name: GetCompareOperatorFunc
+  nameWithType: CompareOperator.GetCompareOperatorFunc
+  fullName: KYS.Library.Helpers.CompareOperator.GetCompareOperatorFunc
+- uid: System.Func{System.IComparable,System.IComparable,System.Boolean}
+  commentId: T:System.Func{System.IComparable,System.IComparable,System.Boolean}
+  parent: System
+  definition: System.Func`3
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<IComparable, IComparable, bool>
+  nameWithType: Func<IComparable, IComparable, bool>
+  fullName: System.Func<System.IComparable, System.IComparable, bool>
+  nameWithType.vb: Func(Of IComparable, IComparable, Boolean)
+  fullName.vb: System.Func(Of System.IComparable, System.IComparable, Boolean)
+  name.vb: Func(Of IComparable, IComparable, Boolean)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: System.IComparable
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  - name: ','
+  - name: " "
+  - uid: System.IComparable
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IComparable
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  - name: ','
+  - name: " "
+  - uid: System.IComparable
+    name: IComparable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )

@@ -1,0 +1,640 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Extensions.ReflectionExtensions
+  commentId: T:KYS.Library.Extensions.ReflectionExtensions
+  id: ReflectionExtensions
+  parent: KYS.Library.Extensions
+  children:
+  - KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})
+  - KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.MemberInfo)
+  - KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.PropertyInfo)
+  langs:
+  - csharp
+  - vb
+  name: ReflectionExtensions
+  nameWithType: ReflectionExtensions
+  fullName: KYS.Library.Extensions.ReflectionExtensions
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Extensions/ReflectionExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ReflectionExtensions
+    path: ../Extensions/ReflectionExtensions.cs
+    startLine: 12
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Provides extension methods for working with <xref href="System.Reflection" data-throw-if-not-resolved="false"></xref> namespace.
+  example: []
+  syntax:
+    content: public static class ReflectionExtensions
+    content.vb: Public Module ReflectionExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.PropertyInfo)
+  commentId: M:KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.PropertyInfo)
+  id: ToName(System.Reflection.PropertyInfo)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.ReflectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToName(PropertyInfo)
+  nameWithType: ReflectionExtensions.ToName(PropertyInfo)
+  fullName: KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.PropertyInfo)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/ReflectionExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ToName
+    path: ../Extensions/ReflectionExtensions.cs
+    startLine: 21
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: >-
+    Obtain the property name from <xref href="System.ComponentModel.DataAnnotations.DisplayAttribute" data-throw-if-not-resolved="false"></xref> and <xref href="System.ComponentModel.DisplayNameAttribute" data-throw-if-not-resolved="false"></xref> in sequence.
+
+    <br /><br />
+
+    If neither attributes are applied, return the property name.
+  example: []
+  syntax:
+    content: public static string ToName(this PropertyInfo propertyInfo)
+    parameters:
+    - id: propertyInfo
+      type: System.Reflection.PropertyInfo
+      description: The <xref href="System.Reflection.PropertyInfo" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    return:
+      type: System.String
+      description: Property name.
+    content.vb: Public Shared Function ToName(propertyInfo As PropertyInfo) As String
+  overload: KYS.Library.Extensions.ReflectionExtensions.ToName*
+- uid: KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.MemberInfo)
+  commentId: M:KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.MemberInfo)
+  id: ToName(System.Reflection.MemberInfo)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.ReflectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToName(MemberInfo)
+  nameWithType: ReflectionExtensions.ToName(MemberInfo)
+  fullName: KYS.Library.Extensions.ReflectionExtensions.ToName(System.Reflection.MemberInfo)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/ReflectionExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ToName
+    path: ../Extensions/ReflectionExtensions.cs
+    startLine: 53
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: >-
+    Obtain the member name from <xref href="System.ComponentModel.DataAnnotations.DisplayAttribute" data-throw-if-not-resolved="false"></xref> and <xref href="System.ComponentModel.DisplayNameAttribute" data-throw-if-not-resolved="false"></xref> (first-come basis).
+
+    <br /><br />
+
+    If neither attributes are applied, return the member name.
+  example: []
+  syntax:
+    content: public static string ToName(this MemberInfo memberInfo)
+    parameters:
+    - id: memberInfo
+      type: System.Reflection.MemberInfo
+      description: The <xref href="System.Reflection.MemberInfo" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    return:
+      type: System.String
+      description: Member name.
+    content.vb: Public Shared Function ToName(memberInfo As MemberInfo) As String
+  overload: KYS.Library.Extensions.ReflectionExtensions.ToName*
+- uid: KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})
+  commentId: M:KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})
+  id: GetPropertyDisplayName``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})
+  parent: KYS.Library.Extensions.ReflectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetPropertyDisplayName<T, P>(Expression<Func<T, P>>)
+  nameWithType: ReflectionExtensions.GetPropertyDisplayName<T, P>(Expression<Func<T, P>>)
+  fullName: KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName<T, P>(System.Linq.Expressions.Expression<System.Func<T, P>>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/ReflectionExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: GetPropertyDisplayName
+    path: ../Extensions/ReflectionExtensions.cs
+    startLine: 91
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: >-
+    Retrieve the value of <xref href="System.ComponentModel.DataAnnotations.DisplayAttribute" data-throw-if-not-resolved="false"></xref> and <xref href="System.ComponentModel.DisplayNameAttribute" data-throw-if-not-resolved="false"></xref> (first-come basis) from a property of the class. 
+
+    <br /><br />
+
+    Usage: 
+
+    <br />
+
+    <code>ReflectionExtensions.GetPropertyDisplayName((Class x) =&gt; x.Property)</code>
+
+    <br /><br />
+
+    Reference: <a href="https://stackoverflow.com/a/74846301/8017690">get the value of DisplayName attribute</a>
+  example: []
+  syntax:
+    content: 'public static string GetPropertyDisplayName<T, P>(Expression<Func<T, P>> propertyExpression) where T : new()'
+    parameters:
+    - id: propertyExpression
+      type: System.Linq.Expressions.Expression{System.Func{{T},{P}}}
+      description: The expression references the property.
+    typeParameters:
+    - id: T
+      description: Must be a reference type with a public parameterless constructor.
+    - id: P
+    return:
+      type: System.String
+      description: Property name.
+    content.vb: Public Shared Function GetPropertyDisplayName(Of T As New, P)(propertyExpression As Expression(Of Func(Of T, P))) As String
+  overload: KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName*
+  nameWithType.vb: ReflectionExtensions.GetPropertyDisplayName(Of T, P)(Expression(Of Func(Of T, P)))
+  fullName.vb: KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName(Of T, P)(System.Linq.Expressions.Expression(Of System.Func(Of T, P)))
+  name.vb: GetPropertyDisplayName(Of T, P)(Expression(Of Func(Of T, P)))
+references:
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
+  href: KYS.html
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel.DataAnnotations.DisplayAttribute
+  commentId: T:System.ComponentModel.DataAnnotations.DisplayAttribute
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations.displayattribute
+  name: DisplayAttribute
+  nameWithType: DisplayAttribute
+  fullName: System.ComponentModel.DataAnnotations.DisplayAttribute
+- uid: System.ComponentModel.DisplayNameAttribute
+  commentId: T:System.ComponentModel.DisplayNameAttribute
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.displaynameattribute
+  name: DisplayNameAttribute
+  nameWithType: DisplayNameAttribute
+  fullName: System.ComponentModel.DisplayNameAttribute
+- uid: System.Reflection.PropertyInfo
+  commentId: T:System.Reflection.PropertyInfo
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo
+  name: PropertyInfo
+  nameWithType: PropertyInfo
+  fullName: System.Reflection.PropertyInfo
+- uid: KYS.Library.Extensions.ReflectionExtensions.ToName*
+  commentId: Overload:KYS.Library.Extensions.ReflectionExtensions.ToName
+  href: KYS.Library.Extensions.ReflectionExtensions.html#KYS_Library_Extensions_ReflectionExtensions_ToName_System_Reflection_PropertyInfo_
+  name: ToName
+  nameWithType: ReflectionExtensions.ToName
+  fullName: KYS.Library.Extensions.ReflectionExtensions.ToName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Reflection.MemberInfo
+  commentId: T:System.Reflection.MemberInfo
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.memberinfo
+  name: MemberInfo
+  nameWithType: MemberInfo
+  fullName: System.Reflection.MemberInfo
+- uid: KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName*
+  commentId: Overload:KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName
+  href: KYS.Library.Extensions.ReflectionExtensions.html#KYS_Library_Extensions_ReflectionExtensions_GetPropertyDisplayName__2_System_Linq_Expressions_Expression_System_Func___0___1___
+  name: GetPropertyDisplayName
+  nameWithType: ReflectionExtensions.GetPropertyDisplayName
+  fullName: KYS.Library.Extensions.ReflectionExtensions.GetPropertyDisplayName
+- uid: System.Linq.Expressions.Expression{System.Func{{T},{P}}}
+  commentId: T:System.Linq.Expressions.Expression{System.Func{``0,``1}}
+  parent: System.Linq.Expressions
+  definition: System.Linq.Expressions.Expression`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<Func<T, P>>
+  nameWithType: Expression<Func<T, P>>
+  fullName: System.Linq.Expressions.Expression<System.Func<T, P>>
+  nameWithType.vb: Expression(Of Func(Of T, P))
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of T, P))
+  name.vb: Expression(Of Func(Of T, P))
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: P
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: P
+  - name: )
+  - name: )
+- uid: System.Linq.Expressions.Expression`1
+  commentId: T:System.Linq.Expressions.Expression`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<TDelegate>
+  nameWithType: Expression<TDelegate>
+  fullName: System.Linq.Expressions.Expression<TDelegate>
+  nameWithType.vb: Expression(Of TDelegate)
+  fullName.vb: System.Linq.Expressions.Expression(Of TDelegate)
+  name.vb: Expression(Of TDelegate)
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - name: TDelegate
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TDelegate
+  - name: )
+- uid: System.Linq.Expressions
+  commentId: N:System.Linq.Expressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq.Expressions
+  nameWithType: System.Linq.Expressions
+  fullName: System.Linq.Expressions
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions

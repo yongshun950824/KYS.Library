@@ -1,0 +1,717 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  commentId: T:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  id: ExcelHelper.ExcelRowStyle
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType
+  langs:
+  - csharp
+  - vb
+  name: ExcelHelper.ExcelRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ExcelRowStyle
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 283
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the blueprint for customizing the style for whole row.
+  example: []
+  syntax:
+    content: public class ExcelHelper.ExcelRowStyle
+    content.vb: Public Class ExcelHelper.ExcelRowStyle
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment
+  id: HorizontalAlignment
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: HorizontalAlignment
+  nameWithType: ExcelHelper.ExcelRowStyle.HorizontalAlignment
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: HorizontalAlignment
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 288
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Gets or sets the horizontal alignment.
+  example: []
+  syntax:
+    content: public ExcelHorizontalAlignment HorizontalAlignment { get; set; }
+    parameters: []
+    return:
+      type: OfficeOpenXml.Style.ExcelHorizontalAlignment
+    content.vb: Public Property HorizontalAlignment As ExcelHorizontalAlignment
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment*
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold
+  id: Bold
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: Bold
+  nameWithType: ExcelHelper.ExcelRowStyle.Bold
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Bold
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 292
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Gets or sets the indicator for applying the bold style.
+  example: []
+  syntax:
+    content: public bool Bold { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Bold As Boolean
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold*
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor
+  id: FontColor
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: FontColor
+  nameWithType: ExcelHelper.ExcelRowStyle.FontColor
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: FontColor
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 296
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Gets or sets the font color.
+  example: []
+  syntax:
+    content: public Color FontColor { get; set; }
+    parameters: []
+    return:
+      type: System.Drawing.Color
+    content.vb: Public Property FontColor As Color
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor*
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType
+  id: PatternType
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: PatternType
+  nameWithType: ExcelHelper.ExcelRowStyle.PatternType
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: PatternType
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 300
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Gets or sets the pattern type.
+  example: []
+  syntax:
+    content: public ExcelFillStyle PatternType { get; set; }
+    parameters: []
+    return:
+      type: OfficeOpenXml.Style.ExcelFillStyle
+    content.vb: Public Property PatternType As ExcelFillStyle
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType*
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor
+  id: BackgroundColor
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: BackgroundColor
+  nameWithType: ExcelHelper.ExcelRowStyle.BackgroundColor
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: BackgroundColor
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 304
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Gets or sets the background color.
+  example: []
+  syntax:
+    content: public Color BackgroundColor { get; set; }
+    parameters: []
+    return:
+      type: System.Drawing.Color
+    content.vb: Public Property BackgroundColor As Color
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor*
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter
+  id: AutoFilter
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: AutoFilter
+  nameWithType: ExcelHelper.ExcelRowStyle.AutoFilter
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: AutoFilter
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 308
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Apply Auto Filter to Excel columns. (For header row only)
+  example: []
+  syntax:
+    content: public bool AutoFilter { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AutoFilter As Boolean
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter*
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+  id: DefaultHeaderRowStyle
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: DefaultHeaderRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DefaultHeaderRowStyle
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 313
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Gets the default header row style instance.
+  example: []
+  syntax:
+    content: public static ExcelHelper.ExcelRowStyle DefaultHeaderRowStyle { get; }
+    parameters: []
+    return:
+      type: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    content.vb: Public Shared ReadOnly Property DefaultHeaderRowStyle As ExcelHelper.ExcelRowStyle
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle*
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle
+  commentId: P:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle
+  id: DefaultSummaryRowStyle
+  parent: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  langs:
+  - csharp
+  - vb
+  name: DefaultSummaryRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExcelHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DefaultSummaryRowStyle
+    path: ../Helpers/ExcelHelper.cs
+    startLine: 331
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Gets the default summary (bottom) row style instance.
+  example: []
+  syntax:
+    content: public static ExcelHelper.ExcelRowStyle DefaultSummaryRowStyle { get; }
+    parameters: []
+    return:
+      type: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    content.vb: Public Shared ReadOnly Property DefaultSummaryRowStyle As ExcelHelper.ExcelRowStyle
+  overload: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle*
+references:
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_HorizontalAlignment
+  name: HorizontalAlignment
+  nameWithType: ExcelHelper.ExcelRowStyle.HorizontalAlignment
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.HorizontalAlignment
+- uid: OfficeOpenXml.Style.ExcelHorizontalAlignment
+  commentId: T:OfficeOpenXml.Style.ExcelHorizontalAlignment
+  parent: OfficeOpenXml.Style
+  isExternal: true
+  name: ExcelHorizontalAlignment
+  nameWithType: ExcelHorizontalAlignment
+  fullName: OfficeOpenXml.Style.ExcelHorizontalAlignment
+- uid: OfficeOpenXml.Style
+  commentId: N:OfficeOpenXml.Style
+  isExternal: true
+  name: OfficeOpenXml.Style
+  nameWithType: OfficeOpenXml.Style
+  fullName: OfficeOpenXml.Style
+  spec.csharp:
+  - uid: OfficeOpenXml
+    name: OfficeOpenXml
+    isExternal: true
+  - name: .
+  - uid: OfficeOpenXml.Style
+    name: Style
+    isExternal: true
+  spec.vb:
+  - uid: OfficeOpenXml
+    name: OfficeOpenXml
+    isExternal: true
+  - name: .
+  - uid: OfficeOpenXml.Style
+    name: Style
+    isExternal: true
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_Bold
+  name: Bold
+  nameWithType: ExcelHelper.ExcelRowStyle.Bold
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.Bold
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_FontColor
+  name: FontColor
+  nameWithType: ExcelHelper.ExcelRowStyle.FontColor
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.FontColor
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_PatternType
+  name: PatternType
+  nameWithType: ExcelHelper.ExcelRowStyle.PatternType
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.PatternType
+- uid: OfficeOpenXml.Style.ExcelFillStyle
+  commentId: T:OfficeOpenXml.Style.ExcelFillStyle
+  parent: OfficeOpenXml.Style
+  isExternal: true
+  name: ExcelFillStyle
+  nameWithType: ExcelFillStyle
+  fullName: OfficeOpenXml.Style.ExcelFillStyle
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_BackgroundColor
+  name: BackgroundColor
+  nameWithType: ExcelHelper.ExcelRowStyle.BackgroundColor
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.BackgroundColor
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_AutoFilter
+  name: AutoFilter
+  nameWithType: ExcelHelper.ExcelRowStyle.AutoFilter
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.AutoFilter
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_DefaultHeaderRowStyle
+  name: DefaultHeaderRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultHeaderRowStyle
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  commentId: T:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.ExcelHelper.html
+  name: ExcelHelper.ExcelRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  spec.csharp:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    name: ExcelRowStyle
+    href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    name: ExcelRowStyle
+    href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle*
+  commentId: Overload:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle
+  href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html#KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_DefaultSummaryRowStyle
+  name: DefaultSummaryRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.DefaultSummaryRowStyle

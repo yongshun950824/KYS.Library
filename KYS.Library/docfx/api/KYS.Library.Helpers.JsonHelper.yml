@@ -1,0 +1,751 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.JsonHelper
+  commentId: T:KYS.Library.Helpers.JsonHelper
+  id: JsonHelper
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  - KYS.Library.Helpers.JsonHelper.Flatten(Newtonsoft.Json.Linq.JToken,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  - KYS.Library.Helpers.JsonHelper.FlattenArray``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  - KYS.Library.Helpers.JsonHelper.FlattenObject``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  langs:
+  - csharp
+  - vb
+  name: JsonHelper
+  nameWithType: JsonHelper
+  fullName: KYS.Library.Helpers.JsonHelper
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: JsonHelper
+    path: ../obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
+    startLine: 26
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Provide utility methods for the JSON.
+  example: []
+  syntax:
+    content: public static class JsonHelper
+    content.vb: Public Module JsonHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Helpers.JsonHelper.FlattenObject``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  commentId: M:KYS.Library.Helpers.JsonHelper.FlattenObject``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  id: FlattenObject``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  parent: KYS.Library.Helpers.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: FlattenObject<T>(T, FlattenFormat)
+  nameWithType: JsonHelper.FlattenObject<T>(T, JsonHelper.FlattenFormat)
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenObject<T>(T, KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: FlattenObject
+    path: ../Helpers/JsonHelper.cs
+    startLine: 44
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Flatten the object into a key-value pair with the key based on the <code>flattenFormat</code> given. 
+
+    <br />
+
+    Default key format: <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath" data-throw-if-not-resolved="false"></xref>.
+
+    <br />
+
+    <br />
+
+    Reference: <a href="https://stackoverflow.com/a/63487391">Generically Flatten Json using c#</a>
+  example: []
+  syntax:
+    content: 'public static Dictionary<string, object> FlattenObject<T>(T source, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath) where T : class, new()'
+    parameters:
+    - id: source
+      type: '{T}'
+      description: The provided value to be flatten.
+    - id: flattenFormat
+      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
+      description: The <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat" data-throw-if-not-resolved="false"></xref> format to construct the key.
+    typeParameters:
+    - id: T
+      description: The type of <code>source</code>. Must be a reference type with a public parameterless constructor.
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: The key value pair for the flatten JSON.
+    content.vb: Public Shared Function FlattenObject(Of T As {Class, New})(source As T, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Dictionary(Of String, Object)
+  overload: KYS.Library.Helpers.JsonHelper.FlattenObject*
+  nameWithType.vb: JsonHelper.FlattenObject(Of T)(T, JsonHelper.FlattenFormat)
+  fullName.vb: KYS.Library.Helpers.JsonHelper.FlattenObject(Of T)(T, KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  name.vb: FlattenObject(Of T)(T, FlattenFormat)
+- uid: KYS.Library.Helpers.JsonHelper.FlattenArray``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  commentId: M:KYS.Library.Helpers.JsonHelper.FlattenArray``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  id: FlattenArray``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  parent: KYS.Library.Helpers.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: FlattenArray<T>(T, FlattenFormat)
+  nameWithType: JsonHelper.FlattenArray<T>(T, JsonHelper.FlattenFormat)
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenArray<T>(T, KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: FlattenArray
+    path: ../Helpers/JsonHelper.cs
+    startLine: 64
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Flatten the array into a key-value pair with the key based on the <code>flattenFormat</code> given. 
+
+    <br />
+
+    Default key format: <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public static Dictionary<string, object> FlattenArray<T>(T source, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath) where T : JToken'
+    parameters:
+    - id: source
+      type: '{T}'
+      description: The provided value to be flatten.
+    - id: flattenFormat
+      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
+      description: The <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat" data-throw-if-not-resolved="false"></xref> format to construct the key.
+    typeParameters:
+    - id: T
+      description: The type of <code>source</code> which is a <xref href="Newtonsoft.Json.Linq.JToken" data-throw-if-not-resolved="false"></xref> type.
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: The key value pair for the flatten JSON.
+    content.vb: Public Shared Function FlattenArray(Of T As JToken)(source As T, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Dictionary(Of String, Object)
+  overload: KYS.Library.Helpers.JsonHelper.FlattenArray*
+  nameWithType.vb: JsonHelper.FlattenArray(Of T)(T, JsonHelper.FlattenFormat)
+  fullName.vb: KYS.Library.Helpers.JsonHelper.FlattenArray(Of T)(T, KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  name.vb: FlattenArray(Of T)(T, FlattenFormat)
+- uid: KYS.Library.Helpers.JsonHelper.Flatten(Newtonsoft.Json.Linq.JToken,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  commentId: M:KYS.Library.Helpers.JsonHelper.Flatten(Newtonsoft.Json.Linq.JToken,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  id: Flatten(Newtonsoft.Json.Linq.JToken,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  parent: KYS.Library.Helpers.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: Flatten(JToken, FlattenFormat)
+  nameWithType: JsonHelper.Flatten(JToken, JsonHelper.FlattenFormat)
+  fullName: KYS.Library.Helpers.JsonHelper.Flatten(Newtonsoft.Json.Linq.JToken, KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Flatten
+    path: ../Helpers/JsonHelper.cs
+    startLine: 100
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Flatten the <xref href="Newtonsoft.Json.Linq.JToken" data-throw-if-not-resolved="false"></xref> instance into a key-value pair with the key based on the <code>flattenFormat</code> given. 
+
+    <br />
+
+    Default key format: <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Dictionary<string, object> Flatten(JToken token, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath)
+    parameters:
+    - id: token
+      type: Newtonsoft.Json.Linq.JToken
+      description: The <xref href="Newtonsoft.Json.Linq.JToken" data-throw-if-not-resolved="false"></xref> instance to be flatten.
+    - id: flattenFormat
+      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
+      description: The <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat" data-throw-if-not-resolved="false"></xref> format to construct the key.
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: The key value pair for the flatten JSON.
+    content.vb: Public Shared Function Flatten(token As JToken, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Dictionary(Of String, Object)
+  overload: KYS.Library.Helpers.JsonHelper.Flatten*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: ''
+- uid: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  commentId: M:KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  id: ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  parent: KYS.Library.Helpers.JsonHelper
+  langs:
+  - csharp
+  - vb
+  name: ConstructFlattenKey(string, FlattenFormat)
+  nameWithType: JsonHelper.ConstructFlattenKey(string, JsonHelper.FlattenFormat)
+  fullName: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(string, KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ConstructFlattenKey
+    path: ../Helpers/JsonHelper.cs
+    startLine: 129
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Construct the key based on the <code>flattenFormat</code> given.
+  example: []
+  syntax:
+    content: public static string ConstructFlattenKey(string key, JsonHelper.FlattenFormat flattenFormat)
+    parameters:
+    - id: key
+      type: System.String
+      description: The <xref href="System.String" data-throw-if-not-resolved="false"></xref> for the key.
+    - id: flattenFormat
+      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
+      description: The <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat" data-throw-if-not-resolved="false"></xref> format to construct the key.
+    return:
+      type: System.String
+      description: The key after applying the <code>flattenFormat</code>.
+    content.vb: Public Shared Function ConstructFlattenKey(key As String, flattenFormat As JsonHelper.FlattenFormat) As String
+  overload: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey*
+  exceptions:
+  - type: System.ComponentModel.InvalidEnumArgumentException
+    commentId: T:System.ComponentModel.InvalidEnumArgumentException
+    description: ''
+  nameWithType.vb: JsonHelper.ConstructFlattenKey(String, JsonHelper.FlattenFormat)
+  fullName.vb: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(String, KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  name.vb: ConstructFlattenKey(String, FlattenFormat)
+references:
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath
+  commentId: F:KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath
+  href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html#KYS_Library_Helpers_JsonHelper_FlattenFormat_JsonPath
+  name: JsonPath
+  nameWithType: JsonHelper.FlattenFormat.JsonPath
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  commentId: T:KYS.Library.Helpers.JsonHelper.FlattenFormat
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.JsonHelper.html
+  name: JsonHelper.FlattenFormat
+  nameWithType: JsonHelper.FlattenFormat
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  spec.csharp:
+  - uid: KYS.Library.Helpers.JsonHelper
+    name: JsonHelper
+    href: KYS.Library.Helpers.JsonHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.JsonHelper
+    name: JsonHelper
+    href: KYS.Library.Helpers.JsonHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+- uid: KYS.Library.Helpers.JsonHelper.FlattenObject*
+  commentId: Overload:KYS.Library.Helpers.JsonHelper.FlattenObject
+  href: KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_FlattenObject__1___0_KYS_Library_Helpers_JsonHelper_FlattenFormat_
+  name: FlattenObject
+  nameWithType: JsonHelper.FlattenObject
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenObject
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Newtonsoft.Json.Linq.JToken
+  commentId: T:Newtonsoft.Json.Linq.JToken
+  parent: Newtonsoft.Json.Linq
+  isExternal: true
+  name: JToken
+  nameWithType: JToken
+  fullName: Newtonsoft.Json.Linq.JToken
+- uid: KYS.Library.Helpers.JsonHelper.FlattenArray*
+  commentId: Overload:KYS.Library.Helpers.JsonHelper.FlattenArray
+  href: KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_FlattenArray__1___0_KYS_Library_Helpers_JsonHelper_FlattenFormat_
+  name: FlattenArray
+  nameWithType: JsonHelper.FlattenArray
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenArray
+- uid: Newtonsoft.Json.Linq
+  commentId: N:Newtonsoft.Json.Linq
+  isExternal: true
+  name: Newtonsoft.Json.Linq
+  nameWithType: Newtonsoft.Json.Linq
+  fullName: Newtonsoft.Json.Linq
+  spec.csharp:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+  spec.vb:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: KYS.Library.Helpers.JsonHelper.Flatten*
+  commentId: Overload:KYS.Library.Helpers.JsonHelper.Flatten
+  href: KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_Flatten_Newtonsoft_Json_Linq_JToken_KYS_Library_Helpers_JsonHelper_FlattenFormat_
+  name: Flatten
+  nameWithType: JsonHelper.Flatten
+  fullName: KYS.Library.Helpers.JsonHelper.Flatten
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.ComponentModel.InvalidEnumArgumentException
+  commentId: T:System.ComponentModel.InvalidEnumArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.invalidenumargumentexception
+  name: InvalidEnumArgumentException
+  nameWithType: InvalidEnumArgumentException
+  fullName: System.ComponentModel.InvalidEnumArgumentException
+- uid: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey*
+  commentId: Overload:KYS.Library.Helpers.JsonHelper.ConstructFlattenKey
+  href: KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_ConstructFlattenKey_System_String_KYS_Library_Helpers_JsonHelper_FlattenFormat_
+  name: ConstructFlattenKey
+  nameWithType: JsonHelper.ConstructFlattenKey
+  fullName: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey

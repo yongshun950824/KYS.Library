@@ -6,7 +6,14 @@ using System.ComponentModel.DataAnnotations;
 namespace KYS.Library.Validations
 {
     /// <summary>
-    /// RequiredIf attribute v2 supported for compare operators.
+    /// <see cref="RequiredIfAttribute"/> attribute v2 supported for comparing the value with operator.
+    /// <br /> <br />
+    /// When the value from the other property is compared and fulfilled the statement for the configured formula: <br />
+    /// <c>
+    /// &lt;other property's value&gt; &lt;operator&gt; &lt;matchedValue&gt;
+    /// </c>
+    /// <br />
+    /// , represents the current property is mandatory.
     /// <br /> <br />
     /// <remarks>
     /// Usage:  <br />
@@ -28,12 +35,23 @@ namespace KYS.Library.Validations
         readonly CompareOperator.CompareOperatorConstants _operator = CompareOperator.CompareOperatorConstants.Equal;
         readonly string _errorMessage;
 
+        /// <summary>
+        /// Initialize new instance of <see cref="RequiredIfComparisonAttribute"/> class.
+        /// </summary>
+        /// <param name="otherPropertyName">The name of property which the property is used to obtain its value and compare with <see cref="matchedValue"/>.</param>
+        /// <param name="matchedValue">The value which must be matched with the value of <see cref="otherPropertyName"/> to perform the validation.</param>
         public RequiredIfComparisonAttribute(string otherPropertyName, object matchedValue) : base()
         {
             _otherPropertyName = otherPropertyName;
             _matchedValue = matchedValue;
         }
 
+        /// <summary>
+        /// Initialize new instance of <see cref="RequiredIfComparisonAttribute"/> class.
+        /// </summary>
+        /// <param name="otherPropertyName">The name of property which the property is used to obtain its value and compare with <see cref="matchedValue"/>.</param>
+        /// <param name="matchedValue">The value which must be matched with the value of <see cref="otherPropertyName"/> to perform the validation.</param>
+        /// <param name="errorMessage">The displayed error message when the validation fails.</param>
         public RequiredIfComparisonAttribute(string otherPropertyName, object matchedValue, string errorMessage) : base(errorMessage)
         {
             _otherPropertyName = otherPropertyName;
@@ -41,6 +59,12 @@ namespace KYS.Library.Validations
             _errorMessage = errorMessage;
         }
 
+        /// <summary>
+        /// Initialize new instance of <see cref="RequiredIfComparisonAttribute"/> class.
+        /// </summary>
+        /// <param name="otherPropertyName">The name of property which the property is used to obtain its value and compare with <see cref="matchedValue"/>.</param>
+        /// <param name="matchedValue">The value which must be matched with the value of <see cref="otherPropertyName"/> to perform the validation.</param>
+        /// <param name="operator">The <see cref="CompareOperator.CompareOperatorConstants"/> operator used to compare the values.</param>
         public RequiredIfComparisonAttribute(
             string otherPropertyName,
             object matchedValue,
@@ -51,6 +75,13 @@ namespace KYS.Library.Validations
             _operator = @operator;
         }
 
+        /// <summary>
+        /// Initialize new instance of <see cref="RequiredIfComparisonAttribute"/> class.
+        /// </summary>
+        /// <param name="otherPropertyName">The name of property which the property is used to obtain its value and compare with <see cref="matchedValue"/>.</param>
+        /// <param name="matchedValue">The value which must be matched with the value of <see cref="otherPropertyName"/> to perform the validation.</param>
+        /// <param name="operator">The <see cref="CompareOperator.CompareOperatorConstants"/> operator used to compare the values.</param>
+        /// <param name="errorMessage">The displayed error message when the validation fails.</param>
         public RequiredIfComparisonAttribute(
             string otherPropertyName,
             object matchedValue,
@@ -63,6 +94,13 @@ namespace KYS.Library.Validations
             _errorMessage = errorMessage;
         }
 
+        /// <summary>
+        /// Determines whether the value from the current property is valid (neither null, empty nor default value)
+        /// if the value from the <c>otherPropertyInfo</c> is fulfilled (the formula), represents the current property is mandatory.
+        /// </summary>
+        /// <param name="value">The value of the object to validate.</param>
+        /// <param name="validationContext">The <see cref="ValidationContext"/> instance.</param>
+        /// <returns>The <see cref="ValidationResult"/> instance containing the result after validation.</returns>
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             ValidationResult validationResult = ValidationResult.Success;

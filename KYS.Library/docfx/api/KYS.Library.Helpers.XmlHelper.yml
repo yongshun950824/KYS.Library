@@ -1,0 +1,903 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.XmlHelper
+  commentId: T:KYS.Library.Helpers.XmlHelper
+  id: XmlHelper
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.Linq.XDocument)
+  - KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.XmlDocument)
+  - KYS.Library.Helpers.XmlHelper.Deserialize``1(System.Xml.Linq.XDocument)
+  - KYS.Library.Helpers.XmlHelper.Deserialize``1(System.Xml.XmlDocument)
+  - KYS.Library.Helpers.XmlHelper.Serialize``1(``0,System.Xml.Formatting)
+  - KYS.Library.Helpers.XmlHelper.ToXDocument(System.Xml.XmlDocument)
+  - KYS.Library.Helpers.XmlHelper.ToXmlDocument(System.Xml.Linq.XDocument)
+  - KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.Linq.XDocument,System.String,System.Xml.Formatting)
+  - KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.XmlDocument,System.String,System.Xml.Formatting)
+  - KYS.Library.Helpers.XmlHelper.WriteFile``1(``0,System.String,System.Xml.Formatting)
+  langs:
+  - csharp
+  - vb
+  name: XmlHelper
+  nameWithType: XmlHelper
+  fullName: KYS.Library.Helpers.XmlHelper
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: XmlHelper
+    path: ../Helpers/XmlHelper.cs
+    startLine: 10
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Provide utility methods for the XML.
+  example: []
+  syntax:
+    content: public static class XmlHelper
+    content.vb: Public Module XmlHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.XmlDocument)
+  commentId: M:KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.XmlDocument)
+  id: Beautify(System.Xml.XmlDocument)
+  isExtensionMethod: true
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: Beautify(XmlDocument)
+  nameWithType: XmlHelper.Beautify(XmlDocument)
+  fullName: KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.XmlDocument)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Beautify
+    path: ../Helpers/XmlHelper.cs
+    startLine: 17
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Beautify the XML string.
+  example: []
+  syntax:
+    content: public static string Beautify(this XmlDocument xmlDocument)
+    parameters:
+    - id: xmlDocument
+      type: System.Xml.XmlDocument
+      description: The <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    return:
+      type: System.String
+      description: The beautified XML string.
+    content.vb: Public Shared Function Beautify(xmlDocument As XmlDocument) As String
+  overload: KYS.Library.Helpers.XmlHelper.Beautify*
+- uid: KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.Linq.XDocument)
+  commentId: M:KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.Linq.XDocument)
+  id: Beautify(System.Xml.Linq.XDocument)
+  isExtensionMethod: true
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: Beautify(XDocument)
+  nameWithType: XmlHelper.Beautify(XDocument)
+  fullName: KYS.Library.Helpers.XmlHelper.Beautify(System.Xml.Linq.XDocument)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Beautify
+    path: ../Helpers/XmlHelper.cs
+    startLine: 31
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Beautify the XML string.
+  example: []
+  syntax:
+    content: public static string Beautify(this XDocument xDocument)
+    parameters:
+    - id: xDocument
+      type: System.Xml.Linq.XDocument
+      description: The <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    return:
+      type: System.String
+      description: The beautified XML string.
+    content.vb: Public Shared Function Beautify(xDocument As XDocument) As String
+  overload: KYS.Library.Helpers.XmlHelper.Beautify*
+- uid: KYS.Library.Helpers.XmlHelper.Serialize``1(``0,System.Xml.Formatting)
+  commentId: M:KYS.Library.Helpers.XmlHelper.Serialize``1(``0,System.Xml.Formatting)
+  id: Serialize``1(``0,System.Xml.Formatting)
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: Serialize<T>(T, Formatting)
+  nameWithType: XmlHelper.Serialize<T>(T, Formatting)
+  fullName: KYS.Library.Helpers.XmlHelper.Serialize<T>(T, System.Xml.Formatting)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Serialize
+    path: ../Helpers/XmlHelper.cs
+    startLine: 46
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Serialize an object of type <code class="typeparamref">T</code> into the XML.
+  example: []
+  syntax:
+    content: 'public static string Serialize<T>(T obj, Formatting formatting = Formatting.Indented) where T : class, new()'
+    parameters:
+    - id: obj
+      type: '{T}'
+      description: The value to be serialized.
+    - id: formatting
+      type: System.Xml.Formatting
+      description: The <xref href="System.Xml.Formatting" data-throw-if-not-resolved="false"></xref> option.
+    typeParameters:
+    - id: T
+      description: The type of <code>obj</code>. Must be a reference type with a public parameterless constructor.
+    return:
+      type: System.String
+      description: Serialized object of type <code class="typeparamref">T</code> in XML.
+    content.vb: Public Shared Function Serialize(Of T As {Class, New})(obj As T, formatting As Formatting = Formatting.Indented) As String
+  overload: KYS.Library.Helpers.XmlHelper.Serialize*
+  nameWithType.vb: XmlHelper.Serialize(Of T)(T, Formatting)
+  fullName.vb: KYS.Library.Helpers.XmlHelper.Serialize(Of T)(T, System.Xml.Formatting)
+  name.vb: Serialize(Of T)(T, Formatting)
+- uid: KYS.Library.Helpers.XmlHelper.Deserialize``1(System.Xml.XmlDocument)
+  commentId: M:KYS.Library.Helpers.XmlHelper.Deserialize``1(System.Xml.XmlDocument)
+  id: Deserialize``1(System.Xml.XmlDocument)
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: Deserialize<T>(XmlDocument)
+  nameWithType: XmlHelper.Deserialize<T>(XmlDocument)
+  fullName: KYS.Library.Helpers.XmlHelper.Deserialize<T>(System.Xml.XmlDocument)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Deserialize
+    path: ../Helpers/XmlHelper.cs
+    startLine: 70
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Deserializes an <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> into an object of type <code class="typeparamref">T</code>.
+  example: []
+  syntax:
+    content: 'public static T Deserialize<T>(XmlDocument xmlDocument) where T : class, new()'
+    parameters:
+    - id: xmlDocument
+      type: System.Xml.XmlDocument
+      description: The XML document containing the serialized representation of the object.
+    typeParameters:
+    - id: T
+      description: The target type to deserialize into. Must be a reference type with a public parameterless constructor.
+    return:
+      type: '{T}'
+      description: An instance of <code class="typeparamref">T</code> created from the contents of the XML document.
+    content.vb: Public Shared Function Deserialize(Of T As {Class, New})(xmlDocument As XmlDocument) As T
+  overload: KYS.Library.Helpers.XmlHelper.Deserialize*
+  nameWithType.vb: XmlHelper.Deserialize(Of T)(XmlDocument)
+  fullName.vb: KYS.Library.Helpers.XmlHelper.Deserialize(Of T)(System.Xml.XmlDocument)
+  name.vb: Deserialize(Of T)(XmlDocument)
+- uid: KYS.Library.Helpers.XmlHelper.Deserialize``1(System.Xml.Linq.XDocument)
+  commentId: M:KYS.Library.Helpers.XmlHelper.Deserialize``1(System.Xml.Linq.XDocument)
+  id: Deserialize``1(System.Xml.Linq.XDocument)
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: Deserialize<T>(XDocument)
+  nameWithType: XmlHelper.Deserialize<T>(XDocument)
+  fullName: KYS.Library.Helpers.XmlHelper.Deserialize<T>(System.Xml.Linq.XDocument)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Deserialize
+    path: ../Helpers/XmlHelper.cs
+    startLine: 93
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Deserializes an <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> into an object of type <code class="typeparamref">T</code>.
+  example: []
+  syntax:
+    content: 'public static T Deserialize<T>(XDocument xDocument) where T : class, new()'
+    parameters:
+    - id: xDocument
+      type: System.Xml.Linq.XDocument
+      description: The XML document containing the serialized representation of the object.
+    typeParameters:
+    - id: T
+      description: The target type to deserialize into. Must be a reference type with a public parameterless constructor.
+    return:
+      type: '{T}'
+      description: An instance of <code class="typeparamref">T</code> created from the contents of the XML document.
+    content.vb: Public Shared Function Deserialize(Of T As {Class, New})(xDocument As XDocument) As T
+  overload: KYS.Library.Helpers.XmlHelper.Deserialize*
+  nameWithType.vb: XmlHelper.Deserialize(Of T)(XDocument)
+  fullName.vb: KYS.Library.Helpers.XmlHelper.Deserialize(Of T)(System.Xml.Linq.XDocument)
+  name.vb: Deserialize(Of T)(XDocument)
+- uid: KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.XmlDocument,System.String,System.Xml.Formatting)
+  commentId: M:KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.XmlDocument,System.String,System.Xml.Formatting)
+  id: WriteFile(System.Xml.XmlDocument,System.String,System.Xml.Formatting)
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteFile(XmlDocument, string, Formatting)
+  nameWithType: XmlHelper.WriteFile(XmlDocument, string, Formatting)
+  fullName: KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.XmlDocument, string, System.Xml.Formatting)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: WriteFile
+    path: ../Helpers/XmlHelper.cs
+    startLine: 111
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Write <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> into file stream.
+  example: []
+  syntax:
+    content: public static Stream WriteFile(XmlDocument xmlDocument, string filePath, Formatting formatting = Formatting.Indented)
+    parameters:
+    - id: xmlDocument
+      type: System.Xml.XmlDocument
+      description: The <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> instance.
+    - id: filePath
+      type: System.String
+      description: The path for the file to be written.
+    - id: formatting
+      type: System.Xml.Formatting
+      description: The <xref href="System.Xml.Formatting" data-throw-if-not-resolved="false"></xref> option.
+    return:
+      type: System.IO.Stream
+      description: The <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> instance containing the XML file.
+    content.vb: Public Shared Function WriteFile(xmlDocument As XmlDocument, filePath As String, formatting As Formatting = Formatting.Indented) As Stream
+  overload: KYS.Library.Helpers.XmlHelper.WriteFile*
+  nameWithType.vb: XmlHelper.WriteFile(XmlDocument, String, Formatting)
+  fullName.vb: KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.XmlDocument, String, System.Xml.Formatting)
+  name.vb: WriteFile(XmlDocument, String, Formatting)
+- uid: KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.Linq.XDocument,System.String,System.Xml.Formatting)
+  commentId: M:KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.Linq.XDocument,System.String,System.Xml.Formatting)
+  id: WriteFile(System.Xml.Linq.XDocument,System.String,System.Xml.Formatting)
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteFile(XDocument, string, Formatting)
+  nameWithType: XmlHelper.WriteFile(XDocument, string, Formatting)
+  fullName: KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.Linq.XDocument, string, System.Xml.Formatting)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: WriteFile
+    path: ../Helpers/XmlHelper.cs
+    startLine: 130
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Write <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> into file stream.
+  example: []
+  syntax:
+    content: public static Stream WriteFile(XDocument xDocument, string filePath, Formatting formatting = Formatting.Indented)
+    parameters:
+    - id: xDocument
+      type: System.Xml.Linq.XDocument
+      description: The <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> instance.
+    - id: filePath
+      type: System.String
+      description: The path for the file to be written.
+    - id: formatting
+      type: System.Xml.Formatting
+      description: The <xref href="System.Xml.Formatting" data-throw-if-not-resolved="false"></xref> option.
+    return:
+      type: System.IO.Stream
+      description: The <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> instance containing the XML file.
+    content.vb: Public Shared Function WriteFile(xDocument As XDocument, filePath As String, formatting As Formatting = Formatting.Indented) As Stream
+  overload: KYS.Library.Helpers.XmlHelper.WriteFile*
+  nameWithType.vb: XmlHelper.WriteFile(XDocument, String, Formatting)
+  fullName.vb: KYS.Library.Helpers.XmlHelper.WriteFile(System.Xml.Linq.XDocument, String, System.Xml.Formatting)
+  name.vb: WriteFile(XDocument, String, Formatting)
+- uid: KYS.Library.Helpers.XmlHelper.WriteFile``1(``0,System.String,System.Xml.Formatting)
+  commentId: M:KYS.Library.Helpers.XmlHelper.WriteFile``1(``0,System.String,System.Xml.Formatting)
+  id: WriteFile``1(``0,System.String,System.Xml.Formatting)
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteFile<T>(T, string, Formatting)
+  nameWithType: XmlHelper.WriteFile<T>(T, string, Formatting)
+  fullName: KYS.Library.Helpers.XmlHelper.WriteFile<T>(T, string, System.Xml.Formatting)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: WriteFile
+    path: ../Helpers/XmlHelper.cs
+    startLine: 152
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Serialize an object of type <code class="typeparamref">T</code> into the XML and write it into a file stream.
+  example: []
+  syntax:
+    content: 'public static Stream WriteFile<T>(T obj, string filePath, Formatting formatting = Formatting.Indented) where T : class, new()'
+    parameters:
+    - id: obj
+      type: '{T}'
+      description: The value to be serialized.
+    - id: filePath
+      type: System.String
+      description: The path for the file to be written.
+    - id: formatting
+      type: System.Xml.Formatting
+      description: The <xref href="System.Xml.Formatting" data-throw-if-not-resolved="false"></xref> option.
+    typeParameters:
+    - id: T
+      description: The target type to deserialize into. Must be a reference type with a public parameterless constructor.
+    return:
+      type: System.IO.Stream
+      description: The <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> instance containing the XML file.
+    content.vb: Public Shared Function WriteFile(Of T As {Class, New})(obj As T, filePath As String, formatting As Formatting = Formatting.Indented) As Stream
+  overload: KYS.Library.Helpers.XmlHelper.WriteFile*
+  nameWithType.vb: XmlHelper.WriteFile(Of T)(T, String, Formatting)
+  fullName.vb: KYS.Library.Helpers.XmlHelper.WriteFile(Of T)(T, String, System.Xml.Formatting)
+  name.vb: WriteFile(Of T)(T, String, Formatting)
+- uid: KYS.Library.Helpers.XmlHelper.ToXmlDocument(System.Xml.Linq.XDocument)
+  commentId: M:KYS.Library.Helpers.XmlHelper.ToXmlDocument(System.Xml.Linq.XDocument)
+  id: ToXmlDocument(System.Xml.Linq.XDocument)
+  isExtensionMethod: true
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: ToXmlDocument(XDocument)
+  nameWithType: XmlHelper.ToXmlDocument(XDocument)
+  fullName: KYS.Library.Helpers.XmlHelper.ToXmlDocument(System.Xml.Linq.XDocument)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ToXmlDocument
+    path: ../Helpers/XmlHelper.cs
+    startLine: 171
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Convert <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> instance to a <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static XmlDocument ToXmlDocument(this XDocument xDocument)
+    parameters:
+    - id: xDocument
+      type: System.Xml.Linq.XDocument
+      description: The <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    return:
+      type: System.Xml.XmlDocument
+      description: The <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> instance created from the <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> contents.
+    content.vb: Public Shared Function ToXmlDocument(xDocument As XDocument) As XmlDocument
+  overload: KYS.Library.Helpers.XmlHelper.ToXmlDocument*
+- uid: KYS.Library.Helpers.XmlHelper.ToXDocument(System.Xml.XmlDocument)
+  commentId: M:KYS.Library.Helpers.XmlHelper.ToXDocument(System.Xml.XmlDocument)
+  id: ToXDocument(System.Xml.XmlDocument)
+  isExtensionMethod: true
+  parent: KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: ToXDocument(XmlDocument)
+  nameWithType: XmlHelper.ToXDocument(XmlDocument)
+  fullName: KYS.Library.Helpers.XmlHelper.ToXDocument(System.Xml.XmlDocument)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/XmlHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ToXDocument
+    path: ../Helpers/XmlHelper.cs
+    startLine: 185
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Convert <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> instance to a <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static XDocument ToXDocument(this XmlDocument xmlDocument)
+    parameters:
+    - id: xmlDocument
+      type: System.Xml.XmlDocument
+      description: The <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    return:
+      type: System.Xml.Linq.XDocument
+      description: The <xref href="System.Xml.Linq.XDocument" data-throw-if-not-resolved="false"></xref> instance created from the <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="false"></xref> contents.
+    content.vb: Public Shared Function ToXDocument(xmlDocument As XmlDocument) As XDocument
+  overload: KYS.Library.Helpers.XmlHelper.ToXDocument*
+references:
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Xml.XmlDocument
+  commentId: T:System.Xml.XmlDocument
+  parent: System.Xml
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.xml.xmldocument
+  name: XmlDocument
+  nameWithType: XmlDocument
+  fullName: System.Xml.XmlDocument
+- uid: KYS.Library.Helpers.XmlHelper.Beautify*
+  commentId: Overload:KYS.Library.Helpers.XmlHelper.Beautify
+  href: KYS.Library.Helpers.XmlHelper.html#KYS_Library_Helpers_XmlHelper_Beautify_System_Xml_XmlDocument_
+  name: Beautify
+  nameWithType: XmlHelper.Beautify
+  fullName: KYS.Library.Helpers.XmlHelper.Beautify
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Xml
+    name: Xml
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Xml
+    name: Xml
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml
+- uid: System.Xml.Linq.XDocument
+  commentId: T:System.Xml.Linq.XDocument
+  parent: System.Xml.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.xml.linq.xdocument
+  name: XDocument
+  nameWithType: XDocument
+  fullName: System.Xml.Linq.XDocument
+- uid: System.Xml.Linq
+  commentId: N:System.Xml.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Xml.Linq
+  nameWithType: System.Xml.Linq
+  fullName: System.Xml.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Xml
+    name: Xml
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml
+  - name: .
+  - uid: System.Xml.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Xml
+    name: Xml
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml
+  - name: .
+  - uid: System.Xml.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml.linq
+- uid: System.Xml.Formatting
+  commentId: T:System.Xml.Formatting
+  parent: System.Xml
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.xml.formatting
+  name: Formatting
+  nameWithType: Formatting
+  fullName: System.Xml.Formatting
+- uid: KYS.Library.Helpers.XmlHelper.Serialize*
+  commentId: Overload:KYS.Library.Helpers.XmlHelper.Serialize
+  href: KYS.Library.Helpers.XmlHelper.html#KYS_Library_Helpers_XmlHelper_Serialize__1___0_System_Xml_Formatting_
+  name: Serialize
+  nameWithType: XmlHelper.Serialize
+  fullName: KYS.Library.Helpers.XmlHelper.Serialize
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: KYS.Library.Helpers.XmlHelper.Deserialize*
+  commentId: Overload:KYS.Library.Helpers.XmlHelper.Deserialize
+  href: KYS.Library.Helpers.XmlHelper.html#KYS_Library_Helpers_XmlHelper_Deserialize__1_System_Xml_XmlDocument_
+  name: Deserialize
+  nameWithType: XmlHelper.Deserialize
+  fullName: KYS.Library.Helpers.XmlHelper.Deserialize
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: KYS.Library.Helpers.XmlHelper.WriteFile*
+  commentId: Overload:KYS.Library.Helpers.XmlHelper.WriteFile
+  href: KYS.Library.Helpers.XmlHelper.html#KYS_Library_Helpers_XmlHelper_WriteFile_System_Xml_XmlDocument_System_String_System_Xml_Formatting_
+  name: WriteFile
+  nameWithType: XmlHelper.WriteFile
+  fullName: KYS.Library.Helpers.XmlHelper.WriteFile
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: KYS.Library.Helpers.XmlHelper.ToXmlDocument*
+  commentId: Overload:KYS.Library.Helpers.XmlHelper.ToXmlDocument
+  href: KYS.Library.Helpers.XmlHelper.html#KYS_Library_Helpers_XmlHelper_ToXmlDocument_System_Xml_Linq_XDocument_
+  name: ToXmlDocument
+  nameWithType: XmlHelper.ToXmlDocument
+  fullName: KYS.Library.Helpers.XmlHelper.ToXmlDocument
+- uid: KYS.Library.Helpers.XmlHelper.ToXDocument*
+  commentId: Overload:KYS.Library.Helpers.XmlHelper.ToXDocument
+  href: KYS.Library.Helpers.XmlHelper.html#KYS_Library_Helpers_XmlHelper_ToXDocument_System_Xml_XmlDocument_
+  name: ToXDocument
+  nameWithType: XmlHelper.ToXDocument
+  fullName: KYS.Library.Helpers.XmlHelper.ToXDocument

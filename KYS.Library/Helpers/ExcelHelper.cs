@@ -10,18 +10,22 @@ using System.Linq;
 
 namespace KYS.Library.Helpers
 {
+    /// <summary>
+    /// Provide utitlity methods for the Excel file.
+    /// </summary>
     public static class ExcelHelper
     {
         /// <summary>
-        /// Generate Excel file with DataSet.
+        /// Generate Excel file with <see cref="DataSet" />.
         /// </summary>
-        /// <param name="ds"></param>
-        /// <param name="excelColumnFormats"></param>
-        /// <param name="headerRowStyle"></param>
-        /// <param name="summaryRowStyle"></param>
-        /// <param name="additionalExcelSheets"></param>
-        /// <param name="license"></param>
-        /// <returns></returns>
+        /// <param name="ds">The <see cref="DataSet" /> instance.</param>
+        /// <param name="excelColumnFormats">The list of columns with the format to be displayed.</param>
+        /// <param name="headerRowStyle">The style of table header.</param>
+        /// <param name="summaryRowStyle">The style of table body.</param>
+        /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
+        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
+        /// <returns>The <c>byte[]</c> instance containing the Excel file content.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] CreateExcelBook(DataSet ds,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
@@ -69,15 +73,16 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Excel file with DataTable.
+        /// Generate Excel file with <see cref="DataTable" />.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="excelColumnFormats"></param>
-        /// <param name="headerRowStyle"></param>
-        /// <param name="summaryRowStyle"></param>
-        /// <param name="additionalExcelSheets"></param>
-        /// <param name="license"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="excelColumnFormats">The list of columns with the format to be displayed.</param>
+        /// <param name="headerRowStyle">The style of table header.</param>
+        /// <param name="summaryRowStyle">The style of table body.</param>
+        /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
+        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
+        /// <returns>The <c>byte[]</c> instance containing the Excel file content.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] CreateExcelBook(DataTable dt,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
@@ -209,18 +214,43 @@ namespace KYS.Library.Helpers
             return totalRow + (hasHeader ? 1 : 0) + 1;
         }
 
+        /// <summary>
+        /// Represent the blueprint for customizing the column to be displayed in the Excel sheet.
+        /// </summary>
         public class ExcelColumnFormat
         {
+            /// <summary>
+            /// Gets or sets the column mapped with the column name in the <see cref="DataTable"/>.
+            /// </summary>
             public string ColumnName { get; set; }
+            /// <summary>
+            /// Gets or sets the name for the column to be displayed as the header name in Excel sheet. 
+            /// </summary>
             public string DisplayedColumnName { get; set; }
+            /// <summary>
+            /// Gets or sets the format for the column (value).
+            /// </summary>
             public string Format { get; set; }
+            /// <summary>
+            /// Gets or sets the horizontal alignment of the column.
+            /// </summary>
             public ExcelHorizontalAlignment? HorizontalAlignment { get; set; }
+            /// <summary>
+            /// Gets or sets the indicator to display the sum of the values in the last row. <br />
+            /// Only for numeric column used.
+            /// </summary>
             public bool HasSumColumn { get; set; }
         }
 
+        /// <summary>
+        /// Represents the blueprint for adding and customizing additional sheet(s) to the Excel worksheet.
+        /// </summary>
         public class AdditionalExcelSheet
         {
             private DataTable _dataTable;
+            /// <summary>
+            /// Gets or sets the <see cref="DataTable"/> instance. 
+            /// </summary>
             public DataTable DataTable
             {
                 get
@@ -234,23 +264,53 @@ namespace KYS.Library.Helpers
                     _dataTable = value;
                 }
             }
+            /// <summary>
+            /// Gets or sets the column(s) and its customization.
+            /// </summary>
             public List<ExcelColumnFormat> ExcelColumnFormats { get; set; } = null;
+            /// <summary>
+            /// Gets or sets the header row style.
+            /// </summary>
             public ExcelRowStyle HeaderRowStyle { get; set; } = ExcelRowStyle.DefaultHeaderRowStyle;
+            /// <summary>
+            /// Gets or sets the summary (bottom) row style.
+            /// </summary>
             public ExcelRowStyle SummaryRowStyle { get; set; } = null;
         }
 
+        /// <summary>
+        /// Represents the blueprint for customizing the style for whole row.
+        /// </summary>
         public class ExcelRowStyle
         {
+            /// <summary>
+            /// Gets or sets the horizontal alignment.
+            /// </summary>
             public ExcelHorizontalAlignment HorizontalAlignment { get; set; } = ExcelHorizontalAlignment.Center;
+            /// <summary>
+            /// Gets or sets the indicator for applying the bold style.
+            /// </summary>
             public bool Bold { get; set; } = true;
+            /// <summary>
+            /// Gets or sets the font color.
+            /// </summary>
             public Color FontColor { get; set; } = Color.Black;
+            /// <summary>
+            /// Gets or sets the pattern type.
+            /// </summary>
             public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.Solid;
+            /// <summary>
+            /// Gets or sets the background color.
+            /// </summary>
             public Color BackgroundColor { get; set; } = Color.Empty;
             /// <summary>
             /// Apply Auto Filter to Excel columns. (For header row only)
             /// </summary>
             public bool AutoFilter { get; set; }
 
+            /// <summary>
+            /// Gets the default header row style instance.
+            /// </summary>
             public static ExcelRowStyle DefaultHeaderRowStyle
             {
                 get
@@ -266,6 +326,9 @@ namespace KYS.Library.Helpers
                 }
             }
 
+            /// <summary>
+            /// Gets the default summary (bottom) row style instance.
+            /// </summary>
             public static ExcelRowStyle DefaultSummaryRowStyle
             {
                 get

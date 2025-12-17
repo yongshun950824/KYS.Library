@@ -1,0 +1,958 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.DataTableHelper
+  commentId: T:KYS.Library.Helpers.DataTableHelper
+  id: DataTableHelper
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.DataTableHelper.ReadCSV(System.IO.Stream)
+  - KYS.Library.Helpers.DataTableHelper.ReadCSV(System.String)
+  - KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable,KYS.Library.Helpers.ExcelHelper.ExcelRowStyle,System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat},OfficeOpenXml.LicenseContext)
+  - KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable,System.Boolean)
+  - KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)
+  - KYS.Library.Helpers.DataTableHelper.WriteToTextFile(System.Data.DataTable,System.Boolean,System.String,System.Globalization.CultureInfo)
+  langs:
+  - csharp
+  - vb
+  name: DataTableHelper
+  nameWithType: DataTableHelper
+  fullName: KYS.Library.Helpers.DataTableHelper
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Helpers/DataTableHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DataTableHelper
+    path: ../Helpers/DataTableHelper.cs
+    startLine: 23
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Provide utility methods for <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class DataTableHelper
+    content.vb: Public Module DataTableHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToTextFile(System.Data.DataTable,System.Boolean,System.String,System.Globalization.CultureInfo)
+  commentId: M:KYS.Library.Helpers.DataTableHelper.WriteToTextFile(System.Data.DataTable,System.Boolean,System.String,System.Globalization.CultureInfo)
+  id: WriteToTextFile(System.Data.DataTable,System.Boolean,System.String,System.Globalization.CultureInfo)
+  parent: KYS.Library.Helpers.DataTableHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteToTextFile(DataTable, bool, string, CultureInfo)
+  nameWithType: DataTableHelper.WriteToTextFile(DataTable, bool, string, CultureInfo)
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToTextFile(System.Data.DataTable, bool, string, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/DataTableHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: WriteToTextFile
+    path: ../Helpers/DataTableHelper.cs
+    startLine: 33
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into text/CSV file.
+  example: []
+  syntax:
+    content: public static byte[] WriteToTextFile(DataTable dt, bool printHeaders = true, string delimiter = ";", CultureInfo cultureInfo = null)
+    parameters:
+    - id: dt
+      type: System.Data.DataTable
+      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance.
+    - id: printHeaders
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the header to be included.
+    - id: delimiter
+      type: System.String
+      description: The separator splits the column.
+    - id: cultureInfo
+      type: System.Globalization.CultureInfo
+      description: The culture to be used.
+    return:
+      type: System.Byte[]
+      description: The byte array for the file.
+    content.vb: Public Shared Function WriteToTextFile(dt As DataTable, printHeaders As Boolean = True, delimiter As String = ";", cultureInfo As CultureInfo = Nothing) As Byte()
+  overload: KYS.Library.Helpers.DataTableHelper.WriteToTextFile*
+  nameWithType.vb: DataTableHelper.WriteToTextFile(DataTable, Boolean, String, CultureInfo)
+  fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToTextFile(System.Data.DataTable, Boolean, String, System.Globalization.CultureInfo)
+  name.vb: WriteToTextFile(DataTable, Boolean, String, CultureInfo)
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable,KYS.Library.Helpers.ExcelHelper.ExcelRowStyle,System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat},OfficeOpenXml.LicenseContext)
+  commentId: M:KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable,KYS.Library.Helpers.ExcelHelper.ExcelRowStyle,System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat},OfficeOpenXml.LicenseContext)
+  id: WriteToExcelFile(System.Data.DataTable,KYS.Library.Helpers.ExcelHelper.ExcelRowStyle,System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat},OfficeOpenXml.LicenseContext)
+  parent: KYS.Library.Helpers.DataTableHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteToExcelFile(DataTable, ExcelRowStyle, List<ExcelColumnFormat>, LicenseContext)
+  nameWithType: DataTableHelper.WriteToExcelFile(DataTable, ExcelHelper.ExcelRowStyle, List<ExcelHelper.ExcelColumnFormat>, LicenseContext)
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable, KYS.Library.Helpers.ExcelHelper.ExcelRowStyle, System.Collections.Generic.List<KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat>, OfficeOpenXml.LicenseContext)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/DataTableHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: WriteToExcelFile
+    path: ../Helpers/DataTableHelper.cs
+    startLine: 59
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into Excel file.
+  example: []
+  syntax:
+    content: public static byte[] WriteToExcelFile(DataTable dt, ExcelHelper.ExcelRowStyle headerRowStyle = null, List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null, LicenseContext license = LicenseContext.NonCommercial)
+    parameters:
+    - id: dt
+      type: System.Data.DataTable
+      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance.
+    - id: headerRowStyle
+      type: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+      description: The style for the header row.
+    - id: excelColumnFormats
+      type: System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat}
+    - id: license
+      type: OfficeOpenXml.LicenseContext
+      description: The license used in <xref href="OfficeOpenXml.ExcelPackage" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Byte[]
+      description: The byte array for the file.
+    content.vb: Public Shared Function WriteToExcelFile(dt As DataTable, headerRowStyle As ExcelHelper.ExcelRowStyle = Nothing, excelColumnFormats As List(Of ExcelHelper.ExcelColumnFormat) = Nothing, license As LicenseContext = LicenseContext.NonCommercial) As Byte()
+  overload: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: DataTableHelper.WriteToExcelFile(DataTable, ExcelHelper.ExcelRowStyle, List(Of ExcelHelper.ExcelColumnFormat), LicenseContext)
+  fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable, KYS.Library.Helpers.ExcelHelper.ExcelRowStyle, System.Collections.Generic.List(Of KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat), OfficeOpenXml.LicenseContext)
+  name.vb: WriteToExcelFile(DataTable, ExcelRowStyle, List(Of ExcelColumnFormat), LicenseContext)
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)
+  commentId: M:KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)
+  id: WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)
+  parent: KYS.Library.Helpers.DataTableHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteToPdfFile(DataTable, bool, Style, Style)
+  nameWithType: DataTableHelper.WriteToPdfFile(DataTable, bool, Style, Style)
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable, bool, iText.Layout.Style, iText.Layout.Style)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/DataTableHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: WriteToPdfFile
+    path: ../Helpers/DataTableHelper.cs
+    startLine: 78
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into PDF file.
+  example: []
+  syntax:
+    content: public static byte[] WriteToPdfFile(DataTable dt, bool printHeaders = true, Style tableHeaderStyle = null, Style tableBodyStyle = null)
+    parameters:
+    - id: dt
+      type: System.Data.DataTable
+      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance.
+    - id: printHeaders
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the header to be included.
+    - id: tableHeaderStyle
+      type: iText.Layout.Style
+      description: The style for the table header.
+    - id: tableBodyStyle
+      type: iText.Layout.Style
+      description: The style for the table content.
+    return:
+      type: System.Byte[]
+      description: The byte array for the file.
+    content.vb: Public Shared Function WriteToPdfFile(dt As DataTable, printHeaders As Boolean = True, tableHeaderStyle As Style = Nothing, tableBodyStyle As Style = Nothing) As Byte()
+  overload: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: DataTableHelper.WriteToPdfFile(DataTable, Boolean, Style, Style)
+  fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable, Boolean, iText.Layout.Style, iText.Layout.Style)
+  name.vb: WriteToPdfFile(DataTable, Boolean, Style, Style)
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable,System.Boolean)
+  commentId: M:KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable,System.Boolean)
+  id: WriteToJsonFile(System.Data.DataTable,System.Boolean)
+  parent: KYS.Library.Helpers.DataTableHelper
+  langs:
+  - csharp
+  - vb
+  name: WriteToJsonFile(DataTable, bool)
+  nameWithType: DataTableHelper.WriteToJsonFile(DataTable, bool)
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable, bool)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/DataTableHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: WriteToJsonFile
+    path: ../Helpers/DataTableHelper.cs
+    startLine: 118
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into JSON file.
+  example: []
+  syntax:
+    content: public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)
+    parameters:
+    - id: dt
+      type: System.Data.DataTable
+      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance.
+    - id: isIndented
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates to print the JSON as indented.
+    return:
+      type: System.Byte[]
+      description: The byte array for the file.
+    content.vb: Public Shared Function WriteToJsonFile(dt As DataTable, isIndented As Boolean = True) As Byte()
+  overload: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile*
+  nameWithType.vb: DataTableHelper.WriteToJsonFile(DataTable, Boolean)
+  fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable, Boolean)
+  name.vb: WriteToJsonFile(DataTable, Boolean)
+- uid: KYS.Library.Helpers.DataTableHelper.ReadCSV(System.String)
+  commentId: M:KYS.Library.Helpers.DataTableHelper.ReadCSV(System.String)
+  id: ReadCSV(System.String)
+  parent: KYS.Library.Helpers.DataTableHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadCSV(string)
+  nameWithType: DataTableHelper.ReadCSV(string)
+  fullName: KYS.Library.Helpers.DataTableHelper.ReadCSV(string)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/DataTableHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ReadCSV
+    path: ../Helpers/DataTableHelper.cs
+    startLine: 143
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Read CSV from file into <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static DataTable ReadCSV(string filePath)
+    parameters:
+    - id: filePath
+      type: System.String
+      description: The path for the CSV file to be read.
+    return:
+      type: System.Data.DataTable
+      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance with the data row(s).
+    content.vb: Public Shared Function ReadCSV(filePath As String) As DataTable
+  overload: KYS.Library.Helpers.DataTableHelper.ReadCSV*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: ''
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: DataTableHelper.ReadCSV(String)
+  fullName.vb: KYS.Library.Helpers.DataTableHelper.ReadCSV(String)
+  name.vb: ReadCSV(String)
+- uid: KYS.Library.Helpers.DataTableHelper.ReadCSV(System.IO.Stream)
+  commentId: M:KYS.Library.Helpers.DataTableHelper.ReadCSV(System.IO.Stream)
+  id: ReadCSV(System.IO.Stream)
+  parent: KYS.Library.Helpers.DataTableHelper
+  langs:
+  - csharp
+  - vb
+  name: ReadCSV(Stream)
+  nameWithType: DataTableHelper.ReadCSV(Stream)
+  fullName: KYS.Library.Helpers.DataTableHelper.ReadCSV(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/DataTableHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ReadCSV
+    path: ../Helpers/DataTableHelper.cs
+    startLine: 163
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Read CSV from <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> into <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static DataTable ReadCSV(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> instance containing the CSV file.
+    return:
+      type: System.Data.DataTable
+      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance with the data row(s).
+    content.vb: Public Shared Function ReadCSV(stream As Stream) As DataTable
+  overload: KYS.Library.Helpers.DataTableHelper.ReadCSV*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+references:
+- uid: System.Data.DataTable
+  commentId: T:System.Data.DataTable
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.datatable
+  name: DataTable
+  nameWithType: DataTable
+  fullName: System.Data.DataTable
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToTextFile*
+  commentId: Overload:KYS.Library.Helpers.DataTableHelper.WriteToTextFile
+  href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_WriteToTextFile_System_Data_DataTable_System_Boolean_System_String_System_Globalization_CultureInfo_
+  name: WriteToTextFile
+  nameWithType: DataTableHelper.WriteToTextFile
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToTextFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.Globalization
+  commentId: N:System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Globalization
+  nameWithType: System.Globalization
+  fullName: System.Globalization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Globalization
+    name: Globalization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Globalization
+    name: Globalization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization
+- uid: OfficeOpenXml.ExcelPackage
+  commentId: T:OfficeOpenXml.ExcelPackage
+  isExternal: true
+  name: ExcelPackage
+  nameWithType: ExcelPackage
+  fullName: OfficeOpenXml.ExcelPackage
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile*
+  commentId: Overload:KYS.Library.Helpers.DataTableHelper.WriteToExcelFile
+  href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_WriteToExcelFile_System_Data_DataTable_KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_System_Collections_Generic_List_KYS_Library_Helpers_ExcelHelper_ExcelColumnFormat__OfficeOpenXml_LicenseContext_
+  name: WriteToExcelFile
+  nameWithType: DataTableHelper.WriteToExcelFile
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  commentId: T:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.ExcelHelper.html
+  name: ExcelHelper.ExcelRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  spec.csharp:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    name: ExcelRowStyle
+    href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    name: ExcelRowStyle
+    href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html
+- uid: System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat}
+  commentId: T:System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ExcelHelper.ExcelColumnFormat>
+  nameWithType: List<ExcelHelper.ExcelColumnFormat>
+  fullName: System.Collections.Generic.List<KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat>
+  nameWithType.vb: List(Of ExcelHelper.ExcelColumnFormat)
+  fullName.vb: System.Collections.Generic.List(Of KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat)
+  name.vb: List(Of ExcelHelper.ExcelColumnFormat)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+    name: ExcelColumnFormat
+    href: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+    name: ExcelColumnFormat
+    href: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.html
+  - name: )
+- uid: OfficeOpenXml.LicenseContext
+  commentId: T:OfficeOpenXml.LicenseContext
+  parent: OfficeOpenXml
+  isExternal: true
+  name: LicenseContext
+  nameWithType: LicenseContext
+  fullName: OfficeOpenXml.LicenseContext
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OfficeOpenXml
+  commentId: N:OfficeOpenXml
+  isExternal: true
+  name: OfficeOpenXml
+  nameWithType: OfficeOpenXml
+  fullName: OfficeOpenXml
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile*
+  commentId: Overload:KYS.Library.Helpers.DataTableHelper.WriteToPdfFile
+  href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_WriteToPdfFile_System_Data_DataTable_System_Boolean_iText_Layout_Style_iText_Layout_Style_
+  name: WriteToPdfFile
+  nameWithType: DataTableHelper.WriteToPdfFile
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile
+- uid: iText.Layout.Style
+  commentId: T:iText.Layout.Style
+  parent: iText.Layout
+  isExternal: true
+  name: Style
+  nameWithType: Style
+  fullName: iText.Layout.Style
+- uid: iText.Layout
+  commentId: N:iText.Layout
+  isExternal: true
+  name: iText.Layout
+  nameWithType: iText.Layout
+  fullName: iText.Layout
+  spec.csharp:
+  - uid: iText
+    name: iText
+    isExternal: true
+  - name: .
+  - uid: iText.Layout
+    name: Layout
+    isExternal: true
+  spec.vb:
+  - uid: iText
+    name: iText
+    isExternal: true
+  - name: .
+  - uid: iText.Layout
+    name: Layout
+    isExternal: true
+- uid: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile*
+  commentId: Overload:KYS.Library.Helpers.DataTableHelper.WriteToJsonFile
+  href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_WriteToJsonFile_System_Data_DataTable_System_Boolean_
+  name: WriteToJsonFile
+  nameWithType: DataTableHelper.WriteToJsonFile
+  fullName: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: KYS.Library.Helpers.DataTableHelper.ReadCSV*
+  commentId: Overload:KYS.Library.Helpers.DataTableHelper.ReadCSV
+  href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_ReadCSV_System_String_
+  name: ReadCSV
+  nameWithType: DataTableHelper.ReadCSV
+  fullName: KYS.Library.Helpers.DataTableHelper.ReadCSV
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
