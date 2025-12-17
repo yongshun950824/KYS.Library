@@ -1,0 +1,329 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  id: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.CompareOperator
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  - KYS.Library.Helpers.DataTableHelper
+  - KYS.Library.Helpers.EmailHelper
+  - KYS.Library.Helpers.EmailHelper.SmtpClientConfig
+  - KYS.Library.Helpers.ExcelHelper
+  - KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
+  - KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+  - KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  - KYS.Library.Helpers.ExpressionBuilder
+  - KYS.Library.Helpers.FileHelper
+  - KYS.Library.Helpers.FilterCriteria`1
+  - KYS.Library.Helpers.FormattingHelper
+  - KYS.Library.Helpers.FormattingHelper.Formatting
+  - KYS.Library.Helpers.JsonHelper
+  - KYS.Library.Helpers.JsonHelper.FlattenFormat
+  - KYS.Library.Helpers.PdfHelper
+  - KYS.Library.Helpers.SqlHelper
+  - KYS.Library.Helpers.StreamHelper
+  - KYS.Library.Helpers.UriHelper
+  - KYS.Library.Helpers.XmlHelper
+  langs:
+  - csharp
+  - vb
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  type: Namespace
+  assemblies:
+  - KYS.Library
+references:
+- uid: KYS.Library.Helpers.CompareOperator
+  commentId: T:KYS.Library.Helpers.CompareOperator
+  href: KYS.Library.Helpers.CompareOperator.html
+  name: CompareOperator
+  nameWithType: CompareOperator
+  fullName: KYS.Library.Helpers.CompareOperator
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  commentId: T:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.CompareOperator.html
+  name: CompareOperator.CompareOperatorConstants
+  nameWithType: CompareOperator.CompareOperatorConstants
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  spec.csharp:
+  - uid: KYS.Library.Helpers.CompareOperator
+    name: CompareOperator
+    href: KYS.Library.Helpers.CompareOperator.html
+  - name: .
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.CompareOperator
+    name: CompareOperator
+    href: KYS.Library.Helpers.CompareOperator.html
+  - name: .
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+- uid: KYS.Library.Helpers.DataTableHelper
+  commentId: T:KYS.Library.Helpers.DataTableHelper
+  href: KYS.Library.Helpers.DataTableHelper.html
+  name: DataTableHelper
+  nameWithType: DataTableHelper
+  fullName: KYS.Library.Helpers.DataTableHelper
+- uid: KYS.Library.Helpers.EmailHelper
+  commentId: T:KYS.Library.Helpers.EmailHelper
+  href: KYS.Library.Helpers.EmailHelper.html
+  name: EmailHelper
+  nameWithType: EmailHelper
+  fullName: KYS.Library.Helpers.EmailHelper
+- uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
+  commentId: T:KYS.Library.Helpers.EmailHelper.SmtpClientConfig
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.EmailHelper.html
+  name: EmailHelper.SmtpClientConfig
+  nameWithType: EmailHelper.SmtpClientConfig
+  fullName: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
+  spec.csharp:
+  - uid: KYS.Library.Helpers.EmailHelper
+    name: EmailHelper
+    href: KYS.Library.Helpers.EmailHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
+    name: SmtpClientConfig
+    href: KYS.Library.Helpers.EmailHelper.SmtpClientConfig.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.EmailHelper
+    name: EmailHelper
+    href: KYS.Library.Helpers.EmailHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
+    name: SmtpClientConfig
+    href: KYS.Library.Helpers.EmailHelper.SmtpClientConfig.html
+- uid: KYS.Library.Helpers.ExcelHelper
+  commentId: T:KYS.Library.Helpers.ExcelHelper
+  href: KYS.Library.Helpers.ExcelHelper.html
+  name: ExcelHelper
+  nameWithType: ExcelHelper
+  fullName: KYS.Library.Helpers.ExcelHelper
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+  commentId: T:KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+  href: KYS.Library.Helpers.ExcelHelper.html
+  name: ExcelHelper.ExcelColumnFormat
+  nameWithType: ExcelHelper.ExcelColumnFormat
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+  spec.csharp:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+    name: ExcelColumnFormat
+    href: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+    name: ExcelColumnFormat
+    href: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.html
+- uid: KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
+  commentId: T:KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
+  href: KYS.Library.Helpers.ExcelHelper.html
+  name: ExcelHelper.AdditionalExcelSheet
+  nameWithType: ExcelHelper.AdditionalExcelSheet
+  fullName: KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
+  spec.csharp:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
+    name: AdditionalExcelSheet
+    href: KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
+    name: AdditionalExcelSheet
+    href: KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.html
+- uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  commentId: T:KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.ExcelHelper.html
+  name: ExcelHelper.ExcelRowStyle
+  nameWithType: ExcelHelper.ExcelRowStyle
+  fullName: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+  spec.csharp:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    name: ExcelRowStyle
+    href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    href: KYS.Library.Helpers.ExcelHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    name: ExcelRowStyle
+    href: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html
+- uid: KYS.Library.Helpers.ExpressionBuilder
+  commentId: T:KYS.Library.Helpers.ExpressionBuilder
+  href: KYS.Library.Helpers.ExpressionBuilder.html
+  name: ExpressionBuilder
+  nameWithType: ExpressionBuilder
+  fullName: KYS.Library.Helpers.ExpressionBuilder
+- uid: KYS.Library.Helpers.FilterCriteria`1
+  commentId: T:KYS.Library.Helpers.FilterCriteria`1
+  href: KYS.Library.Helpers.FilterCriteria-1.html
+  name: FilterCriteria<T>
+  nameWithType: FilterCriteria<T>
+  fullName: KYS.Library.Helpers.FilterCriteria<T>
+  nameWithType.vb: FilterCriteria(Of T)
+  fullName.vb: KYS.Library.Helpers.FilterCriteria(Of T)
+  name.vb: FilterCriteria(Of T)
+  spec.csharp:
+  - uid: KYS.Library.Helpers.FilterCriteria`1
+    name: FilterCriteria
+    href: KYS.Library.Helpers.FilterCriteria-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: KYS.Library.Helpers.FilterCriteria`1
+    name: FilterCriteria
+    href: KYS.Library.Helpers.FilterCriteria-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: KYS.Library.Helpers.FileHelper
+  commentId: T:KYS.Library.Helpers.FileHelper
+  href: KYS.Library.Helpers.FileHelper.html
+  name: FileHelper
+  nameWithType: FileHelper
+  fullName: KYS.Library.Helpers.FileHelper
+- uid: KYS.Library.Helpers.FormattingHelper
+  commentId: T:KYS.Library.Helpers.FormattingHelper
+  href: KYS.Library.Helpers.FormattingHelper.html
+  name: FormattingHelper
+  nameWithType: FormattingHelper
+  fullName: KYS.Library.Helpers.FormattingHelper
+- uid: KYS.Library.Helpers.FormattingHelper.Formatting
+  commentId: T:KYS.Library.Helpers.FormattingHelper.Formatting
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.FormattingHelper.html
+  name: FormattingHelper.Formatting
+  nameWithType: FormattingHelper.Formatting
+  fullName: KYS.Library.Helpers.FormattingHelper.Formatting
+  spec.csharp:
+  - uid: KYS.Library.Helpers.FormattingHelper
+    name: FormattingHelper
+    href: KYS.Library.Helpers.FormattingHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.FormattingHelper.Formatting
+    name: Formatting
+    href: KYS.Library.Helpers.FormattingHelper.Formatting.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.FormattingHelper
+    name: FormattingHelper
+    href: KYS.Library.Helpers.FormattingHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.FormattingHelper.Formatting
+    name: Formatting
+    href: KYS.Library.Helpers.FormattingHelper.Formatting.html
+- uid: KYS.Library.Helpers.JsonHelper
+  commentId: T:KYS.Library.Helpers.JsonHelper
+  href: KYS.Library.Helpers.JsonHelper.html
+  name: JsonHelper
+  nameWithType: JsonHelper
+  fullName: KYS.Library.Helpers.JsonHelper
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  commentId: T:KYS.Library.Helpers.JsonHelper.FlattenFormat
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.JsonHelper.html
+  name: JsonHelper.FlattenFormat
+  nameWithType: JsonHelper.FlattenFormat
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  spec.csharp:
+  - uid: KYS.Library.Helpers.JsonHelper
+    name: JsonHelper
+    href: KYS.Library.Helpers.JsonHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.JsonHelper
+    name: JsonHelper
+    href: KYS.Library.Helpers.JsonHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+- uid: KYS.Library.Helpers.PdfHelper
+  commentId: T:KYS.Library.Helpers.PdfHelper
+  href: KYS.Library.Helpers.PdfHelper.html
+  name: PdfHelper
+  nameWithType: PdfHelper
+  fullName: KYS.Library.Helpers.PdfHelper
+- uid: KYS.Library.Helpers.SqlHelper
+  commentId: T:KYS.Library.Helpers.SqlHelper
+  href: KYS.Library.Helpers.SqlHelper.html
+  name: SqlHelper
+  nameWithType: SqlHelper
+  fullName: KYS.Library.Helpers.SqlHelper
+- uid: KYS.Library.Helpers.StreamHelper
+  commentId: T:KYS.Library.Helpers.StreamHelper
+  href: KYS.Library.Helpers.StreamHelper.html
+  name: StreamHelper
+  nameWithType: StreamHelper
+  fullName: KYS.Library.Helpers.StreamHelper
+- uid: KYS.Library.Helpers.UriHelper
+  commentId: T:KYS.Library.Helpers.UriHelper
+  href: KYS.Library.Helpers.UriHelper.html
+  name: UriHelper
+  nameWithType: UriHelper
+  fullName: KYS.Library.Helpers.UriHelper
+- uid: KYS.Library.Helpers.XmlHelper
+  commentId: T:KYS.Library.Helpers.XmlHelper
+  href: KYS.Library.Helpers.XmlHelper.html
+  name: XmlHelper
+  nameWithType: XmlHelper
+  fullName: KYS.Library.Helpers.XmlHelper
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html

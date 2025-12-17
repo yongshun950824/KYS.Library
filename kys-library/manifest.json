@@ -1,0 +1,816 @@
+{
+  "source_base_path": "/workspaces/KYS.Library/KYS.Library/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.CacheExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.CacheExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.CacheExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.CacheExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"Microsoft.Extensions.Caching.Memory.IMemoryCache\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.DataTableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.DataTableExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.DataTableExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.DataTableExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Data.DataTable\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.DateTimeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.DateTimeExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.DateTimeExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.DateTimeExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.DecimalExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.DecimalExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.DecimalExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.DecimalExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Decimal\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.EnumExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.EnumExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.EnumExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.EnumExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension and helper methods for working with <xref href=\"System.Enum\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.IConfigurationBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.IConfigurationBuilderExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.IConfigurationBuilderExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.IConfigurationBuilderExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"Microsoft.Extensions.Configuration.IConfigurationBuilder\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.IDictionaryExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.IDictionaryExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.IDictionaryExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.IDictionaryExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Collections.Generic.IDictionary%602\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.IEnumerableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.IEnumerableExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.IEnumerableExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.IEnumerableExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Collections.IEnumerable\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"System.Collections.Generic.IEnumerable%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.IListExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.IListExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.IListExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.IListExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Collections.Generic.IList%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.IQueryableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.IQueryableExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.IQueryableExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.IQueryableExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Linq.IQueryable%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.ReflectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.ReflectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.ReflectionExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.ReflectionExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Reflection\" data-throw-if-not-resolved=\"false\"></xref> namespace.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.StringExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.StringExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.StringExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension and helper methods for working with <xref href=\"System.String\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.CompareOperator.CompareOperatorConstants",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.yml\" sourcestartlinenumber=\"1\">Represents the available comparison operators.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.CompareOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.CompareOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.CompareOperator",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.CompareOperator.yml\" sourcestartlinenumber=\"1\">Provides a set of comparison operations that can be applied to values implementing <xref href=\"System.IComparable\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.DataTableHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.DataTableHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.DataTableHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.DataTableHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for <xref href=\"System.Data.DataTable\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.EmailHelper.SmtpClientConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.EmailHelper.SmtpClientConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.EmailHelper.SmtpClientConfig",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.EmailHelper.SmtpClientConfig.yml\" sourcestartlinenumber=\"1\">Represents the configuration settings required to initialize and send emails using an SMTP client.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.EmailHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.EmailHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.EmailHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.EmailHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for sending email.\n<br><br>\nTO-DO: <br></p>\n<ol><li>\n            Migrate to service for DI supported. Support different email providers such as SMTP, SendGrid and etc.\n        </li><li>\n            Implement unit tests.\n        </li></ol>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for adding and customizing additional sheet(s) to the Excel worksheet.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.yml\" sourcestartlinenumber=\"1\">Represent the blueprint for customizing the column to be displayed in the Excel sheet.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.ExcelHelper.ExcelRowStyle",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for customizing the style for whole row.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.ExcelHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.yml\" sourcestartlinenumber=\"1\">Provide utitlity methods for the Excel file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.ExpressionBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.ExpressionBuilder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.ExpressionBuilder",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExpressionBuilder.yml\" sourcestartlinenumber=\"1\">Provide utility methods for <xref href=\"System.Linq.Expressions\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.FileHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.FileHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.FileHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.FileHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for read and write file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.FilterCriteria-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.FilterCriteria-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.FilterCriteria<T>",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.FilterCriteria-1.yml\" sourcestartlinenumber=\"1\">Represents a filter condition that defines a comparison operation\nand a value to compare against within a query or expression.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.FormattingHelper.Formatting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.FormattingHelper.Formatting.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.FormattingHelper.Formatting",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.FormattingHelper.Formatting.yml\" sourcestartlinenumber=\"1\">Represents the available formatting options.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.FormattingHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.FormattingHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.FormattingHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.FormattingHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for formatting string.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.JsonHelper.FlattenFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.JsonHelper.FlattenFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.JsonHelper.FlattenFormat",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.JsonHelper.FlattenFormat.yml\" sourcestartlinenumber=\"1\">Represents the available flatten format option for the key.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.JsonHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.JsonHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.JsonHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.JsonHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for the JSON.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.PdfHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.PdfHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.PdfHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.PdfHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for the PDF file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.SqlHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.SqlHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.SqlHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.SqlHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for ADO.NET.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.StreamHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.StreamHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.StreamHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.StreamHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for <xref href=\"System.IO.Stream\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.UriHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.UriHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.UriHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.UriHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for URI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.XmlHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.XmlHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers.XmlHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.XmlHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for the XML.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Helpers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Helpers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.BaseTranslationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.BaseTranslationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.BaseTranslationService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.BaseTranslationService.yml\" sourcestartlinenumber=\"1\">An abstract class for the translation service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.IBaseTranslationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.IBaseTranslationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.IBaseTranslationService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IBaseTranslationService.yml\" sourcestartlinenumber=\"1\">Defines a service contract for language translation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.IQrGeneratorService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.IQrGeneratorService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.IQrGeneratorService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IQrGeneratorService.yml\" sourcestartlinenumber=\"1\">Defines a contract for generating QR code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.ITranslationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.ITranslationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.ITranslationService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ITranslationService.yml\" sourcestartlinenumber=\"1\">Defines a service contract for language translation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.IZipService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.IZipService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.IZipService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IZipService.yml\" sourcestartlinenumber=\"1\">Define a contract for zipping/unzipping item.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.LanguageResources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.LanguageResources.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.LanguageResources",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.LanguageResources.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for the culture name and its resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.MultiResourcesTranslationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.MultiResourcesTranslationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.MultiResourcesTranslationService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.MultiResourcesTranslationService.yml\" sourcestartlinenumber=\"1\">A service for transaction with supports multiple resources (file).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.QrGeneratorService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.QrGeneratorService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.QrGeneratorService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.QrGeneratorService.yml\" sourcestartlinenumber=\"1\">A service for generating the QR code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.SingleResourceTranslationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.SingleResourceTranslationService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.SingleResourceTranslationService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.SingleResourceTranslationService.yml\" sourcestartlinenumber=\"1\">A service for translation with support only one resource (file).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.ZipService.ZipFileItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.ZipService.ZipFileItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.ZipService.ZipFileItem",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ZipService.ZipFileItem.yml\" sourcestartlinenumber=\"1\">Represents the blueprint on the file element to be zipped into a zip file or unzipped from the zip file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.ZipService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.ZipService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services.ZipService",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ZipService.yml\" sourcestartlinenumber=\"1\">A service for managing zipping and unzipping file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Validations.BooleanRequireAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Validations.BooleanRequireAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Validations.BooleanRequireAttribute",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Validations.EnumerableRequireAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Validations.EnumerableRequireAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Validations.EnumerableRequireAttribute",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Validations.EnumerableRequireAttribute.yml\" sourcestartlinenumber=\"1\">Validation attribute for checking the <xref href=\"System.Collections.IEnumerable\" data-throw-if-not-resolved=\"false\"></xref> field is neither null or empty.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Validations.RequiredIfAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Validations.RequiredIfAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Validations.RequiredIfAttribute",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Validations.RequiredIfAttribute.yml\" sourcestartlinenumber=\"1\">Validation attribute for performing the required validation on the current property when other property fulfills the specific value.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Validations.RequiredIfComparisonAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Validations.RequiredIfComparisonAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Validations.RequiredIfComparisonAttribute",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Validations.RequiredIfComparisonAttribute.yml\" sourcestartlinenumber=\"1\"><xref href=\"KYS.Library.Validations.RequiredIfAttribute\" data-throw-if-not-resolved=\"false\"></xref> attribute v2 supported for comparing the value with operator.\n<br> <br>\nWhen the value from the other property is compared and fulfilled the statement for the configured formula: <br>\n<code>\n&lt;other property's value&gt; &lt;operator&gt; &lt;matchedValue&gt;\n</code>\n<br>\n, represents the current property is mandatory.\n<br> <br>\n<remarks>\nUsage:  <br>\n<code>\n[RequiredIfComparison(    <br>\notherPropertyName: nameof(PropertyOne),     <br>\nmatchedValue: 1,    <br>\noperator: CompareOperator.CompareOperatorConstants.NotEqual)]   <br>\n</code>\n<br> <br>\n<a href=\"https://dotnetfiddle.net/39SX03\">Test case</a>\n</remarks></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Validations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Validations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Validations",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

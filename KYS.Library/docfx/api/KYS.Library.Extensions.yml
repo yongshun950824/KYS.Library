@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
+  id: KYS.Library.Extensions
+  children:
+  - KYS.Library.Extensions.CacheExtensions
+  - KYS.Library.Extensions.DataTableExtensions
+  - KYS.Library.Extensions.DateTimeExtensions
+  - KYS.Library.Extensions.DecimalExtensions
+  - KYS.Library.Extensions.EnumExtensions
+  - KYS.Library.Extensions.IConfigurationBuilderExtensions
+  - KYS.Library.Extensions.IDictionaryExtensions
+  - KYS.Library.Extensions.IEnumerableExtensions
+  - KYS.Library.Extensions.IListExtensions
+  - KYS.Library.Extensions.IQueryableExtensions
+  - KYS.Library.Extensions.ReflectionExtensions
+  - KYS.Library.Extensions.StringExtensions
+  langs:
+  - csharp
+  - vb
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
+  type: Namespace
+  assemblies:
+  - KYS.Library
+references:
+- uid: KYS.Library.Extensions.CacheExtensions
+  commentId: T:KYS.Library.Extensions.CacheExtensions
+  href: KYS.Library.Extensions.CacheExtensions.html
+  name: CacheExtensions
+  nameWithType: CacheExtensions
+  fullName: KYS.Library.Extensions.CacheExtensions
+- uid: KYS.Library.Extensions.DataTableExtensions
+  commentId: T:KYS.Library.Extensions.DataTableExtensions
+  href: KYS.Library.Extensions.DataTableExtensions.html
+  name: DataTableExtensions
+  nameWithType: DataTableExtensions
+  fullName: KYS.Library.Extensions.DataTableExtensions
+- uid: KYS.Library.Extensions.DateTimeExtensions
+  commentId: T:KYS.Library.Extensions.DateTimeExtensions
+  href: KYS.Library.Extensions.DateTimeExtensions.html
+  name: DateTimeExtensions
+  nameWithType: DateTimeExtensions
+  fullName: KYS.Library.Extensions.DateTimeExtensions
+- uid: KYS.Library.Extensions.DecimalExtensions
+  commentId: T:KYS.Library.Extensions.DecimalExtensions
+  href: KYS.Library.Extensions.DecimalExtensions.html
+  name: DecimalExtensions
+  nameWithType: DecimalExtensions
+  fullName: KYS.Library.Extensions.DecimalExtensions
+- uid: KYS.Library.Extensions.EnumExtensions
+  commentId: T:KYS.Library.Extensions.EnumExtensions
+  parent: KYS.Library.Extensions
+  href: KYS.Library.Extensions.EnumExtensions.html
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: KYS.Library.Extensions.EnumExtensions
+- uid: KYS.Library.Extensions.IConfigurationBuilderExtensions
+  commentId: T:KYS.Library.Extensions.IConfigurationBuilderExtensions
+  href: KYS.Library.Extensions.IConfigurationBuilderExtensions.html
+  name: IConfigurationBuilderExtensions
+  nameWithType: IConfigurationBuilderExtensions
+  fullName: KYS.Library.Extensions.IConfigurationBuilderExtensions
+- uid: KYS.Library.Extensions.IDictionaryExtensions
+  commentId: T:KYS.Library.Extensions.IDictionaryExtensions
+  href: KYS.Library.Extensions.IDictionaryExtensions.html
+  name: IDictionaryExtensions
+  nameWithType: IDictionaryExtensions
+  fullName: KYS.Library.Extensions.IDictionaryExtensions
+- uid: KYS.Library.Extensions.IEnumerableExtensions
+  commentId: T:KYS.Library.Extensions.IEnumerableExtensions
+  href: KYS.Library.Extensions.IEnumerableExtensions.html
+  name: IEnumerableExtensions
+  nameWithType: IEnumerableExtensions
+  fullName: KYS.Library.Extensions.IEnumerableExtensions
+- uid: KYS.Library.Extensions.IListExtensions
+  commentId: T:KYS.Library.Extensions.IListExtensions
+  href: KYS.Library.Extensions.IListExtensions.html
+  name: IListExtensions
+  nameWithType: IListExtensions
+  fullName: KYS.Library.Extensions.IListExtensions
+- uid: KYS.Library.Extensions.IQueryableExtensions
+  commentId: T:KYS.Library.Extensions.IQueryableExtensions
+  href: KYS.Library.Extensions.IQueryableExtensions.html
+  name: IQueryableExtensions
+  nameWithType: IQueryableExtensions
+  fullName: KYS.Library.Extensions.IQueryableExtensions
+- uid: KYS.Library.Extensions.ReflectionExtensions
+  commentId: T:KYS.Library.Extensions.ReflectionExtensions
+  href: KYS.Library.Extensions.ReflectionExtensions.html
+  name: ReflectionExtensions
+  nameWithType: ReflectionExtensions
+  fullName: KYS.Library.Extensions.ReflectionExtensions
+- uid: KYS.Library.Extensions.StringExtensions
+  commentId: T:KYS.Library.Extensions.StringExtensions
+  href: KYS.Library.Extensions.StringExtensions.html
+  name: StringExtensions
+  nameWithType: StringExtensions
+  fullName: KYS.Library.Extensions.StringExtensions
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
+  href: KYS.html
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html

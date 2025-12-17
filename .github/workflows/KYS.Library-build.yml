@@ -1,0 +1,40 @@
+name: CI - Build KYS.Library
+permissions:
+  contents: read
+  pull-requests: read
+
+on:
+  workflow_dispatch:    # Allows manual trigger
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+       # Setup .NET SDK for .NET Core project
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      # Restore & Build .NET Core project
+      - name: Restore & Build KYS.Library
+        run: |
+          dotnet restore KYS.Library/KYS.Library.csproj
+          dotnet build KYS.Library/KYS.Library.csproj -c Debug
+
+        # Restore & Build .NET Core project
+      - name: Restore, Build, and Test KYS.TestProject
+        run: |
+          dotnet restore KYS.TestProject/KYS.TestProject.csproj
+          dotnet build KYS.TestProject/KYS.TestProject.csproj -c Debug
+          dotnet test KYS.TestProject/KYS.TestProject.csproj -c Debug --no-build --no-restore

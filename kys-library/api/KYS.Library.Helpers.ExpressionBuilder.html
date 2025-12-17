@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ExpressionBuilder | KYS.Library </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ExpressionBuilder | KYS.Library ">
+      
+      <meta name="description" content="Provide utility methods for .">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/documentation-with-docfx/apiSpec/new?filename=KYS_Library_Helpers_ExpressionBuilder.md&amp;value=---%0Auid%3A%20KYS.Library.Helpers.ExpressionBuilder%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="KYS.Library">
+            KYS.Library
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KYS.Library.Helpers.ExpressionBuilder">
+
+
+
+  <h1 id="KYS_Library_Helpers_ExpressionBuilder" data-uid="KYS.Library.Helpers.ExpressionBuilder" class="text-break">
+Class ExpressionBuilder  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/Helpers/ExpressionBuilder.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KYS.html">KYS</a>.<a class="xref" href="KYS.Library.html">Library</a>.<a class="xref" href="KYS.Library.Helpers.html">Helpers</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>KYS.Library.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provide utility methods for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system">System.Linq.Expressions</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ExpressionBuilder</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ExpressionBuilder</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KYS_Library_Helpers_ExpressionBuilder_BuildAndExpression_" data-uid="KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression*"></a>
+
+  <h3 id="KYS_Library_Helpers_ExpressionBuilder_BuildAndExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___" data-uid="KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})">
+  BuildAndExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/Helpers/ExpressionBuilder.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds a composite <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression&lt;TDelegate&gt;</a> that represents
+a logical AND operation across multiple filter conditions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Expression&lt;Func&lt;T, bool&gt;&gt; BuildAndExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt; filterCriterias) where T : IComparable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filterCriterias</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria</a>&lt;T&gt;&gt;</dt>
+    <dd><p>A list of <a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria&lt;T&gt;</a> objects that define the individual comparison expressions
+to be combined with logical AND.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression&lt;TDelegate&gt;</a> of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func&lt;T, TResult&gt;</a> that evaluates to
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if <b>all</b> the filter conditions are satisfied.
+If <code class="paramref">filterCriterias</code> is empty, the method returns an expression that always evaluates to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the object being filtered. Must implement <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="KYS_Library_Helpers_ExpressionBuilder_BuildOrExpression_" data-uid="KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression*"></a>
+
+  <h3 id="KYS_Library_Helpers_ExpressionBuilder_BuildOrExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___" data-uid="KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})">
+  BuildOrExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/Helpers/ExpressionBuilder.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds a composite <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression&lt;TDelegate&gt;</a> that represents
+a logical OR operation across multiple filter conditions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Expression&lt;Func&lt;T, bool&gt;&gt; BuildOrExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt; filterCriterias) where T : IComparable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filterCriterias</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria</a>&lt;T&gt;&gt;</dt>
+    <dd><p>A list of <a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria&lt;T&gt;</a> objects that define the individual comparison expressions
+to be combined with logical OR.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression&lt;TDelegate&gt;</a> of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func&lt;T, TResult&gt;</a> that evaluates to
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if <b>any</b> filter conditions are satisfied.
+If <code class="paramref">filterCriterias</code> is empty, the method returns an expression that always evaluates to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the object being filtered. Must implement <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="KYS_Library_Helpers_ExpressionBuilder_CompileAndExpression_" data-uid="KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression*"></a>
+
+  <h3 id="KYS_Library_Helpers_ExpressionBuilder_CompileAndExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___" data-uid="KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})">
+  CompileAndExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/Helpers/ExpressionBuilder.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds and compiles a composite predicate function that represents
+a logical AND operation across multiple filter conditions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Func&lt;T, bool&gt; CompileAndExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt; filterCriterias) where T : IComparable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filterCriterias</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria</a>&lt;T&gt;&gt;</dt>
+    <dd><p>A list of <a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria&lt;T&gt;</a> objects defining the comparison
+expressions to be combined with logical AND.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>A compiled <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func&lt;T, TResult&gt;</a> delegate that evaluates to
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if all filter conditions are satisfied.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the object being filtered. Must implement <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="KYS_Library_Helpers_ExpressionBuilder_CompileExpression_" data-uid="KYS.Library.Helpers.ExpressionBuilder.CompileExpression*"></a>
+
+  <h3 id="KYS_Library_Helpers_ExpressionBuilder_CompileExpression__1_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___" data-uid="KYS.Library.Helpers.ExpressionBuilder.CompileExpression``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+  CompileExpression&lt;T&gt;(Expression&lt;Func&lt;T, bool&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/Helpers/ExpressionBuilder.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compiles the specified expression into an executable predicate function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Func&lt;T, bool&gt; CompileExpression&lt;T&gt;(this Expression&lt;Func&lt;T, bool&gt;&gt; lambda) where T : IComparable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lambda</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression&lt;TDelegate&gt;</a> representing a predicate to compile.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>A compiled <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func&lt;T, TResult&gt;</a> delegate that executes the provided expression.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the object being filtered. Must implement <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="KYS_Library_Helpers_ExpressionBuilder_CompileOrExpression_" data-uid="KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression*"></a>
+
+  <h3 id="KYS_Library_Helpers_ExpressionBuilder_CompileOrExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___" data-uid="KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})">
+  CompileOrExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/Helpers/ExpressionBuilder.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds and compiles a composite predicate function that represents
+a logical OR operation across multiple filter conditions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Func&lt;T, bool&gt; CompileOrExpression&lt;T&gt;(List&lt;FilterCriteria&lt;T&gt;&gt; filterCriterias) where T : IComparable</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filterCriterias</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria</a>&lt;T&gt;&gt;</dt>
+    <dd><p>A list of <a class="xref" href="KYS.Library.Helpers.FilterCriteria-1.html">FilterCriteria&lt;T&gt;</a> objects defining the comparison
+expressions to be combined with logical OR.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>A compiled <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func&lt;T, TResult&gt;</a> delegate that evaluates to
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if any filter conditions are satisfied.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the object being filtered. Must implement <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/Helpers/ExpressionBuilder.cs/#L14" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

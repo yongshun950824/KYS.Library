@@ -1,0 +1,163 @@
+### YamlMime:TableOfContent
+items:
+- uid: KYS.Library.Extensions
+  name: KYS.Library.Extensions
+  type: Namespace
+  items:
+  - uid: KYS.Library.Extensions.CacheExtensions
+    name: CacheExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.DataTableExtensions
+    name: DataTableExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.DateTimeExtensions
+    name: DateTimeExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.DecimalExtensions
+    name: DecimalExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.EnumExtensions
+    name: EnumExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.IConfigurationBuilderExtensions
+    name: IConfigurationBuilderExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.IDictionaryExtensions
+    name: IDictionaryExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.IEnumerableExtensions
+    name: IEnumerableExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.IListExtensions
+    name: IListExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.IQueryableExtensions
+    name: IQueryableExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.ReflectionExtensions
+    name: ReflectionExtensions
+    type: Class
+  - uid: KYS.Library.Extensions.StringExtensions
+    name: StringExtensions
+    type: Class
+- uid: KYS.Library.Helpers
+  name: KYS.Library.Helpers
+  type: Namespace
+  items:
+  - uid: KYS.Library.Helpers.CompareOperator
+    name: CompareOperator
+    type: Class
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperator.CompareOperatorConstants
+    type: Enum
+  - uid: KYS.Library.Helpers.DataTableHelper
+    name: DataTableHelper
+    type: Class
+  - uid: KYS.Library.Helpers.EmailHelper
+    name: EmailHelper
+    type: Class
+  - uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
+    name: EmailHelper.SmtpClientConfig
+    type: Class
+  - uid: KYS.Library.Helpers.ExcelHelper
+    name: ExcelHelper
+    type: Class
+  - uid: KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
+    name: ExcelHelper.AdditionalExcelSheet
+    type: Class
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
+    name: ExcelHelper.ExcelColumnFormat
+    type: Class
+  - uid: KYS.Library.Helpers.ExcelHelper.ExcelRowStyle
+    name: ExcelHelper.ExcelRowStyle
+    type: Class
+  - uid: KYS.Library.Helpers.ExpressionBuilder
+    name: ExpressionBuilder
+    type: Class
+  - uid: KYS.Library.Helpers.FileHelper
+    name: FileHelper
+    type: Class
+  - uid: KYS.Library.Helpers.FilterCriteria`1
+    name: FilterCriteria<T>
+    type: Class
+  - uid: KYS.Library.Helpers.FormattingHelper
+    name: FormattingHelper
+    type: Class
+  - uid: KYS.Library.Helpers.FormattingHelper.Formatting
+    name: FormattingHelper.Formatting
+    type: Enum
+  - uid: KYS.Library.Helpers.JsonHelper
+    name: JsonHelper
+    type: Class
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: JsonHelper.FlattenFormat
+    type: Enum
+  - uid: KYS.Library.Helpers.PdfHelper
+    name: PdfHelper
+    type: Class
+  - uid: KYS.Library.Helpers.SqlHelper
+    name: SqlHelper
+    type: Class
+  - uid: KYS.Library.Helpers.StreamHelper
+    name: StreamHelper
+    type: Class
+  - uid: KYS.Library.Helpers.UriHelper
+    name: UriHelper
+    type: Class
+  - uid: KYS.Library.Helpers.XmlHelper
+    name: XmlHelper
+    type: Class
+- uid: KYS.Library.Services
+  name: KYS.Library.Services
+  type: Namespace
+  items:
+  - uid: KYS.Library.Services.BaseTranslationService
+    name: BaseTranslationService
+    type: Class
+  - uid: KYS.Library.Services.IBaseTranslationService
+    name: IBaseTranslationService
+    type: Interface
+  - uid: KYS.Library.Services.IQrGeneratorService
+    name: IQrGeneratorService
+    type: Interface
+  - uid: KYS.Library.Services.ITranslationService
+    name: ITranslationService
+    type: Interface
+  - uid: KYS.Library.Services.IZipService
+    name: IZipService
+    type: Interface
+  - uid: KYS.Library.Services.LanguageResources
+    name: LanguageResources
+    type: Class
+  - uid: KYS.Library.Services.MultiResourcesTranslationService
+    name: MultiResourcesTranslationService
+    type: Class
+  - uid: KYS.Library.Services.QrGeneratorService
+    name: QrGeneratorService
+    type: Class
+  - uid: KYS.Library.Services.SingleResourceTranslationService
+    name: SingleResourceTranslationService
+    type: Class
+  - uid: KYS.Library.Services.ZipService
+    name: ZipService
+    type: Class
+  - uid: KYS.Library.Services.ZipService.ZipFileItem
+    name: ZipService.ZipFileItem
+    type: Class
+- uid: KYS.Library.Validations
+  name: KYS.Library.Validations
+  type: Namespace
+  items:
+  - uid: KYS.Library.Validations.BooleanRequireAttribute
+    name: BooleanRequireAttribute
+    type: Class
+  - uid: KYS.Library.Validations.EnumerableRequireAttribute
+    name: EnumerableRequireAttribute
+    type: Class
+  - uid: KYS.Library.Validations.RequiredIfAttribute
+    name: RequiredIfAttribute
+    type: Class
+  - uid: KYS.Library.Validations.RequiredIfComparisonAttribute
+    name: RequiredIfComparisonAttribute
+    type: Class
+memberLayout: SamePage

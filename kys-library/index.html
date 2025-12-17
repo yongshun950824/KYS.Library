@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>KYS.Library Documentation | KYS.Library </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="KYS.Library Documentation | KYS.Library ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/docfx/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="KYS.Library">
+            KYS.Library
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="kyslibrary-documentation">KYS.Library Documentation</h1>
+
+<p>Welcome to <strong>KYS.Library</strong>, a modular utility library built for internal .NET applications.<br>
+It provides reusable helpers, extensions, services, and validation tools to reduce repeated code and improve application consistency.</p>
+<p>This site contains a high-level overview of the library and a full API reference automatically generated from XML documentation comments.</p>
+<hr>
+<h2 id="-project-modules">📦 Project Modules</h2>
+<h3 id="kyslibraryextensions"><strong>KYS.Library.Extensions</strong></h3>
+<p>Provides extension methods that enhance built-in .NET types, making everyday code more expressive and easier to read.</p>
+<h3 id="kyslibraryhelpers"><strong>KYS.Library.Helpers</strong></h3>
+<p>Includes helper classes focused on simplifying repetitive or boilerplate tasks such as parsing, conversions, or calculations.</p>
+<h3 id="kyslibraryservices"><strong>KYS.Library.Services</strong></h3>
+<p>Contains reusable service-style components that encapsulate common operations or shared logic used across applications.</p>
+<h3 id="kyslibraryvalidations"><strong>KYS.Library.Validations</strong></h3>
+<p>Offers a collection of validation utilities used to enforce consistent input checks and data validation rules.</p>
+<hr>
+<h2 id="-using-this-library-internal-use">🚀 Using This Library (Internal Use)</h2>
+<p>Since this library is not currently published to NuGet, it can be consumed by:</p>
+<ol>
+<li>Cloning or downloading the repository</li>
+<li>Building the solution</li>
+<li>Locating the generated DLLs under:
+<ul>
+<li><em>KYS.Library/bin/Debug/net8.0/</em> or</li>
+<li><em>KYS.Library/bin/Release/net8.0/</em></li>
+</ul>
+</li>
+<li>Adding the DLL references to your project manually:</li>
+</ol>
+<ul>
+<li>In Visual Studio:<br>
+<strong>Project → Add Reference → Browse → Select DLLs</strong></li>
+<li>In .NET CLI-based project:
+<pre><code>&lt;ItemGroup&gt;
+  &lt;Reference Include=&quot;KYS.Library&quot;&gt;
+    &lt;HintPath&gt;path/to/KYS.Library.dll&lt;/HintPath&gt;
+  &lt;/Reference&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="-api-reference">📘 API Reference</h2>
+<p>Detailed class, method, and property documentation is available under the <strong>API</strong> section of this site.<br>
+All content is generated automatically based on XML documentation comments in the source code.</p>
+<hr>
+<h2 id="-project-structure">📂 Project Structure</h2>
+<p>KYS.Library/ <br>
+├── KYS.Library.Services/ <br>
+├── KYS.Library.Extensions/ <br>
+├── KYS.Library.Helpers/ <br>
+└── KYS.Library.Validations/</p>
+<p><em>(Classes and namespaces inside each module can be viewed through the API reference.)</em></p>
+<hr>
+<h2 id="-documentation">🛠 Documentation</h2>
+<p>This documentation is generated using <strong>DocFX</strong> and will stay updated as new XML comments are added or modified.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/documentation-with-docfx/KYS.Library/docfx/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
