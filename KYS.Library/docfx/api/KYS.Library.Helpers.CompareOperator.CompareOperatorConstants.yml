@@ -1,0 +1,425 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  commentId: T:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  id: CompareOperator.CompareOperatorConstants
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.Equal
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThan
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThanOrEqual
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThan
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThanOrEqual
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.NotEqual
+  langs:
+  - csharp
+  - vb
+  name: CompareOperator.CompareOperatorConstants
+  nameWithType: CompareOperator.CompareOperatorConstants
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  type: Enum
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CompareOperatorConstants
+    path: ../Helpers/CompareOperator.cs
+    startLine: 17
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the available comparison operators.
+  example: []
+  syntax:
+    content: public enum CompareOperator.CompareOperatorConstants
+    content.vb: Public Enum CompareOperator.CompareOperatorConstants
+  extensionMethods:
+  - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1
+  - System.Enum.KYS.Library.Extensions.EnumExtensions.ToDescription
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.Equal
+  commentId: F:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.Equal
+  id: Equal
+  parent: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  langs:
+  - csharp
+  - vb
+  name: Equal
+  nameWithType: CompareOperator.CompareOperatorConstants.Equal
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.Equal
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Equal
+    path: ../Helpers/CompareOperator.cs
+    startLine: 22
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the "equal to" comparison operator.
+  example: []
+  syntax:
+    content: Equal = 0
+    return:
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.NotEqual
+  commentId: F:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.NotEqual
+  id: NotEqual
+  parent: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  langs:
+  - csharp
+  - vb
+  name: NotEqual
+  nameWithType: CompareOperator.CompareOperatorConstants.NotEqual
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.NotEqual
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: NotEqual
+    path: ../Helpers/CompareOperator.cs
+    startLine: 27
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the "not equal to" comparison operator.
+  example: []
+  syntax:
+    content: NotEqual = 1
+    return:
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThan
+  commentId: F:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThan
+  id: LessThan
+  parent: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  langs:
+  - csharp
+  - vb
+  name: LessThan
+  nameWithType: CompareOperator.CompareOperatorConstants.LessThan
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThan
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: LessThan
+    path: ../Helpers/CompareOperator.cs
+    startLine: 32
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the "less than" comparison operator.
+  example: []
+  syntax:
+    content: LessThan = 2
+    return:
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThanOrEqual
+  commentId: F:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThanOrEqual
+  id: LessThanOrEqual
+  parent: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  langs:
+  - csharp
+  - vb
+  name: LessThanOrEqual
+  nameWithType: CompareOperator.CompareOperatorConstants.LessThanOrEqual
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.LessThanOrEqual
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: LessThanOrEqual
+    path: ../Helpers/CompareOperator.cs
+    startLine: 37
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the "less than or equal to" comparison operator.
+  example: []
+  syntax:
+    content: LessThanOrEqual = 3
+    return:
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThan
+  commentId: F:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThan
+  id: GreaterThan
+  parent: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  langs:
+  - csharp
+  - vb
+  name: GreaterThan
+  nameWithType: CompareOperator.CompareOperatorConstants.GreaterThan
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThan
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: GreaterThan
+    path: ../Helpers/CompareOperator.cs
+    startLine: 42
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the "greater than" comparison operator.
+  example: []
+  syntax:
+    content: GreaterThan = 4
+    return:
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThanOrEqual
+  commentId: F:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThanOrEqual
+  id: GreaterThanOrEqual
+  parent: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  langs:
+  - csharp
+  - vb
+  name: GreaterThanOrEqual
+  nameWithType: CompareOperator.CompareOperatorConstants.GreaterThanOrEqual
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.GreaterThanOrEqual
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/CompareOperator.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: GreaterThanOrEqual
+    path: ../Helpers/CompareOperator.cs
+    startLine: 47
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the "greater than or equal to" comparison operator.
+  example: []
+  syntax:
+    content: GreaterThanOrEqual = 5
+    return:
+      type: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+references:
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1
+  commentId: M:KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  parent: KYS.Library.Extensions.EnumExtensions
+  definition: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  name: GetEnumMemberValue<CompareOperatorConstants>(CompareOperatorConstants)
+  nameWithType: EnumExtensions.GetEnumMemberValue<CompareOperator.CompareOperatorConstants>(CompareOperator.CompareOperatorConstants)
+  fullName: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue<KYS.Library.Helpers.CompareOperator.CompareOperatorConstants>(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+  nameWithType.vb: EnumExtensions.GetEnumMemberValue(Of CompareOperator.CompareOperatorConstants)(CompareOperator.CompareOperatorConstants)
+  fullName.vb: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue(Of KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+  name.vb: GetEnumMemberValue(Of CompareOperatorConstants)(CompareOperatorConstants)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: <
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+  - name: '>'
+  - name: (
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(KYS.Library.Helpers.CompareOperator.CompareOperatorConstants)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+  - name: )
+  - name: (
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+  - name: )
+- uid: System.Enum.KYS.Library.Extensions.EnumExtensions.ToDescription
+  commentId: M:KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  parent: KYS.Library.Extensions.EnumExtensions
+  definition: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  name: ToDescription(Enum)
+  nameWithType: EnumExtensions.ToDescription(Enum)
+  fullName: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  commentId: M:KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  name: GetEnumMemberValue<TEnum>(TEnum)
+  nameWithType: EnumExtensions.GetEnumMemberValue<TEnum>(TEnum)
+  fullName: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue<TEnum>(TEnum)
+  nameWithType.vb: EnumExtensions.GetEnumMemberValue(Of TEnum)(TEnum)
+  fullName.vb: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue(Of TEnum)(TEnum)
+  name.vb: GetEnumMemberValue(Of TEnum)(TEnum)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: <
+  - name: TEnum
+  - name: '>'
+  - name: (
+  - name: TEnum
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEnum
+  - name: )
+  - name: (
+  - name: TEnum
+  - name: )
+- uid: KYS.Library.Extensions.EnumExtensions
+  commentId: T:KYS.Library.Extensions.EnumExtensions
+  parent: KYS.Library.Extensions
+  href: KYS.Library.Extensions.EnumExtensions.html
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: KYS.Library.Extensions.EnumExtensions
+- uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  commentId: M:KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  isExternal: true
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  name: ToDescription(Enum)
+  nameWithType: EnumExtensions.ToDescription(Enum)
+  fullName: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
+  href: KYS.html
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+- uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  commentId: T:KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.CompareOperator.html
+  name: CompareOperator.CompareOperatorConstants
+  nameWithType: CompareOperator.CompareOperatorConstants
+  fullName: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+  spec.csharp:
+  - uid: KYS.Library.Helpers.CompareOperator
+    name: CompareOperator
+    href: KYS.Library.Helpers.CompareOperator.html
+  - name: .
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.CompareOperator
+    name: CompareOperator
+    href: KYS.Library.Helpers.CompareOperator.html
+  - name: .
+  - uid: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
+    name: CompareOperatorConstants
+    href: KYS.Library.Helpers.CompareOperator.CompareOperatorConstants.html

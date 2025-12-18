@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Validations
+  commentId: N:KYS.Library.Validations
+  id: KYS.Library.Validations
+  children:
+  - KYS.Library.Validations.BooleanRequireAttribute
+  - KYS.Library.Validations.EnumerableRequireAttribute
+  - KYS.Library.Validations.RequiredIfAttribute
+  - KYS.Library.Validations.RequiredIfComparisonAttribute
+  langs:
+  - csharp
+  - vb
+  name: KYS.Library.Validations
+  nameWithType: KYS.Library.Validations
+  fullName: KYS.Library.Validations
+  type: Namespace
+  assemblies:
+  - KYS.Library
+references:
+- uid: KYS.Library.Validations.BooleanRequireAttribute
+  commentId: T:KYS.Library.Validations.BooleanRequireAttribute
+  href: KYS.Library.Validations.BooleanRequireAttribute.html
+  name: BooleanRequireAttribute
+  nameWithType: BooleanRequireAttribute
+  fullName: KYS.Library.Validations.BooleanRequireAttribute
+- uid: KYS.Library.Validations.EnumerableRequireAttribute
+  commentId: T:KYS.Library.Validations.EnumerableRequireAttribute
+  href: KYS.Library.Validations.EnumerableRequireAttribute.html
+  name: EnumerableRequireAttribute
+  nameWithType: EnumerableRequireAttribute
+  fullName: KYS.Library.Validations.EnumerableRequireAttribute
+- uid: KYS.Library.Validations.RequiredIfAttribute
+  commentId: T:KYS.Library.Validations.RequiredIfAttribute
+  href: KYS.Library.Validations.RequiredIfAttribute.html
+  name: RequiredIfAttribute
+  nameWithType: RequiredIfAttribute
+  fullName: KYS.Library.Validations.RequiredIfAttribute
+- uid: KYS.Library.Validations.RequiredIfComparisonAttribute
+  commentId: T:KYS.Library.Validations.RequiredIfComparisonAttribute
+  href: KYS.Library.Validations.RequiredIfComparisonAttribute.html
+  name: RequiredIfComparisonAttribute
+  nameWithType: RequiredIfComparisonAttribute
+  fullName: KYS.Library.Validations.RequiredIfComparisonAttribute

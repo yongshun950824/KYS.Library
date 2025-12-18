@@ -11,6 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace KYS.Library.Helpers
 {
+    /// <summary>
+    /// Provide utility methods for the JSON.
+    /// </summary>
     public static partial class JsonHelper
     {
         [GeneratedRegex(@"\[(\d+)\]", RegexOptions.None, matchTimeoutMilliseconds: 1000)]
@@ -28,14 +31,17 @@ namespace KYS.Library.Helpers
             });
 
         /// <summary>
-        /// Flatten object with dot notation property name.
+        /// Flatten the object into a key-value pair with the key based on the <c>flattenFormat</c> given. 
+        /// <br />
+        /// Default key format: <see cref="FlattenFormat.JsonPath"/>.
+        /// <br />
         /// <br />
         /// Reference: <a href="https://stackoverflow.com/a/63487391">Generically Flatten Json using c#</a>
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="flattenFormat"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">The type of <c>source</c>. Must be a reference type with a public parameterless constructor.</typeparam>
+        /// <param name="source">The provided value to be flatten.</param>
+        /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
+        /// <returns>The key value pair for the flatten JSON.</returns>
         public static Dictionary<string, object> FlattenObject<T>(T source,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : class, new()
@@ -47,6 +53,15 @@ namespace KYS.Library.Helpers
                     v => v.Value);
         }
 
+        /// <summary>
+        /// Flatten the array into a key-value pair with the key based on the <c>flattenFormat</c> given. 
+        /// <br />
+        /// Default key format: <see cref="FlattenFormat.JsonPath"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of <c>source</c> which is a <see cref="JToken" /> type.</typeparam>
+        /// <param name="source">The provided value to be flatten.</param>
+        /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
+        /// <returns>The key value pair for the flatten JSON.</returns>
         public static Dictionary<string, object> FlattenArray<T>(T source,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : JToken
@@ -74,6 +89,15 @@ namespace KYS.Library.Helpers
             return dict;
         }
 
+        /// <summary>
+        /// Flatten the <see cref="JToken" /> instance into a key-value pair with the key based on the <c>flattenFormat</c> given. 
+        /// <br />
+        /// Default key format: <see cref="FlattenFormat.JsonPath"/>.
+        /// </summary>
+        /// <param name="token">The <see cref="JToken" /> instance to be flatten.</param>
+        /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
+        /// <returns>The key value pair for the flatten JSON.</returns>
+        /// <exception cref="ArgumentException"></exception>
         public static Dictionary<string, object> Flatten(JToken token,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
         {
@@ -96,6 +120,13 @@ namespace KYS.Library.Helpers
             dict.Add(key, value);
         }
 
+        /// <summary>
+        /// Construct the key based on the <c>flattenFormat</c> given.
+        /// </summary>
+        /// <param name="key">The <see cref="string" /> for the key.</param>
+        /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
+        /// <returns>The key after applying the <c>flattenFormat</c>.</returns>
+        /// <exception cref="InvalidEnumArgumentException"></exception>
         public static string ConstructFlattenKey(string key, FlattenFormat flattenFormat)
         {
             return flattenFormat switch
@@ -112,6 +143,9 @@ namespace KYS.Library.Helpers
             };
         }
 
+        /// <summary>
+        /// Represents the available flatten format option for the key.
+        /// </summary>
         public enum FlattenFormat
         {
             JsonPath,

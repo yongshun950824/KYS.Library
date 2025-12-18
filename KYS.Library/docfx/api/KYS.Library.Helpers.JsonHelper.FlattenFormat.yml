@@ -1,0 +1,332 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  commentId: T:KYS.Library.Helpers.JsonHelper.FlattenFormat
+  id: JsonHelper.FlattenFormat
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.JsonHelper.FlattenFormat.DotNet
+  - KYS.Library.Helpers.JsonHelper.FlattenFormat.JS
+  - KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath
+  langs:
+  - csharp
+  - vb
+  name: JsonHelper.FlattenFormat
+  nameWithType: JsonHelper.FlattenFormat
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  type: Enum
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: FlattenFormat
+    path: ../Helpers/JsonHelper.cs
+    startLine: 148
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Represents the available flatten format option for the key.
+  example: []
+  syntax:
+    content: public enum JsonHelper.FlattenFormat
+    content.vb: Public Enum JsonHelper.FlattenFormat
+  extensionMethods:
+  - KYS.Library.Helpers.JsonHelper.FlattenFormat.KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1
+  - System.Enum.KYS.Library.Extensions.EnumExtensions.ToDescription
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath
+  commentId: F:KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath
+  id: JsonPath
+  parent: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  langs:
+  - csharp
+  - vb
+  name: JsonPath
+  nameWithType: JsonHelper.FlattenFormat.JsonPath
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: JsonPath
+    path: ../Helpers/JsonHelper.cs
+    startLine: 150
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  syntax:
+    content: JsonPath = 0
+    return:
+      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat.DotNet
+  commentId: F:KYS.Library.Helpers.JsonHelper.FlattenFormat.DotNet
+  id: DotNet
+  parent: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  langs:
+  - csharp
+  - vb
+  name: DotNet
+  nameWithType: JsonHelper.FlattenFormat.DotNet
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat.DotNet
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DotNet
+    path: ../Helpers/JsonHelper.cs
+    startLine: 151
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  syntax:
+    content: DotNet = 1
+    return:
+      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat.JS
+  commentId: F:KYS.Library.Helpers.JsonHelper.FlattenFormat.JS
+  id: JS
+  parent: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  langs:
+  - csharp
+  - vb
+  name: JS
+  nameWithType: JsonHelper.FlattenFormat.JS
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat.JS
+  type: Field
+  source:
+    remote:
+      path: KYS.Library/Helpers/JsonHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: JS
+    path: ../Helpers/JsonHelper.cs
+    startLine: 152
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  syntax:
+    content: JS = 2
+    return:
+      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
+references:
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat.KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1
+  commentId: M:KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  parent: KYS.Library.Extensions.EnumExtensions
+  definition: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  name: GetEnumMemberValue<FlattenFormat>(FlattenFormat)
+  nameWithType: EnumExtensions.GetEnumMemberValue<JsonHelper.FlattenFormat>(JsonHelper.FlattenFormat)
+  fullName: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue<KYS.Library.Helpers.JsonHelper.FlattenFormat>(KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  nameWithType.vb: EnumExtensions.GetEnumMemberValue(Of JsonHelper.FlattenFormat)(JsonHelper.FlattenFormat)
+  fullName.vb: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue(Of KYS.Library.Helpers.JsonHelper.FlattenFormat)(KYS.Library.Helpers.JsonHelper.FlattenFormat)
+  name.vb: GetEnumMemberValue(Of FlattenFormat)(FlattenFormat)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(KYS.Library.Helpers.JsonHelper.FlattenFormat)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: <
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+  - name: '>'
+  - name: (
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(KYS.Library.Helpers.JsonHelper.FlattenFormat)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+  - name: )
+  - name: (
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+  - name: )
+- uid: System.Enum.KYS.Library.Extensions.EnumExtensions.ToDescription
+  commentId: M:KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  parent: KYS.Library.Extensions.EnumExtensions
+  definition: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  name: ToDescription(Enum)
+  nameWithType: EnumExtensions.ToDescription(Enum)
+  fullName: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  commentId: M:KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  name: GetEnumMemberValue<TEnum>(TEnum)
+  nameWithType: EnumExtensions.GetEnumMemberValue<TEnum>(TEnum)
+  fullName: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue<TEnum>(TEnum)
+  nameWithType.vb: EnumExtensions.GetEnumMemberValue(Of TEnum)(TEnum)
+  fullName.vb: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue(Of TEnum)(TEnum)
+  name.vb: GetEnumMemberValue(Of TEnum)(TEnum)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: <
+  - name: TEnum
+  - name: '>'
+  - name: (
+  - name: TEnum
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.GetEnumMemberValue``1(``0)
+    name: GetEnumMemberValue
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_GetEnumMemberValue__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEnum
+  - name: )
+  - name: (
+  - name: TEnum
+  - name: )
+- uid: KYS.Library.Extensions.EnumExtensions
+  commentId: T:KYS.Library.Extensions.EnumExtensions
+  parent: KYS.Library.Extensions
+  href: KYS.Library.Extensions.EnumExtensions.html
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: KYS.Library.Extensions.EnumExtensions
+- uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  commentId: M:KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  isExternal: true
+  href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  name: ToDescription(Enum)
+  nameWithType: EnumExtensions.ToDescription(Enum)
+  fullName: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+  spec.csharp:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Extensions.EnumExtensions.ToDescription(System.Enum)
+    name: ToDescription
+    href: KYS.Library.Extensions.EnumExtensions.html#KYS_Library_Extensions_EnumExtensions_ToDescription_System_Enum_
+  - name: (
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
+  href: KYS.html
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+- uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  commentId: T:KYS.Library.Helpers.JsonHelper.FlattenFormat
+  parent: KYS.Library.Helpers
+  href: KYS.Library.Helpers.JsonHelper.html
+  name: JsonHelper.FlattenFormat
+  nameWithType: JsonHelper.FlattenFormat
+  fullName: KYS.Library.Helpers.JsonHelper.FlattenFormat
+  spec.csharp:
+  - uid: KYS.Library.Helpers.JsonHelper
+    name: JsonHelper
+    href: KYS.Library.Helpers.JsonHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+  spec.vb:
+  - uid: KYS.Library.Helpers.JsonHelper
+    name: JsonHelper
+    href: KYS.Library.Helpers.JsonHelper.html
+  - name: .
+  - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
+    name: FlattenFormat
+    href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html

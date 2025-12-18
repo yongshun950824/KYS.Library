@@ -6,12 +6,26 @@ using System.Reflection;
 
 namespace KYS.Library.Extensions
 {
+    /// <summary>
+    /// Provides extension methods for working with <see cref="DataTable" />.
+    /// </summary>
     public static class DataTableExtensions
     {
+        /// <summary>
+        /// Check <see cref="DataTable" /> instance is null or empty.
+        /// </summary>
+        /// <param name="dataTable">The <see cref="DataTable" /> instance this method extends.</param>
+        /// <returns>The <see cref="bool" /> value indicates the <c>dataTable</c> is null or empty.</returns>
         public static bool IsNullOrEmpty(this DataTable dataTable)
             => dataTable.IsNull()
                 || dataTable.IsEmpty();
 
+        /// <summary>
+        /// Retrieve the element(s) from the <see cref="DataTable" /> instance and return the element(s) as <see cref="IList{T}"/> type.
+        /// </summary>
+        /// <typeparam name="T">The type of element for the returned element(s).</typeparam>
+        /// <param name="dataTable">The <see cref="DataTable" /> instance this method extends.</param>
+        /// <returns>The <see cref="IList{T}" /> instance containing element(s) retrieved from the <c>dataTable</c>.</returns>
         public static IList<T> ToList<T>(this DataTable dataTable)
             where T : class, new()
         {

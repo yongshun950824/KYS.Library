@@ -7,8 +7,18 @@ using System.Reflection;
 
 namespace KYS.Library.Extensions
 {
+    /// <summary>
+    /// Provides extension methods for working with <see cref="System.Reflection"/> namespace.
+    /// </summary>
     public static class ReflectionExtensions
     {
+        /// <summary>
+        /// Obtain the property name from <see cref="DisplayAttribute"/> and <see cref="DisplayNameAttribute"/> in sequence.
+        /// <br /><br />
+        /// If neither attributes are applied, return the property name.
+        /// </summary>
+        /// <param name="propertyInfo">The <see cref="PropertyInfo"/> instance this method extends.</param>
+        /// <returns>Property name.</returns>
         public static string ToName(this PropertyInfo propertyInfo)
         {
             try
@@ -34,6 +44,13 @@ namespace KYS.Library.Extensions
             }
         }
 
+        /// <summary>
+        /// Obtain the member name from <see cref="DisplayAttribute"/> and <see cref="DisplayNameAttribute"/> (first-come basis).
+        /// <br /><br />
+        /// If neither attributes are applied, return the member name.
+        /// </summary>
+        /// <param name="memberInfo">The <see cref="MemberInfo"/> instance this method extends.</param>
+        /// <returns>Member name.</returns>
         public static string ToName(this MemberInfo memberInfo)
         {
             try
@@ -61,7 +78,7 @@ namespace KYS.Library.Extensions
         }
 
         /// <summary>
-        /// To retrieve the value of <c>DisplayAttribute</c>/<c>DisplayNameAttribute</c> from a property of the class. 
+        /// Retrieve the value of <see cref="DisplayAttribute"/> and <see cref="DisplayNameAttribute"/> (first-come basis) from a property of the class. 
         /// <br /><br />
         /// Usage: 
         /// <br />
@@ -69,9 +86,9 @@ namespace KYS.Library.Extensions
         /// <br /><br />
         /// Reference: <a href="https://stackoverflow.com/a/74846301/8017690">get the value of DisplayName attribute</a>
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="propertyExpression"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Must be a reference type with a public parameterless constructor.</typeparam>
+        /// <param name="propertyExpression">The expression references the property.</param>
+        /// <returns>Property name.</returns>
         public static string GetPropertyDisplayName<T, P>(Expression<Func<T, P>> propertyExpression)
             where T : new()
         {

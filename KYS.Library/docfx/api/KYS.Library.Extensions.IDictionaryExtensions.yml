@@ -1,0 +1,599 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Extensions.IDictionaryExtensions
+  commentId: T:KYS.Library.Extensions.IDictionaryExtensions
+  id: IDictionaryExtensions
+  parent: KYS.Library.Extensions
+  children:
+  - KYS.Library.Extensions.IDictionaryExtensions.Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``1})
+  - KYS.Library.Extensions.IDictionaryExtensions.Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  langs:
+  - csharp
+  - vb
+  name: IDictionaryExtensions
+  nameWithType: IDictionaryExtensions
+  fullName: KYS.Library.Extensions.IDictionaryExtensions
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Extensions/IDictionaryExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IDictionaryExtensions
+    path: ../Extensions/IDictionaryExtensions.cs
+    startLine: 8
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Provides extension methods for working with <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class IDictionaryExtensions
+    content.vb: Public Module IDictionaryExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Extensions.IDictionaryExtensions.Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  commentId: M:KYS.Library.Extensions.IDictionaryExtensions.Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  id: Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.IDictionaryExtensions
+  langs:
+  - csharp
+  - vb
+  name: Upsert<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
+  nameWithType: IDictionaryExtensions.Upsert<TKey, TValue>(IDictionary<TKey, TValue>, TKey, TValue)
+  fullName: KYS.Library.Extensions.IDictionaryExtensions.Upsert<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, TValue)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/IDictionaryExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Upsert
+    path: ../Extensions/IDictionaryExtensions.cs
+    startLine: 19
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Upsert entry into the dictionary.
+  example: []
+  syntax:
+    content: public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
+    parameters:
+    - id: dictionary
+      type: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+      description: The <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    - id: key
+      type: '{TKey}'
+      description: The key of the entry to set.
+    - id: value
+      type: '{TValue}'
+      description: The value to associate with the key.
+    typeParameters:
+    - id: TKey
+      description: The type of <code>key</code>.
+    - id: TValue
+      description: The type of <code>value</code>.
+    return:
+      type: '{TValue}'
+      description: The <code>value</code> from the key-value pair to be inserted.
+    content.vb: Public Shared Function Upsert(Of TKey, TValue)(dictionary As IDictionary(Of TKey, TValue), key As TKey, value As TValue) As TValue
+  overload: KYS.Library.Extensions.IDictionaryExtensions.Upsert*
+  nameWithType.vb: IDictionaryExtensions.Upsert(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
+  fullName.vb: KYS.Library.Extensions.IDictionaryExtensions.Upsert(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, TValue)
+  name.vb: Upsert(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, TValue)
+- uid: KYS.Library.Extensions.IDictionaryExtensions.Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``1})
+  commentId: M:KYS.Library.Extensions.IDictionaryExtensions.Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``1})
+  id: Upsert``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``1})
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.IDictionaryExtensions
+  langs:
+  - csharp
+  - vb
+  name: Upsert<TKey, TValue>(IDictionary<TKey, TValue>, TKey, Func<TValue>)
+  nameWithType: IDictionaryExtensions.Upsert<TKey, TValue>(IDictionary<TKey, TValue>, TKey, Func<TValue>)
+  fullName: KYS.Library.Extensions.IDictionaryExtensions.Upsert<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, System.Func<TValue>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/IDictionaryExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Upsert
+    path: ../Extensions/IDictionaryExtensions.cs
+    startLine: 33
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Upsert entry into the dictionary.
+  example: []
+  syntax:
+    content: public static TValue Upsert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Func<TValue> valueProvider)
+    parameters:
+    - id: dictionary
+      type: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+      description: The <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    - id: key
+      type: '{TKey}'
+      description: The key of the entry to set.
+    - id: valueProvider
+      type: System.Func{{TValue}}
+      description: The value provider that returns the value to associate with the key.
+    typeParameters:
+    - id: TKey
+      description: The type of <code>key</code>.
+    - id: TValue
+      description: The type of <code>value</code>.
+    return:
+      type: '{TValue}'
+      description: The <code>value</code> from the key-value pair to be inserted.
+    content.vb: Public Shared Function Upsert(Of TKey, TValue)(dictionary As IDictionary(Of TKey, TValue), key As TKey, valueProvider As Func(Of TValue)) As TValue
+  overload: KYS.Library.Extensions.IDictionaryExtensions.Upsert*
+  nameWithType.vb: IDictionaryExtensions.Upsert(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, Func(Of TValue))
+  fullName.vb: KYS.Library.Extensions.IDictionaryExtensions.Upsert(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, System.Func(Of TValue))
+  name.vb: Upsert(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, Func(Of TValue))
+references:
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
+  href: KYS.html
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Extensions.IDictionaryExtensions.Upsert*
+  commentId: Overload:KYS.Library.Extensions.IDictionaryExtensions.Upsert
+  href: KYS.Library.Extensions.IDictionaryExtensions.html#KYS_Library_Extensions_IDictionaryExtensions_Upsert__2_System_Collections_Generic_IDictionary___0___1____0___1_
+  name: Upsert
+  nameWithType: IDictionaryExtensions.Upsert
+  fullName: KYS.Library.Extensions.IDictionaryExtensions.Upsert
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  commentId: T:System.Collections.Generic.IDictionary{``0,``1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: '{TKey}'
+  commentId: '!:TKey'
+  definition: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: '{TValue}'
+  commentId: '!:TValue'
+  definition: TValue
+  name: TValue
+  nameWithType: TValue
+  fullName: TValue
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: TValue
+  name: TValue
+  nameWithType: TValue
+  fullName: TValue
+- uid: System.Func{{TValue}}
+  commentId: T:System.Func{``1}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TValue>
+  nameWithType: Func<TValue>
+  fullName: System.Func<TValue>
+  nameWithType.vb: Func(Of TValue)
+  fullName.vb: System.Func(Of TValue)
+  name.vb: Func(Of TValue)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )

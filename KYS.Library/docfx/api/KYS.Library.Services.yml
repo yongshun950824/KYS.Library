@@ -1,0 +1,144 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  id: KYS.Library.Services
+  children:
+  - KYS.Library.Services.BaseTranslationService
+  - KYS.Library.Services.IBaseTranslationService
+  - KYS.Library.Services.IQrGeneratorService
+  - KYS.Library.Services.ITranslationService
+  - KYS.Library.Services.IZipService
+  - KYS.Library.Services.LanguageResources
+  - KYS.Library.Services.MultiResourcesTranslationService
+  - KYS.Library.Services.QrGeneratorService
+  - KYS.Library.Services.SingleResourceTranslationService
+  - KYS.Library.Services.ZipService
+  - KYS.Library.Services.ZipService.ZipFileItem
+  langs:
+  - csharp
+  - vb
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  type: Namespace
+  assemblies:
+  - KYS.Library
+references:
+- uid: KYS.Library.Services.IQrGeneratorService
+  commentId: T:KYS.Library.Services.IQrGeneratorService
+  parent: KYS.Library.Services
+  href: KYS.Library.Services.IQrGeneratorService.html
+  name: IQrGeneratorService
+  nameWithType: IQrGeneratorService
+  fullName: KYS.Library.Services.IQrGeneratorService
+- uid: KYS.Library.Services.QrGeneratorService
+  commentId: T:KYS.Library.Services.QrGeneratorService
+  href: KYS.Library.Services.QrGeneratorService.html
+  name: QrGeneratorService
+  nameWithType: QrGeneratorService
+  fullName: KYS.Library.Services.QrGeneratorService
+- uid: KYS.Library.Services.IBaseTranslationService
+  commentId: T:KYS.Library.Services.IBaseTranslationService
+  parent: KYS.Library.Services
+  href: KYS.Library.Services.IBaseTranslationService.html
+  name: IBaseTranslationService
+  nameWithType: IBaseTranslationService
+  fullName: KYS.Library.Services.IBaseTranslationService
+- uid: KYS.Library.Services.ITranslationService
+  commentId: T:KYS.Library.Services.ITranslationService
+  parent: KYS.Library.Services
+  href: KYS.Library.Services.ITranslationService.html
+  name: ITranslationService
+  nameWithType: ITranslationService
+  fullName: KYS.Library.Services.ITranslationService
+- uid: KYS.Library.Services.BaseTranslationService
+  commentId: T:KYS.Library.Services.BaseTranslationService
+  parent: KYS.Library.Services
+  href: KYS.Library.Services.BaseTranslationService.html
+  name: BaseTranslationService
+  nameWithType: BaseTranslationService
+  fullName: KYS.Library.Services.BaseTranslationService
+- uid: KYS.Library.Services.SingleResourceTranslationService
+  commentId: T:KYS.Library.Services.SingleResourceTranslationService
+  href: KYS.Library.Services.SingleResourceTranslationService.html
+  name: SingleResourceTranslationService
+  nameWithType: SingleResourceTranslationService
+  fullName: KYS.Library.Services.SingleResourceTranslationService
+- uid: KYS.Library.Services.MultiResourcesTranslationService
+  commentId: T:KYS.Library.Services.MultiResourcesTranslationService
+  href: KYS.Library.Services.MultiResourcesTranslationService.html
+  name: MultiResourcesTranslationService
+  nameWithType: MultiResourcesTranslationService
+  fullName: KYS.Library.Services.MultiResourcesTranslationService
+- uid: KYS.Library.Services.LanguageResources
+  commentId: T:KYS.Library.Services.LanguageResources
+  href: KYS.Library.Services.LanguageResources.html
+  name: LanguageResources
+  nameWithType: LanguageResources
+  fullName: KYS.Library.Services.LanguageResources
+- uid: KYS.Library.Services.IZipService
+  commentId: T:KYS.Library.Services.IZipService
+  parent: KYS.Library.Services
+  href: KYS.Library.Services.IZipService.html
+  name: IZipService
+  nameWithType: IZipService
+  fullName: KYS.Library.Services.IZipService
+- uid: KYS.Library.Services.ZipService
+  commentId: T:KYS.Library.Services.ZipService
+  href: KYS.Library.Services.ZipService.html
+  name: ZipService
+  nameWithType: ZipService
+  fullName: KYS.Library.Services.ZipService
+- uid: KYS.Library.Services.ZipService.ZipFileItem
+  commentId: T:KYS.Library.Services.ZipService.ZipFileItem
+  href: KYS.Library.Services.ZipService.html
+  name: ZipService.ZipFileItem
+  nameWithType: ZipService.ZipFileItem
+  fullName: KYS.Library.Services.ZipService.ZipFileItem
+  spec.csharp:
+  - uid: KYS.Library.Services.ZipService
+    name: ZipService
+    href: KYS.Library.Services.ZipService.html
+  - name: .
+  - uid: KYS.Library.Services.ZipService.ZipFileItem
+    name: ZipFileItem
+    href: KYS.Library.Services.ZipService.ZipFileItem.html
+  spec.vb:
+  - uid: KYS.Library.Services.ZipService
+    name: ZipService
+    href: KYS.Library.Services.ZipService.html
+  - name: .
+  - uid: KYS.Library.Services.ZipService.ZipFileItem
+    name: ZipFileItem
+    href: KYS.Library.Services.ZipService.ZipFileItem.html
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html

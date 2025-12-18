@@ -18,16 +18,19 @@ using System.Linq;
 
 namespace KYS.Library.Helpers
 {
+    /// <summary>
+    /// Provide utility methods for <see cref="DataTable" />.
+    /// </summary>
     public static class DataTableHelper
     {
         /// <summary>
-        /// Write DataTable into text/CSV file.
+        /// Write <see cref="DataTable" /> into text/CSV file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="printHeaders"></param>
-        /// <param name="delimiter"></param>
-        /// <param name="cultureInfo"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="printHeaders">The <see cref="bool" /> value indicates the header to be included.</param>
+        /// <param name="delimiter">The separator splits the column.</param>
+        /// <param name="cultureInfo">The culture to be used.</param>
+        /// <returns>The byte array for the file.</returns>
         public static byte[] WriteToTextFile(DataTable dt,
             bool printHeaders = true,
             string delimiter = ";",
@@ -47,12 +50,13 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Write DataTable into Excel file.
+        /// Write <see cref="DataTable" /> into Excel file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="headerRowStyle"></param>
-        /// <param name="license"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="headerRowStyle">The style for the header row.</param>
+        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
+        /// <returns>The byte array for the file.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] WriteToExcelFile(DataTable dt,
             ExcelHelper.ExcelRowStyle headerRowStyle = null,
             List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
@@ -64,13 +68,14 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Write DataTable into PDF file.
+        /// Write <see cref="DataTable" /> into PDF file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="printHeaders"></param>
-        /// <param name="tableHeaderStyle"></param>
-        /// <param name="tableBodyStyle"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="printHeaders">The <see cref="bool" /> value indicates the header to be included.</param>
+        /// <param name="tableHeaderStyle">The style for the table header.</param>
+        /// <param name="tableBodyStyle">The style for the table content.</param>
+        /// <returns>The byte array for the file.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] WriteToPdfFile(DataTable dt,
             bool printHeaders = true,
             Style tableHeaderStyle = null,
@@ -106,11 +111,11 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Write DataTable into JSON file.
+        /// Write <see cref="DataTable" /> into JSON file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="isIndented"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="isIndented">The <see cref="bool" /> value indicates to print the JSON as indented.</param>
+        /// <returns>The byte array for the file.</returns>
         public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)
         {
             Formatting formatting = isIndented switch
@@ -130,10 +135,12 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Read CSV from file into DataTable.
+        /// Read CSV from file into <see cref="DataTable" />.
         /// </summary>
-        /// <param name="filePath"></param>
-        /// <returns></returns>
+        /// <param name="filePath">The path for the CSV file to be read.</param>
+        /// <returns>The <see cref="DataTable" /> instance with the data row(s).</returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static DataTable ReadCSV(string filePath)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
@@ -149,10 +156,11 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Read CSV from Stream into DataTable.
+        /// Read CSV from <see cref="Stream" /> into <see cref="DataTable" />.
         /// </summary>
-        /// <param name="stream"></param>
-        /// <returns></returns>
+        /// <param name="stream">The <see cref="Stream" /> instance containing the CSV file.</param>
+        /// <returns>The <see cref="DataTable" /> instance with the data row(s).</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static DataTable ReadCSV(Stream stream)
         {
             ArgumentNullException.ThrowIfNull(stream);

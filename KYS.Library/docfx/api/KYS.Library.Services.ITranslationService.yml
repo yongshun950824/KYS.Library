@@ -1,0 +1,512 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.ITranslationService
+  commentId: T:KYS.Library.Services.ITranslationService
+  id: ITranslationService
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.ITranslationService.GetLanguages
+  - KYS.Library.Services.ITranslationService.Translate(System.String,System.Boolean,System.Globalization.CultureInfo)
+  - KYS.Library.Services.ITranslationService.Translate(System.String,System.String,System.Boolean)
+  - KYS.Library.Services.ITranslationService.Translate(System.String,System.Type,System.Boolean,System.Globalization.CultureInfo)
+  - KYS.Library.Services.ITranslationService.TranslateToEnglish(System.String,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: ITranslationService
+  nameWithType: ITranslationService
+  fullName: KYS.Library.Services.ITranslationService
+  type: Interface
+  source:
+    remote:
+      path: KYS.Library/Services/TranslationService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ITranslationService
+    path: ../Services/TranslationService.cs
+    startLine: 32
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Defines a service contract for language translation.
+  example: []
+  syntax:
+    content: 'public interface ITranslationService : IBaseTranslationService'
+    content.vb: Public Interface ITranslationService Inherits IBaseTranslationService
+  inheritedMembers:
+  - KYS.Library.Services.IBaseTranslationService.CurrentCulture
+  - KYS.Library.Services.IBaseTranslationService.Cultures
+- uid: KYS.Library.Services.ITranslationService.GetLanguages
+  commentId: M:KYS.Library.Services.ITranslationService.GetLanguages
+  id: GetLanguages
+  parent: KYS.Library.Services.ITranslationService
+  langs:
+  - csharp
+  - vb
+  name: GetLanguages()
+  nameWithType: ITranslationService.GetLanguages()
+  fullName: KYS.Library.Services.ITranslationService.GetLanguages()
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/TranslationService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: GetLanguages
+    path: ../Services/TranslationService.cs
+    startLine: 38
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the list of <xref href="KYS.Library.Services.LanguageResources" data-throw-if-not-resolved="false"></xref> containing the culture name and its resources.
+  example: []
+  syntax:
+    content: List<LanguageResources> GetLanguages()
+    return:
+      type: System.Collections.Generic.List{KYS.Library.Services.LanguageResources}
+      description: The list of <xref href="KYS.Library.Services.LanguageResources" data-throw-if-not-resolved="false"></xref> containing the culture name and its resources.
+    content.vb: Function GetLanguages() As List(Of LanguageResources)
+  overload: KYS.Library.Services.ITranslationService.GetLanguages*
+- uid: KYS.Library.Services.ITranslationService.TranslateToEnglish(System.String,System.Boolean)
+  commentId: M:KYS.Library.Services.ITranslationService.TranslateToEnglish(System.String,System.Boolean)
+  id: TranslateToEnglish(System.String,System.Boolean)
+  parent: KYS.Library.Services.ITranslationService
+  langs:
+  - csharp
+  - vb
+  name: TranslateToEnglish(string, bool)
+  nameWithType: ITranslationService.TranslateToEnglish(string, bool)
+  fullName: KYS.Library.Services.ITranslationService.TranslateToEnglish(string, bool)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/TranslationService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: TranslateToEnglish
+    path: ../Services/TranslationService.cs
+    startLine: 45
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Translate <code>input</code> to English word (by resource key). Return the original value if not found.
+  example: []
+  syntax:
+    content: string TranslateToEnglish(string input, bool isReturnedOriginalValue = true)
+    parameters:
+    - id: input
+      type: System.String
+      description: The value to be translated.
+    - id: isReturnedOriginalValue
+      type: System.Boolean
+      description: If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>, <xref href="System.ArgumentNullException" data-throw-if-not-resolved="false"></xref> will be thrown if unable to translate.
+    return:
+      type: System.String
+      description: Translated to English text. Otherwise, returns the original value if <code>isReturnedOriginalValue</code> is true.
+    content.vb: Function TranslateToEnglish(input As String, isReturnedOriginalValue As Boolean = True) As String
+  overload: KYS.Library.Services.ITranslationService.TranslateToEnglish*
+  nameWithType.vb: ITranslationService.TranslateToEnglish(String, Boolean)
+  fullName.vb: KYS.Library.Services.ITranslationService.TranslateToEnglish(String, Boolean)
+  name.vb: TranslateToEnglish(String, Boolean)
+- uid: KYS.Library.Services.ITranslationService.Translate(System.String,System.String,System.Boolean)
+  commentId: M:KYS.Library.Services.ITranslationService.Translate(System.String,System.String,System.Boolean)
+  id: Translate(System.String,System.String,System.Boolean)
+  parent: KYS.Library.Services.ITranslationService
+  langs:
+  - csharp
+  - vb
+  name: Translate(string, string, bool)
+  nameWithType: ITranslationService.Translate(string, string, bool)
+  fullName: KYS.Library.Services.ITranslationService.Translate(string, string, bool)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/TranslationService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Translate
+    path: ../Services/TranslationService.cs
+    startLine: 53
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Translate to selected language for provided <code>cultureName</code>. By default, translate to current/initialized language.
+  example: []
+  syntax:
+    content: string Translate(string input, string cultureName, bool isReturnedOriginalValue = true)
+    parameters:
+    - id: input
+      type: System.String
+      description: A key for the resource.
+    - id: cultureName
+      type: System.String
+      description: 'The culture chosen for the translation. For example: <code>"en-US"</code>.'
+    - id: isReturnedOriginalValue
+      type: System.Boolean
+      description: If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>, <xref href="System.ArgumentNullException" data-throw-if-not-resolved="false"></xref> will be thrown if unable to translate.
+    return:
+      type: System.String
+      description: Translated text. Otherwise, returns the original value if <code>isReturnedOriginalValue</code> is true.
+    content.vb: Function Translate(input As String, cultureName As String, isReturnedOriginalValue As Boolean = True) As String
+  overload: KYS.Library.Services.ITranslationService.Translate*
+  nameWithType.vb: ITranslationService.Translate(String, String, Boolean)
+  fullName.vb: KYS.Library.Services.ITranslationService.Translate(String, String, Boolean)
+  name.vb: Translate(String, String, Boolean)
+- uid: KYS.Library.Services.ITranslationService.Translate(System.String,System.Boolean,System.Globalization.CultureInfo)
+  commentId: M:KYS.Library.Services.ITranslationService.Translate(System.String,System.Boolean,System.Globalization.CultureInfo)
+  id: Translate(System.String,System.Boolean,System.Globalization.CultureInfo)
+  parent: KYS.Library.Services.ITranslationService
+  langs:
+  - csharp
+  - vb
+  name: Translate(string, bool, CultureInfo)
+  nameWithType: ITranslationService.Translate(string, bool, CultureInfo)
+  fullName: KYS.Library.Services.ITranslationService.Translate(string, bool, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/TranslationService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Translate
+    path: ../Services/TranslationService.cs
+    startLine: 61
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Translate to selected language for provided <code>cultureName</code>. By default, translate to current/initialized language.
+  example: []
+  syntax:
+    content: string Translate(string input, bool isReturnedOriginalValue = true, CultureInfo culture = null)
+    parameters:
+    - id: input
+      type: System.String
+      description: A key for the resource.
+    - id: isReturnedOriginalValue
+      type: System.Boolean
+      description: If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>, <xref href="System.ArgumentNullException" data-throw-if-not-resolved="false"></xref> will be thrown if unable to translate.
+    - id: culture
+      type: System.Globalization.CultureInfo
+      description: The culture chosen for the translation. By default, uses the current culture if it is not provided.
+    return:
+      type: System.String
+      description: Translated text. Otherwise, returns the original value if <code>isReturnedOriginalValue</code> is true.
+    content.vb: Function Translate(input As String, isReturnedOriginalValue As Boolean = True, culture As CultureInfo = Nothing) As String
+  overload: KYS.Library.Services.ITranslationService.Translate*
+  nameWithType.vb: ITranslationService.Translate(String, Boolean, CultureInfo)
+  fullName.vb: KYS.Library.Services.ITranslationService.Translate(String, Boolean, System.Globalization.CultureInfo)
+  name.vb: Translate(String, Boolean, CultureInfo)
+- uid: KYS.Library.Services.ITranslationService.Translate(System.String,System.Type,System.Boolean,System.Globalization.CultureInfo)
+  commentId: M:KYS.Library.Services.ITranslationService.Translate(System.String,System.Type,System.Boolean,System.Globalization.CultureInfo)
+  id: Translate(System.String,System.Type,System.Boolean,System.Globalization.CultureInfo)
+  parent: KYS.Library.Services.ITranslationService
+  langs:
+  - csharp
+  - vb
+  name: Translate(string, Type, bool, CultureInfo)
+  nameWithType: ITranslationService.Translate(string, Type, bool, CultureInfo)
+  fullName: KYS.Library.Services.ITranslationService.Translate(string, System.Type, bool, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Services/TranslationService.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Translate
+    path: ../Services/TranslationService.cs
+    startLine: 72
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Translate to selected language for <b>specified resource</b> and provided <code>culture</code>. By default, translate to current/initialized language.
+  example: []
+  syntax:
+    content: string Translate(string input, Type resourceType, bool isReturnedOriginalValue = true, CultureInfo culture = null)
+    parameters:
+    - id: input
+      type: System.String
+      description: A key for the resource.
+    - id: resourceType
+      type: System.Type
+      description: The resource file to be used.
+    - id: isReturnedOriginalValue
+      type: System.Boolean
+      description: If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>, <xref href="System.ArgumentNullException" data-throw-if-not-resolved="false"></xref> will be thrown if unable to translate.
+    - id: culture
+      type: System.Globalization.CultureInfo
+      description: The culture chosen for the translation. By default, uses the current culture if it is not provided.
+    return:
+      type: System.String
+      description: Translated text. Otherwise, returns the original value if <code>isReturnedOriginalValue</code> is true.
+    content.vb: Function Translate(input As String, resourceType As Type, isReturnedOriginalValue As Boolean = True, culture As CultureInfo = Nothing) As String
+  overload: KYS.Library.Services.ITranslationService.Translate*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: ''
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: ITranslationService.Translate(String, Type, Boolean, CultureInfo)
+  fullName.vb: KYS.Library.Services.ITranslationService.Translate(String, System.Type, Boolean, System.Globalization.CultureInfo)
+  name.vb: Translate(String, Type, Boolean, CultureInfo)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: KYS.Library.Services.IBaseTranslationService.CurrentCulture
+  commentId: P:KYS.Library.Services.IBaseTranslationService.CurrentCulture
+  parent: KYS.Library.Services.IBaseTranslationService
+  href: KYS.Library.Services.IBaseTranslationService.html#KYS_Library_Services_IBaseTranslationService_CurrentCulture
+  name: CurrentCulture
+  nameWithType: IBaseTranslationService.CurrentCulture
+  fullName: KYS.Library.Services.IBaseTranslationService.CurrentCulture
+- uid: KYS.Library.Services.IBaseTranslationService.Cultures
+  commentId: P:KYS.Library.Services.IBaseTranslationService.Cultures
+  parent: KYS.Library.Services.IBaseTranslationService
+  href: KYS.Library.Services.IBaseTranslationService.html#KYS_Library_Services_IBaseTranslationService_Cultures
+  name: Cultures
+  nameWithType: IBaseTranslationService.Cultures
+  fullName: KYS.Library.Services.IBaseTranslationService.Cultures
+- uid: KYS.Library.Services.IBaseTranslationService
+  commentId: T:KYS.Library.Services.IBaseTranslationService
+  parent: KYS.Library.Services
+  href: KYS.Library.Services.IBaseTranslationService.html
+  name: IBaseTranslationService
+  nameWithType: IBaseTranslationService
+  fullName: KYS.Library.Services.IBaseTranslationService
+- uid: KYS.Library.Services.LanguageResources
+  commentId: T:KYS.Library.Services.LanguageResources
+  href: KYS.Library.Services.LanguageResources.html
+  name: LanguageResources
+  nameWithType: LanguageResources
+  fullName: KYS.Library.Services.LanguageResources
+- uid: KYS.Library.Services.ITranslationService.GetLanguages*
+  commentId: Overload:KYS.Library.Services.ITranslationService.GetLanguages
+  href: KYS.Library.Services.ITranslationService.html#KYS_Library_Services_ITranslationService_GetLanguages
+  name: GetLanguages
+  nameWithType: ITranslationService.GetLanguages
+  fullName: KYS.Library.Services.ITranslationService.GetLanguages
+- uid: System.Collections.Generic.List{KYS.Library.Services.LanguageResources}
+  commentId: T:System.Collections.Generic.List{KYS.Library.Services.LanguageResources}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<LanguageResources>
+  nameWithType: List<LanguageResources>
+  fullName: System.Collections.Generic.List<KYS.Library.Services.LanguageResources>
+  nameWithType.vb: List(Of LanguageResources)
+  fullName.vb: System.Collections.Generic.List(Of KYS.Library.Services.LanguageResources)
+  name.vb: List(Of LanguageResources)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: KYS.Library.Services.LanguageResources
+    name: LanguageResources
+    href: KYS.Library.Services.LanguageResources.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: KYS.Library.Services.LanguageResources
+    name: LanguageResources
+    href: KYS.Library.Services.LanguageResources.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: KYS.Library.Services.ITranslationService.TranslateToEnglish*
+  commentId: Overload:KYS.Library.Services.ITranslationService.TranslateToEnglish
+  href: KYS.Library.Services.ITranslationService.html#KYS_Library_Services_ITranslationService_TranslateToEnglish_System_String_System_Boolean_
+  name: TranslateToEnglish
+  nameWithType: ITranslationService.TranslateToEnglish
+  fullName: KYS.Library.Services.ITranslationService.TranslateToEnglish
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Services.ITranslationService.Translate*
+  commentId: Overload:KYS.Library.Services.ITranslationService.Translate
+  href: KYS.Library.Services.ITranslationService.html#KYS_Library_Services_ITranslationService_Translate_System_String_System_String_System_Boolean_
+  name: Translate
+  nameWithType: ITranslationService.Translate
+  fullName: KYS.Library.Services.ITranslationService.Translate
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: System.Globalization
+  commentId: N:System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Globalization
+  nameWithType: System.Globalization
+  fullName: System.Globalization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Globalization
+    name: Globalization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Globalization
+    name: Globalization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

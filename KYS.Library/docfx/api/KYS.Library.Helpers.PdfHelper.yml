@@ -1,0 +1,798 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.PdfHelper
+  commentId: T:KYS.Library.Helpers.PdfHelper
+  id: PdfHelper
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})
+  - KYS.Library.Helpers.PdfHelper.IsPasswordProtected(System.Byte[])
+  - KYS.Library.Helpers.PdfHelper.IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  - KYS.Library.Helpers.PdfHelper.LockPdfDocument(System.Byte[],System.String,System.String)
+  - KYS.Library.Helpers.PdfHelper.UnlockPdfDocument(System.Byte[],System.String)
+  langs:
+  - csharp
+  - vb
+  name: PdfHelper
+  nameWithType: PdfHelper
+  fullName: KYS.Library.Helpers.PdfHelper
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Helpers/PdfHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: PdfHelper
+    path: ../Helpers/PdfHelper.cs
+    startLine: 17
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Provide utility methods for the PDF file.
+  example: []
+  syntax:
+    content: public static class PdfHelper
+    content.vb: Public Module PdfHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})
+  commentId: M:KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})
+  id: ConvertHtmlToPdf(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})
+  parent: KYS.Library.Helpers.PdfHelper
+  langs:
+  - csharp
+  - vb
+  name: ConvertHtmlToPdf(string, bool, bool, bool, List<string>)
+  nameWithType: PdfHelper.ConvertHtmlToPdf(string, bool, bool, bool, List<string>)
+  fullName: KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf(string, bool, bool, bool, System.Collections.Generic.List<string>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/PdfHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ConvertHtmlToPdf
+    path: ../Helpers/PdfHelper.cs
+    startLine: 33
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Convert HTML to PDF supported with importing custom font family. <br />
+
+    <br />
+
+    To use custom font family only: <br />
+
+
+    <pre><code class="lang-csharp">ConvertHtmlToPdf(htmlContent, false, false, false, importCustomFontFamilyFilePaths);</code></pre>
+  example: []
+  syntax:
+    content: public static MemoryStream ConvertHtmlToPdf(string htmlContent, bool registerStandardPdfFonts = true, bool registerShippedFonts = true, bool registerSystemFonts = true, List<string> importCustomFontFamilyFilePaths = null)
+    parameters:
+    - id: htmlContent
+      type: System.String
+      description: ''
+    - id: registerStandardPdfFonts
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the standard PDF font families are imported.
+    - id: registerShippedFonts
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the shipped font families are imported.
+    - id: registerSystemFonts
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the system font families are imported.
+    - id: importCustomFontFamilyFilePaths
+      type: System.Collections.Generic.List{System.String}
+      description: List of the custom font family file paths.
+    return:
+      type: System.IO.MemoryStream
+      description: The <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> containing the generated PDF file.
+    content.vb: Public Shared Function ConvertHtmlToPdf(htmlContent As String, registerStandardPdfFonts As Boolean = True, registerShippedFonts As Boolean = True, registerSystemFonts As Boolean = True, importCustomFontFamilyFilePaths As List(Of String) = Nothing) As MemoryStream
+  overload: KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf*
+  nameWithType.vb: PdfHelper.ConvertHtmlToPdf(String, Boolean, Boolean, Boolean, List(Of String))
+  fullName.vb: KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf(String, Boolean, Boolean, Boolean, System.Collections.Generic.List(Of String))
+  name.vb: ConvertHtmlToPdf(String, Boolean, Boolean, Boolean, List(Of String))
+- uid: KYS.Library.Helpers.PdfHelper.IsPasswordProtected(System.Byte[])
+  commentId: M:KYS.Library.Helpers.PdfHelper.IsPasswordProtected(System.Byte[])
+  id: IsPasswordProtected(System.Byte[])
+  parent: KYS.Library.Helpers.PdfHelper
+  langs:
+  - csharp
+  - vb
+  name: IsPasswordProtected(byte[])
+  nameWithType: PdfHelper.IsPasswordProtected(byte[])
+  fullName: KYS.Library.Helpers.PdfHelper.IsPasswordProtected(byte[])
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/PdfHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IsPasswordProtected
+    path: ../Helpers/PdfHelper.cs
+    startLine: 62
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Validate the PDF Document is password-protected.
+  example: []
+  syntax:
+    content: public static bool IsPasswordProtected(byte[] source)
+    parameters:
+    - id: source
+      type: System.Byte[]
+      description: The byte array for the file.
+    return:
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the PDF file is password-protected.
+    content.vb: Public Shared Function IsPasswordProtected(source As Byte()) As Boolean
+  overload: KYS.Library.Helpers.PdfHelper.IsPasswordProtected*
+  nameWithType.vb: PdfHelper.IsPasswordProtected(Byte())
+  fullName.vb: KYS.Library.Helpers.PdfHelper.IsPasswordProtected(Byte())
+  name.vb: IsPasswordProtected(Byte())
+- uid: KYS.Library.Helpers.PdfHelper.IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  commentId: M:KYS.Library.Helpers.PdfHelper.IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  id: IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  parent: KYS.Library.Helpers.PdfHelper
+  langs:
+  - csharp
+  - vb
+  name: IsPasswordProtected(PdfReader)
+  nameWithType: PdfHelper.IsPasswordProtected(PdfReader)
+  fullName: KYS.Library.Helpers.PdfHelper.IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/PdfHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IsPasswordProtected
+    path: ../Helpers/PdfHelper.cs
+    startLine: 75
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Validate the PDF Document is password-protected.
+  example: []
+  syntax:
+    content: public static bool IsPasswordProtected(PdfReader pdfReader)
+    parameters:
+    - id: pdfReader
+      type: iText.Kernel.Pdf.PdfReader
+      description: The <xref href="iText.Kernel.Pdf.PdfReader" data-throw-if-not-resolved="false"></xref> instance containing the <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> with the PDF file.
+    return:
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the PDF file is password-protected.
+    content.vb: Public Shared Function IsPasswordProtected(pdfReader As PdfReader) As Boolean
+  overload: KYS.Library.Helpers.PdfHelper.IsPasswordProtected*
+- uid: KYS.Library.Helpers.PdfHelper.UnlockPdfDocument(System.Byte[],System.String)
+  commentId: M:KYS.Library.Helpers.PdfHelper.UnlockPdfDocument(System.Byte[],System.String)
+  id: UnlockPdfDocument(System.Byte[],System.String)
+  parent: KYS.Library.Helpers.PdfHelper
+  langs:
+  - csharp
+  - vb
+  name: UnlockPdfDocument(byte[], string)
+  nameWithType: PdfHelper.UnlockPdfDocument(byte[], string)
+  fullName: KYS.Library.Helpers.PdfHelper.UnlockPdfDocument(byte[], string)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/PdfHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: UnlockPdfDocument
+    path: ../Helpers/PdfHelper.cs
+    startLine: 98
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Unlock (decrypt) PDF document if it is password-protected.
+  example: []
+  syntax:
+    content: public static byte[] UnlockPdfDocument(byte[] source, string ownerPass)
+    parameters:
+    - id: source
+      type: System.Byte[]
+      description: The byte array for the file.
+    - id: ownerPass
+      type: System.String
+      description: The password for the file.
+    return:
+      type: System.Byte[]
+      description: Byte array for the unlocked PDF file.
+    content.vb: Public Shared Function UnlockPdfDocument(source As Byte(), ownerPass As String) As Byte()
+  overload: KYS.Library.Helpers.PdfHelper.UnlockPdfDocument*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: ''
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: PdfHelper.UnlockPdfDocument(Byte(), String)
+  fullName.vb: KYS.Library.Helpers.PdfHelper.UnlockPdfDocument(Byte(), String)
+  name.vb: UnlockPdfDocument(Byte(), String)
+- uid: KYS.Library.Helpers.PdfHelper.LockPdfDocument(System.Byte[],System.String,System.String)
+  commentId: M:KYS.Library.Helpers.PdfHelper.LockPdfDocument(System.Byte[],System.String,System.String)
+  id: LockPdfDocument(System.Byte[],System.String,System.String)
+  parent: KYS.Library.Helpers.PdfHelper
+  langs:
+  - csharp
+  - vb
+  name: LockPdfDocument(byte[], string, string)
+  nameWithType: PdfHelper.LockPdfDocument(byte[], string, string)
+  fullName: KYS.Library.Helpers.PdfHelper.LockPdfDocument(byte[], string, string)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/PdfHelper.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: LockPdfDocument
+    path: ../Helpers/PdfHelper.cs
+    startLine: 130
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Lock (encrypt) PDF document with password.
+  example: []
+  syntax:
+    content: public static byte[] LockPdfDocument(byte[] source, string ownerPass, string userPass = null)
+    parameters:
+    - id: source
+      type: System.Byte[]
+      description: ''
+    - id: ownerPass
+      type: System.String
+      description: ''
+    - id: userPass
+      type: System.String
+      description: ''
+    return:
+      type: System.Byte[]
+      description: Byte array for the unlocked PDF file.
+    content.vb: Public Shared Function LockPdfDocument(source As Byte(), ownerPass As String, userPass As String = Nothing) As Byte()
+  overload: KYS.Library.Helpers.PdfHelper.LockPdfDocument*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: ''
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: PdfHelper.LockPdfDocument(Byte(), String, String)
+  fullName.vb: KYS.Library.Helpers.PdfHelper.LockPdfDocument(Byte(), String, String)
+  name.vb: LockPdfDocument(Byte(), String, String)
+references:
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.IO.MemoryStream
+  commentId: T:System.IO.MemoryStream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  name: MemoryStream
+  nameWithType: MemoryStream
+  fullName: System.IO.MemoryStream
+- uid: KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf*
+  commentId: Overload:KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf
+  href: KYS.Library.Helpers.PdfHelper.html#KYS_Library_Helpers_PdfHelper_ConvertHtmlToPdf_System_String_System_Boolean_System_Boolean_System_Boolean_System_Collections_Generic_List_System_String__
+  name: ConvertHtmlToPdf
+  nameWithType: PdfHelper.ConvertHtmlToPdf
+  fullName: KYS.Library.Helpers.PdfHelper.ConvertHtmlToPdf
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: KYS.Library.Helpers.PdfHelper.IsPasswordProtected*
+  commentId: Overload:KYS.Library.Helpers.PdfHelper.IsPasswordProtected
+  href: KYS.Library.Helpers.PdfHelper.html#KYS_Library_Helpers_PdfHelper_IsPasswordProtected_System_Byte___
+  name: IsPasswordProtected
+  nameWithType: PdfHelper.IsPasswordProtected
+  fullName: KYS.Library.Helpers.PdfHelper.IsPasswordProtected
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: iText.Kernel.Pdf.PdfReader
+  commentId: T:iText.Kernel.Pdf.PdfReader
+  parent: iText.Kernel.Pdf
+  isExternal: true
+  name: PdfReader
+  nameWithType: PdfReader
+  fullName: iText.Kernel.Pdf.PdfReader
+- uid: iText.Kernel.Pdf
+  commentId: N:iText.Kernel.Pdf
+  isExternal: true
+  name: iText.Kernel.Pdf
+  nameWithType: iText.Kernel.Pdf
+  fullName: iText.Kernel.Pdf
+  spec.csharp:
+  - uid: iText
+    name: iText
+    isExternal: true
+  - name: .
+  - uid: iText.Kernel
+    name: Kernel
+    isExternal: true
+  - name: .
+  - uid: iText.Kernel.Pdf
+    name: Pdf
+    isExternal: true
+  spec.vb:
+  - uid: iText
+    name: iText
+    isExternal: true
+  - name: .
+  - uid: iText.Kernel
+    name: Kernel
+    isExternal: true
+  - name: .
+  - uid: iText.Kernel.Pdf
+    name: Pdf
+    isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: KYS.Library.Helpers.PdfHelper.UnlockPdfDocument*
+  commentId: Overload:KYS.Library.Helpers.PdfHelper.UnlockPdfDocument
+  href: KYS.Library.Helpers.PdfHelper.html#KYS_Library_Helpers_PdfHelper_UnlockPdfDocument_System_Byte___System_String_
+  name: UnlockPdfDocument
+  nameWithType: PdfHelper.UnlockPdfDocument
+  fullName: KYS.Library.Helpers.PdfHelper.UnlockPdfDocument
+- uid: KYS.Library.Helpers.PdfHelper.LockPdfDocument*
+  commentId: Overload:KYS.Library.Helpers.PdfHelper.LockPdfDocument
+  href: KYS.Library.Helpers.PdfHelper.html#KYS_Library_Helpers_PdfHelper_LockPdfDocument_System_Byte___System_String_System_String_
+  name: LockPdfDocument
+  nameWithType: PdfHelper.LockPdfDocument
+  fullName: KYS.Library.Helpers.PdfHelper.LockPdfDocument
