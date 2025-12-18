@@ -1,6 +1,6 @@
 name: Build and Publish KYS.Library DocFX
 permissions:
-  contents: read
+  contents: write
 
 on:
   workflow_dispatch: # Allows manual trigger
@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
 
@@ -31,7 +31,7 @@ jobs:
           docfx build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./KYS.Library/docfx/_site
