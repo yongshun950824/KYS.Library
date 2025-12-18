@@ -30,8 +30,9 @@ jobs:
           docfx metadata
           docfx build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      # peaceiris/actions-gh-pages@v4.0.0 
+      - name: Deploy to GitHub Pages 
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./KYS.Library/docfx/_site
