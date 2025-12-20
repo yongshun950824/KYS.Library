@@ -1,0 +1,923 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Helpers.ExpressionBuilder
+  commentId: T:KYS.Library.Helpers.ExpressionBuilder
+  id: ExpressionBuilder
+  parent: KYS.Library.Helpers
+  children:
+  - KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  - KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  - KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  - KYS.Library.Helpers.ExpressionBuilder.CompileExpression``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  - KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  langs:
+  - csharp
+  - vb
+  name: ExpressionBuilder
+  nameWithType: ExpressionBuilder
+  fullName: KYS.Library.Helpers.ExpressionBuilder
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ExpressionBuilder
+    path: ../Helpers/ExpressionBuilder.cs
+    startLine: 13
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Provide utility methods for <xref href="System.Linq.Expressions" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class ExpressionBuilder
+    content.vb: Public Module ExpressionBuilder
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  commentId: M:KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  id: BuildAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  parent: KYS.Library.Helpers.ExpressionBuilder
+  langs:
+  - csharp
+  - vb
+  name: BuildAndExpression<T>(List<FilterCriteria<T>>)
+  nameWithType: ExpressionBuilder.BuildAndExpression<T>(List<FilterCriteria<T>>)
+  fullName: KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression<T>(System.Collections.Generic.List<KYS.Library.Helpers.FilterCriteria<T>>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: BuildAndExpression
+    path: ../Helpers/ExpressionBuilder.cs
+    startLine: 31
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Builds a composite <xref href="System.Linq.Expressions.Expression%601" data-throw-if-not-resolved="false"></xref> that represents
+
+    a logical AND operation across multiple filter conditions.
+  example: []
+  syntax:
+    content: 'public static Expression<Func<T, bool>> BuildAndExpression<T>(List<FilterCriteria<T>> filterCriterias) where T : IComparable'
+    parameters:
+    - id: filterCriterias
+      type: System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{{T}}}
+      description: >-
+        A list of <xref href="KYS.Library.Helpers.FilterCriteria%601" data-throw-if-not-resolved="false"></xref> objects that define the individual comparison expressions
+
+        to be combined with logical AND.
+    typeParameters:
+    - id: T
+      description: The type of the object being filtered. Must implement <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: >-
+        An <xref href="System.Linq.Expressions.Expression%601" data-throw-if-not-resolved="false"></xref> of type <xref href="System.Func%602" data-throw-if-not-resolved="false"></xref> that evaluates to
+
+        <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if <b>all</b> the filter conditions are satisfied.
+
+        If <code class="paramref">filterCriterias</code> is empty, the method returns an expression that always evaluates to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>.
+    content.vb: Public Shared Function BuildAndExpression(Of T As IComparable)(filterCriterias As List(Of FilterCriteria(Of T))) As Expression(Of Func(Of T, Boolean))
+  overload: KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression*
+  nameWithType.vb: ExpressionBuilder.BuildAndExpression(Of T)(List(Of FilterCriteria(Of T)))
+  fullName.vb: KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression(Of T)(System.Collections.Generic.List(Of KYS.Library.Helpers.FilterCriteria(Of T)))
+  name.vb: BuildAndExpression(Of T)(List(Of FilterCriteria(Of T)))
+- uid: KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  commentId: M:KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  id: CompileAndExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  parent: KYS.Library.Helpers.ExpressionBuilder
+  langs:
+  - csharp
+  - vb
+  name: CompileAndExpression<T>(List<FilterCriteria<T>>)
+  nameWithType: ExpressionBuilder.CompileAndExpression<T>(List<FilterCriteria<T>>)
+  fullName: KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression<T>(System.Collections.Generic.List<KYS.Library.Helpers.FilterCriteria<T>>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CompileAndExpression
+    path: ../Helpers/ExpressionBuilder.cs
+    startLine: 62
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Builds and compiles a composite predicate function that represents
+
+    a logical AND operation across multiple filter conditions.
+  example: []
+  syntax:
+    content: 'public static Func<T, bool> CompileAndExpression<T>(List<FilterCriteria<T>> filterCriterias) where T : IComparable'
+    parameters:
+    - id: filterCriterias
+      type: System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{{T}}}
+      description: >-
+        A list of <xref href="KYS.Library.Helpers.FilterCriteria%601" data-throw-if-not-resolved="false"></xref> objects defining the comparison
+
+        expressions to be combined with logical AND.
+    typeParameters:
+    - id: T
+      description: The type of the object being filtered. Must implement <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Func{{T},System.Boolean}
+      description: >-
+        A compiled <xref href="System.Func%602" data-throw-if-not-resolved="false"></xref> delegate that evaluates to
+
+        <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if all filter conditions are satisfied.
+    content.vb: Public Shared Function CompileAndExpression(Of T As IComparable)(filterCriterias As List(Of FilterCriteria(Of T))) As Func(Of T, Boolean)
+  overload: KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression*
+  nameWithType.vb: ExpressionBuilder.CompileAndExpression(Of T)(List(Of FilterCriteria(Of T)))
+  fullName.vb: KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression(Of T)(System.Collections.Generic.List(Of KYS.Library.Helpers.FilterCriteria(Of T)))
+  name.vb: CompileAndExpression(Of T)(List(Of FilterCriteria(Of T)))
+- uid: KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  commentId: M:KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  id: BuildOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  parent: KYS.Library.Helpers.ExpressionBuilder
+  langs:
+  - csharp
+  - vb
+  name: BuildOrExpression<T>(List<FilterCriteria<T>>)
+  nameWithType: ExpressionBuilder.BuildOrExpression<T>(List<FilterCriteria<T>>)
+  fullName: KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression<T>(System.Collections.Generic.List<KYS.Library.Helpers.FilterCriteria<T>>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: BuildOrExpression
+    path: ../Helpers/ExpressionBuilder.cs
+    startLine: 85
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Builds a composite <xref href="System.Linq.Expressions.Expression%601" data-throw-if-not-resolved="false"></xref> that represents
+
+    a logical OR operation across multiple filter conditions.
+  example: []
+  syntax:
+    content: 'public static Expression<Func<T, bool>> BuildOrExpression<T>(List<FilterCriteria<T>> filterCriterias) where T : IComparable'
+    parameters:
+    - id: filterCriterias
+      type: System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{{T}}}
+      description: >-
+        A list of <xref href="KYS.Library.Helpers.FilterCriteria%601" data-throw-if-not-resolved="false"></xref> objects that define the individual comparison expressions
+
+        to be combined with logical OR.
+    typeParameters:
+    - id: T
+      description: The type of the object being filtered. Must implement <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: >-
+        An <xref href="System.Linq.Expressions.Expression%601" data-throw-if-not-resolved="false"></xref> of type <xref href="System.Func%602" data-throw-if-not-resolved="false"></xref> that evaluates to
+
+        <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if <b>any</b> filter conditions are satisfied.
+
+        If <code class="paramref">filterCriterias</code> is empty, the method returns an expression that always evaluates to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>.
+    content.vb: Public Shared Function BuildOrExpression(Of T As IComparable)(filterCriterias As List(Of FilterCriteria(Of T))) As Expression(Of Func(Of T, Boolean))
+  overload: KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression*
+  nameWithType.vb: ExpressionBuilder.BuildOrExpression(Of T)(List(Of FilterCriteria(Of T)))
+  fullName.vb: KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression(Of T)(System.Collections.Generic.List(Of KYS.Library.Helpers.FilterCriteria(Of T)))
+  name.vb: BuildOrExpression(Of T)(List(Of FilterCriteria(Of T)))
+- uid: KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  commentId: M:KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  id: CompileOrExpression``1(System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}})
+  parent: KYS.Library.Helpers.ExpressionBuilder
+  langs:
+  - csharp
+  - vb
+  name: CompileOrExpression<T>(List<FilterCriteria<T>>)
+  nameWithType: ExpressionBuilder.CompileOrExpression<T>(List<FilterCriteria<T>>)
+  fullName: KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression<T>(System.Collections.Generic.List<KYS.Library.Helpers.FilterCriteria<T>>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CompileOrExpression
+    path: ../Helpers/ExpressionBuilder.cs
+    startLine: 116
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: >-
+    Builds and compiles a composite predicate function that represents
+
+    a logical OR operation across multiple filter conditions.
+  example: []
+  syntax:
+    content: 'public static Func<T, bool> CompileOrExpression<T>(List<FilterCriteria<T>> filterCriterias) where T : IComparable'
+    parameters:
+    - id: filterCriterias
+      type: System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{{T}}}
+      description: >-
+        A list of <xref href="KYS.Library.Helpers.FilterCriteria%601" data-throw-if-not-resolved="false"></xref> objects defining the comparison
+
+        expressions to be combined with logical OR.
+    typeParameters:
+    - id: T
+      description: The type of the object being filtered. Must implement <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Func{{T},System.Boolean}
+      description: >-
+        A compiled <xref href="System.Func%602" data-throw-if-not-resolved="false"></xref> delegate that evaluates to
+
+        <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> only if any filter conditions are satisfied.
+    content.vb: Public Shared Function CompileOrExpression(Of T As IComparable)(filterCriterias As List(Of FilterCriteria(Of T))) As Func(Of T, Boolean)
+  overload: KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression*
+  nameWithType.vb: ExpressionBuilder.CompileOrExpression(Of T)(List(Of FilterCriteria(Of T)))
+  fullName.vb: KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression(Of T)(System.Collections.Generic.List(Of KYS.Library.Helpers.FilterCriteria(Of T)))
+  name.vb: CompileOrExpression(Of T)(List(Of FilterCriteria(Of T)))
+- uid: KYS.Library.Helpers.ExpressionBuilder.CompileExpression``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  commentId: M:KYS.Library.Helpers.ExpressionBuilder.CompileExpression``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  id: CompileExpression``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  isExtensionMethod: true
+  parent: KYS.Library.Helpers.ExpressionBuilder
+  langs:
+  - csharp
+  - vb
+  name: CompileExpression<T>(Expression<Func<T, bool>>)
+  nameWithType: ExpressionBuilder.CompileExpression<T>(Expression<Func<T, bool>>)
+  fullName: KYS.Library.Helpers.ExpressionBuilder.CompileExpression<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CompileExpression
+    path: ../Helpers/ExpressionBuilder.cs
+    startLine: 135
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Compiles the specified expression into an executable predicate function.
+  example: []
+  syntax:
+    content: 'public static Func<T, bool> CompileExpression<T>(this Expression<Func<T, bool>> lambda) where T : IComparable'
+    parameters:
+    - id: lambda
+      type: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+      description: The <xref href="System.Linq.Expressions.Expression%601" data-throw-if-not-resolved="false"></xref> representing a predicate to compile.
+    typeParameters:
+    - id: T
+      description: The type of the object being filtered. Must implement <xref href="System.IComparable" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Func{{T},System.Boolean}
+      description: A compiled <xref href="System.Func%602" data-throw-if-not-resolved="false"></xref> delegate that executes the provided expression.
+    content.vb: Public Shared Function CompileExpression(Of T As IComparable)(lambda As Expression(Of Func(Of T, Boolean))) As Func(Of T, Boolean)
+  overload: KYS.Library.Helpers.ExpressionBuilder.CompileExpression*
+  nameWithType.vb: ExpressionBuilder.CompileExpression(Of T)(Expression(Of Func(Of T, Boolean)))
+  fullName.vb: KYS.Library.Helpers.ExpressionBuilder.CompileExpression(Of T)(System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean)))
+  name.vb: CompileExpression(Of T)(Expression(Of Func(Of T, Boolean)))
+references:
+- uid: System.Linq.Expressions
+  commentId: N:System.Linq.Expressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq.Expressions
+  nameWithType: System.Linq.Expressions
+  fullName: System.Linq.Expressions
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+- uid: KYS.Library.Helpers
+  commentId: N:KYS.Library.Helpers
+  href: KYS.html
+  name: KYS.Library.Helpers
+  nameWithType: KYS.Library.Helpers
+  fullName: KYS.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Helpers
+    name: Helpers
+    href: KYS.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Linq.Expressions.Expression`1
+  commentId: T:System.Linq.Expressions.Expression`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<TDelegate>
+  nameWithType: Expression<TDelegate>
+  fullName: System.Linq.Expressions.Expression<TDelegate>
+  nameWithType.vb: Expression(Of TDelegate)
+  fullName.vb: System.Linq.Expressions.Expression(Of TDelegate)
+  name.vb: Expression(Of TDelegate)
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - name: TDelegate
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TDelegate
+  - name: )
+- uid: System.IComparable
+  commentId: T:System.IComparable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icomparable
+  name: IComparable
+  nameWithType: IComparable
+  fullName: System.IComparable
+- uid: KYS.Library.Helpers.FilterCriteria`1
+  commentId: T:KYS.Library.Helpers.FilterCriteria`1
+  href: KYS.Library.Helpers.FilterCriteria-1.html
+  name: FilterCriteria<T>
+  nameWithType: FilterCriteria<T>
+  fullName: KYS.Library.Helpers.FilterCriteria<T>
+  nameWithType.vb: FilterCriteria(Of T)
+  fullName.vb: KYS.Library.Helpers.FilterCriteria(Of T)
+  name.vb: FilterCriteria(Of T)
+  spec.csharp:
+  - uid: KYS.Library.Helpers.FilterCriteria`1
+    name: FilterCriteria
+    href: KYS.Library.Helpers.FilterCriteria-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: KYS.Library.Helpers.FilterCriteria`1
+    name: FilterCriteria
+    href: KYS.Library.Helpers.FilterCriteria-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression*
+  commentId: Overload:KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression
+  href: KYS.Library.Helpers.ExpressionBuilder.html#KYS_Library_Helpers_ExpressionBuilder_BuildAndExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___
+  name: BuildAndExpression
+  nameWithType: ExpressionBuilder.BuildAndExpression
+  fullName: KYS.Library.Helpers.ExpressionBuilder.BuildAndExpression
+- uid: System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{{T}}}
+  commentId: T:System.Collections.Generic.List{KYS.Library.Helpers.FilterCriteria{``0}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<FilterCriteria<T>>
+  nameWithType: List<FilterCriteria<T>>
+  fullName: System.Collections.Generic.List<KYS.Library.Helpers.FilterCriteria<T>>
+  nameWithType.vb: List(Of FilterCriteria(Of T))
+  fullName.vb: System.Collections.Generic.List(Of KYS.Library.Helpers.FilterCriteria(Of T))
+  name.vb: List(Of FilterCriteria(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: KYS.Library.Helpers.FilterCriteria`1
+    name: FilterCriteria
+    href: KYS.Library.Helpers.FilterCriteria-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: KYS.Library.Helpers.FilterCriteria`1
+    name: FilterCriteria
+    href: KYS.Library.Helpers.FilterCriteria-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Linq.Expressions.Expression{System.Func{{T},System.Boolean}}
+  commentId: T:System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}
+  parent: System.Linq.Expressions
+  definition: System.Linq.Expressions.Expression`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<Func<T, bool>>
+  nameWithType: Expression<Func<T, bool>>
+  fullName: System.Linq.Expressions.Expression<System.Func<T, bool>>
+  nameWithType.vb: Expression(Of Func(Of T, Boolean))
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of T, Boolean))
+  name.vb: Expression(Of Func(Of T, Boolean))
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression*
+  commentId: Overload:KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression
+  href: KYS.Library.Helpers.ExpressionBuilder.html#KYS_Library_Helpers_ExpressionBuilder_CompileAndExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___
+  name: CompileAndExpression
+  nameWithType: ExpressionBuilder.CompileAndExpression
+  fullName: KYS.Library.Helpers.ExpressionBuilder.CompileAndExpression
+- uid: System.Func{{T},System.Boolean}
+  commentId: T:System.Func{``0,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, bool>
+  nameWithType: Func<T, bool>
+  fullName: System.Func<T, bool>
+  nameWithType.vb: Func(Of T, Boolean)
+  fullName.vb: System.Func(Of T, Boolean)
+  name.vb: Func(Of T, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression*
+  commentId: Overload:KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression
+  href: KYS.Library.Helpers.ExpressionBuilder.html#KYS_Library_Helpers_ExpressionBuilder_BuildOrExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___
+  name: BuildOrExpression
+  nameWithType: ExpressionBuilder.BuildOrExpression
+  fullName: KYS.Library.Helpers.ExpressionBuilder.BuildOrExpression
+- uid: KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression*
+  commentId: Overload:KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression
+  href: KYS.Library.Helpers.ExpressionBuilder.html#KYS_Library_Helpers_ExpressionBuilder_CompileOrExpression__1_System_Collections_Generic_List_KYS_Library_Helpers_FilterCriteria___0___
+  name: CompileOrExpression
+  nameWithType: ExpressionBuilder.CompileOrExpression
+  fullName: KYS.Library.Helpers.ExpressionBuilder.CompileOrExpression
+- uid: KYS.Library.Helpers.ExpressionBuilder.CompileExpression*
+  commentId: Overload:KYS.Library.Helpers.ExpressionBuilder.CompileExpression
+  href: KYS.Library.Helpers.ExpressionBuilder.html#KYS_Library_Helpers_ExpressionBuilder_CompileExpression__1_System_Linq_Expressions_Expression_System_Func___0_System_Boolean___
+  name: CompileExpression
+  nameWithType: ExpressionBuilder.CompileExpression
+  fullName: KYS.Library.Helpers.ExpressionBuilder.CompileExpression

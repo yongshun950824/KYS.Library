@@ -10,30 +10,42 @@ using System.Linq;
 
 namespace KYS.Library.Helpers
 {
+    /// <summary>
+    /// Provide utitlity methods for the Excel file.
+    /// </summary>
     public static class ExcelHelper
     {
         /// <summary>
-        /// Generate Excel file with DataSet.
+        /// Generate Excel file with <see cref="DataSet" />.
         /// </summary>
-        /// <param name="ds"></param>
-        /// <param name="excelColumnFormats"></param>
-        /// <param name="headerRowStyle"></param>
-        /// <param name="summaryRowStyle"></param>
-        /// <param name="additionalExcelSheets"></param>
-        /// <returns></returns>
+        /// <param name="ds">The <see cref="DataSet" /> instance.</param>
+        /// <param name="excelColumnFormats">The list of columns with the format to be displayed.</param>
+        /// <param name="headerRowStyle">The style of table header.</param>
+        /// <param name="summaryRowStyle">The style of table body.</param>
+        /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
+        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
+        /// <returns>The <c>byte[]</c> instance containing the Excel file content.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] CreateExcelBook(DataSet ds,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
-            List<AdditionalExcelSheet> additionalExcelSheets = null)
+            List<AdditionalExcelSheet> additionalExcelSheets = null,
+            LicenseContext license = LicenseContext.NonCommercial)
         {
+            ArgumentNullException.ThrowIfNull(ds);
+
             MemoryStream outputStream = new MemoryStream();
 
+            ExcelPackage.LicenseContext = license;
             using ExcelPackage package = new ExcelPackage(outputStream);
             foreach (DataTable dt in ds.Tables)
             {
+                // Avoid updating original source datatable
+                DataTable copiedDt = dt.Copy();
+
                 CreateExcelWorksheet(package,
-                    dt,
+                    copiedDt,
                     excelColumnFormats,
                     headerRowStyle,
                     summaryRowStyle);
@@ -43,8 +55,11 @@ namespace KYS.Library.Helpers
             {
                 foreach (AdditionalExcelSheet sheet in additionalExcelSheets)
                 {
+                    // Avoid updating original source datatable
+                    DataTable copiedDt = sheet.DataTable.Copy();
+
                     CreateExcelWorksheet(package,
-                        sheet.DataTable,
+                        copiedDt,
                         sheet.ExcelColumnFormats,
                         sheet.HeaderRowStyle,
                         sheet.SummaryRowStyle);
@@ -58,28 +73,37 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Excel file with DataTable.
+        /// Generate Excel file with <see cref="DataTable" />.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="excelColumnFormats"></param>
-        /// <param name="headerRowStyle"></param>
-        /// <param name="summaryRowStyle"></param>
-        /// <param name="additionalExcelSheets"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="excelColumnFormats">The list of columns with the format to be displayed.</param>
+        /// <param name="headerRowStyle">The style of table header.</param>
+        /// <param name="summaryRowStyle">The style of table body.</param>
+        /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
+        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
+        /// <returns>The <c>byte[]</c> instance containing the Excel file content.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] CreateExcelBook(DataTable dt,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
-            List<AdditionalExcelSheet> additionalExcelSheets = null)
+            List<AdditionalExcelSheet> additionalExcelSheets = null,
+            LicenseContext license = LicenseContext.NonCommercial)
         {
+            ArgumentNullException.ThrowIfNull(dt);
+
+            // Avoid updating original source datatable
+            DataTable copiedDt = dt.Copy();
+
             DataSet ds = new DataSet();
-            ds.Tables.Add(dt);
+            ds.Tables.Add(copiedDt);
 
             return CreateExcelBook(ds,
                 excelColumnFormats,
                 headerRowStyle,
                 summaryRowStyle,
-                additionalExcelSheets);
+                additionalExcelSheets,
+                license);
         }
 
         private static void CreateExcelWorksheet(ExcelPackage package,
@@ -88,8 +112,9 @@ namespace KYS.Library.Helpers
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null)
         {
+            bool hasHeader = true;
+
             headerRowStyle ??= ExcelRowStyle.DefaultHeaderRowStyle;
-            summaryRowStyle ??= ExcelRowStyle.DefaultSummaryRowStyle;
 
             #region Rearrange & Rename Data Column
             if (!excelColumnFormats.IsNullOrEmpty())
@@ -132,76 +157,160 @@ namespace KYS.Library.Helpers
             int totalColumn = dt.Columns.Count;
             if (totalRow > 0)
             {
-                #region Set column format
-                if (excelColumnFormats?.Any() ?? false)
-                {
-                    int columnIndex = 1;
-                    foreach (var excelColumnFormat in excelColumnFormats)
-                    {
-                        int totalRowIndex = totalRow + 1;
-                        if (excelColumnFormat.HasSumColumn)
-                        {
-                            totalRowIndex += 1;
-                            string sumColumnName = dt.Columns[columnIndex - 1].ColumnName;
-                            object total = dt.Compute($"SUM([{sumColumnName}])", null);
-                            worksheet.Cells[totalRowIndex, columnIndex].Value = total;
-
-                            #region Styling for summary row
-                            worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Color.SetColor(summaryRowStyle.FontColor);
-                            worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Font.Bold = summaryRowStyle.Bold;
-
-                            if (summaryRowStyle.PatternType != ExcelFillStyle.None)
-                            {
-                                worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.PatternType = summaryRowStyle.PatternType;
-                                worksheet.Cells[totalRowIndex, 1, totalRowIndex, totalColumn].Style.Fill.BackgroundColor.SetColor(summaryRowStyle.BackgroundColor);
-                            }
-                            #endregion
-                        }
-
-                        if (!String.IsNullOrEmpty(excelColumnFormat.Format))
-                            worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.Numberformat.Format = excelColumnFormat.Format;
-
-                        if (excelColumnFormat.HorizontalAlignment != null)
-                            worksheet.Cells[2, columnIndex, totalRowIndex, columnIndex].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
-
-                        columnIndex++;
-                    }
-                }
-                #endregion
+                ApplyColumnFormats(worksheet, dt, excelColumnFormats, totalRow, hasHeader);
             }
+
+            #region Styling for summary row
+            if (summaryRowStyle != null)
+            {
+                int summaryRowIndex = CalculateSummaryRowIndex(totalRow, hasHeader);
+
+                worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Font.Color.SetColor(summaryRowStyle.FontColor);
+                worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Font.Bold = summaryRowStyle.Bold;
+
+                if (summaryRowStyle.PatternType != ExcelFillStyle.None)
+                {
+                    worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Fill.PatternType = summaryRowStyle.PatternType;
+                    worksheet.Cells[summaryRowIndex, 1, summaryRowIndex, totalColumn].Style.Fill.BackgroundColor.SetColor(summaryRowStyle.BackgroundColor);
+                }
+            }
+            #endregion
 
             worksheet.Cells.AutoFitColumns();
         }
 
+        private static void ApplyColumnFormats(ExcelWorksheet worksheet,
+            DataTable dt,
+            List<ExcelColumnFormat> excelColumnFormats,
+            int totalRow,
+            bool hasHeader = true)
+        {
+            if (excelColumnFormats == null || excelColumnFormats.Count == 0)
+                return;
+
+            int columnIndex = 1;
+            int summaryRowIndex = CalculateSummaryRowIndex(totalRow, hasHeader);
+            foreach (var excelColumnFormat in excelColumnFormats)
+            {
+                if (excelColumnFormat.HasSumColumn)
+                {
+                    string sumColumnName = dt.Columns[columnIndex - 1].ColumnName;
+                    object total = dt.Compute($"SUM([{sumColumnName}])", null);
+                    worksheet.Cells[summaryRowIndex, columnIndex].Value = total;
+                }
+
+                if (!String.IsNullOrEmpty(excelColumnFormat.Format))
+                    worksheet.Cells[2, columnIndex, summaryRowIndex, columnIndex].Style.Numberformat.Format = excelColumnFormat.Format;
+
+                if (excelColumnFormat.HorizontalAlignment != null)
+                    worksheet.Cells[2, columnIndex, summaryRowIndex, columnIndex].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
+
+                columnIndex++;
+            }
+        }
+
+        private static int CalculateSummaryRowIndex(int totalRow, bool hasHeader)
+        {
+            return totalRow + (hasHeader ? 1 : 0) + 1;
+        }
+
+        /// <summary>
+        /// Represent the blueprint for customizing the column to be displayed in the Excel sheet.
+        /// </summary>
         public class ExcelColumnFormat
         {
+            /// <summary>
+            /// Gets or sets the column mapped with the column name in the <see cref="DataTable"/>.
+            /// </summary>
             public string ColumnName { get; set; }
+            /// <summary>
+            /// Gets or sets the name for the column to be displayed as the header name in Excel sheet. 
+            /// </summary>
             public string DisplayedColumnName { get; set; }
+            /// <summary>
+            /// Gets or sets the format for the column (value).
+            /// </summary>
             public string Format { get; set; }
+            /// <summary>
+            /// Gets or sets the horizontal alignment of the column.
+            /// </summary>
             public ExcelHorizontalAlignment? HorizontalAlignment { get; set; }
+            /// <summary>
+            /// Gets or sets the indicator to display the sum of the values in the last row. <br />
+            /// Only for numeric column used.
+            /// </summary>
             public bool HasSumColumn { get; set; }
         }
 
+        /// <summary>
+        /// Represents the blueprint for adding and customizing additional sheet(s) to the Excel worksheet.
+        /// </summary>
         public class AdditionalExcelSheet
         {
-            public DataTable DataTable { get; set; }
+            private DataTable _dataTable;
+            /// <summary>
+            /// Gets or sets the <see cref="DataTable"/> instance. 
+            /// </summary>
+            public DataTable DataTable
+            {
+                get
+                {
+                    return _dataTable;
+                }
+                set
+                {
+                    ArgumentNullException.ThrowIfNull(value);
+
+                    _dataTable = value;
+                }
+            }
+            /// <summary>
+            /// Gets or sets the column(s) and its customization.
+            /// </summary>
             public List<ExcelColumnFormat> ExcelColumnFormats { get; set; } = null;
+            /// <summary>
+            /// Gets or sets the header row style.
+            /// </summary>
             public ExcelRowStyle HeaderRowStyle { get; set; } = ExcelRowStyle.DefaultHeaderRowStyle;
-            public ExcelRowStyle SummaryRowStyle { get; set; } = ExcelRowStyle.DefaultSummaryRowStyle;
+            /// <summary>
+            /// Gets or sets the summary (bottom) row style.
+            /// </summary>
+            public ExcelRowStyle SummaryRowStyle { get; set; } = null;
         }
 
+        /// <summary>
+        /// Represents the blueprint for customizing the style for whole row.
+        /// </summary>
         public class ExcelRowStyle
         {
+            /// <summary>
+            /// Gets or sets the horizontal alignment.
+            /// </summary>
             public ExcelHorizontalAlignment HorizontalAlignment { get; set; } = ExcelHorizontalAlignment.Center;
+            /// <summary>
+            /// Gets or sets the indicator for applying the bold style.
+            /// </summary>
             public bool Bold { get; set; } = true;
+            /// <summary>
+            /// Gets or sets the font color.
+            /// </summary>
             public Color FontColor { get; set; } = Color.Black;
-            public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.None;
+            /// <summary>
+            /// Gets or sets the pattern type.
+            /// </summary>
+            public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.Solid;
+            /// <summary>
+            /// Gets or sets the background color.
+            /// </summary>
             public Color BackgroundColor { get; set; } = Color.Empty;
             /// <summary>
             /// Apply Auto Filter to Excel columns. (For header row only)
             /// </summary>
             public bool AutoFilter { get; set; }
 
+            /// <summary>
+            /// Gets the default header row style instance.
+            /// </summary>
             public static ExcelRowStyle DefaultHeaderRowStyle
             {
                 get
@@ -217,6 +326,9 @@ namespace KYS.Library.Helpers
                 }
             }
 
+            /// <summary>
+            /// Gets the default summary (bottom) row style instance.
+            /// </summary>
             public static ExcelRowStyle DefaultSummaryRowStyle
             {
                 get

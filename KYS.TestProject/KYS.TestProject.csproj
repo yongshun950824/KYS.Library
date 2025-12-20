@@ -10,6 +10,13 @@
     <None Remove="appsettings.json" />
     <None Remove="Resources\logo.png" />
     <None Remove="Resources\sample.txt" />
+    <None Remove="Resources\DataTableHelper\data.csv" />
+    <None Remove="Resources\PdfHelper\sample-PDF.pdf" /> 
+    <None Remove="Resources\PdfHelper\sample-PDF-protected.pdf" /> 
+    <None Remove="Resources\PdfHelper\Montserrat\Montserrat-Bold.ttf" />
+    <None Remove="Resources\PdfHelper\Montserrat\Montserrat-Italic.ttf" />
+    <None Remove="Resources\PdfHelper\Montserrat\Montserrat-Medium.ttf" />
+    <None Remove="Resources\PdfHelper\Montserrat\Montserrat-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,14 +29,42 @@
     <Content Include="Resources\sample.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\DataTableHelper\data.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PdfHelper\sample-PDF.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PdfHelper\sample-PDF-protected.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PdfHelper\Montserrat\Montserrat-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PdfHelper\Montserrat\Montserrat-Italic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PdfHelper\Montserrat\Montserrat-Medium.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PdfHelper\Montserrat\Montserrat-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="coverlet.msbuild" Version="6.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
-    <PackageReference Include="coverlet.collector" Version="3.0.2" />
-  </ItemGroup>
+	<PackageReference Include="coverlet.collector" Version="3.2.0">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KYS.Library\KYS.Library.csproj" />

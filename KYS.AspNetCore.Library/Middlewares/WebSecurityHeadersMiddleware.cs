@@ -7,6 +7,15 @@ namespace KYS.AspNetCore.Library.Middlewares
     {
         private readonly RequestDelegate _next;
 
+        private static readonly Dictionary<string, string> _securityHeaders = new()
+        {
+            { "Content-Security-Policy", "default-src 'self'; img-src 'self' https: data:; connect-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; font-src 'self' https://netdna.bootstrapcdn.com/; style-src 'self' 'unsafe-inline';" },
+            { "X-Content-Type-Options", "nosniff" },
+            { "X-Frame-Options", "SAMEORIGIN" },
+            { "X-XSS-Protection", "1; mode=block" },
+            { "Strict-Transport-Security", "max-age=31536000; includeSubDomains" }
+        };
+
         public WebSecurityHeadersMiddleware(RequestDelegate next)
         {
             _next = next;
@@ -14,11 +23,10 @@ namespace KYS.AspNetCore.Library.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
-            context.Response.Headers.Add("Content-Security-Policy", new StringValues("default-src 'self'; img-src 'self' https: data:; connect-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; font-src 'self' https://netdna.bootstrapcdn.com/; style-src 'self' 'unsafe-inline';"));
-            context.Response.Headers.Add("X-Content-Type-Options", new StringValues("nosniff"));
-            context.Response.Headers.Add("X-Frame-Options", new StringValues("SAMEORIGIN"));
-            context.Response.Headers.Add("X-XSS-Protection", new StringValues("1; mode=block"));
-            context.Response.Headers.Add("Strict-Transport-Security", new StringValues("max-age=31536000; includeSubDomains"));
+            foreach (var header in _securityHeaders)
+            {
+                context.Response.Headers.Append(header.Key, new StringValues(header.Value));
+            }
 
             await _next(context);
         }

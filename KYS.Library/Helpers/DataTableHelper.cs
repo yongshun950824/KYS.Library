@@ -9,138 +9,83 @@ using iText.Layout.Properties;
 using KYS.Library.Extensions;
 using Newtonsoft.Json;
 using OfficeOpenXml;
-using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 
 namespace KYS.Library.Helpers
 {
+    /// <summary>
+    /// Provide utility methods for <see cref="DataTable" />.
+    /// </summary>
     public static class DataTableHelper
     {
         /// <summary>
-        /// Write DataTable into text/CSV file.
+        /// Write <see cref="DataTable" /> into text/CSV file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="printHeaders"></param>
-        /// <param name="delimiter"></param>
-        /// <param name="cultureInfo"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="printHeaders">The <see cref="bool" /> value indicates the header to be included.</param>
+        /// <param name="delimiter">The separator splits the column.</param>
+        /// <param name="cultureInfo">The culture to be used.</param>
+        /// <returns>The byte array for the file.</returns>
         public static byte[] WriteToTextFile(DataTable dt,
             bool printHeaders = true,
             string delimiter = ";",
             CultureInfo cultureInfo = null)
         {
-            using MemoryStream ms = new MemoryStream();
-            using TextWriter writer = new StreamWriter(ms);
-
             string csvString = null;
 
             if (!dt.IsNullOrEmpty())
                 csvString = DataTableToCSV(dt, printHeaders, delimiter, cultureInfo);
 
-            writer.Write(csvString);
-
-            writer.Flush();
+            using Stream stream = StreamHelper.WriteStringIntoStream(csvString);
+            using MemoryStream ms = new MemoryStream();
+            stream.CopyTo(ms);
 
             ms.Position = 0;
             return ms.ToArray();
         }
 
         /// <summary>
-        /// Write DataTable into Excel file.
+        /// Write <see cref="DataTable" /> into Excel file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="sheetName"></param>
-        /// <param name="printHeaders"></param>
-        /// <param name="headerStyle"></param>
-        /// <param name="license"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="headerRowStyle">The style for the header row.</param>
+        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
+        /// <returns>The byte array for the file.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] WriteToExcelFile(DataTable dt,
-            string sheetName,
-            bool printHeaders = true,
-            ExcelHeaderStyle headerStyle = default,
-            Dictionary<string, string> columnNameDict = null,
-            List<ExcelColumnFormat> excelColumnFormats = null,
+            ExcelHelper.ExcelRowStyle headerRowStyle = null,
+            List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
             LicenseContext license = LicenseContext.NonCommercial)
         {
-            ExcelPackage.LicenseContext = license;
+            ArgumentNullException.ThrowIfNull(dt);
 
-            const int START_ROW = 1;
-            const int START_COL = 1;
-
-            #region Rename DataTable Header column name
-            if (columnNameDict != null)
-            {
-                foreach (DataColumn col in dt.Columns)
-                {
-                    if (columnNameDict.TryGetValue(col.ColumnName, out string replacedColumnName))
-                        col.ColumnName = replacedColumnName;
-                }
-            }
-            #endregion
-
-            using MemoryStream ms = new MemoryStream();
-            using ExcelPackage package = new ExcelPackage(ms);
-
-            ExcelWorksheet sheet = package.Workbook.Worksheets.Add(sheetName);
-
-            #region Set header style
-            if (headerStyle == null)
-                headerStyle = new ExcelHeaderStyle();
-
-            using var range = sheet.Cells[START_ROW, START_COL, START_ROW, dt.Columns.Count];
-            range.Style.Font.Bold = headerStyle.Bold;
-            range.Style.Fill.PatternType = headerStyle.PatternType;
-            range.Style.Fill.BackgroundColor.SetColor(headerStyle.BackgroundColor);
-            #endregion
-
-            sheet.Cells[START_ROW, START_COL].LoadFromDataTable(dt, printHeaders);
-
-            #region Set column format
-            int totalRow = dt.Rows.Count;
-            if (!excelColumnFormats.IsNullOrEmpty()
-                && totalRow > 0)
-            {
-                foreach (var excelColumnFormat in excelColumnFormats)
-                {
-                    foreach (int column in excelColumnFormat.Columns)
-                    {
-                        if (!String.IsNullOrEmpty(excelColumnFormat.Format))
-                            sheet.Cells[2, column, totalRow + 1, column].Style.Numberformat.Format = excelColumnFormat.Format;
-
-                        if (excelColumnFormat.HorizontalAlignment != null)
-                            sheet.Cells[2, column, totalRow + 1, column].Style.HorizontalAlignment = excelColumnFormat.HorizontalAlignment.Value;
-                    }
-                }
-            }
-            #endregion
-
-            package.Save();
-
-            ms.Position = 0;
-            return ms.ToArray();
+            return ExcelHelper.CreateExcelBook(dt, excelColumnFormats, headerRowStyle, license: license);
         }
 
         /// <summary>
-        /// Write DataTable into PDF file.
+        /// Write <see cref="DataTable" /> into PDF file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="printHeaders"></param>
-        /// <param name="tableHeaderStyle"></param>
-        /// <param name="tableBodyStyle"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="printHeaders">The <see cref="bool" /> value indicates the header to be included.</param>
+        /// <param name="tableHeaderStyle">The style for the table header.</param>
+        /// <param name="tableBodyStyle">The style for the table content.</param>
+        /// <returns>The byte array for the file.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] WriteToPdfFile(DataTable dt,
             bool printHeaders = true,
             Style tableHeaderStyle = null,
             Style tableBodyStyle = null)
         {
+            ArgumentNullException.ThrowIfNull(dt);
+
             using MemoryStream ms = new MemoryStream();
             using PdfWriter pdfWriter = new PdfWriter(ms);
+            pdfWriter.SetCloseStream(false);
 
             PdfDocument pdfDoc = new PdfDocument(pdfWriter);
             Document document = new Document(pdfDoc);
@@ -166,11 +111,11 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Write DataTable into JSON file.
+        /// Write <see cref="DataTable" /> into JSON file.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <param name="isIndented"></param>
-        /// <returns></returns>
+        /// <param name="dt">The <see cref="DataTable" /> instance.</param>
+        /// <param name="isIndented">The <see cref="bool" /> value indicates to print the JSON as indented.</param>
+        /// <returns>The byte array for the file.</returns>
         public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)
         {
             Formatting formatting = isIndented switch
@@ -181,7 +126,7 @@ namespace KYS.Library.Helpers
 
             string jsonString = JsonConvert.SerializeObject(dt, formatting);
 
-            Stream stream = StreamHelper.ReadStringIntoStream(jsonString);
+            using Stream stream = StreamHelper.WriteStringIntoStream(jsonString);
             using MemoryStream ms = new MemoryStream();
             stream.CopyTo(ms);
 
@@ -190,24 +135,36 @@ namespace KYS.Library.Helpers
         }
 
         /// <summary>
-        /// Read CSV from file into DataTable.
+        /// Read CSV from file into <see cref="DataTable" />.
         /// </summary>
-        /// <param name="filePath"></param>
-        /// <returns></returns>
+        /// <param name="filePath">The path for the CSV file to be read.</param>
+        /// <returns>The <see cref="DataTable" /> instance with the data row(s).</returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static DataTable ReadCSV(string filePath)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+
+            if (!filePath.EndsWith(".csv"))
+            {
+                throw new ArgumentException($"Provided {nameof(filePath)} must be a CSV file.");
+            }
+
             using StreamReader sr = new StreamReader(filePath);
 
             return ReadCSV(sr);
         }
 
         /// <summary>
-        /// Read CSV from Stream into DataTable.
+        /// Read CSV from <see cref="Stream" /> into <see cref="DataTable" />.
         /// </summary>
-        /// <param name="stream"></param>
-        /// <returns></returns>
+        /// <param name="stream">The <see cref="Stream" /> instance containing the CSV file.</param>
+        /// <returns>The <see cref="DataTable" /> instance with the data row(s).</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static DataTable ReadCSV(Stream stream)
         {
+            ArgumentNullException.ThrowIfNull(stream);
+
             using StreamReader sr = new StreamReader(stream);
 
             return ReadCSV(sr);
@@ -239,8 +196,7 @@ namespace KYS.Library.Helpers
             return dt;
         }
 
-        private static string DataTableToCSV(
-            DataTable dt,
+        private static string DataTableToCSV(DataTable dt,
             bool printHeaders = true,
             string delimiter = ";",
             CultureInfo cultureInfo = null)
@@ -312,7 +268,7 @@ namespace KYS.Library.Helpers
                 foreach (string columnName in columnNames)
                 {
                     var cell = new Cell()
-                        .Add(new Paragraph(dtRow[columnName]?.ToString()));
+                        .Add(new Paragraph(dtRow[columnName].ToString()));
 
                     if (bodyStyle != null)
                         cell.AddStyle(bodyStyle);
@@ -323,23 +279,6 @@ namespace KYS.Library.Helpers
             #endregion
 
             return table;
-        }
-
-        public class ExcelHeaderStyle
-        {
-            public bool Bold { get; set; } = true;
-            public ExcelFillStyle PatternType { get; set; } = ExcelFillStyle.Solid;
-            public Color BackgroundColor { get; set; } = Color.LightGray;
-        }
-
-        /// <summary>
-        /// A setting class to define the displayed format/pattern for Excel columns
-        /// </summary>
-        public class ExcelColumnFormat
-        {
-            public string Format { get; set; }
-            public int[] Columns { get; set; }
-            public ExcelHorizontalAlignment? HorizontalAlignment { get; set; }
         }
     }
 }

@@ -1,0 +1,573 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Extensions.CacheExtensions
+  commentId: T:KYS.Library.Extensions.CacheExtensions
+  id: CacheExtensions
+  parent: KYS.Library.Extensions
+  children:
+  - KYS.Library.Extensions.CacheExtensions.Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.Int32)
+  - KYS.Library.Extensions.CacheExtensions.Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.TimeSpan)
+  - KYS.Library.Extensions.CacheExtensions.Get``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,System.String,``0@)
+  langs:
+  - csharp
+  - vb
+  name: CacheExtensions
+  nameWithType: CacheExtensions
+  fullName: KYS.Library.Extensions.CacheExtensions
+  type: Class
+  source:
+    remote:
+      path: KYS.Library/Extensions/CacheExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CacheExtensions
+    path: ../Extensions/CacheExtensions.cs
+    startLine: 8
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Provides extension methods for working with <xref href="Microsoft.Extensions.Caching.Memory.IMemoryCache" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class CacheExtensions
+    content.vb: Public Module CacheExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Extensions.CacheExtensions.Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.Int32)
+  commentId: M:KYS.Library.Extensions.CacheExtensions.Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.Int32)
+  id: Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.Int32)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.CacheExtensions
+  langs:
+  - csharp
+  - vb
+  name: Add<T>(IMemoryCache, T, string, int)
+  nameWithType: CacheExtensions.Add<T>(IMemoryCache, T, string, int)
+  fullName: KYS.Library.Extensions.CacheExtensions.Add<T>(Microsoft.Extensions.Caching.Memory.IMemoryCache, T, string, int)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/CacheExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Add
+    path: ../Extensions/CacheExtensions.cs
+    startLine: 18
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Add value to <xref href="Microsoft.Extensions.Caching.Memory.IMemoryCache" data-throw-if-not-resolved="false"></xref> instance with expired after <code>expiredSeconds</code> seconds (absolute expiration).
+  example: []
+  syntax:
+    content: public static void Add<T>(this IMemoryCache cache, T o, string key, int expiredSeconds)
+    parameters:
+    - id: cache
+      type: Microsoft.Extensions.Caching.Memory.IMemoryCache
+      description: The <xref href="Microsoft.Extensions.Caching.Memory.IMemoryCache" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    - id: o
+      type: '{T}'
+      description: The value to associate with the key.
+    - id: key
+      type: System.String
+      description: The key of the entry to set.
+    - id: expiredSeconds
+      type: System.Int32
+      description: The duration in second(s) that the entry to be expired (absolute expiration).
+    typeParameters:
+    - id: T
+      description: The type of <code>o</code>.
+    content.vb: Public Shared Sub Add(Of T)(cache As IMemoryCache, o As T, key As String, expiredSeconds As Integer)
+  overload: KYS.Library.Extensions.CacheExtensions.Add*
+  nameWithType.vb: CacheExtensions.Add(Of T)(IMemoryCache, T, String, Integer)
+  fullName.vb: KYS.Library.Extensions.CacheExtensions.Add(Of T)(Microsoft.Extensions.Caching.Memory.IMemoryCache, T, String, Integer)
+  name.vb: Add(Of T)(IMemoryCache, T, String, Integer)
+- uid: KYS.Library.Extensions.CacheExtensions.Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.TimeSpan)
+  commentId: M:KYS.Library.Extensions.CacheExtensions.Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.TimeSpan)
+  id: Add``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,``0,System.String,System.TimeSpan)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.CacheExtensions
+  langs:
+  - csharp
+  - vb
+  name: Add<T>(IMemoryCache, T, string, TimeSpan)
+  nameWithType: CacheExtensions.Add<T>(IMemoryCache, T, string, TimeSpan)
+  fullName: KYS.Library.Extensions.CacheExtensions.Add<T>(Microsoft.Extensions.Caching.Memory.IMemoryCache, T, string, System.TimeSpan)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/CacheExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Add
+    path: ../Extensions/CacheExtensions.cs
+    startLine: 35
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Add value to <xref href="Microsoft.Extensions.Caching.Memory.IMemoryCache" data-throw-if-not-resolved="false"></xref> instance with expired after <code>timeSpan</code> (absolute expiration).
+  example: []
+  syntax:
+    content: public static void Add<T>(this IMemoryCache cache, T o, string key, TimeSpan timeSpan)
+    parameters:
+    - id: cache
+      type: Microsoft.Extensions.Caching.Memory.IMemoryCache
+      description: The <xref href="Microsoft.Extensions.Caching.Memory.IMemoryCache" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    - id: o
+      type: '{T}'
+      description: The value to associate with the key.
+    - id: key
+      type: System.String
+      description: The key of the entry to set.
+    - id: timeSpan
+      type: System.TimeSpan
+      description: The duration in <xref href="System.TimeSpan" data-throw-if-not-resolved="false"></xref> that the entry to be expired (absolute expiration).
+    typeParameters:
+    - id: T
+      description: The type of <code>o</code>.
+    content.vb: Public Shared Sub Add(Of T)(cache As IMemoryCache, o As T, key As String, timeSpan As TimeSpan)
+  overload: KYS.Library.Extensions.CacheExtensions.Add*
+  nameWithType.vb: CacheExtensions.Add(Of T)(IMemoryCache, T, String, TimeSpan)
+  fullName.vb: KYS.Library.Extensions.CacheExtensions.Add(Of T)(Microsoft.Extensions.Caching.Memory.IMemoryCache, T, String, System.TimeSpan)
+  name.vb: Add(Of T)(IMemoryCache, T, String, TimeSpan)
+- uid: KYS.Library.Extensions.CacheExtensions.Get``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,System.String,``0@)
+  commentId: M:KYS.Library.Extensions.CacheExtensions.Get``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,System.String,``0@)
+  id: Get``1(Microsoft.Extensions.Caching.Memory.IMemoryCache,System.String,``0@)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.CacheExtensions
+  langs:
+  - csharp
+  - vb
+  name: Get<T>(IMemoryCache, string, out T)
+  nameWithType: CacheExtensions.Get<T>(IMemoryCache, string, out T)
+  fullName: KYS.Library.Extensions.CacheExtensions.Get<T>(Microsoft.Extensions.Caching.Memory.IMemoryCache, string, out T)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/CacheExtensions.cs
+      branch: documentation-with-docfx
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Get
+    path: ../Extensions/CacheExtensions.cs
+    startLine: 52
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Safely retrieve cache value from <xref href="Microsoft.Extensions.Caching.Memory.IMemoryCache" data-throw-if-not-resolved="false"></xref> by key.
+  example: []
+  syntax:
+    content: public static bool Get<T>(this IMemoryCache cache, string key, out T value)
+    parameters:
+    - id: cache
+      type: Microsoft.Extensions.Caching.Memory.IMemoryCache
+      description: The <xref href="Microsoft.Extensions.Caching.Memory.IMemoryCache" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    - id: key
+      type: System.String
+      description: The key of the entry to set.
+    - id: value
+      type: '{T}'
+      description: The value associated with this key.
+    typeParameters:
+    - id: T
+      description: The type of <code>value</code>.
+    return:
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates the key existed in the cache.
+    content.vb: Public Shared Function [Get](Of T)(cache As IMemoryCache, key As String, value As T) As Boolean
+  overload: KYS.Library.Extensions.CacheExtensions.Get*
+  nameWithType.vb: CacheExtensions.Get(Of T)(IMemoryCache, String, T)
+  fullName.vb: KYS.Library.Extensions.CacheExtensions.Get(Of T)(Microsoft.Extensions.Caching.Memory.IMemoryCache, String, T)
+  name.vb: Get(Of T)(IMemoryCache, String, T)
+references:
+- uid: Microsoft.Extensions.Caching.Memory.IMemoryCache
+  commentId: T:Microsoft.Extensions.Caching.Memory.IMemoryCache
+  parent: Microsoft.Extensions.Caching.Memory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory.imemorycache
+  name: IMemoryCache
+  nameWithType: IMemoryCache
+  fullName: Microsoft.Extensions.Caching.Memory.IMemoryCache
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
+  href: KYS.html
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Microsoft.Extensions.Caching.Memory
+  commentId: N:Microsoft.Extensions.Caching.Memory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Caching.Memory
+  nameWithType: Microsoft.Extensions.Caching.Memory
+  fullName: Microsoft.Extensions.Caching.Memory
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Caching
+    name: Caching
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching
+  - name: .
+  - uid: Microsoft.Extensions.Caching.Memory
+    name: Memory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Caching
+    name: Caching
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching
+  - name: .
+  - uid: Microsoft.Extensions.Caching.Memory
+    name: Memory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Extensions.CacheExtensions.Add*
+  commentId: Overload:KYS.Library.Extensions.CacheExtensions.Add
+  href: KYS.Library.Extensions.CacheExtensions.html#KYS_Library_Extensions_CacheExtensions_Add__1_Microsoft_Extensions_Caching_Memory_IMemoryCache___0_System_String_System_Int32_
+  name: Add
+  nameWithType: CacheExtensions.Add
+  fullName: KYS.Library.Extensions.CacheExtensions.Add
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: KYS.Library.Extensions.CacheExtensions.Get*
+  commentId: Overload:KYS.Library.Extensions.CacheExtensions.Get
+  href: KYS.Library.Extensions.CacheExtensions.html#KYS_Library_Extensions_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_String___0__
+  name: Get
+  nameWithType: CacheExtensions.Get
+  fullName: KYS.Library.Extensions.CacheExtensions.Get

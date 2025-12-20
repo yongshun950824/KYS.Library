@@ -3,17 +3,34 @@ using iText.Html2pdf.Resolver.Font;
 using iText.IO.Source;
 using iText.Kernel.Exceptions;
 using iText.Kernel.Pdf;
-using iText.Layout.Font;
 using KYS.Library.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace KYS.Library.Helpers
 {
-    public class PdfHelper
+    /// <summary>
+    /// Provide utility methods for the PDF file.
+    /// </summary>
+    public static class PdfHelper
     {
+        /// <summary>
+        /// Convert HTML to PDF supported with importing custom font family. <br />
+        /// <br />
+        /// To use custom font family only: <br />
+        /// <code>
+        /// ConvertHtmlToPdf(htmlContent, false, false, false, importCustomFontFamilyFilePaths);
+        /// </code>
+        /// </summary>
+        /// <param name="htmlContent"></param>
+        /// <param name="registerStandardPdfFonts">The <see cref="bool" /> value indicates the standard PDF font families are imported.</param>
+        /// <param name="registerShippedFonts">The <see cref="bool" /> value indicates the shipped font families are imported.</param>
+        /// <param name="registerSystemFonts">The <see cref="bool" /> value indicates the system font families are imported.</param>
+        /// <param name="importCustomFontFamilyFilePaths">List of the custom font family file paths.</param>
+        /// <returns>The <see cref="MemoryStream" /> containing the generated PDF file.</returns>
         public static MemoryStream ConvertHtmlToPdf(string htmlContent,
             bool registerStandardPdfFonts = true,
             bool registerShippedFonts = true,
@@ -41,8 +58,8 @@ namespace KYS.Library.Helpers
         /// <summary>
         /// Validate the PDF Document is password-protected.
         /// </summary>
-        /// <param name="source"></param>
-        /// <returns></returns>
+        /// <param name="source">The byte array for the file.</param>
+        /// <returns>The <see cref="bool" /> value indicates the PDF file is password-protected.</returns>
         public static bool IsPasswordProtected(byte[] source)
         {
             using MemoryStream ms = new MemoryStream(source);
@@ -54,8 +71,8 @@ namespace KYS.Library.Helpers
         /// <summary>
         /// Validate the PDF Document is password-protected.
         /// </summary>
-        /// <param name="pdfReader"></param>
-        /// <returns></returns>
+        /// <param name="pdfReader">The <see cref="PdfReader" /> instance containing the <see cref="MemoryStream" /> with the PDF file.</param>
+        /// <returns>The <see cref="bool" /> value indicates the PDF file is password-protected.</returns>
         public static bool IsPasswordProtected(PdfReader pdfReader)
         {
             try
@@ -74,11 +91,15 @@ namespace KYS.Library.Helpers
         /// <summary>
         /// Unlock (decrypt) PDF document if it is password-protected. 
         /// </summary>
-        /// <param name="source"></param>
-        /// <param name="ownerPass"></param>
-        /// <returns></returns>
+        /// <param name="source">The byte array for the file.</param>
+        /// <param name="ownerPass">The password for the file.</param>
+        /// <returns>Byte array for the unlocked PDF file.</returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] UnlockPdfDocument(byte[] source, string ownerPass)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(ownerPass);
+
             if (!IsPasswordProtected(source))
                 return source;
 
@@ -104,9 +125,13 @@ namespace KYS.Library.Helpers
         /// <param name="source"></param>
         /// <param name="ownerPass"></param>
         /// <param name="userPass"></param>
-        /// <returns></returns>
+        /// <returns>Byte array for the unlocked PDF file.</returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static byte[] LockPdfDocument(byte[] source, string ownerPass, string userPass = null)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(ownerPass);
+
             if (String.IsNullOrEmpty(userPass))
                 userPass = ownerPass;
 
@@ -136,13 +161,15 @@ namespace KYS.Library.Helpers
         /// <br /><br />
         /// To use the imported font without system font. 
         /// <br />
-        /// <c>GetPdfConverterProperties(false, false, false, importCustomFontFamilyFilePaths)</c>
+        /// <code>
+        /// GetPdfConverterProperties(false, false, false, importCustomFontFamilyFilePaths)
+        /// </code>
         /// </summary>
-        /// <param name="registerStandardPdfFonts"></param>
-        /// <param name="registerShippedFonts"></param>
-        /// <param name="registerSystemFonts"></param>
-        /// <param name="importCustomFontFilePaths">Absolute custom font file paths.</param>
-        /// <returns></returns>
+        /// <param name="registerStandardPdfFonts"><c>Boolean</c> indicates the standard PDF font families are imported.</param>
+        /// <param name="registerShippedFonts"><c>Boolean</c> indicates the shipped font families are imported.</param>
+        /// <param name="registerSystemFonts"><c>Boolean</c> indicates the system font families are imported.</param>
+        /// <param name="importCustomFontFamilyFilePaths">List of the custom font family file paths.</param>
+        /// <returns><c>ConverterProperties</c> instance to be used for <c>HtmlConverter.ConvertToPdf</c> method.</returns>
         private static ConverterProperties GetPdfConverterProperties(bool registerStandardPdfFonts = true,
             bool registerShippedFonts = true,
             bool registerSystemFonts = true,
@@ -154,19 +181,17 @@ namespace KYS.Library.Helpers
                 && importCustomFontFilePaths.IsNullOrEmpty())
                 return null;
 
-            FontProvider fontProvider = null;
+            importCustomFontFilePaths ??= new List<string>();
+
+            DefaultFontProvider fontProvider;
             if (registerStandardPdfFonts && registerShippedFonts && registerSystemFonts)
                 fontProvider = new DefaultFontProvider();
             else
                 fontProvider = new DefaultFontProvider(registerStandardPdfFonts, registerShippedFonts, registerSystemFonts);
 
-            // Use only imported font files
-            //FontProvider provider = new DefaultFontProvider(false, false, false);
-
-            foreach (string font in importCustomFontFilePaths)
+            foreach (string font in importCustomFontFilePaths.Where(x => File.Exists(x)))
             {
-                if (File.Exists(font))
-                    fontProvider.AddFont(font);
+                fontProvider.AddFont(font);
             }
 
             ConverterProperties converterProperties = new ConverterProperties();
