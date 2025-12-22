@@ -12,7 +12,7 @@ jobs:
     name: Build and analyze
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
           
@@ -37,7 +37,7 @@ jobs:
     if: ${{ vars.ENABLE_COVERAGE == 'true' }}
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
