@@ -3081,6 +3081,78 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Validations.EnumerableRequireAttribute.IsValid
   nameWithType: EnumerableRequireAttribute.IsValid
+- uid: KYS.Library.Validations.JsonObjectAttribute
+  name: JsonObjectAttribute
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html
+  commentId: T:KYS.Library.Validations.JsonObjectAttribute
+  fullName: KYS.Library.Validations.JsonObjectAttribute
+  nameWithType: JsonObjectAttribute
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor
+  name: JsonObjectAttribute()
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute__ctor
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.#ctor
+  name.vb: New()
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute()
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New()
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute()
+  nameWithType.vb: JsonObjectAttribute.New()
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor(System.Boolean,System.String)
+  name: JsonObjectAttribute(bool, string)
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute__ctor_System_Boolean_System_String_
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.#ctor(System.Boolean,System.String)
+  name.vb: New(Boolean, String)
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute(bool, string)
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New(Boolean, String)
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute(bool, string)
+  nameWithType.vb: JsonObjectAttribute.New(Boolean, String)
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor(System.String)
+  name: JsonObjectAttribute(string)
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute__ctor_System_String_
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.#ctor(System.String)
+  name.vb: New(String)
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute(string)
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New(String)
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute(string)
+  nameWithType.vb: JsonObjectAttribute.New(String)
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor*
+  name: JsonObjectAttribute
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute__ctor_
+  commentId: Overload:KYS.Library.Validations.JsonObjectAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute
+  nameWithType.vb: JsonObjectAttribute.New
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  name: IsAllowNullOrEmpty
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute_IsAllowNullOrEmpty
+  commentId: P:KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  nameWithType: JsonObjectAttribute.IsAllowNullOrEmpty
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty*
+  name: IsAllowNullOrEmpty
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute_IsAllowNullOrEmpty_
+  commentId: Overload:KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  isSpec: "True"
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  nameWithType: JsonObjectAttribute.IsAllowNullOrEmpty
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  name: IsValid(object, ValidationContext)
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute_IsValid_System_Object_System_ComponentModel_DataAnnotations_ValidationContext_
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  name.vb: IsValid(Object, ValidationContext)
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsValid(object, System.ComponentModel.DataAnnotations.ValidationContext)
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.IsValid(Object, System.ComponentModel.DataAnnotations.ValidationContext)
+  nameWithType: JsonObjectAttribute.IsValid(object, ValidationContext)
+  nameWithType.vb: JsonObjectAttribute.IsValid(Object, ValidationContext)
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsValid*
+  name: IsValid
+  href: api/KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute_IsValid_
+  commentId: Overload:KYS.Library.Validations.JsonObjectAttribute.IsValid
+  isSpec: "True"
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsValid
+  nameWithType: JsonObjectAttribute.IsValid
 - uid: KYS.Library.Validations.RequiredIfAttribute
   name: RequiredIfAttribute
   href: api/KYS.Library.Validations.RequiredIfAttribute.html

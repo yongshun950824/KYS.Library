@@ -698,6 +698,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Validations.JsonObjectAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Validations.JsonObjectAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Validations.JsonObjectAttribute",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Validations.JsonObjectAttribute.yml\" sourcestartlinenumber=\"1\">Validation attribute for checking the provided value is a valid JSON object.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KYS.Library.Validations.RequiredIfAttribute.yml",
       "output": {
         ".html": {
