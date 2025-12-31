@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: FilterCriteria
     path: ../Helpers/ExpressionBuilder.cs
     startLine: 197
@@ -63,8 +63,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Operator
     path: ../Helpers/ExpressionBuilder.cs
     startLine: 203
@@ -96,8 +96,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Value
     path: ../Helpers/ExpressionBuilder.cs
     startLine: 207

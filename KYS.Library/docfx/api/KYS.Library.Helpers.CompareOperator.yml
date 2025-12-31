@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: CompareOperator
     path: ../Helpers/CompareOperator.cs
     startLine: 12
@@ -59,8 +59,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Compare
     path: ../Helpers/CompareOperator.cs
     startLine: 58
@@ -100,8 +100,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Compare
     path: ../Helpers/CompareOperator.cs
     startLine: 69
@@ -147,8 +147,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/CompareOperator.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetCompareOperatorFunc
     path: ../Helpers/CompareOperator.cs
     startLine: 82

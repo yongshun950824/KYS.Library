@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: CacheExtensions
     path: ../Extensions/CacheExtensions.cs
     startLine: 8
@@ -56,8 +56,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Add
     path: ../Extensions/CacheExtensions.cs
     startLine: 18
@@ -104,8 +104,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Add
     path: ../Extensions/CacheExtensions.cs
     startLine: 35
@@ -152,8 +152,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Get
     path: ../Extensions/CacheExtensions.cs
     startLine: 52

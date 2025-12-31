@@ -6,6 +6,7 @@ items:
   children:
   - KYS.Library.Validations.BooleanRequireAttribute
   - KYS.Library.Validations.EnumerableRequireAttribute
+  - KYS.Library.Validations.JsonObjectAttribute
   - KYS.Library.Validations.RequiredIfAttribute
   - KYS.Library.Validations.RequiredIfComparisonAttribute
   langs:
@@ -30,6 +31,12 @@ references:
   name: EnumerableRequireAttribute
   nameWithType: EnumerableRequireAttribute
   fullName: KYS.Library.Validations.EnumerableRequireAttribute
+- uid: KYS.Library.Validations.JsonObjectAttribute
+  commentId: T:KYS.Library.Validations.JsonObjectAttribute
+  href: KYS.Library.Validations.JsonObjectAttribute.html
+  name: JsonObjectAttribute
+  nameWithType: JsonObjectAttribute
+  fullName: KYS.Library.Validations.JsonObjectAttribute
 - uid: KYS.Library.Validations.RequiredIfAttribute
   commentId: T:KYS.Library.Validations.RequiredIfAttribute
   href: KYS.Library.Validations.RequiredIfAttribute.html

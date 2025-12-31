@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DateTimeExtensions
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 8
@@ -60,8 +60,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ToIso8601String
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 17
@@ -105,8 +105,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetFirstDateOfMonth
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 27
@@ -144,8 +144,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetLastDateOfMonth
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 37
@@ -183,8 +183,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetFirstDateOfYear
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 49
@@ -222,8 +222,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetLastDateOfYear
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 59
@@ -261,8 +261,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: ConvertToThaiBuddhistDateTime
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 71
@@ -300,8 +300,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DateTimeExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetAge
     path: ../Extensions/DateTimeExtensions.cs
     startLine: 84

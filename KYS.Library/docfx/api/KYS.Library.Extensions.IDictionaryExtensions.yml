@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IDictionaryExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: IDictionaryExtensions
     path: ../Extensions/IDictionaryExtensions.cs
     startLine: 8
@@ -55,8 +55,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IDictionaryExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Upsert
     path: ../Extensions/IDictionaryExtensions.cs
     startLine: 19
@@ -105,8 +105,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IDictionaryExtensions.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Upsert
     path: ../Extensions/IDictionaryExtensions.cs
     startLine: 33

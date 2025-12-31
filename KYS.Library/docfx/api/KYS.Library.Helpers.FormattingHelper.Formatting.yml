@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/FormattingHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Formatting
     path: ../Helpers/FormattingHelper.cs
     startLine: 17
@@ -46,8 +46,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/FormattingHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: SnakeCase
     path: ../Helpers/FormattingHelper.cs
     startLine: 19

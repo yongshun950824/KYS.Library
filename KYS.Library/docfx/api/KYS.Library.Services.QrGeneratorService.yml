@@ -33,8 +33,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: QrGeneratorService
     path: ../Services/QrGeneratorService.cs
     startLine: 44
@@ -72,8 +72,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Services/QrGeneratorService.cs
     startLine: 63
@@ -107,8 +107,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Services/QrGeneratorService.cs
     startLine: 76
@@ -158,8 +158,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Services/QrGeneratorService.cs
     startLine: 100
@@ -196,8 +196,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Services/QrGeneratorService.cs
     startLine: 112
@@ -243,8 +243,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
     path: ../Services/QrGeneratorService.cs
     startLine: 129
@@ -306,8 +306,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Value
     path: ../Services/QrGeneratorService.cs
     startLine: 151
@@ -337,8 +337,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Width
     path: ../Services/QrGeneratorService.cs
     startLine: 155
@@ -368,8 +368,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Height
     path: ../Services/QrGeneratorService.cs
     startLine: 159
@@ -399,8 +399,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: LogoPath
     path: ../Services/QrGeneratorService.cs
     startLine: 163
@@ -430,8 +430,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: LogoWidth
     path: ../Services/QrGeneratorService.cs
     startLine: 167
@@ -461,8 +461,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: LogoHeight
     path: ../Services/QrGeneratorService.cs
     startLine: 171
@@ -492,8 +492,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Margin
     path: ../Services/QrGeneratorService.cs
     startLine: 175
@@ -523,8 +523,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: QRCode
     path: ../Services/QrGeneratorService.cs
     startLine: 180
@@ -554,8 +554,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Draw
     path: ../Services/QrGeneratorService.cs
     startLine: 186
@@ -587,8 +587,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DrawAndToMemoryStream
     path: ../Services/QrGeneratorService.cs
     startLine: 232
@@ -620,8 +620,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DrawAndToBase64
     path: ../Services/QrGeneratorService.cs
     startLine: 248
@@ -653,8 +653,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DrawAndToDataUri
     path: ../Services/QrGeneratorService.cs
     startLine: 259
@@ -686,8 +686,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/QrGeneratorService.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: DrawAndToFile
     path: ../Services/QrGeneratorService.cs
     startLine: 270

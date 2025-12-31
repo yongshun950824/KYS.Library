@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/SQLHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: SqlHelper
     path: ../Helpers/SQLHelper.cs
     startLine: 10
@@ -55,8 +55,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/SQLHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetDataSet
     path: ../Helpers/SQLHelper.cs
     startLine: 22
@@ -109,8 +109,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/SQLHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: GetDataTable
     path: ../Helpers/SQLHelper.cs
     startLine: 51
@@ -163,8 +163,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/SQLHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: BuildStructuredSqlParameter
     path: ../Helpers/SQLHelper.cs
     startLine: 118

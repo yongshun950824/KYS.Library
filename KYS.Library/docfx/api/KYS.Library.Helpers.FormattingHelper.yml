@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: FormattingHelper
     path: ../obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
     startLine: 8
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/FormattingHelper.cs
-      branch: documentation-with-docfx
-      repo: https://github.com/yongshun950824/KYS.Library
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
     id: Convert
     path: ../Helpers/FormattingHelper.cs
     startLine: 29

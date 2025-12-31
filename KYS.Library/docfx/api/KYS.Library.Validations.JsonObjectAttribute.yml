@@ -1,42 +1,44 @@
 ### YamlMime:ManagedReference
 items:
-- uid: KYS.Library.Validations.RequiredIfAttribute
-  commentId: T:KYS.Library.Validations.RequiredIfAttribute
-  id: RequiredIfAttribute
+- uid: KYS.Library.Validations.JsonObjectAttribute
+  commentId: T:KYS.Library.Validations.JsonObjectAttribute
+  id: JsonObjectAttribute
   parent: KYS.Library.Validations
   children:
-  - KYS.Library.Validations.RequiredIfAttribute.#ctor(System.String,System.String)
-  - KYS.Library.Validations.RequiredIfAttribute.#ctor(System.String,System.String,System.String)
-  - KYS.Library.Validations.RequiredIfAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  - KYS.Library.Validations.JsonObjectAttribute.#ctor
+  - KYS.Library.Validations.JsonObjectAttribute.#ctor(System.Boolean,System.String)
+  - KYS.Library.Validations.JsonObjectAttribute.#ctor(System.String)
+  - KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  - KYS.Library.Validations.JsonObjectAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   langs:
   - csharp
   - vb
-  name: RequiredIfAttribute
-  nameWithType: RequiredIfAttribute
-  fullName: KYS.Library.Validations.RequiredIfAttribute
+  name: JsonObjectAttribute
+  nameWithType: JsonObjectAttribute
+  fullName: KYS.Library.Validations.JsonObjectAttribute
   type: Class
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
+      path: KYS.Library/Validations/JsonObjectAttribute.cs
       branch: feature/validations-with-unit-test
       repo: https://github.com/yongshun950824/KYS.Library.git
-    id: RequiredIfAttribute
-    path: ../Validations/RequiredIfAttribute.cs
-    startLine: 8
+    id: JsonObjectAttribute
+    path: ../Validations/JsonObjectAttribute.cs
+    startLine: 9
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Validations
-  summary: Validation attribute for performing the required validation on the current property when other property fulfills the specific value.
+  summary: Validation attribute for checking the provided value is a valid JSON object.
   example: []
   syntax:
     content: >-
-      [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+      [AttributeUsage(AttributeTargets.Property)]
 
-      public class RequiredIfAttribute : ValidationAttribute
+      public class JsonObjectAttribute : ValidationAttribute
     content.vb: >-
-      <AttributeUsage(AttributeTargets.Property, AllowMultiple:=True)>
+      <AttributeUsage(AttributeTargets.Property)>
 
-      Public Class RequiredIfAttribute Inherits ValidationAttribute
+      Public Class JsonObjectAttribute Inherits ValidationAttribute
   inheritance:
   - System.Object
   - System.Attribute
@@ -100,115 +102,164 @@ items:
     arguments:
     - type: System.AttributeTargets
       value: 128
-    namedArguments:
-    - name: AllowMultiple
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  commentId: P:KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  id: IsAllowNullOrEmpty
+  parent: KYS.Library.Validations.JsonObjectAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsAllowNullOrEmpty
+  nameWithType: JsonObjectAttribute.IsAllowNullOrEmpty
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  type: Property
+  source:
+    remote:
+      path: KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: IsAllowNullOrEmpty
+    path: ../Validations/JsonObjectAttribute.cs
+    startLine: 15
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Validations
+  summary: Gets or sets the indicator allows the value with null or empty.
+  example: []
+  syntax:
+    content: public bool IsAllowNullOrEmpty { get; set; }
+    parameters: []
+    return:
       type: System.Boolean
-      value: true
-- uid: KYS.Library.Validations.RequiredIfAttribute.#ctor(System.String,System.String)
-  commentId: M:KYS.Library.Validations.RequiredIfAttribute.#ctor(System.String,System.String)
-  id: '#ctor(System.String,System.String)'
-  parent: KYS.Library.Validations.RequiredIfAttribute
+    content.vb: Public Property IsAllowNullOrEmpty As Boolean
+  overload: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty*
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.#ctor
+  id: '#ctor'
+  parent: KYS.Library.Validations.JsonObjectAttribute
   langs:
   - csharp
   - vb
-  name: RequiredIfAttribute(string, string)
-  nameWithType: RequiredIfAttribute.RequiredIfAttribute(string, string)
-  fullName: KYS.Library.Validations.RequiredIfAttribute.RequiredIfAttribute(string, string)
+  name: JsonObjectAttribute()
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute()
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute()
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
+      path: KYS.Library/Validations/JsonObjectAttribute.cs
       branch: feature/validations-with-unit-test
       repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
-    path: ../Validations/RequiredIfAttribute.cs
-    startLine: 19
+    path: ../Validations/JsonObjectAttribute.cs
+    startLine: 20
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Validations
-  summary: Initialize new instance of <xref href="KYS.Library.Validations.RequiredIfAttribute" data-throw-if-not-resolved="false"></xref> class.
+  summary: Initialize new instance of <xref href="KYS.Library.Validations.JsonObjectAttribute" data-throw-if-not-resolved="false"></xref> class.
   example: []
   syntax:
-    content: public RequiredIfAttribute(string otherPropertyName, string matchedValue)
-    parameters:
-    - id: otherPropertyName
-      type: System.String
-      description: The name of property which the property is used to obtain its value and compare with matchedValue.
-    - id: matchedValue
-      type: System.String
-      description: The value which must be matched with the value of otherPropertyName to perform the validation.
-    content.vb: Public Sub New(otherPropertyName As String, matchedValue As String)
-  overload: KYS.Library.Validations.RequiredIfAttribute.#ctor*
-  nameWithType.vb: RequiredIfAttribute.New(String, String)
-  fullName.vb: KYS.Library.Validations.RequiredIfAttribute.New(String, String)
-  name.vb: New(String, String)
-- uid: KYS.Library.Validations.RequiredIfAttribute.#ctor(System.String,System.String,System.String)
-  commentId: M:KYS.Library.Validations.RequiredIfAttribute.#ctor(System.String,System.String,System.String)
-  id: '#ctor(System.String,System.String,System.String)'
-  parent: KYS.Library.Validations.RequiredIfAttribute
+    content: public JsonObjectAttribute()
+    content.vb: Public Sub New()
+  overload: KYS.Library.Validations.JsonObjectAttribute.#ctor*
+  nameWithType.vb: JsonObjectAttribute.New()
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New()
+  name.vb: New()
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor(System.String)
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: KYS.Library.Validations.JsonObjectAttribute
   langs:
   - csharp
   - vb
-  name: RequiredIfAttribute(string, string, string)
-  nameWithType: RequiredIfAttribute.RequiredIfAttribute(string, string, string)
-  fullName: KYS.Library.Validations.RequiredIfAttribute.RequiredIfAttribute(string, string, string)
+  name: JsonObjectAttribute(string)
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute(string)
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute(string)
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
+      path: KYS.Library/Validations/JsonObjectAttribute.cs
       branch: feature/validations-with-unit-test
       repo: https://github.com/yongshun950824/KYS.Library.git
     id: .ctor
-    path: ../Validations/RequiredIfAttribute.cs
-    startLine: 32
+    path: ../Validations/JsonObjectAttribute.cs
+    startLine: 29
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Validations
-  summary: Initialize new instance of <xref href="KYS.Library.Validations.RequiredIfAttribute" data-throw-if-not-resolved="false"></xref> class.
+  summary: Initialize new instance of <xref href="KYS.Library.Validations.JsonObjectAttribute" data-throw-if-not-resolved="false"></xref> class.
   example: []
   syntax:
-    content: public RequiredIfAttribute(string otherPropertyName, string matchedValue, string errorMessage)
+    content: public JsonObjectAttribute(string errorMessage)
     parameters:
-    - id: otherPropertyName
-      type: System.String
-      description: The name of property which the property is used to obtain its value and compare with matchedValue.
-    - id: matchedValue
-      type: System.String
-      description: The value which must be matched with the value of otherPropertyName to perform the validation.
     - id: errorMessage
       type: System.String
       description: The displayed error message when the validation fails.
-    content.vb: Public Sub New(otherPropertyName As String, matchedValue As String, errorMessage As String)
-  overload: KYS.Library.Validations.RequiredIfAttribute.#ctor*
-  nameWithType.vb: RequiredIfAttribute.New(String, String, String)
-  fullName.vb: KYS.Library.Validations.RequiredIfAttribute.New(String, String, String)
-  name.vb: New(String, String, String)
-- uid: KYS.Library.Validations.RequiredIfAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
-  commentId: M:KYS.Library.Validations.RequiredIfAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+    content.vb: Public Sub New(errorMessage As String)
+  overload: KYS.Library.Validations.JsonObjectAttribute.#ctor*
+  nameWithType.vb: JsonObjectAttribute.New(String)
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New(String)
+  name.vb: New(String)
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor(System.Boolean,System.String)
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.#ctor(System.Boolean,System.String)
+  id: '#ctor(System.Boolean,System.String)'
+  parent: KYS.Library.Validations.JsonObjectAttribute
+  langs:
+  - csharp
+  - vb
+  name: JsonObjectAttribute(bool, string)
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute(bool, string)
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute(bool, string)
+  type: Constructor
+  source:
+    remote:
+      path: KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: feature/validations-with-unit-test
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: .ctor
+    path: ../Validations/JsonObjectAttribute.cs
+    startLine: 39
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Validations
+  summary: Initialize new instance of <xref href="KYS.Library.Validations.JsonObjectAttribute" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public JsonObjectAttribute(bool isAllowNullOrEmpty, string errorMessage)
+    parameters:
+    - id: isAllowNullOrEmpty
+      type: System.Boolean
+      description: The indicator allows the value is null or empty.
+    - id: errorMessage
+      type: System.String
+      description: The displayed error message when the validation fails.
+    content.vb: Public Sub New(isAllowNullOrEmpty As Boolean, errorMessage As String)
+  overload: KYS.Library.Validations.JsonObjectAttribute.#ctor*
+  nameWithType.vb: JsonObjectAttribute.New(Boolean, String)
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New(Boolean, String)
+  name.vb: New(Boolean, String)
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
+  commentId: M:KYS.Library.Validations.JsonObjectAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
   id: IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
-  parent: KYS.Library.Validations.RequiredIfAttribute
+  parent: KYS.Library.Validations.JsonObjectAttribute
   langs:
   - csharp
   - vb
   name: IsValid(object, ValidationContext)
-  nameWithType: RequiredIfAttribute.IsValid(object, ValidationContext)
-  fullName: KYS.Library.Validations.RequiredIfAttribute.IsValid(object, System.ComponentModel.DataAnnotations.ValidationContext)
+  nameWithType: JsonObjectAttribute.IsValid(object, ValidationContext)
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsValid(object, System.ComponentModel.DataAnnotations.ValidationContext)
   type: Method
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
+      path: KYS.Library/Validations/JsonObjectAttribute.cs
       branch: feature/validations-with-unit-test
       repo: https://github.com/yongshun950824/KYS.Library.git
     id: IsValid
-    path: ../Validations/RequiredIfAttribute.cs
-    startLine: 46
+    path: ../Validations/JsonObjectAttribute.cs
+    startLine: 50
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Validations
-  summary: >-
-    Determines whether the value from the current property is valid (neither null nor empty)
-
-    if the value from the <code>otherPropertyInfo</code> is fulfilled, represents the current property is mandatory.
+  summary: Determines whether the value from the current property is a valid JSON object.
   example: []
   syntax:
     content: protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -224,9 +275,9 @@ items:
       description: The <xref href="System.ComponentModel.DataAnnotations.ValidationResult" data-throw-if-not-resolved="false"></xref> instance containing the result after validation.
     content.vb: Protected Overrides Function IsValid(value As Object, validationContext As ValidationContext) As ValidationResult
   overridden: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)
-  overload: KYS.Library.Validations.RequiredIfAttribute.IsValid*
-  nameWithType.vb: RequiredIfAttribute.IsValid(Object, ValidationContext)
-  fullName.vb: KYS.Library.Validations.RequiredIfAttribute.IsValid(Object, System.ComponentModel.DataAnnotations.ValidationContext)
+  overload: KYS.Library.Validations.JsonObjectAttribute.IsValid*
+  nameWithType.vb: JsonObjectAttribute.IsValid(Object, ValidationContext)
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.IsValid(Object, System.ComponentModel.DataAnnotations.ValidationContext)
   name.vb: IsValid(Object, ValidationContext)
 references:
 - uid: KYS.Library.Validations
@@ -2339,20 +2390,37 @@ references:
     name: DataAnnotations
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations
-- uid: KYS.Library.Validations.RequiredIfAttribute
-  commentId: T:KYS.Library.Validations.RequiredIfAttribute
-  href: KYS.Library.Validations.RequiredIfAttribute.html
-  name: RequiredIfAttribute
-  nameWithType: RequiredIfAttribute
-  fullName: KYS.Library.Validations.RequiredIfAttribute
-- uid: KYS.Library.Validations.RequiredIfAttribute.#ctor*
-  commentId: Overload:KYS.Library.Validations.RequiredIfAttribute.#ctor
-  href: KYS.Library.Validations.RequiredIfAttribute.html#KYS_Library_Validations_RequiredIfAttribute__ctor_System_String_System_String_
-  name: RequiredIfAttribute
-  nameWithType: RequiredIfAttribute.RequiredIfAttribute
-  fullName: KYS.Library.Validations.RequiredIfAttribute.RequiredIfAttribute
-  nameWithType.vb: RequiredIfAttribute.New
-  fullName.vb: KYS.Library.Validations.RequiredIfAttribute.New
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty*
+  commentId: Overload:KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+  href: KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute_IsAllowNullOrEmpty
+  name: IsAllowNullOrEmpty
+  nameWithType: JsonObjectAttribute.IsAllowNullOrEmpty
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsAllowNullOrEmpty
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: KYS.Library.Validations.JsonObjectAttribute
+  commentId: T:KYS.Library.Validations.JsonObjectAttribute
+  href: KYS.Library.Validations.JsonObjectAttribute.html
+  name: JsonObjectAttribute
+  nameWithType: JsonObjectAttribute
+  fullName: KYS.Library.Validations.JsonObjectAttribute
+- uid: KYS.Library.Validations.JsonObjectAttribute.#ctor*
+  commentId: Overload:KYS.Library.Validations.JsonObjectAttribute.#ctor
+  href: KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute__ctor
+  name: JsonObjectAttribute
+  nameWithType: JsonObjectAttribute.JsonObjectAttribute
+  fullName: KYS.Library.Validations.JsonObjectAttribute.JsonObjectAttribute
+  nameWithType.vb: JsonObjectAttribute.New
+  fullName.vb: KYS.Library.Validations.JsonObjectAttribute.New
   name.vb: New
 - uid: System.String
   commentId: T:System.String
@@ -2426,9 +2494,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations.validationcontext
   - name: )
-- uid: KYS.Library.Validations.RequiredIfAttribute.IsValid*
-  commentId: Overload:KYS.Library.Validations.RequiredIfAttribute.IsValid
-  href: KYS.Library.Validations.RequiredIfAttribute.html#KYS_Library_Validations_RequiredIfAttribute_IsValid_System_Object_System_ComponentModel_DataAnnotations_ValidationContext_
+- uid: KYS.Library.Validations.JsonObjectAttribute.IsValid*
+  commentId: Overload:KYS.Library.Validations.JsonObjectAttribute.IsValid
+  href: KYS.Library.Validations.JsonObjectAttribute.html#KYS_Library_Validations_JsonObjectAttribute_IsValid_System_Object_System_ComponentModel_DataAnnotations_ValidationContext_
   name: IsValid
-  nameWithType: RequiredIfAttribute.IsValid
-  fullName: KYS.Library.Validations.RequiredIfAttribute.IsValid
+  nameWithType: JsonObjectAttribute.IsValid
+  fullName: KYS.Library.Validations.JsonObjectAttribute.IsValid
