@@ -4,13 +4,19 @@ permissions:
   pull-requests: read
 
 on:
-  workflow_dispatch:    # Allows manual trigger
+  workflow_dispatch: # Allows manual trigger
   push:
     branches:
       - master
+    paths:
+      - "KYS.AspNetCore.Library/**"
+      - "KYS.Library/**"
   pull_request:
     branches:
       - master
+    paths:
+      - "KYS.AspNetCore.Library/**"
+      - "KYS.Library/**"
 
 jobs:
   build:
@@ -20,11 +26,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-       # Setup .NET SDK for .NET Core project
+        # Setup .NET SDK for .NET Core project
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: "8.0.x"
 
       # Restore & Build .NET Core project
       - name: Restore & Build .NET Core Project
