@@ -366,6 +366,28 @@ references:
   fullName.vb: KYS.Library.Extensions.IConfigurationBuilderExtensions.Bind(Of T)(Microsoft.Extensions.Configuration.IConfigurationBuilder, String, T)
   nameWithType: IConfigurationBuilderExtensions.Bind<T>(IConfigurationBuilder, string, T)
   nameWithType.vb: IConfigurationBuilderExtensions.Bind(Of T)(IConfigurationBuilder, String, T)
+- uid: KYS.Library.Extensions.IDataReaderExtensions
+  name: IDataReaderExtensions
+  href: api/KYS.Library.Extensions.IDataReaderExtensions.html
+  commentId: T:KYS.Library.Extensions.IDataReaderExtensions
+  fullName: KYS.Library.Extensions.IDataReaderExtensions
+  nameWithType: IDataReaderExtensions
+- uid: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue*
+  name: SafeGetValue
+  href: api/KYS.Library.Extensions.IDataReaderExtensions.html#KYS_Library_Extensions_IDataReaderExtensions_SafeGetValue_
+  commentId: Overload:KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue
+  isSpec: "True"
+  fullName: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue
+  nameWithType: IDataReaderExtensions.SafeGetValue
+- uid: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue``1(System.Data.IDataReader,System.String,``0)
+  name: SafeGetValue<T>(IDataReader, string, T)
+  href: api/KYS.Library.Extensions.IDataReaderExtensions.html#KYS_Library_Extensions_IDataReaderExtensions_SafeGetValue__1_System_Data_IDataReader_System_String___0_
+  commentId: M:KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue``1(System.Data.IDataReader,System.String,``0)
+  name.vb: SafeGetValue(Of T)(IDataReader, String, T)
+  fullName: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue<T>(System.Data.IDataReader, string, T)
+  fullName.vb: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue(Of T)(System.Data.IDataReader, String, T)
+  nameWithType: IDataReaderExtensions.SafeGetValue<T>(IDataReader, string, T)
+  nameWithType.vb: IDataReaderExtensions.SafeGetValue(Of T)(IDataReader, String, T)
 - uid: KYS.Library.Extensions.IDictionaryExtensions
   name: IDictionaryExtensions
   href: api/KYS.Library.Extensions.IDictionaryExtensions.html
@@ -728,6 +750,22 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Extensions.StringExtensions.RemovePreFix
   nameWithType: StringExtensions.RemovePreFix
+- uid: KYS.Library.Extensions.StringExtensions.Truncate(System.String,System.Int32)
+  name: Truncate(string, int)
+  href: api/KYS.Library.Extensions.StringExtensions.html#KYS_Library_Extensions_StringExtensions_Truncate_System_String_System_Int32_
+  commentId: M:KYS.Library.Extensions.StringExtensions.Truncate(System.String,System.Int32)
+  name.vb: Truncate(String, Integer)
+  fullName: KYS.Library.Extensions.StringExtensions.Truncate(string, int)
+  fullName.vb: KYS.Library.Extensions.StringExtensions.Truncate(String, Integer)
+  nameWithType: StringExtensions.Truncate(string, int)
+  nameWithType.vb: StringExtensions.Truncate(String, Integer)
+- uid: KYS.Library.Extensions.StringExtensions.Truncate*
+  name: Truncate
+  href: api/KYS.Library.Extensions.StringExtensions.html#KYS_Library_Extensions_StringExtensions_Truncate_
+  commentId: Overload:KYS.Library.Extensions.StringExtensions.Truncate
+  isSpec: "True"
+  fullName: KYS.Library.Extensions.StringExtensions.Truncate
+  nameWithType: StringExtensions.Truncate
 - uid: KYS.Library.Helpers
   name: KYS.Library.Helpers
   href: api/KYS.Library.Helpers.html
@@ -1776,6 +1814,19 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Helpers.StreamHelper.ReadBase64StringToByteArray
   nameWithType: StreamHelper.ReadBase64StringToByteArray
+- uid: KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
+  name: ToBase64Async(Stream)
+  href: api/KYS.Library.Helpers.StreamHelper.html#KYS_Library_Helpers_StreamHelper_ToBase64Async_System_IO_Stream_
+  commentId: M:KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
+  fullName: KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
+  nameWithType: StreamHelper.ToBase64Async(Stream)
+- uid: KYS.Library.Helpers.StreamHelper.ToBase64Async*
+  name: ToBase64Async
+  href: api/KYS.Library.Helpers.StreamHelper.html#KYS_Library_Helpers_StreamHelper_ToBase64Async_
+  commentId: Overload:KYS.Library.Helpers.StreamHelper.ToBase64Async
+  isSpec: "True"
+  fullName: KYS.Library.Helpers.StreamHelper.ToBase64Async
+  nameWithType: StreamHelper.ToBase64Async
 - uid: KYS.Library.Helpers.StreamHelper.ToByteArray(System.IO.MemoryStream)
   name: ToByteArray(MemoryStream)
   href: api/KYS.Library.Helpers.StreamHelper.html#KYS_Library_Helpers_StreamHelper_ToByteArray_System_IO_MemoryStream_

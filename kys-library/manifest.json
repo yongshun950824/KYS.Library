@@ -96,6 +96,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Extensions.IDataReaderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Extensions.IDataReaderExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Extensions.IDataReaderExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KYS.Library.Extensions.IDictionaryExtensions.yml",
       "output": {
         ".html": {
