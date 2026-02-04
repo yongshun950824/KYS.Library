@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/BooleanRequireAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: BooleanRequireAttribute
     path: ../Validations/BooleanRequireAttribute.cs
     startLine: 10
@@ -112,8 +112,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/BooleanRequireAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/BooleanRequireAttribute.cs
     startLine: 16
@@ -143,8 +143,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/BooleanRequireAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/BooleanRequireAttribute.cs
     startLine: 25
@@ -178,8 +178,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/BooleanRequireAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsValid
     path: ../Validations/BooleanRequireAttribute.cs
     startLine: 35

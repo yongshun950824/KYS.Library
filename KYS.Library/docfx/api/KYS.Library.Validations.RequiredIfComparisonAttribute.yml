@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfComparisonAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: RequiredIfComparisonAttribute
     path: ../Validations/RequiredIfComparisonAttribute.cs
     startLine: 29
@@ -159,8 +159,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfComparisonAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfComparisonAttribute.cs
     startLine: 42
@@ -197,8 +197,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfComparisonAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfComparisonAttribute.cs
     startLine: 54
@@ -238,8 +238,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfComparisonAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfComparisonAttribute.cs
     startLine: 67
@@ -279,8 +279,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfComparisonAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfComparisonAttribute.cs
     startLine: 84
@@ -323,8 +323,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfComparisonAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsValid
     path: ../Validations/RequiredIfComparisonAttribute.cs
     startLine: 103
@@ -368,8 +368,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfComparisonAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: FormatErrorMessage
     path: ../Validations/RequiredIfComparisonAttribute.cs
     startLine: 138

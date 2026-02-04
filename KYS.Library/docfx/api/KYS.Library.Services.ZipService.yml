@@ -24,8 +24,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ZipService
     path: ../Services/ZipService.cs
     startLine: 37
@@ -63,8 +63,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: FileName
     path: ../Services/ZipService.cs
     startLine: 46
@@ -94,8 +94,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Password
     path: ../Services/ZipService.cs
     startLine: 63
@@ -125,8 +125,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: FileItems
     path: ../Services/ZipService.cs
     startLine: 77
@@ -156,8 +156,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Services/ZipService.cs
     startLine: 92
@@ -187,8 +187,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Services/ZipService.cs
     startLine: 99
@@ -225,8 +225,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Services/ZipService.cs
     startLine: 111
@@ -266,8 +266,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Zip
     path: ../Services/ZipService.cs
     startLine: 121
@@ -299,8 +299,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ZipAndToFile
     path: ../Services/ZipService.cs
     startLine: 155
@@ -343,8 +343,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/ZipService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Unzip
     path: ../Services/ZipService.cs
     startLine: 170

@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: RequiredIfAttribute
     path: ../Validations/RequiredIfAttribute.cs
     startLine: 8
@@ -118,8 +118,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfAttribute.cs
     startLine: 19
@@ -156,8 +156,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfAttribute.cs
     startLine: 32
@@ -197,8 +197,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsValid
     path: ../Validations/RequiredIfAttribute.cs
     startLine: 46

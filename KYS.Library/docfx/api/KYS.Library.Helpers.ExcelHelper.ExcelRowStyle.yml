@@ -23,8 +23,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ExcelRowStyle
     path: ../Helpers/ExcelHelper.cs
     startLine: 283
@@ -60,8 +60,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: HorizontalAlignment
     path: ../Helpers/ExcelHelper.cs
     startLine: 288
@@ -91,8 +91,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Bold
     path: ../Helpers/ExcelHelper.cs
     startLine: 292
@@ -122,8 +122,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: FontColor
     path: ../Helpers/ExcelHelper.cs
     startLine: 296
@@ -153,8 +153,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: PatternType
     path: ../Helpers/ExcelHelper.cs
     startLine: 300
@@ -184,8 +184,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: BackgroundColor
     path: ../Helpers/ExcelHelper.cs
     startLine: 304
@@ -215,8 +215,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: AutoFilter
     path: ../Helpers/ExcelHelper.cs
     startLine: 308
@@ -246,8 +246,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: DefaultHeaderRowStyle
     path: ../Helpers/ExcelHelper.cs
     startLine: 313
@@ -277,8 +277,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: DefaultSummaryRowStyle
     path: ../Helpers/ExcelHelper.cs
     startLine: 331

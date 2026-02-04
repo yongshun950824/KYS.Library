@@ -10,6 +10,7 @@ items:
   - KYS.Library.Extensions.DecimalExtensions
   - KYS.Library.Extensions.EnumExtensions
   - KYS.Library.Extensions.IConfigurationBuilderExtensions
+  - KYS.Library.Extensions.IDataReaderExtensions
   - KYS.Library.Extensions.IDictionaryExtensions
   - KYS.Library.Extensions.IEnumerableExtensions
   - KYS.Library.Extensions.IListExtensions
@@ -63,6 +64,12 @@ references:
   name: IConfigurationBuilderExtensions
   nameWithType: IConfigurationBuilderExtensions
   fullName: KYS.Library.Extensions.IConfigurationBuilderExtensions
+- uid: KYS.Library.Extensions.IDataReaderExtensions
+  commentId: T:KYS.Library.Extensions.IDataReaderExtensions
+  href: KYS.Library.Extensions.IDataReaderExtensions.html
+  name: IDataReaderExtensions
+  nameWithType: IDataReaderExtensions
+  fullName: KYS.Library.Extensions.IDataReaderExtensions
 - uid: KYS.Library.Extensions.IDictionaryExtensions
   commentId: T:KYS.Library.Extensions.IDictionaryExtensions
   href: KYS.Library.Extensions.IDictionaryExtensions.html

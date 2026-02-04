@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IQueryableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IQueryableExtensions
     path: ../Extensions/IQueryableExtensions.cs
     startLine: 8
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IQueryableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: WhereIf
     path: ../Extensions/IQueryableExtensions.cs
     startLine: 18

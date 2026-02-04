@@ -10,6 +10,7 @@ items:
   - KYS.Library.Extensions.StringExtensions.Join(System.String,System.Boolean,System.String[])
   - KYS.Library.Extensions.StringExtensions.RemovePostFix(System.String,System.String[])
   - KYS.Library.Extensions.StringExtensions.RemovePreFix(System.String,System.String[])
+  - KYS.Library.Extensions.StringExtensions.Truncate(System.String,System.Int32)
   langs:
   - csharp
   - vb
@@ -20,8 +21,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: StringExtensions
     path: ../Extensions/StringExtensions.cs
     startLine: 10
@@ -58,8 +59,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: RemovePostFix
     path: ../Extensions/StringExtensions.cs
     startLine: 19
@@ -103,8 +104,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: RemovePreFix
     path: ../Extensions/StringExtensions.cs
     startLine: 42
@@ -148,8 +149,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsValidBase64
     path: ../Extensions/StringExtensions.cs
     startLine: 63
@@ -187,8 +188,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Join
     path: ../Extensions/StringExtensions.cs
     startLine: 78
@@ -235,8 +236,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Join
     path: ../Extensions/StringExtensions.cs
     startLine: 97
@@ -265,6 +266,48 @@ items:
   nameWithType.vb: StringExtensions.Join(String, Boolean, ParamArray String())
   fullName.vb: KYS.Library.Extensions.StringExtensions.Join(String, Boolean, ParamArray String())
   name.vb: Join(String, Boolean, ParamArray String())
+- uid: KYS.Library.Extensions.StringExtensions.Truncate(System.String,System.Int32)
+  commentId: M:KYS.Library.Extensions.StringExtensions.Truncate(System.String,System.Int32)
+  id: Truncate(System.String,System.Int32)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.StringExtensions
+  langs:
+  - csharp
+  - vb
+  name: Truncate(string, int)
+  nameWithType: StringExtensions.Truncate(string, int)
+  fullName: KYS.Library.Extensions.StringExtensions.Truncate(string, int)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Extensions/StringExtensions.cs
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Truncate
+    path: ../Extensions/StringExtensions.cs
+    startLine: 124
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Extensions
+  summary: Truncate the <xref href="System.String" data-throw-if-not-resolved="false"></xref> value with provided character length.
+  example: []
+  syntax:
+    content: public static string Truncate(this string str, int length)
+    parameters:
+    - id: str
+      type: System.String
+      description: The <xref href="System.String" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    - id: length
+      type: System.Int32
+      description: The number of characters to be extracted. Must be positive value and more than zero.
+    return:
+      type: System.String
+      description: Truncated string.
+    content.vb: Public Shared Function Truncate(str As String, length As Integer) As String
+  overload: KYS.Library.Extensions.StringExtensions.Truncate*
+  nameWithType.vb: StringExtensions.Truncate(String, Integer)
+  fullName.vb: KYS.Library.Extensions.StringExtensions.Truncate(String, Integer)
+  name.vb: Truncate(String, Integer)
 references:
 - uid: System.String
   commentId: T:System.String
@@ -720,3 +763,20 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: KYS.Library.Extensions.StringExtensions.Truncate*
+  commentId: Overload:KYS.Library.Extensions.StringExtensions.Truncate
+  href: KYS.Library.Extensions.StringExtensions.html#KYS_Library_Extensions_StringExtensions_Truncate_System_String_System_Int32_
+  name: Truncate
+  nameWithType: StringExtensions.Truncate
+  fullName: KYS.Library.Extensions.StringExtensions.Truncate
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

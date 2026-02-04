@@ -1,35 +1,34 @@
 ### YamlMime:ManagedReference
 items:
-- uid: KYS.Library.Services.LanguageResources
-  commentId: T:KYS.Library.Services.LanguageResources
-  id: LanguageResources
-  parent: KYS.Library.Services
+- uid: KYS.Library.Extensions.IDataReaderExtensions
+  commentId: T:KYS.Library.Extensions.IDataReaderExtensions
+  id: IDataReaderExtensions
+  parent: KYS.Library.Extensions
   children:
-  - KYS.Library.Services.LanguageResources.CultureName
-  - KYS.Library.Services.LanguageResources.Resources
+  - KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue``1(System.Data.IDataReader,System.String,``0)
   langs:
   - csharp
   - vb
-  name: LanguageResources
-  nameWithType: LanguageResources
-  fullName: KYS.Library.Services.LanguageResources
+  name: IDataReaderExtensions
+  nameWithType: IDataReaderExtensions
+  fullName: KYS.Library.Extensions.IDataReaderExtensions
   type: Class
   source:
     remote:
-      path: KYS.Library/Services/TranslationService.cs
+      path: KYS.Library/Extensions/IDataReaderExtensions.cs
       branch: feature/enhancement
       repo: https://github.com/yongshun950824/KYS.Library
-    id: LanguageResources
-    path: ../Services/TranslationService.cs
-    startLine: 506
+    id: IDataReaderExtensions
+    path: ../Extensions/IDataReaderExtensions.cs
+    startLine: 8
   assemblies:
   - KYS.Library
-  namespace: KYS.Library.Services
-  summary: Represents the blueprint for the culture name and its resources.
+  namespace: KYS.Library.Extensions
+  summary: Provides extension methods for working with <xref href="System.Data.IDataReader" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public class LanguageResources
-    content.vb: Public Class LanguageResources
+    content: public static class IDataReaderExtensions
+    content.vb: Public Module IDataReaderExtensions
   inheritance:
   - System.Object
   inheritedMembers:
@@ -40,75 +39,74 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: KYS.Library.Services.LanguageResources.CultureName
-  commentId: P:KYS.Library.Services.LanguageResources.CultureName
-  id: CultureName
-  parent: KYS.Library.Services.LanguageResources
+- uid: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue``1(System.Data.IDataReader,System.String,``0)
+  commentId: M:KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue``1(System.Data.IDataReader,System.String,``0)
+  id: SafeGetValue``1(System.Data.IDataReader,System.String,``0)
+  isExtensionMethod: true
+  parent: KYS.Library.Extensions.IDataReaderExtensions
   langs:
   - csharp
   - vb
-  name: CultureName
-  nameWithType: LanguageResources.CultureName
-  fullName: KYS.Library.Services.LanguageResources.CultureName
-  type: Property
+  name: SafeGetValue<T>(IDataReader, string, T)
+  nameWithType: IDataReaderExtensions.SafeGetValue<T>(IDataReader, string, T)
+  fullName: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue<T>(System.Data.IDataReader, string, T)
+  type: Method
   source:
     remote:
-      path: KYS.Library/Services/TranslationService.cs
+      path: KYS.Library/Extensions/IDataReaderExtensions.cs
       branch: feature/enhancement
       repo: https://github.com/yongshun950824/KYS.Library
-    id: CultureName
-    path: ../Services/TranslationService.cs
-    startLine: 511
+    id: SafeGetValue
+    path: ../Extensions/IDataReaderExtensions.cs
+    startLine: 20
   assemblies:
   - KYS.Library
-  namespace: KYS.Library.Services
-  summary: Gets or sets the culture name.
+  namespace: KYS.Library.Extensions
+  summary: >-
+    Safely retrieves the value from the <xref href="System.Data.IDataReader" data-throw-if-not-resolved="false"></xref> instance for the specified column.
+
+    <br />
+
+    Handles DBNull, type conversion, and provides specialized validation for <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> boundaries.
   example: []
   syntax:
-    content: public string CultureName { get; set; }
-    parameters: []
-    return:
+    content: public static T SafeGetValue<T>(this IDataReader reader, string columnName, T defaultValue = default)
+    parameters:
+    - id: reader
+      type: System.Data.IDataReader
+      description: The <xref href="System.Data.IDataReader" data-throw-if-not-resolved="false"></xref> instance this method extends.
+    - id: columnName
       type: System.String
-    content.vb: Public Property CultureName As String
-  overload: KYS.Library.Services.LanguageResources.CultureName*
-- uid: KYS.Library.Services.LanguageResources.Resources
-  commentId: P:KYS.Library.Services.LanguageResources.Resources
-  id: Resources
-  parent: KYS.Library.Services.LanguageResources
-  langs:
-  - csharp
-  - vb
-  name: Resources
-  nameWithType: LanguageResources.Resources
-  fullName: KYS.Library.Services.LanguageResources.Resources
-  type: Property
-  source:
-    remote:
-      path: KYS.Library/Services/TranslationService.cs
-      branch: feature/enhancement
-      repo: https://github.com/yongshun950824/KYS.Library
-    id: Resources
-    path: ../Services/TranslationService.cs
-    startLine: 515
-  assemblies:
-  - KYS.Library
-  namespace: KYS.Library.Services
-  summary: Gets or sets the key-value pairs with the resource file name and its languages in key-value pair.
-  example: []
-  syntax:
-    content: public Dictionary<string, Dictionary<string, string>> Resources { get; set; }
-    parameters: []
+      description: The name for the data column.
+    - id: defaultValue
+      type: '{T}'
+      description: The returned value when the column is <code>DBNull</code> or contains an out-of-range DateTime.
+    typeParameters:
+    - id: T
+      description: The type of returned value and <code>defaultValue</code>.
     return:
-      type: System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}}
-    content.vb: Public Property Resources As Dictionary(Of String, Dictionary(Of String, String))
-  overload: KYS.Library.Services.LanguageResources.Resources*
+      type: '{T}'
+      description: The value from the column cast to <code class="typeparamref">T</code>. Or <code class="paramref">defaultValue</code> if the column is null or an invalid date.
+    content.vb: Public Shared Function SafeGetValue(Of T)(reader As IDataReader, columnName As String, defaultValue As T = Nothing) As T
+  overload: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue*
+  nameWithType.vb: IDataReaderExtensions.SafeGetValue(Of T)(IDataReader, String, T)
+  fullName.vb: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue(Of T)(System.Data.IDataReader, String, T)
+  name.vb: SafeGetValue(Of T)(IDataReader, String, T)
 references:
-- uid: KYS.Library.Services
-  commentId: N:KYS.Library.Services
+- uid: System.Data.IDataReader
+  commentId: T:System.Data.IDataReader
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idatareader
+  name: IDataReader
+  nameWithType: IDataReader
+  fullName: System.Data.IDataReader
+- uid: KYS.Library.Extensions
+  commentId: N:KYS.Library.Extensions
   href: KYS.html
-  name: KYS.Library.Services
-  nameWithType: KYS.Library.Services
-  fullName: KYS.Library.Services
+  name: KYS.Library.Extensions
+  nameWithType: KYS.Library.Extensions
+  fullName: KYS.Library.Extensions
   spec.csharp:
   - uid: KYS
     name: KYS
@@ -118,9 +116,9 @@ references:
     name: Library
     href: KYS.Library.html
   - name: .
-  - uid: KYS.Library.Services
-    name: Services
-    href: KYS.Library.Services.html
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
   spec.vb:
   - uid: KYS
     name: KYS
@@ -130,9 +128,9 @@ references:
     name: Library
     href: KYS.Library.html
   - name: .
-  - uid: KYS.Library.Services
-    name: Services
-    href: KYS.Library.Services.html
+  - uid: KYS.Library.Extensions
+    name: Extensions
+    href: KYS.Library.Extensions.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -363,6 +361,33 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
 - uid: System
   commentId: N:System
   isExternal: true
@@ -370,12 +395,23 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: KYS.Library.Services.LanguageResources.CultureName*
-  commentId: Overload:KYS.Library.Services.LanguageResources.CultureName
-  href: KYS.Library.Services.LanguageResources.html#KYS_Library_Services_LanguageResources_CultureName
-  name: CultureName
-  nameWithType: LanguageResources.CultureName
-  fullName: KYS.Library.Services.LanguageResources.CultureName
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue*
+  commentId: Overload:KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue
+  href: KYS.Library.Extensions.IDataReaderExtensions.html#KYS_Library_Extensions_IDataReaderExtensions_SafeGetValue__1_System_Data_IDataReader_System_String___0_
+  name: SafeGetValue
+  nameWithType: IDataReaderExtensions.SafeGetValue
+  fullName: KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -387,153 +423,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: KYS.Library.Services.LanguageResources.Resources*
-  commentId: Overload:KYS.Library.Services.LanguageResources.Resources
-  href: KYS.Library.Services.LanguageResources.html#KYS_Library_Services_LanguageResources_Resources
-  name: Resources
-  nameWithType: LanguageResources.Resources
-  fullName: KYS.Library.Services.LanguageResources.Resources
-- uid: System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.String}}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<string, Dictionary<string, string>>
-  nameWithType: Dictionary<string, Dictionary<string, string>>
-  fullName: System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>>
-  nameWithType.vb: Dictionary(Of String, Dictionary(Of String, String))
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, System.Collections.Generic.Dictionary(Of String, String))
-  name.vb: Dictionary(Of String, Dictionary(Of String, String))
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  - name: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

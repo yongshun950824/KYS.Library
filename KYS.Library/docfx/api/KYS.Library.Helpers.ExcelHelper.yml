@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ExcelHelper
     path: ../Helpers/ExcelHelper.cs
     startLine: 15
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: CreateExcelBook
     path: ../Helpers/ExcelHelper.cs
     startLine: 28
@@ -111,8 +111,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: CreateExcelBook
     path: ../Helpers/ExcelHelper.cs
     startLine: 85

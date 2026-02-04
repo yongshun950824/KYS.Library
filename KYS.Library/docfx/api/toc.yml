@@ -22,6 +22,9 @@ items:
   - uid: KYS.Library.Extensions.IConfigurationBuilderExtensions
     name: IConfigurationBuilderExtensions
     type: Class
+  - uid: KYS.Library.Extensions.IDataReaderExtensions
+    name: IDataReaderExtensions
+    type: Class
   - uid: KYS.Library.Extensions.IDictionaryExtensions
     name: IDictionaryExtensions
     type: Class

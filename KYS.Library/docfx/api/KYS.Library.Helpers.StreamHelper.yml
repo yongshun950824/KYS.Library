@@ -6,6 +6,7 @@ items:
   parent: KYS.Library.Helpers
   children:
   - KYS.Library.Helpers.StreamHelper.ReadBase64StringToByteArray(System.String)
+  - KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
   - KYS.Library.Helpers.StreamHelper.ToByteArray(System.IO.MemoryStream)
   - KYS.Library.Helpers.StreamHelper.ToMemoryStream(System.Byte[])
   - KYS.Library.Helpers.StreamHelper.WriteStringIntoStream(System.String)
@@ -19,11 +20,11 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: StreamHelper
     path: ../Helpers/StreamHelper.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -56,11 +57,11 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: WriteStringIntoStream
     path: ../Helpers/StreamHelper.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -94,11 +95,11 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ToMemoryStream
     path: ../Helpers/StreamHelper.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -132,11 +133,11 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ToByteArray
     path: ../Helpers/StreamHelper.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -167,11 +168,11 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ReadBase64StringToByteArray
     path: ../Helpers/StreamHelper.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -198,6 +199,41 @@ items:
   nameWithType.vb: StreamHelper.ReadBase64StringToByteArray(String)
   fullName.vb: KYS.Library.Helpers.StreamHelper.ReadBase64StringToByteArray(String)
   name.vb: ReadBase64StringToByteArray(String)
+- uid: KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
+  commentId: M:KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
+  id: ToBase64Async(System.IO.Stream)
+  parent: KYS.Library.Helpers.StreamHelper
+  langs:
+  - csharp
+  - vb
+  name: ToBase64Async(Stream)
+  nameWithType: StreamHelper.ToBase64Async(Stream)
+  fullName: KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: KYS.Library/Helpers/StreamHelper.cs
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ToBase64Async
+    path: ../Helpers/StreamHelper.cs
+    startLine: 72
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Helpers
+  summary: Convert <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> to a Base64 string.
+  example: []
+  syntax:
+    content: public static Task<string> ToBase64Async(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: The Base64 string after converting from the <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Shared Function ToBase64Async(stream As Stream) As Task(Of String)
+  overload: KYS.Library.Helpers.StreamHelper.ToBase64Async*
 references:
 - uid: System.IO.Stream
   commentId: T:System.IO.Stream
@@ -581,3 +617,109 @@ references:
   name: ReadBase64StringToByteArray
   nameWithType: StreamHelper.ReadBase64StringToByteArray
   fullName: KYS.Library.Helpers.StreamHelper.ReadBase64StringToByteArray
+- uid: KYS.Library.Helpers.StreamHelper.ToBase64Async*
+  commentId: Overload:KYS.Library.Helpers.StreamHelper.ToBase64Async
+  href: KYS.Library.Helpers.StreamHelper.html#KYS_Library_Helpers_StreamHelper_ToBase64Async_System_IO_Stream_
+  name: ToBase64Async
+  nameWithType: StreamHelper.ToBase64Async
+  fullName: KYS.Library.Helpers.StreamHelper.ToBase64Async
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

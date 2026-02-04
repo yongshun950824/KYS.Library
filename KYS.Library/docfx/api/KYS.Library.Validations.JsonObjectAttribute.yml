@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: JsonObjectAttribute
     path: ../Validations/JsonObjectAttribute.cs
     startLine: 9
@@ -116,8 +116,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsAllowNullOrEmpty
     path: ../Validations/JsonObjectAttribute.cs
     startLine: 15
@@ -147,8 +147,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/JsonObjectAttribute.cs
     startLine: 20
@@ -178,8 +178,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/JsonObjectAttribute.cs
     startLine: 29
@@ -213,8 +213,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/JsonObjectAttribute.cs
     startLine: 39
@@ -251,8 +251,8 @@ items:
   source:
     remote:
       path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsValid
     path: ../Validations/JsonObjectAttribute.cs
     startLine: 50

@@ -23,8 +23,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: SmtpClientConfig
     path: ../Helpers/EmailHelper.cs
     startLine: 104
@@ -78,8 +78,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Helpers/EmailHelper.cs
     startLine: 116
@@ -131,8 +131,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Host
     path: ../Helpers/EmailHelper.cs
     startLine: 134
@@ -162,8 +162,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Port
     path: ../Helpers/EmailHelper.cs
     startLine: 138
@@ -193,8 +193,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: SenderEmail
     path: ../Helpers/EmailHelper.cs
     startLine: 142
@@ -224,8 +224,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: SenderPassword
     path: ../Helpers/EmailHelper.cs
     startLine: 146
@@ -255,8 +255,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: EnableSSL
     path: ../Helpers/EmailHelper.cs
     startLine: 150
@@ -286,8 +286,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: UseDefaultCredentials
     path: ../Helpers/EmailHelper.cs
     startLine: 154
@@ -317,8 +317,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: op_Implicit
     path: ../Helpers/EmailHelper.cs
     startLine: 168
