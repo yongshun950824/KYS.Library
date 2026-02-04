@@ -104,7 +104,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
             string expectedValue = "!@test";
 
             // Act
-            string actualValue = StringExtensions.RemovePostFix(input, [ "!", "@" ]);
+            string actualValue = StringExtensions.RemovePostFix(input, ["!", "@"]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
@@ -117,7 +117,7 @@ namespace KYS.TestProject.ExtensionsUnitTests
             string expectedValue = input;
 
             // Act
-            string actualValue = StringExtensions.RemovePreFix(input, [ "," ]);
+            string actualValue = StringExtensions.RemovePreFix(input, [","]);
 
             // Assert
             Assert.AreEqual(expectedValue, actualValue);
@@ -298,6 +298,75 @@ namespace KYS.TestProject.ExtensionsUnitTests
 
             // Assert
             Assert.AreEqual(input, result);
+        }
+
+        [Test]
+        public void Truncate_WithNullValue_ShouldReturnNull()
+        {
+            // Arrage
+            string input = null;
+
+            // Act
+            var result = input.Truncate(1);
+
+            // Assert
+            Assert.AreEqual(input, result);
+        }
+
+        [Test]
+        public void Truncate_WithEmptyString_ShouldReturnEmptyString()
+        {
+            // Arrage
+            string input = String.Empty;
+
+            // Act
+            var result = input.Truncate(1);
+
+            // Assert
+            Assert.AreEqual(input, result);
+        }
+
+        [Test]
+        public void Truncate_WithLessThanOneLength_ShouldThrowException()
+        {
+            // Arrage
+            string input = String.Empty;
+            var expectedEx = new ArgumentException("The length must be positive value and more than zero.", "length");
+
+            // Act
+            var ex = Assert.Catch<ArgumentException>(() => input.Truncate(0));
+
+            // Assert
+            Assert.IsInstanceOf<ArgumentException>(ex);
+            Assert.AreEqual(expectedEx.Message, ex.Message);
+        }
+
+        [Test]
+        public void Truncate_WithProvidedLengthIsLesser_ShouldReturnTruncatedString()
+        {
+            // Arrage
+            string input = "sample";
+            int truncatedLength = 3;
+
+            // Act
+            var result = input.Truncate(truncatedLength);
+
+            // Assert
+            Assert.AreEqual(input[..Math.Min(input.Length, truncatedLength)], result);
+        }
+
+        [Test]
+        public void Truncate_WithProvidedLengthIsLonger_ShouldReturnTruncatedString()
+        {
+            // Arrage
+            string input = "sample";
+            int truncatedLength = 10;
+
+            // Act
+            var result = input.Truncate(truncatedLength);
+
+            // Assert
+            Assert.AreEqual(input[..Math.Min(input.Length, truncatedLength)], result);
         }
     }
 }

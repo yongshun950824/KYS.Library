@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace KYS.Library.Helpers
 {
@@ -62,6 +63,21 @@ namespace KYS.Library.Helpers
             byte[] bytes = Convert.FromBase64String(base64String);
 
             return ToByteArray(ToMemoryStream(bytes));
+        }
+
+        /// <summary>
+        /// Convert <see cref="Stream" /> to a Base64 string.
+        /// </summary>
+        /// <param name="stream">The <see cref="Stream" /> instance.</param>
+        /// <returns>The Base64 string after converting from the <see cref="Stream" /> instance.</returns>
+        public static async Task<string> ToBase64Async(Stream stream)
+        {
+            ArgumentNullException.ThrowIfNull(stream);
+
+            using MemoryStream ms = new();
+            await stream.CopyToAsync(ms);
+
+            return Convert.ToBase64String(ms.ToArray());
         }
     }
 }
