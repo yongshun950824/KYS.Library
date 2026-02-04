@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: FileHelper
     path: ../Helpers/FileHelper.cs
     startLine: 8
@@ -55,8 +55,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: WriteFile
     path: ../Helpers/FileHelper.cs
     startLine: 16
@@ -97,8 +97,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: WriteFile
     path: ../Helpers/FileHelper.cs
     startLine: 32
@@ -139,8 +139,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: LoadFileToMemoryStream
     path: ../Helpers/FileHelper.cs
     startLine: 48

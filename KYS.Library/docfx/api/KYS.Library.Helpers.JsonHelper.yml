@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: JsonHelper
     path: ../obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
     startLine: 26
@@ -56,8 +56,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: FlattenObject
     path: ../Helpers/JsonHelper.cs
     startLine: 44
@@ -111,8 +111,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: FlattenArray
     path: ../Helpers/JsonHelper.cs
     startLine: 64
@@ -160,8 +160,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Flatten
     path: ../Helpers/JsonHelper.cs
     startLine: 100
@@ -207,8 +207,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ConstructFlattenKey
     path: ../Helpers/JsonHelper.cs
     startLine: 129

@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DecimalExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: DecimalExtensions
     path: ../Extensions/DecimalExtensions.cs
     startLine: 7
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/DecimalExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Round
     path: ../Extensions/DecimalExtensions.cs
     startLine: 15

@@ -27,8 +27,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IEnumerableExtensions
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 10
@@ -65,8 +65,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsNullOrEmpty
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 18
@@ -107,8 +107,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: IsNullOrEmpty
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 27
@@ -143,8 +143,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: AsString
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 37
@@ -185,8 +185,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Trim
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 45
@@ -224,8 +224,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: HasDuplicates
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 54
@@ -266,8 +266,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ToString
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 66
@@ -317,8 +317,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ToString
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 99
@@ -368,8 +368,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Paging
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 130
@@ -419,8 +419,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Paging
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 143
@@ -470,8 +470,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Paging
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 157
@@ -524,8 +524,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: OrderBySequence
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 198
@@ -587,8 +587,8 @@ items:
   source:
     remote:
       path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: OrderBy
     path: ../Extensions/IEnumerableExtensions.cs
     startLine: 226

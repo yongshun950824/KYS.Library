@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: EmailHelper
     path: ../Helpers/EmailHelper.cs
     startLine: 25
@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Send
     path: ../Helpers/EmailHelper.cs
     startLine: 38

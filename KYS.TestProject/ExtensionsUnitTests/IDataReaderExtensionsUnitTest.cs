@@ -15,7 +15,7 @@ public class IDataReaderExtensionsUnitTest
 
     }
 
-    private Mock<IDataReader> SetupMock(string columnName, object value)
+    private static Mock<IDataReader> SetupMock(string columnName, object value)
     {
         var mockReader = new Mock<IDataReader>();
         mockReader.Setup(r => r.GetOrdinal(columnName)).Returns(0);

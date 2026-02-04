@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ITranslationService
     path: ../Services/TranslationService.cs
     startLine: 32
@@ -50,8 +50,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: GetLanguages
     path: ../Services/TranslationService.cs
     startLine: 38
@@ -81,8 +81,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: TranslateToEnglish
     path: ../Services/TranslationService.cs
     startLine: 45
@@ -122,8 +122,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Translate
     path: ../Services/TranslationService.cs
     startLine: 53
@@ -166,8 +166,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Translate
     path: ../Services/TranslationService.cs
     startLine: 61
@@ -210,8 +210,8 @@ items:
   source:
     remote:
       path: KYS.Library/Services/TranslationService.cs
-      branch: feature/validations-with-unit-test
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: feature/enhancement
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Translate
     path: ../Services/TranslationService.cs
     startLine: 72
