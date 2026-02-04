@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class IDataReaderExtensions | KYS.Library ">
       
-      
+      <meta name="description" content="Provides extension methods for working with .">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="KYS_Library_Extensions_IDataReaderExtensions" data-uid="KYS.Library.Extensions.IDataReaderExtensions" class="text-break">
-Class IDataReaderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/KYS.Library/Extensions/IDataReaderExtensions.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Class IDataReaderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/KYS.Library/Extensions/IDataReaderExtensions.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class IDataReaderExtensions  <a class="header-action link-secondary" title="View
   <dl><dt>Assembly</dt><dd>KYS.Library.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides extension methods for working with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idatareader">IDataReader</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,13 @@ Class IDataReaderExtensions  <a class="header-action link-secondary" title="View
 
   <h3 id="KYS_Library_Extensions_IDataReaderExtensions_SafeGetValue__1_System_Data_IDataReader_System_String___0_" data-uid="KYS.Library.Extensions.IDataReaderExtensions.SafeGetValue``1(System.Data.IDataReader,System.String,``0)">
   SafeGetValue&lt;T&gt;(IDataReader, string, T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/KYS.Library/Extensions/IDataReaderExtensions.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/KYS.Library/Extensions/IDataReaderExtensions.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Safely retrieves the value from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idatareader">IDataReader</a> instance for the specified column.
+<br>
+Handles DBNull, type conversion, and provides specialized validation for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a> boundaries.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,23 +173,28 @@ Class IDataReaderExtensions  <a class="header-action link-secondary" title="View
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>reader</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idatareader">IDataReader</a></dt>
-    <dd></dd>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idatareader">IDataReader</a> instance this method extends.</p>
+</dd>
     <dt><code>columnName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name for the data column.</p>
+</dd>
     <dt><code>defaultValue</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dd><p>The returned value when the column is <code>DBNull</code> or contains an out-of-range DateTime.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">T</span></dt>
-    <dd></dd>
+    <dd><p>The value from the column cast to <code class="typeparamref">T</code>. Or <code class="paramref">defaultValue</code> if the column is null or an invalid date.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>The type of returned value and <code>defaultValue</code>.</p>
+</dd>
   </dl>
 
 
@@ -201,7 +210,7 @@ Class IDataReaderExtensions  <a class="header-action link-secondary" title="View
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/KYS.Library/Extensions/IDataReaderExtensions.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/KYS.Library/Extensions/IDataReaderExtensions.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

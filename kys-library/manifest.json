@@ -106,7 +106,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "KYS.Library.Extensions.IDataReaderExtensions",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/KYS.Library.Extensions.IDataReaderExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"System.Data.IDataReader\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
