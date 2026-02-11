@@ -4,17 +4,19 @@ on:
     branches:
       - master
     paths:
-      - "KYS.Library/**"
+      - "src/KYS.Library/**"
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
-      - "KYS.Library/**"
+      - "src/KYS.Library/**"
 jobs:
   build:
     name: Build and analyze
     permissions:
       contents: read
     runs-on: windows-latest
+    env:
+      KYS_LIBRARY_TESTS_PROJECT: tests/KYS.Library.Tests
     steps:
       - uses: actions/checkout@v6
         with:
@@ -33,7 +35,7 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: Run unit tests
-        run: dotnet test KYS.TestProject --no-build --configuration Release
+        run: dotnet test $KYS_LIBRARY_TESTS_PROJECT --no-build --configuration Release
 
   coverage:
     name: Run coverage analysis
@@ -42,6 +44,8 @@ jobs:
     needs: build
     if: ${{ vars.ENABLE_COVERAGE == 'true' }}
     runs-on: windows-latest
+    env:
+      KYS_LIBRARY_TESTS_PROJECT: tests/KYS.Library.Tests
     steps:
       - uses: actions/checkout@v6
         with:
@@ -85,7 +89,7 @@ jobs:
 
       - name: Run tests with coverage (OpenCover)
         run: |
-          dotnet test KYS.TestProject --results-directory TestResults `
+          dotnet test $KYS_LIBRARY_TESTS_PROJECT --results-directory TestResults `
             --collect:"XPlat Code Coverage" `
             -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
         shell: pwsh

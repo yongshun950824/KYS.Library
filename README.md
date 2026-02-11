@@ -24,8 +24,8 @@ Set of helpers, extension methods, services and validations (attributes) to help
 
 | Library | DocFX site |
 |-|-|
-| [KYS.Library](https://github.com/yongshun950824/KYS.Library/tree/master/KYS.Library) | https://yongshun950824.github.io/KYS.Library/kys-library/index.html |
-| [KYS.AspNetCore.Library](https://github.com/yongshun950824/KYS.Library/tree/master/KYS.AspNetCore.Library) | TBD |
-| [KYS.EFCore.Library](https://github.com/yongshun950824/KYS.Library/tree/master/KYS.EFCore.Library) | TBD |
+| [KYS.Library](https://github.com/yongshun950824/KYS.Library/tree/master/src/KYS.Library) | https://yongshun950824.github.io/KYS.Library/kys-library/index.html |
+| [KYS.AspNetCore.Library](https://github.com/yongshun950824/KYS.Library/tree/master/src/KYS.AspNetCore.Library) | TBD |
+| [KYS.EFCore.Library](https://github.com/yongshun950824/KYS.Library/tree/master/src/KYS.EFCore.Library) | TBD |
 
 *TBD - To be determined*
