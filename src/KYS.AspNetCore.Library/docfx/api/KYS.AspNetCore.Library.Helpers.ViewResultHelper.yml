@@ -1,0 +1,622 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  commentId: T:KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  id: ViewResultHelper
+  parent: KYS.AspNetCore.Library.Helpers
+  children:
+  - KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.Net.Http.HttpResponseMessage,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: ViewResultHelper
+  nameWithType: ViewResultHelper
+  fullName: KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  type: Class
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Helpers/ViewResultHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: ViewResultHelper
+    path: ../Helpers/ViewResultHelper.cs
+    startLine: 11
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Helpers
+  summary: Provide utility methods for <xref href="Microsoft.AspNetCore.Mvc.ViewResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class ViewResultHelper
+    content.vb: Public Module ViewResultHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.Net.Http.HttpResponseMessage,System.String,System.String)
+  commentId: M:KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.Net.Http.HttpResponseMessage,System.String,System.String)
+  id: ToViewResultAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.Net.Http.HttpResponseMessage,System.String,System.String)
+  parent: KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  langs:
+  - csharp
+  - vb
+  name: ToViewResultAsync<T>(HttpContext, HttpResponseMessage, string, string)
+  nameWithType: ViewResultHelper.ToViewResultAsync<T>(HttpContext, HttpResponseMessage, string, string)
+  fullName: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync<T>(Microsoft.AspNetCore.Http.HttpContext, System.Net.Http.HttpResponseMessage, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Helpers/ViewResultHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: ToViewResultAsync
+    path: ../Helpers/ViewResultHelper.cs
+    startLine: 35
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Helpers
+  summary: >-
+    Read <code>HttpResponseMessage</code> and render it to a <code>ViewResult</code>.
+
+    <br /><br />
+
+    Idea from <a href="https://stackoverflow.com/questions/79674066/how-to-convert-httpresponsemessage-to-viewresult/79674130#79674130">How to convert HttpResponseMessage to ViewResult?</a>
+  remarks: >-
+    This method automatically handles:
+
+    <ul><li>Checking <xref href="System.Net.Http.HttpResponseMessage.IsSuccessStatusCode" data-throw-if-not-resolved="false"></xref>.</li><li>Asynchronous reading of the response content.</li><li>Deserialization of JSON content into type <code class="typeparamref">T</code>.</li><li>Mapping API status codes and reason phrases to the view model.</li></ul>
+  example: []
+  syntax:
+    content: public static Task<ViewResult> ToViewResultAsync<T>(HttpContext httpContext, HttpResponseMessage response, string viewName, string errorViewName = "/Views/Shared/Error.cshtml")
+    parameters:
+    - id: httpContext
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The current HTTP context, used to initialize the ViewDataDictionary.
+    - id: response
+      type: System.Net.Http.HttpResponseMessage
+      description: The raw response received from an API call.
+    - id: viewName
+      type: System.String
+      description: The name or path of the view to render on a successful API response.
+    - id: errorViewName
+      type: System.String
+      description: The name or path of the view to render if the API returns a non-success status code. Defaults to the Shared Error view.
+    typeParameters:
+    - id: T
+      description: The expected model type to be deserialized from the response body.
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ViewResult}
+      description: A <xref href="Microsoft.AspNetCore.Mvc.ViewResult" data-throw-if-not-resolved="false"></xref> containing an <xref href="KYS.AspNetCore.Library.Models.ApiReponseModel%601" data-throw-if-not-resolved="false"></xref> as its model.
+    content.vb: Public Shared Function ToViewResultAsync(Of T)(httpContext As HttpContext, response As HttpResponseMessage, viewName As String, errorViewName As String = "/Views/Shared/Error.cshtml") As Task(Of ViewResult)
+  overload: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync*
+  nameWithType.vb: ViewResultHelper.ToViewResultAsync(Of T)(HttpContext, HttpResponseMessage, String, String)
+  fullName.vb: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync(Of T)(Microsoft.AspNetCore.Http.HttpContext, System.Net.Http.HttpResponseMessage, String, String)
+  name.vb: ToViewResultAsync(Of T)(HttpContext, HttpResponseMessage, String, String)
+references:
+- uid: Microsoft.AspNetCore.Mvc.ViewResult
+  commentId: T:Microsoft.AspNetCore.Mvc.ViewResult
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.viewresult
+  name: ViewResult
+  nameWithType: ViewResult
+  fullName: Microsoft.AspNetCore.Mvc.ViewResult
+- uid: KYS.AspNetCore.Library.Helpers
+  commentId: N:KYS.AspNetCore.Library.Helpers
+  href: KYS.html
+  name: KYS.AspNetCore.Library.Helpers
+  nameWithType: KYS.AspNetCore.Library.Helpers
+  fullName: KYS.AspNetCore.Library.Helpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.AspNetCore
+    name: AspNetCore
+    href: KYS.AspNetCore.html
+  - name: .
+  - uid: KYS.AspNetCore.Library
+    name: Library
+    href: KYS.AspNetCore.Library.html
+  - name: .
+  - uid: KYS.AspNetCore.Library.Helpers
+    name: Helpers
+    href: KYS.AspNetCore.Library.Helpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.AspNetCore
+    name: AspNetCore
+    href: KYS.AspNetCore.html
+  - name: .
+  - uid: KYS.AspNetCore.Library
+    name: Library
+    href: KYS.AspNetCore.Library.html
+  - name: .
+  - uid: KYS.AspNetCore.Library.Helpers
+    name: Helpers
+    href: KYS.AspNetCore.Library.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  commentId: T:KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
+  name: ApiReponseModel<T>
+  nameWithType: ApiReponseModel<T>
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>
+  nameWithType.vb: ApiReponseModel(Of T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T)
+  name.vb: ApiReponseModel(Of T)
+  spec.csharp:
+  - uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+    name: ApiReponseModel
+    href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+    name: ApiReponseModel
+    href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Net.Http.HttpResponseMessage.IsSuccessStatusCode
+  commentId: P:System.Net.Http.HttpResponseMessage.IsSuccessStatusCode
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage.issuccessstatuscode
+  name: IsSuccessStatusCode
+  nameWithType: HttpResponseMessage.IsSuccessStatusCode
+  fullName: System.Net.Http.HttpResponseMessage.IsSuccessStatusCode
+- uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync*
+  commentId: Overload:KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync
+  href: KYS.AspNetCore.Library.Helpers.ViewResultHelper.html#KYS_AspNetCore_Library_Helpers_ViewResultHelper_ToViewResultAsync__1_Microsoft_AspNetCore_Http_HttpContext_System_Net_Http_HttpResponseMessage_System_String_System_String_
+  name: ToViewResultAsync
+  nameWithType: ViewResultHelper.ToViewResultAsync
+  fullName: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.httpcontext
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: System.Net.Http.HttpResponseMessage
+  commentId: T:System.Net.Http.HttpResponseMessage
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  name: HttpResponseMessage
+  nameWithType: HttpResponseMessage
+  fullName: System.Net.Http.HttpResponseMessage
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ViewResult}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ViewResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ViewResult>
+  nameWithType: Task<ViewResult>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ViewResult>
+  nameWithType.vb: Task(Of ViewResult)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ViewResult)
+  name.vb: Task(Of ViewResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Mvc.ViewResult
+    name: ViewResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.viewresult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Mvc.ViewResult
+    name: ViewResult
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.viewresult
+  - name: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

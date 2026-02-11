@@ -1,0 +1,942 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  commentId: T:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  id: JsonToHtmlTagHelper
+  parent: KYS.AspNetCore.Library.TagHelpers
+  children:
+  - KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  - KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  - KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  - KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  - KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  - KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  langs:
+  - csharp
+  - vb
+  name: JsonToHtmlTagHelper
+  nameWithType: JsonToHtmlTagHelper
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  type: Class
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: JsonToHtmlTagHelper
+    path: ../TagHelpers/JsonToHtmlTagHelper.cs
+    startLine: 14
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.TagHelpers
+  summary: >-
+    A tag helper that converts JSON (Object &amp; Array) into Table. <br />
+
+    <ul><li>Support display data in flatten form.</li><li>Support generated HTML as a <code>&lt;table&gt;</code> element or Bootstrap Grid.</li></ul>
+  example: []
+  syntax:
+    content: >-
+      [HtmlTargetElement("json-to-html", Attributes = "json", TagStructure = TagStructure.NormalOrSelfClosing)]
+
+      public class JsonToHtmlTagHelper : TagHelper, ITagHelper, ITagHelperComponent
+    content.vb: >-
+      <HtmlTargetElement("json-to-html", Attributes:="json", TagStructure:=TagStructure.NormalOrSelfClosing)>
+
+      Public Class JsonToHtmlTagHelper Inherits TagHelper Implements ITagHelper, ITagHelperComponent
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+  implements:
+  - Microsoft.AspNetCore.Razor.TagHelpers.ITagHelper
+  - Microsoft.AspNetCore.Razor.TagHelpers.ITagHelperComponent
+  inheritedMembers:
+  - Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Init(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext)
+  - Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  - Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Order
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Microsoft.AspNetCore.Razor.TagHelpers.HtmlTargetElementAttribute
+    ctor: Microsoft.AspNetCore.Razor.TagHelpers.HtmlTargetElementAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: json-to-html
+    namedArguments:
+    - name: Attributes
+      type: System.String
+      value: json
+    - name: TagStructure
+      type: Microsoft.AspNetCore.Razor.TagHelpers.TagStructure
+      value: 1
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  commentId: P:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  id: Json
+  parent: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  langs:
+  - csharp
+  - vb
+  name: Json
+  nameWithType: JsonToHtmlTagHelper.Json
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  type: Property
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: Json
+    path: ../TagHelpers/JsonToHtmlTagHelper.cs
+    startLine: 20
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.TagHelpers
+  summary: Gets or sets the serialized JSON object/array.
+  example: []
+  syntax:
+    content: >-
+      [HtmlAttributeName("json")]
+
+      public string Json { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <HtmlAttributeName("json")>
+
+      Public Property Json As String
+  overload: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json*
+  attributes:
+  - type: Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeNameAttribute
+    ctor: Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: json
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  commentId: P:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  id: AsFlatten
+  parent: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  langs:
+  - csharp
+  - vb
+  name: AsFlatten
+  nameWithType: JsonToHtmlTagHelper.AsFlatten
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  type: Property
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: AsFlatten
+    path: ../TagHelpers/JsonToHtmlTagHelper.cs
+    startLine: 26
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.TagHelpers
+  summary: Gets or sets the indicator to flatten the JSON.
+  example: []
+  syntax:
+    content: >-
+      [HtmlAttributeName("asFlatten")]
+
+      public bool AsFlatten { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <HtmlAttributeName("asFlatten")>
+
+      Public Property AsFlatten As Boolean
+  overload: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten*
+  attributes:
+  - type: Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeNameAttribute
+    ctor: Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: asFlatten
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  commentId: P:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  id: AsBootstrapGrid
+  parent: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  langs:
+  - csharp
+  - vb
+  name: AsBootstrapGrid
+  nameWithType: JsonToHtmlTagHelper.AsBootstrapGrid
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  type: Property
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: AsBootstrapGrid
+    path: ../TagHelpers/JsonToHtmlTagHelper.cs
+    startLine: 32
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.TagHelpers
+  summary: Gets or sets the indicator to generate the HTML content as Bootstrap Grid.
+  example: []
+  syntax:
+    content: >-
+      [HtmlAttributeName("asBootstrapGrid")]
+
+      public bool AsBootstrapGrid { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <HtmlAttributeName("asBootstrapGrid")>
+
+      Public Property AsBootstrapGrid As Boolean
+  overload: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid*
+  attributes:
+  - type: Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeNameAttribute
+    ctor: Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: asBootstrapGrid
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  commentId: M:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  id: ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  parent: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  langs:
+  - csharp
+  - vb
+  name: ProcessAsync(TagHelperContext, TagHelperOutput)
+  nameWithType: JsonToHtmlTagHelper.ProcessAsync(TagHelperContext, TagHelperOutput)
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext, Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: ProcessAsync
+    path: ../TagHelpers/JsonToHtmlTagHelper.cs
+    startLine: 35
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.TagHelpers
+  summary: >-
+    <summary>
+
+    Asynchronously executes the <xref href="Microsoft.AspNetCore.Razor.TagHelpers.TagHelper" data-throw-if-not-resolved="false"></xref> with the given <code class="paramref">context</code> and
+
+    <code class="paramref">output</code>.
+
+    </summary>
+
+    <param name="context">Contains information associated with the current HTML tag.</param>
+
+    <param name="output">A stateful HTML element used to generate an HTML tag.</param>
+
+    <returns>A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> that on completion updates the <code class="paramref">output</code>.</returns>
+
+    <remarks>By default this calls into <xref href="Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext%2cMicrosoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)" data-throw-if-not-resolved="false"></xref>.</remarks>.
+  example: []
+  syntax:
+    content: public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+    - id: output
+      type: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Overrides Function ProcessAsync(context As TagHelperContext, output As TagHelperOutput) As Task
+  overridden: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  overload: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync*
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  commentId: M:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  id: GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  parent: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  langs:
+  - csharp
+  - vb
+  name: GenerateHtml(JToken)
+  nameWithType: JsonToHtmlTagHelper.GenerateHtml(JToken)
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: GenerateHtml
+    path: ../TagHelpers/JsonToHtmlTagHelper.cs
+    startLine: 67
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.TagHelpers
+  syntax:
+    content: public static string GenerateHtml(JToken token)
+    parameters:
+    - id: token
+      type: Newtonsoft.Json.Linq.JToken
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateHtml(token As JToken) As String
+  overload: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml*
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  commentId: M:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  id: GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  parent: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  langs:
+  - csharp
+  - vb
+  name: GenerateHtmlWithBootstrapGrid(JToken)
+  nameWithType: JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(JToken)
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: GenerateHtmlWithBootstrapGrid
+    path: ../TagHelpers/JsonToHtmlTagHelper.cs
+    startLine: 100
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.TagHelpers
+  syntax:
+    content: public static string GenerateHtmlWithBootstrapGrid(JToken token)
+    parameters:
+    - id: token
+      type: Newtonsoft.Json.Linq.JToken
+    return:
+      type: System.String
+    content.vb: Public Shared Function GenerateHtmlWithBootstrapGrid(token As JToken) As String
+  overload: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid*
+references:
+- uid: KYS.AspNetCore.Library.TagHelpers
+  commentId: N:KYS.AspNetCore.Library.TagHelpers
+  href: KYS.html
+  name: KYS.AspNetCore.Library.TagHelpers
+  nameWithType: KYS.AspNetCore.Library.TagHelpers
+  fullName: KYS.AspNetCore.Library.TagHelpers
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.AspNetCore
+    name: AspNetCore
+    href: KYS.AspNetCore.html
+  - name: .
+  - uid: KYS.AspNetCore.Library
+    name: Library
+    href: KYS.AspNetCore.Library.html
+  - name: .
+  - uid: KYS.AspNetCore.Library.TagHelpers
+    name: TagHelpers
+    href: KYS.AspNetCore.Library.TagHelpers.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.AspNetCore
+    name: AspNetCore
+    href: KYS.AspNetCore.html
+  - name: .
+  - uid: KYS.AspNetCore.Library
+    name: Library
+    href: KYS.AspNetCore.Library.html
+  - name: .
+  - uid: KYS.AspNetCore.Library.TagHelpers
+    name: TagHelpers
+    href: KYS.AspNetCore.Library.TagHelpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+  commentId: T:Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+  parent: Microsoft.AspNetCore.Razor.TagHelpers
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper
+  name: TagHelper
+  nameWithType: TagHelper
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.ITagHelper
+  commentId: T:Microsoft.AspNetCore.Razor.TagHelpers.ITagHelper
+  parent: Microsoft.AspNetCore.Razor.TagHelpers
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.itaghelper
+  name: ITagHelper
+  nameWithType: ITagHelper
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.ITagHelper
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.ITagHelperComponent
+  commentId: T:Microsoft.AspNetCore.Razor.TagHelpers.ITagHelperComponent
+  parent: Microsoft.AspNetCore.Razor.TagHelpers
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.itaghelpercomponent
+  name: ITagHelperComponent
+  nameWithType: ITagHelperComponent
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.ITagHelperComponent
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Init(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext)
+  commentId: M:Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Init(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext)
+  parent: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.init
+  name: Init(TagHelperContext)
+  nameWithType: TagHelper.Init(TagHelperContext)
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Init(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Init(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext)
+    name: Init
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.init
+  - name: (
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+    name: TagHelperContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Init(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext)
+    name: Init
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.init
+  - name: (
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+    name: TagHelperContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext
+  - name: )
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  commentId: M:Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  parent: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.process
+  name: Process(TagHelperContext, TagHelperOutput)
+  nameWithType: TagHelper.Process(TagHelperContext, TagHelperOutput)
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext, Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.process
+  - name: (
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+    name: TagHelperContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext
+  - name: ','
+  - name: " "
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+    name: TagHelperOutput
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelperoutput
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Process(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.process
+  - name: (
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+    name: TagHelperContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext
+  - name: ','
+  - name: " "
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+    name: TagHelperOutput
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelperoutput
+  - name: )
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Order
+  commentId: P:Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Order
+  parent: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.order
+  name: Order
+  nameWithType: TagHelper.Order
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.Order
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Razor.TagHelpers
+  commentId: N:Microsoft.AspNetCore.Razor.TagHelpers
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Razor.TagHelpers
+  nameWithType: Microsoft.AspNetCore.Razor.TagHelpers
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Razor
+    name: Razor
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor
+  - name: .
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers
+    name: TagHelpers
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Razor
+    name: Razor
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor
+  - name: .
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers
+    name: TagHelpers
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json*
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  href: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_Json
+  name: Json
+  nameWithType: JsonToHtmlTagHelper.Json
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten*
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  href: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsFlatten
+  name: AsFlatten
+  nameWithType: JsonToHtmlTagHelper.AsFlatten
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid*
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  href: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsBootstrapGrid
+  name: AsBootstrapGrid
+  nameWithType: JsonToHtmlTagHelper.AsBootstrapGrid
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  commentId: M:Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  parent: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.processasync
+  name: ProcessAsync(TagHelperContext, TagHelperOutput)
+  nameWithType: TagHelper.ProcessAsync(TagHelperContext, TagHelperOutput)
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext, Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+    name: ProcessAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.processasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+    name: TagHelperContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext
+  - name: ','
+  - name: " "
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+    name: TagHelperOutput
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelperoutput
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+    name: ProcessAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.processasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+    name: TagHelperContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext
+  - name: ','
+  - name: " "
+  - uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+    name: TagHelperOutput
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelperoutput
+  - name: )
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync*
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync
+  href: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_ProcessAsync_Microsoft_AspNetCore_Razor_TagHelpers_TagHelperContext_Microsoft_AspNetCore_Razor_TagHelpers_TagHelperOutput_
+  name: ProcessAsync
+  nameWithType: JsonToHtmlTagHelper.ProcessAsync
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+  commentId: T:Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+  parent: Microsoft.AspNetCore.Razor.TagHelpers
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext
+  name: TagHelperContext
+  nameWithType: TagHelperContext
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext
+- uid: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+  commentId: T:Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+  parent: Microsoft.AspNetCore.Razor.TagHelpers
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelperoutput
+  name: TagHelperOutput
+  nameWithType: TagHelperOutput
+  fullName: Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml*
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml
+  href: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtml_Newtonsoft_Json_Linq_JToken_
+  name: GenerateHtml
+  nameWithType: JsonToHtmlTagHelper.GenerateHtml
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml
+- uid: Newtonsoft.Json.Linq.JToken
+  commentId: T:Newtonsoft.Json.Linq.JToken
+  parent: Newtonsoft.Json.Linq
+  isExternal: true
+  name: JToken
+  nameWithType: JToken
+  fullName: Newtonsoft.Json.Linq.JToken
+- uid: Newtonsoft.Json.Linq
+  commentId: N:Newtonsoft.Json.Linq
+  isExternal: true
+  name: Newtonsoft.Json.Linq
+  nameWithType: Newtonsoft.Json.Linq
+  fullName: Newtonsoft.Json.Linq
+  spec.csharp:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+  spec.vb:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json.Linq
+    name: Linq
+    isExternal: true
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid*
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid
+  href: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtmlWithBootstrapGrid_Newtonsoft_Json_Linq_JToken_
+  name: GenerateHtmlWithBootstrapGrid
+  nameWithType: JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid

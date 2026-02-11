@@ -367,4 +367,4 @@ FodyWeavers.xsd
 lcov.info
 covstats/
 
-*/docfx/_site/
+**/docfx/_site/

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.TagHelpers
+  commentId: N:KYS.AspNetCore.Library.TagHelpers
+  id: KYS.AspNetCore.Library.TagHelpers
+  children:
+  - KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  langs:
+  - csharp
+  - vb
+  name: KYS.AspNetCore.Library.TagHelpers
+  nameWithType: KYS.AspNetCore.Library.TagHelpers
+  fullName: KYS.AspNetCore.Library.TagHelpers
+  type: Namespace
+  assemblies:
+  - KYS.AspNetCore.Library
+references:
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  commentId: T:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  href: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html
+  name: JsonToHtmlTagHelper
+  nameWithType: JsonToHtmlTagHelper
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper

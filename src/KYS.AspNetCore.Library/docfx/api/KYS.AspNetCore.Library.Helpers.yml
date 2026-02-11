@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.Helpers
+  commentId: N:KYS.AspNetCore.Library.Helpers
+  id: KYS.AspNetCore.Library.Helpers
+  children:
+  - KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  langs:
+  - csharp
+  - vb
+  name: KYS.AspNetCore.Library.Helpers
+  nameWithType: KYS.AspNetCore.Library.Helpers
+  fullName: KYS.AspNetCore.Library.Helpers
+  type: Namespace
+  assemblies:
+  - KYS.AspNetCore.Library
+references:
+- uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  commentId: T:KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  href: KYS.AspNetCore.Library.Helpers.ViewResultHelper.html
+  name: ViewResultHelper
+  nameWithType: ViewResultHelper
+  fullName: KYS.AspNetCore.Library.Helpers.ViewResultHelper

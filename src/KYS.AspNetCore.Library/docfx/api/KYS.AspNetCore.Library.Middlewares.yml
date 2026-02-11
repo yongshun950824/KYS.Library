@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.Middlewares
+  commentId: N:KYS.AspNetCore.Library.Middlewares
+  id: KYS.AspNetCore.Library.Middlewares
+  children:
+  - KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+  - KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware
+  langs:
+  - csharp
+  - vb
+  name: KYS.AspNetCore.Library.Middlewares
+  nameWithType: KYS.AspNetCore.Library.Middlewares
+  fullName: KYS.AspNetCore.Library.Middlewares
+  type: Namespace
+  assemblies:
+  - KYS.AspNetCore.Library
+references:
+- uid: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+  commentId: T:KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+  href: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html
+  name: ApiSecurityHeadersMiddleware
+  nameWithType: ApiSecurityHeadersMiddleware
+  fullName: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+- uid: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware
+  commentId: T:KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware
+  href: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html
+  name: WebSecurityHeadersMiddleware
+  nameWithType: WebSecurityHeadersMiddleware
+  fullName: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware

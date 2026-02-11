@@ -6,6 +6,9 @@ using Newtonsoft.Json;
 
 namespace KYS.AspNetCore.Library.Helpers
 {
+    /// <summary>
+    /// Provide utility methods for <see cref="ViewResult" />.
+    /// </summary>
     public static class ViewResultHelper
     {
         /// <summary>
@@ -13,12 +16,23 @@ namespace KYS.AspNetCore.Library.Helpers
         /// <br /><br />
         /// Idea from <a href="https://stackoverflow.com/questions/79674066/how-to-convert-httpresponsemessage-to-viewresult/79674130#79674130">How to convert HttpResponseMessage to ViewResult?</a>
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="httpContext"></param>
-        /// <param name="response"></param>
-        /// <param name="viewName"></param>
-        /// <param name="errorViewName"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">The expected model type to be deserialized from the response body.</typeparam>
+        /// <param name="httpContext">The current HTTP context, used to initialize the <see cref="ViewDataDictionary"/>.</param>
+        /// <param name="response">The raw response received from an API call.</param>
+        /// <param name="viewName">The name or path of the view to render on a successful API response.</param>
+        /// <param name="errorViewName">The name or path of the view to render if the API returns a non-success status code. Defaults to the Shared Error view.</param>
+        /// <returns>
+        /// A <see cref="ViewResult"/> containing an <see cref="ApiReponseModel{T}"/> as its model.
+        /// </returns>
+        /// <remarks>
+        /// This method automatically handles:
+        /// <list type="bullet">
+        /// <item>Checking <see cref="HttpResponseMessage.IsSuccessStatusCode"/>.</item>
+        /// <item>Asynchronous reading of the response content.</item>
+        /// <item>Deserialization of JSON content into type <typeparamref name="T"/>.</item>
+        /// <item>Mapping API status codes and reason phrases to the view model.</item>
+        /// </list>
+        /// </remarks>
         public static async Task<ViewResult> ToViewResultAsync<T>(
             HttpContext httpContext,
             HttpResponseMessage response,
