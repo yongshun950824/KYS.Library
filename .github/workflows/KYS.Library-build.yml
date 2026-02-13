@@ -9,16 +9,20 @@ on:
     branches:
       - master
     paths:
-      - "KYS.Library/**"
+      - "src/KYS.Library/**"
   pull_request:
     branches:
       - master
     paths:
-      - "KYS.Library/**"
+      - "src/KYS.Library/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      KYS_LIBRARY_PROJECT: src/KYS.Library/KYS.Library.csproj
+      KYS_LIBRARY_TESTS_PROJECT: tests/KYS.Library.Tests/KYS.Library.Tests.csproj
 
     steps:
       - name: Checkout repository
@@ -33,12 +37,12 @@ jobs:
       # Restore & Build .NET Core project
       - name: Restore & Build KYS.Library
         run: |
-          dotnet restore KYS.Library/KYS.Library.csproj
-          dotnet build KYS.Library/KYS.Library.csproj -c Debug
+          dotnet restore $KYS_LIBRARY_PROJECT
+          dotnet build $KYS_LIBRARY_PROJECT -c Debug
 
         # Restore & Build .NET Core project
-      - name: Restore, Build, and Test KYS.TestProject
+      - name: Restore, Build, and Test KYS.Library.Tests
         run: |
-          dotnet restore KYS.TestProject/KYS.TestProject.csproj
-          dotnet build KYS.TestProject/KYS.TestProject.csproj -c Debug
-          dotnet test KYS.TestProject/KYS.TestProject.csproj -c Debug --no-build --no-restore
+          dotnet restore $KYS_LIBRARY_TESTS_PROJECT
+          dotnet build $KYS_LIBRARY_TESTS_PROJECT -c Debug
+          dotnet test $KYS_LIBRARY_TESTS_PROJECT -c Debug --no-build --no-restore

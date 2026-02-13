@@ -9,18 +9,22 @@ on:
     branches:
       - master
     paths:
-      - "KYS.AspNetCore.Library/**"
-      - "KYS.Library/**"
+      - "src/KYS.AspNetCore.Library/**"
+      - "src/KYS.Library/**"
   pull_request:
     branches:
       - master
     paths:
-      - "KYS.AspNetCore.Library/**"
-      - "KYS.Library/**"
+      - "src/KYS.AspNetCore.Library/**"
+      - "src/KYS.Library/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      KYS_ASPNETCORE_LIBRARY_PROJECT: src/KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj
+      KYS_ASPNETCORE_LIBRARY_TESTS_PROJECT:
 
     steps:
       - name: Checkout repository
@@ -35,6 +39,6 @@ jobs:
       # Restore & Build .NET Core project
       - name: Restore & Build .NET Core Project
         run: |
-          dotnet restore KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj
-          dotnet build KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj -c Debug
-          dotnet test KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj -c Debug --no-build --no-restore
+          dotnet restore $KYS_ASPNETCORE_LIBRARY_PROJECT
+          dotnet build $KYS_ASPNETCORE_LIBRARY_PROJECT -c Debug
+          dotnet test $KYS_ASPNETCORE_LIBRARY_PROJECT -c Debug --no-build --no-restore

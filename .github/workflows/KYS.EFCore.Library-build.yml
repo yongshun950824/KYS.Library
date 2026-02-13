@@ -9,18 +9,22 @@ on:
     branches:
       - master
     paths:
-      - "KYS.EFCore.Library/**"
-      - "KYS.Library/**"
+      - "src/KYS.EFCore.Library/**"
+      - "src/KYS.Library/**"
   pull_request:
     branches:
       - master
     paths:
-      - "KYS.AspNetCore.Library/**"
-      - "KYS.Library/**"
+      - "src/KYS.AspNetCore.Library/**"
+      - "src/KYS.Library/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      KYS_EFCORE_LIBRARY_PROJECT: src/KYS.EFCore.Library/KYS.EFCore.Library.csproj
+      KYS_EFORE_LIBRARY_TESTS_PROJECT:
 
     steps:
       - name: Checkout repository
@@ -35,6 +39,6 @@ jobs:
       # Restore & Build .NET Core project
       - name: Restore & Build .NET Core Project
         run: |
-          dotnet restore KYS.EFCore.Library/KYS.EFCore.Library.csproj
-          dotnet build KYS.EFCore.Library/KYS.EFCore.Library.csproj -c Debug
-          dotnet test KYS.EFCore.Library/KYS.EFCore.Library.csproj -c Debug --no-build --no-restore
+          dotnet restore $KYS_EFCORE_LIBRARY_PROJECT
+          dotnet build $KYS_EFCORE_LIBRARY_PROJECT -c Debug
+          dotnet test $KYS_EFCORE_LIBRARY_PROJECT -c Debug --no-build --no-restore
