@@ -18,31 +18,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    env:
-      KYS_LIBRARY_PROJECT: src/KYS.Library/KYS.Library.csproj
-      KYS_LIBRARY_TESTS_PROJECT: tests/KYS.Library.Tests/KYS.Library.Tests.csproj
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-        # Setup .NET SDK for .NET Core project
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: "8.0.x"
-
-      # Restore & Build .NET Core project
-      - name: Restore & Build KYS.Library
-        run: |
-          dotnet restore $KYS_LIBRARY_PROJECT
-          dotnet build $KYS_LIBRARY_PROJECT -c Debug
-
-        # Restore & Build .NET Core project
-      - name: Restore, Build, and Test KYS.Library.Tests
-        run: |
-          dotnet restore $KYS_LIBRARY_TESTS_PROJECT
-          dotnet build $KYS_LIBRARY_TESTS_PROJECT -c Debug
-          dotnet test $KYS_LIBRARY_TESTS_PROJECT -c Debug --no-build --no-restore
+    uses: ./.github/workflows/templates/reusable-dotnet-build.yml
+    with: 
+      library-name: 'KYS.Library'
+      library-project-path: 'src/KYS.Library/KYS.Library.csproj'
+      library-tests-project-path: 'tests/KYS.Library.Tests/KYS.Library.Tests.csproj'
+      dotnet-version: '8.0.x'

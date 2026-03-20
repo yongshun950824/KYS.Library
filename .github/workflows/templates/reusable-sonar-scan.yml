@@ -1,14 +1,33 @@
-name: SonarQube
+name: Reusable SonarQube Scanning
+
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - "src/KYS.Library/**"
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - "src/KYS.Library/**"
+  workflow_call:
+    inputs:
+      tests-project-path:
+        required: true
+        type: string
+      sonar-project-name:
+        required: true
+        type: string
+      sonar-org:
+        required: true
+        type: string
+        default: 'yongshun950824'
+      sonar-exclusions:
+        required: false
+        type: string
+        default: '**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/**'
+      sonar-coverage-exclusions:
+        required: false
+        type: string
+      sonar-cpd-exclusions:
+        required: false
+        type: string
+        default: '**/Migrations/**,**/Generated/**'
+    secrets:
+      SONAR_TOKEN:
+        required: true
+        
 jobs:
   build:
     name: Build and analyze
@@ -16,7 +35,7 @@ jobs:
       contents: read
     runs-on: windows-latest
     env:
-      KYS_LIBRARY_TESTS_PROJECT: tests/KYS.Library.Tests
+      TESTS_PROJECT: ${{ inputs:tests-project-path }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -35,7 +54,7 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: Run unit tests
-        run: dotnet test $KYS_LIBRARY_TESTS_PROJECT --no-build --configuration Release
+        run: dotnet test $TESTS_PROJECT --no-build --configuration Release
 
   coverage:
     name: Run coverage analysis
@@ -45,7 +64,7 @@ jobs:
     if: ${{ vars.ENABLE_COVERAGE == 'true' }}
     runs-on: windows-latest
     env:
-      KYS_LIBRARY_TESTS_PROJECT: tests/KYS.Library.Tests
+      TESTS_PROJECT: ${{ inputs:tests-project-path }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -79,17 +98,17 @@ jobs:
         shell: pwsh
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin `
-            /k:"yongshun950824_kys-library" `
-            /o:"yongshun950824" `
+            /k:"${{ inputs:sonar-project-name }}" `
+            /o:"${{ inputs:sonar-org }}" `
             /d:sonar.token="${{ env.SONAR_TOKEN }}" `
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
-            /d:sonar.exclusions=**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/** `
-            /d:sonar.coverage.exclusions="**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**,**/Generated/**" `
-            /d:sonar.cpd.exclusions="**/Migrations/**,**/Generated/**"
+            /d:sonar.exclusions=${{ inputs:sonar-exclusions }} `
+            /d:sonar.coverage.exclusions="${{ inputs:sonar-coverage-exclusions }}" `
+            /d:sonar.cpd.exclusions="${{ inputs:sonar-cpd-exclusions }}"
 
       - name: Run tests with coverage (OpenCover)
         run: |
-          dotnet test $KYS_LIBRARY_TESTS_PROJECT --results-directory TestResults `
+          dotnet test $TESTS_PROJECT --results-directory TestResults `
             --collect:"XPlat Code Coverage" `
             -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
         shell: pwsh
