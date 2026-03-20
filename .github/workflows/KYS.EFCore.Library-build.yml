@@ -15,30 +15,14 @@ on:
     branches:
       - master
     paths:
-      - "src/KYS.AspNetCore.Library/**"
+      - "src/KYS.EFCore.Library/**"
       - "src/KYS.Library/**"
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    env:
-      KYS_EFCORE_LIBRARY_PROJECT: src/KYS.EFCore.Library/KYS.EFCore.Library.csproj
-      KYS_EFORE_LIBRARY_TESTS_PROJECT:
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-        # Setup .NET SDK for .NET Core project
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: "8.0.x"
-
-      # Restore & Build .NET Core project
-      - name: Restore & Build .NET Core Project
-        run: |
-          dotnet restore $KYS_EFCORE_LIBRARY_PROJECT
-          dotnet build $KYS_EFCORE_LIBRARY_PROJECT -c Debug
-          dotnet test $KYS_EFCORE_LIBRARY_PROJECT -c Debug --no-build --no-restore
+    uses: ./.github/workflows/templates/reusable-dotnet-build.yml
+    with: 
+      library-name: 'KYS.EFCore Library'
+      library-project-path: 'src/KYS.EFCore.Library/KYS.EFCore.Library.csproj'
+      library-tests-project-path:
+      dotnet-version: '8.0.x'

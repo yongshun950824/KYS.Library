@@ -1,0 +1,52 @@
+name: Reusable .NET Build
+
+on:
+  workflow_call:
+    inputs:
+      library-name:
+        required: true
+        type: string
+      library-project-path:
+        required: true
+        type: string
+      library-tests-project-path:
+        required: false
+        type: string
+      dotnet-version:
+        required: false
+        type: string
+        default: '8.0.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      LIBRARY_NAME: ${{ inputs:library-name }}
+      LIBRARY_PROJECT: ${{ inputs:library-project-path }}
+      LIBRARY_TESTS_PROJECT: ${{ inputs:library-tests-project-path }}
+      DOTNET_VERSION: ${{ inputs.dotnet-version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+        # Setup .NET SDK for .NET Core project
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      # Restore & Build .NET project
+      - name: Restore & Build ${{ env.LIBRARY_NAME }}
+        run: |
+          dotnet restore ${{ env.LIBRARY_PROJECT }}
+          dotnet build ${{ env.LIBRARY_PROJECT }} -c Debug
+
+        # Restore & Build .NET Tests project
+      - name: Restore, Build, and Test ${{ format('{0}.Tests', env.LIBRARY_NAME)}}
+        if: ${{ env.LIBRARY_TESTS_PROJECT }}
+        run: |
+          dotnet restore ${{ env.LIBRARY_TESTS_PROJECT }}
+          dotnet build ${{ env.LIBRARY_TESTS_PROJECT }} -c Debug
+          dotnet test ${{ env.LIBRARY_TESTS_PROJECT }} -c Debug --no-build --no-restore
