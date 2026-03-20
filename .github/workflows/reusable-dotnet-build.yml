@@ -22,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LIBRARY_NAME: ${{ inputs:library-name }}
-      LIBRARY_PROJECT: ${{ inputs:library-project-path }}
-      LIBRARY_TESTS_PROJECT: ${{ inputs:library-tests-project-path }}
+      LIBRARY_NAME: ${{ inputs.library-name }}
+      LIBRARY_PROJECT: ${{ inputs.library-project-path }}
+      LIBRARY_TESTS_PROJECT: ${{ inputs.library-tests-project-path }}
       DOTNET_VERSION: ${{ inputs.dotnet-version }}
 
     steps:
