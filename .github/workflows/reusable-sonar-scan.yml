@@ -35,7 +35,7 @@ jobs:
       contents: read
     runs-on: windows-latest
     env:
-      TESTS_PROJECT: ${{ inputs:tests-project-path }}
+      TESTS_PROJECT: ${{ inputs.tests-project-path }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -64,7 +64,7 @@ jobs:
     if: ${{ vars.ENABLE_COVERAGE == 'true' }}
     runs-on: windows-latest
     env:
-      TESTS_PROJECT: ${{ inputs:tests-project-path }}
+      TESTS_PROJECT: ${{ inputs.tests-project-path }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -98,13 +98,13 @@ jobs:
         shell: pwsh
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin `
-            /k:"${{ inputs:sonar-project-name }}" `
-            /o:"${{ inputs:sonar-org }}" `
+            /k:"${{ inputs.sonar-project-name }}" `
+            /o:"${{ inputs.sonar-org }}" `
             /d:sonar.token="${{ env.SONAR_TOKEN }}" `
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
-            /d:sonar.exclusions=${{ inputs:sonar-exclusions }} `
-            /d:sonar.coverage.exclusions="${{ inputs:sonar-coverage-exclusions }}" `
-            /d:sonar.cpd.exclusions="${{ inputs:sonar-cpd-exclusions }}"
+            /d:sonar.exclusions=${{ inputs.sonar-exclusions }} `
+            /d:sonar.coverage.exclusions="${{ inputs.sonar-coverage-exclusions }}" `
+            /d:sonar.cpd.exclusions="${{ inputs.sonar-cpd-exclusions }}"
 
       - name: Run tests with coverage (OpenCover)
         run: |
