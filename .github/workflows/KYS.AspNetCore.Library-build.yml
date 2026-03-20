@@ -20,7 +20,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/templates/reusable-dotnet-build.yml
+    uses: ./.github/workflows/reusable-dotnet-build.yml
     with: 
       library-name: 'KYS.AspNetCore Library'
       library-project-path: 'src/KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj'

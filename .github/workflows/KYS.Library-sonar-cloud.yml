@@ -13,7 +13,7 @@ on:
 
 jobs:
   scan:
-    uses: ./.github/workflows/templates/reusable-sonar-scan.yml
+    uses: ./.github/workflows/reusable-sonar-scan.yml
     with:
       tests-project-path: 'tests/KYS.Library.Tests'
       sonar-project-name: 'yongshun950824_kys-library'
