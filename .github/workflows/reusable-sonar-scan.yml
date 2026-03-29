@@ -9,25 +9,28 @@ on:
       sonar-project-name:
         required: true
         type: string
+      sonar-project-dir:
+        required: true
+        type: string
       sonar-org:
         required: true
         type: string
-        default: 'yongshun950824'
+        default: "yongshun950824"
       sonar-exclusions:
         required: false
         type: string
-        default: '**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/**'
+        default: "**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/**"
       sonar-coverage-exclusions:
         required: false
         type: string
       sonar-cpd-exclusions:
         required: false
         type: string
-        default: '**/Migrations/**,**/Generated/**'
+        default: "**/Migrations/**,**/Generated/**"
     secrets:
       SONAR_TOKEN:
         required: true
-        
+
 jobs:
   build:
     name: Build and analyze
@@ -95,16 +98,23 @@ jobs:
       - name: Begin Sonar analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_NAME: ${{ inputs.sonar-project-name }}
+          SONAR_PROJECT_DIR: ${{ inputs.sonar-project-dir }}
+          SONAR_ORG: ${{ inputs.sonar-org }}
+          SONAR_EXCLUSIONS: ${{ inputs.sonar-exclusions }}
+          SONAR_COVERAGE_EXCLUSIONS: ${{ inputs.sonar-coverage-exclusions }}
+          SONAR_CPD_EXCLUSIONS: ${{ inputs.sonar-cpd-exclusions }}
         shell: pwsh
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin `
-            /k:"${{ inputs.sonar-project-name }}" `
-            /o:"${{ inputs.sonar-org }}" `
-            /d:sonar.token="${{ env.SONAR_TOKEN }}" `
+            /k:"$SONAR_PROJECT_NAME" `
+            /o:"$SONAR_ORG" `
+            /d:sonar.token="$SONAR_TOKEN" `
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
-            /d:sonar.exclusions=${{ inputs.sonar-exclusions }} `
-            /d:sonar.coverage.exclusions="${{ inputs.sonar-coverage-exclusions }}" `
-            /d:sonar.cpd.exclusions="${{ inputs.sonar-cpd-exclusions }}"
+            /d:sonar.projectBaseDir="$SONAR_PROJECT_DIR"
+            /d:sonar.exclusions="$SONAR_EXCLUSIONS" `
+            /d:sonar.coverage.exclusions="$SONAR_COVERAGE_EXCLUSIONS" `
+            /d:sonar.cpd.exclusions="$SONAR_CPD_EXCLUSIONS"
 
       - name: Run tests with coverage (OpenCover)
         run: |
@@ -191,5 +201,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           .\.sonar\scanner\dotnet-sonarscanner end `
-            /d:sonar.token="${{ env.SONAR_TOKEN }}"
+            /d:sonar.token="$SONAR_TOKEN"
         shell: pwsh

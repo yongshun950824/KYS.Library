@@ -15,7 +15,7 @@ on:
       dotnet-version:
         required: false
         type: string
-        default: '8.0.x'
+        default: "8.0.x"
 
 jobs:
   build:
@@ -40,13 +40,13 @@ jobs:
       # Restore & Build .NET project
       - name: Restore & Build ${{ env.LIBRARY_NAME }}
         run: |
-          dotnet restore ${{ env.LIBRARY_PROJECT }}
-          dotnet build ${{ env.LIBRARY_PROJECT }} -c Debug
+          dotnet restore $LIBRARY_PROJECT
+          dotnet build $LIBRARY_PROJECT -c Debug
 
         # Restore & Build .NET Tests project
       - name: Restore, Build, and Test ${{ format('{0}.Tests', env.LIBRARY_NAME)}}
         if: ${{ env.LIBRARY_TESTS_PROJECT }}
         run: |
-          dotnet restore ${{ env.LIBRARY_TESTS_PROJECT }}
-          dotnet build ${{ env.LIBRARY_TESTS_PROJECT }} -c Debug
-          dotnet test ${{ env.LIBRARY_TESTS_PROJECT }} -c Debug --no-build --no-restore
+          dotnet restore $LIBRARY_TESTS_PROJECT
+          dotnet build $LIBRARY_TESTS_PROJECT -c Debug
+          dotnet test $LIBRARY_TESTS_PROJECT -c Debug --no-build --no-restore
