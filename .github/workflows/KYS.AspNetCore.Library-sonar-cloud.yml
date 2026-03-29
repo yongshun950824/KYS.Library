@@ -18,6 +18,7 @@ jobs:
       tests-project-path: "tests/KYS.AspNetCore.Library.Tests"
       sonar-project-name: "yongshun950824_kys-aspnetcore-library"
       sonar-org: "yongshun950824"
+      sonar-project-dir: "src/KYS.AspNetCore.Library"
       sonar-exclusions: "**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/**"
       sonar-coverage-exclusions: "**/KYS.Library/**,**/KYS.EFCore.Library/**,**/Generated/**"
       sonar-cpd-exclusions: "**/Migrations/**,**/Generated/**"

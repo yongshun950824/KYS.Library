@@ -6,8 +6,14 @@ using NUnit.Framework;
 
 namespace KYS.AspNetCore.Library.Tests.TagHelpersUnitTests;
 
-public class JsonToHtmlTagHelperUnitTest
+public partial class JsonToHtmlTagHelperUnitTest
 {
+    [GeneratedRegex(@"\s+", RegexOptions.None, matchTimeoutMilliseconds: 1000)]
+    private static partial Regex MultipleSpacesReplacementRegex();
+
+    [GeneratedRegex(@">\s+<", RegexOptions.None, matchTimeoutMilliseconds: 1000)]
+    private static partial Regex SpaceBetweenHtmlTagsReplacementRegex();
+
     [Test]
     public async Task ProcessAsync_WithJsonObject_ShouldGenerateHtmlTable()
     {
@@ -203,7 +209,7 @@ public class JsonToHtmlTagHelperUnitTest
     }
 
     #region Helper method for TagHelper
-    private TagHelperContext CreateTagHelperContext()
+    private static TagHelperContext CreateTagHelperContext()
     {
         return new TagHelperContext(
             [],
@@ -211,7 +217,7 @@ public class JsonToHtmlTagHelperUnitTest
             Guid.NewGuid().ToString("N"));
     }
 
-    private TagHelperOutput CreateTagHelperOutput(string tagName)
+    private static TagHelperOutput CreateTagHelperOutput(string tagName)
     {
         return new TagHelperOutput(
             tagName,
@@ -229,11 +235,11 @@ public class JsonToHtmlTagHelperUnitTest
         // 1. Convert all tabs and newlines to spaces
         // 2. Collapse multiple spaces into one
         // 3. Trim leading/trailing whitespace
-        string clean = Regex.Replace(input, @"\s+", " ").Trim();
+        string clean = MultipleSpacesReplacementRegex().Replace(input, " ").Trim();
 
         // 4. Optional: Remove spaces between HTML tags (e.g., "> <" becomes "><")
         // This prevents tests from failing just because of indentation between <tr> and <td>
-        clean = Regex.Replace(clean, @">\s+<", "><");
+        clean = SpaceBetweenHtmlTagsReplacementRegex().Replace(clean, "><");
 
         return clean;
     }
