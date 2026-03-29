@@ -1,0 +1,242 @@
+{
+  "source_base_path": "/home/runner/work/KYS.Library/KYS.Library/src/KYS.AspNetCore.Library/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Extensions.HttpContextExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for working with <xref href=\"Microsoft.AspNetCore.Http.HttpContext\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Helpers.ViewResultHelper",
+      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for <xref href=\"Microsoft.AspNetCore.Mvc.ViewResult\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Helpers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Helpers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware",
+      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.yml\" sourcestartlinenumber=\"1\">Middleware that injects security-hardening HTTP headers into all outgoing responses.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware",
+      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.yml\" sourcestartlinenumber=\"1\">Middleware that injects security-hardening HTTP headers into all outgoing responses.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Middlewares.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Middlewares.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Middlewares",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Models.ApiReponseModel<T>",
+      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for the base response with status code, response message and data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper",
+      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.yml\" sourcestartlinenumber=\"1\">A tag helper that converts JSON (Object &amp; Array) into Table. <br></p>\n<ul><li>Support display data in flatten form.</li><li>Support generated HTML as a <code>&lt;table&gt;</code> element or Bootstrap Grid.</li></ul>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.AspNetCore.Library.TagHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.AspNetCore.Library.TagHelpers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.AspNetCore.Library.TagHelpers",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

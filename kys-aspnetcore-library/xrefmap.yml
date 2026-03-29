@@ -1,0 +1,343 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: KYS.AspNetCore.Library.Extensions
+  name: KYS.AspNetCore.Library.Extensions
+  href: api/KYS.AspNetCore.Library.Extensions.html
+  commentId: N:KYS.AspNetCore.Library.Extensions
+  fullName: KYS.AspNetCore.Library.Extensions
+  nameWithType: KYS.AspNetCore.Library.Extensions
+- uid: KYS.AspNetCore.Library.Extensions.HttpContextExtensions
+  name: HttpContextExtensions
+  href: api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.html
+  commentId: T:KYS.AspNetCore.Library.Extensions.HttpContextExtensions
+  fullName: KYS.AspNetCore.Library.Extensions.HttpContextExtensions
+  nameWithType: HttpContextExtensions
+- uid: KYS.AspNetCore.Library.Extensions.HttpContextExtensions.CreateViewDataDictionary*
+  name: CreateViewDataDictionary
+  href: api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.html#KYS_AspNetCore_Library_Extensions_HttpContextExtensions_CreateViewDataDictionary_
+  commentId: Overload:KYS.AspNetCore.Library.Extensions.HttpContextExtensions.CreateViewDataDictionary
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.Extensions.HttpContextExtensions.CreateViewDataDictionary
+  nameWithType: HttpContextExtensions.CreateViewDataDictionary
+- uid: KYS.AspNetCore.Library.Extensions.HttpContextExtensions.CreateViewDataDictionary``1(Microsoft.AspNetCore.Http.HttpContext,``0)
+  name: CreateViewDataDictionary<T>(HttpContext, T)
+  href: api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.html#KYS_AspNetCore_Library_Extensions_HttpContextExtensions_CreateViewDataDictionary__1_Microsoft_AspNetCore_Http_HttpContext___0_
+  commentId: M:KYS.AspNetCore.Library.Extensions.HttpContextExtensions.CreateViewDataDictionary``1(Microsoft.AspNetCore.Http.HttpContext,``0)
+  name.vb: CreateViewDataDictionary(Of T)(HttpContext, T)
+  fullName: KYS.AspNetCore.Library.Extensions.HttpContextExtensions.CreateViewDataDictionary<T>(Microsoft.AspNetCore.Http.HttpContext, T)
+  fullName.vb: KYS.AspNetCore.Library.Extensions.HttpContextExtensions.CreateViewDataDictionary(Of T)(Microsoft.AspNetCore.Http.HttpContext, T)
+  nameWithType: HttpContextExtensions.CreateViewDataDictionary<T>(HttpContext, T)
+  nameWithType.vb: HttpContextExtensions.CreateViewDataDictionary(Of T)(HttpContext, T)
+- uid: KYS.AspNetCore.Library.Helpers
+  name: KYS.AspNetCore.Library.Helpers
+  href: api/KYS.AspNetCore.Library.Helpers.html
+  commentId: N:KYS.AspNetCore.Library.Helpers
+  fullName: KYS.AspNetCore.Library.Helpers
+  nameWithType: KYS.AspNetCore.Library.Helpers
+- uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  name: ViewResultHelper
+  href: api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.html
+  commentId: T:KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  fullName: KYS.AspNetCore.Library.Helpers.ViewResultHelper
+  nameWithType: ViewResultHelper
+- uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync*
+  name: ToViewResultAsync
+  href: api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.html#KYS_AspNetCore_Library_Helpers_ViewResultHelper_ToViewResultAsync_
+  commentId: Overload:KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync
+  nameWithType: ViewResultHelper.ToViewResultAsync
+- uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.Net.Http.HttpResponseMessage,System.String,System.String)
+  name: ToViewResultAsync<T>(HttpContext, HttpResponseMessage, string, string)
+  href: api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.html#KYS_AspNetCore_Library_Helpers_ViewResultHelper_ToViewResultAsync__1_Microsoft_AspNetCore_Http_HttpContext_System_Net_Http_HttpResponseMessage_System_String_System_String_
+  commentId: M:KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync``1(Microsoft.AspNetCore.Http.HttpContext,System.Net.Http.HttpResponseMessage,System.String,System.String)
+  name.vb: ToViewResultAsync(Of T)(HttpContext, HttpResponseMessage, String, String)
+  fullName: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync<T>(Microsoft.AspNetCore.Http.HttpContext, System.Net.Http.HttpResponseMessage, string, string)
+  fullName.vb: KYS.AspNetCore.Library.Helpers.ViewResultHelper.ToViewResultAsync(Of T)(Microsoft.AspNetCore.Http.HttpContext, System.Net.Http.HttpResponseMessage, String, String)
+  nameWithType: ViewResultHelper.ToViewResultAsync<T>(HttpContext, HttpResponseMessage, string, string)
+  nameWithType.vb: ViewResultHelper.ToViewResultAsync(Of T)(HttpContext, HttpResponseMessage, String, String)
+- uid: KYS.AspNetCore.Library.Middlewares
+  name: KYS.AspNetCore.Library.Middlewares
+  href: api/KYS.AspNetCore.Library.Middlewares.html
+  commentId: N:KYS.AspNetCore.Library.Middlewares
+  fullName: KYS.AspNetCore.Library.Middlewares
+  nameWithType: KYS.AspNetCore.Library.Middlewares
+- uid: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+  name: ApiSecurityHeadersMiddleware
+  href: api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html
+  commentId: T:KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+  fullName: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+  nameWithType: ApiSecurityHeadersMiddleware
+- uid: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name: ApiSecurityHeadersMiddleware(RequestDelegate)
+  href: api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_ApiSecurityHeadersMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_
+  commentId: M:KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name.vb: New(RequestDelegate)
+  fullName: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.ApiSecurityHeadersMiddleware(Microsoft.AspNetCore.Http.RequestDelegate)
+  fullName.vb: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate)
+  nameWithType: ApiSecurityHeadersMiddleware.ApiSecurityHeadersMiddleware(RequestDelegate)
+  nameWithType.vb: ApiSecurityHeadersMiddleware.New(RequestDelegate)
+- uid: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.#ctor*
+  name: ApiSecurityHeadersMiddleware
+  href: api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_ApiSecurityHeadersMiddleware__ctor_
+  commentId: Overload:KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.ApiSecurityHeadersMiddleware
+  fullName.vb: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.New
+  nameWithType: ApiSecurityHeadersMiddleware.ApiSecurityHeadersMiddleware
+  nameWithType.vb: ApiSecurityHeadersMiddleware.New
+- uid: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  name: InvokeAsync(HttpContext)
+  href: api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_ApiSecurityHeadersMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_
+  commentId: M:KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  fullName: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  nameWithType: ApiSecurityHeadersMiddleware.InvokeAsync(HttpContext)
+- uid: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.InvokeAsync*
+  name: InvokeAsync
+  href: api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_ApiSecurityHeadersMiddleware_InvokeAsync_
+  commentId: Overload:KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.InvokeAsync
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.InvokeAsync
+  nameWithType: ApiSecurityHeadersMiddleware.InvokeAsync
+- uid: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware
+  name: WebSecurityHeadersMiddleware
+  href: api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html
+  commentId: T:KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware
+  fullName: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware
+  nameWithType: WebSecurityHeadersMiddleware
+- uid: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name: WebSecurityHeadersMiddleware(RequestDelegate)
+  href: api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_WebSecurityHeadersMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_
+  commentId: M:KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name.vb: New(RequestDelegate)
+  fullName: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.WebSecurityHeadersMiddleware(Microsoft.AspNetCore.Http.RequestDelegate)
+  fullName.vb: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate)
+  nameWithType: WebSecurityHeadersMiddleware.WebSecurityHeadersMiddleware(RequestDelegate)
+  nameWithType.vb: WebSecurityHeadersMiddleware.New(RequestDelegate)
+- uid: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.#ctor*
+  name: WebSecurityHeadersMiddleware
+  href: api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_WebSecurityHeadersMiddleware__ctor_
+  commentId: Overload:KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.WebSecurityHeadersMiddleware
+  fullName.vb: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.New
+  nameWithType: WebSecurityHeadersMiddleware.WebSecurityHeadersMiddleware
+  nameWithType.vb: WebSecurityHeadersMiddleware.New
+- uid: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  name: InvokeAsync(HttpContext)
+  href: api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_WebSecurityHeadersMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_
+  commentId: M:KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  fullName: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  nameWithType: WebSecurityHeadersMiddleware.InvokeAsync(HttpContext)
+- uid: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.InvokeAsync*
+  name: InvokeAsync
+  href: api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html#KYS_AspNetCore_Library_Middlewares_WebSecurityHeadersMiddleware_InvokeAsync_
+  commentId: Overload:KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.InvokeAsync
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.InvokeAsync
+  nameWithType: WebSecurityHeadersMiddleware.InvokeAsync
+- uid: KYS.AspNetCore.Library.Models
+  name: KYS.AspNetCore.Library.Models
+  href: api/KYS.AspNetCore.Library.Models.html
+  commentId: N:KYS.AspNetCore.Library.Models
+  fullName: KYS.AspNetCore.Library.Models
+  nameWithType: KYS.AspNetCore.Library.Models
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  name: ApiReponseModel<T>
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
+  commentId: T:KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  name.vb: ApiReponseModel(Of T)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T)
+  nameWithType: ApiReponseModel<T>
+  nameWithType.vb: ApiReponseModel(Of T)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode)
+  name: ApiReponseModel(HttpStatusCode)
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode)
+  name.vb: New(HttpStatusCode)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode)
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
+  name: ApiReponseModel(HttpStatusCode, string)
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode_System_String_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
+  name.vb: New(HttpStatusCode, String)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, string)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, String)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, string)
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, String)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
+  name: ApiReponseModel(HttpStatusCode, string, T)
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode_System_String__0_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
+  name.vb: New(HttpStatusCode, String, T)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, string, T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, String, T)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, string, T)
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, String, T)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
+  name: ApiReponseModel(HttpStatusCode, T)
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode__0_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
+  name.vb: New(HttpStatusCode, T)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, T)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, T)
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, T)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor*
+  name: ApiReponseModel
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New
+  nameWithType: ApiReponseModel<T>.ApiReponseModel
+  nameWithType.vb: ApiReponseModel(Of T).New
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  name: Data
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_Data
+  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.Data
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).Data
+  nameWithType: ApiReponseModel<T>.Data
+  nameWithType.vb: ApiReponseModel(Of T).Data
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data*
+  name: Data
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_Data_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.Data
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).Data
+  nameWithType: ApiReponseModel<T>.Data
+  nameWithType.vb: ApiReponseModel(Of T).Data
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  name: ResponseMessage
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_ResponseMessage
+  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ResponseMessage
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).ResponseMessage
+  nameWithType: ApiReponseModel<T>.ResponseMessage
+  nameWithType.vb: ApiReponseModel(Of T).ResponseMessage
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage*
+  name: ResponseMessage
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_ResponseMessage_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ResponseMessage
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).ResponseMessage
+  nameWithType: ApiReponseModel<T>.ResponseMessage
+  nameWithType.vb: ApiReponseModel(Of T).ResponseMessage
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  name: StatusCode
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_StatusCode
+  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.StatusCode
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).StatusCode
+  nameWithType: ApiReponseModel<T>.StatusCode
+  nameWithType.vb: ApiReponseModel(Of T).StatusCode
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode*
+  name: StatusCode
+  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_StatusCode_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.StatusCode
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).StatusCode
+  nameWithType: ApiReponseModel<T>.StatusCode
+  nameWithType.vb: ApiReponseModel(Of T).StatusCode
+- uid: KYS.AspNetCore.Library.TagHelpers
+  name: KYS.AspNetCore.Library.TagHelpers
+  href: api/KYS.AspNetCore.Library.TagHelpers.html
+  commentId: N:KYS.AspNetCore.Library.TagHelpers
+  fullName: KYS.AspNetCore.Library.TagHelpers
+  nameWithType: KYS.AspNetCore.Library.TagHelpers
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  name: JsonToHtmlTagHelper
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html
+  commentId: T:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+  nameWithType: JsonToHtmlTagHelper
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  name: AsBootstrapGrid
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsBootstrapGrid
+  commentId: P:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  nameWithType: JsonToHtmlTagHelper.AsBootstrapGrid
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid*
+  name: AsBootstrapGrid
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsBootstrapGrid_
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid
+  nameWithType: JsonToHtmlTagHelper.AsBootstrapGrid
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  name: AsFlatten
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsFlatten
+  commentId: P:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  nameWithType: JsonToHtmlTagHelper.AsFlatten
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten*
+  name: AsFlatten
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsFlatten_
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten
+  nameWithType: JsonToHtmlTagHelper.AsFlatten
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  name: GenerateHtml(JToken)
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtml_Newtonsoft_Json_Linq_JToken_
+  commentId: M:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)
+  nameWithType: JsonToHtmlTagHelper.GenerateHtml(JToken)
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml*
+  name: GenerateHtml
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtml_
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml
+  nameWithType: JsonToHtmlTagHelper.GenerateHtml
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  name: GenerateHtmlWithBootstrapGrid(JToken)
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtmlWithBootstrapGrid_Newtonsoft_Json_Linq_JToken_
+  commentId: M:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)
+  nameWithType: JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(JToken)
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid*
+  name: GenerateHtmlWithBootstrapGrid
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtmlWithBootstrapGrid_
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid
+  nameWithType: JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  name: Json
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_Json
+  commentId: P:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  nameWithType: JsonToHtmlTagHelper.Json
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json*
+  name: Json
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_Json_
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json
+  nameWithType: JsonToHtmlTagHelper.Json
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  name: ProcessAsync(TagHelperContext, TagHelperOutput)
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_ProcessAsync_Microsoft_AspNetCore_Razor_TagHelpers_TagHelperContext_Microsoft_AspNetCore_Razor_TagHelpers_TagHelperOutput_
+  commentId: M:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext, Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)
+  nameWithType: JsonToHtmlTagHelper.ProcessAsync(TagHelperContext, TagHelperOutput)
+- uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync*
+  name: ProcessAsync
+  href: api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html#KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_ProcessAsync_
+  commentId: Overload:KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync
+  isSpec: "True"
+  fullName: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync
+  nameWithType: JsonToHtmlTagHelper.ProcessAsync

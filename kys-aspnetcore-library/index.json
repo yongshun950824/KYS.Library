@@ -1,0 +1,72 @@
+{
+  "api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.html": {
+    "href": "api/KYS.AspNetCore.Library.Extensions.HttpContextExtensions.html",
+    "title": "Class HttpContextExtensions | KYS.AspNetCore.Library",
+    "summary": "Class HttpContextExtensions Namespace KYS.AspNetCore.Library.Extensions Assembly KYS.AspNetCore.Library.dll Provides extension methods for working with HttpContext. public static class HttpContextExtensions Inheritance object HttpContextExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods CreateViewDataDictionary<T>(HttpContext, T) Create a ViewDataDictionary instance containing a <T> as its model. public static ViewDataDictionary<T> CreateViewDataDictionary<T>(this HttpContext httpContext, T model) Parameters httpContext HttpContext The HttpContext instance this method extends. model T The value to be included. Returns ViewDataDictionary<T> A ViewDataDictionary containing a <T> as its model. Type Parameters T The type of model."
+  },
+  "api/KYS.AspNetCore.Library.Extensions.html": {
+    "href": "api/KYS.AspNetCore.Library.Extensions.html",
+    "title": "Namespace KYS.AspNetCore.Library.Extensions | KYS.AspNetCore.Library",
+    "summary": "Namespace KYS.AspNetCore.Library.Extensions Classes HttpContextExtensions Provides extension methods for working with HttpContext."
+  },
+  "api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.html": {
+    "href": "api/KYS.AspNetCore.Library.Helpers.ViewResultHelper.html",
+    "title": "Class ViewResultHelper | KYS.AspNetCore.Library",
+    "summary": "Class ViewResultHelper Namespace KYS.AspNetCore.Library.Helpers Assembly KYS.AspNetCore.Library.dll Provide utility methods for ViewResult. public static class ViewResultHelper Inheritance object ViewResultHelper Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods ToViewResultAsync<T>(HttpContext, HttpResponseMessage, string, string) Read HttpResponseMessage and render it to a ViewResult. Idea from How to convert HttpResponseMessage to ViewResult? public static Task<ViewResult> ToViewResultAsync<T>(HttpContext httpContext, HttpResponseMessage response, string viewName, string errorViewName = \"/Views/Shared/Error.cshtml\") Parameters httpContext HttpContext The current HTTP context, used to initialize the ViewDataDictionary. response HttpResponseMessage The raw response received from an API call. viewName string The name or path of the view to render on a successful API response. errorViewName string The name or path of the view to render if the API returns a non-success status code. Defaults to the Shared Error view. Returns Task<ViewResult> A ViewResult containing an ApiReponseModel<T> as its model. Type Parameters T The expected model type to be deserialized from the response body. Remarks This method automatically handles: Checking IsSuccessStatusCode. Asynchronous reading of the response content. Deserialization of JSON content into type T. Mapping API status codes and reason phrases to the view model."
+  },
+  "api/KYS.AspNetCore.Library.Helpers.html": {
+    "href": "api/KYS.AspNetCore.Library.Helpers.html",
+    "title": "Namespace KYS.AspNetCore.Library.Helpers | KYS.AspNetCore.Library",
+    "summary": "Namespace KYS.AspNetCore.Library.Helpers Classes ViewResultHelper Provide utility methods for ViewResult."
+  },
+  "api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html": {
+    "href": "api/KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware.html",
+    "title": "Class ApiSecurityHeadersMiddleware | KYS.AspNetCore.Library",
+    "summary": "Class ApiSecurityHeadersMiddleware Namespace KYS.AspNetCore.Library.Middlewares Assembly KYS.AspNetCore.Library.dll Middleware that injects security-hardening HTTP headers into all outgoing responses. public class ApiSecurityHeadersMiddleware Inheritance object ApiSecurityHeadersMiddleware Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Remarks This middleware targets vulnerabilities such as Cross-Site Scripting (XSS), Clickjacking, and Protocol Downgrade attacks. It should be registered early in the request pipeline. Constructors ApiSecurityHeadersMiddleware(RequestDelegate) public ApiSecurityHeadersMiddleware(RequestDelegate next) Parameters next RequestDelegate Methods InvokeAsync(HttpContext) Processes the request and applies the security headers to the response. public Task InvokeAsync(HttpContext context) Parameters context HttpContext The current HttpContext. Returns Task A Task representing the asynchronous operation."
+  },
+  "api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html": {
+    "href": "api/KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware.html",
+    "title": "Class WebSecurityHeadersMiddleware | KYS.AspNetCore.Library",
+    "summary": "Class WebSecurityHeadersMiddleware Namespace KYS.AspNetCore.Library.Middlewares Assembly KYS.AspNetCore.Library.dll Middleware that injects security-hardening HTTP headers into all outgoing responses. public class WebSecurityHeadersMiddleware Inheritance object WebSecurityHeadersMiddleware Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Remarks This middleware targets vulnerabilities such as Cross-Site Scripting (XSS), Clickjacking, and Protocol Downgrade attacks. It should be registered early in the request pipeline. Constructors WebSecurityHeadersMiddleware(RequestDelegate) public WebSecurityHeadersMiddleware(RequestDelegate next) Parameters next RequestDelegate Methods InvokeAsync(HttpContext) Processes the request and applies the security headers to the response. public Task InvokeAsync(HttpContext context) Parameters context HttpContext The current HttpContext. Returns Task A Task representing the asynchronous operation."
+  },
+  "api/KYS.AspNetCore.Library.Middlewares.html": {
+    "href": "api/KYS.AspNetCore.Library.Middlewares.html",
+    "title": "Namespace KYS.AspNetCore.Library.Middlewares | KYS.AspNetCore.Library",
+    "summary": "Namespace KYS.AspNetCore.Library.Middlewares Classes ApiSecurityHeadersMiddleware Middleware that injects security-hardening HTTP headers into all outgoing responses. WebSecurityHeadersMiddleware Middleware that injects security-hardening HTTP headers into all outgoing responses."
+  },
+  "api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html": {
+    "href": "api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html",
+    "title": "Class ApiReponseModel<T> | KYS.AspNetCore.Library",
+    "summary": "Class ApiReponseModel<T> Namespace KYS.AspNetCore.Library.Models Assembly KYS.AspNetCore.Library.dll Represents the blueprint for the base response with status code, response message and data. public class ApiReponseModel<T> Type Parameters T The type of response data. Inheritance object ApiReponseModel<T> Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors ApiReponseModel(HttpStatusCode) public ApiReponseModel(HttpStatusCode statusCode) Parameters statusCode HttpStatusCode ApiReponseModel(HttpStatusCode, string) public ApiReponseModel(HttpStatusCode statusCode, string responseMessage) Parameters statusCode HttpStatusCode responseMessage string ApiReponseModel(HttpStatusCode, string, T) public ApiReponseModel(HttpStatusCode statusCode, string responseMessage, T data) Parameters statusCode HttpStatusCode responseMessage string data T ApiReponseModel(HttpStatusCode, T) public ApiReponseModel(HttpStatusCode statusCode, T data) Parameters statusCode HttpStatusCode data T Properties Data Gets the response body data. public T Data { get; } Property Value T ResponseMessage Gets the response message. public string ResponseMessage { get; } Property Value string StatusCode Gets the response status code. public HttpStatusCode StatusCode { get; } Property Value HttpStatusCode"
+  },
+  "api/KYS.AspNetCore.Library.Models.html": {
+    "href": "api/KYS.AspNetCore.Library.Models.html",
+    "title": "Namespace KYS.AspNetCore.Library.Models | KYS.AspNetCore.Library",
+    "summary": "Namespace KYS.AspNetCore.Library.Models Classes ApiReponseModel<T> Represents the blueprint for the base response with status code, response message and data."
+  },
+  "api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html": {
+    "href": "api/KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.html",
+    "title": "Class JsonToHtmlTagHelper | KYS.AspNetCore.Library",
+    "summary": "Class JsonToHtmlTagHelper Namespace KYS.AspNetCore.Library.TagHelpers Assembly KYS.AspNetCore.Library.dll A tag helper that converts JSON (Object & Array) into Table. Support display data in flatten form. Support generated HTML as a <table> element or Bootstrap Grid. [HtmlTargetElement(\"json-to-html\", Attributes = \"json\", TagStructure = TagStructure.NormalOrSelfClosing)] public class JsonToHtmlTagHelper : TagHelper, ITagHelper, ITagHelperComponent Inheritance object TagHelper JsonToHtmlTagHelper Implements ITagHelper ITagHelperComponent Inherited Members TagHelper.Init(TagHelperContext) TagHelper.Process(TagHelperContext, TagHelperOutput) TagHelper.Order object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties AsBootstrapGrid Gets or sets the indicator to generate the HTML content as Bootstrap Grid. [HtmlAttributeName(\"asBootstrapGrid\")] public bool AsBootstrapGrid { get; set; } Property Value bool AsFlatten Gets or sets the indicator to flatten the JSON. [HtmlAttributeName(\"asFlatten\")] public bool AsFlatten { get; set; } Property Value bool Json Gets or sets the serialized JSON object/array. [HtmlAttributeName(\"json\")] public string Json { get; set; } Property Value string Methods GenerateHtml(JToken) public static string GenerateHtml(JToken token) Parameters token JToken Returns string GenerateHtmlWithBootstrapGrid(JToken) public static string GenerateHtmlWithBootstrapGrid(JToken token) Parameters token JToken Returns string ProcessAsync(TagHelperContext, TagHelperOutput) Asynchronously executes the TagHelper with the given context and output. Contains information associated with the current HTML tag. A stateful HTML element used to generate an HTML tag. A Task that on completion updates the output. By default this calls into Process(TagHelperContext, TagHelperOutput). . public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output) Parameters context TagHelperContext output TagHelperOutput Returns Task"
+  },
+  "api/KYS.AspNetCore.Library.TagHelpers.html": {
+    "href": "api/KYS.AspNetCore.Library.TagHelpers.html",
+    "title": "Namespace KYS.AspNetCore.Library.TagHelpers | KYS.AspNetCore.Library",
+    "summary": "Namespace KYS.AspNetCore.Library.TagHelpers Classes JsonToHtmlTagHelper A tag helper that converts JSON (Object & Array) into Table. Support display data in flatten form. Support generated HTML as a <table> element or Bootstrap Grid."
+  },
+  "docs/getting-started.html": {
+    "href": "docs/getting-started.html",
+    "title": "Getting Started | KYS.AspNetCore.Library",
+    "summary": "Getting Started"
+  },
+  "docs/introduction.html": {
+    "href": "docs/introduction.html",
+    "title": "Introduction | KYS.AspNetCore.Library",
+    "summary": "Introduction"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "KYS.AspNetCore.Library Documentation | KYS.AspNetCore.Library",
+    "summary": "KYS.AspNetCore.Library Documentation Welcome to KYS.AspNetCore.Library, a modular utility library built for internal ASP.NET (Core) applications. It provides reusable helpers, extensions, and middlewares to reduce repeated code and improve application consistency. This site contains a high-level overview of the library and a full API reference automatically generated from XML documentation comments. \uD83D\uDCE6 Project Modules KYS.AspNetCore.Library.Extensions Provides extension methods that enhance built-in .NET types, making everyday code more expressive and easier to read. KYS.AspNetCore.Library.Helpers Includes helper classes focused on simplifying repetitive or boilerplate tasks such as parsing, conversions, or calculations. KYS.AspNetCore.Library.Middlewares Contains reusable middlewares to be assembled into an application pipeline to handle HTTP requests and responses. \uD83D\uDE80 Using This Library (Internal Use) Since this library is not currently published to NuGet, it can be consumed by: Cloning or downloading the repository Building the solution Locating the generated DLLs under: KYS.AspNetCore.Library/bin/Debug/net8.0/ or KYS.AspNetCore.Library/bin/Release/net8.0/ Adding the DLL references to your project manually: In Visual Studio: Project → Add Reference → Browse → Select DLLs In .NET CLI-based project: <ItemGroup> <Reference Include=\"KYS.AspNetCore.Library\"> <HintPath>path/to/KYS.AspNetCore.Library.dll</HintPath> </Reference> </ItemGroup> \uD83D\uDCD8 API Reference Detailed class, method, and property documentation is available under the API section of this site. All content is generated automatically based on XML documentation comments in the source code. \uD83D\uDCC2 Project Structure KYS.Library/ ├── KYS.AspNetCore.Library.Extensions/ ├── KYS.AspNetCore.Library.Helpers/ ├── KYS.AspNetCore.Library.Middlewares/ ├── KYS.AspNetCore.Library.Models/ └── KYS.AspNetCore.Library.TagHelpers/ (Classes and namespaces inside each module can be viewed through the API reference.) \uD83D\uDEE0 Documentation This documentation is generated using DocFX and will stay updated as new XML comments are added or modified."
+  }
+}

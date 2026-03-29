@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class JsonToHtmlTagHelper | KYS.AspNetCore.Library </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class JsonToHtmlTagHelper | KYS.AspNetCore.Library ">
+      
+      <meta name="description" content="A tag helper that converts JSON (Object &amp;amp; Array) into Table.  Support display data in flatten form.Support generated HTML as a &amp;lt;table&amp;gt; element or Bootstrap Grid.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/master/apiSpec/new?filename=KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper.md&amp;value=---%0Auid%3A%20KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="KYS.AspNetCore.Library">
+            KYS.AspNetCore.Library
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper">
+
+
+
+  <h1 id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper" class="text-break">
+Class JsonToHtmlTagHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KYS.html">KYS</a>.<a class="xref" href="KYS.AspNetCore.html">AspNetCore</a>.<a class="xref" href="KYS.AspNetCore.Library.html">Library</a>.<a class="xref" href="KYS.AspNetCore.Library.TagHelpers.html">TagHelpers</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>KYS.AspNetCore.Library.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A tag helper that converts JSON (Object &amp; Array) into Table. <br></p>
+<ul><li>Support display data in flatten form.</li><li>Support generated HTML as a <code>&lt;table&gt;</code> element or Bootstrap Grid.</li></ul>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HtmlTargetElement(&quot;json-to-html&quot;, Attributes = &quot;json&quot;, TagStructure = TagStructure.NormalOrSelfClosing)]
+public class JsonToHtmlTagHelper : TagHelper, ITagHelper, ITagHelperComponent</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper">TagHelper</a></div>
+      <div><span class="xref">JsonToHtmlTagHelper</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.itaghelper">ITagHelper</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.itaghelpercomponent">ITagHelperComponent</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.init">TagHelper.Init(TagHelperContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.process">TagHelper.Process(TagHelperContext, TagHelperOutput)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.order">TagHelper.Order</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsBootstrapGrid_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid*"></a>
+
+  <h3 id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsBootstrapGrid" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsBootstrapGrid">
+  AsBootstrapGrid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the indicator to generate the HTML content as Bootstrap Grid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HtmlAttributeName(&quot;asBootstrapGrid&quot;)]
+public bool AsBootstrapGrid { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsFlatten_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten*"></a>
+
+  <h3 id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_AsFlatten" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.AsFlatten">
+  AsFlatten
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the indicator to flatten the JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HtmlAttributeName(&quot;asFlatten&quot;)]
+public bool AsFlatten { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_Json_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json*"></a>
+
+  <h3 id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_Json" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.Json">
+  Json
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the serialized JSON object/array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HtmlAttributeName(&quot;json&quot;)]
+public string Json { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtml_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml*"></a>
+
+  <h3 id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtml_Newtonsoft_Json_Linq_JToken_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtml(Newtonsoft.Json.Linq.JToken)">
+  GenerateHtml(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GenerateHtml(JToken token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <span class="xref">JToken</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtmlWithBootstrapGrid_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid*"></a>
+
+  <h3 id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_GenerateHtmlWithBootstrapGrid_Newtonsoft_Json_Linq_JToken_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.GenerateHtmlWithBootstrapGrid(Newtonsoft.Json.Linq.JToken)">
+  GenerateHtmlWithBootstrapGrid(JToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GenerateHtmlWithBootstrapGrid(JToken token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <span class="xref">JToken</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_ProcessAsync_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync*"></a>
+
+  <h3 id="KYS_AspNetCore_Library_TagHelpers_JsonToHtmlTagHelper_ProcessAsync_Microsoft_AspNetCore_Razor_TagHelpers_TagHelperContext_Microsoft_AspNetCore_Razor_TagHelpers_TagHelperOutput_" data-uid="KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper.ProcessAsync(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperContext,Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput)">
+  ProcessAsync(TagHelperContext, TagHelperOutput)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><summary>
+Asynchronously executes the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper">TagHelper</a> with the given <code class="paramref">context</code> and
+<code class="paramref">output</code>.
+</summary>
+<param name="context">Contains information associated with the current HTML tag.
+<param name="output">A stateful HTML element used to generate an HTML tag.
+<returns>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> that on completion updates the <code class="paramref">output</code>.</returns>
+<remarks>By default this calls into <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelper.process">Process(TagHelperContext, TagHelperOutput)</a>.</remarks>.
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelpercontext">TagHelperContext</a></dt>
+    <dd></dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.razor.taghelpers.taghelperoutput">TagHelperOutput</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs/#L15" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
