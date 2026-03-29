@@ -23,6 +23,8 @@ on:
 jobs:
   build-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     env:
       LIBRARY_NAME: ${{ inputs.library-name }}
