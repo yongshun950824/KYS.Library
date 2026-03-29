@@ -1,0 +1,42 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.Models
+  commentId: N:KYS.AspNetCore.Library.Models
+  id: KYS.AspNetCore.Library.Models
+  children:
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: KYS.AspNetCore.Library.Models
+  nameWithType: KYS.AspNetCore.Library.Models
+  fullName: KYS.AspNetCore.Library.Models
+  type: Namespace
+  assemblies:
+  - KYS.AspNetCore.Library
+references:
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  commentId: T:KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
+  name: ApiReponseModel<T>
+  nameWithType: ApiReponseModel<T>
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>
+  nameWithType.vb: ApiReponseModel(Of T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T)
+  name.vb: ApiReponseModel(Of T)
+  spec.csharp:
+  - uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+    name: ApiReponseModel
+    href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+    name: ApiReponseModel
+    href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

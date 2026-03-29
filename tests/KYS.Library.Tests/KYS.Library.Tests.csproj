@@ -67,7 +67,7 @@
 	</PackageReference>  </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\KYS.Library\KYS.Library.csproj" />
+    <ProjectReference Include="../../src/KYS.Library/KYS.Library.csproj" />
   </ItemGroup>
 
   <ItemGroup>

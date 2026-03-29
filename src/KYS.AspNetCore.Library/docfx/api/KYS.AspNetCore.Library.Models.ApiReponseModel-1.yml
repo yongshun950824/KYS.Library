@@ -1,0 +1,653 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  commentId: T:KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  id: ApiReponseModel`1
+  parent: KYS.AspNetCore.Library.Models
+  children:
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode)
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  - KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  langs:
+  - csharp
+  - vb
+  name: ApiReponseModel<T>
+  nameWithType: ApiReponseModel<T>
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>
+  type: Class
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: ApiReponseModel
+    path: ../Models/ApiReponseModel.cs
+    startLine: 8
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  summary: Represents the blueprint for the base response with status code, response message and data.
+  example: []
+  syntax:
+    content: public class ApiReponseModel<T>
+    typeParameters:
+    - id: T
+      description: The type of response data.
+    content.vb: Public Class ApiReponseModel(Of T)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: ApiReponseModel(Of T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T)
+  name.vb: ApiReponseModel(Of T)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  id: StatusCode
+  parent: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: ApiReponseModel<T>.StatusCode
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.StatusCode
+  type: Property
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: StatusCode
+    path: ../Models/ApiReponseModel.cs
+    startLine: 13
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  summary: Gets the response status code.
+  example: []
+  syntax:
+    content: public HttpStatusCode StatusCode { get; }
+    parameters: []
+    return:
+      type: System.Net.HttpStatusCode
+    content.vb: Public Property StatusCode As HttpStatusCode
+  overload: KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode*
+  nameWithType.vb: ApiReponseModel(Of T).StatusCode
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).StatusCode
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  id: ResponseMessage
+  parent: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: ResponseMessage
+  nameWithType: ApiReponseModel<T>.ResponseMessage
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ResponseMessage
+  type: Property
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: ResponseMessage
+    path: ../Models/ApiReponseModel.cs
+    startLine: 17
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  summary: Gets the response message.
+  example: []
+  syntax:
+    content: public string ResponseMessage { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ResponseMessage As String
+  overload: KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage*
+  nameWithType.vb: ApiReponseModel(Of T).ResponseMessage
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).ResponseMessage
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  id: Data
+  parent: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: ApiReponseModel<T>.Data
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.Data
+  type: Property
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: Data
+    path: ../Models/ApiReponseModel.cs
+    startLine: 21
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  summary: Gets the response body data.
+  example: []
+  syntax:
+    content: public T Data { get; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Property Data As T
+  overload: KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data*
+  nameWithType.vb: ApiReponseModel(Of T).Data
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).Data
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode)
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode)
+  id: '#ctor(System.Net.HttpStatusCode)'
+  parent: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: ApiReponseModel(HttpStatusCode)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode)
+  type: Constructor
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: .ctor
+    path: ../Models/ApiReponseModel.cs
+    startLine: 23
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  syntax:
+    content: public ApiReponseModel(HttpStatusCode statusCode)
+    parameters:
+    - id: statusCode
+      type: System.Net.HttpStatusCode
+    content.vb: Public Sub New(statusCode As HttpStatusCode)
+  overload: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor*
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode)
+  name.vb: New(HttpStatusCode)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
+  id: '#ctor(System.Net.HttpStatusCode,`0)'
+  parent: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: ApiReponseModel(HttpStatusCode, T)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, T)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, T)
+  type: Constructor
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: .ctor
+    path: ../Models/ApiReponseModel.cs
+    startLine: 28
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  syntax:
+    content: public ApiReponseModel(HttpStatusCode statusCode, T data)
+    parameters:
+    - id: statusCode
+      type: System.Net.HttpStatusCode
+    - id: data
+      type: '{T}'
+    content.vb: Public Sub New(statusCode As HttpStatusCode, data As T)
+  overload: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor*
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, T)
+  name.vb: New(HttpStatusCode, T)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
+  id: '#ctor(System.Net.HttpStatusCode,System.String)'
+  parent: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: ApiReponseModel(HttpStatusCode, string)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, string)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, string)
+  type: Constructor
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: .ctor
+    path: ../Models/ApiReponseModel.cs
+    startLine: 34
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  syntax:
+    content: public ApiReponseModel(HttpStatusCode statusCode, string responseMessage)
+    parameters:
+    - id: statusCode
+      type: System.Net.HttpStatusCode
+    - id: responseMessage
+      type: System.String
+    content.vb: Public Sub New(statusCode As HttpStatusCode, responseMessage As String)
+  overload: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor*
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, String)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, String)
+  name.vb: New(HttpStatusCode, String)
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
+  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
+  id: '#ctor(System.Net.HttpStatusCode,System.String,`0)'
+  parent: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+  langs:
+  - csharp
+  - vb
+  name: ApiReponseModel(HttpStatusCode, string, T)
+  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, string, T)
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, string, T)
+  type: Constructor
+  source:
+    remote:
+      path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
+      branch: kys_aspnet_core_library_unit_test_and_docfx
+      repo: https://github.com/yongshun950824/KYS.Library.git
+    id: .ctor
+    path: ../Models/ApiReponseModel.cs
+    startLine: 40
+  assemblies:
+  - KYS.AspNetCore.Library
+  namespace: KYS.AspNetCore.Library.Models
+  syntax:
+    content: public ApiReponseModel(HttpStatusCode statusCode, string responseMessage, T data)
+    parameters:
+    - id: statusCode
+      type: System.Net.HttpStatusCode
+    - id: responseMessage
+      type: System.String
+    - id: data
+      type: '{T}'
+    content.vb: Public Sub New(statusCode As HttpStatusCode, responseMessage As String, data As T)
+  overload: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor*
+  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, String, T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, String, T)
+  name.vb: New(HttpStatusCode, String, T)
+references:
+- uid: KYS.AspNetCore.Library.Models
+  commentId: N:KYS.AspNetCore.Library.Models
+  href: KYS.html
+  name: KYS.AspNetCore.Library.Models
+  nameWithType: KYS.AspNetCore.Library.Models
+  fullName: KYS.AspNetCore.Library.Models
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.AspNetCore
+    name: AspNetCore
+    href: KYS.AspNetCore.html
+  - name: .
+  - uid: KYS.AspNetCore.Library
+    name: Library
+    href: KYS.AspNetCore.Library.html
+  - name: .
+  - uid: KYS.AspNetCore.Library.Models
+    name: Models
+    href: KYS.AspNetCore.Library.Models.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.AspNetCore
+    name: AspNetCore
+    href: KYS.AspNetCore.html
+  - name: .
+  - uid: KYS.AspNetCore.Library
+    name: Library
+    href: KYS.AspNetCore.Library.html
+  - name: .
+  - uid: KYS.AspNetCore.Library.Models
+    name: Models
+    href: KYS.AspNetCore.Library.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode*
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_StatusCode
+  name: StatusCode
+  nameWithType: ApiReponseModel<T>.StatusCode
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.StatusCode
+  nameWithType.vb: ApiReponseModel(Of T).StatusCode
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).StatusCode
+- uid: System.Net.HttpStatusCode
+  commentId: T:System.Net.HttpStatusCode
+  parent: System.Net
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.httpstatuscode
+  name: HttpStatusCode
+  nameWithType: HttpStatusCode
+  fullName: System.Net.HttpStatusCode
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage*
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_ResponseMessage
+  name: ResponseMessage
+  nameWithType: ApiReponseModel<T>.ResponseMessage
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ResponseMessage
+  nameWithType.vb: ApiReponseModel(Of T).ResponseMessage
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).ResponseMessage
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data*
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_Data
+  name: Data
+  nameWithType: ApiReponseModel<T>.Data
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.Data
+  nameWithType.vb: ApiReponseModel(Of T).Data
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).Data
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor*
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor
+  href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode_
+  name: ApiReponseModel
+  nameWithType: ApiReponseModel<T>.ApiReponseModel
+  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel
+  nameWithType.vb: ApiReponseModel(Of T).New
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New
+  name.vb: New

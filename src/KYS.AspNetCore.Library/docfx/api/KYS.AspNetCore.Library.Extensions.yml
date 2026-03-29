@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.AspNetCore.Library.Extensions
+  commentId: N:KYS.AspNetCore.Library.Extensions
+  id: KYS.AspNetCore.Library.Extensions
+  children:
+  - KYS.AspNetCore.Library.Extensions.HttpContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: KYS.AspNetCore.Library.Extensions
+  nameWithType: KYS.AspNetCore.Library.Extensions
+  fullName: KYS.AspNetCore.Library.Extensions
+  type: Namespace
+  assemblies:
+  - KYS.AspNetCore.Library
+references:
+- uid: KYS.AspNetCore.Library.Extensions.HttpContextExtensions
+  commentId: T:KYS.AspNetCore.Library.Extensions.HttpContextExtensions
+  href: KYS.AspNetCore.Library.Extensions.HttpContextExtensions.html
+  name: HttpContextExtensions
+  nameWithType: HttpContextExtensions
+  fullName: KYS.AspNetCore.Library.Extensions.HttpContextExtensions

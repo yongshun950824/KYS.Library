@@ -1,0 +1,59 @@
+name: Reusable Publish DocFxx
+
+on:
+  workflow_call:
+    inputs:
+      library-name:
+        required: true
+        type: string
+      docfx-project:
+        required: true
+        type: string
+      docfx-publish-dir:
+        required: true
+        type: string
+      dotnet-version:
+        required: false
+        type: string
+        default: "8.0.x"
+    secrets:
+      GITHUB_TOKEN:
+        required: true
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    env:
+      LIBRARY_NAME: ${{ inputs.library-name }}
+      DOCFX_PROJECT: ${{ inputs.docfx-project }}
+      DOCFX_PUBLISH_DIR: ${{ inputs.docfx-publish-dir }}
+      DOTNET_VERSION: ${{ inputs.dotnet-version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
+
+      - name: Build Documentation
+        working-directory: ${{ env.DOCFX_PROJECT }}
+        run: |
+          docfx metadata
+          docfx build
+
+      # peaceiris/actions-gh-pages@v4.0.0
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.DOCFX_PUBLISH_DIR }}
+          destination_dir: ${{ env.LIBRARY_NAME }}

@@ -3,10 +3,20 @@ using Microsoft.Extensions.Primitives;
 
 namespace KYS.AspNetCore.Library.Middlewares
 {
+    /// <summary>
+    /// Middleware that injects security-hardening HTTP headers into all outgoing responses.
+    /// </summary>
+    /// <remarks>
+    /// This middleware targets vulnerabilities such as Cross-Site Scripting (XSS), 
+    /// Clickjacking, and Protocol Downgrade attacks. It should be registered early in the request pipeline.
+    /// </remarks>
     public class ApiSecurityHeadersMiddleware
     {
         private readonly RequestDelegate _next;
 
+        /// <summary>
+        /// Static collection of headers to be applied to the HttpContext.Response.
+        /// </summary>
         private static readonly Dictionary<string, string> _securityHeaders = new()
         {
             { "Content-Security-Policy", "default-src 'self'" },
@@ -21,6 +31,11 @@ namespace KYS.AspNetCore.Library.Middlewares
             _next = next;
         }
 
+        /// <summary>
+        /// Processes the request and applies the security headers to the response.
+        /// </summary>
+        /// <param name="context">The current <see cref="HttpContext"/>.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public async Task InvokeAsync(HttpContext context)
         {
             foreach (var header in _securityHeaders)

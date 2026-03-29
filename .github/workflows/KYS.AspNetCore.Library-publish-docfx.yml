@@ -1,4 +1,4 @@
-name: Build and Publish KYS.Library DocFX
+name: Build and Publish KYS.AspNetCore.Library DocFX
 permissions:
   contents: write
 
@@ -8,15 +8,15 @@ on:
     branches:
       - master
     paths:
-      - "src/KYS.Library/**"
+      - "src/KYS.AspNetCore.Library/**"
 
 jobs:
   build-docs:
     uses: ./.github/workflows/reusable-publish-docfx.yml
     with:
-      library-name: kys-library
-      docfx-project: src/KYS.Library/docfx
-      docfx-publish-dir: ./src/KYS.Library/docfx/_site
+      library-name: kys-aspnetcore-library
+      docfx-project: src/KYS.AspNetCore.Library/docfx
+      docfx-publish-dir: ./src/KYS.AspNetCore.Library/docfx/_site
       dotnet-version:
     secrets:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

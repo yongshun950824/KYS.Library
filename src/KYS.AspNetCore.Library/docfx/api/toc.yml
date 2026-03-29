@@ -1,0 +1,41 @@
+### YamlMime:TableOfContent
+items:
+- uid: KYS.AspNetCore.Library.Extensions
+  name: KYS.AspNetCore.Library.Extensions
+  type: Namespace
+  items:
+  - uid: KYS.AspNetCore.Library.Extensions.HttpContextExtensions
+    name: HttpContextExtensions
+    type: Class
+- uid: KYS.AspNetCore.Library.Helpers
+  name: KYS.AspNetCore.Library.Helpers
+  type: Namespace
+  items:
+  - uid: KYS.AspNetCore.Library.Helpers.ViewResultHelper
+    name: ViewResultHelper
+    type: Class
+- uid: KYS.AspNetCore.Library.Middlewares
+  name: KYS.AspNetCore.Library.Middlewares
+  type: Namespace
+  items:
+  - uid: KYS.AspNetCore.Library.Middlewares.ApiSecurityHeadersMiddleware
+    name: ApiSecurityHeadersMiddleware
+    type: Class
+  - uid: KYS.AspNetCore.Library.Middlewares.WebSecurityHeadersMiddleware
+    name: WebSecurityHeadersMiddleware
+    type: Class
+- uid: KYS.AspNetCore.Library.Models
+  name: KYS.AspNetCore.Library.Models
+  type: Namespace
+  items:
+  - uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
+    name: ApiReponseModel<T>
+    type: Class
+- uid: KYS.AspNetCore.Library.TagHelpers
+  name: KYS.AspNetCore.Library.TagHelpers
+  type: Namespace
+  items:
+  - uid: KYS.AspNetCore.Library.TagHelpers.JsonToHtmlTagHelper
+    name: JsonToHtmlTagHelper
+    type: Class
+memberLayout: SamePage

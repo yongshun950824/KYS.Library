@@ -1,0 +1,27 @@
+name: KYS.AspNetCore.Library - SonarQube
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.AspNetCore.Library/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "src/KYS.AspNetCore.Library/**"
+
+jobs:
+  scan:
+    uses: ./.github/workflows/reusable-sonar-scan.yml
+    with:
+      tests-project-path: "tests/KYS.AspNetCore.Library.Tests"
+      sonar-project-name: "yongshun950824_kys-aspnetcore-library"
+      sonar-org: "yongshun950824"
+      sonar-exclusions: "**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/**"
+      sonar-coverage-exclusions: "**/KYS.Library/**,**/KYS.EFCore.Library/**,**/Generated/**"
+      sonar-cpd-exclusions: "**/Migrations/**,**/Generated/**"
+    secrets:
+      SONAR_TOKEN: ${{ secrets.KYS_ASPNETCORE_LIBRARY_SONAR_TOKEN }}
+    permissions:
+      contents: read

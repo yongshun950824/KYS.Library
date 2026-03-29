@@ -1,27 +1,35 @@
-﻿using KYS.Library.Helpers;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using System.Text;
+using KYS.Library.Helpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Newtonsoft.Json.Linq;
-using System.Text;
 
 namespace KYS.AspNetCore.Library.TagHelpers
 {
     /// <summary>
-    /// A Tag Helper that converts JSON (Object & Array) into Table. <br />
-    /// <ul>
-    /// <li>Support display data in flatten form.</li><br />
-    /// <li>Support generated HTML in <code>table</code> element or Bootstrap Grid.</li>
-    /// </ul>
+    /// A tag helper that converts JSON (Object &amp; Array) into Table. <br />
+    /// <list type="bullet">
+    /// <item>Support display data in flatten form.</item>
+    /// <item>Support generated HTML as a <c>&lt;table&gt;</c> element or Bootstrap Grid.</item>
+    /// </list>
     /// </summary>
     [HtmlTargetElement("json-to-html", Attributes = "json", TagStructure = TagStructure.NormalOrSelfClosing)]
     public class JsonToHtmlTagHelper : TagHelper
     {
+        /// <summary>
+        /// Gets or sets the serialized JSON object/array.
+        /// </summary>
         [HtmlAttributeName("json")]
         public string Json { get; set; }
 
+        /// <summary>
+        /// Gets or sets the indicator to flatten the JSON.
+        /// </summary>
         [HtmlAttributeName("asFlatten")]
         public bool AsFlatten { get; set; }
 
+        /// <summary>
+        /// Gets or sets the indicator to generate the HTML content as Bootstrap Grid.
+        /// </summary>
         [HtmlAttributeName("asBootstrapGrid")]
         public bool AsBootstrapGrid { get; set; }
 
