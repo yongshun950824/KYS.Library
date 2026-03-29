@@ -70,7 +70,7 @@ public class ViewResultHelperUnitTest
         Assert.AreEqual(httpResponse.ReasonPhrase, model!.ResponseMessage);
     }
 
-    private HttpContext MockHttpContext()
+    private static DefaultHttpContext MockHttpContext()
     {
         var mockContext = new DefaultHttpContext();
         var metadataProvider = new EmptyModelMetadataProvider();
