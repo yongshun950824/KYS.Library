@@ -1,15 +1,18 @@
 name: KYS.Library - SonarQube
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
     paths:
       - "src/KYS.Library/**"
+      - "tests/KYS.Library.Tests/**"
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - "src/KYS.Library/**"
+      - "tests/KYS.Library.Tests/**"
 
 jobs:
   scan:

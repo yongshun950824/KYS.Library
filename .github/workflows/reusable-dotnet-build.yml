@@ -20,6 +20,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     env:
       LIBRARY_NAME: ${{ inputs.library-name }}
