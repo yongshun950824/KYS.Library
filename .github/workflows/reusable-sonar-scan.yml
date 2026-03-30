@@ -111,7 +111,7 @@ jobs:
             /o:"$SONAR_ORG" `
             /d:sonar.token="$SONAR_TOKEN" `
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
-            /d:sonar.projectBaseDir="$SONAR_PROJECT_DIR"
+            /d:sonar.projectBaseDir="$SONAR_PROJECT_DIR" `
             /d:sonar.exclusions="$SONAR_EXCLUSIONS" `
             /d:sonar.coverage.exclusions="$SONAR_COVERAGE_EXCLUSIONS" `
             /d:sonar.cpd.exclusions="$SONAR_CPD_EXCLUSIONS"
