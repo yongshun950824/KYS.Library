@@ -1,15 +1,18 @@
 name: KYS.AspNetCore.Library - SonarQube
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
     paths:
       - "src/KYS.AspNetCore.Library/**"
+      - "tests/KYS.AspNetCore.Library.Tests/**"
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - "src/KYS.AspNetCore.Library/**"
+      - "tests/KYS.AspNetCore.Library.Tests/**"
 
 jobs:
   scan:
