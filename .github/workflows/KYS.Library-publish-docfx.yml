@@ -18,6 +18,5 @@ jobs:
       docfx-project: src/KYS.Library/docfx
       docfx-publish-dir: ./src/KYS.Library/docfx/_site
       dotnet-version:
-    secrets: inherit
     permissions:
       contents: write

@@ -18,6 +18,5 @@ jobs:
       docfx-project: src/KYS.AspNetCore.Library/docfx
       docfx-publish-dir: ./src/KYS.AspNetCore.Library/docfx/_site
       dotnet-version:
-    secrets: inherit
     permissions:
       contents: write
