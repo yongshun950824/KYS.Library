@@ -107,8 +107,8 @@ jobs:
         shell: pwsh
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin `
-            /k:"$SONAR_PROJECT_NAME" `
-            /o:"$SONAR_ORG" `
+            /k:"$env:SONAR_PROJECT_NAME" `
+            /o:"$env:SONAR_ORG" `
             /d:sonar.token="$env:SONAR_TOKEN" `
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
             /d:sonar.projectBaseDir="$env:SONAR_PROJECT_DIR" `
