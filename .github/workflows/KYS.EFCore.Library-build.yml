@@ -11,12 +11,14 @@ on:
     paths:
       - "src/KYS.EFCore.Library/**"
       - "src/KYS.Library/**"
+      - "tests/KYS.Library.Tests/**"
   pull_request:
     branches:
       - master
     paths:
       - "src/KYS.EFCore.Library/**"
       - "src/KYS.Library/**"
+      - "tests/KYS.Library.Tests/**"
 
 jobs:
   build:
