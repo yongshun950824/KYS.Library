@@ -50,7 +50,9 @@ jobs:
       # peaceiris/actions-gh-pages@v4.0.0
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ GITHUB_TOKEN }}
           publish_dir: ${{ env.DOCFX_PUBLISH_DIR }}
           destination_dir: ${{ env.LIBRARY_NAME }}
