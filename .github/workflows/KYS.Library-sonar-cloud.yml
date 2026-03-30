@@ -19,10 +19,10 @@ jobs:
     uses: ./.github/workflows/reusable-sonar-scan.yml
     with:
       tests-project-path: "tests/KYS.Library.Tests"
+      lib-project-path: "src/KYS.Library"
       sonar-project-name: "yongshun950824_kys-library"
       sonar-org: "yongshun950824"
-      sonar-project-dir: "src/KYS.Library"
-      sonar-exclusions: "**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/**"
+      sonar-exclusions: "**/bin/**,**/obj/**,**/Migrations/**,**/Generated/**,**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**"
       sonar-coverage-exclusions: "**/KYS.AspNetCore.Library/**,**/KYS.EFCore.Library/**,**/Generated/**"
       sonar-cpd-exclusions: "**/Migrations/**,**/Generated/**"
     secrets:

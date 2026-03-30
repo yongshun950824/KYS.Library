@@ -6,10 +6,10 @@ on:
       tests-project-path:
         required: true
         type: string
-      sonar-project-name:
+      lib-project-path:
         required: true
         type: string
-      sonar-project-dir:
+      sonar-project-name:
         required: true
         type: string
       sonar-org:
@@ -19,7 +19,7 @@ on:
       sonar-exclusions:
         required: false
         type: string
-        default: "**/bin/**,**/obj/**,**/*.dll,**/*.csproj,**/Migrations/**,**/Generated/**"
+        default: "**/bin/**,**/obj/**,**/Migrations/**,**/Generated/**"
       sonar-coverage-exclusions:
         required: false
         type: string
@@ -39,6 +39,7 @@ jobs:
     runs-on: windows-latest
     env:
       TESTS_PROJECT: ${{ inputs.tests-project-path }}
+      LIB_PROJECT: ${{ inputs.lib-project-path }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -54,7 +55,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build $LIB_PROJECT --no-restore --configuration Release --no-incremental
 
       - name: Run unit tests
         run: dotnet test $TESTS_PROJECT --no-build --configuration Release
@@ -99,7 +100,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_PROJECT_NAME: ${{ inputs.sonar-project-name }}
-          SONAR_PROJECT_DIR: ${{ inputs.sonar-project-dir }}
+          SONAR_SOURCES: ${{ inputs.lib-project-path }}
           SONAR_ORG: ${{ inputs.sonar-org }}
           SONAR_EXCLUSIONS: ${{ inputs.sonar-exclusions }}
           SONAR_COVERAGE_EXCLUSIONS: ${{ inputs.sonar-coverage-exclusions }}
@@ -111,7 +112,7 @@ jobs:
             /o:"$env:SONAR_ORG" `
             /d:sonar.token="$env:SONAR_TOKEN" `
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
-            /d:sonar.projectBaseDir="$env:SONAR_PROJECT_DIR" `
+            /d:sonar.sources="$env:SONAR_SOURCES" `
             /d:sonar.exclusions="$env:SONAR_EXCLUSIONS" `
             /d:sonar.coverage.exclusions="$env:SONAR_COVERAGE_EXCLUSIONS" `
             /d:sonar.cpd.exclusions="$env:SONAR_CPD_EXCLUSIONS"
