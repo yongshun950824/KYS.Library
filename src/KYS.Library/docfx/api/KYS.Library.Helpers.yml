@@ -7,6 +7,7 @@ items:
   - KYS.Library.Helpers.CompareOperator
   - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
   - KYS.Library.Helpers.DataTableHelper
+  - KYS.Library.Helpers.DomainErrors
   - KYS.Library.Helpers.EmailHelper
   - KYS.Library.Helpers.EmailHelper.SmtpClientConfig
   - KYS.Library.Helpers.ExcelHelper
@@ -70,6 +71,12 @@ references:
   name: DataTableHelper
   nameWithType: DataTableHelper
   fullName: KYS.Library.Helpers.DataTableHelper
+- uid: KYS.Library.Helpers.DomainErrors
+  commentId: T:KYS.Library.Helpers.DomainErrors
+  href: KYS.Library.Helpers.DomainErrors.html
+  name: DomainErrors
+  nameWithType: DomainErrors
+  fullName: KYS.Library.Helpers.DomainErrors
 - uid: KYS.Library.Helpers.EmailHelper
   commentId: T:KYS.Library.Helpers.EmailHelper
   href: KYS.Library.Helpers.EmailHelper.html

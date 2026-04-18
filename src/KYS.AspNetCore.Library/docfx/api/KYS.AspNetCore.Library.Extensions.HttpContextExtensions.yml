@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Extensions/HttpContextExtensions.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: HttpContextExtensions
     path: ../Extensions/HttpContextExtensions.cs
     startLine: 10
@@ -54,8 +54,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Extensions/HttpContextExtensions.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: CreateViewDataDictionary
     path: ../Extensions/HttpContextExtensions.cs
     startLine: 19

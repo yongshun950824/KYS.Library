@@ -19,12 +19,12 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ExcelColumnFormat
     path: ../Helpers/ExcelHelper.cs
-    startLine: 219
+    startLine: 238
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -56,12 +56,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ColumnName
     path: ../Helpers/ExcelHelper.cs
-    startLine: 224
+    startLine: 243
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -87,12 +87,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DisplayedColumnName
     path: ../Helpers/ExcelHelper.cs
-    startLine: 228
+    startLine: 247
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -118,12 +118,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Format
     path: ../Helpers/ExcelHelper.cs
-    startLine: 232
+    startLine: 251
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -149,12 +149,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: HorizontalAlignment
     path: ../Helpers/ExcelHelper.cs
-    startLine: 236
+    startLine: 255
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -180,12 +180,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: HasSumColumn
     path: ../Helpers/ExcelHelper.cs
-    startLine: 241
+    startLine: 260
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers

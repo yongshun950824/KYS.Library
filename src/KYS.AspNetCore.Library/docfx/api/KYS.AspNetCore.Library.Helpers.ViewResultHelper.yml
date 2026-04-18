@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Helpers/ViewResultHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ViewResultHelper
     path: ../Helpers/ViewResultHelper.cs
     startLine: 11
@@ -53,8 +53,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Helpers/ViewResultHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ToViewResultAsync
     path: ../Helpers/ViewResultHelper.cs
     startLine: 35
@@ -62,13 +62,14 @@ items:
   - KYS.AspNetCore.Library
   namespace: KYS.AspNetCore.Library.Helpers
   summary: >-
-    Read <code>HttpResponseMessage</code> and render it to a <code>ViewResult</code>.
+    Read <xref href="System.Net.Http.HttpResponseMessage" data-throw-if-not-resolved="false"></xref> and render it to a <xref href="Microsoft.AspNetCore.Mvc.ViewResult" data-throw-if-not-resolved="false"></xref>.
 
     <br /><br />
 
     Idea from <a href="https://stackoverflow.com/questions/79674066/how-to-convert-httpresponsemessage-to-viewresult/79674130#79674130">How to convert HttpResponseMessage to ViewResult?</a>
   remarks: >-
     This method automatically handles:
+
 
     <ul><li>Checking <xref href="System.Net.Http.HttpResponseMessage.IsSuccessStatusCode" data-throw-if-not-resolved="false"></xref>.</li><li>Asynchronous reading of the response content.</li><li>Deserialization of JSON content into type <code class="typeparamref">T</code>.</li><li>Mapping API status codes and reason phrases to the view model.</li></ul>
   example: []
@@ -381,6 +382,14 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.Net.Http.HttpResponseMessage
+  commentId: T:System.Net.Http.HttpResponseMessage
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  name: HttpResponseMessage
+  nameWithType: HttpResponseMessage
+  fullName: System.Net.Http.HttpResponseMessage
 - uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
   commentId: T:KYS.AspNetCore.Library.Models.ApiReponseModel`1
   href: KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
@@ -427,14 +436,6 @@ references:
   name: HttpContext
   nameWithType: HttpContext
   fullName: Microsoft.AspNetCore.Http.HttpContext
-- uid: System.Net.Http.HttpResponseMessage
-  commentId: T:System.Net.Http.HttpResponseMessage
-  parent: System.Net.Http
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
-  name: HttpResponseMessage
-  nameWithType: HttpResponseMessage
-  fullName: System.Net.Http.HttpResponseMessage
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -481,43 +482,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.viewresult
   - name: )
-- uid: Microsoft.AspNetCore.Http
-  commentId: N:Microsoft.AspNetCore.Http
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft
-  name: Microsoft.AspNetCore.Http
-  nameWithType: Microsoft.AspNetCore.Http
-  fullName: Microsoft.AspNetCore.Http
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.AspNetCore
-    name: AspNetCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
-  - name: .
-  - uid: Microsoft.AspNetCore.Http
-    name: Http
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.AspNetCore
-    name: AspNetCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
-  - name: .
-  - uid: Microsoft.AspNetCore.Http
-    name: Http
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
 - uid: System.Net.Http
   commentId: N:System.Net.Http
   isExternal: true
@@ -555,6 +519,43 @@ references:
     name: Http
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true

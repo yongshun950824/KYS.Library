@@ -5,7 +5,6 @@ items:
   id: JsonHelper
   parent: KYS.Library.Helpers
   children:
-  - KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
   - KYS.Library.Helpers.JsonHelper.Flatten(Newtonsoft.Json.Linq.JToken,KYS.Library.Helpers.JsonHelper.FlattenFormat)
   - KYS.Library.Helpers.JsonHelper.FlattenArray``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
   - KYS.Library.Helpers.JsonHelper.FlattenObject``1(``0,KYS.Library.Helpers.JsonHelper.FlattenFormat)
@@ -17,12 +16,8 @@ items:
   fullName: KYS.Library.Helpers.JsonHelper
   type: Class
   source:
-    remote:
-      path: KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
-      branch: feature/enhancement
-      repo: https://github.com/yongshun950824/KYS.Library
     id: JsonHelper
-    path: ../obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
+    path: /workspaces/KYS.Library/src/KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
     startLine: 26
   assemblies:
   - KYS.Library
@@ -55,12 +50,12 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FlattenObject
     path: ../Helpers/JsonHelper.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -78,7 +73,7 @@ items:
     Reference: <a href="https://stackoverflow.com/a/63487391">Generically Flatten Json using c#</a>
   example: []
   syntax:
-    content: 'public static Dictionary<string, object> FlattenObject<T>(T source, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath) where T : class, new()'
+    content: 'public static Result<Dictionary<string, object>> FlattenObject<T>(T source, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath) where T : class, new()'
     parameters:
     - id: source
       type: '{T}'
@@ -90,9 +85,9 @@ items:
     - id: T
       description: The type of <code>source</code>. Must be a reference type with a public parameterless constructor.
     return:
-      type: System.Collections.Generic.Dictionary{System.String,System.Object}
-      description: The key value pair for the flatten JSON.
-    content.vb: Public Shared Function FlattenObject(Of T As {Class, New})(source As T, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Dictionary(Of String, Object)
+      type: CSharpFunctionalExtensions.Result{System.Collections.Generic.Dictionary{System.String,System.Object}}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the key value pair for the flatten JSON.
+    content.vb: Public Shared Function FlattenObject(Of T As {Class, New})(source As T, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Result(Of Dictionary(Of String, Object))
   overload: KYS.Library.Helpers.JsonHelper.FlattenObject*
   nameWithType.vb: JsonHelper.FlattenObject(Of T)(T, JsonHelper.FlattenFormat)
   fullName.vb: KYS.Library.Helpers.JsonHelper.FlattenObject(Of T)(T, KYS.Library.Helpers.JsonHelper.FlattenFormat)
@@ -110,12 +105,12 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FlattenArray
     path: ../Helpers/JsonHelper.cs
-    startLine: 64
+    startLine: 66
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -127,7 +122,7 @@ items:
     Default key format: <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: 'public static Dictionary<string, object> FlattenArray<T>(T source, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath) where T : JToken'
+    content: 'public static Result<Dictionary<string, object>> FlattenArray<T>(T source, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath) where T : JToken'
     parameters:
     - id: source
       type: '{T}'
@@ -139,9 +134,9 @@ items:
     - id: T
       description: The type of <code>source</code> which is a <xref href="Newtonsoft.Json.Linq.JToken" data-throw-if-not-resolved="false"></xref> type.
     return:
-      type: System.Collections.Generic.Dictionary{System.String,System.Object}
-      description: The key value pair for the flatten JSON.
-    content.vb: Public Shared Function FlattenArray(Of T As JToken)(source As T, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Dictionary(Of String, Object)
+      type: CSharpFunctionalExtensions.Result{System.Collections.Generic.Dictionary{System.String,System.Object}}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the key value pair for the flatten JSON.
+    content.vb: Public Shared Function FlattenArray(Of T As JToken)(source As T, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Result(Of Dictionary(Of String, Object))
   overload: KYS.Library.Helpers.JsonHelper.FlattenArray*
   nameWithType.vb: JsonHelper.FlattenArray(Of T)(T, JsonHelper.FlattenFormat)
   fullName.vb: KYS.Library.Helpers.JsonHelper.FlattenArray(Of T)(T, KYS.Library.Helpers.JsonHelper.FlattenFormat)
@@ -159,12 +154,12 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Flatten
     path: ../Helpers/JsonHelper.cs
-    startLine: 100
+    startLine: 86
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -176,7 +171,7 @@ items:
     Default key format: <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat.JsonPath" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public static Dictionary<string, object> Flatten(JToken token, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath)
+    content: public static Result<Dictionary<string, object>> Flatten(JToken token, JsonHelper.FlattenFormat flattenFormat = FlattenFormat.JsonPath)
     parameters:
     - id: token
       type: Newtonsoft.Json.Linq.JToken
@@ -185,59 +180,10 @@ items:
       type: KYS.Library.Helpers.JsonHelper.FlattenFormat
       description: The <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat" data-throw-if-not-resolved="false"></xref> format to construct the key.
     return:
-      type: System.Collections.Generic.Dictionary{System.String,System.Object}
-      description: The key value pair for the flatten JSON.
-    content.vb: Public Shared Function Flatten(token As JToken, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Dictionary(Of String, Object)
+      type: CSharpFunctionalExtensions.Result{System.Collections.Generic.Dictionary{System.String,System.Object}}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the flattened key-value pairs.
+    content.vb: Public Shared Function Flatten(token As JToken, flattenFormat As JsonHelper.FlattenFormat = FlattenFormat.JsonPath) As Result(Of Dictionary(Of String, Object))
   overload: KYS.Library.Helpers.JsonHelper.Flatten*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: ''
-- uid: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  commentId: M:KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  id: ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  parent: KYS.Library.Helpers.JsonHelper
-  langs:
-  - csharp
-  - vb
-  name: ConstructFlattenKey(string, FlattenFormat)
-  nameWithType: JsonHelper.ConstructFlattenKey(string, JsonHelper.FlattenFormat)
-  fullName: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(string, KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  type: Method
-  source:
-    remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
-      repo: https://github.com/yongshun950824/KYS.Library
-    id: ConstructFlattenKey
-    path: ../Helpers/JsonHelper.cs
-    startLine: 129
-  assemblies:
-  - KYS.Library
-  namespace: KYS.Library.Helpers
-  summary: Construct the key based on the <code>flattenFormat</code> given.
-  example: []
-  syntax:
-    content: public static string ConstructFlattenKey(string key, JsonHelper.FlattenFormat flattenFormat)
-    parameters:
-    - id: key
-      type: System.String
-      description: The <xref href="System.String" data-throw-if-not-resolved="false"></xref> for the key.
-    - id: flattenFormat
-      type: KYS.Library.Helpers.JsonHelper.FlattenFormat
-      description: The <xref href="KYS.Library.Helpers.JsonHelper.FlattenFormat" data-throw-if-not-resolved="false"></xref> format to construct the key.
-    return:
-      type: System.String
-      description: The key after applying the <code>flattenFormat</code>.
-    content.vb: Public Shared Function ConstructFlattenKey(key As String, flattenFormat As JsonHelper.FlattenFormat) As String
-  overload: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey*
-  exceptions:
-  - type: System.ComponentModel.InvalidEnumArgumentException
-    commentId: T:System.ComponentModel.InvalidEnumArgumentException
-    description: ''
-  nameWithType.vb: JsonHelper.ConstructFlattenKey(String, JsonHelper.FlattenFormat)
-  fullName.vb: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(String, KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  name.vb: ConstructFlattenKey(String, FlattenFormat)
 references:
 - uid: KYS.Library.Helpers
   commentId: N:KYS.Library.Helpers
@@ -535,6 +481,31 @@ references:
   - uid: KYS.Library.Helpers.JsonHelper.FlattenFormat
     name: FlattenFormat
     href: KYS.Library.Helpers.JsonHelper.FlattenFormat.html
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
+  isExternal: true
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: KYS.Library.Helpers.JsonHelper.FlattenObject*
   commentId: Overload:KYS.Library.Helpers.JsonHelper.FlattenObject
   href: KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_FlattenObject__1___0_KYS_Library_Helpers_JsonHelper_FlattenFormat_
@@ -547,18 +518,22 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
+- uid: CSharpFunctionalExtensions.Result{System.Collections.Generic.Dictionary{System.String,System.Object}}
+  commentId: T:CSharpFunctionalExtensions.Result{System.Collections.Generic.Dictionary{System.String,System.Object}}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<string, object>
-  nameWithType: Dictionary<string, object>
-  fullName: System.Collections.Generic.Dictionary<string, object>
-  nameWithType.vb: Dictionary(Of String, Object)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
-  name.vb: Dictionary(Of String, Object)
+  name: Result<Dictionary<string, object>>
+  nameWithType: Result<Dictionary<string, object>>
+  fullName: CSharpFunctionalExtensions.Result<System.Collections.Generic.Dictionary<string, object>>
+  nameWithType.vb: Result(Of Dictionary(Of String, Object))
+  fullName.vb: CSharpFunctionalExtensions.Result(Of System.Collections.Generic.Dictionary(Of String, Object))
+  name.vb: Result(Of Dictionary(Of String, Object))
   spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
@@ -575,7 +550,14 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: '>'
+  - name: '>'
   spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
     isExternal: true
@@ -594,81 +576,17 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+  - name: )
 - uid: T
   name: T
   nameWithType: T
   fullName: T
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions
 - uid: Newtonsoft.Json.Linq.JToken
   commentId: T:Newtonsoft.Json.Linq.JToken
   parent: Newtonsoft.Json.Linq
@@ -712,40 +630,9 @@ references:
   - uid: Newtonsoft.Json.Linq
     name: Linq
     isExternal: true
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
-  name: ArgumentException
-  nameWithType: ArgumentException
-  fullName: System.ArgumentException
 - uid: KYS.Library.Helpers.JsonHelper.Flatten*
   commentId: Overload:KYS.Library.Helpers.JsonHelper.Flatten
   href: KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_Flatten_Newtonsoft_Json_Linq_JToken_KYS_Library_Helpers_JsonHelper_FlattenFormat_
   name: Flatten
   nameWithType: JsonHelper.Flatten
   fullName: KYS.Library.Helpers.JsonHelper.Flatten
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: System.ComponentModel.InvalidEnumArgumentException
-  commentId: T:System.ComponentModel.InvalidEnumArgumentException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.invalidenumargumentexception
-  name: InvalidEnumArgumentException
-  nameWithType: InvalidEnumArgumentException
-  fullName: System.ComponentModel.InvalidEnumArgumentException
-- uid: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey*
-  commentId: Overload:KYS.Library.Helpers.JsonHelper.ConstructFlattenKey
-  href: KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_ConstructFlattenKey_System_String_KYS_Library_Helpers_JsonHelper_FlattenFormat_
-  name: ConstructFlattenKey
-  nameWithType: JsonHelper.ConstructFlattenKey
-  fullName: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey

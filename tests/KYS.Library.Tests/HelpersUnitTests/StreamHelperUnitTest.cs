@@ -1,9 +1,9 @@
-﻿using KYS.Library.Helpers;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using KYS.Library.Helpers;
+using NUnit.Framework;
 
 namespace KYS.Library.Tests.HelpersUnitTests
 {
@@ -17,7 +17,7 @@ namespace KYS.Library.Tests.HelpersUnitTests
 
             // Act
             using Stream stream = StreamHelper.WriteStringIntoStream(input);
-            using StreamReader reader = new StreamReader(stream);
+            using StreamReader reader = new(stream);
             string result = reader.ReadToEnd();
 
             // Assert
@@ -34,7 +34,7 @@ namespace KYS.Library.Tests.HelpersUnitTests
 
             // Act
             using Stream stream = StreamHelper.WriteStringIntoStream(input);
-            using StreamReader reader = new StreamReader(stream);
+            using StreamReader reader = new(stream);
             string result = reader.ReadToEnd();
 
             // Assert
@@ -50,7 +50,7 @@ namespace KYS.Library.Tests.HelpersUnitTests
 
             // Act
             using Stream stream = StreamHelper.WriteStringIntoStream(input);
-            using StreamReader reader = new StreamReader(stream);
+            using StreamReader reader = new(stream);
             string result = reader.ReadToEnd();
 
             // Assert
@@ -65,15 +65,18 @@ namespace KYS.Library.Tests.HelpersUnitTests
             byte[] input = { 1, 2, 3, 4, 5 };
 
             // Act
-            using MemoryStream result = StreamHelper.ToMemoryStream(input);
+            var result = StreamHelper.ToMemoryStream(input);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(0, result.Position, "Stream position should be reset to 0");
-            Assert.AreEqual(input.Length, result.Length, "Stream length should match byte array length");
+            Assert.IsTrue(result.IsSuccess);
+
+            using var ms = result.Value;
+            Assert.IsNotNull(ms);
+            Assert.AreEqual(0, ms.Position, "Stream position should be reset to 0");
+            Assert.AreEqual(input.Length, ms.Length, "Stream length should match byte array length");
 
             // Verify that content is identical
-            byte[] resultBytes = result.ToArray();
+            byte[] resultBytes = ms.ToArray();
             CollectionAssert.AreEqual(input, resultBytes);
         }
 
@@ -84,12 +87,15 @@ namespace KYS.Library.Tests.HelpersUnitTests
             byte[] input = Array.Empty<byte>();
 
             // Act
-            using MemoryStream result = StreamHelper.ToMemoryStream(input);
+            var result = StreamHelper.ToMemoryStream(input);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(0, result.Length);
-            Assert.AreEqual(0, result.Position);
+            Assert.IsTrue(result.IsSuccess);
+
+            using var ms = result.Value;
+            Assert.IsNotNull(ms);
+            Assert.AreEqual(0, ms.Length);
+            Assert.AreEqual(0, ms.Position);
         }
 
         [Test]
@@ -98,8 +104,12 @@ namespace KYS.Library.Tests.HelpersUnitTests
             // Arrange
             byte[] input = null;
 
-            // Act & Assert
-            Assert.Throws<NullReferenceException>(() => StreamHelper.ToMemoryStream(input));
+            // Act
+            var result = StreamHelper.ToMemoryStream(input);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(DomainErrors.CannotBeNull("byteArray"), result.Error);
         }
 
         [Test]
@@ -107,7 +117,7 @@ namespace KYS.Library.Tests.HelpersUnitTests
         {
             // Arrange
             byte[] expectedBytes = { 10, 20, 30, 40 };
-            using MemoryStream ms = new MemoryStream(expectedBytes);
+            using MemoryStream ms = new(expectedBytes);
 
             // Act
             byte[] result = StreamHelper.ToByteArray(ms);
@@ -121,7 +131,7 @@ namespace KYS.Library.Tests.HelpersUnitTests
         public void ToByteArray_WithEmptyMemoryStream_ShouldReturnEmptyArray()
         {
             // Arrange
-            using MemoryStream ms = new MemoryStream();
+            using MemoryStream ms = new();
 
             // Act
             byte[] result = StreamHelper.ToByteArray(ms);
@@ -149,47 +159,52 @@ namespace KYS.Library.Tests.HelpersUnitTests
             string base64 = Convert.ToBase64String(originalBytes);
 
             // Act
-            byte[] result = StreamHelper.ReadBase64StringToByteArray(base64);
+            var result = StreamHelper.ReadBase64StringToByteArray(base64);
 
             // Assert
-            Assert.AreEqual(originalBytes, result);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(originalBytes, result.Value);
         }
 
         [Test]
-        public void ReadBase64StringToByteArray_WithEmptyString_ShouldThrowException()
+        public void ReadBase64StringToByteArray_WithEmptyString_ShouldReturnResultFailure()
         {
             // Arrange
             string invalidBase64 = "";
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() =>
-                StreamHelper.ReadBase64StringToByteArray(invalidBase64));
+            var result = StreamHelper.ReadBase64StringToByteArray(invalidBase64);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(DomainErrors.Required("base64String"), result.Error);
         }
 
         [Test]
-        public void ReadBase64StringToByteArray_WithCorruptedBase64_ShouldThrowFormatException()
+        public void ReadBase64StringToByteArray_WithCorruptedBase64_ShouldReturnResultFailure()
         {
             // Arrange
             string invalidBase64 = "Invalid!!Base64==";
 
-            // Act & Assert
-            Assert.Throws<FormatException>(() =>
-                StreamHelper.ReadBase64StringToByteArray(invalidBase64));
+            // Act
+            var result = StreamHelper.ReadBase64StringToByteArray(invalidBase64);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
         }
 
         [Test]
-        public async Task ToBase64Async_WithNullValue_ShouldThrowException()
+        public async Task ToBase64Async_WithNullValue_ShouldReturnResultFailure()
         {
             // Arrange
             Stream stream = null;
-            ArgumentNullException expectedEx = new ArgumentNullException(nameof(stream));
 
             // Act
-            var ex = Assert.CatchAsync<ArgumentException>(() => StreamHelper.ToBase64Async(stream));
+            var result = await StreamHelper.ToBase64Async(stream);
 
             // Assert
-            Assert.IsInstanceOf<ArgumentException>(ex);
-            Assert.AreEqual(expectedEx.Message, ex.Message);
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(DomainErrors.CannotBeNull("stream"), result.Error);
         }
 
         [Test]
@@ -205,7 +220,8 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = await StreamHelper.ToBase64Async(stream);
 
             // Assert
-            Assert.AreEqual(expectedBase64, result);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(expectedBase64, result.Value);
         }
     }
 }

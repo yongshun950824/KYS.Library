@@ -22,8 +22,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: SmtpClientConfig
     path: ../Helpers/EmailHelper.cs
@@ -39,6 +39,7 @@ items:
 
 
     Example usage:
+
 
     <pre><code class="lang-csharp">var smtpConfig = new SmtpClientConfig(
         host: "smtp.gmail.com",
@@ -77,8 +78,8 @@ items:
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Helpers/EmailHelper.cs
@@ -130,8 +131,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Host
     path: ../Helpers/EmailHelper.cs
@@ -161,8 +162,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Port
     path: ../Helpers/EmailHelper.cs
@@ -192,8 +193,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: SenderEmail
     path: ../Helpers/EmailHelper.cs
@@ -223,8 +224,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: SenderPassword
     path: ../Helpers/EmailHelper.cs
@@ -254,8 +255,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: EnableSSL
     path: ../Helpers/EmailHelper.cs
@@ -285,8 +286,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: UseDefaultCredentials
     path: ../Helpers/EmailHelper.cs
@@ -316,8 +317,8 @@ items:
   type: Operator
   source:
     remote:
-      path: KYS.Library/Helpers/EmailHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/EmailHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: op_Implicit
     path: ../Helpers/EmailHelper.cs
@@ -328,6 +329,7 @@ items:
   summary: Implicitly converts an instance of <xref href="KYS.Library.Helpers.EmailHelper.SmtpClientConfig" data-throw-if-not-resolved="false"></xref> to a configured instance of <xref href="System.Net.Mail.SmtpClient" data-throw-if-not-resolved="false"></xref>.
   remarks: >-
     This allows seamless casting from <xref href="KYS.Library.Helpers.EmailHelper.SmtpClientConfig" data-throw-if-not-resolved="false"></xref> to <xref href="System.Net.Mail.SmtpClient" data-throw-if-not-resolved="false"></xref>:
+
 
     <pre><code class="lang-csharp">var smtpConfig = new SmtpClientConfig("smtp.gmail.com", 587, "user@gmail.com", "password", true);
 

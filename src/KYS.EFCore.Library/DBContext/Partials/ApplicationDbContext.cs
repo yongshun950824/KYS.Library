@@ -48,7 +48,11 @@ namespace KYS.EFCore.Library.DBContext
                 var noTempPropAuditEntries = auditEntries.Where(e => !e.HasTemporaryProperties).ToList();
                 foreach (var auditEntry in noTempPropAuditEntries)
                 {
-                    ActionLog.Add(auditEntry.ToActionLog(formatting));
+                    var result = auditEntry.ToActionLog(formatting);
+                    if (result.IsFailure)
+                        throw new Exception(result.Error);
+
+                    ActionLog.Add(result.Value);
                 }
 
                 return auditEntries.Where(e => e.HasTemporaryProperties).ToList();
@@ -57,7 +61,7 @@ namespace KYS.EFCore.Library.DBContext
             {
                 _logger.LogError(ex, "[{Method}] Exception", nameof(OnBeforeSaveChanges));
 
-                return new List<AuditEntry>();
+                throw;
             }
         }
 
@@ -82,7 +86,11 @@ namespace KYS.EFCore.Library.DBContext
                         }
                     }
 
-                    ActionLog.Add(auditEntry.ToActionLog(formatting));
+                    var result = auditEntry.ToActionLog(formatting);
+                    if (result.IsFailure)
+                        throw new Exception(result.Error);
+
+                    ActionLog.Add(result.Value);
                 }
 
                 await base.SaveChangesAsync();
@@ -90,6 +98,8 @@ namespace KYS.EFCore.Library.DBContext
             catch (Exception ex)
             {
                 _logger.LogError(ex, "[{Method}] Exception", nameof(OnAfterSaveChangesAsync));
+
+                throw;
             }
         }
 

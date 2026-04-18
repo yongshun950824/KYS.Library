@@ -8,29 +8,6 @@ namespace KYS.Library.Tests.HelpersUnitTests;
 
 public class SqlHelperUnitTest
 {
-    [TestCase(null, "test")]
-    [TestCase("<connection string>", null)]
-    public void GetDataSet_WithInvalidArguments_ShouldThrowException(string connectionString, string commandText)
-    {
-        // Arrange
-        CommandType commandType = CommandType.Text;
-
-        // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => SqlHelper.GetDataSet(connectionString, commandType, commandText));
-    }
-
-
-    [TestCase(null, "test")]
-    [TestCase("<connection string>", null)]
-    public void GetDataTable_WithInvalidArguments_ShouldThrowException(string connectionString, string commandText)
-    {
-        // Arrange
-        CommandType commandType = CommandType.Text;
-
-        // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => SqlHelper.GetDataTable(connectionString, commandType, commandText));
-    }
-
     [Test]
     public void BuildStructuredSqlParameter_ShouldReturnValidSqlParameter()
     {

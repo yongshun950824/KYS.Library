@@ -20,12 +20,12 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DataTableHelper
     path: ../Helpers/DataTableHelper.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -57,19 +57,19 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToTextFile
     path: ../Helpers/DataTableHelper.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into text/CSV file.
   example: []
   syntax:
-    content: public static byte[] WriteToTextFile(DataTable dt, bool printHeaders = true, string delimiter = ";", CultureInfo cultureInfo = null)
+    content: public static Result<byte[]> WriteToTextFile(DataTable dt, bool printHeaders = true, string delimiter = ";", CultureInfo cultureInfo = null)
     parameters:
     - id: dt
       type: System.Data.DataTable
@@ -84,9 +84,9 @@ items:
       type: System.Globalization.CultureInfo
       description: The culture to be used.
     return:
-      type: System.Byte[]
-      description: The byte array for the file.
-    content.vb: Public Shared Function WriteToTextFile(dt As DataTable, printHeaders As Boolean = True, delimiter As String = ";", cultureInfo As CultureInfo = Nothing) As Byte()
+      type: CSharpFunctionalExtensions.Result{System.Byte[]}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing byte[] instance which is the file.
+    content.vb: Public Shared Function WriteToTextFile(dt As DataTable, printHeaders As Boolean = True, delimiter As String = ";", cultureInfo As CultureInfo = Nothing) As Result(Of Byte())
   overload: KYS.Library.Helpers.DataTableHelper.WriteToTextFile*
   nameWithType.vb: DataTableHelper.WriteToTextFile(DataTable, Boolean, String, CultureInfo)
   fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToTextFile(System.Data.DataTable, Boolean, String, System.Globalization.CultureInfo)
@@ -104,8 +104,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToExcelFile
     path: ../Helpers/DataTableHelper.cs
@@ -116,7 +116,7 @@ items:
   summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into Excel file.
   example: []
   syntax:
-    content: public static byte[] WriteToExcelFile(DataTable dt, ExcelHelper.ExcelRowStyle headerRowStyle = null, List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null, LicenseContext license = LicenseContext.NonCommercial)
+    content: public static Result<byte[]> WriteToExcelFile(DataTable dt, ExcelHelper.ExcelRowStyle headerRowStyle = null, List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null, LicenseContext license = LicenseContext.NonCommercial)
     parameters:
     - id: dt
       type: System.Data.DataTable
@@ -130,14 +130,10 @@ items:
       type: OfficeOpenXml.LicenseContext
       description: The license used in <xref href="OfficeOpenXml.ExcelPackage" data-throw-if-not-resolved="false"></xref>.
     return:
-      type: System.Byte[]
-      description: The byte array for the file.
-    content.vb: Public Shared Function WriteToExcelFile(dt As DataTable, headerRowStyle As ExcelHelper.ExcelRowStyle = Nothing, excelColumnFormats As List(Of ExcelHelper.ExcelColumnFormat) = Nothing, license As LicenseContext = LicenseContext.NonCommercial) As Byte()
+      type: CSharpFunctionalExtensions.Result{System.Byte[]}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the byte[] instance which is the Excel file content.
+    content.vb: Public Shared Function WriteToExcelFile(dt As DataTable, headerRowStyle As ExcelHelper.ExcelRowStyle = Nothing, excelColumnFormats As List(Of ExcelHelper.ExcelColumnFormat) = Nothing, license As LicenseContext = LicenseContext.NonCommercial) As Result(Of Byte())
   overload: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
   nameWithType.vb: DataTableHelper.WriteToExcelFile(DataTable, ExcelHelper.ExcelRowStyle, List(Of ExcelHelper.ExcelColumnFormat), LicenseContext)
   fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable, KYS.Library.Helpers.ExcelHelper.ExcelRowStyle, System.Collections.Generic.List(Of KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat), OfficeOpenXml.LicenseContext)
   name.vb: WriteToExcelFile(DataTable, ExcelRowStyle, List(Of ExcelColumnFormat), LicenseContext)
@@ -154,19 +150,19 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToPdfFile
     path: ../Helpers/DataTableHelper.cs
-    startLine: 78
+    startLine: 75
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into PDF file.
   example: []
   syntax:
-    content: public static byte[] WriteToPdfFile(DataTable dt, bool printHeaders = true, Style tableHeaderStyle = null, Style tableBodyStyle = null)
+    content: public static Result<byte[]> WriteToPdfFile(DataTable dt, bool printHeaders = true, Style tableHeaderStyle = null, Style tableBodyStyle = null)
     parameters:
     - id: dt
       type: System.Data.DataTable
@@ -181,14 +177,10 @@ items:
       type: iText.Layout.Style
       description: The style for the table content.
     return:
-      type: System.Byte[]
-      description: The byte array for the file.
-    content.vb: Public Shared Function WriteToPdfFile(dt As DataTable, printHeaders As Boolean = True, tableHeaderStyle As Style = Nothing, tableBodyStyle As Style = Nothing) As Byte()
+      type: CSharpFunctionalExtensions.Result{System.Byte[]}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the byte[] instance which is the PDF file content.
+    content.vb: Public Shared Function WriteToPdfFile(dt As DataTable, printHeaders As Boolean = True, tableHeaderStyle As Style = Nothing, tableBodyStyle As Style = Nothing) As Result(Of Byte())
   overload: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
   nameWithType.vb: DataTableHelper.WriteToPdfFile(DataTable, Boolean, Style, Style)
   fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable, Boolean, iText.Layout.Style, iText.Layout.Style)
   name.vb: WriteToPdfFile(DataTable, Boolean, Style, Style)
@@ -205,19 +197,19 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToJsonFile
     path: ../Helpers/DataTableHelper.cs
-    startLine: 118
+    startLine: 115
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Write <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> into JSON file.
   example: []
   syntax:
-    content: public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)
+    content: public static Result<byte[]> WriteToJsonFile(DataTable dt, bool isIndented = true)
     parameters:
     - id: dt
       type: System.Data.DataTable
@@ -226,9 +218,9 @@ items:
       type: System.Boolean
       description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value indicates to print the JSON as indented.
     return:
-      type: System.Byte[]
-      description: The byte array for the file.
-    content.vb: Public Shared Function WriteToJsonFile(dt As DataTable, isIndented As Boolean = True) As Byte()
+      type: CSharpFunctionalExtensions.Result{System.Byte[]}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the byte[] instance which is the JSON file content.
+    content.vb: Public Shared Function WriteToJsonFile(dt As DataTable, isIndented As Boolean = True) As Result(Of Byte())
   overload: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile*
   nameWithType.vb: DataTableHelper.WriteToJsonFile(DataTable, Boolean)
   fullName.vb: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable, Boolean)
@@ -246,35 +238,28 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ReadCSV
     path: ../Helpers/DataTableHelper.cs
-    startLine: 143
+    startLine: 139
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Read CSV from file into <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public static DataTable ReadCSV(string filePath)
+    content: public static Result<DataTable> ReadCSV(string filePath)
     parameters:
     - id: filePath
       type: System.String
       description: The path for the CSV file to be read.
     return:
-      type: System.Data.DataTable
-      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance with the data row(s).
-    content.vb: Public Shared Function ReadCSV(filePath As String) As DataTable
+      type: CSharpFunctionalExtensions.Result{System.Data.DataTable}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance with the data row(s).
+    content.vb: Public Shared Function ReadCSV(filePath As String) As Result(Of DataTable)
   overload: KYS.Library.Helpers.DataTableHelper.ReadCSV*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: ''
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
   nameWithType.vb: DataTableHelper.ReadCSV(String)
   fullName.vb: KYS.Library.Helpers.DataTableHelper.ReadCSV(String)
   name.vb: ReadCSV(String)
@@ -291,32 +276,28 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ReadCSV
     path: ../Helpers/DataTableHelper.cs
-    startLine: 163
+    startLine: 157
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Read CSV from <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> into <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public static DataTable ReadCSV(Stream stream)
+    content: public static Result<DataTable> ReadCSV(Stream stream)
     parameters:
     - id: stream
       type: System.IO.Stream
       description: The <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> instance containing the CSV file.
     return:
-      type: System.Data.DataTable
-      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance with the data row(s).
-    content.vb: Public Shared Function ReadCSV(stream As Stream) As DataTable
+      type: CSharpFunctionalExtensions.Result{System.Data.DataTable}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance with the data row(s).
+    content.vb: Public Shared Function ReadCSV(stream As Stream) As Result(Of DataTable)
   overload: KYS.Library.Helpers.DataTableHelper.ReadCSV*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
 references:
 - uid: System.Data.DataTable
   commentId: T:System.Data.DataTable
@@ -631,6 +612,31 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
+  isExternal: true
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: KYS.Library.Helpers.DataTableHelper.WriteToTextFile*
   commentId: Overload:KYS.Library.Helpers.DataTableHelper.WriteToTextFile
   href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_WriteToTextFile_System_Data_DataTable_System_Boolean_System_String_System_Globalization_CultureInfo_
@@ -656,28 +662,42 @@ references:
   name: CultureInfo
   nameWithType: CultureInfo
   fullName: System.Globalization.CultureInfo
-- uid: System.Byte[]
-  isExternal: true
+- uid: CSharpFunctionalExtensions.Result{System.Byte[]}
+  commentId: T:CSharpFunctionalExtensions.Result{System.Byte[]}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
   href: https://learn.microsoft.com/dotnet/api/system.byte
-  name: byte[]
-  nameWithType: byte[]
-  fullName: byte[]
-  nameWithType.vb: Byte()
-  fullName.vb: Byte()
-  name.vb: Byte()
+  name: Result<byte[]>
+  nameWithType: Result<byte[]>
+  fullName: CSharpFunctionalExtensions.Result<byte[]>
+  nameWithType.vb: Result(Of Byte())
+  fullName.vb: CSharpFunctionalExtensions.Result(Of Byte())
+  name.vb: Result(Of Byte())
   spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
   - uid: System.Byte
     name: byte
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.byte
   - name: '['
   - name: ']'
+  - name: '>'
   spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Byte
     name: Byte
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.byte
   - name: (
+  - name: )
   - name: )
 - uid: System.Globalization
   commentId: N:System.Globalization
@@ -706,19 +726,18 @@ references:
     name: Globalization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.globalization
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions
 - uid: OfficeOpenXml.ExcelPackage
   commentId: T:OfficeOpenXml.ExcelPackage
   isExternal: true
   name: ExcelPackage
   nameWithType: ExcelPackage
   fullName: OfficeOpenXml.ExcelPackage
-- uid: System.ArgumentNullException
-  commentId: T:System.ArgumentNullException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
-  name: ArgumentNullException
-  nameWithType: ArgumentNullException
-  fullName: System.ArgumentNullException
 - uid: KYS.Library.Helpers.DataTableHelper.WriteToExcelFile*
   commentId: Overload:KYS.Library.Helpers.DataTableHelper.WriteToExcelFile
   href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_WriteToExcelFile_System_Data_DataTable_KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_System_Collections_Generic_List_KYS_Library_Helpers_ExcelHelper_ExcelColumnFormat__OfficeOpenXml_LicenseContext_
@@ -908,19 +927,45 @@ references:
   name: WriteToJsonFile
   nameWithType: DataTableHelper.WriteToJsonFile
   fullName: KYS.Library.Helpers.DataTableHelper.WriteToJsonFile
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
-  name: ArgumentException
-  nameWithType: ArgumentException
-  fullName: System.ArgumentException
 - uid: KYS.Library.Helpers.DataTableHelper.ReadCSV*
   commentId: Overload:KYS.Library.Helpers.DataTableHelper.ReadCSV
   href: KYS.Library.Helpers.DataTableHelper.html#KYS_Library_Helpers_DataTableHelper_ReadCSV_System_String_
   name: ReadCSV
   nameWithType: DataTableHelper.ReadCSV
   fullName: KYS.Library.Helpers.DataTableHelper.ReadCSV
+- uid: CSharpFunctionalExtensions.Result{System.Data.DataTable}
+  commentId: T:CSharpFunctionalExtensions.Result{System.Data.DataTable}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.data.datatable
+  name: Result<DataTable>
+  nameWithType: Result<DataTable>
+  fullName: CSharpFunctionalExtensions.Result<System.Data.DataTable>
+  nameWithType.vb: Result(Of DataTable)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of System.Data.DataTable)
+  name.vb: Result(Of DataTable)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.Data.DataTable
+    name: DataTable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.datatable
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Data.DataTable
+    name: DataTable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.datatable
+  - name: )
 - uid: System.IO.Stream
   commentId: T:System.IO.Stream
   parent: System.IO

@@ -1,8 +1,7 @@
-﻿using KYS.Library.Helpers;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using KYS.Library.Helpers;
+using NUnit.Framework;
 using static KYS.Library.Helpers.FormattingHelper;
 
 namespace KYS.Library.Tests.HelpersUnitTests
@@ -39,7 +38,7 @@ namespace KYS.Library.Tests.HelpersUnitTests
         }
 
         [Test]
-        public void Convert_WithEmptyString_ShouldReturnOriginalValue()
+        public void Convert_WithEmptyString_ShouldReturnResultSuccessWithOriginalValue()
         {
             // Arrange
             string input = String.Empty;
@@ -48,11 +47,12 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = FormattingHelper.Convert(input, Formatting.SnakeCase);
 
             // Assert
-            Assert.AreEqual(input, result);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(input, result.Value);
         }
 
         [Test]
-        public void Convert_WithNullString_ShouldReturnOriginalValue()
+        public void Convert_WithNullString_ShouldReturnResultSuccessWithOriginalValue()
         {
             // Arrange
             string input = null;
@@ -61,38 +61,37 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = FormattingHelper.Convert(input, Formatting.SnakeCase);
 
             // Assert
-            Assert.AreEqual(input, result);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(input, result.Value);
         }
 
         [Test]
-        public void Convert_WithInvalidEnum_ShouldThrowException()
+        public void Convert_WithInvalidEnum_ShouldReturnResultFailure()
         {
             // Arrange
             Formatting unknown = (Formatting)9;
             string input = "test";
-            var expectedEx = new InvalidEnumArgumentException("format", (int)unknown, typeof(Formatting));
 
             // Act
-            var ex = Assert.Catch<InvalidEnumArgumentException>(
-                () => FormattingHelper.Convert(input, unknown)
-            );
+            var result = FormattingHelper.Convert(input, unknown);
 
             // Assert
-            Assert.IsInstanceOf<InvalidEnumArgumentException>(ex);
-            Assert.AreEqual(expectedEx.Message, ex.Message);
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual($"Invalid formatting option: {unknown}.", result.Error);
         }
 
-        [TestCaseSource("TestCases")]
-        public void Convert_WithTestCase_ShouldReturnSnakeCaseValue(string input,
+        [TestCaseSource(nameof(TestCases))]
+        public void Convert_WithTestCase_ShouldReturnResultSuccessWithSnakeCaseValue(string input,
             Formatting format,
             string expectedValue,
             int i)
         {
             // Act
-            string actualValue = FormattingHelper.Convert(input, format);
+            var result = FormattingHelper.Convert(input, format);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(expectedValue, result.Value);
         }
     }
 }

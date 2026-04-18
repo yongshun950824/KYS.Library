@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using CSharpFunctionalExtensions;
 
 namespace KYS.Library.Helpers
 {
@@ -13,15 +14,23 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <param name="ms">The <see cref="MemoryStream" /> instance containing the file conetnt.</param>
         /// <param name="fileName">The name for the file to be generated.</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static void WriteFile(MemoryStream ms, string fileName)
+        /// <returns>A <see cref="Result" /> indicating the success or failure of the operation.</returns>
+        public static Result WriteFile(MemoryStream ms, string fileName)
         {
-            ArgumentNullException.ThrowIfNull(ms);
+            if (ms == null)
+                return Result.Failure(String.Format(DomainErrors.CannotBeNull(nameof(ms))));
 
-            using FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write);
-            ms.WriteTo(fs);
+            if (String.IsNullOrWhiteSpace(fileName))
+                return Result.Failure(String.Format(DomainErrors.Required(nameof(fileName))));
 
-            ms.Close();
+            return Result.Try(() =>
+            {
+                using FileStream fs = new(fileName, FileMode.Create, FileAccess.Write);
+                ms.WriteTo(fs);
+
+                ms.Close();
+            },
+            ex => ex.Message);
         }
 
         /// <summary>
@@ -29,36 +38,44 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <param name="bytes">The <c>byte[]</c> instance containing the file content.</param>
         /// <param name="fileName">The name for the file to be generated.</param>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static void WriteFile(byte[] bytes, string fileName)
+        /// <returns>A <see cref="Result" /> indicating the success or failure of the operation.</returns>
+        public static Result WriteFile(byte[] bytes, string fileName)
         {
-            ArgumentNullException.ThrowIfNull(bytes);
+            if (bytes == null)
+                return Result.Failure(String.Format(DomainErrors.CannotBeNull(nameof(bytes))));
 
-            using MemoryStream ms = StreamHelper.ToMemoryStream(bytes);
-            WriteFile(ms, fileName);
+            if (String.IsNullOrWhiteSpace(fileName))
+                return Result.Failure(String.Format(DomainErrors.Required(nameof(fileName))));
+
+            return StreamHelper.ToMemoryStream(bytes)
+                .Bind(ms => WriteFile(ms, fileName));
         }
 
         /// <summary>
         /// Load the file content into the <see cref="MemoryStream" /> instance.
         /// </summary>
         /// <param name="filePath">The path for the file to be loaded.</param>
-        /// <returns>The <see cref="MemoryStream" /> instance containing the file content.</returns>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="FileNotFoundException"></exception>
-        public static MemoryStream LoadFileToMemoryStream(string filePath)
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="MemoryStream" /> instance containing the file content.</returns>
+        public static Result<MemoryStream> LoadFileToMemoryStream(string filePath)
         {
-            ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+            if (String.IsNullOrWhiteSpace(filePath))
+                return Result.Failure<MemoryStream>(String.Format(DomainErrors.Required(nameof(filePath))));
 
             if (!File.Exists(filePath))
-            {
-                throw new FileNotFoundException(filePath);
-            }
+                return Result.Failure<MemoryStream>(String.Format(DomainErrors.FileNotFound(filePath)));
 
+            return Result.Try(
+                () => LoadFileToMemoryStreamCore(filePath),
+                ex => ex.Message
+            );
+        }
+
+        internal static MemoryStream LoadFileToMemoryStreamCore(string filePath)
+        {
             using FileStream fs = File.OpenRead(filePath);
             fs.Position = 0;
 
-            MemoryStream ms = new MemoryStream();
+            MemoryStream ms = new();
             fs.CopyTo(ms);
 
             ms.Position = 0;

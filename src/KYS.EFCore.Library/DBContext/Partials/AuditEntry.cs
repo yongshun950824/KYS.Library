@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using CSharpFunctionalExtensions;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -27,13 +28,21 @@ namespace KYS.EFCore.Library.DBContext.Partials
         public List<PropertyEntry> TemporaryProperties { get; } = new List<PropertyEntry>();
         public bool HasTemporaryProperties => TemporaryProperties.Count > 0;
 
-        public ActionLog ToActionLog(KYS.Library.Helpers.FormattingHelper.Formatting formatting = KYS.Library.Helpers.FormattingHelper.Formatting.SnakeCase)
+        public Result<ActionLog> ToActionLog(KYS.Library.Helpers.FormattingHelper.Formatting formatting = KYS.Library.Helpers.FormattingHelper.Formatting.SnakeCase)
         {
+            var tableNameResult = TableName.Convert(formatting);
+            if (tableNameResult.IsFailure)
+                return Result.Failure<ActionLog>($"Failed to convert table name '{TableName}' with error: {tableNameResult.Error}");
+
+            var columnNameResult = Column.Convert(formatting);
+            if (columnNameResult.IsFailure)
+                return Result.Failure<ActionLog>($"Failed to convert column name '{Column}' with error: {columnNameResult.Error}");
+
             var auditLog = new ActionLog
             {
                 ReferenceId = KeyValues.FirstOrDefault().Value.ToString(),
-                ReferenceTable = TableName.Convert(formatting),
-                ColumnName = Column.Convert(formatting),
+                ReferenceTable = tableNameResult.Value,
+                ColumnName = columnNameResult.Value,
                 ActionType = Action,
                 CreatedDate = DateTime.UtcNow,
                 CreatedUser = UserId

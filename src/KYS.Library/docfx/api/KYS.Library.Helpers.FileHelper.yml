@@ -17,12 +17,12 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/FileHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FileHelper
     path: ../Helpers/FileHelper.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -54,19 +54,19 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/FileHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteFile
     path: ../Helpers/FileHelper.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Write the content from the <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance in a new file.
   example: []
   syntax:
-    content: public static void WriteFile(MemoryStream ms, string fileName)
+    content: public static Result WriteFile(MemoryStream ms, string fileName)
     parameters:
     - id: ms
       type: System.IO.MemoryStream
@@ -74,12 +74,11 @@ items:
     - id: fileName
       type: System.String
       description: The name for the file to be generated.
-    content.vb: Public Shared Sub WriteFile(ms As MemoryStream, fileName As String)
+    return:
+      type: CSharpFunctionalExtensions.Result
+      description: A <xref href="CSharpFunctionalExtensions.Result" data-throw-if-not-resolved="false"></xref> indicating the success or failure of the operation.
+    content.vb: Public Shared Function WriteFile(ms As MemoryStream, fileName As String) As Result
   overload: KYS.Library.Helpers.FileHelper.WriteFile*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
   nameWithType.vb: FileHelper.WriteFile(MemoryStream, String)
   fullName.vb: KYS.Library.Helpers.FileHelper.WriteFile(System.IO.MemoryStream, String)
   name.vb: WriteFile(MemoryStream, String)
@@ -96,19 +95,19 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/FileHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteFile
     path: ../Helpers/FileHelper.cs
-    startLine: 32
+    startLine: 41
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Write the content from the <code>bytes</code> array in a new file.
   example: []
   syntax:
-    content: public static void WriteFile(byte[] bytes, string fileName)
+    content: public static Result WriteFile(byte[] bytes, string fileName)
     parameters:
     - id: bytes
       type: System.Byte[]
@@ -116,12 +115,11 @@ items:
     - id: fileName
       type: System.String
       description: The name for the file to be generated.
-    content.vb: Public Shared Sub WriteFile(bytes As Byte(), fileName As String)
+    return:
+      type: CSharpFunctionalExtensions.Result
+      description: A <xref href="CSharpFunctionalExtensions.Result" data-throw-if-not-resolved="false"></xref> indicating the success or failure of the operation.
+    content.vb: Public Shared Function WriteFile(bytes As Byte(), fileName As String) As Result
   overload: KYS.Library.Helpers.FileHelper.WriteFile*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
   nameWithType.vb: FileHelper.WriteFile(Byte(), String)
   fullName.vb: KYS.Library.Helpers.FileHelper.WriteFile(Byte(), String)
   name.vb: WriteFile(Byte(), String)
@@ -138,38 +136,28 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/FileHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/FileHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: LoadFileToMemoryStream
     path: ../Helpers/FileHelper.cs
-    startLine: 48
+    startLine: 58
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Load the file content into the <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance.
   example: []
   syntax:
-    content: public static MemoryStream LoadFileToMemoryStream(string filePath)
+    content: public static Result<MemoryStream> LoadFileToMemoryStream(string filePath)
     parameters:
     - id: filePath
       type: System.String
       description: The path for the file to be loaded.
     return:
-      type: System.IO.MemoryStream
-      description: The <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance containing the file content.
-    content.vb: Public Shared Function LoadFileToMemoryStream(filePath As String) As MemoryStream
+      type: CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance containing the file content.
+    content.vb: Public Shared Function LoadFileToMemoryStream(filePath As String) As Result(Of MemoryStream)
   overload: KYS.Library.Helpers.FileHelper.LoadFileToMemoryStream*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: ''
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
-  - type: System.IO.FileNotFoundException
-    commentId: T:System.IO.FileNotFoundException
-    description: ''
   nameWithType.vb: FileHelper.LoadFileToMemoryStream(String)
   fullName.vb: KYS.Library.Helpers.FileHelper.LoadFileToMemoryStream(String)
   name.vb: LoadFileToMemoryStream(String)
@@ -449,13 +437,13 @@ references:
   name: MemoryStream
   nameWithType: MemoryStream
   fullName: System.IO.MemoryStream
-- uid: System.ArgumentNullException
-  commentId: T:System.ArgumentNullException
+- uid: CSharpFunctionalExtensions.Result
+  commentId: T:CSharpFunctionalExtensions.Result
+  parent: CSharpFunctionalExtensions
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
-  name: ArgumentNullException
-  nameWithType: ArgumentNullException
-  fullName: System.ArgumentNullException
+  name: Result
+  nameWithType: Result
+  fullName: CSharpFunctionalExtensions.Result
 - uid: KYS.Library.Helpers.FileHelper.WriteFile*
   commentId: Overload:KYS.Library.Helpers.FileHelper.WriteFile
   href: KYS.Library.Helpers.FileHelper.html#KYS_Library_Helpers_FileHelper_WriteFile_System_IO_MemoryStream_System_String_
@@ -500,6 +488,12 @@ references:
     name: IO
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions
 - uid: System.Byte[]
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.byte
@@ -523,23 +517,67 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.byte
   - name: (
   - name: )
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
-  name: ArgumentException
-  nameWithType: ArgumentException
-  fullName: System.ArgumentException
-- uid: System.IO.FileNotFoundException
-  commentId: T:System.IO.FileNotFoundException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception
-  name: FileNotFoundException
-  nameWithType: FileNotFoundException
-  fullName: System.IO.FileNotFoundException
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: KYS.Library.Helpers.FileHelper.LoadFileToMemoryStream*
   commentId: Overload:KYS.Library.Helpers.FileHelper.LoadFileToMemoryStream
   href: KYS.Library.Helpers.FileHelper.html#KYS_Library_Helpers_FileHelper_LoadFileToMemoryStream_System_String_
   name: LoadFileToMemoryStream
   nameWithType: FileHelper.LoadFileToMemoryStream
   fullName: KYS.Library.Helpers.FileHelper.LoadFileToMemoryStream
+- uid: CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+  commentId: T:CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  name: Result<MemoryStream>
+  nameWithType: Result<MemoryStream>
+  fullName: CSharpFunctionalExtensions.Result<System.IO.MemoryStream>
+  nameWithType.vb: Result(Of MemoryStream)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of System.IO.MemoryStream)
+  name.vb: Result(Of MemoryStream)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.IO.MemoryStream
+    name: MemoryStream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IO.MemoryStream
+    name: MemoryStream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  - name: )

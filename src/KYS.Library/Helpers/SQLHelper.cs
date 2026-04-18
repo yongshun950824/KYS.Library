@@ -11,64 +11,6 @@ namespace KYS.Library.Helpers
     public static class SqlHelper
     {
         /// <summary>
-        /// Execute SQL query and obtain the result in <see cref="DataSet" />.
-        /// </summary>
-        /// <param name="connectionString">The connection string for database.</param>
-        /// <param name="commandType">The command type.</param>
-        /// <param name="commandText">The command query.</param>
-        /// <param name="sqlParameters">One or more <see cref="SqlParameter" />s.</param>
-        /// <returns>The <see cref="DataSet" /> instance containing the result for the query.</returns>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static DataSet GetDataSet(string connectionString, CommandType commandType, string commandText,
-            params SqlParameter[] sqlParameters)
-        {
-            ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
-            ArgumentException.ThrowIfNullOrWhiteSpace(commandText);
-
-            using SqlConnection con = new SqlConnection(connectionString);
-            using SqlCommand command = new SqlCommand(commandText, con);
-            con.Open();
-            command.CommandType = commandType;
-            command.Parameters.AddRange(sqlParameters);
-
-            using SqlDataAdapter da = new SqlDataAdapter(command);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-
-            return ds;
-        }
-
-        /// <summary>
-        /// Execute SQL query and obtain the result in <see cref="DataTable" />.
-        /// </summary>
-        /// <param name="connectionString">The connection string for database.</param>
-        /// <param name="commandType">The command type.</param>
-        /// <param name="commandText">The command query.</param>
-        /// <param name="sqlParameters">One or more <see cref="SqlParameter" />s.</param>
-        /// <returns>The <see cref="DataTable" /> instance containing the result for the query.</returns>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static DataTable GetDataTable(string connectionString, CommandType commandType, string commandText,
-            params SqlParameter[] sqlParameters)
-        {
-            ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
-            ArgumentException.ThrowIfNullOrWhiteSpace(commandText);
-
-            using SqlConnection con = new SqlConnection(connectionString);
-            using SqlCommand command = new SqlCommand(commandText, con);
-            con.Open();
-            command.CommandType = commandType;
-            command.Parameters.AddRange(sqlParameters);
-
-            using SqlDataAdapter da = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
-        }
-
-        /// <summary>
         /// Build structured parameter. Scenario: Query with <c>IN (SELECT [col] FROM @Parameter)</c>.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -123,16 +65,16 @@ namespace KYS.Library.Helpers
             ArgumentException.ThrowIfNullOrWhiteSpace(tableTypeColumnName);
             ArgumentException.ThrowIfNullOrWhiteSpace(parameterName);
 
-            DataTable dt = new DataTable();
+            DataTable dt = new();
             dt.Columns.Add(tableTypeColumnName, typeof(T));
 
             foreach (var @value in values)
-                dt.Rows.Add(new object[] { @value });
+                dt.Rows.Add(values: [@value]);
 
             return new SqlParameter(parameterName, SqlDbType.Structured)
             {
                 Value = dt,
-                TypeName = tableTypeName,
+                TypeName = tableTypeName
             };
         }
     }

@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ExpressionBuilder
     path: ../Helpers/ExpressionBuilder.cs
@@ -56,8 +56,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: BuildAndExpression
     path: ../Helpers/ExpressionBuilder.cs
@@ -108,8 +108,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CompileAndExpression
     path: ../Helpers/ExpressionBuilder.cs
@@ -158,8 +158,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: BuildOrExpression
     path: ../Helpers/ExpressionBuilder.cs
@@ -210,8 +210,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CompileOrExpression
     path: ../Helpers/ExpressionBuilder.cs
@@ -261,8 +261,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CompileExpression
     path: ../Helpers/ExpressionBuilder.cs

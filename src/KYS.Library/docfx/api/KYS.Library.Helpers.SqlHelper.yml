@@ -6,8 +6,6 @@ items:
   parent: KYS.Library.Helpers
   children:
   - KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter``1(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{``0})
-  - KYS.Library.Helpers.SqlHelper.GetDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  - KYS.Library.Helpers.SqlHelper.GetDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
   langs:
   - csharp
   - vb
@@ -17,8 +15,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/SQLHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/SQLHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: SqlHelper
     path: ../Helpers/SQLHelper.cs
@@ -41,114 +39,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: KYS.Library.Helpers.SqlHelper.GetDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  commentId: M:KYS.Library.Helpers.SqlHelper.GetDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  id: GetDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  parent: KYS.Library.Helpers.SqlHelper
-  langs:
-  - csharp
-  - vb
-  name: GetDataSet(string, CommandType, string, params SqlParameter[])
-  nameWithType: SqlHelper.GetDataSet(string, CommandType, string, params SqlParameter[])
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataSet(string, System.Data.CommandType, string, params System.Data.SqlClient.SqlParameter[])
-  type: Method
-  source:
-    remote:
-      path: KYS.Library/Helpers/SQLHelper.cs
-      branch: feature/enhancement
-      repo: https://github.com/yongshun950824/KYS.Library
-    id: GetDataSet
-    path: ../Helpers/SQLHelper.cs
-    startLine: 22
-  assemblies:
-  - KYS.Library
-  namespace: KYS.Library.Helpers
-  summary: Execute SQL query and obtain the result in <xref href="System.Data.DataSet" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public static DataSet GetDataSet(string connectionString, CommandType commandType, string commandText, params SqlParameter[] sqlParameters)
-    parameters:
-    - id: connectionString
-      type: System.String
-      description: The connection string for database.
-    - id: commandType
-      type: System.Data.CommandType
-      description: The command type.
-    - id: commandText
-      type: System.String
-      description: The command query.
-    - id: sqlParameters
-      type: System.Data.SqlClient.SqlParameter[]
-      description: One or more <xref href="System.Data.SqlClient.SqlParameter" data-throw-if-not-resolved="false"></xref>s.
-    return:
-      type: System.Data.DataSet
-      description: The <xref href="System.Data.DataSet" data-throw-if-not-resolved="false"></xref> instance containing the result for the query.
-    content.vb: Public Shared Function GetDataSet(connectionString As String, commandType As CommandType, commandText As String, ParamArray sqlParameters As SqlParameter()) As DataSet
-  overload: KYS.Library.Helpers.SqlHelper.GetDataSet*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: ''
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
-  nameWithType.vb: SqlHelper.GetDataSet(String, CommandType, String, ParamArray SqlParameter())
-  fullName.vb: KYS.Library.Helpers.SqlHelper.GetDataSet(String, System.Data.CommandType, String, ParamArray System.Data.SqlClient.SqlParameter())
-  name.vb: GetDataSet(String, CommandType, String, ParamArray SqlParameter())
-- uid: KYS.Library.Helpers.SqlHelper.GetDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  commentId: M:KYS.Library.Helpers.SqlHelper.GetDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  id: GetDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  parent: KYS.Library.Helpers.SqlHelper
-  langs:
-  - csharp
-  - vb
-  name: GetDataTable(string, CommandType, string, params SqlParameter[])
-  nameWithType: SqlHelper.GetDataTable(string, CommandType, string, params SqlParameter[])
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataTable(string, System.Data.CommandType, string, params System.Data.SqlClient.SqlParameter[])
-  type: Method
-  source:
-    remote:
-      path: KYS.Library/Helpers/SQLHelper.cs
-      branch: feature/enhancement
-      repo: https://github.com/yongshun950824/KYS.Library
-    id: GetDataTable
-    path: ../Helpers/SQLHelper.cs
-    startLine: 51
-  assemblies:
-  - KYS.Library
-  namespace: KYS.Library.Helpers
-  summary: Execute SQL query and obtain the result in <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public static DataTable GetDataTable(string connectionString, CommandType commandType, string commandText, params SqlParameter[] sqlParameters)
-    parameters:
-    - id: connectionString
-      type: System.String
-      description: The connection string for database.
-    - id: commandType
-      type: System.Data.CommandType
-      description: The command type.
-    - id: commandText
-      type: System.String
-      description: The command query.
-    - id: sqlParameters
-      type: System.Data.SqlClient.SqlParameter[]
-      description: One or more <xref href="System.Data.SqlClient.SqlParameter" data-throw-if-not-resolved="false"></xref>s.
-    return:
-      type: System.Data.DataTable
-      description: The <xref href="System.Data.DataTable" data-throw-if-not-resolved="false"></xref> instance containing the result for the query.
-    content.vb: Public Shared Function GetDataTable(connectionString As String, commandType As CommandType, commandText As String, ParamArray sqlParameters As SqlParameter()) As DataTable
-  overload: KYS.Library.Helpers.SqlHelper.GetDataTable*
-  exceptions:
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: ''
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: ''
-  nameWithType.vb: SqlHelper.GetDataTable(String, CommandType, String, ParamArray SqlParameter())
-  fullName.vb: KYS.Library.Helpers.SqlHelper.GetDataTable(String, System.Data.CommandType, String, ParamArray System.Data.SqlClient.SqlParameter())
-  name.vb: GetDataTable(String, CommandType, String, ParamArray SqlParameter())
 - uid: KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter``1(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{``0})
   commentId: M:KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter``1(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{``0})
   id: BuildStructuredSqlParameter``1(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{``0})
@@ -162,12 +52,12 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/SQLHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/SQLHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: BuildStructuredSqlParameter
     path: ../Helpers/SQLHelper.cs
-    startLine: 118
+    startLine: 60
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -498,14 +388,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Data.DataSet
-  commentId: T:System.Data.DataSet
-  parent: System.Data
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.data.dataset
-  name: DataSet
-  nameWithType: DataSet
-  fullName: System.Data.DataSet
 - uid: System.Data.SqlClient.SqlParameter
   commentId: T:System.Data.SqlClient.SqlParameter
   parent: System.Data.SqlClient
@@ -528,12 +410,12 @@ references:
   name: ArgumentNullException
   nameWithType: ArgumentNullException
   fullName: System.ArgumentNullException
-- uid: KYS.Library.Helpers.SqlHelper.GetDataSet*
-  commentId: Overload:KYS.Library.Helpers.SqlHelper.GetDataSet
-  href: KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_GetDataSet_System_String_System_Data_CommandType_System_String_System_Data_SqlClient_SqlParameter___
-  name: GetDataSet
-  nameWithType: SqlHelper.GetDataSet
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataSet
+- uid: KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter*
+  commentId: Overload:KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter
+  href: KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_BuildStructuredSqlParameter__1_System_String_System_String_System_String_System_Collections_Generic_IEnumerable___0__
+  name: BuildStructuredSqlParameter
+  nameWithType: SqlHelper.BuildStructuredSqlParameter
+  fullName: KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -545,64 +427,35 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Data.CommandType
-  commentId: T:System.Data.CommandType
-  parent: System.Data
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.data.commandtype
-  name: CommandType
-  nameWithType: CommandType
-  fullName: System.Data.CommandType
-- uid: System.Data.SqlClient.SqlParameter[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter
-  name: SqlParameter[]
-  nameWithType: SqlParameter[]
-  fullName: System.Data.SqlClient.SqlParameter[]
-  nameWithType.vb: SqlParameter()
-  fullName.vb: System.Data.SqlClient.SqlParameter()
-  name.vb: SqlParameter()
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Data.SqlClient.SqlParameter
-    name: SqlParameter
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter
-  - name: '['
-  - name: ']'
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
   spec.vb:
-  - uid: System.Data.SqlClient.SqlParameter
-    name: SqlParameter
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
+  - name: Of
+  - name: " "
+  - name: T
   - name: )
-- uid: System.Data
-  commentId: N:System.Data
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Data
-  nameWithType: System.Data
-  fullName: System.Data
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Data
-    name: Data
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Data
-    name: Data
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data
 - uid: System.Data.SqlClient
   commentId: N:System.Data.SqlClient
   isExternal: true
@@ -640,55 +493,6 @@ references:
     name: SqlClient
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.data.sqlclient
-- uid: System.Data.DataTable
-  commentId: T:System.Data.DataTable
-  parent: System.Data
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.data.datatable
-  name: DataTable
-  nameWithType: DataTable
-  fullName: System.Data.DataTable
-- uid: KYS.Library.Helpers.SqlHelper.GetDataTable*
-  commentId: Overload:KYS.Library.Helpers.SqlHelper.GetDataTable
-  href: KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_GetDataTable_System_String_System_Data_CommandType_System_String_System_Data_SqlClient_SqlParameter___
-  name: GetDataTable
-  nameWithType: SqlHelper.GetDataTable
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataTable
-- uid: KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter*
-  commentId: Overload:KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter
-  href: KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_BuildStructuredSqlParameter__1_System_String_System_String_System_String_System_Collections_Generic_IEnumerable___0__
-  name: BuildStructuredSqlParameter
-  nameWithType: SqlHelper.BuildStructuredSqlParameter
-  fullName: KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter
-- uid: System.Collections.Generic.IEnumerable{{T}}
-  commentId: T:System.Collections.Generic.IEnumerable{``0}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true

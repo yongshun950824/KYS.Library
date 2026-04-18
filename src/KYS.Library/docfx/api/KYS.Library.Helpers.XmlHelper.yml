@@ -24,8 +24,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: XmlHelper
     path: ../Helpers/XmlHelper.cs
@@ -62,8 +62,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Beautify
     path: ../Helpers/XmlHelper.cs
@@ -98,8 +98,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Beautify
     path: ../Helpers/XmlHelper.cs
@@ -133,8 +133,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Serialize
     path: ../Helpers/XmlHelper.cs
@@ -177,8 +177,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Deserialize
     path: ../Helpers/XmlHelper.cs
@@ -218,8 +218,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Deserialize
     path: ../Helpers/XmlHelper.cs
@@ -259,8 +259,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteFile
     path: ../Helpers/XmlHelper.cs
@@ -303,8 +303,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteFile
     path: ../Helpers/XmlHelper.cs
@@ -347,8 +347,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteFile
     path: ../Helpers/XmlHelper.cs
@@ -395,8 +395,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToXmlDocument
     path: ../Helpers/XmlHelper.cs
@@ -431,8 +431,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/XmlHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/XmlHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToXDocument
     path: ../Helpers/XmlHelper.cs

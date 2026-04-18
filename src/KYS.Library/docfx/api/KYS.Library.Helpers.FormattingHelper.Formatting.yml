@@ -15,8 +15,8 @@ items:
   type: Enum
   source:
     remote:
-      path: KYS.Library/Helpers/FormattingHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/FormattingHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Formatting
     path: ../Helpers/FormattingHelper.cs
@@ -45,8 +45,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/FormattingHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/FormattingHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: SnakeCase
     path: ../Helpers/FormattingHelper.cs

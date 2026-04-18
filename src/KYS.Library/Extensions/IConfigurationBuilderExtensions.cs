@@ -48,7 +48,9 @@ namespace KYS.Library.Extensions
             else if (obj is IEnumerable seq)
             {
                 JToken jToken = JArray.FromObject(seq, _DefaultSerializer);
-                dict = Flatten(jToken, FlattenFormat.DotNet)
+
+                var flattenResult = Flatten(jToken, FlattenFormat.DotNet);
+                dict = flattenResult.Value
                     .Select(x => new KeyValuePair<string, string>(
                         $"{key}:{x.Key}",
                         x.Value?.ToString()))
@@ -57,7 +59,9 @@ namespace KYS.Library.Extensions
             else
             {
                 JToken jToken = JObject.FromObject(obj, _DefaultSerializer);
-                dict = Flatten(jToken, FlattenFormat.DotNet)
+                
+                var flattenResult = Flatten(jToken, FlattenFormat.DotNet);
+                dict = flattenResult.Value
                     .Select(x => new KeyValuePair<string, string>(
                         $"{key}:{x.Key}",
                         x.Value?.ToString()))

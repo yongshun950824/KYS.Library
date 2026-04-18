@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: JsonToHtmlTagHelper
     path: ../TagHelpers/JsonToHtmlTagHelper.cs
     startLine: 14
@@ -87,8 +87,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Json
     path: ../TagHelpers/JsonToHtmlTagHelper.cs
     startLine: 20
@@ -130,8 +130,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: AsFlatten
     path: ../TagHelpers/JsonToHtmlTagHelper.cs
     startLine: 26
@@ -173,8 +173,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: AsBootstrapGrid
     path: ../TagHelpers/JsonToHtmlTagHelper.cs
     startLine: 32
@@ -216,8 +216,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ProcessAsync
     path: ../TagHelpers/JsonToHtmlTagHelper.cs
     startLine: 35
@@ -267,11 +267,11 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: GenerateHtml
     path: ../TagHelpers/JsonToHtmlTagHelper.cs
-    startLine: 67
+    startLine: 71
   assemblies:
   - KYS.AspNetCore.Library
   namespace: KYS.AspNetCore.Library.TagHelpers
@@ -298,11 +298,11 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/TagHelpers/JsonToHtmlTagHelper.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: GenerateHtmlWithBootstrapGrid
     path: ../TagHelpers/JsonToHtmlTagHelper.cs
-    startLine: 100
+    startLine: 104
   assemblies:
   - KYS.AspNetCore.Library
   namespace: KYS.AspNetCore.Library.TagHelpers

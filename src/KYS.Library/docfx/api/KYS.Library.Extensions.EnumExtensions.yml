@@ -21,8 +21,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: EnumExtensions
     path: ../Extensions/EnumExtensions.cs
@@ -58,8 +58,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: GetEnumValues
     path: ../Extensions/EnumExtensions.cs
@@ -95,8 +95,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: GetEnumNames
     path: ../Extensions/EnumExtensions.cs
@@ -133,8 +133,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToDescription
     path: ../Extensions/EnumExtensions.cs
@@ -173,8 +173,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToDictionary
     path: ../Extensions/EnumExtensions.cs
@@ -211,8 +211,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: GetEnumMemberValue
     path: ../Extensions/EnumExtensions.cs
@@ -258,8 +258,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: EnumMemberValueToEnum
     path: ../Extensions/EnumExtensions.cs
@@ -308,8 +308,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/EnumExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/EnumExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: GetValueByDescription
     path: ../Extensions/EnumExtensions.cs

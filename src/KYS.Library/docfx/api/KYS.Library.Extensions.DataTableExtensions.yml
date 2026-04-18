@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Extensions/DataTableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/DataTableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DataTableExtensions
     path: ../Extensions/DataTableExtensions.cs
@@ -54,8 +54,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/DataTableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/DataTableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsNullOrEmpty
     path: ../Extensions/DataTableExtensions.cs
@@ -90,8 +90,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/DataTableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/DataTableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToList
     path: ../Extensions/DataTableExtensions.cs

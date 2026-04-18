@@ -26,8 +26,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IEnumerableExtensions
     path: ../Extensions/IEnumerableExtensions.cs
@@ -64,8 +64,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsNullOrEmpty
     path: ../Extensions/IEnumerableExtensions.cs
@@ -106,8 +106,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsNullOrEmpty
     path: ../Extensions/IEnumerableExtensions.cs
@@ -142,8 +142,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: AsString
     path: ../Extensions/IEnumerableExtensions.cs
@@ -184,8 +184,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Trim
     path: ../Extensions/IEnumerableExtensions.cs
@@ -223,8 +223,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: HasDuplicates
     path: ../Extensions/IEnumerableExtensions.cs
@@ -265,8 +265,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToString
     path: ../Extensions/IEnumerableExtensions.cs
@@ -316,8 +316,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToString
     path: ../Extensions/IEnumerableExtensions.cs
@@ -367,8 +367,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Paging
     path: ../Extensions/IEnumerableExtensions.cs
@@ -418,8 +418,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Paging
     path: ../Extensions/IEnumerableExtensions.cs
@@ -469,8 +469,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Paging
     path: ../Extensions/IEnumerableExtensions.cs
@@ -523,8 +523,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: OrderBySequence
     path: ../Extensions/IEnumerableExtensions.cs
@@ -586,8 +586,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IEnumerableExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IEnumerableExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: OrderBy
     path: ../Extensions/IEnumerableExtensions.cs

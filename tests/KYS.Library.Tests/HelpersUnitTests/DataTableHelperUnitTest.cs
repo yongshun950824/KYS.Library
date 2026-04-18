@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using iText.Layout;
 using iText.Layout.Properties;
 using KYS.Library.Extensions;
@@ -6,20 +13,13 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.IO;
-using System.Text;
 
 namespace KYS.Library.Tests.HelpersUnitTests;
 
 public class DataTableHelperUnitTest
 {
-    private readonly DataTable _dt = new DataTable();
-    private readonly List<Student> _studentList = new List<Student>
+    private readonly DataTable _dt = new();
+    private readonly List<Student> _studentList = new()
     {
         new Student { Id = 1, Name = "Ali" },
         new Student {  Id = 2, Name = "Bob" }
@@ -53,10 +53,12 @@ public class DataTableHelperUnitTest
     public void WriteToTextFile_WithDefault_ShouldReturnByteArray()
     {
         // Act
-        var bytes = DataTableHelper.WriteToTextFile(_dt);
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToTextFile(_dt);
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.That(content, Does.Contain($"{nameof(Student.Id)}{SEPARATOR}{nameof(Student.Name)}"));
         Assert.That(content, Does.Contain($"{_studentList[0].Id}{SEPARATOR}{_studentList[0].Name}"));
         Assert.That(content, Does.Contain($"{_studentList[1].Id}{SEPARATOR}{_studentList[1].Name}"));
@@ -66,10 +68,12 @@ public class DataTableHelperUnitTest
     public void WriteToTextFile_WithEmptyDataTable_ShouldReturnByteArray()
     {
         // Act
-        var bytes = DataTableHelper.WriteToTextFile(new DataTable());
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToTextFile(new DataTable());
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.AreEqual(String.Empty, content);
     }
 
@@ -77,10 +81,12 @@ public class DataTableHelperUnitTest
     public void WriteToTextFile_WithoutHeaders_ShouldReturnByteArray()
     {
         // Act
-        var bytes = DataTableHelper.WriteToTextFile(_dt, printHeaders: false);
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToTextFile(_dt, printHeaders: false);
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.That(content, !Does.Contain($"{nameof(Student.Id)}{SEPARATOR}{nameof(Student.Name)}"));
         Assert.That(content, Does.Contain($"{_studentList[0].Id}{SEPARATOR}{_studentList[0].Name}"));
         Assert.That(content, Does.Contain($"{_studentList[1].Id}{SEPARATOR}{_studentList[1].Name}"));
@@ -93,10 +99,12 @@ public class DataTableHelperUnitTest
         string separator = ",";
 
         // Act
-        var bytes = DataTableHelper.WriteToTextFile(_dt, delimiter: separator);
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToTextFile(_dt, delimiter: separator);
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.That(content, Does.Contain($"{nameof(Student.Id)}{separator}{nameof(Student.Name)}"));
         Assert.That(content, Does.Contain($"{_studentList[0].Id}{separator}{_studentList[0].Name}"));
         Assert.That(content, Does.Contain($"{_studentList[1].Id}{separator}{_studentList[1].Name}"));
@@ -106,13 +114,15 @@ public class DataTableHelperUnitTest
     public void WriteToTextFile_WithProvidedCulture_ShouldReturnByteArray()
     {
         // Arrange
-        CultureInfo culture = new CultureInfo("th-TH");
+        CultureInfo culture = new("th-TH");
 
         // Act
-        var bytes = DataTableHelper.WriteToTextFile(_dt, cultureInfo: culture);
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToTextFile(_dt, cultureInfo: culture);
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.That(content, Does.Contain($"{nameof(Student.Id)}{SEPARATOR}{nameof(Student.Name)}"));
         Assert.That(content, Does.Contain($"{_studentList[0].Id}{SEPARATOR}{_studentList[0].Name}"));
         Assert.That(content, Does.Contain($"{_studentList[1].Id}{SEPARATOR}{_studentList[1].Name}"));
@@ -125,10 +135,12 @@ public class DataTableHelperUnitTest
         var expectedResult = JsonConvert.SerializeObject(_studentList, Newtonsoft.Json.Formatting.Indented);
 
         // Act
-        var bytes = DataTableHelper.WriteToJsonFile(_dt);
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToJsonFile(_dt);
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.AreEqual(expectedResult, content);
     }
 
@@ -139,10 +151,12 @@ public class DataTableHelperUnitTest
         var expectedResult = JsonConvert.SerializeObject(_studentList);
 
         // Act
-        var bytes = DataTableHelper.WriteToJsonFile(_dt, false);
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToJsonFile(_dt, false);
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.AreEqual(expectedResult, content);
     }
 
@@ -153,10 +167,12 @@ public class DataTableHelperUnitTest
         var expectedResult = "[]";
 
         // Act
-        var bytes = DataTableHelper.WriteToJsonFile(new DataTable());
-        var content = Encoding.UTF8.GetString(bytes);
+        var result = DataTableHelper.WriteToJsonFile(new DataTable());
 
-        // Assert
+        // Assert        
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = Encoding.UTF8.GetString(result.Value);
         Assert.AreEqual(expectedResult, content);
     }
 
@@ -164,58 +180,79 @@ public class DataTableHelperUnitTest
     public void ReadCSV_WithValidFilePath_ShouldReturnDataTable()
     {
         // Act
-        DataTable dt = DataTableHelper.ReadCSV(_csvFilePath);
+        var result = DataTableHelper.ReadCSV(_csvFilePath);
 
         // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        DataTable dt = result.Value;
         Assert.IsNotNull(dt);
         Assert.IsTrue(dt.Columns.Count > 0);
         Assert.IsTrue(dt.Rows.Count > 0);
     }
 
     [Test]
-    public void ReadCSV_WithInvalidFilePath_ShouldReturnDataTable()
+    public void ReadCSV_WithInvalidFilePath_ShouldReturnResultFailure()
     {
-        // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => DataTableHelper.ReadCSV((string)null));
+        // Act
+        var result = DataTableHelper.ReadCSV((string)null);
+
+        // Assert
+        Assert.IsFalse(result.IsSuccess);
+        Assert.AreEqual(DomainErrors.Required("filePath"), result.Error);
     }
 
     [Test]
-    public void ReadCSV_WithNotCSVFilePath_ShouldReturnDataTable()
+    public void ReadCSV_WithNotCSVFilePath_ShouldReturnResultFailure()
     {
         // Arrange
         string filePath = Directory.GetCurrentDirectory() + "\\Resources\\DataTableHelper\\data.txt";
 
-        // Act & Assert
-        var ex = Assert.Throws<ArgumentException>(() => DataTableHelper.ReadCSV(filePath));
+        // Act
+        var result = DataTableHelper.ReadCSV(filePath);
 
-        Assert.AreEqual("Provided filePath must be a CSV file.", ex.Message);
+        // Assert
+        Assert.IsFalse(result.IsSuccess);
+        Assert.AreEqual("Provided filePath must be a CSV file.", result.Error);
     }
 
     [Test]
-    public void ReadCSV_WithNullStream_ShouldThrowException()
+    public void ReadCSV_WithNullStream_ShouldReturnResultFailure()
     {
-        // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => DataTableHelper.ReadCSV((Stream)null));
+        // Act
+        var result = DataTableHelper.ReadCSV((Stream)null);
+
+        // Assert
+        Assert.IsFalse(result.IsSuccess);
+        Assert.AreEqual(DomainErrors.CannotBeNull("stream"), result.Error);
     }
 
     [Test]
     public void ReadCSV_WithStream_ShouldReturnDataTable()
     {
         // Arrange
-        var stream = FileHelper.LoadFileToMemoryStream(_csvFilePath);
+        var stream = FileHelper.LoadFileToMemoryStreamCore(_csvFilePath);
 
-        // Act & Assert
-        DataTable dt = DataTableHelper.ReadCSV(stream);
+        // Act
+        var result = DataTableHelper.ReadCSV(stream);
 
+        // Assert
+        Assert.IsTrue(result.IsSuccess);
+
+        DataTable dt = result.Value;
         Assert.IsTrue(dt.Rows.Count > 0);
         Assert.IsTrue(dt.Columns.Count > 0);
     }
 
     [Test]
-    public void WriteToExcelFile_WithNullDataTable_ShouldThrowException()
+    public void WriteToExcelFile_WithNullDataTable_ShouldReturnResultFailure()
     {
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => DataTableHelper.WriteToExcelFile(null));
+        var result = DataTableHelper.WriteToExcelFile(null);
+
+        // Assert
+        Assert.IsFalse(result.IsSuccess);
+        Assert.AreEqual(DomainErrors.CannotBeNull("dt"), result.Error);
     }
 
     [Test]
@@ -226,13 +263,16 @@ public class DataTableHelperUnitTest
         _dt.TableName = sheetName;
 
         // Act
-        byte[] result = DataTableHelper.WriteToExcelFile(_dt);
+        var result = DataTableHelper.WriteToExcelFile(_dt);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, sheetName);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, sheetName);
     }
 
     [Test]
@@ -243,26 +283,29 @@ public class DataTableHelperUnitTest
         _dt.TableName = sheetName;
         var excelColumnFormats = new List<ExcelHelper.ExcelColumnFormat>
         {
-            new ExcelHelper.ExcelColumnFormat
+            new()
             {
                 ColumnName = nameof(Student.Id),
                 Format = "0",
-                HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Right
+                HorizontalAlignment = ExcelHorizontalAlignment.Right
             },
-            new ExcelHelper.ExcelColumnFormat
+            new()
             {
                 ColumnName = nameof(Student.Name)
             }
         };
 
         // Act
-        byte[] result = DataTableHelper.WriteToExcelFile(_dt, excelColumnFormats: excelColumnFormats);
+        var result = DataTableHelper.WriteToExcelFile(_dt, excelColumnFormats: excelColumnFormats);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, sheetName, excelColumnFormats: excelColumnFormats);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, sheetName, excelColumnFormats: excelColumnFormats);
     }
 
     [Test]
@@ -279,53 +322,69 @@ public class DataTableHelperUnitTest
         };
 
         // Act
-        byte[] result = DataTableHelper.WriteToExcelFile(_dt, headerRowStyle: headerRowStyle);
+        var result = DataTableHelper.WriteToExcelFile(_dt, headerRowStyle: headerRowStyle);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, sheetName, headerRowStyle: headerRowStyle);
+        var content = result.Value;
+        Assert.IsNotNull(result);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, sheetName, headerRowStyle: headerRowStyle);
     }
 
     [Test]
-    public void WriteToPdfFile_WithNullDataTable_ShouldThrowException()
+    public void WriteToPdfFile_WithNullDataTable_ShouldReturnResultFailure()
     {
-        // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => DataTableHelper.WriteToPdfFile(null));
+        // Act
+        var result = DataTableHelper.WriteToPdfFile(null);
+
+        // Assert
+        Assert.IsFalse(result.IsSuccess);
+        Assert.AreEqual(DomainErrors.CannotBeNull("dt"), result.Error);
     }
 
     [Test]
     public void WriteToPdfFile_WithEmptyDataTable_ShouldReturnByteArray()
     {
         // Act
-        byte[] result = DataTableHelper.WriteToPdfFile(new DataTable());
+        var result = DataTableHelper.WriteToPdfFile(new DataTable());
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
     }
 
     [Test]
     public void WriteToPdfFile_ShouldReturnByteArray()
     {
         // Act
-        byte[] result = DataTableHelper.WriteToPdfFile(_dt);
+        var result = DataTableHelper.WriteToPdfFile(_dt);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
     }
 
     [Test]
     public void WriteToPdfFile_WithExcludeHeaderColumn_ShouldReturnByteArray()
     {
         // Act
-        byte[] result = DataTableHelper.WriteToPdfFile(_dt, printHeaders: false);
+        var result = DataTableHelper.WriteToPdfFile(_dt, printHeaders: false);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
     }
 
     [Test]
@@ -339,11 +398,14 @@ public class DataTableHelperUnitTest
             .SetTextAlignment(TextAlignment.LEFT);
 
         // Act
-        byte[] result = DataTableHelper.WriteToPdfFile(_dt, tableBodyStyle: tableBodyStyle);
+        var result = DataTableHelper.WriteToPdfFile(_dt, tableBodyStyle: tableBodyStyle);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
+
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
     }
 
     private void AssertExcel(byte[] bytes,
@@ -351,8 +413,8 @@ public class DataTableHelperUnitTest
         List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
         ExcelHelper.ExcelRowStyle headerRowStyle = null)
     {
-        using MemoryStream ms = StreamHelper.ToMemoryStream(bytes);
-        using ExcelPackage package = new ExcelPackage(ms);
+        using MemoryStream ms = StreamHelper.ToMemoryStream(bytes).Value;
+        using ExcelPackage package = new(ms);
         var worksheet = package.Workbook.Worksheets[0];
 
         // Sheet name assertion

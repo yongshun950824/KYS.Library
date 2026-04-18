@@ -22,12 +22,12 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ExcelRowStyle
     path: ../Helpers/ExcelHelper.cs
-    startLine: 283
+    startLine: 302
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -59,12 +59,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: HorizontalAlignment
     path: ../Helpers/ExcelHelper.cs
-    startLine: 288
+    startLine: 307
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -90,12 +90,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Bold
     path: ../Helpers/ExcelHelper.cs
-    startLine: 292
+    startLine: 311
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -121,12 +121,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FontColor
     path: ../Helpers/ExcelHelper.cs
-    startLine: 296
+    startLine: 315
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -152,12 +152,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: PatternType
     path: ../Helpers/ExcelHelper.cs
-    startLine: 300
+    startLine: 319
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -183,12 +183,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: BackgroundColor
     path: ../Helpers/ExcelHelper.cs
-    startLine: 304
+    startLine: 323
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -214,12 +214,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: AutoFilter
     path: ../Helpers/ExcelHelper.cs
-    startLine: 308
+    startLine: 327
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -245,12 +245,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DefaultHeaderRowStyle
     path: ../Helpers/ExcelHelper.cs
-    startLine: 313
+    startLine: 332
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
@@ -276,12 +276,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DefaultSummaryRowStyle
     path: ../Helpers/ExcelHelper.cs
-    startLine: 331
+    startLine: 350
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers

@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/PdfHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/PdfHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: PdfHelper
     path: ../Helpers/PdfHelper.cs
@@ -56,8 +56,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/PdfHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/PdfHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ConvertHtmlToPdf
     path: ../Helpers/PdfHelper.cs
@@ -71,7 +71,6 @@ items:
     <br />
 
     To use custom font family only: <br />
-
 
     <pre><code class="lang-csharp">ConvertHtmlToPdf(htmlContent, false, false, false, importCustomFontFamilyFilePaths);</code></pre>
   example: []
@@ -114,8 +113,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/PdfHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/PdfHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsPasswordProtected
     path: ../Helpers/PdfHelper.cs
@@ -152,8 +151,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/PdfHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/PdfHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsPasswordProtected
     path: ../Helpers/PdfHelper.cs
@@ -187,8 +186,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/PdfHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/PdfHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: UnlockPdfDocument
     path: ../Helpers/PdfHelper.cs
@@ -235,8 +234,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/PdfHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/PdfHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: LockPdfDocument
     path: ../Helpers/PdfHelper.cs

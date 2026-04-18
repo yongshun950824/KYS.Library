@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Middlewares/WebSecurityHeadersMiddleware.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: WebSecurityHeadersMiddleware
     path: ../Middlewares/WebSecurityHeadersMiddleware.cs
     startLine: 12
@@ -58,8 +58,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Middlewares/WebSecurityHeadersMiddleware.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Middlewares/WebSecurityHeadersMiddleware.cs
     startLine: 28
@@ -90,8 +90,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Middlewares/WebSecurityHeadersMiddleware.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: InvokeAsync
     path: ../Middlewares/WebSecurityHeadersMiddleware.cs
     startLine: 38
