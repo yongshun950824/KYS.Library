@@ -17,8 +17,8 @@ items:
   type: Enum
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FlattenFormat
     path: ../Helpers/JsonHelper.cs
@@ -47,8 +47,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: JsonPath
     path: ../Helpers/JsonHelper.cs
@@ -73,8 +73,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DotNet
     path: ../Helpers/JsonHelper.cs
@@ -99,8 +99,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: JS
     path: ../Helpers/JsonHelper.cs

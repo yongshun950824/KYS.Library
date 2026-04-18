@@ -17,8 +17,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/CacheExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CacheExtensions
     path: ../Extensions/CacheExtensions.cs
@@ -55,8 +55,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/CacheExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Add
     path: ../Extensions/CacheExtensions.cs
@@ -103,8 +103,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/CacheExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Add
     path: ../Extensions/CacheExtensions.cs
@@ -151,8 +151,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/CacheExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/CacheExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Get
     path: ../Extensions/CacheExtensions.cs

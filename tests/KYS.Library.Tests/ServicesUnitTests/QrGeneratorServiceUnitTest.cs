@@ -1,4 +1,5 @@
-﻿using KYS.Library.Extensions;
+﻿using CSharpFunctionalExtensions;
+using KYS.Library.Extensions;
 using KYS.Library.Services;
 using NUnit.Framework;
 using System;
@@ -35,74 +36,50 @@ namespace KYS.Library.Tests.ServicesUnitTests
         }
 
         [Test]
-        public void Constructor_WithNull_ShouldThrowException()
+        public void Create_WithNull_ShouldReturnFailure()
         {
-            // Arrange
-            ArgumentNullException expectedEx = new ArgumentNullException("value");
-
             // Act
-            var ex = Assert.Throws<ArgumentNullException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(null);
-            });
+            var result = QrGenerator.Create(null);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.That(result.Error, Is.EqualTo("Invalid value."));
         }
 
         [Test]
-        public void Constructor_WithInvalidWidth_ShouldThrowException()
+        public void Create_WithInvalidWidth_ShouldReturnFailure()
         {
-            // Arrange
-            ArgumentException expectedEx = new ArgumentException("Invalid width.");
-
             // Act
-            var ex = Assert.Throws<ArgumentException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, -10, _defaultHeight, _defaultMargin);
-            });
+            var result = QrGenerator.Create(_qrValue, -10, _defaultHeight, _defaultMargin);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.That(result.Error, Is.EqualTo("Invalid width."));
         }
 
         [Test]
-        public void Constructor_WithInvalidHeight_ShouldThrowException()
+        public void Create_WithInvalidHeight_ShouldReturnFailure()
         {
-            // Arrange
-            ArgumentException expectedEx = new ArgumentException("Invalid height.");
-
             // Act
-            var ex = Assert.Throws<ArgumentException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _defaultWidth, -10, _defaultMargin);
-            });
+            var result = QrGenerator.Create(_qrValue, _defaultWidth, -10, _defaultMargin);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.That(result.Error, Is.EqualTo("Invalid height."));
         }
 
         [Test]
-        public void Constructor_WithInvalidMargin_ShouldThrowException()
+        public void Create_WithInvalidMargin_ShouldReturnFailure()
         {
-            // Arrange
-            ArgumentException expectedEx = new ArgumentException("Invalid margin.");
-
             // Act
-            var ex = Assert.Throws<ArgumentException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _defaultWidth, _defaultHeight, -10);
-            });
+            var result = QrGenerator.Create(_qrValue, _defaultWidth, _defaultHeight, -10);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.That(result.Error, Is.EqualTo("Invalid margin."));
         }
 
         [Test]
         public void Draw_WithDefaultSize_ShouldGenerateQR()
         {
             // Act
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+            var qrGeneratorService = QrGenerator.Create(_qrValue).Value;
             qrGeneratorService.Draw();
 
             // Assert
@@ -125,7 +102,7 @@ namespace KYS.Library.Tests.ServicesUnitTests
             int margin = 2;
 
             // Act
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, width, height, margin);
+            var qrGeneratorService = QrGenerator.Create(_qrValue, width, height, margin).Value;
             qrGeneratorService.Draw();
 
             // Assert
@@ -143,7 +120,7 @@ namespace KYS.Library.Tests.ServicesUnitTests
         public void Draw_WithDefaultSizeLogo_ShouldGenerateQR()
         {
             // Act
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
+            var qrGeneratorService = QrGenerator.CreateWithLogo(_qrValue, _logoPath).Value;
             qrGeneratorService.Draw();
 
             // Assert
@@ -166,8 +143,8 @@ namespace KYS.Library.Tests.ServicesUnitTests
             int margin = 1;
 
             // Act
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
-                _defaultWidth, _defaultHeight, margin, logoWidth, logoHeight);
+            var qrGeneratorService = QrGenerator.CreateWithLogo(_qrValue, _logoPath,
+                _defaultWidth, _defaultHeight, margin, logoWidth, logoHeight).Value;
             qrGeneratorService.Draw();
 
             // Assert
@@ -192,8 +169,7 @@ namespace KYS.Library.Tests.ServicesUnitTests
             int margin = 1;
 
             // Act
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
-                width, height, margin, logoWidth, logoHeight);
+            var qrGeneratorService = QrGenerator.CreateWithLogo(_qrValue, _logoPath, width, height, margin, logoWidth, logoHeight).Value;
             qrGeneratorService.Draw();
 
             // Assert
@@ -208,40 +184,30 @@ namespace KYS.Library.Tests.ServicesUnitTests
         }
 
         [Test]
-        public void Constructor_WithNullLogoPath_ShouldThrowException()
+        public void CreateWithLogo_WithNullLogoPath_ShouldReturnFailure()
         {
-            // Arrange
-            ArgumentNullException expectedEx = new ArgumentNullException("logoPath");
-
             // Act
-            var ex = Assert.Throws<ArgumentNullException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, logoPath: null);
-            });
+            var result = QrGenerator.CreateWithLogo(_qrValue, logoPath: null);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo("Invalid logoPath."));
         }
 
         [Test]
-        public void Constructor_WithInvalidLogoPath_ShouldThrowException()
+        public void CreateWithLogo_WithInvalidLogoPath_ShouldReturnFailure()
         {
-            // Arrange
-            FileNotFoundException expectedEx = new FileNotFoundException("logoPath");
-
             // Act
-            var ex = Assert.Throws<FileNotFoundException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue,
-                    Path.Combine(Directory.GetCurrentDirectory(), "Resources", "dummy-image.png"));
-            });
+            var result = QrGenerator.CreateWithLogo(_qrValue,
+                Path.Combine(Directory.GetCurrentDirectory(), "Resources", "dummy-image.png"));
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo("File not found: logoPath."));
         }
 
         [Test]
-        public void Constructor_WithLogoWidthIsLarger_ShouldThrowException()
+        public void CreateWithLogo_WithLogoWidthIsLarger_ShouldReturnFailure()
         {
             // Arrange
             int width = 100;
@@ -249,21 +215,17 @@ namespace KYS.Library.Tests.ServicesUnitTests
             int logoWidth = 200;
             int logoHeight = 50;
 
-            ArgumentException expectedEx = new ArgumentException("Provided logo width must be smaller than QR code width.");
-
             // Act
-            var ex = Assert.Throws<ArgumentException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
-                    width, height, _defaultMargin, logoWidth, logoHeight);
-            });
+            var result = QrGenerator.CreateWithLogo(_qrValue, _logoPath,
+                width, height, _defaultMargin, logoWidth, logoHeight);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo("Provided logo width must be smaller than QR code width."));
         }
 
         [Test]
-        public void Constructor_WithLogoHeightIsLarger_ShouldThrowException()
+        public void CreateWithLogo_WithLogoHeightIsLarger_ShouldReturnFailure()
         {
             // Arrange
             int width = 100;
@@ -271,31 +233,28 @@ namespace KYS.Library.Tests.ServicesUnitTests
             int logoWidth = 50;
             int logoHeight = 200;
 
-            ArgumentException expectedEx = new ArgumentException("Provided logo height must be smaller than QR code height.");
-
             // Act
-            var ex = Assert.Throws<ArgumentException>(() =>
-            {
-                QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath,
-                    width, height, _defaultMargin, logoWidth, logoHeight);
-            });
+            var result = QrGenerator.CreateWithLogo(_qrValue, _logoPath,
+                width, height, _defaultMargin, logoWidth, logoHeight);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo("Provided logo height must be smaller than QR code height."));
         }
 
         [Test]
         public void DrawAndToMemoryStream_ShouldWriteIntoMS()
         {
             // Arrange
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+            QrGenerator qrGeneratorService = QrGenerator.Create(_qrValue).Value;
 
             // Act
-            MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
+            Result<MemoryStream> msResult = qrGeneratorService.DrawAndToMemoryStream();
 
             // Assert
-            Assert.NotNull(ms);
-            Assert.IsTrue(ms.Length > 0);   // Not empty MemoryStream
+            Assert.IsTrue(msResult.IsSuccess);
+            Assert.NotNull(msResult.Value);
+            Assert.IsTrue(msResult.Value.Length > 0);   // Not empty MemoryStream
         }
 
         [Test]
@@ -303,16 +262,14 @@ namespace KYS.Library.Tests.ServicesUnitTests
         {
             // Arrange
             string filePath = null;
-            ArgumentNullException expectedEx = new ArgumentNullException(nameof(filePath));
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+            QrGenerator qrGeneratorService = QrGenerator.Create(_qrValue).Value;
 
             // Act
-            var ex = Assert.Throws<ArgumentNullException>(
-                () => qrGeneratorService.DrawAndToFile(filePath)
-            );
+            var result = qrGeneratorService.DrawAndToFile(filePath);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo("Invalid filePath."));
         }
 
         [Test]
@@ -320,12 +277,13 @@ namespace KYS.Library.Tests.ServicesUnitTests
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+            QrGenerator qrGeneratorService = QrGenerator.Create(_qrValue).Value;
 
             // Act
-            qrGeneratorService.DrawAndToFile(filePath);
+            var result = qrGeneratorService.DrawAndToFile(filePath);
 
             // Assert
+            Assert.IsTrue(result.IsSuccess);
             Assert.IsTrue(File.Exists(filePath));
         }
 
@@ -334,12 +292,13 @@ namespace KYS.Library.Tests.ServicesUnitTests
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}");
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+            QrGenerator qrGeneratorService = QrGenerator.Create(_qrValue).Value;
 
             // Act
-            qrGeneratorService.DrawAndToFile(filePath);
+            var result = qrGeneratorService.DrawAndToFile(filePath);
 
             // Assert
+            Assert.IsTrue(result.IsSuccess);
             Assert.IsTrue(File.Exists(filePath + ".png"));
         }
 
@@ -348,12 +307,13 @@ namespace KYS.Library.Tests.ServicesUnitTests
         {
             // Arrange
             string filePath = Path.Combine(_outputDirectoryPath, $"qr_{DateTime.Now:yyyyMMddHHmm}.png");
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue, _logoPath);
+            QrGenerator qrGeneratorService = QrGenerator.CreateWithLogo(_qrValue, _logoPath).Value;
 
             // Act
-            qrGeneratorService.DrawAndToFile(filePath);
+            var result = qrGeneratorService.DrawAndToFile(filePath);
 
             // Assert
+            Assert.IsTrue(result.IsSuccess);
             Assert.IsTrue(File.Exists(filePath));
         }
 
@@ -361,15 +321,18 @@ namespace KYS.Library.Tests.ServicesUnitTests
         public void DrawAndToBase64_ShouldGenerateQRToBase64()
         {
             // Arrange
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
+            QrGenerator qrGeneratorService = QrGenerator.Create(_qrValue).Value;
 
-            using MemoryStream ms = qrGeneratorService.DrawAndToMemoryStream();
-            string expectedBase64String = Convert.ToBase64String(ms.ToArray());
+            Result<MemoryStream> msResult = qrGeneratorService.DrawAndToMemoryStream();
+            string expectedBase64String = Convert.ToBase64String(msResult.Value.ToArray());
 
             // Act
-            string base64String = qrGeneratorService.DrawAndToBase64();
+            Result<string> base64StringResult = qrGeneratorService.DrawAndToBase64();
 
             // Assert
+            Assert.IsTrue(base64StringResult.IsSuccess);
+
+            string base64String = base64StringResult.Value;
             Assert.IsNotNull(base64String);
             Assert.IsNotEmpty(base64String);
             Assert.IsTrue(base64String.IsValidBase64());
@@ -381,15 +344,18 @@ namespace KYS.Library.Tests.ServicesUnitTests
         {
             // Arrange
             string dataUriPrefix = "data:image/png;base64, ";
-            QrGeneratorService qrGeneratorService = new QrGeneratorService(_qrValue);
- 
-            string base64String = qrGeneratorService.DrawAndToBase64();
-            string expectedDataUri = dataUriPrefix + base64String;
+            QrGenerator qrGeneratorService = QrGenerator.Create(_qrValue).Value;
+
+            Result<string> base64StringResult = qrGeneratorService.DrawAndToBase64();
+            string expectedDataUri = dataUriPrefix + base64StringResult.Value;
 
             // Act
-            string dataUri = qrGeneratorService.DrawAndToDataUri();
+            Result<string> dataUriResult = qrGeneratorService.DrawAndToDataUri();
 
             // Assert
+            Assert.IsTrue(dataUriResult.IsSuccess);
+
+            string dataUri = dataUriResult.Value;
             Assert.IsNotNull(dataUri);
             Assert.IsNotEmpty(dataUri);
             Assert.IsTrue(dataUri.StartsWith(dataUriPrefix));

@@ -1,0 +1,465 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.IQrGenerator
+  commentId: T:KYS.Library.Services.IQrGenerator
+  id: IQrGenerator
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.IQrGenerator.Draw
+  - KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  - KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  - KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  - KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  langs:
+  - csharp
+  - vb
+  name: IQrGenerator
+  nameWithType: IQrGenerator
+  fullName: KYS.Library.Services.IQrGenerator
+  type: Interface
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IQrGenerator
+    path: ../Services/QrGenerator.cs
+    startLine: 15
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Defines a contract for generating QR code.
+  example: []
+  syntax:
+    content: public interface IQrGenerator
+    content.vb: Public Interface IQrGenerator
+  derivedClasses:
+  - KYS.Library.Services.QrGenerator
+- uid: KYS.Library.Services.IQrGenerator.Draw
+  commentId: M:KYS.Library.Services.IQrGenerator.Draw
+  id: Draw
+  parent: KYS.Library.Services.IQrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: IQrGenerator.Draw()
+  fullName: KYS.Library.Services.IQrGenerator.Draw()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Draw
+    path: ../Services/QrGenerator.cs
+    startLine: 21
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw QR code.
+  example: []
+  syntax:
+    content: Result<SKBitmap> Draw()
+    return:
+      type: CSharpFunctionalExtensions.Result{SkiaSharp.SKBitmap}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="SkiaSharp.SKBitmap" data-throw-if-not-resolved="false"></xref> instance for the QR code.
+    content.vb: Function Draw() As Result(Of SKBitmap)
+  overload: KYS.Library.Services.IQrGenerator.Draw*
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  id: DrawAndToMemoryStream
+  parent: KYS.Library.Services.IQrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToMemoryStream()
+  nameWithType: IQrGenerator.DrawAndToMemoryStream()
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToMemoryStream
+    path: ../Services/QrGenerator.cs
+    startLine: 27
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw QR code into a <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: Result<MemoryStream> DrawAndToMemoryStream()
+    return:
+      type: CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance containing the QR code.
+    content.vb: Function DrawAndToMemoryStream() As Result(Of MemoryStream)
+  overload: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream*
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  id: DrawAndToBase64
+  parent: KYS.Library.Services.IQrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToBase64()
+  nameWithType: IQrGenerator.DrawAndToBase64()
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToBase64()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToBase64
+    path: ../Services/QrGenerator.cs
+    startLine: 33
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and generate a Base64 string.
+  example: []
+  syntax:
+    content: Result<string> DrawAndToBase64()
+    return:
+      type: CSharpFunctionalExtensions.Result{System.String}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the Base64 string for the QR code.
+    content.vb: Function DrawAndToBase64() As Result(Of String)
+  overload: KYS.Library.Services.IQrGenerator.DrawAndToBase64*
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  id: DrawAndToDataUri
+  parent: KYS.Library.Services.IQrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToDataUri()
+  nameWithType: IQrGenerator.DrawAndToDataUri()
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToDataUri()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToDataUri
+    path: ../Services/QrGenerator.cs
+    startLine: 39
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and generate a data URI string.
+  example: []
+  syntax:
+    content: Result<string> DrawAndToDataUri()
+    return:
+      type: CSharpFunctionalExtensions.Result{System.String}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the data URI string for the QR code.
+    content.vb: Function DrawAndToDataUri() As Result(Of String)
+  overload: KYS.Library.Services.IQrGenerator.DrawAndToDataUri*
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  id: DrawAndToFile(System.String)
+  parent: KYS.Library.Services.IQrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToFile(string)
+  nameWithType: IQrGenerator.DrawAndToFile(string)
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToFile(string)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToFile
+    path: ../Services/QrGenerator.cs
+    startLine: 46
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and save it as a file.
+  example: []
+  syntax:
+    content: Result DrawAndToFile(string filePath)
+    parameters:
+    - id: filePath
+      type: System.String
+      description: The path for the QR code to be saved.
+    return:
+      type: CSharpFunctionalExtensions.Result
+      description: A <xref href="CSharpFunctionalExtensions.Result" data-throw-if-not-resolved="false"></xref> indicating success or failure.
+    content.vb: Function DrawAndToFile(filePath As String) As Result
+  overload: KYS.Library.Services.IQrGenerator.DrawAndToFile*
+  nameWithType.vb: IQrGenerator.DrawAndToFile(String)
+  fullName.vb: KYS.Library.Services.IQrGenerator.DrawAndToFile(String)
+  name.vb: DrawAndToFile(String)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
+  isExternal: true
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SkiaSharp.SKBitmap
+  commentId: T:SkiaSharp.SKBitmap
+  parent: SkiaSharp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  name: SKBitmap
+  nameWithType: SKBitmap
+  fullName: SkiaSharp.SKBitmap
+- uid: KYS.Library.Services.IQrGenerator.Draw*
+  commentId: Overload:KYS.Library.Services.IQrGenerator.Draw
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_Draw
+  name: Draw
+  nameWithType: IQrGenerator.Draw
+  fullName: KYS.Library.Services.IQrGenerator.Draw
+- uid: CSharpFunctionalExtensions.Result{SkiaSharp.SKBitmap}
+  commentId: T:CSharpFunctionalExtensions.Result{SkiaSharp.SKBitmap}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  name: Result<SKBitmap>
+  nameWithType: Result<SKBitmap>
+  fullName: CSharpFunctionalExtensions.Result<SkiaSharp.SKBitmap>
+  nameWithType.vb: Result(Of SKBitmap)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of SkiaSharp.SKBitmap)
+  name.vb: Result(Of SKBitmap)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: SkiaSharp.SKBitmap
+    name: SKBitmap
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SkiaSharp.SKBitmap
+    name: SKBitmap
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  - name: )
+- uid: SkiaSharp
+  commentId: N:SkiaSharp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/skiasharp
+  name: SkiaSharp
+  nameWithType: SkiaSharp
+  fullName: SkiaSharp
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions
+- uid: System.IO.MemoryStream
+  commentId: T:System.IO.MemoryStream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  name: MemoryStream
+  nameWithType: MemoryStream
+  fullName: System.IO.MemoryStream
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream*
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream
+  name: DrawAndToMemoryStream
+  nameWithType: IQrGenerator.DrawAndToMemoryStream
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+- uid: CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+  commentId: T:CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  name: Result<MemoryStream>
+  nameWithType: Result<MemoryStream>
+  fullName: CSharpFunctionalExtensions.Result<System.IO.MemoryStream>
+  nameWithType.vb: Result(Of MemoryStream)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of System.IO.MemoryStream)
+  name.vb: Result(Of MemoryStream)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.IO.MemoryStream
+    name: MemoryStream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IO.MemoryStream
+    name: MemoryStream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  - name: )
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToBase64*
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToBase64
+  name: DrawAndToBase64
+  nameWithType: IQrGenerator.DrawAndToBase64
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToBase64
+- uid: CSharpFunctionalExtensions.Result{System.String}
+  commentId: T:CSharpFunctionalExtensions.Result{System.String}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Result<string>
+  nameWithType: Result<string>
+  fullName: CSharpFunctionalExtensions.Result<string>
+  nameWithType.vb: Result(Of String)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of String)
+  name.vb: Result(Of String)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToDataUri*
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToDataUri
+  name: DrawAndToDataUri
+  nameWithType: IQrGenerator.DrawAndToDataUri
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+- uid: CSharpFunctionalExtensions.Result
+  commentId: T:CSharpFunctionalExtensions.Result
+  parent: CSharpFunctionalExtensions
+  isExternal: true
+  name: Result
+  nameWithType: Result
+  fullName: CSharpFunctionalExtensions.Result
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToFile*
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToFile
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToFile_System_String_
+  name: DrawAndToFile
+  nameWithType: IQrGenerator.DrawAndToFile
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

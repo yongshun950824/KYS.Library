@@ -18,8 +18,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: AdditionalExcelSheet
     path: ../Helpers/ExcelHelper.cs
@@ -55,8 +55,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DataTable
     path: ../Helpers/ExcelHelper.cs
@@ -86,8 +86,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ExcelColumnFormats
     path: ../Helpers/ExcelHelper.cs
@@ -117,8 +117,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: HeaderRowStyle
     path: ../Helpers/ExcelHelper.cs
@@ -148,8 +148,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: SummaryRowStyle
     path: ../Helpers/ExcelHelper.cs

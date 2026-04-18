@@ -17,8 +17,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/RequiredIfAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: RequiredIfAttribute
     path: ../Validations/RequiredIfAttribute.cs
@@ -117,8 +117,8 @@ items:
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/RequiredIfAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfAttribute.cs
@@ -155,8 +155,8 @@ items:
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/RequiredIfAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/RequiredIfAttribute.cs
@@ -196,8 +196,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Validations/RequiredIfAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/RequiredIfAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsValid
     path: ../Validations/RequiredIfAttribute.cs
