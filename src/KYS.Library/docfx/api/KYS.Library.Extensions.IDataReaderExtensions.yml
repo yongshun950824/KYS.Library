@@ -15,8 +15,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Extensions/IDataReaderExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IDataReaderExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IDataReaderExtensions
     path: ../Extensions/IDataReaderExtensions.cs
@@ -53,8 +53,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IDataReaderExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IDataReaderExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: SafeGetValue
     path: ../Extensions/IDataReaderExtensions.cs

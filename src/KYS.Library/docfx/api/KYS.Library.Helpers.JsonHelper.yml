@@ -17,12 +17,8 @@ items:
   fullName: KYS.Library.Helpers.JsonHelper
   type: Class
   source:
-    remote:
-      path: KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
-      branch: feature/enhancement
-      repo: https://github.com/yongshun950824/KYS.Library
     id: JsonHelper
-    path: ../obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
+    path: /workspaces/KYS.Library/src/KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
     startLine: 26
   assemblies:
   - KYS.Library
@@ -55,8 +51,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FlattenObject
     path: ../Helpers/JsonHelper.cs
@@ -110,8 +106,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FlattenArray
     path: ../Helpers/JsonHelper.cs
@@ -159,8 +155,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Flatten
     path: ../Helpers/JsonHelper.cs
@@ -206,8 +202,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/JsonHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/JsonHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ConstructFlattenKey
     path: ../Helpers/JsonHelper.cs

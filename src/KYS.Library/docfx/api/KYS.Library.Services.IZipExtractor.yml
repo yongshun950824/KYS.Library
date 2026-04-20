@@ -1,0 +1,145 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.IZipExtractor
+  commentId: T:KYS.Library.Services.IZipExtractor
+  id: IZipExtractor
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.IZipExtractor.Unzip(System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IZipExtractor
+  nameWithType: IZipExtractor
+  fullName: KYS.Library.Services.IZipExtractor
+  type: Interface
+  source:
+    remote:
+      path: src/KYS.Library/Services/ZipExtractor.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IZipExtractor
+    path: ../Services/ZipExtractor.cs
+    startLine: 14
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Define a contract for unzipping item.
+  example: []
+  syntax:
+    content: public interface IZipExtractor
+    content.vb: Public Interface IZipExtractor
+  derivedClasses:
+  - KYS.Library.Services.ZipExtractor
+- uid: KYS.Library.Services.IZipExtractor.Unzip(System.String,System.String)
+  commentId: M:KYS.Library.Services.IZipExtractor.Unzip(System.String,System.String)
+  id: Unzip(System.String,System.String)
+  parent: KYS.Library.Services.IZipExtractor
+  langs:
+  - csharp
+  - vb
+  name: Unzip(string, string)
+  nameWithType: IZipExtractor.Unzip(string, string)
+  fullName: KYS.Library.Services.IZipExtractor.Unzip(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/ZipExtractor.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Unzip
+    path: ../Services/ZipExtractor.cs
+    startLine: 25
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Unzip the zipped file and save in the provided location.
+  example: []
+  syntax:
+    content: Result Unzip(string srcFilePath, string destDirPath)
+    parameters:
+    - id: srcFilePath
+      type: System.String
+      description: The source file path of the zipped file.
+    - id: destDirPath
+      type: System.String
+      description: The directory path where the unzipped files will be saved.
+    return:
+      type: CSharpFunctionalExtensions.Result
+      description: >-
+        A <xref href="CSharpFunctionalExtensions.Result" data-throw-if-not-resolved="false"></xref> that indicates success if the zip file is extracted successfully; 
+
+        otherwise, a failed result with an error message describing the failure reason.
+    content.vb: Function Unzip(srcFilePath As String, destDirPath As String) As Result
+  overload: KYS.Library.Services.IZipExtractor.Unzip*
+  nameWithType.vb: IZipExtractor.Unzip(String, String)
+  fullName.vb: KYS.Library.Services.IZipExtractor.Unzip(String, String)
+  name.vb: Unzip(String, String)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: CSharpFunctionalExtensions.Result
+  commentId: T:CSharpFunctionalExtensions.Result
+  parent: CSharpFunctionalExtensions
+  isExternal: true
+  name: Result
+  nameWithType: Result
+  fullName: CSharpFunctionalExtensions.Result
+- uid: KYS.Library.Services.IZipExtractor.Unzip*
+  commentId: Overload:KYS.Library.Services.IZipExtractor.Unzip
+  href: KYS.Library.Services.IZipExtractor.html#KYS_Library_Services_IZipExtractor_Unzip_System_String_System_String_
+  name: Unzip
+  nameWithType: IZipExtractor.Unzip
+  fullName: KYS.Library.Services.IZipExtractor.Unzip
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

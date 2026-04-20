@@ -114,38 +114,44 @@ items:
   name: KYS.Library.Services
   type: Namespace
   items:
-  - uid: KYS.Library.Services.BaseTranslationService
-    name: BaseTranslationService
+  - uid: KYS.Library.Services.BaseTranslator
+    name: BaseTranslator
     type: Class
-  - uid: KYS.Library.Services.IBaseTranslationService
-    name: IBaseTranslationService
+  - uid: KYS.Library.Services.IMultiResourcesTranslator
+    name: IMultiResourcesTranslator
     type: Interface
-  - uid: KYS.Library.Services.IQrGeneratorService
-    name: IQrGeneratorService
+  - uid: KYS.Library.Services.IQrGenerator
+    name: IQrGenerator
     type: Interface
-  - uid: KYS.Library.Services.ITranslationService
-    name: ITranslationService
+  - uid: KYS.Library.Services.ITranslator
+    name: ITranslator
     type: Interface
-  - uid: KYS.Library.Services.IZipService
-    name: IZipService
+  - uid: KYS.Library.Services.IZipCreator
+    name: IZipCreator
+    type: Interface
+  - uid: KYS.Library.Services.IZipExtractor
+    name: IZipExtractor
     type: Interface
   - uid: KYS.Library.Services.LanguageResources
     name: LanguageResources
     type: Class
-  - uid: KYS.Library.Services.MultiResourcesTranslationService
-    name: MultiResourcesTranslationService
+  - uid: KYS.Library.Services.MultiResourcesTranslator
+    name: MultiResourcesTranslator
     type: Class
-  - uid: KYS.Library.Services.QrGeneratorService
-    name: QrGeneratorService
+  - uid: KYS.Library.Services.QrGenerator
+    name: QrGenerator
     type: Class
-  - uid: KYS.Library.Services.SingleResourceTranslationService
-    name: SingleResourceTranslationService
+  - uid: KYS.Library.Services.SingleResourceTranslator
+    name: SingleResourceTranslator
     type: Class
-  - uid: KYS.Library.Services.ZipService
-    name: ZipService
+  - uid: KYS.Library.Services.ZipCreator
+    name: ZipCreator
     type: Class
-  - uid: KYS.Library.Services.ZipService.ZipFileItem
-    name: ZipService.ZipFileItem
+  - uid: KYS.Library.Services.ZipExtractor
+    name: ZipExtractor
+    type: Class
+  - uid: KYS.Library.Services.ZipFileItem
+    name: ZipFileItem
     type: Class
 - uid: KYS.Library.Validations
   name: KYS.Library.Validations

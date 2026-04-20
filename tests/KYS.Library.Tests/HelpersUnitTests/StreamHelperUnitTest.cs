@@ -185,7 +185,7 @@ namespace KYS.Library.Tests.HelpersUnitTests
             ArgumentNullException expectedEx = new ArgumentNullException(nameof(stream));
 
             // Act
-            var ex = Assert.CatchAsync<ArgumentException>(() => StreamHelper.ToBase64Async(stream));
+            var ex = Assert.CatchAsync<ArgumentException>(async () => await StreamHelper.ToBase64Async(stream));
 
             // Assert
             Assert.IsInstanceOf<ArgumentException>(ex);

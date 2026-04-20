@@ -1,4 +1,5 @@
-﻿using KYS.Library.Services;
+﻿using CSharpFunctionalExtensions;
+using KYS.Library.Services;
 using KYS.Library.Tests.Resources;
 using NUnit.Framework;
 using System;
@@ -13,11 +14,14 @@ namespace KYS.Library.Tests.ServicesUnitTests
 {
     public class MultiResourcesTranslationServiceUnitTest
     {
-        private static readonly JsonSerializerOptions _serializerOptions = new JsonSerializerOptions
+        private static readonly JsonSerializerOptions _serializerOptions = new()
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             WriteIndented = true
         };
+
+        private const string UNSUPPORTED_LANGUAGE_ERROR_MESSAGE = "Provided {0} doesn't support for {1} language translation.";
+        private const string UNSUPPORTED_LANGUAGE_FOR_RESOURCE_ERROR_MESSAGE = "Provided {0} doesn't support for {1} language translation in {2}.";
 
         [SetUp]
         public void Setup()
@@ -25,15 +29,16 @@ namespace KYS.Library.Tests.ServicesUnitTests
         }
 
         [Test]
-        public void Constructor_WithoutInitializeCulture_ShouldGetCurrentCulture()
+        public void Create_WithoutInitializeCulture_ShouldGetCurrentCulture()
         {
             // Arrange
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                Assembly.GetExecutingAssembly()
-            );
             CultureInfo expectedValue = CultureInfo.CurrentCulture;
 
             // Act
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
+                Assembly.GetExecutingAssembly()
+            ).Value;
             var actualValue = translationService.CurrentCulture;
 
             // Assert
@@ -41,15 +46,16 @@ namespace KYS.Library.Tests.ServicesUnitTests
         }
 
         [Test]
-        public void Constructor_WithInitializeThaiCulture_ShouldGetCorrectCulture()
+        public void Create_WithCurrentCulture_ShouldGetCorrectCulture()
         {
             // Arrange
-            CultureInfo expectedValue = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                expectedValue
-            );
+            CultureInfo expectedValue = new("th-TH");
 
             // Act
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
+                currentCulture: expectedValue
+            ).Value;
             var actualValue = translationService.CurrentCulture;
 
             // Assert
@@ -57,17 +63,17 @@ namespace KYS.Library.Tests.ServicesUnitTests
         }
 
         [Test]
-        public void Constructor_WithoutInitializeCultureInfos_ShouldGetAllCultures()
+        public void Create_WithCurrentCulture_ShouldGetAllCultures()
         {
             // Arrange
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                new CultureInfo("th-TH")
-            );
-
             var expectedValue = CultureInfo.GetCultures(CultureTypes.AllCultures)
                 .ToList();
 
             // Act
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
+                currentCulture: new CultureInfo("th-TH")
+            ).Value;
             var actualValue = translationService.Cultures;
 
             // Assert
@@ -76,18 +82,18 @@ namespace KYS.Library.Tests.ServicesUnitTests
         }
 
         [Test]
-        public void Constructor_WithInitializeCultureInfos_ShouldGetCurrentCutures()
+        public void Create_WithCurrentCultureAndCultureInfos_ShouldGetCurrentCultures()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
-
+            CultureInfo cultureInfo = new("th-TH");
             var expectedValue = new List<CultureInfo> { CultureInfo.InvariantCulture, cultureInfo };
 
             // Act
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
+                cultureInfo,
+                [cultureInfo]
+            ).Value;
             var actualValue = translationService.Cultures;
 
             // Assert
@@ -96,48 +102,64 @@ namespace KYS.Library.Tests.ServicesUnitTests
         }
 
         [Test]
-        public void Constructor_WithFirstConstructor_ShouldGetLanguages()
+        public void Create_WithCurrentCultureAndCultureInfos_ShouldGetLanguages()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
-
-            string notExpectedValue = JsonSerializer.Serialize(new { }, _serializerOptions);   // Empty object
+            CultureInfo cultureInfo = new("th-TH");
 
             // Act
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
+                cultureInfo,
+                [cultureInfo]
+            ).Value;
             var languages = translationService.GetLanguages();
-            string serializedLanguageObj = JsonSerializer.Serialize(languages, _serializerOptions);
-            Console.WriteLine(serializedLanguageObj);
 
             // Assert
             Assert.IsNotNull(languages);
-            Assert.AreNotEqual(notExpectedValue, serializedLanguageObj);
+            Assert.NotEquilaventTo(new { }, languages);
             Assert.IsNotNull(languages.FirstOrDefault(x => x.CultureName == "th-TH"));
         }
 
         [Test]
-        public void Constructor_WithSecondConstructor_ShouldGetLanguages()
+        public void Create_WithAssemblyAndCurrentCultureAndCultureInfos_ShouldGetLanguages()
         {
             // Arrange
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 new CultureInfo("th-TH"),
-                new List<CultureInfo> { new CultureInfo("th-TH"), new CultureInfo("zh-CN") }
-            );
+                [new CultureInfo("th-TH"), new CultureInfo("zh-CN")]
+            ).Value;
 
+            // Act
+            var languages = translationService.GetLanguages();
+
+            // Assert
+            Assert.IsNotNull(languages);
+            Assert.NotEquilaventTo(new { }, languages);
+            Assert.IsNotNull(languages.FirstOrDefault(x => x.CultureName == "th-TH"));
+            Assert.IsNotNull(languages.FirstOrDefault(x => x.CultureName == "zh-CN"));
+        }
+
+        [Test]
+        public void Create_WithoutAssembly_ShouldGetLanguages()
+        {
+            // Arrange
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
+                assembly: null,
+                currentCulture: new CultureInfo("th-TH"),
+                cultures: [new CultureInfo("th-TH"), new CultureInfo("zh-CN")]
+            ).Value;
             string notExpectedValue = JsonSerializer.Serialize(new { }, _serializerOptions);   // Empty object
 
             // Act
             var languages = translationService.GetLanguages();
-            string serializedLanguageObj = JsonSerializer.Serialize(languages, _serializerOptions);
-            Console.WriteLine(serializedLanguageObj);
 
             // Assert
             Assert.IsNotNull(languages);
-            Assert.AreNotEqual(notExpectedValue, serializedLanguageObj);
+            Assert.NotEquilaventTo(new { }, languages);
             Assert.IsNotNull(languages.FirstOrDefault(x => x.CultureName == "th-TH"));
             Assert.IsNotNull(languages.FirstOrDefault(x => x.CultureName == "zh-CN"));
         }
@@ -146,253 +168,201 @@ namespace KYS.Library.Tests.ServicesUnitTests
         public void TranslateToEnglish_ShouldReturnTranslatedEnglishText()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            CultureInfo cultureInfo = new("th-TH");
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
+                [cultureInfo]
+            ).Value;
 
             string input = "เด็ก";
             string expectedValue = "Child";
 
             // Act
-            string actualValue = translationService.TranslateToEnglish(input);
+            Result<string> result = translationService.TranslateToEnglish(input);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(expectedValue, result.Value);
         }
 
         [Test]
-        public void TranslateToEnglish_WithUnknown_ShouldReturnOriginalValue()
+        public void TranslateToEnglish_WithUnknown_ShouldReturnTranslatedEnglishText()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            CultureInfo cultureInfo = new("th-TH");
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
+                [cultureInfo]
+            ).Value;
 
             string input = "unknown";
-            string expectedValue = "unknown";
 
             // Act
-            string actualValue = translationService.TranslateToEnglish(input);
+            Result<string> result = translationService.TranslateToEnglish(input);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-
-        [Test]
-        public void TranslateToEnglish_WithUnknownAndDisableReturnedOriginalValue_ShouldThrowException()
-        {
-            // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                Assembly.GetExecutingAssembly(),
-                cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
-
-            string input = "unknown";
-            ArgumentNullException expectedEx = new ArgumentNullException($"Provided {input} doesn't support for English language translation.");
-
-            // Act
-            var ex = Assert.Throws<ArgumentNullException>(() => translationService.TranslateToEnglish(input, false));
-
-            // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo(String.Format(UNSUPPORTED_LANGUAGE_ERROR_MESSAGE, input, "English")));
         }
 
         [Test]
         public void Translate_WithoutCulture_ShouldReturnDefaultCultureText()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            CultureInfo cultureInfo = new("th-TH");
             Type resourceType = typeof(Resource);
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
+                [cultureInfo]
+            ).Value;
 
             string input = "Spouse";
             // "คู่สมรส"
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
-            string actualValue = translationService.Translate(input);
+            Result<string> result = translationService.Translate(input);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(expectedValue, result.Value);
         }
 
         [Test]
-        public void Translate_ToUnsupportedCulture_ShouldReturnOriginalValue()
+        public void Translate_ToUnsupportedCulture_ShouldReturnResultFailure()
         {
             // Arrange
-            CultureInfo culture = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            CultureInfo culture = new("th-TH");
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 culture,
-                new List<CultureInfo> { culture }
-            );
+                [culture]
+            ).Value;
 
             string input = "Spouse";
             string cultureName = "en-MY";
-            string expectedValue = "Spouse";
 
             // Act
-            string actualValue = translationService.Translate(input, cultureName);
+            Result<string> result = translationService.Translate(input, cultureName);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo(String.Format(UNSUPPORTED_LANGUAGE_ERROR_MESSAGE, input, cultureName)));
         }
 
         [Test]
         public void Translate_ToSpecificCulture_ShouldReturnTranslatedText()
         {
             // Arrange
-            CultureInfo culture = new CultureInfo("th-TH");
+            CultureInfo culture = new("th-TH");
             Type resourceType = typeof(Resource);
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
-                cultures: new List<CultureInfo> { culture }
-            );
+                cultures: [culture]
+            ).Value;
 
             string input = "Spouse";
             // "คู่สมรส"
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, culture) ?? input;
 
             // Act
-            string actualValue = translationService.Translate(input, culture: culture);
+            Result<string> result = translationService.Translate(input, culture: culture);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(expectedValue, result.Value);
         }
 
         [Test]
-        public void Translate_ToDefaultCulture_ShouldReturnOriginalValue()
+        public void Translate_WithUnknown_ShouldReturnResultFailure()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            CultureInfo cultureInfo = new("th-TH");
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 currentCulture: cultureInfo,
-                cultures: new List<CultureInfo> { cultureInfo }
-            );
+                cultures: [cultureInfo]
+            ).Value;
 
             string input = "unknown";
-            string expectedValue = "unknown";
 
             // Act
-            string actualValue = translationService.Translate(input);
+            Result<string> result = translationService.Translate(input);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
-        }
-
-        [Test]
-        public void Translate_WithDisabledReturnedOriginalValueAndToDefaultCulture_ShouldThrowException()
-        {
-            // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                Assembly.GetExecutingAssembly(),
-                currentCulture: cultureInfo,
-                cultures: new List<CultureInfo> { cultureInfo }
-            );
-
-            string input = "unknown";
-            ArgumentNullException expectedEx = new ArgumentNullException($"Provided {input} doesn't support for {cultureInfo.Name} language translation.");
-
-            // Act
-            var ex = Assert.Throws<ArgumentNullException>(() => translationService.Translate(input, false));
-
-            // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo(String.Format(UNSUPPORTED_LANGUAGE_ERROR_MESSAGE, input, cultureInfo.Name)));
         }
 
         [Test]
         public void Translate_WithSpecificResource_ShouldReturnTranslatedText()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            CultureInfo cultureInfo = new("th-TH");
             Type resourceType = typeof(Resource);
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
+                [cultureInfo]
+            ).Value;
 
             string input = "Spouse";
             // คู่สมรส
             string expectedValue = Helpers.GetTranslatedText(input, resourceType, cultureInfo) ?? input;
 
             // Act
-            string actualValue = translationService.Translate(input, resourceType);
+            Result<string> result = translationService.Translate(input, resourceType);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(expectedValue, result.Value);
         }
 
         [Test]
-        public void Translate_WithInvalidResource_ShouldThrowException()
+        public void Translate_WithInvalidResource_ShouldReturnResultFailure()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            CultureInfo cultureInfo = new("th-TH");
             Type resourceType = typeof(string);     // Invalid resource
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
+                [cultureInfo]
+            ).Value;
 
             string input = "Spouse";
-            ArgumentException expectedEx = new ArgumentException($"{resourceType.FullName} resource does not existed.");
 
             // Act
-            var ex = Assert.Throws<ArgumentException>(() => translationService.Translate(input, resourceType));
+            Result<string> result = translationService.Translate(input, resourceType);
 
             // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual($"{resourceType.FullName} resource does not exist.", result.Error);
         }
-
-        [Test]
-        public void Translate_WithResourceAndDisabledReturnedOriginalValue_ShouldThrowException()
-        {
-            // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
-            Type resourceType = typeof(Resource);
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
-                Assembly.GetExecutingAssembly(),
-                cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
-
-            string input = "unknown";
-            ArgumentNullException expectedEx = new ArgumentNullException($"Provided {input} doesn't support for {cultureInfo.Name} language translation.");
-
-            // Act
-            var ex = Assert.Throws<ArgumentNullException>(() => translationService.Translate(input, resourceType, false));
-
-            // Assert
-            Assert.That(ex.Message, Is.EqualTo(expectedEx.Message));
-        }
-
 
         [Test]
         public void Translate_IgnoreCase_ShouldReturnTranslatedText()
         {
             // Arrange
-            CultureInfo cultureInfo = new CultureInfo("th-TH");
+            CultureInfo cultureInfo = new("th-TH");
             Type resourceType = typeof(Resource);
-            MultiResourcesTranslationService translationService = new MultiResourcesTranslationService(
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
                 Assembly.GetExecutingAssembly(),
                 cultureInfo,
-                new List<CultureInfo> { cultureInfo }
-            );
+                [cultureInfo]
+            ).Value;
 
             string input = "spouse";
             string resourceKey = "Spouse";
@@ -400,10 +370,34 @@ namespace KYS.Library.Tests.ServicesUnitTests
             string expectedValue = Helpers.GetTranslatedText(resourceKey, resourceType, cultureInfo) ?? input;
 
             // Act
-            string actualValue = translationService.Translate(input, resourceType);
+            Result<string> result = translationService.Translate(input, resourceType);
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.IsTrue(result.IsSuccess);
+            Assert.AreEqual(expectedValue, result.Value);
+        }
+
+        [Test]
+        public void Translate_WithSpecificResourceAndUnknown_ShouldReturnTranslatedText()
+        {
+            // Arrange
+            CultureInfo cultureInfo = new("th-TH");
+            Type resourceType = typeof(Resource);
+            MultiResourcesTranslator translationService = MultiResourcesTranslator.Create
+            (
+                Assembly.GetExecutingAssembly(),
+                cultureInfo,
+                [cultureInfo]
+            ).Value;
+
+            string input = "unknown";
+
+            // Act
+            Result<string> result = translationService.Translate(input, resourceType);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.That(result.Error, Is.EqualTo(String.Format(UNSUPPORTED_LANGUAGE_FOR_RESOURCE_ERROR_MESSAGE, input, cultureInfo.Name, resourceType.FullName)));
         }
     }
 }

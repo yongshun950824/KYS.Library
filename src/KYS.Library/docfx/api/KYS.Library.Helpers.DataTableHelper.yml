@@ -20,8 +20,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: DataTableHelper
     path: ../Helpers/DataTableHelper.cs
@@ -57,8 +57,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToTextFile
     path: ../Helpers/DataTableHelper.cs
@@ -104,8 +104,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToExcelFile
     path: ../Helpers/DataTableHelper.cs
@@ -154,8 +154,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToPdfFile
     path: ../Helpers/DataTableHelper.cs
@@ -205,8 +205,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteToJsonFile
     path: ../Helpers/DataTableHelper.cs
@@ -246,8 +246,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ReadCSV
     path: ../Helpers/DataTableHelper.cs
@@ -291,8 +291,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/DataTableHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/DataTableHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ReadCSV
     path: ../Helpers/DataTableHelper.cs

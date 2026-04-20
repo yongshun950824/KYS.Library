@@ -20,8 +20,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/StringExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: StringExtensions
     path: ../Extensions/StringExtensions.cs
@@ -58,8 +58,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/StringExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: RemovePostFix
     path: ../Extensions/StringExtensions.cs
@@ -103,8 +103,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/StringExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: RemovePreFix
     path: ../Extensions/StringExtensions.cs
@@ -148,8 +148,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/StringExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsValidBase64
     path: ../Extensions/StringExtensions.cs
@@ -187,8 +187,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/StringExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Join
     path: ../Extensions/StringExtensions.cs
@@ -235,8 +235,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/StringExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Join
     path: ../Extensions/StringExtensions.cs
@@ -280,8 +280,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/StringExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/StringExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Truncate
     path: ../Extensions/StringExtensions.cs

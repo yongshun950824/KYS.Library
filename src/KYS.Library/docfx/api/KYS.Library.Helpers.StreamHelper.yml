@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/StreamHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: StreamHelper
     path: ../Helpers/StreamHelper.cs
@@ -56,8 +56,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/StreamHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: WriteStringIntoStream
     path: ../Helpers/StreamHelper.cs
@@ -94,8 +94,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/StreamHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToMemoryStream
     path: ../Helpers/StreamHelper.cs
@@ -132,8 +132,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/StreamHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToByteArray
     path: ../Helpers/StreamHelper.cs
@@ -167,8 +167,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/StreamHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ReadBase64StringToByteArray
     path: ../Helpers/StreamHelper.cs
@@ -212,8 +212,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/StreamHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/StreamHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ToBase64Async
     path: ../Helpers/StreamHelper.cs

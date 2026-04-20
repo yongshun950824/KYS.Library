@@ -20,8 +20,8 @@ items:
   type: Enum
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CompareOperatorConstants
     path: ../Helpers/CompareOperator.cs
@@ -50,8 +50,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Equal
     path: ../Helpers/CompareOperator.cs
@@ -78,8 +78,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: NotEqual
     path: ../Helpers/CompareOperator.cs
@@ -106,8 +106,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: LessThan
     path: ../Helpers/CompareOperator.cs
@@ -134,8 +134,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: LessThanOrEqual
     path: ../Helpers/CompareOperator.cs
@@ -162,8 +162,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: GreaterThan
     path: ../Helpers/CompareOperator.cs
@@ -190,8 +190,8 @@ items:
   type: Field
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: GreaterThanOrEqual
     path: ../Helpers/CompareOperator.cs

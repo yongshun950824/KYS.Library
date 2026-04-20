@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: ExcelHelper
     path: ../Helpers/ExcelHelper.cs
@@ -53,8 +53,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CreateExcelBook
     path: ../Helpers/ExcelHelper.cs
@@ -110,8 +110,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/ExcelHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExcelHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CreateExcelBook
     path: ../Helpers/ExcelHelper.cs
