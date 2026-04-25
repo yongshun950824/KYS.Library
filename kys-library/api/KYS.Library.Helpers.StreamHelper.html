@@ -89,7 +89,7 @@
 
 
   <h1 id="KYS_Library_Helpers_StreamHelper" data-uid="KYS.Library.Helpers.StreamHelper" class="text-break">
-Class StreamHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class StreamHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="KYS_Library_Helpers_StreamHelper_ReadBase64StringToByteArray_System_String_" data-uid="KYS.Library.Helpers.StreamHelper.ReadBase64StringToByteArray(System.String)">
   ReadBase64StringToByteArray(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Convert Base64 string to byte array.</p>
@@ -165,7 +165,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] ReadBase64StringToByteArray(string base64String)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;byte[]&gt; ReadBase64StringToByteArray(string base64String)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -177,8 +177,8 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p><code>byte[]</code> instance.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the byte[] instance.</p>
 </dd>
   </dl>
 
@@ -189,13 +189,6 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd></dd>
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -203,7 +196,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="KYS_Library_Helpers_StreamHelper_ToBase64Async_System_IO_Stream_" data-uid="KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)">
   ToBase64Async(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Convert <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> to a Base64 string.</p>
@@ -211,7 +204,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;string&gt; ToBase64Async(Stream stream)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;Result&lt;string&gt;&gt; ToBase64Async(Stream stream)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -223,8 +216,8 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd><p>The Base64 string after converting from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> instance.</p>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the Base64 string.</p>
 </dd>
   </dl>
 
@@ -242,7 +235,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="KYS_Library_Helpers_StreamHelper_ToByteArray_System_IO_MemoryStream_" data-uid="KYS.Library.Helpers.StreamHelper.ToByteArray(System.IO.MemoryStream)">
   ToByteArray(MemoryStream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Convert <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> to byte array.</p>
@@ -263,7 +256,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The <code>byte[]</code> instance after converting from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a>.</p>
+    <dd><p>The byte[] instance after converting from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a>.</p>
 </dd>
   </dl>
 
@@ -281,7 +274,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="KYS_Library_Helpers_StreamHelper_ToMemoryStream_System_Byte___" data-uid="KYS.Library.Helpers.StreamHelper.ToMemoryStream(System.Byte[])">
   ToMemoryStream(byte[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Convert byte array to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a>.</p>
@@ -289,20 +282,20 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static MemoryStream ToMemoryStream(byte[] byteArray)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;MemoryStream&gt; ToMemoryStream(byte[] byteArray)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>byteArray</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The <code>byte[]</code> instance.</p>
+    <dd><p>The byte[] instance.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance after converting from the byte array.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance after converting from the byte array.</p>
 </dd>
   </dl>
 
@@ -320,7 +313,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 
   <h3 id="KYS_Library_Helpers_StreamHelper_WriteStringIntoStream_System_String_" data-uid="KYS.Library.Helpers.StreamHelper.WriteStringIntoStream(System.String)">
   WriteStringIntoStream(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Write <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> value into the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a>.</p>
@@ -359,7 +352,7 @@ Class StreamHelper  <a class="header-action link-secondary" title="View source" 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/StreamHelper.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

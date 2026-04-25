@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IQrGeneratorService | KYS.Library </title>
+      <title>Interface IQrGenerator | KYS.Library </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IQrGeneratorService | KYS.Library ">
+      <meta name="title" content="Interface IQrGenerator | KYS.Library ">
       
       <meta name="description" content="Defines a contract for generating QR code.">
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/feature/enhancement/apiSpec/new?filename=KYS_Library_Services_IQrGeneratorService.md&amp;value=---%0Auid%3A%20KYS.Library.Services.IQrGeneratorService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/master/apiSpec/new?filename=KYS_Library_Services_IQrGenerator.md&amp;value=---%0Auid%3A%20KYS.Library.Services.IQrGenerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="KYS.Library.Services.IQrGeneratorService">
+        <article data-uid="KYS.Library.Services.IQrGenerator">
 
 
 
-  <h1 id="KYS_Library_Services_IQrGeneratorService" data-uid="KYS.Library.Services.IQrGeneratorService" class="text-break">
-Interface IQrGeneratorService  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/QrGeneratorService.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h1 id="KYS_Library_Services_IQrGenerator" data-uid="KYS.Library.Services.IQrGenerator" class="text-break">
+Interface IQrGenerator  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/QrGenerator.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,7 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IQrGeneratorService</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IQrGenerator</code></pre>
   </div>
 
 
@@ -121,11 +121,11 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
 </h2>
 
 
-  <a id="KYS_Library_Services_IQrGeneratorService_Draw_" data-uid="KYS.Library.Services.IQrGeneratorService.Draw*"></a>
+  <a id="KYS_Library_Services_IQrGenerator_Draw_" data-uid="KYS.Library.Services.IQrGenerator.Draw*"></a>
 
-  <h3 id="KYS_Library_Services_IQrGeneratorService_Draw" data-uid="KYS.Library.Services.IQrGeneratorService.Draw">
+  <h3 id="KYS_Library_Services_IQrGenerator_Draw" data-uid="KYS.Library.Services.IQrGenerator.Draw">
   Draw()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/QrGeneratorService.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/QrGenerator.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Draw QR code.</p>
@@ -133,14 +133,14 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">SKBitmap Draw()</code></pre>
+    <pre><code class="lang-csharp hljs">Result&lt;SKBitmap&gt; Draw()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap">SKBitmap</a></dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap">SKBitmap</a>instance for the QR code.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap">SKBitmap</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap">SKBitmap</a> instance for the QR code.</p>
 </dd>
   </dl>
 
@@ -154,11 +154,11 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
 
 
 
-  <a id="KYS_Library_Services_IQrGeneratorService_DrawAndToBase64_" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToBase64*"></a>
+  <a id="KYS_Library_Services_IQrGenerator_DrawAndToBase64_" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToBase64*"></a>
 
-  <h3 id="KYS_Library_Services_IQrGeneratorService_DrawAndToBase64" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToBase64">
+  <h3 id="KYS_Library_Services_IQrGenerator_DrawAndToBase64" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToBase64">
   DrawAndToBase64()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/QrGeneratorService.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/QrGenerator.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Draw the QR code and generate a Base64 string.</p>
@@ -166,14 +166,14 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string DrawAndToBase64()</code></pre>
+    <pre><code class="lang-csharp hljs">Result&lt;string&gt; DrawAndToBase64()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>A Base64 string for the QR code.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the Base64 string for the QR code.</p>
 </dd>
   </dl>
 
@@ -187,11 +187,11 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
 
 
 
-  <a id="KYS_Library_Services_IQrGeneratorService_DrawAndToDataUri_" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri*"></a>
+  <a id="KYS_Library_Services_IQrGenerator_DrawAndToDataUri_" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToDataUri*"></a>
 
-  <h3 id="KYS_Library_Services_IQrGeneratorService_DrawAndToDataUri" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToDataUri">
+  <h3 id="KYS_Library_Services_IQrGenerator_DrawAndToDataUri" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToDataUri">
   DrawAndToDataUri()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/QrGeneratorService.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/QrGenerator.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Draw the QR code and generate a data URI string.</p>
@@ -199,14 +199,14 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string DrawAndToDataUri()</code></pre>
+    <pre><code class="lang-csharp hljs">Result&lt;string&gt; DrawAndToDataUri()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>A data URI string for the QR code.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the data URI string for the QR code.</p>
 </dd>
   </dl>
 
@@ -220,11 +220,11 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
 
 
 
-  <a id="KYS_Library_Services_IQrGeneratorService_DrawAndToFile_" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToFile*"></a>
+  <a id="KYS_Library_Services_IQrGenerator_DrawAndToFile_" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToFile*"></a>
 
-  <h3 id="KYS_Library_Services_IQrGeneratorService_DrawAndToFile_System_String_" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToFile(System.String)">
+  <h3 id="KYS_Library_Services_IQrGenerator_DrawAndToFile_System_String_" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)">
   DrawAndToFile(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/QrGeneratorService.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/QrGenerator.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Draw the QR code and save it as a file.</p>
@@ -232,7 +232,7 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void DrawAndToFile(string filePath)</code></pre>
+    <pre><code class="lang-csharp hljs">Result DrawAndToFile(string filePath)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -242,6 +242,12 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
 </dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Result</span></dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result</span> indicating success or failure.</p>
+</dd>
+  </dl>
 
 
 
@@ -253,11 +259,11 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
 
 
 
-  <a id="KYS_Library_Services_IQrGeneratorService_DrawAndToMemoryStream_" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream*"></a>
+  <a id="KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream_" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream*"></a>
 
-  <h3 id="KYS_Library_Services_IQrGeneratorService_DrawAndToMemoryStream" data-uid="KYS.Library.Services.IQrGeneratorService.DrawAndToMemoryStream">
+  <h3 id="KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream" data-uid="KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream">
   DrawAndToMemoryStream()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/QrGeneratorService.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/QrGenerator.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Draw QR code into a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance.</p>
@@ -265,14 +271,14 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">MemoryStream DrawAndToMemoryStream()</code></pre>
+    <pre><code class="lang-csharp hljs">Result&lt;MemoryStream&gt; DrawAndToMemoryStream()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a></dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance containing the QR code.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance containing the QR code.</p>
 </dd>
   </dl>
 
@@ -290,7 +296,7 @@ Interface IQrGeneratorService  <a class="header-action link-secondary" title="Vi
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/QrGeneratorService.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/QrGenerator.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

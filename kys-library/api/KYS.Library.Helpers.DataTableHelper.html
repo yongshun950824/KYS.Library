@@ -89,7 +89,7 @@
 
 
   <h1 id="KYS_Library_Helpers_DataTableHelper" data-uid="KYS.Library.Helpers.DataTableHelper" class="text-break">
-Class DataTableHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L24"><i class="bi bi-code-slash"></i></a>
+Class DataTableHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_ReadCSV_System_IO_Stream_" data-uid="KYS.Library.Helpers.DataTableHelper.ReadCSV(System.IO.Stream)">
   ReadCSV(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Read CSV from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> into <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a>.</p>
@@ -165,7 +165,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static DataTable ReadCSV(Stream stream)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;DataTable&gt; ReadCSV(Stream stream)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -177,8 +177,8 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> instance with the data row(s).</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> instance with the data row(s).</p>
 </dd>
   </dl>
 
@@ -189,11 +189,6 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -201,7 +196,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_ReadCSV_System_String_" data-uid="KYS.Library.Helpers.DataTableHelper.ReadCSV(System.String)">
   ReadCSV(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Read CSV from file into <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a>.</p>
@@ -209,7 +204,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static DataTable ReadCSV(string filePath)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;DataTable&gt; ReadCSV(string filePath)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -221,8 +216,8 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> instance with the data row(s).</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> instance with the data row(s).</p>
 </dd>
   </dl>
 
@@ -233,13 +228,6 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd></dd>
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -255,7 +243,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] WriteToExcelFile(DataTable dt, ExcelHelper.ExcelRowStyle headerRowStyle = null, List&lt;ExcelHelper.ExcelColumnFormat&gt; excelColumnFormats = null, LicenseContext license = LicenseContext.NonCommercial)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;byte[]&gt; WriteToExcelFile(DataTable dt, ExcelHelper.ExcelRowStyle headerRowStyle = null, List&lt;ExcelHelper.ExcelColumnFormat&gt; excelColumnFormats = null, LicenseContext license = LicenseContext.NonCommercial)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -275,8 +263,8 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The byte array for the file.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the byte[] instance which is the Excel file content.</p>
 </dd>
   </dl>
 
@@ -287,11 +275,6 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -299,7 +282,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_WriteToJsonFile_System_Data_DataTable_System_Boolean_" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable,System.Boolean)">
   WriteToJsonFile(DataTable, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Write <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> into JSON file.</p>
@@ -307,7 +290,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;byte[]&gt; WriteToJsonFile(DataTable dt, bool isIndented = true)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -322,8 +305,8 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The byte array for the file.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the byte[] instance which is the JSON file content.</p>
 </dd>
   </dl>
 
@@ -341,7 +324,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_WriteToPdfFile_System_Data_DataTable_System_Boolean_iText_Layout_Style_iText_Layout_Style_" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)">
   WriteToPdfFile(DataTable, bool, Style, Style)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Write <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> into PDF file.</p>
@@ -349,7 +332,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] WriteToPdfFile(DataTable dt, bool printHeaders = true, Style tableHeaderStyle = null, Style tableBodyStyle = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;byte[]&gt; WriteToPdfFile(DataTable dt, bool printHeaders = true, Style tableHeaderStyle = null, Style tableBodyStyle = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -370,8 +353,8 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The byte array for the file.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the byte[] instance which is the PDF file content.</p>
 </dd>
   </dl>
 
@@ -382,11 +365,6 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -394,7 +372,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_WriteToTextFile_System_Data_DataTable_System_Boolean_System_String_System_Globalization_CultureInfo_" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToTextFile(System.Data.DataTable,System.Boolean,System.String,System.Globalization.CultureInfo)">
   WriteToTextFile(DataTable, bool, string, CultureInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Write <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> into text/CSV file.</p>
@@ -402,7 +380,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] WriteToTextFile(DataTable dt, bool printHeaders = true, string delimiter = &quot;;&quot;, CultureInfo cultureInfo = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;byte[]&gt; WriteToTextFile(DataTable dt, bool printHeaders = true, string delimiter = &quot;;&quot;, CultureInfo cultureInfo = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -423,8 +401,8 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The byte array for the file.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing byte[] instance which is the file.</p>
 </dd>
   </dl>
 
@@ -442,7 +420,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L24" class="edit-link">Edit this page</a>
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L25" class="edit-link">Edit this page</a>
         </div>
 
 

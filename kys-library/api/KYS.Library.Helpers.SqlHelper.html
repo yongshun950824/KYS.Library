@@ -157,7 +157,7 @@ Class SqlHelper  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="KYS_Library_Helpers_SqlHelper_BuildStructuredSqlParameter__1_System_String_System_String_System_String_System_Collections_Generic_IEnumerable___0__" data-uid="KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter``1(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{``0})">
   BuildStructuredSqlParameter&lt;T&gt;(string, string, string, IEnumerable&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/SQLHelper.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/SQLHelper.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Build structured parameter. Scenario: Query with <code>IN (SELECT [col] FROM @Parameter)</code>.</p>
@@ -224,116 +224,6 @@ Class SqlHelper  <a class="header-action link-secondary" title="View source" hre
       </a>
     </li></ol>
 </div>
-
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd></dd>
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-  <a id="KYS_Library_Helpers_SqlHelper_GetDataSet_" data-uid="KYS.Library.Helpers.SqlHelper.GetDataSet*"></a>
-
-  <h3 id="KYS_Library_Helpers_SqlHelper_GetDataSet_System_String_System_Data_CommandType_System_String_System_Data_SqlClient_SqlParameter___" data-uid="KYS.Library.Helpers.SqlHelper.GetDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
-  GetDataSet(string, CommandType, string, params SqlParameter[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/SQLHelper.cs/#L23"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Execute SQL query and obtain the result in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dataset">DataSet</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static DataSet GetDataSet(string connectionString, CommandType commandType, string commandText, params SqlParameter[] sqlParameters)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>connectionString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The connection string for database.</p>
-</dd>
-    <dt><code>commandType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.commandtype">CommandType</a></dt>
-    <dd><p>The command type.</p>
-</dd>
-    <dt><code>commandText</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The command query.</p>
-</dd>
-    <dt><code>sqlParameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter">SqlParameter</a>[]</dt>
-    <dd><p>One or more <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter">SqlParameter</a>s.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dataset">DataSet</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dataset">DataSet</a> instance containing the result for the query.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd></dd>
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-  <a id="KYS_Library_Helpers_SqlHelper_GetDataTable_" data-uid="KYS.Library.Helpers.SqlHelper.GetDataTable*"></a>
-
-  <h3 id="KYS_Library_Helpers_SqlHelper_GetDataTable_System_String_System_Data_CommandType_System_String_System_Data_SqlClient_SqlParameter___" data-uid="KYS.Library.Helpers.SqlHelper.GetDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
-  GetDataTable(string, CommandType, string, params SqlParameter[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/SQLHelper.cs/#L52"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Execute SQL query and obtain the result in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static DataTable GetDataTable(string connectionString, CommandType commandType, string commandText, params SqlParameter[] sqlParameters)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>connectionString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The connection string for database.</p>
-</dd>
-    <dt><code>commandType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.commandtype">CommandType</a></dt>
-    <dd><p>The command type.</p>
-</dd>
-    <dt><code>commandText</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The command query.</p>
-</dd>
-    <dt><code>sqlParameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter">SqlParameter</a>[]</dt>
-    <dd><p>One or more <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter">SqlParameter</a>s.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> instance containing the result for the query.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
 
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">

@@ -947,6 +947,60 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Helpers.DataTableHelper.WriteToTextFile
   nameWithType: DataTableHelper.WriteToTextFile
+- uid: KYS.Library.Helpers.DomainErrors
+  name: DomainErrors
+  href: api/KYS.Library.Helpers.DomainErrors.html
+  commentId: T:KYS.Library.Helpers.DomainErrors
+  fullName: KYS.Library.Helpers.DomainErrors
+  nameWithType: DomainErrors
+- uid: KYS.Library.Helpers.DomainErrors.CannotBeNull(System.String)
+  name: CannotBeNull(string)
+  href: api/KYS.Library.Helpers.DomainErrors.html#KYS_Library_Helpers_DomainErrors_CannotBeNull_System_String_
+  commentId: M:KYS.Library.Helpers.DomainErrors.CannotBeNull(System.String)
+  name.vb: CannotBeNull(String)
+  fullName: KYS.Library.Helpers.DomainErrors.CannotBeNull(string)
+  fullName.vb: KYS.Library.Helpers.DomainErrors.CannotBeNull(String)
+  nameWithType: DomainErrors.CannotBeNull(string)
+  nameWithType.vb: DomainErrors.CannotBeNull(String)
+- uid: KYS.Library.Helpers.DomainErrors.CannotBeNull*
+  name: CannotBeNull
+  href: api/KYS.Library.Helpers.DomainErrors.html#KYS_Library_Helpers_DomainErrors_CannotBeNull_
+  commentId: Overload:KYS.Library.Helpers.DomainErrors.CannotBeNull
+  isSpec: "True"
+  fullName: KYS.Library.Helpers.DomainErrors.CannotBeNull
+  nameWithType: DomainErrors.CannotBeNull
+- uid: KYS.Library.Helpers.DomainErrors.FileNotFound(System.String)
+  name: FileNotFound(string)
+  href: api/KYS.Library.Helpers.DomainErrors.html#KYS_Library_Helpers_DomainErrors_FileNotFound_System_String_
+  commentId: M:KYS.Library.Helpers.DomainErrors.FileNotFound(System.String)
+  name.vb: FileNotFound(String)
+  fullName: KYS.Library.Helpers.DomainErrors.FileNotFound(string)
+  fullName.vb: KYS.Library.Helpers.DomainErrors.FileNotFound(String)
+  nameWithType: DomainErrors.FileNotFound(string)
+  nameWithType.vb: DomainErrors.FileNotFound(String)
+- uid: KYS.Library.Helpers.DomainErrors.FileNotFound*
+  name: FileNotFound
+  href: api/KYS.Library.Helpers.DomainErrors.html#KYS_Library_Helpers_DomainErrors_FileNotFound_
+  commentId: Overload:KYS.Library.Helpers.DomainErrors.FileNotFound
+  isSpec: "True"
+  fullName: KYS.Library.Helpers.DomainErrors.FileNotFound
+  nameWithType: DomainErrors.FileNotFound
+- uid: KYS.Library.Helpers.DomainErrors.Required(System.String)
+  name: Required(string)
+  href: api/KYS.Library.Helpers.DomainErrors.html#KYS_Library_Helpers_DomainErrors_Required_System_String_
+  commentId: M:KYS.Library.Helpers.DomainErrors.Required(System.String)
+  name.vb: Required(String)
+  fullName: KYS.Library.Helpers.DomainErrors.Required(string)
+  fullName.vb: KYS.Library.Helpers.DomainErrors.Required(String)
+  nameWithType: DomainErrors.Required(string)
+  nameWithType.vb: DomainErrors.Required(String)
+- uid: KYS.Library.Helpers.DomainErrors.Required*
+  name: Required
+  href: api/KYS.Library.Helpers.DomainErrors.html#KYS_Library_Helpers_DomainErrors_Required_
+  commentId: Overload:KYS.Library.Helpers.DomainErrors.Required
+  isSpec: "True"
+  fullName: KYS.Library.Helpers.DomainErrors.Required
+  nameWithType: DomainErrors.Required
 - uid: KYS.Library.Helpers.EmailHelper
   name: EmailHelper
   href: api/KYS.Library.Helpers.EmailHelper.html
@@ -1577,22 +1631,6 @@ references:
   commentId: T:KYS.Library.Helpers.JsonHelper
   fullName: KYS.Library.Helpers.JsonHelper
   nameWithType: JsonHelper
-- uid: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  name: ConstructFlattenKey(string, FlattenFormat)
-  href: api/KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_ConstructFlattenKey_System_String_KYS_Library_Helpers_JsonHelper_FlattenFormat_
-  commentId: M:KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(System.String,KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  name.vb: ConstructFlattenKey(String, FlattenFormat)
-  fullName: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(string, KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  fullName.vb: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey(String, KYS.Library.Helpers.JsonHelper.FlattenFormat)
-  nameWithType: JsonHelper.ConstructFlattenKey(string, JsonHelper.FlattenFormat)
-  nameWithType.vb: JsonHelper.ConstructFlattenKey(String, JsonHelper.FlattenFormat)
-- uid: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey*
-  name: ConstructFlattenKey
-  href: api/KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_ConstructFlattenKey_
-  commentId: Overload:KYS.Library.Helpers.JsonHelper.ConstructFlattenKey
-  isSpec: "True"
-  fullName: KYS.Library.Helpers.JsonHelper.ConstructFlattenKey
-  nameWithType: JsonHelper.ConstructFlattenKey
 - uid: KYS.Library.Helpers.JsonHelper.Flatten(Newtonsoft.Json.Linq.JToken,KYS.Library.Helpers.JsonHelper.FlattenFormat)
   name: Flatten(JToken, FlattenFormat)
   href: api/KYS.Library.Helpers.JsonHelper.html#KYS_Library_Helpers_JsonHelper_Flatten_Newtonsoft_Json_Linq_JToken_KYS_Library_Helpers_JsonHelper_FlattenFormat_
@@ -1760,38 +1798,6 @@ references:
   fullName.vb: KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter(Of T)(String, String, String, System.Collections.Generic.IEnumerable(Of T))
   nameWithType: SqlHelper.BuildStructuredSqlParameter<T>(string, string, string, IEnumerable<T>)
   nameWithType.vb: SqlHelper.BuildStructuredSqlParameter(Of T)(String, String, String, IEnumerable(Of T))
-- uid: KYS.Library.Helpers.SqlHelper.GetDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  name: GetDataSet(string, CommandType, string, params SqlParameter[])
-  href: api/KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_GetDataSet_System_String_System_Data_CommandType_System_String_System_Data_SqlClient_SqlParameter___
-  commentId: M:KYS.Library.Helpers.SqlHelper.GetDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  name.vb: GetDataSet(String, CommandType, String, ParamArray SqlParameter())
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataSet(string, System.Data.CommandType, string, params System.Data.SqlClient.SqlParameter[])
-  fullName.vb: KYS.Library.Helpers.SqlHelper.GetDataSet(String, System.Data.CommandType, String, ParamArray System.Data.SqlClient.SqlParameter())
-  nameWithType: SqlHelper.GetDataSet(string, CommandType, string, params SqlParameter[])
-  nameWithType.vb: SqlHelper.GetDataSet(String, CommandType, String, ParamArray SqlParameter())
-- uid: KYS.Library.Helpers.SqlHelper.GetDataSet*
-  name: GetDataSet
-  href: api/KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_GetDataSet_
-  commentId: Overload:KYS.Library.Helpers.SqlHelper.GetDataSet
-  isSpec: "True"
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataSet
-  nameWithType: SqlHelper.GetDataSet
-- uid: KYS.Library.Helpers.SqlHelper.GetDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  name: GetDataTable(string, CommandType, string, params SqlParameter[])
-  href: api/KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_GetDataTable_System_String_System_Data_CommandType_System_String_System_Data_SqlClient_SqlParameter___
-  commentId: M:KYS.Library.Helpers.SqlHelper.GetDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])
-  name.vb: GetDataTable(String, CommandType, String, ParamArray SqlParameter())
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataTable(string, System.Data.CommandType, string, params System.Data.SqlClient.SqlParameter[])
-  fullName.vb: KYS.Library.Helpers.SqlHelper.GetDataTable(String, System.Data.CommandType, String, ParamArray System.Data.SqlClient.SqlParameter())
-  nameWithType: SqlHelper.GetDataTable(string, CommandType, string, params SqlParameter[])
-  nameWithType.vb: SqlHelper.GetDataTable(String, CommandType, String, ParamArray SqlParameter())
-- uid: KYS.Library.Helpers.SqlHelper.GetDataTable*
-  name: GetDataTable
-  href: api/KYS.Library.Helpers.SqlHelper.html#KYS_Library_Helpers_SqlHelper_GetDataTable_
-  commentId: Overload:KYS.Library.Helpers.SqlHelper.GetDataTable
-  isSpec: "True"
-  fullName: KYS.Library.Helpers.SqlHelper.GetDataTable
-  nameWithType: SqlHelper.GetDataTable
 - uid: KYS.Library.Helpers.StreamHelper
   name: StreamHelper
   href: api/KYS.Library.Helpers.StreamHelper.html
@@ -2156,6 +2162,221 @@ references:
   commentId: F:KYS.Library.Services.BaseTranslationService._currentCulture
   fullName: KYS.Library.Services.BaseTranslationService._currentCulture
   nameWithType: BaseTranslationService._currentCulture
+- uid: KYS.Library.Services.BaseTranslator
+  name: BaseTranslator
+  href: api/KYS.Library.Services.BaseTranslator.html
+  commentId: T:KYS.Library.Services.BaseTranslator
+  fullName: KYS.Library.Services.BaseTranslator
+  nameWithType: BaseTranslator
+- uid: KYS.Library.Services.BaseTranslator.#ctor(System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name: BaseTranslator(CultureInfo, List<CultureInfo>)
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator__ctor_System_Globalization_CultureInfo_System_Collections_Generic_List_System_Globalization_CultureInfo__
+  commentId: M:KYS.Library.Services.BaseTranslator.#ctor(System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name.vb: New(CultureInfo, List(Of CultureInfo))
+  fullName: KYS.Library.Services.BaseTranslator.BaseTranslator(System.Globalization.CultureInfo, System.Collections.Generic.List<System.Globalization.CultureInfo>)
+  fullName.vb: KYS.Library.Services.BaseTranslator.New(System.Globalization.CultureInfo, System.Collections.Generic.List(Of System.Globalization.CultureInfo))
+  nameWithType: BaseTranslator.BaseTranslator(CultureInfo, List<CultureInfo>)
+  nameWithType.vb: BaseTranslator.New(CultureInfo, List(Of CultureInfo))
+- uid: KYS.Library.Services.BaseTranslator.#ctor*
+  name: BaseTranslator
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator__ctor_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.Library.Services.BaseTranslator.BaseTranslator
+  fullName.vb: KYS.Library.Services.BaseTranslator.New
+  nameWithType: BaseTranslator.BaseTranslator
+  nameWithType.vb: BaseTranslator.New
+- uid: KYS.Library.Services.BaseTranslator.CultureLookups
+  name: CultureLookups
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_CultureLookups
+  commentId: P:KYS.Library.Services.BaseTranslator.CultureLookups
+  fullName: KYS.Library.Services.BaseTranslator.CultureLookups
+  nameWithType: BaseTranslator.CultureLookups
+- uid: KYS.Library.Services.BaseTranslator.CultureLookups*
+  name: CultureLookups
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_CultureLookups_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.CultureLookups
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.CultureLookups
+  nameWithType: BaseTranslator.CultureLookups
+- uid: KYS.Library.Services.BaseTranslator.Cultures
+  name: Cultures
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_Cultures
+  commentId: P:KYS.Library.Services.BaseTranslator.Cultures
+  fullName: KYS.Library.Services.BaseTranslator.Cultures
+  nameWithType: BaseTranslator.Cultures
+- uid: KYS.Library.Services.BaseTranslator.Cultures*
+  name: Cultures
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_Cultures_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.Cultures
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.Cultures
+  nameWithType: BaseTranslator.Cultures
+- uid: KYS.Library.Services.BaseTranslator.CurrentCulture
+  name: CurrentCulture
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_CurrentCulture
+  commentId: P:KYS.Library.Services.BaseTranslator.CurrentCulture
+  fullName: KYS.Library.Services.BaseTranslator.CurrentCulture
+  nameWithType: BaseTranslator.CurrentCulture
+- uid: KYS.Library.Services.BaseTranslator.CurrentCulture*
+  name: CurrentCulture
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_CurrentCulture_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.CurrentCulture
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.CurrentCulture
+  nameWithType: BaseTranslator.CurrentCulture
+- uid: KYS.Library.Services.BaseTranslator.EnglishLookup
+  name: EnglishLookup
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_EnglishLookup
+  commentId: P:KYS.Library.Services.BaseTranslator.EnglishLookup
+  fullName: KYS.Library.Services.BaseTranslator.EnglishLookup
+  nameWithType: BaseTranslator.EnglishLookup
+- uid: KYS.Library.Services.BaseTranslator.EnglishLookup*
+  name: EnglishLookup
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_EnglishLookup_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.EnglishLookup
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.EnglishLookup
+  nameWithType: BaseTranslator.EnglishLookup
+- uid: KYS.Library.Services.BaseTranslator.GetLanguages
+  name: GetLanguages()
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_GetLanguages
+  commentId: M:KYS.Library.Services.BaseTranslator.GetLanguages
+  fullName: KYS.Library.Services.BaseTranslator.GetLanguages()
+  nameWithType: BaseTranslator.GetLanguages()
+- uid: KYS.Library.Services.BaseTranslator.GetLanguages*
+  name: GetLanguages
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_GetLanguages_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.GetLanguages
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.GetLanguages
+  nameWithType: BaseTranslator.GetLanguages
+- uid: KYS.Library.Services.BaseTranslator.InitCultureInfos(System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name: InitCultureInfos(List<CultureInfo>)
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_InitCultureInfos_System_Collections_Generic_List_System_Globalization_CultureInfo__
+  commentId: M:KYS.Library.Services.BaseTranslator.InitCultureInfos(System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name.vb: InitCultureInfos(List(Of CultureInfo))
+  fullName: KYS.Library.Services.BaseTranslator.InitCultureInfos(System.Collections.Generic.List<System.Globalization.CultureInfo>)
+  fullName.vb: KYS.Library.Services.BaseTranslator.InitCultureInfos(System.Collections.Generic.List(Of System.Globalization.CultureInfo))
+  nameWithType: BaseTranslator.InitCultureInfos(List<CultureInfo>)
+  nameWithType.vb: BaseTranslator.InitCultureInfos(List(Of CultureInfo))
+- uid: KYS.Library.Services.BaseTranslator.InitCultureInfos*
+  name: InitCultureInfos
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_InitCultureInfos_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.InitCultureInfos
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.InitCultureInfos
+  nameWithType: BaseTranslator.InitCultureInfos
+- uid: KYS.Library.Services.BaseTranslator.InitCurrentCulture(System.Globalization.CultureInfo)
+  name: InitCurrentCulture(CultureInfo)
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_InitCurrentCulture_System_Globalization_CultureInfo_
+  commentId: M:KYS.Library.Services.BaseTranslator.InitCurrentCulture(System.Globalization.CultureInfo)
+  fullName: KYS.Library.Services.BaseTranslator.InitCurrentCulture(System.Globalization.CultureInfo)
+  nameWithType: BaseTranslator.InitCurrentCulture(CultureInfo)
+- uid: KYS.Library.Services.BaseTranslator.InitCurrentCulture*
+  name: InitCurrentCulture
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_InitCurrentCulture_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.InitCurrentCulture
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.InitCurrentCulture
+  nameWithType: BaseTranslator.InitCurrentCulture
+- uid: KYS.Library.Services.BaseTranslator.InitializeTranslator*
+  name: InitializeTranslator
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_InitializeTranslator_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.InitializeTranslator
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.InitializeTranslator
+  nameWithType: BaseTranslator.InitializeTranslator
+- uid: KYS.Library.Services.BaseTranslator.InitializeTranslator``1(``0)
+  name: InitializeTranslator<T>(T)
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_InitializeTranslator__1___0_
+  commentId: M:KYS.Library.Services.BaseTranslator.InitializeTranslator``1(``0)
+  name.vb: InitializeTranslator(Of T)(T)
+  fullName: KYS.Library.Services.BaseTranslator.InitializeTranslator<T>(T)
+  fullName.vb: KYS.Library.Services.BaseTranslator.InitializeTranslator(Of T)(T)
+  nameWithType: BaseTranslator.InitializeTranslator<T>(T)
+  nameWithType.vb: BaseTranslator.InitializeTranslator(Of T)(T)
+- uid: KYS.Library.Services.BaseTranslator.LanguageResources
+  name: LanguageResources
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_LanguageResources
+  commentId: P:KYS.Library.Services.BaseTranslator.LanguageResources
+  fullName: KYS.Library.Services.BaseTranslator.LanguageResources
+  nameWithType: BaseTranslator.LanguageResources
+- uid: KYS.Library.Services.BaseTranslator.LanguageResources*
+  name: LanguageResources
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_LanguageResources_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.LanguageResources
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.LanguageResources
+  nameWithType: BaseTranslator.LanguageResources
+- uid: KYS.Library.Services.BaseTranslator.LoadLanguages
+  name: LoadLanguages()
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_LoadLanguages
+  commentId: M:KYS.Library.Services.BaseTranslator.LoadLanguages
+  fullName: KYS.Library.Services.BaseTranslator.LoadLanguages()
+  nameWithType: BaseTranslator.LoadLanguages()
+- uid: KYS.Library.Services.BaseTranslator.LoadLanguages*
+  name: LoadLanguages
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_LoadLanguages_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.LoadLanguages
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.LoadLanguages
+  nameWithType: BaseTranslator.LoadLanguages
+- uid: KYS.Library.Services.BaseTranslator.ResourceLookups
+  name: ResourceLookups
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_ResourceLookups
+  commentId: P:KYS.Library.Services.BaseTranslator.ResourceLookups
+  fullName: KYS.Library.Services.BaseTranslator.ResourceLookups
+  nameWithType: BaseTranslator.ResourceLookups
+- uid: KYS.Library.Services.BaseTranslator.ResourceLookups*
+  name: ResourceLookups
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_ResourceLookups_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.ResourceLookups
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.ResourceLookups
+  nameWithType: BaseTranslator.ResourceLookups
+- uid: KYS.Library.Services.BaseTranslator.Translate(System.String,System.Globalization.CultureInfo)
+  name: Translate(string, CultureInfo)
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_Translate_System_String_System_Globalization_CultureInfo_
+  commentId: M:KYS.Library.Services.BaseTranslator.Translate(System.String,System.Globalization.CultureInfo)
+  name.vb: Translate(String, CultureInfo)
+  fullName: KYS.Library.Services.BaseTranslator.Translate(string, System.Globalization.CultureInfo)
+  fullName.vb: KYS.Library.Services.BaseTranslator.Translate(String, System.Globalization.CultureInfo)
+  nameWithType: BaseTranslator.Translate(string, CultureInfo)
+  nameWithType.vb: BaseTranslator.Translate(String, CultureInfo)
+- uid: KYS.Library.Services.BaseTranslator.Translate(System.String,System.String)
+  name: Translate(string, string)
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_Translate_System_String_System_String_
+  commentId: M:KYS.Library.Services.BaseTranslator.Translate(System.String,System.String)
+  name.vb: Translate(String, String)
+  fullName: KYS.Library.Services.BaseTranslator.Translate(string, string)
+  fullName.vb: KYS.Library.Services.BaseTranslator.Translate(String, String)
+  nameWithType: BaseTranslator.Translate(string, string)
+  nameWithType.vb: BaseTranslator.Translate(String, String)
+- uid: KYS.Library.Services.BaseTranslator.Translate*
+  name: Translate
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_Translate_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.Translate
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.Translate
+  nameWithType: BaseTranslator.Translate
+- uid: KYS.Library.Services.BaseTranslator.TranslateToEnglish(System.String)
+  name: TranslateToEnglish(string)
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_TranslateToEnglish_System_String_
+  commentId: M:KYS.Library.Services.BaseTranslator.TranslateToEnglish(System.String)
+  name.vb: TranslateToEnglish(String)
+  fullName: KYS.Library.Services.BaseTranslator.TranslateToEnglish(string)
+  fullName.vb: KYS.Library.Services.BaseTranslator.TranslateToEnglish(String)
+  nameWithType: BaseTranslator.TranslateToEnglish(string)
+  nameWithType.vb: BaseTranslator.TranslateToEnglish(String)
+- uid: KYS.Library.Services.BaseTranslator.TranslateToEnglish*
+  name: TranslateToEnglish
+  href: api/KYS.Library.Services.BaseTranslator.html#KYS_Library_Services_BaseTranslator_TranslateToEnglish_
+  commentId: Overload:KYS.Library.Services.BaseTranslator.TranslateToEnglish
+  isSpec: "True"
+  fullName: KYS.Library.Services.BaseTranslator.TranslateToEnglish
+  nameWithType: BaseTranslator.TranslateToEnglish
 - uid: KYS.Library.Services.IBaseTranslationService
   name: IBaseTranslationService
   href: api/KYS.Library.Services.IBaseTranslationService.html
@@ -2188,6 +2409,134 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Services.IBaseTranslationService.CurrentCulture
   nameWithType: IBaseTranslationService.CurrentCulture
+- uid: KYS.Library.Services.IBaseTranslator
+  name: IBaseTranslator
+  href: api/KYS.Library.Services.IBaseTranslator.html
+  commentId: T:KYS.Library.Services.IBaseTranslator
+  fullName: KYS.Library.Services.IBaseTranslator
+  nameWithType: IBaseTranslator
+- uid: KYS.Library.Services.IBaseTranslator.Cultures
+  name: Cultures
+  href: api/KYS.Library.Services.IBaseTranslator.html#KYS_Library_Services_IBaseTranslator_Cultures
+  commentId: P:KYS.Library.Services.IBaseTranslator.Cultures
+  fullName: KYS.Library.Services.IBaseTranslator.Cultures
+  nameWithType: IBaseTranslator.Cultures
+- uid: KYS.Library.Services.IBaseTranslator.Cultures*
+  name: Cultures
+  href: api/KYS.Library.Services.IBaseTranslator.html#KYS_Library_Services_IBaseTranslator_Cultures_
+  commentId: Overload:KYS.Library.Services.IBaseTranslator.Cultures
+  isSpec: "True"
+  fullName: KYS.Library.Services.IBaseTranslator.Cultures
+  nameWithType: IBaseTranslator.Cultures
+- uid: KYS.Library.Services.IBaseTranslator.CurrentCulture
+  name: CurrentCulture
+  href: api/KYS.Library.Services.IBaseTranslator.html#KYS_Library_Services_IBaseTranslator_CurrentCulture
+  commentId: P:KYS.Library.Services.IBaseTranslator.CurrentCulture
+  fullName: KYS.Library.Services.IBaseTranslator.CurrentCulture
+  nameWithType: IBaseTranslator.CurrentCulture
+- uid: KYS.Library.Services.IBaseTranslator.CurrentCulture*
+  name: CurrentCulture
+  href: api/KYS.Library.Services.IBaseTranslator.html#KYS_Library_Services_IBaseTranslator_CurrentCulture_
+  commentId: Overload:KYS.Library.Services.IBaseTranslator.CurrentCulture
+  isSpec: "True"
+  fullName: KYS.Library.Services.IBaseTranslator.CurrentCulture
+  nameWithType: IBaseTranslator.CurrentCulture
+- uid: KYS.Library.Services.IMultiResourcesTranslator
+  name: IMultiResourcesTranslator
+  href: api/KYS.Library.Services.IMultiResourcesTranslator.html
+  commentId: T:KYS.Library.Services.IMultiResourcesTranslator
+  fullName: KYS.Library.Services.IMultiResourcesTranslator
+  nameWithType: IMultiResourcesTranslator
+- uid: KYS.Library.Services.IMultiResourcesTranslator.Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  name: Translate(string, Type, CultureInfo)
+  href: api/KYS.Library.Services.IMultiResourcesTranslator.html#KYS_Library_Services_IMultiResourcesTranslator_Translate_System_String_System_Type_System_Globalization_CultureInfo_
+  commentId: M:KYS.Library.Services.IMultiResourcesTranslator.Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  name.vb: Translate(String, Type, CultureInfo)
+  fullName: KYS.Library.Services.IMultiResourcesTranslator.Translate(string, System.Type, System.Globalization.CultureInfo)
+  fullName.vb: KYS.Library.Services.IMultiResourcesTranslator.Translate(String, System.Type, System.Globalization.CultureInfo)
+  nameWithType: IMultiResourcesTranslator.Translate(string, Type, CultureInfo)
+  nameWithType.vb: IMultiResourcesTranslator.Translate(String, Type, CultureInfo)
+- uid: KYS.Library.Services.IMultiResourcesTranslator.Translate*
+  name: Translate
+  href: api/KYS.Library.Services.IMultiResourcesTranslator.html#KYS_Library_Services_IMultiResourcesTranslator_Translate_
+  commentId: Overload:KYS.Library.Services.IMultiResourcesTranslator.Translate
+  isSpec: "True"
+  fullName: KYS.Library.Services.IMultiResourcesTranslator.Translate
+  nameWithType: IMultiResourcesTranslator.Translate
+- uid: KYS.Library.Services.IQrGenerator
+  name: IQrGenerator
+  href: api/KYS.Library.Services.IQrGenerator.html
+  commentId: T:KYS.Library.Services.IQrGenerator
+  fullName: KYS.Library.Services.IQrGenerator
+  nameWithType: IQrGenerator
+- uid: KYS.Library.Services.IQrGenerator.Draw
+  name: Draw()
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_Draw
+  commentId: M:KYS.Library.Services.IQrGenerator.Draw
+  fullName: KYS.Library.Services.IQrGenerator.Draw()
+  nameWithType: IQrGenerator.Draw()
+- uid: KYS.Library.Services.IQrGenerator.Draw*
+  name: Draw
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_Draw_
+  commentId: Overload:KYS.Library.Services.IQrGenerator.Draw
+  isSpec: "True"
+  fullName: KYS.Library.Services.IQrGenerator.Draw
+  nameWithType: IQrGenerator.Draw
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  name: DrawAndToBase64()
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToBase64
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToBase64()
+  nameWithType: IQrGenerator.DrawAndToBase64()
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToBase64*
+  name: DrawAndToBase64
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToBase64_
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  isSpec: "True"
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  nameWithType: IQrGenerator.DrawAndToBase64
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  name: DrawAndToDataUri()
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToDataUri
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToDataUri()
+  nameWithType: IQrGenerator.DrawAndToDataUri()
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToDataUri*
+  name: DrawAndToDataUri
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToDataUri_
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  isSpec: "True"
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  nameWithType: IQrGenerator.DrawAndToDataUri
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  name: DrawAndToFile(string)
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToFile_System_String_
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  name.vb: DrawAndToFile(String)
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToFile(string)
+  fullName.vb: KYS.Library.Services.IQrGenerator.DrawAndToFile(String)
+  nameWithType: IQrGenerator.DrawAndToFile(string)
+  nameWithType.vb: IQrGenerator.DrawAndToFile(String)
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToFile*
+  name: DrawAndToFile
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToFile_
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToFile
+  isSpec: "True"
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToFile
+  nameWithType: IQrGenerator.DrawAndToFile
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  name: DrawAndToMemoryStream()
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream()
+  nameWithType: IQrGenerator.DrawAndToMemoryStream()
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream*
+  name: DrawAndToMemoryStream
+  href: api/KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream_
+  commentId: Overload:KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  isSpec: "True"
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  nameWithType: IQrGenerator.DrawAndToMemoryStream
 - uid: KYS.Library.Services.IQrGeneratorService
   name: IQrGeneratorService
   href: api/KYS.Library.Services.IQrGeneratorService.html
@@ -2331,6 +2680,123 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Services.ITranslationService.TranslateToEnglish
   nameWithType: ITranslationService.TranslateToEnglish
+- uid: KYS.Library.Services.ITranslator
+  name: ITranslator
+  href: api/KYS.Library.Services.ITranslator.html
+  commentId: T:KYS.Library.Services.ITranslator
+  fullName: KYS.Library.Services.ITranslator
+  nameWithType: ITranslator
+- uid: KYS.Library.Services.ITranslator.GetLanguages
+  name: GetLanguages()
+  href: api/KYS.Library.Services.ITranslator.html#KYS_Library_Services_ITranslator_GetLanguages
+  commentId: M:KYS.Library.Services.ITranslator.GetLanguages
+  fullName: KYS.Library.Services.ITranslator.GetLanguages()
+  nameWithType: ITranslator.GetLanguages()
+- uid: KYS.Library.Services.ITranslator.GetLanguages*
+  name: GetLanguages
+  href: api/KYS.Library.Services.ITranslator.html#KYS_Library_Services_ITranslator_GetLanguages_
+  commentId: Overload:KYS.Library.Services.ITranslator.GetLanguages
+  isSpec: "True"
+  fullName: KYS.Library.Services.ITranslator.GetLanguages
+  nameWithType: ITranslator.GetLanguages
+- uid: KYS.Library.Services.ITranslator.Translate(System.String,System.Globalization.CultureInfo)
+  name: Translate(string, CultureInfo)
+  href: api/KYS.Library.Services.ITranslator.html#KYS_Library_Services_ITranslator_Translate_System_String_System_Globalization_CultureInfo_
+  commentId: M:KYS.Library.Services.ITranslator.Translate(System.String,System.Globalization.CultureInfo)
+  name.vb: Translate(String, CultureInfo)
+  fullName: KYS.Library.Services.ITranslator.Translate(string, System.Globalization.CultureInfo)
+  fullName.vb: KYS.Library.Services.ITranslator.Translate(String, System.Globalization.CultureInfo)
+  nameWithType: ITranslator.Translate(string, CultureInfo)
+  nameWithType.vb: ITranslator.Translate(String, CultureInfo)
+- uid: KYS.Library.Services.ITranslator.Translate(System.String,System.String)
+  name: Translate(string, string)
+  href: api/KYS.Library.Services.ITranslator.html#KYS_Library_Services_ITranslator_Translate_System_String_System_String_
+  commentId: M:KYS.Library.Services.ITranslator.Translate(System.String,System.String)
+  name.vb: Translate(String, String)
+  fullName: KYS.Library.Services.ITranslator.Translate(string, string)
+  fullName.vb: KYS.Library.Services.ITranslator.Translate(String, String)
+  nameWithType: ITranslator.Translate(string, string)
+  nameWithType.vb: ITranslator.Translate(String, String)
+- uid: KYS.Library.Services.ITranslator.Translate*
+  name: Translate
+  href: api/KYS.Library.Services.ITranslator.html#KYS_Library_Services_ITranslator_Translate_
+  commentId: Overload:KYS.Library.Services.ITranslator.Translate
+  isSpec: "True"
+  fullName: KYS.Library.Services.ITranslator.Translate
+  nameWithType: ITranslator.Translate
+- uid: KYS.Library.Services.ITranslator.TranslateToEnglish(System.String)
+  name: TranslateToEnglish(string)
+  href: api/KYS.Library.Services.ITranslator.html#KYS_Library_Services_ITranslator_TranslateToEnglish_System_String_
+  commentId: M:KYS.Library.Services.ITranslator.TranslateToEnglish(System.String)
+  name.vb: TranslateToEnglish(String)
+  fullName: KYS.Library.Services.ITranslator.TranslateToEnglish(string)
+  fullName.vb: KYS.Library.Services.ITranslator.TranslateToEnglish(String)
+  nameWithType: ITranslator.TranslateToEnglish(string)
+  nameWithType.vb: ITranslator.TranslateToEnglish(String)
+- uid: KYS.Library.Services.ITranslator.TranslateToEnglish*
+  name: TranslateToEnglish
+  href: api/KYS.Library.Services.ITranslator.html#KYS_Library_Services_ITranslator_TranslateToEnglish_
+  commentId: Overload:KYS.Library.Services.ITranslator.TranslateToEnglish
+  isSpec: "True"
+  fullName: KYS.Library.Services.ITranslator.TranslateToEnglish
+  nameWithType: ITranslator.TranslateToEnglish
+- uid: KYS.Library.Services.IZipCreator
+  name: IZipCreator
+  href: api/KYS.Library.Services.IZipCreator.html
+  commentId: T:KYS.Library.Services.IZipCreator
+  fullName: KYS.Library.Services.IZipCreator
+  nameWithType: IZipCreator
+- uid: KYS.Library.Services.IZipCreator.Zip
+  name: Zip()
+  href: api/KYS.Library.Services.IZipCreator.html#KYS_Library_Services_IZipCreator_Zip
+  commentId: M:KYS.Library.Services.IZipCreator.Zip
+  fullName: KYS.Library.Services.IZipCreator.Zip()
+  nameWithType: IZipCreator.Zip()
+- uid: KYS.Library.Services.IZipCreator.Zip*
+  name: Zip
+  href: api/KYS.Library.Services.IZipCreator.html#KYS_Library_Services_IZipCreator_Zip_
+  commentId: Overload:KYS.Library.Services.IZipCreator.Zip
+  isSpec: "True"
+  fullName: KYS.Library.Services.IZipCreator.Zip
+  nameWithType: IZipCreator.Zip
+- uid: KYS.Library.Services.IZipCreator.ZipAndToFile(System.String)
+  name: ZipAndToFile(string)
+  href: api/KYS.Library.Services.IZipCreator.html#KYS_Library_Services_IZipCreator_ZipAndToFile_System_String_
+  commentId: M:KYS.Library.Services.IZipCreator.ZipAndToFile(System.String)
+  name.vb: ZipAndToFile(String)
+  fullName: KYS.Library.Services.IZipCreator.ZipAndToFile(string)
+  fullName.vb: KYS.Library.Services.IZipCreator.ZipAndToFile(String)
+  nameWithType: IZipCreator.ZipAndToFile(string)
+  nameWithType.vb: IZipCreator.ZipAndToFile(String)
+- uid: KYS.Library.Services.IZipCreator.ZipAndToFile*
+  name: ZipAndToFile
+  href: api/KYS.Library.Services.IZipCreator.html#KYS_Library_Services_IZipCreator_ZipAndToFile_
+  commentId: Overload:KYS.Library.Services.IZipCreator.ZipAndToFile
+  isSpec: "True"
+  fullName: KYS.Library.Services.IZipCreator.ZipAndToFile
+  nameWithType: IZipCreator.ZipAndToFile
+- uid: KYS.Library.Services.IZipExtractor
+  name: IZipExtractor
+  href: api/KYS.Library.Services.IZipExtractor.html
+  commentId: T:KYS.Library.Services.IZipExtractor
+  fullName: KYS.Library.Services.IZipExtractor
+  nameWithType: IZipExtractor
+- uid: KYS.Library.Services.IZipExtractor.Unzip(System.String,System.String)
+  name: Unzip(string, string)
+  href: api/KYS.Library.Services.IZipExtractor.html#KYS_Library_Services_IZipExtractor_Unzip_System_String_System_String_
+  commentId: M:KYS.Library.Services.IZipExtractor.Unzip(System.String,System.String)
+  name.vb: Unzip(String, String)
+  fullName: KYS.Library.Services.IZipExtractor.Unzip(string, string)
+  fullName.vb: KYS.Library.Services.IZipExtractor.Unzip(String, String)
+  nameWithType: IZipExtractor.Unzip(string, string)
+  nameWithType.vb: IZipExtractor.Unzip(String, String)
+- uid: KYS.Library.Services.IZipExtractor.Unzip*
+  name: Unzip
+  href: api/KYS.Library.Services.IZipExtractor.html#KYS_Library_Services_IZipExtractor_Unzip_
+  commentId: Overload:KYS.Library.Services.IZipExtractor.Unzip
+  isSpec: "True"
+  fullName: KYS.Library.Services.IZipExtractor.Unzip
+  nameWithType: IZipExtractor.Unzip
 - uid: KYS.Library.Services.IZipService
   name: IZipService
   href: api/KYS.Library.Services.IZipService.html
@@ -2524,6 +2990,319 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Services.MultiResourcesTranslationService.TranslateToEnglish
   nameWithType: MultiResourcesTranslationService.TranslateToEnglish
+- uid: KYS.Library.Services.MultiResourcesTranslator
+  name: MultiResourcesTranslator
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html
+  commentId: T:KYS.Library.Services.MultiResourcesTranslator
+  fullName: KYS.Library.Services.MultiResourcesTranslator
+  nameWithType: MultiResourcesTranslator
+- uid: KYS.Library.Services.MultiResourcesTranslator.#ctor(System.Reflection.Assembly,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name: MultiResourcesTranslator(Assembly, CultureInfo, List<CultureInfo>)
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator__ctor_System_Reflection_Assembly_System_Globalization_CultureInfo_System_Collections_Generic_List_System_Globalization_CultureInfo__
+  commentId: M:KYS.Library.Services.MultiResourcesTranslator.#ctor(System.Reflection.Assembly,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name.vb: New(Assembly, CultureInfo, List(Of CultureInfo))
+  fullName: KYS.Library.Services.MultiResourcesTranslator.MultiResourcesTranslator(System.Reflection.Assembly, System.Globalization.CultureInfo, System.Collections.Generic.List<System.Globalization.CultureInfo>)
+  fullName.vb: KYS.Library.Services.MultiResourcesTranslator.New(System.Reflection.Assembly, System.Globalization.CultureInfo, System.Collections.Generic.List(Of System.Globalization.CultureInfo))
+  nameWithType: MultiResourcesTranslator.MultiResourcesTranslator(Assembly, CultureInfo, List<CultureInfo>)
+  nameWithType.vb: MultiResourcesTranslator.New(Assembly, CultureInfo, List(Of CultureInfo))
+- uid: KYS.Library.Services.MultiResourcesTranslator.#ctor*
+  name: MultiResourcesTranslator
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator__ctor_
+  commentId: Overload:KYS.Library.Services.MultiResourcesTranslator.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.Library.Services.MultiResourcesTranslator.MultiResourcesTranslator
+  fullName.vb: KYS.Library.Services.MultiResourcesTranslator.New
+  nameWithType: MultiResourcesTranslator.MultiResourcesTranslator
+  nameWithType.vb: MultiResourcesTranslator.New
+- uid: KYS.Library.Services.MultiResourcesTranslator.Create(System.Globalization.CultureInfo)
+  name: Create(CultureInfo)
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_Create_System_Globalization_CultureInfo_
+  commentId: M:KYS.Library.Services.MultiResourcesTranslator.Create(System.Globalization.CultureInfo)
+  fullName: KYS.Library.Services.MultiResourcesTranslator.Create(System.Globalization.CultureInfo)
+  nameWithType: MultiResourcesTranslator.Create(CultureInfo)
+- uid: KYS.Library.Services.MultiResourcesTranslator.Create(System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name: Create(CultureInfo, List<CultureInfo>)
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_Create_System_Globalization_CultureInfo_System_Collections_Generic_List_System_Globalization_CultureInfo__
+  commentId: M:KYS.Library.Services.MultiResourcesTranslator.Create(System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name.vb: Create(CultureInfo, List(Of CultureInfo))
+  fullName: KYS.Library.Services.MultiResourcesTranslator.Create(System.Globalization.CultureInfo, System.Collections.Generic.List<System.Globalization.CultureInfo>)
+  fullName.vb: KYS.Library.Services.MultiResourcesTranslator.Create(System.Globalization.CultureInfo, System.Collections.Generic.List(Of System.Globalization.CultureInfo))
+  nameWithType: MultiResourcesTranslator.Create(CultureInfo, List<CultureInfo>)
+  nameWithType.vb: MultiResourcesTranslator.Create(CultureInfo, List(Of CultureInfo))
+- uid: KYS.Library.Services.MultiResourcesTranslator.Create(System.Reflection.Assembly,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name: Create(Assembly, CultureInfo, List<CultureInfo>)
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_Create_System_Reflection_Assembly_System_Globalization_CultureInfo_System_Collections_Generic_List_System_Globalization_CultureInfo__
+  commentId: M:KYS.Library.Services.MultiResourcesTranslator.Create(System.Reflection.Assembly,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name.vb: Create(Assembly, CultureInfo, List(Of CultureInfo))
+  fullName: KYS.Library.Services.MultiResourcesTranslator.Create(System.Reflection.Assembly, System.Globalization.CultureInfo, System.Collections.Generic.List<System.Globalization.CultureInfo>)
+  fullName.vb: KYS.Library.Services.MultiResourcesTranslator.Create(System.Reflection.Assembly, System.Globalization.CultureInfo, System.Collections.Generic.List(Of System.Globalization.CultureInfo))
+  nameWithType: MultiResourcesTranslator.Create(Assembly, CultureInfo, List<CultureInfo>)
+  nameWithType.vb: MultiResourcesTranslator.Create(Assembly, CultureInfo, List(Of CultureInfo))
+- uid: KYS.Library.Services.MultiResourcesTranslator.Create*
+  name: Create
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_Create_
+  commentId: Overload:KYS.Library.Services.MultiResourcesTranslator.Create
+  isSpec: "True"
+  fullName: KYS.Library.Services.MultiResourcesTranslator.Create
+  nameWithType: MultiResourcesTranslator.Create
+- uid: KYS.Library.Services.MultiResourcesTranslator.LoadLanguages
+  name: LoadLanguages()
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_LoadLanguages
+  commentId: M:KYS.Library.Services.MultiResourcesTranslator.LoadLanguages
+  fullName: KYS.Library.Services.MultiResourcesTranslator.LoadLanguages()
+  nameWithType: MultiResourcesTranslator.LoadLanguages()
+- uid: KYS.Library.Services.MultiResourcesTranslator.LoadLanguages*
+  name: LoadLanguages
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_LoadLanguages_
+  commentId: Overload:KYS.Library.Services.MultiResourcesTranslator.LoadLanguages
+  isSpec: "True"
+  fullName: KYS.Library.Services.MultiResourcesTranslator.LoadLanguages
+  nameWithType: MultiResourcesTranslator.LoadLanguages
+- uid: KYS.Library.Services.MultiResourcesTranslator.Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  name: Translate(string, Type, CultureInfo)
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_Translate_System_String_System_Type_System_Globalization_CultureInfo_
+  commentId: M:KYS.Library.Services.MultiResourcesTranslator.Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  name.vb: Translate(String, Type, CultureInfo)
+  fullName: KYS.Library.Services.MultiResourcesTranslator.Translate(string, System.Type, System.Globalization.CultureInfo)
+  fullName.vb: KYS.Library.Services.MultiResourcesTranslator.Translate(String, System.Type, System.Globalization.CultureInfo)
+  nameWithType: MultiResourcesTranslator.Translate(string, Type, CultureInfo)
+  nameWithType.vb: MultiResourcesTranslator.Translate(String, Type, CultureInfo)
+- uid: KYS.Library.Services.MultiResourcesTranslator.Translate*
+  name: Translate
+  href: api/KYS.Library.Services.MultiResourcesTranslator.html#KYS_Library_Services_MultiResourcesTranslator_Translate_
+  commentId: Overload:KYS.Library.Services.MultiResourcesTranslator.Translate
+  isSpec: "True"
+  fullName: KYS.Library.Services.MultiResourcesTranslator.Translate
+  nameWithType: MultiResourcesTranslator.Translate
+- uid: KYS.Library.Services.QrGenerator
+  name: QrGenerator
+  href: api/KYS.Library.Services.QrGenerator.html
+  commentId: T:KYS.Library.Services.QrGenerator
+  fullName: KYS.Library.Services.QrGenerator
+  nameWithType: QrGenerator
+- uid: KYS.Library.Services.QrGenerator.Create(System.String)
+  name: Create(string)
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Create_System_String_
+  commentId: M:KYS.Library.Services.QrGenerator.Create(System.String)
+  name.vb: Create(String)
+  fullName: KYS.Library.Services.QrGenerator.Create(string)
+  fullName.vb: KYS.Library.Services.QrGenerator.Create(String)
+  nameWithType: QrGenerator.Create(string)
+  nameWithType.vb: QrGenerator.Create(String)
+- uid: KYS.Library.Services.QrGenerator.Create(System.String,System.Int32,System.Int32,System.Int32)
+  name: Create(string, int, int, int)
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Create_System_String_System_Int32_System_Int32_System_Int32_
+  commentId: M:KYS.Library.Services.QrGenerator.Create(System.String,System.Int32,System.Int32,System.Int32)
+  name.vb: Create(String, Integer, Integer, Integer)
+  fullName: KYS.Library.Services.QrGenerator.Create(string, int, int, int)
+  fullName.vb: KYS.Library.Services.QrGenerator.Create(String, Integer, Integer, Integer)
+  nameWithType: QrGenerator.Create(string, int, int, int)
+  nameWithType.vb: QrGenerator.Create(String, Integer, Integer, Integer)
+- uid: KYS.Library.Services.QrGenerator.Create*
+  name: Create
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Create_
+  commentId: Overload:KYS.Library.Services.QrGenerator.Create
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.Create
+  nameWithType: QrGenerator.Create
+- uid: KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String)
+  name: CreateWithLogo(string, string)
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_CreateWithLogo_System_String_System_String_
+  commentId: M:KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String)
+  name.vb: CreateWithLogo(String, String)
+  fullName: KYS.Library.Services.QrGenerator.CreateWithLogo(string, string)
+  fullName.vb: KYS.Library.Services.QrGenerator.CreateWithLogo(String, String)
+  nameWithType: QrGenerator.CreateWithLogo(string, string)
+  nameWithType.vb: QrGenerator.CreateWithLogo(String, String)
+- uid: KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  name: CreateWithLogo(string, string, int, int, int, int, int)
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_CreateWithLogo_System_String_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: CreateWithLogo(String, String, Integer, Integer, Integer, Integer, Integer)
+  fullName: KYS.Library.Services.QrGenerator.CreateWithLogo(string, string, int, int, int, int, int)
+  fullName.vb: KYS.Library.Services.QrGenerator.CreateWithLogo(String, String, Integer, Integer, Integer, Integer, Integer)
+  nameWithType: QrGenerator.CreateWithLogo(string, string, int, int, int, int, int)
+  nameWithType.vb: QrGenerator.CreateWithLogo(String, String, Integer, Integer, Integer, Integer, Integer)
+- uid: KYS.Library.Services.QrGenerator.CreateWithLogo*
+  name: CreateWithLogo
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_CreateWithLogo_
+  commentId: Overload:KYS.Library.Services.QrGenerator.CreateWithLogo
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.CreateWithLogo
+  nameWithType: QrGenerator.CreateWithLogo
+- uid: KYS.Library.Services.QrGenerator.Draw
+  name: Draw()
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Draw
+  commentId: M:KYS.Library.Services.QrGenerator.Draw
+  fullName: KYS.Library.Services.QrGenerator.Draw()
+  nameWithType: QrGenerator.Draw()
+- uid: KYS.Library.Services.QrGenerator.Draw*
+  name: Draw
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Draw_
+  commentId: Overload:KYS.Library.Services.QrGenerator.Draw
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.Draw
+  nameWithType: QrGenerator.Draw
+- uid: KYS.Library.Services.QrGenerator.DrawAndToBase64
+  name: DrawAndToBase64()
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToBase64
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToBase64
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToBase64()
+  nameWithType: QrGenerator.DrawAndToBase64()
+- uid: KYS.Library.Services.QrGenerator.DrawAndToBase64*
+  name: DrawAndToBase64
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToBase64_
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToBase64
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToBase64
+  nameWithType: QrGenerator.DrawAndToBase64
+- uid: KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  name: DrawAndToDataUri()
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToDataUri
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToDataUri()
+  nameWithType: QrGenerator.DrawAndToDataUri()
+- uid: KYS.Library.Services.QrGenerator.DrawAndToDataUri*
+  name: DrawAndToDataUri
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToDataUri_
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  nameWithType: QrGenerator.DrawAndToDataUri
+- uid: KYS.Library.Services.QrGenerator.DrawAndToFile(System.String)
+  name: DrawAndToFile(string)
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToFile_System_String_
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToFile(System.String)
+  name.vb: DrawAndToFile(String)
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToFile(string)
+  fullName.vb: KYS.Library.Services.QrGenerator.DrawAndToFile(String)
+  nameWithType: QrGenerator.DrawAndToFile(string)
+  nameWithType.vb: QrGenerator.DrawAndToFile(String)
+- uid: KYS.Library.Services.QrGenerator.DrawAndToFile*
+  name: DrawAndToFile
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToFile_
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToFile
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToFile
+  nameWithType: QrGenerator.DrawAndToFile
+- uid: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  name: DrawAndToMemoryStream()
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToMemoryStream
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream()
+  nameWithType: QrGenerator.DrawAndToMemoryStream()
+- uid: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream*
+  name: DrawAndToMemoryStream
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToMemoryStream_
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  nameWithType: QrGenerator.DrawAndToMemoryStream
+- uid: KYS.Library.Services.QrGenerator.Height
+  name: Height
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Height
+  commentId: P:KYS.Library.Services.QrGenerator.Height
+  fullName: KYS.Library.Services.QrGenerator.Height
+  nameWithType: QrGenerator.Height
+- uid: KYS.Library.Services.QrGenerator.Height*
+  name: Height
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Height_
+  commentId: Overload:KYS.Library.Services.QrGenerator.Height
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.Height
+  nameWithType: QrGenerator.Height
+- uid: KYS.Library.Services.QrGenerator.LogoHeight
+  name: LogoHeight
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoHeight
+  commentId: P:KYS.Library.Services.QrGenerator.LogoHeight
+  fullName: KYS.Library.Services.QrGenerator.LogoHeight
+  nameWithType: QrGenerator.LogoHeight
+- uid: KYS.Library.Services.QrGenerator.LogoHeight*
+  name: LogoHeight
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoHeight_
+  commentId: Overload:KYS.Library.Services.QrGenerator.LogoHeight
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.LogoHeight
+  nameWithType: QrGenerator.LogoHeight
+- uid: KYS.Library.Services.QrGenerator.LogoPath
+  name: LogoPath
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoPath
+  commentId: P:KYS.Library.Services.QrGenerator.LogoPath
+  fullName: KYS.Library.Services.QrGenerator.LogoPath
+  nameWithType: QrGenerator.LogoPath
+- uid: KYS.Library.Services.QrGenerator.LogoPath*
+  name: LogoPath
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoPath_
+  commentId: Overload:KYS.Library.Services.QrGenerator.LogoPath
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.LogoPath
+  nameWithType: QrGenerator.LogoPath
+- uid: KYS.Library.Services.QrGenerator.LogoWidth
+  name: LogoWidth
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoWidth
+  commentId: P:KYS.Library.Services.QrGenerator.LogoWidth
+  fullName: KYS.Library.Services.QrGenerator.LogoWidth
+  nameWithType: QrGenerator.LogoWidth
+- uid: KYS.Library.Services.QrGenerator.LogoWidth*
+  name: LogoWidth
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoWidth_
+  commentId: Overload:KYS.Library.Services.QrGenerator.LogoWidth
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.LogoWidth
+  nameWithType: QrGenerator.LogoWidth
+- uid: KYS.Library.Services.QrGenerator.Margin
+  name: Margin
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Margin
+  commentId: P:KYS.Library.Services.QrGenerator.Margin
+  fullName: KYS.Library.Services.QrGenerator.Margin
+  nameWithType: QrGenerator.Margin
+- uid: KYS.Library.Services.QrGenerator.Margin*
+  name: Margin
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Margin_
+  commentId: Overload:KYS.Library.Services.QrGenerator.Margin
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.Margin
+  nameWithType: QrGenerator.Margin
+- uid: KYS.Library.Services.QrGenerator.QRCode
+  name: QRCode
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_QRCode
+  commentId: P:KYS.Library.Services.QrGenerator.QRCode
+  fullName: KYS.Library.Services.QrGenerator.QRCode
+  nameWithType: QrGenerator.QRCode
+- uid: KYS.Library.Services.QrGenerator.QRCode*
+  name: QRCode
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_QRCode_
+  commentId: Overload:KYS.Library.Services.QrGenerator.QRCode
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.QRCode
+  nameWithType: QrGenerator.QRCode
+- uid: KYS.Library.Services.QrGenerator.Value
+  name: Value
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Value
+  commentId: P:KYS.Library.Services.QrGenerator.Value
+  fullName: KYS.Library.Services.QrGenerator.Value
+  nameWithType: QrGenerator.Value
+- uid: KYS.Library.Services.QrGenerator.Value*
+  name: Value
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Value_
+  commentId: Overload:KYS.Library.Services.QrGenerator.Value
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.Value
+  nameWithType: QrGenerator.Value
+- uid: KYS.Library.Services.QrGenerator.Width
+  name: Width
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Width
+  commentId: P:KYS.Library.Services.QrGenerator.Width
+  fullName: KYS.Library.Services.QrGenerator.Width
+  nameWithType: QrGenerator.Width
+- uid: KYS.Library.Services.QrGenerator.Width*
+  name: Width
+  href: api/KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Width_
+  commentId: Overload:KYS.Library.Services.QrGenerator.Width
+  isSpec: "True"
+  fullName: KYS.Library.Services.QrGenerator.Width
+  nameWithType: QrGenerator.Width
 - uid: KYS.Library.Services.QrGeneratorService
   name: QrGeneratorService
   href: api/KYS.Library.Services.QrGeneratorService.html
@@ -2867,6 +3646,254 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Services.SingleResourceTranslationService.TranslateToEnglish
   nameWithType: SingleResourceTranslationService.TranslateToEnglish
+- uid: KYS.Library.Services.SingleResourceTranslator
+  name: SingleResourceTranslator
+  href: api/KYS.Library.Services.SingleResourceTranslator.html
+  commentId: T:KYS.Library.Services.SingleResourceTranslator
+  fullName: KYS.Library.Services.SingleResourceTranslator
+  nameWithType: SingleResourceTranslator
+- uid: KYS.Library.Services.SingleResourceTranslator.Create(System.String,System.Reflection.Assembly,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name: Create(string, Assembly, CultureInfo, List<CultureInfo>)
+  href: api/KYS.Library.Services.SingleResourceTranslator.html#KYS_Library_Services_SingleResourceTranslator_Create_System_String_System_Reflection_Assembly_System_Globalization_CultureInfo_System_Collections_Generic_List_System_Globalization_CultureInfo__
+  commentId: M:KYS.Library.Services.SingleResourceTranslator.Create(System.String,System.Reflection.Assembly,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name.vb: Create(String, Assembly, CultureInfo, List(Of CultureInfo))
+  fullName: KYS.Library.Services.SingleResourceTranslator.Create(string, System.Reflection.Assembly, System.Globalization.CultureInfo, System.Collections.Generic.List<System.Globalization.CultureInfo>)
+  fullName.vb: KYS.Library.Services.SingleResourceTranslator.Create(String, System.Reflection.Assembly, System.Globalization.CultureInfo, System.Collections.Generic.List(Of System.Globalization.CultureInfo))
+  nameWithType: SingleResourceTranslator.Create(string, Assembly, CultureInfo, List<CultureInfo>)
+  nameWithType.vb: SingleResourceTranslator.Create(String, Assembly, CultureInfo, List(Of CultureInfo))
+- uid: KYS.Library.Services.SingleResourceTranslator.Create(System.Type,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name: Create(Type, CultureInfo, List<CultureInfo>)
+  href: api/KYS.Library.Services.SingleResourceTranslator.html#KYS_Library_Services_SingleResourceTranslator_Create_System_Type_System_Globalization_CultureInfo_System_Collections_Generic_List_System_Globalization_CultureInfo__
+  commentId: M:KYS.Library.Services.SingleResourceTranslator.Create(System.Type,System.Globalization.CultureInfo,System.Collections.Generic.List{System.Globalization.CultureInfo})
+  name.vb: Create(Type, CultureInfo, List(Of CultureInfo))
+  fullName: KYS.Library.Services.SingleResourceTranslator.Create(System.Type, System.Globalization.CultureInfo, System.Collections.Generic.List<System.Globalization.CultureInfo>)
+  fullName.vb: KYS.Library.Services.SingleResourceTranslator.Create(System.Type, System.Globalization.CultureInfo, System.Collections.Generic.List(Of System.Globalization.CultureInfo))
+  nameWithType: SingleResourceTranslator.Create(Type, CultureInfo, List<CultureInfo>)
+  nameWithType.vb: SingleResourceTranslator.Create(Type, CultureInfo, List(Of CultureInfo))
+- uid: KYS.Library.Services.SingleResourceTranslator.Create*
+  name: Create
+  href: api/KYS.Library.Services.SingleResourceTranslator.html#KYS_Library_Services_SingleResourceTranslator_Create_
+  commentId: Overload:KYS.Library.Services.SingleResourceTranslator.Create
+  isSpec: "True"
+  fullName: KYS.Library.Services.SingleResourceTranslator.Create
+  nameWithType: SingleResourceTranslator.Create
+- uid: KYS.Library.Services.SingleResourceTranslator.LoadLanguages
+  name: LoadLanguages()
+  href: api/KYS.Library.Services.SingleResourceTranslator.html#KYS_Library_Services_SingleResourceTranslator_LoadLanguages
+  commentId: M:KYS.Library.Services.SingleResourceTranslator.LoadLanguages
+  fullName: KYS.Library.Services.SingleResourceTranslator.LoadLanguages()
+  nameWithType: SingleResourceTranslator.LoadLanguages()
+- uid: KYS.Library.Services.SingleResourceTranslator.LoadLanguages*
+  name: LoadLanguages
+  href: api/KYS.Library.Services.SingleResourceTranslator.html#KYS_Library_Services_SingleResourceTranslator_LoadLanguages_
+  commentId: Overload:KYS.Library.Services.SingleResourceTranslator.LoadLanguages
+  isSpec: "True"
+  fullName: KYS.Library.Services.SingleResourceTranslator.LoadLanguages
+  nameWithType: SingleResourceTranslator.LoadLanguages
+- uid: KYS.Library.Services.ZipCreator
+  name: ZipCreator
+  href: api/KYS.Library.Services.ZipCreator.html
+  commentId: T:KYS.Library.Services.ZipCreator
+  fullName: KYS.Library.Services.ZipCreator
+  nameWithType: ZipCreator
+- uid: KYS.Library.Services.ZipCreator.#ctor
+  name: ZipCreator()
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator__ctor
+  commentId: M:KYS.Library.Services.ZipCreator.#ctor
+  name.vb: New()
+  fullName: KYS.Library.Services.ZipCreator.ZipCreator()
+  fullName.vb: KYS.Library.Services.ZipCreator.New()
+  nameWithType: ZipCreator.ZipCreator()
+  nameWithType.vb: ZipCreator.New()
+- uid: KYS.Library.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Services.ZipFileItem})
+  name: ZipCreator(string, List<ZipFileItem>)
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator__ctor_System_String_System_Collections_Generic_List_KYS_Library_Services_ZipFileItem__
+  commentId: M:KYS.Library.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Services.ZipFileItem})
+  name.vb: New(String, List(Of ZipFileItem))
+  fullName: KYS.Library.Services.ZipCreator.ZipCreator(string, System.Collections.Generic.List<KYS.Library.Services.ZipFileItem>)
+  fullName.vb: KYS.Library.Services.ZipCreator.New(String, System.Collections.Generic.List(Of KYS.Library.Services.ZipFileItem))
+  nameWithType: ZipCreator.ZipCreator(string, List<ZipFileItem>)
+  nameWithType.vb: ZipCreator.New(String, List(Of ZipFileItem))
+- uid: KYS.Library.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Services.ZipFileItem},System.String)
+  name: ZipCreator(string, List<ZipFileItem>, string)
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator__ctor_System_String_System_Collections_Generic_List_KYS_Library_Services_ZipFileItem__System_String_
+  commentId: M:KYS.Library.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Services.ZipFileItem},System.String)
+  name.vb: New(String, List(Of ZipFileItem), String)
+  fullName: KYS.Library.Services.ZipCreator.ZipCreator(string, System.Collections.Generic.List<KYS.Library.Services.ZipFileItem>, string)
+  fullName.vb: KYS.Library.Services.ZipCreator.New(String, System.Collections.Generic.List(Of KYS.Library.Services.ZipFileItem), String)
+  nameWithType: ZipCreator.ZipCreator(string, List<ZipFileItem>, string)
+  nameWithType.vb: ZipCreator.New(String, List(Of ZipFileItem), String)
+- uid: KYS.Library.Services.ZipCreator.#ctor*
+  name: ZipCreator
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator__ctor_
+  commentId: Overload:KYS.Library.Services.ZipCreator.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.Library.Services.ZipCreator.ZipCreator
+  fullName.vb: KYS.Library.Services.ZipCreator.New
+  nameWithType: ZipCreator.ZipCreator
+  nameWithType.vb: ZipCreator.New
+- uid: KYS.Library.Services.ZipCreator.FileItems
+  name: FileItems
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_FileItems
+  commentId: P:KYS.Library.Services.ZipCreator.FileItems
+  fullName: KYS.Library.Services.ZipCreator.FileItems
+  nameWithType: ZipCreator.FileItems
+- uid: KYS.Library.Services.ZipCreator.FileItems*
+  name: FileItems
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_FileItems_
+  commentId: Overload:KYS.Library.Services.ZipCreator.FileItems
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipCreator.FileItems
+  nameWithType: ZipCreator.FileItems
+- uid: KYS.Library.Services.ZipCreator.FileName
+  name: FileName
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_FileName
+  commentId: P:KYS.Library.Services.ZipCreator.FileName
+  fullName: KYS.Library.Services.ZipCreator.FileName
+  nameWithType: ZipCreator.FileName
+- uid: KYS.Library.Services.ZipCreator.FileName*
+  name: FileName
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_FileName_
+  commentId: Overload:KYS.Library.Services.ZipCreator.FileName
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipCreator.FileName
+  nameWithType: ZipCreator.FileName
+- uid: KYS.Library.Services.ZipCreator.Password
+  name: Password
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_Password
+  commentId: P:KYS.Library.Services.ZipCreator.Password
+  fullName: KYS.Library.Services.ZipCreator.Password
+  nameWithType: ZipCreator.Password
+- uid: KYS.Library.Services.ZipCreator.Password*
+  name: Password
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_Password_
+  commentId: Overload:KYS.Library.Services.ZipCreator.Password
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipCreator.Password
+  nameWithType: ZipCreator.Password
+- uid: KYS.Library.Services.ZipCreator.Zip
+  name: Zip()
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_Zip
+  commentId: M:KYS.Library.Services.ZipCreator.Zip
+  fullName: KYS.Library.Services.ZipCreator.Zip()
+  nameWithType: ZipCreator.Zip()
+- uid: KYS.Library.Services.ZipCreator.Zip*
+  name: Zip
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_Zip_
+  commentId: Overload:KYS.Library.Services.ZipCreator.Zip
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipCreator.Zip
+  nameWithType: ZipCreator.Zip
+- uid: KYS.Library.Services.ZipCreator.ZipAndToFile(System.String)
+  name: ZipAndToFile(string)
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_ZipAndToFile_System_String_
+  commentId: M:KYS.Library.Services.ZipCreator.ZipAndToFile(System.String)
+  name.vb: ZipAndToFile(String)
+  fullName: KYS.Library.Services.ZipCreator.ZipAndToFile(string)
+  fullName.vb: KYS.Library.Services.ZipCreator.ZipAndToFile(String)
+  nameWithType: ZipCreator.ZipAndToFile(string)
+  nameWithType.vb: ZipCreator.ZipAndToFile(String)
+- uid: KYS.Library.Services.ZipCreator.ZipAndToFile*
+  name: ZipAndToFile
+  href: api/KYS.Library.Services.ZipCreator.html#KYS_Library_Services_ZipCreator_ZipAndToFile_
+  commentId: Overload:KYS.Library.Services.ZipCreator.ZipAndToFile
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipCreator.ZipAndToFile
+  nameWithType: ZipCreator.ZipAndToFile
+- uid: KYS.Library.Services.ZipExtractor
+  name: ZipExtractor
+  href: api/KYS.Library.Services.ZipExtractor.html
+  commentId: T:KYS.Library.Services.ZipExtractor
+  fullName: KYS.Library.Services.ZipExtractor
+  nameWithType: ZipExtractor
+- uid: KYS.Library.Services.ZipExtractor.FileItems
+  name: FileItems
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_FileItems
+  commentId: P:KYS.Library.Services.ZipExtractor.FileItems
+  fullName: KYS.Library.Services.ZipExtractor.FileItems
+  nameWithType: ZipExtractor.FileItems
+- uid: KYS.Library.Services.ZipExtractor.FileItems*
+  name: FileItems
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_FileItems_
+  commentId: Overload:KYS.Library.Services.ZipExtractor.FileItems
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipExtractor.FileItems
+  nameWithType: ZipExtractor.FileItems
+- uid: KYS.Library.Services.ZipExtractor.FileName
+  name: FileName
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_FileName
+  commentId: P:KYS.Library.Services.ZipExtractor.FileName
+  fullName: KYS.Library.Services.ZipExtractor.FileName
+  nameWithType: ZipExtractor.FileName
+- uid: KYS.Library.Services.ZipExtractor.FileName*
+  name: FileName
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_FileName_
+  commentId: Overload:KYS.Library.Services.ZipExtractor.FileName
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipExtractor.FileName
+  nameWithType: ZipExtractor.FileName
+- uid: KYS.Library.Services.ZipExtractor.Password
+  name: Password
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_Password
+  commentId: P:KYS.Library.Services.ZipExtractor.Password
+  fullName: KYS.Library.Services.ZipExtractor.Password
+  nameWithType: ZipExtractor.Password
+- uid: KYS.Library.Services.ZipExtractor.Password*
+  name: Password
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_Password_
+  commentId: Overload:KYS.Library.Services.ZipExtractor.Password
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipExtractor.Password
+  nameWithType: ZipExtractor.Password
+- uid: KYS.Library.Services.ZipExtractor.Unzip(System.String,System.String)
+  name: Unzip(string, string)
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_Unzip_System_String_System_String_
+  commentId: M:KYS.Library.Services.ZipExtractor.Unzip(System.String,System.String)
+  name.vb: Unzip(String, String)
+  fullName: KYS.Library.Services.ZipExtractor.Unzip(string, string)
+  fullName.vb: KYS.Library.Services.ZipExtractor.Unzip(String, String)
+  nameWithType: ZipExtractor.Unzip(string, string)
+  nameWithType.vb: ZipExtractor.Unzip(String, String)
+- uid: KYS.Library.Services.ZipExtractor.Unzip*
+  name: Unzip
+  href: api/KYS.Library.Services.ZipExtractor.html#KYS_Library_Services_ZipExtractor_Unzip_
+  commentId: Overload:KYS.Library.Services.ZipExtractor.Unzip
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipExtractor.Unzip
+  nameWithType: ZipExtractor.Unzip
+- uid: KYS.Library.Services.ZipFileItem
+  name: ZipFileItem
+  href: api/KYS.Library.Services.ZipFileItem.html
+  commentId: T:KYS.Library.Services.ZipFileItem
+  fullName: KYS.Library.Services.ZipFileItem
+  nameWithType: ZipFileItem
+- uid: KYS.Library.Services.ZipFileItem.Contents
+  name: Contents
+  href: api/KYS.Library.Services.ZipFileItem.html#KYS_Library_Services_ZipFileItem_Contents
+  commentId: P:KYS.Library.Services.ZipFileItem.Contents
+  fullName: KYS.Library.Services.ZipFileItem.Contents
+  nameWithType: ZipFileItem.Contents
+- uid: KYS.Library.Services.ZipFileItem.Contents*
+  name: Contents
+  href: api/KYS.Library.Services.ZipFileItem.html#KYS_Library_Services_ZipFileItem_Contents_
+  commentId: Overload:KYS.Library.Services.ZipFileItem.Contents
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipFileItem.Contents
+  nameWithType: ZipFileItem.Contents
+- uid: KYS.Library.Services.ZipFileItem.Name
+  name: Name
+  href: api/KYS.Library.Services.ZipFileItem.html#KYS_Library_Services_ZipFileItem_Name
+  commentId: P:KYS.Library.Services.ZipFileItem.Name
+  fullName: KYS.Library.Services.ZipFileItem.Name
+  nameWithType: ZipFileItem.Name
+- uid: KYS.Library.Services.ZipFileItem.Name*
+  name: Name
+  href: api/KYS.Library.Services.ZipFileItem.html#KYS_Library_Services_ZipFileItem_Name_
+  commentId: Overload:KYS.Library.Services.ZipFileItem.Name
+  isSpec: "True"
+  fullName: KYS.Library.Services.ZipFileItem.Name
+  nameWithType: ZipFileItem.Name
 - uid: KYS.Library.Services.ZipService
   name: ZipService
   href: api/KYS.Library.Services.ZipService.html

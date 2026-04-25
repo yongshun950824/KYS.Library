@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IZipService | KYS.Library </title>
+      <title>Interface IBaseTranslator | KYS.Library </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IZipService | KYS.Library ">
+      <meta name="title" content="Interface IBaseTranslator | KYS.Library ">
       
-      <meta name="description" content="Define a contract for zipping/unzipping item.">
+      <meta name="description" content="Defines a service contract for language translation.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/feature/enhancement/apiSpec/new?filename=KYS_Library_Services_IZipService.md&amp;value=---%0Auid%3A%20KYS.Library.Services.IZipService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/enhancement/functional_error_handling_and_creational_patterns/apiSpec/new?filename=KYS_Library_Services_IBaseTranslator.md&amp;value=---%0Auid%3A%20KYS.Library.Services.IBaseTranslator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="KYS.Library.Services.IZipService">
+        <article data-uid="KYS.Library.Services.IBaseTranslator">
 
 
 
-  <h1 id="KYS_Library_Services_IZipService" data-uid="KYS.Library.Services.IZipService" class="text-break">
-Interface IZipService  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/ZipService.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h1 id="KYS_Library_Services_IBaseTranslator" data-uid="KYS.Library.Services.IBaseTranslator" class="text-break">
+Interface IBaseTranslator  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/enhancement/functional_error_handling_and_creational_patterns/src/KYS.Library/Services/BaseTranslator.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,12 +97,12 @@ Interface IZipService  <a class="header-action link-secondary" title="View sourc
   <dl><dt>Assembly</dt><dd>KYS.Library.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Define a contract for zipping/unzipping item.</p>
+  <div class="markdown summary"><p>Defines a service contract for language translation.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IZipService</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IBaseTranslator</code></pre>
   </div>
 
 
@@ -117,33 +117,33 @@ Interface IZipService  <a class="header-action link-secondary" title="View sourc
 
 
 
-  <h2 class="section" id="methods">Methods
+  <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="KYS_Library_Services_IZipService_Unzip_" data-uid="KYS.Library.Services.IZipService.Unzip*"></a>
+  <a id="KYS_Library_Services_IBaseTranslator_Cultures_" data-uid="KYS.Library.Services.IBaseTranslator.Cultures*"></a>
 
-  <h3 id="KYS_Library_Services_IZipService_Unzip_System_String_System_String_" data-uid="KYS.Library.Services.IZipService.Unzip(System.String,System.String)">
-  Unzip(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/ZipService.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <h3 id="KYS_Library_Services_IBaseTranslator_Cultures" data-uid="KYS.Library.Services.IBaseTranslator.Cultures">
+  Cultures
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/enhancement/functional_error_handling_and_creational_patterns/src/KYS.Library/Services/BaseTranslator.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Unzip the zipped file and save in the provided location.</p>
+  <div class="markdown level1 summary"><p>Gets the list of available cultures.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Unzip(string srcFilePath, string destDirPath)</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;CultureInfo&gt; Cultures { get; }</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
+
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><code>srcFilePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The source file path of the zipped file.</p>
-</dd>
-    <dt><code>destDirPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The directory path where the unzipped files will be saved.</p>
-</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a>&gt;</dt>
+    <dd></dd>
   </dl>
 
 
@@ -153,68 +153,30 @@ Interface IZipService  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <a id="KYS_Library_Services_IBaseTranslator_CurrentCulture_" data-uid="KYS.Library.Services.IBaseTranslator.CurrentCulture*"></a>
 
-
-
-
-  <a id="KYS_Library_Services_IZipService_Zip_" data-uid="KYS.Library.Services.IZipService.Zip*"></a>
-
-  <h3 id="KYS_Library_Services_IZipService_Zip" data-uid="KYS.Library.Services.IZipService.Zip">
-  Zip()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/ZipService.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="KYS_Library_Services_IBaseTranslator_CurrentCulture" data-uid="KYS.Library.Services.IBaseTranslator.CurrentCulture">
+  CurrentCulture
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/enhancement/functional_error_handling_and_creational_patterns/src/KYS.Library/Services/BaseTranslator.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Zip item(s).</p>
+  <div class="markdown level1 summary"><p>Gets the current culture.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">byte[] Zip()</code></pre>
+    <pre><code class="lang-csharp hljs">CultureInfo CurrentCulture { get; }</code></pre>
   </div>
 
 
-  <h4 class="section">Returns</h4>
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The byte array containing the zipped file.</p>
-</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></dt>
+    <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="KYS_Library_Services_IZipService_ZipAndToFile_" data-uid="KYS.Library.Services.IZipService.ZipAndToFile*"></a>
-
-  <h3 id="KYS_Library_Services_IZipService_ZipAndToFile_System_String_" data-uid="KYS.Library.Services.IZipService.ZipAndToFile(System.String)">
-  ZipAndToFile(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/ZipService.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Zip item(s) and save the zipped file in the provided location.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void ZipAndToFile(string destDirPath)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>destDirPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The directory path where the zipped file will be saved.</p>
-</dd>
-  </dl>
-
-
-
-
 
 
 
@@ -227,7 +189,7 @@ Interface IZipService  <a class="header-action link-secondary" title="View sourc
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/yongshun950824/KYS.Library/blob/feature/enhancement/KYS.Library/Services/ZipService.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/enhancement/functional_error_handling_and_creational_patterns/src/KYS.Library/Services/BaseTranslator.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -157,7 +157,7 @@ Class FormattingHelper
 
   <h3 id="KYS_Library_Helpers_FormattingHelper_Convert_System_String_KYS_Library_Helpers_FormattingHelper_Formatting_" data-uid="KYS.Library.Helpers.FormattingHelper.Convert(System.String,KYS.Library.Helpers.FormattingHelper.Formatting)">
   Convert(string, Formatting)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/FormattingHelper.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/FormattingHelper.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Format the <code>value</code> based on the provided <a class="xref" href="KYS.Library.Helpers.FormattingHelper.Formatting.html">FormattingHelper.Formatting</a> option.</p>
@@ -165,7 +165,7 @@ Class FormattingHelper
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Convert(this string value, FormattingHelper.Formatting format)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;string&gt; Convert(this string value, FormattingHelper.Formatting format)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -180,8 +180,8 @@ Class FormattingHelper
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> value after formatted.</p>
+    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the formatted value.</p>
 </dd>
   </dl>
 
@@ -192,11 +192,6 @@ Class FormattingHelper
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.invalidenumargumentexception">InvalidEnumArgumentException</a></dt>
-    <dd></dd>
-  </dl>
 
 
 

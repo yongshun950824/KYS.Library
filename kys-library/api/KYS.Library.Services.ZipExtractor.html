@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class FileHelper | KYS.Library </title>
+      <title>Class ZipExtractor | KYS.Library </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class FileHelper | KYS.Library ">
+      <meta name="title" content="Class ZipExtractor | KYS.Library ">
       
-      <meta name="description" content="Provide utility methods for read and write file.">
+      
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/master/apiSpec/new?filename=KYS_Library_Helpers_FileHelper.md&amp;value=---%0Auid%3A%20KYS.Library.Helpers.FileHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/yongshun950824/KYS.Library/new/master/apiSpec/new?filename=KYS_Library_Services_ZipExtractor.md&amp;value=---%0Auid%3A%20KYS.Library.Services.ZipExtractor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,25 +84,24 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="KYS.Library.Helpers.FileHelper">
+        <article data-uid="KYS.Library.Services.ZipExtractor">
 
 
 
-  <h1 id="KYS_Library_Helpers_FileHelper" data-uid="KYS.Library.Helpers.FileHelper" class="text-break">
-Class FileHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/FileHelper.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <h1 id="KYS_Library_Services_ZipExtractor" data-uid="KYS.Library.Services.ZipExtractor" class="text-break">
+Class ZipExtractor  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/ZipExtractor.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="KYS.html">KYS</a>.<a class="xref" href="KYS.Library.html">Library</a>.<a class="xref" href="KYS.Library.Helpers.html">Helpers</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KYS.html">KYS</a>.<a class="xref" href="KYS.Library.html">Library</a>.<a class="xref" href="KYS.Library.Services.html">Services</a></dd></dl>
   <dl><dt>Assembly</dt><dd>KYS.Library.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provide utility methods for read and write file.</p>
-</div>
+  <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class FileHelper</code></pre>
+    <pre><code class="lang-csharp hljs">public class ZipExtractor : IZipExtractor</code></pre>
   </div>
 
 
@@ -112,10 +111,16 @@ Class FileHelper  <a class="header-action link-secondary" title="View source" hr
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">FileHelper</span></div>
+      <div><span class="xref">ZipExtractor</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="KYS.Library.Services.IZipExtractor.html">IZipExtractor</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -149,120 +154,140 @@ Class FileHelper  <a class="header-action link-secondary" title="View source" hr
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="KYS_Library_Services_ZipExtractor_FileItems_" data-uid="KYS.Library.Services.ZipExtractor.FileItems*"></a>
+
+  <h3 id="KYS_Library_Services_ZipExtractor_FileItems" data-uid="KYS.Library.Services.ZipExtractor.FileItems">
+  FileItems
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/ZipExtractor.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the item(s) inside the zip file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ZipFileItem&gt; FileItems { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KYS.Library.Services.ZipFileItem.html">ZipFileItem</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KYS_Library_Services_ZipExtractor_FileName_" data-uid="KYS.Library.Services.ZipExtractor.FileName*"></a>
+
+  <h3 id="KYS_Library_Services_ZipExtractor_FileName" data-uid="KYS.Library.Services.ZipExtractor.FileName">
+  FileName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/ZipExtractor.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the file name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FileName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="KYS_Library_Services_ZipExtractor_Password_" data-uid="KYS.Library.Services.ZipExtractor.Password*"></a>
+
+  <h3 id="KYS_Library_Services_ZipExtractor_Password" data-uid="KYS.Library.Services.ZipExtractor.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/ZipExtractor.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the password for the zip file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="KYS_Library_Helpers_FileHelper_LoadFileToMemoryStream_" data-uid="KYS.Library.Helpers.FileHelper.LoadFileToMemoryStream*"></a>
+  <a id="KYS_Library_Services_ZipExtractor_Unzip_" data-uid="KYS.Library.Services.ZipExtractor.Unzip*"></a>
 
-  <h3 id="KYS_Library_Helpers_FileHelper_LoadFileToMemoryStream_System_String_" data-uid="KYS.Library.Helpers.FileHelper.LoadFileToMemoryStream(System.String)">
-  LoadFileToMemoryStream(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/FileHelper.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <h3 id="KYS_Library_Services_ZipExtractor_Unzip_System_String_System_String_" data-uid="KYS.Library.Services.ZipExtractor.Unzip(System.String,System.String)">
+  Unzip(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/ZipExtractor.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Load the file content into the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance.</p>
+  <div class="markdown level1 summary"><p>Reference: <a href="https://stackoverflow.com/a/22444096/8017690">How to extract a folder from zip file using SharpZipLib?</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result&lt;MemoryStream&gt; LoadFileToMemoryStream(string filePath)</code></pre>
+    <pre><code class="lang-csharp hljs">public Result Unzip(string srcFilePath, string destDirPath)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>filePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The path for the file to be loaded.</p>
+    <dt><code>srcFilePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path directory (with the file name) for the zip file located.</p>
 </dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Result</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a>&gt;</dt>
-    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result&lt;T&gt;</span> containing the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance containing the file content.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="KYS_Library_Helpers_FileHelper_WriteFile_" data-uid="KYS.Library.Helpers.FileHelper.WriteFile*"></a>
-
-  <h3 id="KYS_Library_Helpers_FileHelper_WriteFile_System_Byte___System_String_" data-uid="KYS.Library.Helpers.FileHelper.WriteFile(System.Byte[],System.String)">
-  WriteFile(byte[], string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/FileHelper.cs/#L42"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Write the content from the <code>bytes</code> array in a new file.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result WriteFile(byte[] bytes, string fileName)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>bytes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd><p>The <code>byte[]</code> instance containing the file content.</p>
-</dd>
-    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The name for the file to be generated.</p>
+    <dt><code>destDirPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path directory where the unzipped file element(s) to be placed.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">Result</span></dt>
-    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result</span> indicating the success or failure of the operation.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="KYS_Library_Helpers_FileHelper_WriteFile_" data-uid="KYS.Library.Helpers.FileHelper.WriteFile*"></a>
-
-  <h3 id="KYS_Library_Helpers_FileHelper_WriteFile_System_IO_MemoryStream_System_String_" data-uid="KYS.Library.Helpers.FileHelper.WriteFile(System.IO.MemoryStream,System.String)">
-  WriteFile(MemoryStream, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/FileHelper.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Write the content from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance in a new file.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result WriteFile(MemoryStream ms, string fileName)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> instance containing the file conetnt.</p>
-</dd>
-    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The name for the file to be generated.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Result</span></dt>
-    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result</span> indicating the success or failure of the operation.</p>
+    <dd><p>A <span class="xref">CSharpFunctionalExtensions.Result</span> that indicates success if the zip file is extracted successfully;
+otherwise, a failed result with an error message describing the failure reason.</p>
 </dd>
   </dl>
 
@@ -280,7 +305,7 @@ Class FileHelper  <a class="header-action link-secondary" title="View source" hr
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/FileHelper.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Services/ZipExtractor.cs/#L29" class="edit-link">Edit this page</a>
         </div>
 
 
