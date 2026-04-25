@@ -40,14 +40,18 @@ namespace KYS.AspNetCore.Library.TagHelpers
             JToken jToken = JToken.Parse(Json);
             if (AsFlatten)
             {
-                Dictionary<string, object> flattenDict = JsonHelper.Flatten(jToken);
+                var flattenResult = JsonHelper.Flatten(jToken);
+                if (flattenResult.IsFailure)
+                    return Task.FromException(new Exception(flattenResult.Error));
+
+                Dictionary<string, object> flattenDict = flattenResult.Value;
                 jToken = JToken.FromObject(flattenDict);
             }
 
-            string html = String.Empty;
+            string html;
             if (AsBootstrapGrid)
             {
-                StringBuilder sb = new StringBuilder();
+                StringBuilder sb = new();
 
                 sb.AppendLine("<div class='container-fluid'>");
                 sb.AppendLine(GenerateHtmlWithBootstrapGrid(jToken));

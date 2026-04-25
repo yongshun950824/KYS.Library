@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: FilterCriteria
     path: ../Helpers/ExpressionBuilder.cs
@@ -62,8 +62,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Operator
     path: ../Helpers/ExpressionBuilder.cs
@@ -95,8 +95,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Helpers/ExpressionBuilder.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/ExpressionBuilder.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Value
     path: ../Helpers/ExpressionBuilder.cs

@@ -1,30 +1,29 @@
 using System;
-using System.Data;
-using NUnit.Framework;
-using KYS.Library.Helpers;
-using KYS.Library.Extensions;
 using System.Collections.Generic;
-using System.IO;
-using OfficeOpenXml;
-using System.Linq;
+using System.Data;
 using System.Drawing;
+using System.IO;
+using KYS.Library.Extensions;
+using KYS.Library.Helpers;
+using NUnit.Framework;
+using OfficeOpenXml;
 
 namespace KYS.Library.Tests.HelpersUnitTests;
 
 public class ExcelHelperUnitTest
 {
-    private readonly DataTable _dt = new DataTable();
-    private readonly List<Student> _studentList = new List<Student>
-    {
+    private readonly DataTable _dt = new();
+    private readonly List<Student> _studentList =
+    [
         new Student { Id = 1, Name = "Ali", Age = 10 },
         new Student {  Id = 2, Name = "Bob", Age = 11 }
-    };
-    private readonly DataTable _dtTwo = new DataTable();
-    private readonly List<Student> _studentTwoList = new List<Student>
-    {
+    ];
+    private readonly DataTable _dtTwo = new();
+    private readonly List<Student> _studentTwoList =
+    [
         new Student { Id = 3, Name = "Charles", Age = 12 },
         new Student {  Id = 4, Name = "Danny", Age = 13 }
-    };
+    ];
 
     [SetUp]
     public void Setup()
@@ -69,10 +68,14 @@ public class ExcelHelperUnitTest
     }
 
     [Test]
-    public void CreateExcelBook_WithNullDataSet_ShouldThrowException()
+    public void CreateExcelBook_WithNullDataSet_ShouldReturnResultFailure()
     {
-        // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => ExcelHelper.CreateExcelBook((DataSet)null));
+        // Act
+        var result = ExcelHelper.CreateExcelBook((DataSet)null);
+
+        // Assert
+        Assert.IsFalse(result.IsSuccess);
+        Assert.AreEqual(DomainErrors.CannotBeNull("ds"), result.Error);
     }
 
     [Test]
@@ -82,24 +85,31 @@ public class ExcelHelperUnitTest
         string sheetName = "sample";
         _dt.TableName = sheetName;
 
-        DataSet ds = new DataSet();
+        DataSet ds = new();
         ds.Tables.Add(_dt);
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(ds);
+        var result = ExcelHelper.CreateExcelBook(ds);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt);
     }
 
     [Test]
-    public void CreateExcelBook_WithNullDataTable_ShouldThrowException()
+    public void CreateExcelBook_WithNullDataTable_ShouldReturnResultFailure()
     {
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => ExcelHelper.CreateExcelBook((DataTable)null));
+        var result = ExcelHelper.CreateExcelBook((DataTable)null);
+
+        // Assert
+        Assert.IsFalse(result.IsSuccess);
+        Assert.AreEqual(DomainErrors.CannotBeNull("dt"), result.Error);
     }
 
     [Test]
@@ -109,13 +119,16 @@ public class ExcelHelperUnitTest
         _dt.TableName = "sample";
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(_dt);
+        var result = ExcelHelper.CreateExcelBook(_dt);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt);
     }
 
     [Test]
@@ -124,8 +137,8 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = new List<ExcelHelper.ExcelColumnFormat>
-        {
+        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats =
+        [
             new ExcelHelper.ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Id),
@@ -136,16 +149,19 @@ public class ExcelHelperUnitTest
             {
                 ColumnName = nameof(Student.Name)
             }
-        };
+        ];
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(_dt, excelColumnFormats);
+        var result = ExcelHelper.CreateExcelBook(_dt, excelColumnFormats);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt, excelColumnFormats: excelColumnFormats);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt, excelColumnFormats: excelColumnFormats);
     }
 
     [Test]
@@ -154,8 +170,8 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        List<ExcelHelper.ExcelColumnFormat> excelColumnsFormat = new List<ExcelHelper.ExcelColumnFormat>
-        {
+        List<ExcelHelper.ExcelColumnFormat> excelColumnsFormat =
+        [
             new ExcelHelper.ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Id),
@@ -168,16 +184,19 @@ public class ExcelHelperUnitTest
                 ColumnName = nameof(Student.Name),
                 DisplayedColumnName = "Full Name"
             }
-        };
+        ];
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(_dt, excelColumnsFormat);
+        var result = ExcelHelper.CreateExcelBook(_dt, excelColumnsFormat);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt, excelColumnFormats: excelColumnsFormat);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt, excelColumnFormats: excelColumnsFormat);
     }
 
     [Test]
@@ -186,8 +205,8 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = new List<ExcelHelper.ExcelColumnFormat>
-        {
+        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats =
+        [
             new ExcelHelper.ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Id),
@@ -203,37 +222,44 @@ public class ExcelHelperUnitTest
                 ColumnName = nameof(Student.Age),
                 HasSumColumn = true
             }
-        };
+        ];
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(_dt, excelColumnFormats);
+        var result = ExcelHelper.CreateExcelBook(_dt, excelColumnFormats);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt, excelColumnFormats: excelColumnFormats);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt, excelColumnFormats: excelColumnFormats);
     }
 
     [Test]
-    public void CreateExcelBook_WithAdditionalExcelSheetHasNullDataTable_ShouldReturnByteArray()
+    public void CreateExcelBook_WithAdditionalExcelSheetHasNullDataTable_ShouldThrowArgumentNullException()
     {
         // Arrange
         _dt.TableName = "sample";
 
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() =>
+        var ex = Assert.Throws<ArgumentNullException>(() =>
         {
-            List<ExcelHelper.AdditionalExcelSheet> additionalExcelSheets = new List<ExcelHelper.AdditionalExcelSheet>
-            {
+            List<ExcelHelper.AdditionalExcelSheet> additionalExcelSheets =
+            [
                 new ExcelHelper.AdditionalExcelSheet
                 {
                     DataTable = null
                 }
-            };
+            ];
 
             ExcelHelper.CreateExcelBook(_dt, additionalExcelSheets: additionalExcelSheets);
         });
+
+        // Assert
+        Assert.IsInstanceOf<ArgumentNullException>(ex);
+        Assert.AreEqual(new ArgumentNullException("DataTable").Message, ex.Message);
     }
 
     [Test]
@@ -243,27 +269,30 @@ public class ExcelHelperUnitTest
         _dt.TableName = "sample";
 
         _dtTwo.TableName = "sample-2";
-        List<ExcelHelper.AdditionalExcelSheet> additionalExcelSheets = new List<ExcelHelper.AdditionalExcelSheet>
-        {
+        List<ExcelHelper.AdditionalExcelSheet> additionalExcelSheets =
+        [
             new ExcelHelper.AdditionalExcelSheet
             {
                 DataTable = _dtTwo
             }
-        };
+        ];
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(_dt, additionalExcelSheets: additionalExcelSheets);
+        var result = ExcelHelper.CreateExcelBook(_dt, additionalExcelSheets: additionalExcelSheets);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt);
 
         int sheetIndex = 1;
         foreach (var sheet in additionalExcelSheets)
         {
-            AssertExcel(result, sheet.DataTable, sheetIndex, sheet.ExcelColumnFormats, sheet.HeaderRowStyle);
+            AssertExcel(content, sheet.DataTable, sheetIndex, sheet.ExcelColumnFormats, sheet.HeaderRowStyle);
 
             sheetIndex++;
         }
@@ -275,7 +304,7 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        ExcelHelper.ExcelRowStyle headerRowStyle = new ExcelHelper.ExcelRowStyle
+        ExcelHelper.ExcelRowStyle headerRowStyle = new()
         {
             BackgroundColor = Color.DarkBlue,
             FontColor = Color.White,
@@ -283,13 +312,16 @@ public class ExcelHelperUnitTest
         };
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(_dt, headerRowStyle: headerRowStyle);
+        var result = ExcelHelper.CreateExcelBook(_dt, headerRowStyle: headerRowStyle);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt, headerRowStyle: headerRowStyle);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt, headerRowStyle: headerRowStyle);
     }
 
     [Test]
@@ -298,20 +330,23 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        ExcelHelper.ExcelRowStyle summaryRowStyle = new ExcelHelper.ExcelRowStyle
+        ExcelHelper.ExcelRowStyle summaryRowStyle = new()
         {
             BackgroundColor = Color.ForestGreen,
             FontColor = Color.Black
         };
 
         // Act
-        byte[] result = ExcelHelper.CreateExcelBook(_dt, summaryRowStyle: summaryRowStyle);
+        var result = ExcelHelper.CreateExcelBook(_dt, summaryRowStyle: summaryRowStyle);
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.That(result.Length, Is.GreaterThan(0));
+        Assert.IsTrue(result.IsSuccess);
 
-        AssertExcel(result, _dt, summaryRowStyle: summaryRowStyle);
+        var content = result.Value;
+        Assert.IsNotNull(content);
+        Assert.That(content.Length, Is.GreaterThan(0));
+
+        AssertExcel(content, _dt, summaryRowStyle: summaryRowStyle);
     }
 
     private static void AssertExcel(byte[] bytes,
@@ -321,8 +356,8 @@ public class ExcelHelperUnitTest
         ExcelHelper.ExcelRowStyle headerRowStyle = null,
         ExcelHelper.ExcelRowStyle summaryRowStyle = null)
     {
-        using MemoryStream ms = StreamHelper.ToMemoryStream(bytes);
-        using ExcelPackage package = new ExcelPackage(ms);
+        using MemoryStream ms = StreamHelper.ToMemoryStream(bytes).Value;
+        using ExcelPackage package = new(ms);
         var worksheet = package.Workbook.Worksheets[sheetIndex];
 
         // Sheet name assertion

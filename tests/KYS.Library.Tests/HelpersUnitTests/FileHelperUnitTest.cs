@@ -7,20 +7,23 @@ namespace KYS.Library.Tests.HelpersUnitTests
 {
     internal class FileHelperUnitTest
     {
+        private readonly string COULD_NOT_FIND_PATH_ERROR_MESSAGE = "Could not find a part of the path '{0}'.";
+
         [Test]
         public void WriteFile_WithValidMemoryStream_ShouldCreateFileWithCorrectContent()
         {
             // Arrange
             byte[] data = [1, 2, 3, 4, 5];
-            using MemoryStream ms = new MemoryStream(data);
+            using MemoryStream ms = new(data);
 
             string tempFilePath = Path.GetTempFileName();
             File.Delete(tempFilePath);
 
             // Act
-            FileHelper.WriteFile(ms, tempFilePath);
+            var result = FileHelper.WriteFile(ms, tempFilePath);
 
             // Assert
+            Assert.IsTrue(result.IsSuccess);
             Assert.That(File.Exists(tempFilePath), Is.True, "File should be created.");
 
             byte[] fileBytes = File.ReadAllBytes(tempFilePath);
@@ -31,32 +34,55 @@ namespace KYS.Library.Tests.HelpersUnitTests
         }
 
         [Test]
-        public void WriteFile_WithNullStream_ShouldThrowArgumentNullException()
+        public void WriteFile_WithNullStream_ShouldReturnResultFailure()
         {
             // Arrange
             string tempFilePath = Path.GetTempFileName();
 
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => FileHelper.WriteFile((MemoryStream)null, tempFilePath));
+            // Act
+            var result = FileHelper.WriteFile((MemoryStream)null, tempFilePath);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual("ms cannot be null.", result.Error);
 
             // Cleanup
             File.Delete(tempFilePath);
         }
 
         [Test]
-        public void WriteFile_WithMemoryStreamInvalidPath_ShouldThrowException()
+        public void WriteFile_WithMemoryStreamAndInvalidPath_ShouldReturnResultFailure()
         {
             // Arrange
             byte[] data = [1, 2, 3];
-            using MemoryStream ms = new MemoryStream(data);
+            using MemoryStream ms = new(data);
             string invalidPath = Environment.OSVersion.Platform switch
             {
                 PlatformID.Win32NT => "?:\\invalid\\path.txt",  // Invalid on Windows
                 _ => "/invalid_dir/\\invalid_path.txt"          // Invalid on Linux/macOS
             };
 
-            // Act & Assert
-            Assert.Throws<DirectoryNotFoundException>(() => FileHelper.WriteFile(ms, invalidPath));
+            // Act
+            var result = FileHelper.WriteFile(ms, invalidPath);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(String.Format(COULD_NOT_FIND_PATH_ERROR_MESSAGE, invalidPath), result.Error);
+        }
+
+        [Test]
+        public void WriteFile_WithMemoryStreamAndEmptyFileName_ShouldReturnResultFailure()
+        {
+            // Arrange
+            byte[] data = [1, 2, 3, 4, 5];
+            using MemoryStream ms = new(data);
+
+            // Act
+            var result = FileHelper.WriteFile(ms, String.Empty);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(String.Format(DomainErrors.Required("fileName")), result.Error);
         }
 
         [Test]
@@ -69,9 +95,10 @@ namespace KYS.Library.Tests.HelpersUnitTests
             File.Delete(tempFilePath);
 
             // Act
-            FileHelper.WriteFile(data, tempFilePath);
+            var result = FileHelper.WriteFile(data, tempFilePath);
 
             // Assert
+            Assert.IsTrue(result.IsSuccess);
             Assert.That(File.Exists(tempFilePath), Is.True, "File should be created.");
 
             byte[] fileBytes = File.ReadAllBytes(tempFilePath);
@@ -82,20 +109,24 @@ namespace KYS.Library.Tests.HelpersUnitTests
         }
 
         [Test]
-        public void WriteFile_WithNullBytesArray_ShouldThrowArgumentNullException()
+        public void WriteFile_WithNullBytesArray_ShouldReturnResultFailure()
         {
             // Arrange
             string tempFilePath = Path.GetTempFileName();
 
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => FileHelper.WriteFile((byte[])null, tempFilePath));
+            // Act 
+            var result = FileHelper.WriteFile((byte[])null, tempFilePath);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual("bytes cannot be null.", result.Error);
 
             // Cleanup
             File.Delete(tempFilePath);
         }
 
         [Test]
-        public void WriteFile_WithBytesArrayAndInvalidPath_ShouldThrowException()
+        public void WriteFile_WithBytesArrayAndInvalidPath_ShouldReturnResultFailure()
         {
             // Arrange
             byte[] data = [1, 2, 3];
@@ -105,8 +136,26 @@ namespace KYS.Library.Tests.HelpersUnitTests
                 _ => "/invalid_dir/\\invalid_path.txt"          // Invalid on Linux/macOS
             };
 
-            // Act & Assert
-            Assert.Throws<DirectoryNotFoundException>(() => FileHelper.WriteFile(data, invalidPath));
+            // Act
+            var result = FileHelper.WriteFile(data, invalidPath);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(String.Format(COULD_NOT_FIND_PATH_ERROR_MESSAGE, invalidPath), result.Error);
+        }
+
+        [Test]
+        public void WriteFile_WithBytesArrayAndEmptyFileName_ShouldReturnResultFailure()
+        {
+            // Arrange
+            byte[] data = [1, 2, 3, 4, 5];
+
+            // Act
+            var result = FileHelper.WriteFile(data, String.Empty);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(String.Format(DomainErrors.Required("fileName")), result.Error);
         }
 
         [Test]
@@ -116,23 +165,30 @@ namespace KYS.Library.Tests.HelpersUnitTests
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "sample.txt");
 
             // Act
-            using MemoryStream result = FileHelper.LoadFileToMemoryStream(filePath);
+            var result = FileHelper.LoadFileToMemoryStream(filePath);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.CanRead);
-            Assert.AreEqual(0, result.Position, "Stream position should be reset to 0");
+            Assert.IsTrue(result.IsSuccess);
+
+            var ms = result.Value;
+            Assert.IsNotNull(ms);
+            Assert.IsTrue(ms.CanRead);
+            Assert.AreEqual(0, ms.Position, "Stream position should be reset to 0");
         }
 
         [Test]
-        public void LoadFileToMemoryStream_WithEmptyFilePath_ShouldThrowException()
+        public void LoadFileToMemoryStream_WithEmptyFilePath_ShouldReturnResultFailure()
         {
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => FileHelper.LoadFileToMemoryStream(null));
+            // Act 
+            var result = FileHelper.LoadFileToMemoryStream(null);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(DomainErrors.Required("filePath"), result.Error);
         }
 
         [Test]
-        public void LoadFileToMemoryStream_WithInvalidFilePath_ShouldThrowException()
+        public void LoadFileToMemoryStream_WithInvalidFilePath_ShouldReturnResultFailure()
         {
             // Arrange
             string invalidPath = Environment.OSVersion.Platform switch
@@ -141,8 +197,12 @@ namespace KYS.Library.Tests.HelpersUnitTests
                 _ => "/invalid_dir/\\invalid_path.txt"          // Invalid on Linux/macOS
             };
 
-            // Act & Assert
-            Assert.Throws<FileNotFoundException>(() => FileHelper.LoadFileToMemoryStream(invalidPath));
+            // Act 
+            var result = FileHelper.LoadFileToMemoryStream(invalidPath);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual($"File not found: {invalidPath}.", result.Error);
         }
     }
 }

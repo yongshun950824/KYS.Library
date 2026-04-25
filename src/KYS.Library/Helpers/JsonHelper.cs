@@ -1,13 +1,14 @@
-﻿using KYS.Library.Extensions;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using CSharpFunctionalExtensions;
+using KYS.Library.Extensions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 
 namespace KYS.Library.Helpers
 {
@@ -41,16 +42,17 @@ namespace KYS.Library.Helpers
         /// <typeparam name="T">The type of <c>source</c>. Must be a reference type with a public parameterless constructor.</typeparam>
         /// <param name="source">The provided value to be flatten.</param>
         /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
-        /// <returns>The key value pair for the flatten JSON.</returns>
-        public static Dictionary<string, object> FlattenObject<T>(T source,
+        /// <returns>A <see cref="Result{Dictionary{string, object}}" /> containing the key value pair for the flatten JSON.</returns>
+        public static Result<Dictionary<string, object>> FlattenObject<T>(T source,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : class, new()
         {
-            return JObject.FromObject(source, DefaultSerializer)
-                .Descendants()
-                .OfType<JValue>()
-                .ToDictionary(k => ConstructFlattenKey(k.Path, flattenFormat),
-                    v => v.Value);
+            return ValidateFlattenFormat(flattenFormat)
+                .Bind(() => Result.Try(
+                    () => Result.Success(FlattenObjectCore(source, flattenFormat)),
+                    ex => ex.Message
+                ))
+                .Bind(result => result);
         }
 
         /// <summary>
@@ -61,32 +63,17 @@ namespace KYS.Library.Helpers
         /// <typeparam name="T">The type of <c>source</c> which is a <see cref="JToken" /> type.</typeparam>
         /// <param name="source">The provided value to be flatten.</param>
         /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
-        /// <returns>The key value pair for the flatten JSON.</returns>
-        public static Dictionary<string, object> FlattenArray<T>(T source,
+        /// <returns>A <see cref="Result{Dictionary{string, object}}" /> containing the key value pair for the flatten JSON.</returns>
+        public static Result<Dictionary<string, object>> FlattenArray<T>(T source,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
             where T : JToken
         {
-            var dict = new Dictionary<string, object>();
-
-            foreach (var jToken in JToken.FromObject(source, DefaultSerializer).Children())
-            {
-                if (jToken is JObject childObj)
-                {
-                    foreach (var kvp in FlattenObject(childObj, flattenFormat))
-                        AddFlattenEntry(dict, $"{jToken.Path}.{kvp.Key}", kvp.Value, flattenFormat);
-                }
-                else if (jToken is JArray childArr)
-                {
-                    foreach (var kvp in FlattenArray(childArr, flattenFormat))
-                        AddFlattenEntry(dict, $"{jToken.Path}{kvp.Key}", kvp.Value, flattenFormat);
-                }
-                else
-                {
-                    AddFlattenEntry(dict, jToken.Path, ((JValue)jToken).Value, flattenFormat);
-                }
-            }
-
-            return dict;
+            return ValidateFlattenFormat(flattenFormat)
+                .Bind(() => Result.Try(
+                    () => Result.Success(FlattenArrayCore(source, flattenFormat)),
+                    ex => ex.Message
+                ))
+                .Bind(result => result);
         }
 
         /// <summary>
@@ -96,21 +83,16 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <param name="token">The <see cref="JToken" /> instance to be flatten.</param>
         /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
-        /// <returns>The key value pair for the flatten JSON.</returns>
-        /// <exception cref="ArgumentException"></exception>
-        public static Dictionary<string, object> Flatten(JToken token,
+        /// <returns>A <see cref="Result{T}" /> containing the flattened key-value pairs.</returns>
+        public static Result<Dictionary<string, object>> Flatten(JToken token,
             FlattenFormat flattenFormat = FlattenFormat.JsonPath)
         {
-            if (token.Type == JTokenType.Object)
-            {
-                return FlattenObject(token.ToObject<JObject>(), flattenFormat);
-            }
-            else if (token.Type == JTokenType.Array)
-            {
-                return FlattenArray(token, flattenFormat);
-            }
-
-            throw new ArgumentException($"Provided {nameof(token)} is neither a valid JSON object nor array.");
+            return ValidateFlattenFormat(flattenFormat)
+                .Bind(() => Result.Try(
+                    () => Result.Success(FlattenCore(token, flattenFormat)),
+                    ex => ex.Message
+                ))
+                .Bind(result => result);
         }
 
         private static void AddFlattenEntry(Dictionary<string, object> dict, string key, object value, FlattenFormat flattenFormat)
@@ -127,20 +109,89 @@ namespace KYS.Library.Helpers
         /// <param name="flattenFormat">The <see cref="FlattenFormat" /> format to construct the key.</param>
         /// <returns>The key after applying the <c>flattenFormat</c>.</returns>
         /// <exception cref="InvalidEnumArgumentException"></exception>
-        public static string ConstructFlattenKey(string key, FlattenFormat flattenFormat)
+        internal static string ConstructFlattenKey(string key, FlattenFormat flattenFormat)
         {
             return flattenFormat switch
             {
                 FlattenFormat.DotNet =>
-                    DigitJsonPathReplacementRegex().Replace(key, ":$1")
+                    DigitJsonPathReplacementRegex()
+                        .Replace(key, ":$1")
                         .Replace(".", ":")
                         .RemovePreFix(":"),
                 FlattenFormat.JS =>
-                    DigitJsonPathReplacementRegex().Replace(key, ".$1")
+                    DigitJsonPathReplacementRegex()
+                        .Replace(key, ".$1")
                         .RemovePreFix("."),
                 FlattenFormat.JsonPath => key,
                 _ => throw new InvalidEnumArgumentException(nameof(flattenFormat), (int)flattenFormat, typeof(FlattenFormat))
             };
+        }
+
+        private static Dictionary<string, object> FlattenCore(JToken token,
+            FlattenFormat flattenFormat = FlattenFormat.JsonPath)
+        {
+            if (token.Type == JTokenType.Object)
+            {
+                return FlattenObjectCore(token.ToObject<JObject>(), flattenFormat);
+            }
+            else if (token.Type == JTokenType.Array)
+            {
+                return FlattenArrayCore(token, flattenFormat);
+            }
+
+            throw new ArgumentException($"Provided {nameof(token)} is neither a valid JSON object nor array.");
+        }
+
+        private static Dictionary<string, object> FlattenObjectCore<T>(T src, FlattenFormat format)
+            where T : class, new()
+        {
+            var flattenObject = JObject.FromObject(src, DefaultSerializer)
+                .Descendants()
+                .OfType<JValue>()
+                .ToDictionary(k => ConstructFlattenKey(k.Path, format),
+                    v => v.Value);
+
+            return flattenObject;
+        }
+
+        private static Dictionary<string, object> FlattenArrayCore<T>(T src, FlattenFormat format)
+            where T : JToken
+        {
+            var dict = new Dictionary<string, object>();
+
+            foreach (var jToken in JToken.FromObject(src, DefaultSerializer).Children())
+            {
+                if (jToken is JObject childObj)
+                {
+                    foreach (var kvp in FlattenObjectCore(childObj, format))
+                    {
+                        AddFlattenEntry(dict, $"{jToken.Path}.{kvp.Key}", kvp.Value, format);
+                    }
+                }
+                else if (jToken is JArray childArr)
+                {
+                    foreach (var kvp in FlattenArrayCore(childArr, format))
+                    {
+                        AddFlattenEntry(dict, $"{jToken.Path}{kvp.Key}", kvp.Value, format);
+                    }
+                }
+                else
+                {
+                    AddFlattenEntry(dict, jToken.Path, ((JValue)jToken).Value, format);
+                }
+            }
+
+            return dict;
+        }
+
+        private static Result ValidateFlattenFormat(FlattenFormat flattenFormat)
+        {
+            const string INVALID_FLATTEN_FORMAT_ERROR_MSG = "Invalid formatting option (flattenFormat): {0}.";
+
+            if (!Enum.IsDefined(typeof(FlattenFormat), flattenFormat))
+                return Result.Failure(String.Format(INVALID_FLATTEN_FORMAT_ERROR_MSG, flattenFormat));
+
+            return Result.Success();
         }
 
         /// <summary>

@@ -208,6 +208,29 @@ public partial class JsonToHtmlTagHelperUnitTest
         );
     }
 
+    [Test]
+    public void ProcessAsync_WithInvalidValue_ShouldThrowException()
+    {
+        // Arrange
+        var jsonInput = "Invalid value";
+        var helper = new JsonToHtmlTagHelper
+        {
+            Json = JsonSerializer.Serialize(jsonInput),
+            AsFlatten = true
+        };
+
+        var context = CreateTagHelperContext();
+        var output = CreateTagHelperOutput("json-to-html");
+
+        // Act
+        var ex = Assert.CatchAsync(async () => await helper.ProcessAsync(context, output));
+
+        // Assert
+        Assert.IsNotNull(ex);
+        Assert.IsInstanceOf<Exception>(ex);
+        Assert.AreEqual($"Provided token is neither a valid JSON object nor array.", ex?.Message);
+    }
+
     #region Helper method for TagHelper
     private static TagHelperContext CreateTagHelperContext()
     {

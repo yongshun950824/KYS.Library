@@ -1,0 +1,245 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.IZipCreator
+  commentId: T:KYS.Library.Services.IZipCreator
+  id: IZipCreator
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.IZipCreator.Zip
+  - KYS.Library.Services.IZipCreator.ZipAndToFile(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IZipCreator
+  nameWithType: IZipCreator
+  fullName: KYS.Library.Services.IZipCreator
+  type: Interface
+  source:
+    remote:
+      path: src/KYS.Library/Services/ZipCreator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IZipCreator
+    path: ../Services/ZipCreator.cs
+    startLine: 14
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Define a contract for zipping item.
+  example: []
+  syntax:
+    content: public interface IZipCreator
+    content.vb: Public Interface IZipCreator
+  derivedClasses:
+  - KYS.Library.Services.ZipCreator
+- uid: KYS.Library.Services.IZipCreator.Zip
+  commentId: M:KYS.Library.Services.IZipCreator.Zip
+  id: Zip
+  parent: KYS.Library.Services.IZipCreator
+  langs:
+  - csharp
+  - vb
+  name: Zip()
+  nameWithType: IZipCreator.Zip()
+  fullName: KYS.Library.Services.IZipCreator.Zip()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/ZipCreator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Zip
+    path: ../Services/ZipCreator.cs
+    startLine: 23
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Zip item(s).
+  example: []
+  syntax:
+    content: Result<byte[]> Zip()
+    return:
+      type: CSharpFunctionalExtensions.Result{System.Byte[]}
+      description: >-
+        A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the byte array of the created zip file if successful; 
+
+        otherwise, a failed result with an error message.
+    content.vb: Function Zip() As Result(Of Byte())
+  overload: KYS.Library.Services.IZipCreator.Zip*
+- uid: KYS.Library.Services.IZipCreator.ZipAndToFile(System.String)
+  commentId: M:KYS.Library.Services.IZipCreator.ZipAndToFile(System.String)
+  id: ZipAndToFile(System.String)
+  parent: KYS.Library.Services.IZipCreator
+  langs:
+  - csharp
+  - vb
+  name: ZipAndToFile(string)
+  nameWithType: IZipCreator.ZipAndToFile(string)
+  fullName: KYS.Library.Services.IZipCreator.ZipAndToFile(string)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/ZipCreator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: ZipAndToFile
+    path: ../Services/ZipCreator.cs
+    startLine: 33
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Zip item(s) and save the zipped file in the provided location.
+  example: []
+  syntax:
+    content: Result ZipAndToFile(string destDirPath)
+    parameters:
+    - id: destDirPath
+      type: System.String
+      description: The directory path where the zipped file will be saved.
+    return:
+      type: CSharpFunctionalExtensions.Result
+      description: >-
+        A <xref href="CSharpFunctionalExtensions.Result" data-throw-if-not-resolved="false"></xref> that indicates success if the zip file is created and saved successfully; 
+
+        otherwise, a failed result with an error message describing the failure reason.
+    content.vb: Function ZipAndToFile(destDirPath As String) As Result
+  overload: KYS.Library.Services.IZipCreator.ZipAndToFile*
+  nameWithType.vb: IZipCreator.ZipAndToFile(String)
+  fullName.vb: KYS.Library.Services.IZipCreator.ZipAndToFile(String)
+  name.vb: ZipAndToFile(String)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
+  isExternal: true
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: KYS.Library.Services.IZipCreator.Zip*
+  commentId: Overload:KYS.Library.Services.IZipCreator.Zip
+  href: KYS.Library.Services.IZipCreator.html#KYS_Library_Services_IZipCreator_Zip
+  name: Zip
+  nameWithType: IZipCreator.Zip
+  fullName: KYS.Library.Services.IZipCreator.Zip
+- uid: CSharpFunctionalExtensions.Result{System.Byte[]}
+  commentId: T:CSharpFunctionalExtensions.Result{System.Byte[]}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: Result<byte[]>
+  nameWithType: Result<byte[]>
+  fullName: CSharpFunctionalExtensions.Result<byte[]>
+  nameWithType.vb: Result(Of Byte())
+  fullName.vb: CSharpFunctionalExtensions.Result(Of Byte())
+  name.vb: Result(Of Byte())
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+  - name: )
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions
+- uid: CSharpFunctionalExtensions.Result
+  commentId: T:CSharpFunctionalExtensions.Result
+  parent: CSharpFunctionalExtensions
+  isExternal: true
+  name: Result
+  nameWithType: Result
+  fullName: CSharpFunctionalExtensions.Result
+- uid: KYS.Library.Services.IZipCreator.ZipAndToFile*
+  commentId: Overload:KYS.Library.Services.IZipCreator.ZipAndToFile
+  href: KYS.Library.Services.IZipCreator.html#KYS_Library_Services_IZipCreator_ZipAndToFile_System_String_
+  name: ZipAndToFile
+  nameWithType: IZipCreator.ZipAndToFile
+  fullName: KYS.Library.Services.IZipCreator.ZipAndToFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

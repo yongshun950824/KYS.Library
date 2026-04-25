@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Extensions/IDictionaryExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IDictionaryExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IDictionaryExtensions
     path: ../Extensions/IDictionaryExtensions.cs
@@ -54,8 +54,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IDictionaryExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IDictionaryExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Upsert
     path: ../Extensions/IDictionaryExtensions.cs
@@ -104,8 +104,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Extensions/IDictionaryExtensions.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Extensions/IDictionaryExtensions.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Upsert
     path: ../Extensions/IDictionaryExtensions.cs

@@ -1,4 +1,11 @@
-﻿using CsvHelper;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using CSharpFunctionalExtensions;
+using CsvHelper;
 using CsvHelper.Configuration;
 using iText.IO.Font.Constants;
 using iText.Kernel.Font;
@@ -9,12 +16,6 @@ using iText.Layout.Properties;
 using KYS.Library.Extensions;
 using Newtonsoft.Json;
 using OfficeOpenXml;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 
 namespace KYS.Library.Helpers
 {
@@ -30,8 +31,8 @@ namespace KYS.Library.Helpers
         /// <param name="printHeaders">The <see cref="bool" /> value indicates the header to be included.</param>
         /// <param name="delimiter">The separator splits the column.</param>
         /// <param name="cultureInfo">The culture to be used.</param>
-        /// <returns>The byte array for the file.</returns>
-        public static byte[] WriteToTextFile(DataTable dt,
+        /// <returns>A <see cref="Result{T}" /> containing <see cref="byte[]" /> instance which is the file.</returns>
+        public static Result<byte[]> WriteToTextFile(DataTable dt,
             bool printHeaders = true,
             string delimiter = ";",
             CultureInfo cultureInfo = null)
@@ -42,11 +43,11 @@ namespace KYS.Library.Helpers
                 csvString = DataTableToCSV(dt, printHeaders, delimiter, cultureInfo);
 
             using Stream stream = StreamHelper.WriteStringIntoStream(csvString);
-            using MemoryStream ms = new MemoryStream();
+            using MemoryStream ms = new();
             stream.CopyTo(ms);
 
             ms.Position = 0;
-            return ms.ToArray();
+            return Result.Success(ms.ToArray());
         }
 
         /// <summary>
@@ -55,15 +56,12 @@ namespace KYS.Library.Helpers
         /// <param name="dt">The <see cref="DataTable" /> instance.</param>
         /// <param name="headerRowStyle">The style for the header row.</param>
         /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
-        /// <returns>The byte array for the file.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static byte[] WriteToExcelFile(DataTable dt,
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="byte[]" /> instance which is the Excel file content.</returns>
+        public static Result<byte[]> WriteToExcelFile(DataTable dt,
             ExcelHelper.ExcelRowStyle headerRowStyle = null,
             List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
             LicenseContext license = LicenseContext.NonCommercial)
         {
-            ArgumentNullException.ThrowIfNull(dt);
-
             return ExcelHelper.CreateExcelBook(dt, excelColumnFormats, headerRowStyle, license: license);
         }
 
@@ -74,31 +72,30 @@ namespace KYS.Library.Helpers
         /// <param name="printHeaders">The <see cref="bool" /> value indicates the header to be included.</param>
         /// <param name="tableHeaderStyle">The style for the table header.</param>
         /// <param name="tableBodyStyle">The style for the table content.</param>
-        /// <returns>The byte array for the file.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static byte[] WriteToPdfFile(DataTable dt,
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="byte[]" /> instance which is the PDF file content.</returns>
+        public static Result<byte[]> WriteToPdfFile(DataTable dt,
             bool printHeaders = true,
             Style tableHeaderStyle = null,
             Style tableBodyStyle = null)
         {
-            ArgumentNullException.ThrowIfNull(dt);
+            if (dt == null)
+                return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(dt)));
 
-            using MemoryStream ms = new MemoryStream();
-            using PdfWriter pdfWriter = new PdfWriter(ms);
+            using MemoryStream ms = new();
+            using PdfWriter pdfWriter = new(ms);
             pdfWriter.SetCloseStream(false);
 
-            PdfDocument pdfDoc = new PdfDocument(pdfWriter);
-            Document document = new Document(pdfDoc);
+            PdfDocument pdfDoc = new(pdfWriter);
+            Document document = new(pdfDoc);
             PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             document.SetFont(font)
                 .SetFontSize(10);
 
             #region Sample Header style
-            if (tableHeaderStyle == null)
-                tableHeaderStyle = new Style()
-                    .SetBackgroundColor(iText.Kernel.Colors.ColorConstants.LIGHT_GRAY)
-                    .SetBold()
-                    .SetTextAlignment(TextAlignment.CENTER);
+            tableHeaderStyle ??= new Style()
+                .SetBackgroundColor(iText.Kernel.Colors.ColorConstants.LIGHT_GRAY)
+                .SetBold()
+                .SetTextAlignment(TextAlignment.CENTER);
             #endregion
 
             if (!dt.IsNullOrEmpty())
@@ -107,7 +104,7 @@ namespace KYS.Library.Helpers
             document.Close();
 
             ms.Position = 0;
-            return ms.ToArray();
+            return Result.Success(ms.ToArray());
         }
 
         /// <summary>
@@ -115,8 +112,8 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <param name="dt">The <see cref="DataTable" /> instance.</param>
         /// <param name="isIndented">The <see cref="bool" /> value indicates to print the JSON as indented.</param>
-        /// <returns>The byte array for the file.</returns>
-        public static byte[] WriteToJsonFile(DataTable dt, bool isIndented = true)
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="byte[]" /> instance which is the JSON file content.</returns>
+        public static Result<byte[]> WriteToJsonFile(DataTable dt, bool isIndented = true)
         {
             Formatting formatting = isIndented switch
             {
@@ -127,52 +124,50 @@ namespace KYS.Library.Helpers
             string jsonString = JsonConvert.SerializeObject(dt, formatting);
 
             using Stream stream = StreamHelper.WriteStringIntoStream(jsonString);
-            using MemoryStream ms = new MemoryStream();
+            using MemoryStream ms = new();
             stream.CopyTo(ms);
 
             ms.Position = 0;
-            return ms.ToArray();
+
+            return Result.Success(ms.ToArray());
         }
 
         /// <summary>
         /// Read CSV from file into <see cref="DataTable" />.
         /// </summary>
         /// <param name="filePath">The path for the CSV file to be read.</param>
-        /// <returns>The <see cref="DataTable" /> instance with the data row(s).</returns>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static DataTable ReadCSV(string filePath)
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="DataTable" /> instance with the data row(s).</returns>
+        public static Result<DataTable> ReadCSV(string filePath)
         {
-            ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+            if (String.IsNullOrWhiteSpace(filePath))
+                return Result.Failure<DataTable>(DomainErrors.Required(nameof(filePath)));
 
             if (!filePath.EndsWith(".csv"))
-            {
-                throw new ArgumentException($"Provided {nameof(filePath)} must be a CSV file.");
-            }
+                return Result.Failure<DataTable>($"Provided {nameof(filePath)} must be a CSV file.");
 
-            using StreamReader sr = new StreamReader(filePath);
+            using StreamReader sr = new(filePath);
 
-            return ReadCSV(sr);
+            return Result.Success(ReadCSV(sr));
         }
 
         /// <summary>
         /// Read CSV from <see cref="Stream" /> into <see cref="DataTable" />.
         /// </summary>
         /// <param name="stream">The <see cref="Stream" /> instance containing the CSV file.</param>
-        /// <returns>The <see cref="DataTable" /> instance with the data row(s).</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static DataTable ReadCSV(Stream stream)
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="DataTable" /> instance with the data row(s).</returns>
+        public static Result<DataTable> ReadCSV(Stream stream)
         {
-            ArgumentNullException.ThrowIfNull(stream);
+            if (stream == null)
+                return Result.Failure<DataTable>(DomainErrors.CannotBeNull(nameof(stream)));
 
-            using StreamReader sr = new StreamReader(stream);
+            using StreamReader sr = new(stream);
 
-            return ReadCSV(sr);
+            return Result.Success(ReadCSV(sr));
         }
 
         private static DataTable ReadCSV(StreamReader sr)
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new();
 
             string[] headers = sr.ReadLine().Split(',');
             foreach (string header in headers)
@@ -201,9 +196,9 @@ namespace KYS.Library.Helpers
             string delimiter = ";",
             CultureInfo cultureInfo = null)
         {
-            StringWriter sw = new StringWriter();
+            StringWriter sw = new();
 
-            CsvConfiguration config = new CsvConfiguration(cultureInfo ?? CultureInfo.InvariantCulture)
+            CsvConfiguration config = new(cultureInfo ?? CultureInfo.InvariantCulture)
             {
                 Delimiter = delimiter
             };

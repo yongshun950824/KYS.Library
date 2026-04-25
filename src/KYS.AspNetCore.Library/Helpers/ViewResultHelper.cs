@@ -12,7 +12,7 @@ namespace KYS.AspNetCore.Library.Helpers
     public static class ViewResultHelper
     {
         /// <summary>
-        /// Read <c>HttpResponseMessage</c> and render it to a <c>ViewResult</c>.
+        /// Read <see cref="HttpResponseMessage" /> and render it to a <see cref="ViewResult" />.
         /// <br /><br />
         /// Idea from <a href="https://stackoverflow.com/questions/79674066/how-to-convert-httpresponsemessage-to-viewresult/79674130#79674130">How to convert HttpResponseMessage to ViewResult?</a>
         /// </summary>

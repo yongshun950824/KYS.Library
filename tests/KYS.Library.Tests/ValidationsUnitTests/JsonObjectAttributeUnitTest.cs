@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using NUnit.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using Newtonsoft.Json;
+using NUnit.Framework;
 using JsonObjectAttribute = KYS.Library.Validations.JsonObjectAttribute;
 
 namespace KYS.Library.Tests.ValidationsUnitTests
@@ -18,82 +18,87 @@ namespace KYS.Library.Tests.ValidationsUnitTests
         {
             get
             {
-                List<List<object>> testCases = new List<List<object>>()
-                {
+                List<List<object>> testCases =
+                [
                     #region Valid JSON object case
-                    new List<object>
-                    {
+                    [
                         new ValidationModel { Prop = JsonConvert.SerializeObject(new { PropOne = "Value 1", PropTwo = 2 }) },
                         true,
                         null
-                    },
+                    ],
                     #endregion
                     #region Valid with empty string / null case
-                    new List<object>
-                    {
+                    [
                         new ValidationWithAllowNullOrEmptyModel { Prop = null },
                         true,
                         null
-                    },
-                    new List<object>
-                    {
+                    ],
+                    [
                         new ValidationWithAllowNullOrEmptyModel { Prop = "" },
                         true,
                         null
-                    },
-                    new List<object>
-                    {
+                    ],
+                    [
                         new ValidationWithAllowNullOrEmptyModel { Prop = JsonConvert.SerializeObject(new { PropOne = "Value 1", PropTwo = 2 }) },
                         true,
                         null
-                    },
+                    ],
                     #endregion
                     #region Invalid JSON / Invalid JSON object case
-                    new List<object>
-                    {
+                    [
                         new ValidationModel { Prop = "VALUE" },
                         false,
                         $"{nameof(ValidationModel.Prop)} is an invalid JSON object."
-                    },
-                    new List<object>
-                    {
+                    ],
+                    [
                         new ValidationModel { Prop = JsonConvert.SerializeObject(1) },
                         false,
                         $"{nameof(ValidationModel.Prop)} is an invalid JSON object."
-                    },
-                    new List<object>
-                    {
+                    ],
+                    [
                         new ValidationModel { Prop = "{ \"PropOne\": \"Missing comma\" \"PropTwo\": null }" },
                         false,
                         $"{nameof(ValidationModel.Prop)} is an invalid JSON object."
-                    },
-                    new List<object>
-                    {
-                        new ValidationWithMessageModel { Prop = "" },
+                    ],
+                    [
+                        new ValidationWithMessageModel { Prop = "VALUE" },
                         false,
                         $"Prop is invalid JSON object. Please provide a valid JSON object."
-                    },
-                    new List<object>
-                    {
+                    ],
+                    [
+                        new ValidationWithMessageModel { Prop = JsonConvert.SerializeObject(1) },
+                        false,
+                        $"Prop is invalid JSON object. Please provide a valid JSON object."
+                    ],
+                    [
                         new ValidationWithMessageModel { Prop = "{ \"PropOne\": \"Missing comma\" \"PropTwo\": null }" },
                         false,
                         $"Prop is invalid JSON object. Please provide a valid JSON object."
-                    },
-                    new List<object>
-                    {
-                        new ValidationWithMessageModel
+                    ],
+                    [
+                        new ValidationWithNotAllowNullOrEmptyAndMessageModel { Prop = "" },
+                        false,
+                        $"Prop is invalid JSON object. Please provide a valid JSON object."
+                    ],
+                    [
+                        new ValidationWithNotAllowNullOrEmptyAndMessageModel { Prop = "{ \"PropOne\": \"Missing comma\" \"PropTwo\": null }" },
+                        false,
+                        $"Prop is invalid JSON object. Please provide a valid JSON object."
+                    ],
+                    [
+                        new ValidationWithNotAllowNullOrEmptyAndMessageModel
                         {
                             Prop = JsonConvert.SerializeObject(
-                                new List<ValidationWithMessageModel>
+                                new List<ValidationWithNotAllowNullOrEmptyAndMessageModel>
                                 {
-                                    new ValidationWithMessageModel { Prop = JsonConvert.SerializeObject(new { PropOne = "Value 1", PropTwo = 2 }) }
+                                    new() { Prop = JsonConvert.SerializeObject(new { PropOne = "Value 1", PropTwo = 2 }) }
                                 })
                         },
                         false,
                         $"Prop is invalid JSON object. Please provide a valid JSON object."
-                    },
+                    ],
                     #endregion
-                };
+                ];
 
                 // Iterate to create `TestCaseData` with different arguments
                 // Without index, will treat as same test case even the reference (type) is different
@@ -115,8 +120,8 @@ namespace KYS.Library.Tests.ValidationsUnitTests
             int index)
         {
             // Arrange
-            ValidationContext validationContext = new ValidationContext(testInput);
-            List<ValidationResult> results = new List<ValidationResult>();
+            ValidationContext validationContext = new(testInput);
+            List<ValidationResult> results = [];
 
             // Act
             bool isValid = Validator.TryValidateObject(testInput, validationContext, results, true);
@@ -138,10 +143,17 @@ namespace KYS.Library.Tests.ValidationsUnitTests
             public string Prop { get; set; }
         }
 
-
         public class ValidationWithMessageModel
         {
-            [JsonObject(IsAllowNullOrEmpty = false, ErrorMessage = "Prop is invalid JSON object. Please provide a valid JSON object.")]
+            // [JsonObject(ErrorMessage = "Prop is invalid JSON object. Please provide a valid JSON object.")]
+            [JsonObject("Prop is invalid JSON object. Please provide a valid JSON object.")]
+            public string Prop { get; set; }
+        }
+
+        public class ValidationWithNotAllowNullOrEmptyAndMessageModel
+        {
+            // [JsonObject(IsAllowNullOrEmpty = false, ErrorMessage = "Prop is invalid JSON object. Please provide a valid JSON object.")]
+            [JsonObject(false, "Prop is invalid JSON object. Please provide a valid JSON object.")]
             public string Prop { get; set; }
         }
     }

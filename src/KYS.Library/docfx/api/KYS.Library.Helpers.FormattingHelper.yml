@@ -14,12 +14,8 @@ items:
   fullName: KYS.Library.Helpers.FormattingHelper
   type: Class
   source:
-    remote:
-      path: KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
-      branch: feature/enhancement
-      repo: https://github.com/yongshun950824/KYS.Library
     id: FormattingHelper
-    path: ../obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
+    path: /workspaces/KYS.Library/src/KYS.Library/obj/Release/net8.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
     startLine: 8
   assemblies:
   - KYS.Library
@@ -53,19 +49,19 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/FormattingHelper.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/FormattingHelper.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Convert
     path: ../Helpers/FormattingHelper.cs
-    startLine: 29
+    startLine: 28
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Helpers
   summary: Format the <code>value</code> based on the provided <xref href="KYS.Library.Helpers.FormattingHelper.Formatting" data-throw-if-not-resolved="false"></xref> option.
   example: []
   syntax:
-    content: public static string Convert(this string value, FormattingHelper.Formatting format)
+    content: public static Result<string> Convert(this string value, FormattingHelper.Formatting format)
     parameters:
     - id: value
       type: System.String
@@ -74,14 +70,10 @@ items:
       type: KYS.Library.Helpers.FormattingHelper.Formatting
       description: The selected <xref href="KYS.Library.Helpers.FormattingHelper.Formatting" data-throw-if-not-resolved="false"></xref> option.
     return:
-      type: System.String
-      description: The <xref href="System.String" data-throw-if-not-resolved="false"></xref> value after formatted.
-    content.vb: Public Shared Function Convert(value As String, format As FormattingHelper.Formatting) As String
+      type: CSharpFunctionalExtensions.Result{System.String}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the formatted value.
+    content.vb: Public Shared Function Convert(value As String, format As FormattingHelper.Formatting) As Result(Of String)
   overload: KYS.Library.Helpers.FormattingHelper.Convert*
-  exceptions:
-  - type: System.ComponentModel.InvalidEnumArgumentException
-    commentId: T:System.ComponentModel.InvalidEnumArgumentException
-    description: ''
   nameWithType.vb: FormattingHelper.Convert(String, FormattingHelper.Formatting)
   fullName.vb: KYS.Library.Helpers.FormattingHelper.Convert(String, KYS.Library.Helpers.FormattingHelper.Formatting)
   name.vb: Convert(String, Formatting)
@@ -387,16 +379,73 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.ComponentModel.InvalidEnumArgumentException
-  commentId: T:System.ComponentModel.InvalidEnumArgumentException
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.invalidenumargumentexception
-  name: InvalidEnumArgumentException
-  nameWithType: InvalidEnumArgumentException
-  fullName: System.ComponentModel.InvalidEnumArgumentException
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: KYS.Library.Helpers.FormattingHelper.Convert*
   commentId: Overload:KYS.Library.Helpers.FormattingHelper.Convert
   href: KYS.Library.Helpers.FormattingHelper.html#KYS_Library_Helpers_FormattingHelper_Convert_System_String_KYS_Library_Helpers_FormattingHelper_Formatting_
   name: Convert
   nameWithType: FormattingHelper.Convert
   fullName: KYS.Library.Helpers.FormattingHelper.Convert
+- uid: CSharpFunctionalExtensions.Result{System.String}
+  commentId: T:CSharpFunctionalExtensions.Result{System.String}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Result<string>
+  nameWithType: Result<string>
+  fullName: CSharpFunctionalExtensions.Result<string>
+  nameWithType.vb: Result(Of String)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of String)
+  name.vb: Result(Of String)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions

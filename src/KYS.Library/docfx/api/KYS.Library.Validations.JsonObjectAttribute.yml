@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: JsonObjectAttribute
     path: ../Validations/JsonObjectAttribute.cs
@@ -115,8 +115,8 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsAllowNullOrEmpty
     path: ../Validations/JsonObjectAttribute.cs
@@ -146,8 +146,8 @@ items:
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/JsonObjectAttribute.cs
@@ -177,8 +177,8 @@ items:
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/JsonObjectAttribute.cs
@@ -212,8 +212,8 @@ items:
   type: Constructor
   source:
     remote:
-      path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Validations/JsonObjectAttribute.cs
@@ -250,8 +250,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Validations/JsonObjectAttribute.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Validations/JsonObjectAttribute.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: IsValid
     path: ../Validations/JsonObjectAttribute.cs

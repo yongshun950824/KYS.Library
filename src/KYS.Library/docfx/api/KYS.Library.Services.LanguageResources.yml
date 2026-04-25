@@ -16,20 +16,20 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Services/TranslationService.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Services/BaseTranslator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: LanguageResources
-    path: ../Services/TranslationService.cs
-    startLine: 506
+    path: ../Services/BaseTranslator.cs
+    startLine: 250
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Services
   summary: Represents the blueprint for the culture name and its resources.
   example: []
   syntax:
-    content: public class LanguageResources
-    content.vb: Public Class LanguageResources
+    content: public sealed class LanguageResources
+    content.vb: Public NotInheritable Class LanguageResources
   inheritance:
   - System.Object
   inheritedMembers:
@@ -37,7 +37,6 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
 - uid: KYS.Library.Services.LanguageResources.CultureName
@@ -53,12 +52,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Services/TranslationService.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Services/BaseTranslator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CultureName
-    path: ../Services/TranslationService.cs
-    startLine: 511
+    path: ../Services/BaseTranslator.cs
+    startLine: 255
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Services
@@ -84,12 +83,12 @@ items:
   type: Property
   source:
     remote:
-      path: KYS.Library/Services/TranslationService.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Services/BaseTranslator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Resources
-    path: ../Services/TranslationService.cs
-    startLine: 515
+    path: ../Services/BaseTranslator.cs
+    startLine: 259
   assemblies:
   - KYS.Library
   namespace: KYS.Library.Services
@@ -268,30 +267,6 @@ references:
     name: GetType
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
   - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)

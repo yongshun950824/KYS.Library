@@ -1,0 +1,1430 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.QrGenerator
+  commentId: T:KYS.Library.Services.QrGenerator
+  id: QrGenerator
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.QrGenerator.Create(System.String)
+  - KYS.Library.Services.QrGenerator.Create(System.String,System.Int32,System.Int32,System.Int32)
+  - KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String)
+  - KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  - KYS.Library.Services.QrGenerator.Draw
+  - KYS.Library.Services.QrGenerator.DrawAndToBase64
+  - KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  - KYS.Library.Services.QrGenerator.DrawAndToFile(System.String)
+  - KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  - KYS.Library.Services.QrGenerator.Height
+  - KYS.Library.Services.QrGenerator.LogoHeight
+  - KYS.Library.Services.QrGenerator.LogoPath
+  - KYS.Library.Services.QrGenerator.LogoWidth
+  - KYS.Library.Services.QrGenerator.Margin
+  - KYS.Library.Services.QrGenerator.QRCode
+  - KYS.Library.Services.QrGenerator.Value
+  - KYS.Library.Services.QrGenerator.Width
+  langs:
+  - csharp
+  - vb
+  name: QrGenerator
+  nameWithType: QrGenerator
+  fullName: KYS.Library.Services.QrGenerator
+  type: Class
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: QrGenerator
+    path: ../Services/QrGenerator.cs
+    startLine: 52
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: A service for generating the QR code.
+  example: []
+  syntax:
+    content: 'public class QrGenerator : IQrGenerator'
+    content.vb: Public Class QrGenerator Implements IQrGenerator
+  inheritance:
+  - System.Object
+  implements:
+  - KYS.Library.Services.IQrGenerator
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: KYS.Library.Services.QrGenerator.Create(System.String)
+  commentId: M:KYS.Library.Services.QrGenerator.Create(System.String)
+  id: Create(System.String)
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Create(string)
+  nameWithType: QrGenerator.Create(string)
+  fullName: KYS.Library.Services.QrGenerator.Create(string)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Create
+    path: ../Services/QrGenerator.cs
+    startLine: 105
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Creates a new instance of the <xref href="KYS.Library.Services.QrGenerator" data-throw-if-not-resolved="false"></xref> class with the specified value and default width, height and margin.
+  example: []
+  syntax:
+    content: public static Result<QrGenerator> Create(string value)
+    parameters:
+    - id: value
+      type: System.String
+      description: The value to be included in the QR code.
+    return:
+      type: CSharpFunctionalExtensions.Result{KYS.Library.Services.QrGenerator}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the created QR generator instance.
+    content.vb: Public Shared Function Create(value As String) As Result(Of QrGenerator)
+  overload: KYS.Library.Services.QrGenerator.Create*
+  nameWithType.vb: QrGenerator.Create(String)
+  fullName.vb: KYS.Library.Services.QrGenerator.Create(String)
+  name.vb: Create(String)
+- uid: KYS.Library.Services.QrGenerator.Create(System.String,System.Int32,System.Int32,System.Int32)
+  commentId: M:KYS.Library.Services.QrGenerator.Create(System.String,System.Int32,System.Int32,System.Int32)
+  id: Create(System.String,System.Int32,System.Int32,System.Int32)
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Create(string, int, int, int)
+  nameWithType: QrGenerator.Create(string, int, int, int)
+  fullName: KYS.Library.Services.QrGenerator.Create(string, int, int, int)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Create
+    path: ../Services/QrGenerator.cs
+    startLine: 118
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Creates a new instance of the <xref href="KYS.Library.Services.QrGenerator" data-throw-if-not-resolved="false"></xref> class with the specified value and default width, height and margin.
+  example: []
+  syntax:
+    content: public static Result<QrGenerator> Create(string value, int width, int height, int margin)
+    parameters:
+    - id: value
+      type: System.String
+      description: The value to be included in the QR code.
+    - id: width
+      type: System.Int32
+      description: The width for the generated QR code image.
+    - id: height
+      type: System.Int32
+      description: The height for the generated QR code image.
+    - id: margin
+      type: System.Int32
+      description: The margin for the generated QR code image.
+    return:
+      type: CSharpFunctionalExtensions.Result{KYS.Library.Services.QrGenerator}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the created QR generator instance.
+    content.vb: Public Shared Function Create(value As String, width As Integer, height As Integer, margin As Integer) As Result(Of QrGenerator)
+  overload: KYS.Library.Services.QrGenerator.Create*
+  nameWithType.vb: QrGenerator.Create(String, Integer, Integer, Integer)
+  fullName.vb: KYS.Library.Services.QrGenerator.Create(String, Integer, Integer, Integer)
+  name.vb: Create(String, Integer, Integer, Integer)
+- uid: KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String)
+  commentId: M:KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String)
+  id: CreateWithLogo(System.String,System.String)
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: CreateWithLogo(string, string)
+  nameWithType: QrGenerator.CreateWithLogo(string, string)
+  fullName: KYS.Library.Services.QrGenerator.CreateWithLogo(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CreateWithLogo
+    path: ../Services/QrGenerator.cs
+    startLine: 141
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Creates a new instance of the <xref href="KYS.Library.Services.QrGenerator" data-throw-if-not-resolved="false"></xref> class with the specified value and logo path, and default width, height and margin.
+  example: []
+  syntax:
+    content: public static Result<QrGenerator> CreateWithLogo(string value, string logoPath)
+    parameters:
+    - id: value
+      type: System.String
+      description: The value to be included in the QR code.
+    - id: logoPath
+      type: System.String
+      description: The path for the logo image which the logo will be attached in the QR code.
+    return:
+      type: CSharpFunctionalExtensions.Result{KYS.Library.Services.QrGenerator}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the created QR generator instance.
+    content.vb: Public Shared Function CreateWithLogo(value As String, logoPath As String) As Result(Of QrGenerator)
+  overload: KYS.Library.Services.QrGenerator.CreateWithLogo*
+  nameWithType.vb: QrGenerator.CreateWithLogo(String, String)
+  fullName.vb: KYS.Library.Services.QrGenerator.CreateWithLogo(String, String)
+  name.vb: CreateWithLogo(String, String)
+- uid: KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:KYS.Library.Services.QrGenerator.CreateWithLogo(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  id: CreateWithLogo(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: CreateWithLogo(string, string, int, int, int, int, int)
+  nameWithType: QrGenerator.CreateWithLogo(string, string, int, int, int, int, int)
+  fullName: KYS.Library.Services.QrGenerator.CreateWithLogo(string, string, int, int, int, int, int)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: CreateWithLogo
+    path: ../Services/QrGenerator.cs
+    startLine: 163
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Creates a new instance of the <xref href="KYS.Library.Services.QrGenerator" data-throw-if-not-resolved="false"></xref> class with the specified value, logo path, width, height and margin, and default logo width and height.
+  example: []
+  syntax:
+    content: public static Result<QrGenerator> CreateWithLogo(string value, string logoPath, int width, int height, int margin, int logoWidth, int logoHeight)
+    parameters:
+    - id: value
+      type: System.String
+      description: The value to be included in the QR code.
+    - id: logoPath
+      type: System.String
+      description: The path for the logo image which the logo will be attached in the QR code.
+    - id: width
+      type: System.Int32
+      description: The width for the generated QR code image.
+    - id: height
+      type: System.Int32
+      description: The height for the generated QR code image.
+    - id: margin
+      type: System.Int32
+      description: The margin for the generated QR code image.
+    - id: logoWidth
+      type: System.Int32
+      description: The width for the generated logo.
+    - id: logoHeight
+      type: System.Int32
+      description: The height for the generated logo.
+    return:
+      type: CSharpFunctionalExtensions.Result{KYS.Library.Services.QrGenerator}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the created QR generator instance.
+    content.vb: Public Shared Function CreateWithLogo(value As String, logoPath As String, width As Integer, height As Integer, margin As Integer, logoWidth As Integer, logoHeight As Integer) As Result(Of QrGenerator)
+  overload: KYS.Library.Services.QrGenerator.CreateWithLogo*
+  nameWithType.vb: QrGenerator.CreateWithLogo(String, String, Integer, Integer, Integer, Integer, Integer)
+  fullName.vb: KYS.Library.Services.QrGenerator.CreateWithLogo(String, String, Integer, Integer, Integer, Integer, Integer)
+  name.vb: CreateWithLogo(String, String, Integer, Integer, Integer, Integer, Integer)
+- uid: KYS.Library.Services.QrGenerator.Value
+  commentId: P:KYS.Library.Services.QrGenerator.Value
+  id: Value
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: QrGenerator.Value
+  fullName: KYS.Library.Services.QrGenerator.Value
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Value
+    path: ../Services/QrGenerator.cs
+    startLine: 187
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the value to be included in the QR code.
+  example: []
+  syntax:
+    content: public string Value { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Value As String
+  overload: KYS.Library.Services.QrGenerator.Value*
+- uid: KYS.Library.Services.QrGenerator.Width
+  commentId: P:KYS.Library.Services.QrGenerator.Width
+  id: Width
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: QrGenerator.Width
+  fullName: KYS.Library.Services.QrGenerator.Width
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Width
+    path: ../Services/QrGenerator.cs
+    startLine: 191
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the width for the generated QR code image.
+  example: []
+  syntax:
+    content: public int Width { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Width As Integer
+  overload: KYS.Library.Services.QrGenerator.Width*
+- uid: KYS.Library.Services.QrGenerator.Height
+  commentId: P:KYS.Library.Services.QrGenerator.Height
+  id: Height
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: QrGenerator.Height
+  fullName: KYS.Library.Services.QrGenerator.Height
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Height
+    path: ../Services/QrGenerator.cs
+    startLine: 195
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the height for the generated QR code image.
+  example: []
+  syntax:
+    content: public int Height { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Height As Integer
+  overload: KYS.Library.Services.QrGenerator.Height*
+- uid: KYS.Library.Services.QrGenerator.LogoPath
+  commentId: P:KYS.Library.Services.QrGenerator.LogoPath
+  id: LogoPath
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: LogoPath
+  nameWithType: QrGenerator.LogoPath
+  fullName: KYS.Library.Services.QrGenerator.LogoPath
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: LogoPath
+    path: ../Services/QrGenerator.cs
+    startLine: 199
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the path for the logo image which the logo will be attached in the QR code.
+  example: []
+  syntax:
+    content: public string LogoPath { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property LogoPath As String
+  overload: KYS.Library.Services.QrGenerator.LogoPath*
+- uid: KYS.Library.Services.QrGenerator.LogoWidth
+  commentId: P:KYS.Library.Services.QrGenerator.LogoWidth
+  id: LogoWidth
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: LogoWidth
+  nameWithType: QrGenerator.LogoWidth
+  fullName: KYS.Library.Services.QrGenerator.LogoWidth
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: LogoWidth
+    path: ../Services/QrGenerator.cs
+    startLine: 203
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the width for the generated logo.
+  example: []
+  syntax:
+    content: public int? LogoWidth { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public ReadOnly Property LogoWidth As Integer?
+  overload: KYS.Library.Services.QrGenerator.LogoWidth*
+- uid: KYS.Library.Services.QrGenerator.LogoHeight
+  commentId: P:KYS.Library.Services.QrGenerator.LogoHeight
+  id: LogoHeight
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: LogoHeight
+  nameWithType: QrGenerator.LogoHeight
+  fullName: KYS.Library.Services.QrGenerator.LogoHeight
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: LogoHeight
+    path: ../Services/QrGenerator.cs
+    startLine: 207
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the height for the generated logo.
+  example: []
+  syntax:
+    content: public int? LogoHeight { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public ReadOnly Property LogoHeight As Integer?
+  overload: KYS.Library.Services.QrGenerator.LogoHeight*
+- uid: KYS.Library.Services.QrGenerator.Margin
+  commentId: P:KYS.Library.Services.QrGenerator.Margin
+  id: Margin
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Margin
+  nameWithType: QrGenerator.Margin
+  fullName: KYS.Library.Services.QrGenerator.Margin
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Margin
+    path: ../Services/QrGenerator.cs
+    startLine: 211
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the margin for the generated QR code image.
+  example: []
+  syntax:
+    content: public int Margin { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Margin As Integer
+  overload: KYS.Library.Services.QrGenerator.Margin*
+- uid: KYS.Library.Services.QrGenerator.QRCode
+  commentId: P:KYS.Library.Services.QrGenerator.QRCode
+  id: QRCode
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: QRCode
+  nameWithType: QrGenerator.QRCode
+  fullName: KYS.Library.Services.QrGenerator.QRCode
+  type: Property
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: QRCode
+    path: ../Services/QrGenerator.cs
+    startLine: 216
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Gets the <xref href="SkiaSharp.SKBitmap" data-throw-if-not-resolved="false"></xref>instance for the QR code.
+  example: []
+  syntax:
+    content: public SKBitmap QRCode { get; }
+    parameters: []
+    return:
+      type: SkiaSharp.SKBitmap
+    content.vb: Public Property QRCode As SKBitmap
+  overload: KYS.Library.Services.QrGenerator.QRCode*
+- uid: KYS.Library.Services.QrGenerator.Draw
+  commentId: M:KYS.Library.Services.QrGenerator.Draw
+  id: Draw
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: Draw()
+  nameWithType: QrGenerator.Draw()
+  fullName: KYS.Library.Services.QrGenerator.Draw()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Draw
+    path: ../Services/QrGenerator.cs
+    startLine: 222
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw QR code.
+  example: []
+  syntax:
+    content: public Result<SKBitmap> Draw()
+    return:
+      type: CSharpFunctionalExtensions.Result{SkiaSharp.SKBitmap}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="SkiaSharp.SKBitmap" data-throw-if-not-resolved="false"></xref> instance for the QR code.
+    content.vb: Public Function Draw() As Result(Of SKBitmap)
+  overload: KYS.Library.Services.QrGenerator.Draw*
+  implements:
+  - KYS.Library.Services.IQrGenerator.Draw
+- uid: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  id: DrawAndToMemoryStream
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToMemoryStream()
+  nameWithType: QrGenerator.DrawAndToMemoryStream()
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToMemoryStream
+    path: ../Services/QrGenerator.cs
+    startLine: 268
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw QR code into a <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: public Result<MemoryStream> DrawAndToMemoryStream()
+    return:
+      type: CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="System.IO.MemoryStream" data-throw-if-not-resolved="false"></xref> instance containing the QR code.
+    content.vb: Public Function DrawAndToMemoryStream() As Result(Of MemoryStream)
+  overload: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream*
+  implements:
+  - KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+- uid: KYS.Library.Services.QrGenerator.DrawAndToBase64
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToBase64
+  id: DrawAndToBase64
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToBase64()
+  nameWithType: QrGenerator.DrawAndToBase64()
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToBase64()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToBase64
+    path: ../Services/QrGenerator.cs
+    startLine: 278
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and generate a Base64 string.
+  example: []
+  syntax:
+    content: public Result<string> DrawAndToBase64()
+    return:
+      type: CSharpFunctionalExtensions.Result{System.String}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the Base64 string for the QR code.
+    content.vb: Public Function DrawAndToBase64() As Result(Of String)
+  overload: KYS.Library.Services.QrGenerator.DrawAndToBase64*
+  implements:
+  - KYS.Library.Services.IQrGenerator.DrawAndToBase64
+- uid: KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  id: DrawAndToDataUri
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToDataUri()
+  nameWithType: QrGenerator.DrawAndToDataUri()
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToDataUri()
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToDataUri
+    path: ../Services/QrGenerator.cs
+    startLine: 290
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and generate a data URI string.
+  example: []
+  syntax:
+    content: public Result<string> DrawAndToDataUri()
+    return:
+      type: CSharpFunctionalExtensions.Result{System.String}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the data URI string for the QR code.
+    content.vb: Public Function DrawAndToDataUri() As Result(Of String)
+  overload: KYS.Library.Services.QrGenerator.DrawAndToDataUri*
+  implements:
+  - KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+- uid: KYS.Library.Services.QrGenerator.DrawAndToFile(System.String)
+  commentId: M:KYS.Library.Services.QrGenerator.DrawAndToFile(System.String)
+  id: DrawAndToFile(System.String)
+  parent: KYS.Library.Services.QrGenerator
+  langs:
+  - csharp
+  - vb
+  name: DrawAndToFile(string)
+  nameWithType: QrGenerator.DrawAndToFile(string)
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToFile(string)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/QrGenerator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: DrawAndToFile
+    path: ../Services/QrGenerator.cs
+    startLine: 301
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Draw the QR code and save it as a file.
+  example: []
+  syntax:
+    content: public Result DrawAndToFile(string filePath)
+    parameters:
+    - id: filePath
+      type: System.String
+      description: The path for the QR code to be saved.
+    return:
+      type: CSharpFunctionalExtensions.Result
+      description: A <xref href="CSharpFunctionalExtensions.Result" data-throw-if-not-resolved="false"></xref> indicating success or failure.
+    content.vb: Public Function DrawAndToFile(filePath As String) As Result
+  overload: KYS.Library.Services.QrGenerator.DrawAndToFile*
+  implements:
+  - KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  nameWithType.vb: QrGenerator.DrawAndToFile(String)
+  fullName.vb: KYS.Library.Services.QrGenerator.DrawAndToFile(String)
+  name.vb: DrawAndToFile(String)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: KYS.Library.Services.IQrGenerator
+  commentId: T:KYS.Library.Services.IQrGenerator
+  parent: KYS.Library.Services
+  href: KYS.Library.Services.IQrGenerator.html
+  name: IQrGenerator
+  nameWithType: IQrGenerator
+  fullName: KYS.Library.Services.IQrGenerator
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: KYS.Library.Services.QrGenerator
+  commentId: T:KYS.Library.Services.QrGenerator
+  href: KYS.Library.Services.QrGenerator.html
+  name: QrGenerator
+  nameWithType: QrGenerator
+  fullName: KYS.Library.Services.QrGenerator
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
+  isExternal: true
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: KYS.Library.Services.QrGenerator.Create*
+  commentId: Overload:KYS.Library.Services.QrGenerator.Create
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Create_System_String_
+  name: Create
+  nameWithType: QrGenerator.Create
+  fullName: KYS.Library.Services.QrGenerator.Create
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CSharpFunctionalExtensions.Result{KYS.Library.Services.QrGenerator}
+  commentId: T:CSharpFunctionalExtensions.Result{KYS.Library.Services.QrGenerator}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: KYS.Library.Services.QrGenerator.html
+  name: Result<QrGenerator>
+  nameWithType: Result<QrGenerator>
+  fullName: CSharpFunctionalExtensions.Result<KYS.Library.Services.QrGenerator>
+  nameWithType.vb: Result(Of QrGenerator)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of KYS.Library.Services.QrGenerator)
+  name.vb: Result(Of QrGenerator)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: KYS.Library.Services.QrGenerator
+    name: QrGenerator
+    href: KYS.Library.Services.QrGenerator.html
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: KYS.Library.Services.QrGenerator
+    name: QrGenerator
+    href: KYS.Library.Services.QrGenerator.html
+  - name: )
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: KYS.Library.Services.QrGenerator.CreateWithLogo*
+  commentId: Overload:KYS.Library.Services.QrGenerator.CreateWithLogo
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_CreateWithLogo_System_String_System_String_
+  name: CreateWithLogo
+  nameWithType: QrGenerator.CreateWithLogo
+  fullName: KYS.Library.Services.QrGenerator.CreateWithLogo
+- uid: KYS.Library.Services.QrGenerator.Value*
+  commentId: Overload:KYS.Library.Services.QrGenerator.Value
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Value
+  name: Value
+  nameWithType: QrGenerator.Value
+  fullName: KYS.Library.Services.QrGenerator.Value
+- uid: KYS.Library.Services.QrGenerator.Width*
+  commentId: Overload:KYS.Library.Services.QrGenerator.Width
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Width
+  name: Width
+  nameWithType: QrGenerator.Width
+  fullName: KYS.Library.Services.QrGenerator.Width
+- uid: KYS.Library.Services.QrGenerator.Height*
+  commentId: Overload:KYS.Library.Services.QrGenerator.Height
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Height
+  name: Height
+  nameWithType: QrGenerator.Height
+  fullName: KYS.Library.Services.QrGenerator.Height
+- uid: KYS.Library.Services.QrGenerator.LogoPath*
+  commentId: Overload:KYS.Library.Services.QrGenerator.LogoPath
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoPath
+  name: LogoPath
+  nameWithType: QrGenerator.LogoPath
+  fullName: KYS.Library.Services.QrGenerator.LogoPath
+- uid: KYS.Library.Services.QrGenerator.LogoWidth*
+  commentId: Overload:KYS.Library.Services.QrGenerator.LogoWidth
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoWidth
+  name: LogoWidth
+  nameWithType: QrGenerator.LogoWidth
+  fullName: KYS.Library.Services.QrGenerator.LogoWidth
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: KYS.Library.Services.QrGenerator.LogoHeight*
+  commentId: Overload:KYS.Library.Services.QrGenerator.LogoHeight
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_LogoHeight
+  name: LogoHeight
+  nameWithType: QrGenerator.LogoHeight
+  fullName: KYS.Library.Services.QrGenerator.LogoHeight
+- uid: KYS.Library.Services.QrGenerator.Margin*
+  commentId: Overload:KYS.Library.Services.QrGenerator.Margin
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Margin
+  name: Margin
+  nameWithType: QrGenerator.Margin
+  fullName: KYS.Library.Services.QrGenerator.Margin
+- uid: SkiaSharp.SKBitmap
+  commentId: T:SkiaSharp.SKBitmap
+  parent: SkiaSharp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  name: SKBitmap
+  nameWithType: SKBitmap
+  fullName: SkiaSharp.SKBitmap
+- uid: KYS.Library.Services.QrGenerator.QRCode*
+  commentId: Overload:KYS.Library.Services.QrGenerator.QRCode
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_QRCode
+  name: QRCode
+  nameWithType: QrGenerator.QRCode
+  fullName: KYS.Library.Services.QrGenerator.QRCode
+- uid: SkiaSharp
+  commentId: N:SkiaSharp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/skiasharp
+  name: SkiaSharp
+  nameWithType: SkiaSharp
+  fullName: SkiaSharp
+- uid: KYS.Library.Services.QrGenerator.Draw*
+  commentId: Overload:KYS.Library.Services.QrGenerator.Draw
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_Draw
+  name: Draw
+  nameWithType: QrGenerator.Draw
+  fullName: KYS.Library.Services.QrGenerator.Draw
+- uid: KYS.Library.Services.IQrGenerator.Draw
+  commentId: M:KYS.Library.Services.IQrGenerator.Draw
+  parent: KYS.Library.Services.IQrGenerator
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_Draw
+  name: Draw()
+  nameWithType: IQrGenerator.Draw()
+  fullName: KYS.Library.Services.IQrGenerator.Draw()
+  spec.csharp:
+  - uid: KYS.Library.Services.IQrGenerator.Draw
+    name: Draw
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_Draw
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Services.IQrGenerator.Draw
+    name: Draw
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_Draw
+  - name: (
+  - name: )
+- uid: CSharpFunctionalExtensions.Result{SkiaSharp.SKBitmap}
+  commentId: T:CSharpFunctionalExtensions.Result{SkiaSharp.SKBitmap}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  name: Result<SKBitmap>
+  nameWithType: Result<SKBitmap>
+  fullName: CSharpFunctionalExtensions.Result<SkiaSharp.SKBitmap>
+  nameWithType.vb: Result(Of SKBitmap)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of SkiaSharp.SKBitmap)
+  name.vb: Result(Of SKBitmap)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: SkiaSharp.SKBitmap
+    name: SKBitmap
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SkiaSharp.SKBitmap
+    name: SKBitmap
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/skiasharp.skbitmap
+  - name: )
+- uid: System.IO.MemoryStream
+  commentId: T:System.IO.MemoryStream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  name: MemoryStream
+  nameWithType: MemoryStream
+  fullName: System.IO.MemoryStream
+- uid: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream*
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToMemoryStream
+  name: DrawAndToMemoryStream
+  nameWithType: QrGenerator.DrawAndToMemoryStream
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToMemoryStream
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+  parent: KYS.Library.Services.IQrGenerator
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream
+  name: DrawAndToMemoryStream()
+  nameWithType: IQrGenerator.DrawAndToMemoryStream()
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream()
+  spec.csharp:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+    name: DrawAndToMemoryStream
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToMemoryStream
+    name: DrawAndToMemoryStream
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToMemoryStream
+  - name: (
+  - name: )
+- uid: CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+  commentId: T:CSharpFunctionalExtensions.Result{System.IO.MemoryStream}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  name: Result<MemoryStream>
+  nameWithType: Result<MemoryStream>
+  fullName: CSharpFunctionalExtensions.Result<System.IO.MemoryStream>
+  nameWithType.vb: Result(Of MemoryStream)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of System.IO.MemoryStream)
+  name.vb: Result(Of MemoryStream)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.IO.MemoryStream
+    name: MemoryStream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.IO.MemoryStream
+    name: MemoryStream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.memorystream
+  - name: )
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: KYS.Library.Services.QrGenerator.DrawAndToBase64*
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToBase64
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToBase64
+  name: DrawAndToBase64
+  nameWithType: QrGenerator.DrawAndToBase64
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToBase64
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToBase64
+  parent: KYS.Library.Services.IQrGenerator
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToBase64
+  name: DrawAndToBase64()
+  nameWithType: IQrGenerator.DrawAndToBase64()
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToBase64()
+  spec.csharp:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToBase64
+    name: DrawAndToBase64
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToBase64
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToBase64
+    name: DrawAndToBase64
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToBase64
+  - name: (
+  - name: )
+- uid: CSharpFunctionalExtensions.Result{System.String}
+  commentId: T:CSharpFunctionalExtensions.Result{System.String}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Result<string>
+  nameWithType: Result<string>
+  fullName: CSharpFunctionalExtensions.Result<string>
+  nameWithType.vb: Result(Of String)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of String)
+  name.vb: Result(Of String)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: KYS.Library.Services.QrGenerator.DrawAndToDataUri*
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToDataUri
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToDataUri
+  name: DrawAndToDataUri
+  nameWithType: QrGenerator.DrawAndToDataUri
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToDataUri
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+  parent: KYS.Library.Services.IQrGenerator
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToDataUri
+  name: DrawAndToDataUri()
+  nameWithType: IQrGenerator.DrawAndToDataUri()
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToDataUri()
+  spec.csharp:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+    name: DrawAndToDataUri
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToDataUri
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToDataUri
+    name: DrawAndToDataUri
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToDataUri
+  - name: (
+  - name: )
+- uid: CSharpFunctionalExtensions.Result
+  commentId: T:CSharpFunctionalExtensions.Result
+  parent: CSharpFunctionalExtensions
+  isExternal: true
+  name: Result
+  nameWithType: Result
+  fullName: CSharpFunctionalExtensions.Result
+- uid: KYS.Library.Services.QrGenerator.DrawAndToFile*
+  commentId: Overload:KYS.Library.Services.QrGenerator.DrawAndToFile
+  href: KYS.Library.Services.QrGenerator.html#KYS_Library_Services_QrGenerator_DrawAndToFile_System_String_
+  name: DrawAndToFile
+  nameWithType: QrGenerator.DrawAndToFile
+  fullName: KYS.Library.Services.QrGenerator.DrawAndToFile
+- uid: KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  commentId: M:KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+  parent: KYS.Library.Services.IQrGenerator
+  isExternal: true
+  href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToFile_System_String_
+  name: DrawAndToFile(string)
+  nameWithType: IQrGenerator.DrawAndToFile(string)
+  fullName: KYS.Library.Services.IQrGenerator.DrawAndToFile(string)
+  nameWithType.vb: IQrGenerator.DrawAndToFile(String)
+  fullName.vb: KYS.Library.Services.IQrGenerator.DrawAndToFile(String)
+  name.vb: DrawAndToFile(String)
+  spec.csharp:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+    name: DrawAndToFile
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToFile_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: KYS.Library.Services.IQrGenerator.DrawAndToFile(System.String)
+    name: DrawAndToFile
+    href: KYS.Library.Services.IQrGenerator.html#KYS_Library_Services_IQrGenerator_DrawAndToFile_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )

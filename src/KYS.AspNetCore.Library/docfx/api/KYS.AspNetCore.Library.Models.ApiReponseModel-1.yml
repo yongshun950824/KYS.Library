@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ApiReponseModel
     path: ../Models/ApiReponseModel.cs
     startLine: 8
@@ -65,8 +65,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: StatusCode
     path: ../Models/ApiReponseModel.cs
     startLine: 13
@@ -98,8 +98,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: ResponseMessage
     path: ../Models/ApiReponseModel.cs
     startLine: 17
@@ -131,8 +131,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: Data
     path: ../Models/ApiReponseModel.cs
     startLine: 21
@@ -164,8 +164,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Models/ApiReponseModel.cs
     startLine: 23
@@ -196,8 +196,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Models/ApiReponseModel.cs
     startLine: 28
@@ -230,8 +230,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Models/ApiReponseModel.cs
     startLine: 34
@@ -264,8 +264,8 @@ items:
   source:
     remote:
       path: src/KYS.AspNetCore.Library/Models/ApiReponseModel.cs
-      branch: kys_aspnet_core_library_unit_test_and_docfx
-      repo: https://github.com/yongshun950824/KYS.Library.git
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
     id: .ctor
     path: ../Models/ApiReponseModel.cs
     startLine: 40

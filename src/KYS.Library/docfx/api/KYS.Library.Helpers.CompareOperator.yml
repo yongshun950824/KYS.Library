@@ -17,8 +17,8 @@ items:
   type: Class
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: CompareOperator
     path: ../Helpers/CompareOperator.cs
@@ -58,8 +58,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Compare
     path: ../Helpers/CompareOperator.cs
@@ -99,8 +99,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: Compare
     path: ../Helpers/CompareOperator.cs
@@ -146,8 +146,8 @@ items:
   type: Method
   source:
     remote:
-      path: KYS.Library/Helpers/CompareOperator.cs
-      branch: feature/enhancement
+      path: src/KYS.Library/Helpers/CompareOperator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
       repo: https://github.com/yongshun950824/KYS.Library
     id: GetCompareOperatorFunc
     path: ../Helpers/CompareOperator.cs

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using CSharpFunctionalExtensions;
 
 namespace KYS.Library.Helpers
 {
@@ -16,8 +17,8 @@ namespace KYS.Library.Helpers
         /// <returns>The <see cref="Stream" /> instance containing the <c>value</c>.</returns>
         public static Stream WriteStringIntoStream(string s)
         {
-            var stream = new MemoryStream();
-            var writer = new StreamWriter(stream);
+            MemoryStream stream = new();
+            StreamWriter writer = new(stream);
             writer.Write(s);
             writer.Flush();
             stream.Position = 0;
@@ -28,11 +29,14 @@ namespace KYS.Library.Helpers
         /// <summary>
         /// Convert byte array to the <see cref="MemoryStream" />.
         /// </summary>
-        /// <param name="byteArray">The <c>byte[]</c> instance.</param>
-        /// <returns>The <see cref="MemoryStream" /> instance after converting from the byte array.</returns>
-        public static MemoryStream ToMemoryStream(byte[] byteArray)
+        /// <param name="byteArray">The <see cref="byte[]" /> instance.</param>
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="MemoryStream" /> instance after converting from the byte array.</returns>
+        public static Result<MemoryStream> ToMemoryStream(byte[] byteArray)
         {
-            MemoryStream ms = new MemoryStream();
+            if (byteArray == null)
+                return Result.Failure<MemoryStream>(DomainErrors.CannotBeNull(nameof(byteArray)));
+
+            MemoryStream ms = new();
             ms.Write(byteArray, 0, byteArray.Length);
             ms.Position = 0;
 
@@ -43,7 +47,7 @@ namespace KYS.Library.Helpers
         /// Convert <see cref="MemoryStream" /> to byte array.
         /// </summary>
         /// <param name="ms">The <see cref="MemoryStream" /> instance.</param>
-        /// <returns>The <c>byte[]</c> instance after converting from the <see cref="MemoryStream" />.</returns>
+        /// <returns>The <see cref="byte[]" /> instance after converting from the <see cref="MemoryStream" />.</returns>
         public static byte[] ToByteArray(MemoryStream ms)
         {
             return ms.ToArray();
@@ -53,31 +57,35 @@ namespace KYS.Library.Helpers
         /// Convert Base64 string to byte array.
         /// </summary>
         /// <param name="base64String">The Base64 string.</param>
-        /// <returns><c>byte[]</c> instance.</returns>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static byte[] ReadBase64StringToByteArray(string base64String)
+        /// <returns>A <see cref="Result{T}" /> containing the <see cref="byte[]" /> instance.</returns>
+        public static Result<byte[]> ReadBase64StringToByteArray(string base64String)
         {
-            ArgumentException.ThrowIfNullOrWhiteSpace(base64String);
+            if (String.IsNullOrWhiteSpace(base64String))
+                return Result.Failure<byte[]>(String.Format(DomainErrors.Required(nameof(base64String))));
 
-            byte[] bytes = Convert.FromBase64String(base64String);
-
-            return ToByteArray(ToMemoryStream(bytes));
+            return Result.Try(
+                    () => Convert.FromBase64String(base64String),
+                    ex => ex.Message
+                )
+                .Bind(ToMemoryStream)
+                .Map(ToByteArray);
         }
 
         /// <summary>
         /// Convert <see cref="Stream" /> to a Base64 string.
         /// </summary>
         /// <param name="stream">The <see cref="Stream" /> instance.</param>
-        /// <returns>The Base64 string after converting from the <see cref="Stream" /> instance.</returns>
-        public static async Task<string> ToBase64Async(Stream stream)
+        /// <returns>A <see cref="Result{T}" /> containing the Base64 string.</returns>
+        public static async Task<Result<string>> ToBase64Async(Stream stream)
         {
-            ArgumentNullException.ThrowIfNull(stream);
+            if (stream == null)
+                return Result.Failure<string>(DomainErrors.CannotBeNull(nameof(stream)));
 
             using MemoryStream ms = new();
             await stream.CopyToAsync(ms);
 
-            return Convert.ToBase64String(ms.ToArray());
+            return Result.Success(ms.ToArray())
+                .Map(bytes => Convert.ToBase64String(bytes));
         }
     }
 }

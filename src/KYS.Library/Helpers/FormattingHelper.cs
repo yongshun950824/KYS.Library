@@ -1,6 +1,6 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Text.RegularExpressions;
+using CSharpFunctionalExtensions;
 
 namespace KYS.Library.Helpers
 {
@@ -25,17 +25,16 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <param name="value">The <see cref="string" /> value provided for the formatting.</param>
         /// <param name="format">The selected <see cref="Formatting" /> option.</param>
-        /// <returns>The <see cref="string" /> value after formatted.</returns>
-        /// <exception cref="InvalidEnumArgumentException"></exception>
-        public static string Convert(this string value, Formatting format)
+        /// <returns>A <see cref="Result{T}" /> containing the formatted value.</returns>
+        public static Result<string> Convert(this string value, Formatting format)
         {
             if (String.IsNullOrEmpty(value))
-                return value;
+                return Result.Success(value);
 
             return format switch
             {
-                Formatting.SnakeCase => ConvertToSnakeCase(value),
-                _ => throw new InvalidEnumArgumentException(nameof(format), (int)format, typeof(Formatting)),
+                Formatting.SnakeCase => Result.Success(ConvertToSnakeCase(value)),
+                _ => Result.Failure<string>($"Invalid formatting option: {format}."),
             };
         }
 

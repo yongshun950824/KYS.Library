@@ -1,12 +1,14 @@
-﻿using KYS.Library.Extensions;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using CSharpFunctionalExtensions;
+using KYS.Library.Extensions;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 
 namespace KYS.Library.Helpers
 {
@@ -24,52 +26,57 @@ namespace KYS.Library.Helpers
         /// <param name="summaryRowStyle">The style of table body.</param>
         /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
         /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
-        /// <returns>The <c>byte[]</c> instance containing the Excel file content.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static byte[] CreateExcelBook(DataSet ds,
+        /// <returns>A <see cref="Result{T}" /> containing a <see cref="byte[]" /> instance which is the Excel file content.</returns>
+        public static Result<byte[]> CreateExcelBook(DataSet ds,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
             List<AdditionalExcelSheet> additionalExcelSheets = null,
             LicenseContext license = LicenseContext.NonCommercial)
         {
-            ArgumentNullException.ThrowIfNull(ds);
+            if (ds == null)
+                return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(ds)));
 
-            MemoryStream outputStream = new MemoryStream();
-
-            ExcelPackage.LicenseContext = license;
-            using ExcelPackage package = new ExcelPackage(outputStream);
-            foreach (DataTable dt in ds.Tables)
-            {
-                // Avoid updating original source datatable
-                DataTable copiedDt = dt.Copy();
-
-                CreateExcelWorksheet(package,
-                    copiedDt,
-                    excelColumnFormats,
-                    headerRowStyle,
-                    summaryRowStyle);
-            }
-
-            if (!additionalExcelSheets.IsNullOrEmpty())
-            {
-                foreach (AdditionalExcelSheet sheet in additionalExcelSheets)
+            return Result.Try(() =>
                 {
-                    // Avoid updating original source datatable
-                    DataTable copiedDt = sheet.DataTable.Copy();
+                    MemoryStream outputStream = new();
 
-                    CreateExcelWorksheet(package,
-                        copiedDt,
-                        sheet.ExcelColumnFormats,
-                        sheet.HeaderRowStyle,
-                        sheet.SummaryRowStyle);
-                }
-            }
-            package.Save();
+                    ExcelPackage.LicenseContext = license;
+                    using ExcelPackage package = new(outputStream);
+                    foreach (DataTable dt in ds.Tables)
+                    {
+                        // Avoid updating original source datatable
+                        DataTable copiedDt = dt.Copy();
 
-            outputStream.Position = 0;
+                        CreateExcelWorksheet(package,
+                            copiedDt,
+                            excelColumnFormats,
+                            headerRowStyle,
+                            summaryRowStyle);
+                    }
 
-            return outputStream.ToArray();
+                    if (!additionalExcelSheets.IsNullOrEmpty())
+                    {
+                        foreach (AdditionalExcelSheet sheet in additionalExcelSheets)
+                        {
+                            // Avoid updating original source datatable
+                            DataTable copiedDt = sheet.DataTable.Copy();
+
+                            CreateExcelWorksheet(package,
+                                copiedDt,
+                                sheet.ExcelColumnFormats,
+                                sheet.HeaderRowStyle,
+                                sheet.SummaryRowStyle);
+                        }
+                    }
+                    package.Save();
+
+                    outputStream.Position = 0;
+
+                    return Result.Success(outputStream.ToArray());
+                },
+                ex => ex.Message)
+            .Bind(result => result);
         }
 
         /// <summary>
@@ -81,29 +88,34 @@ namespace KYS.Library.Helpers
         /// <param name="summaryRowStyle">The style of table body.</param>
         /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
         /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
-        /// <returns>The <c>byte[]</c> instance containing the Excel file content.</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static byte[] CreateExcelBook(DataTable dt,
+        /// <returns>A <see cref="Result{T}" /> containing a <see cref="byte[]" /> instance which is the Excel file content.</returns>
+        public static Result<byte[]> CreateExcelBook(DataTable dt,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
             List<AdditionalExcelSheet> additionalExcelSheets = null,
             LicenseContext license = LicenseContext.NonCommercial)
         {
-            ArgumentNullException.ThrowIfNull(dt);
+            if (dt == null)
+                return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(dt)));
 
-            // Avoid updating original source datatable
-            DataTable copiedDt = dt.Copy();
+            return Result.Try(() =>
+                {
+                    // Avoid updating original source datatable
+                    DataTable copiedDt = dt.Copy();
 
-            DataSet ds = new DataSet();
-            ds.Tables.Add(copiedDt);
+                    DataSet ds = new();
+                    ds.Tables.Add(copiedDt);
 
-            return CreateExcelBook(ds,
-                excelColumnFormats,
-                headerRowStyle,
-                summaryRowStyle,
-                additionalExcelSheets,
-                license);
+                    return CreateExcelBook(ds,
+                        excelColumnFormats,
+                        headerRowStyle,
+                        summaryRowStyle,
+                        additionalExcelSheets,
+                        license);
+                },
+                ex => ex.Message)
+            .Bind(result => result);
         }
 
         private static void CreateExcelWorksheet(ExcelPackage package,
@@ -259,7 +271,7 @@ namespace KYS.Library.Helpers
                 }
                 set
                 {
-                    ArgumentNullException.ThrowIfNull(value);
+                    ValidateDataTable(value);
 
                     _dataTable = value;
                 }
@@ -276,6 +288,13 @@ namespace KYS.Library.Helpers
             /// Gets or sets the summary (bottom) row style.
             /// </summary>
             public ExcelRowStyle SummaryRowStyle { get; set; } = null;
+
+            [SuppressMessage("Usage", "S3236:Caller information parameters should not be explicitly provided",
+                Justification = "Property setters always pass 'value', so nameof(DataTable) is clearer.")]
+            private static void ValidateDataTable(DataTable value)
+            {
+                ArgumentNullException.ThrowIfNull(value, nameof(DataTable));
+            }
         }
 
         /// <summary>

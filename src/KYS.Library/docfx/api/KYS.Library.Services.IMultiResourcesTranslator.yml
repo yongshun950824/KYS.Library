@@ -1,0 +1,239 @@
+### YamlMime:ManagedReference
+items:
+- uid: KYS.Library.Services.IMultiResourcesTranslator
+  commentId: T:KYS.Library.Services.IMultiResourcesTranslator
+  id: IMultiResourcesTranslator
+  parent: KYS.Library.Services
+  children:
+  - KYS.Library.Services.IMultiResourcesTranslator.Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  langs:
+  - csharp
+  - vb
+  name: IMultiResourcesTranslator
+  nameWithType: IMultiResourcesTranslator
+  fullName: KYS.Library.Services.IMultiResourcesTranslator
+  type: Interface
+  source:
+    remote:
+      path: src/KYS.Library/Services/MultiResourcesTranslator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: IMultiResourcesTranslator
+    path: ../Services/MultiResourcesTranslator.cs
+    startLine: 15
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Defines a service contract for language translation with support for multiple resources (files).
+  example: []
+  syntax:
+    content: public interface IMultiResourcesTranslator
+    content.vb: Public Interface IMultiResourcesTranslator
+  derivedClasses:
+  - KYS.Library.Services.MultiResourcesTranslator
+- uid: KYS.Library.Services.IMultiResourcesTranslator.Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  commentId: M:KYS.Library.Services.IMultiResourcesTranslator.Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  id: Translate(System.String,System.Type,System.Globalization.CultureInfo)
+  parent: KYS.Library.Services.IMultiResourcesTranslator
+  langs:
+  - csharp
+  - vb
+  name: Translate(string, Type, CultureInfo)
+  nameWithType: IMultiResourcesTranslator.Translate(string, Type, CultureInfo)
+  fullName: KYS.Library.Services.IMultiResourcesTranslator.Translate(string, System.Type, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: src/KYS.Library/Services/MultiResourcesTranslator.cs
+      branch: enhancement/functional_error_handling_and_creational_patterns
+      repo: https://github.com/yongshun950824/KYS.Library
+    id: Translate
+    path: ../Services/MultiResourcesTranslator.cs
+    startLine: 24
+  assemblies:
+  - KYS.Library
+  namespace: KYS.Library.Services
+  summary: Translate to selected language for <b>specified resource</b> and provided <code>culture</code>. By default, translate to current/initialized language.
+  example: []
+  syntax:
+    content: Result<string> Translate(string input, Type resourceType, CultureInfo culture = null)
+    parameters:
+    - id: input
+      type: System.String
+      description: A key for the resource.
+    - id: resourceType
+      type: System.Type
+      description: The resource file to be used.
+    - id: culture
+      type: System.Globalization.CultureInfo
+      description: The culture chosen for the translation. By default, uses the current culture if it is not provided.
+    return:
+      type: CSharpFunctionalExtensions.Result{System.String}
+      description: A <xref href="CSharpFunctionalExtensions.Result%601" data-throw-if-not-resolved="false"></xref> containing the translated English text.
+    content.vb: Function Translate(input As String, resourceType As Type, culture As CultureInfo = Nothing) As Result(Of String)
+  overload: KYS.Library.Services.IMultiResourcesTranslator.Translate*
+  nameWithType.vb: IMultiResourcesTranslator.Translate(String, Type, CultureInfo)
+  fullName.vb: KYS.Library.Services.IMultiResourcesTranslator.Translate(String, System.Type, System.Globalization.CultureInfo)
+  name.vb: Translate(String, Type, CultureInfo)
+references:
+- uid: KYS.Library.Services
+  commentId: N:KYS.Library.Services
+  href: KYS.html
+  name: KYS.Library.Services
+  nameWithType: KYS.Library.Services
+  fullName: KYS.Library.Services
+  spec.csharp:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+  spec.vb:
+  - uid: KYS
+    name: KYS
+    href: KYS.html
+  - name: .
+  - uid: KYS.Library
+    name: Library
+    href: KYS.Library.html
+  - name: .
+  - uid: KYS.Library.Services
+    name: Services
+    href: KYS.Library.Services.html
+- uid: CSharpFunctionalExtensions.Result`1
+  commentId: T:CSharpFunctionalExtensions.Result`1
+  isExternal: true
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: CSharpFunctionalExtensions.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: KYS.Library.Services.IMultiResourcesTranslator.Translate*
+  commentId: Overload:KYS.Library.Services.IMultiResourcesTranslator.Translate
+  href: KYS.Library.Services.IMultiResourcesTranslator.html#KYS_Library_Services_IMultiResourcesTranslator_Translate_System_String_System_Type_System_Globalization_CultureInfo_
+  name: Translate
+  nameWithType: IMultiResourcesTranslator.Translate
+  fullName: KYS.Library.Services.IMultiResourcesTranslator.Translate
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: CSharpFunctionalExtensions.Result{System.String}
+  commentId: T:CSharpFunctionalExtensions.Result{System.String}
+  parent: CSharpFunctionalExtensions
+  definition: CSharpFunctionalExtensions.Result`1
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Result<string>
+  nameWithType: Result<string>
+  fullName: CSharpFunctionalExtensions.Result<string>
+  nameWithType.vb: Result(Of String)
+  fullName.vb: CSharpFunctionalExtensions.Result(Of String)
+  name.vb: Result(Of String)
+  spec.csharp:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: CSharpFunctionalExtensions.Result`1
+    name: Result
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Globalization
+  commentId: N:System.Globalization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Globalization
+  nameWithType: System.Globalization
+  fullName: System.Globalization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Globalization
+    name: Globalization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Globalization
+    name: Globalization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.globalization
+- uid: CSharpFunctionalExtensions
+  commentId: N:CSharpFunctionalExtensions
+  isExternal: true
+  name: CSharpFunctionalExtensions
+  nameWithType: CSharpFunctionalExtensions
+  fullName: CSharpFunctionalExtensions

@@ -59,7 +59,9 @@ namespace KYS.Library.Helpers
         public static string ToQueryParams<T>(T source)
             where T : class, new()
         {
-            return JsonHelper.FlattenObject(source)
+            var flattenResult = JsonHelper.FlattenObject(source);
+
+            return flattenResult.Value
                 .ToDictionary(k => k.Key, v => v.Value?.ToString())
                 .ToQueryParams();
         }

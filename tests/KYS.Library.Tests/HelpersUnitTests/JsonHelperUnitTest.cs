@@ -1,18 +1,19 @@
-﻿using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Newtonsoft.Json.Linq;
+using NUnit.Framework;
 using static KYS.Library.Helpers.JsonHelper;
 
 namespace KYS.Library.Tests.HelpersUnitTests
 {
     internal class JsonHelperUnitTest
     {
-        private readonly DateTime testDate = new DateTime(2023, 10, 27, 10, 30, 0, DateTimeKind.Utc);
+        private readonly DateTime testDate = new(2023, 10, 27, 10, 30, 0, DateTimeKind.Utc);
+        private const string INVALID_FORMAT_ERROR_MESSAGE = "Invalid formatting option (flattenFormat): {0}.";
 
         [Test]
-        public void ConstructFlattenKey_WithFlattenFormat_ShouldThrowException()
+        public void ConstructFlattenKey_WithFlattenFormat_ShouldReturnResultFailure()
         {
             // Arrange
             FlattenFormat unknown = (FlattenFormat)999;
@@ -43,10 +44,13 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = FlattenObject(source, FlattenFormat.JsonPath);
 
             // Assert
-            Assert.AreEqual(3, result.Count);
-            Assert.AreEqual("TestItem", result["Name"]);
-            Assert.AreEqual(42L, result["Value"]); // JValue.Value<object>() often returns long for int
-            Assert.AreEqual(testDate, Helpers.ParseDateFromIso8601(result["Date"].ToString())); // Expect DateTime due to serializer settings
+            Assert.IsTrue(result.IsSuccess);
+
+            var flattenedDict = result.Value;
+            Assert.AreEqual(3, flattenedDict.Count);
+            Assert.AreEqual("TestItem", flattenedDict["Name"]);
+            Assert.AreEqual(42L, flattenedDict["Value"]); // JValue.Value<object>() often returns long for int
+            Assert.AreEqual(testDate, Helpers.ParseDateFromIso8601(flattenedDict["Date"].ToString())); // Expect DateTime due to serializer settings
         }
 
         [Test]
@@ -57,8 +61,8 @@ namespace KYS.Library.Tests.HelpersUnitTests
             {
                 Id = "A101",
                 Detail = new SimpleObject { Name = "Inner", Value = 99, Date = testDate },
-                Tags = new List<string> { "tag1", "tag2" },
-                Counts = new int[] { 10, 20 },
+                Tags = ["tag1", "tag2"],
+                Counts = [10, 20],
                 Metadata = new Dictionary<string, object> { { "key", "metaValue" } },
                 IsActive = true,
                 NullValue = null
@@ -68,29 +72,52 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = FlattenObject(source, FlattenFormat.JsonPath);
 
             // Assert
-            Assert.AreEqual(11, result.Count);
+            Assert.IsTrue(result.IsSuccess);
+
+            var flattenedDict = result.Value;
+            Assert.AreEqual(11, flattenedDict.Count);
 
             // Simple property
-            Assert.AreEqual("A101", result["Id"]);
+            Assert.AreEqual("A101", flattenedDict["Id"]);
 
             // Nested properties
-            Assert.AreEqual("Inner", result["Detail.Name"]);
-            Assert.AreEqual(99L, result["Detail.Value"]);
+            Assert.AreEqual("Inner", flattenedDict["Detail.Name"]);
+            Assert.AreEqual(99L, flattenedDict["Detail.Value"]);
 
             // Array/List properties (JsonPath notation)
-            Assert.AreEqual("tag1", result["Tags[0]"]);
-            Assert.AreEqual("tag2", result["Tags[1]"]);
-            Assert.AreEqual(10L, result["Counts[0]"]);
-            Assert.AreEqual(20L, result["Counts[1]"]);
+            Assert.AreEqual("tag1", flattenedDict["Tags[0]"]);
+            Assert.AreEqual("tag2", flattenedDict["Tags[1]"]);
+            Assert.AreEqual(10L, flattenedDict["Counts[0]"]);
+            Assert.AreEqual(20L, flattenedDict["Counts[1]"]);
 
             // Dictionary/Object properties
-            Assert.AreEqual("metaValue", result["Metadata.key"]);
+            Assert.AreEqual("metaValue", flattenedDict["Metadata.key"]);
 
             // Boolean property
-            Assert.IsTrue((bool)result["IsActive"]);
+            Assert.IsTrue((bool)flattenedDict["IsActive"]);
 
             // Null property (value should be null)
-            Assert.IsNull(result["NullValue"]);
+            Assert.IsNull(flattenedDict["NullValue"]);
+        }
+
+        [Test]
+        public void FlattenObject_WithInvalidFlattenFormat_ShouldReturnResultFailure()
+        {
+            // Arrange
+            FlattenFormat flattenFormat = (FlattenFormat)999;
+            var source = new SimpleObject
+            {
+                Name = "TestItem",
+                Value = 42,
+                Date = testDate
+            };
+
+            // Act
+            var result = FlattenObject(source, flattenFormat);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(string.Format(INVALID_FORMAT_ERROR_MESSAGE, flattenFormat), result.Error);
         }
 
         [Test]
@@ -99,8 +126,8 @@ namespace KYS.Library.Tests.HelpersUnitTests
             // Arrange
             var sourceList = new List<SimpleObject>
             {
-                new SimpleObject { Name = "Item0", Value = 1, Date = testDate },
-                new SimpleObject { Name = "Item1", Value = 2, Date = testDate.AddDays(1) }
+                new() { Name = "Item0", Value = 1, Date = testDate },
+                new() { Name = "Item1", Value = 2, Date = testDate.AddDays(1) }
             };
             var token = JToken.FromObject(sourceList);
 
@@ -108,13 +135,36 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = FlattenArray(token, FlattenFormat.JsonPath);
 
             // Assert
-            Assert.AreEqual(6, result.Count);
-            Assert.AreEqual("Item0", result["[0].Name"]);
-            Assert.AreEqual(1L, result["[0].Value"]);
-            Assert.AreEqual("Item1", result["[1].Name"]);
-            Assert.AreEqual(2L, result["[1].Value"]);
+            Assert.IsTrue(result.IsSuccess);
+
+            var flattenedDict = result.Value;
+            Assert.AreEqual(6, flattenedDict.Count);
+            Assert.AreEqual("Item0", flattenedDict["[0].Name"]);
+            Assert.AreEqual(1L, flattenedDict["[0].Value"]);
+            Assert.AreEqual("Item1", flattenedDict["[1].Name"]);
+            Assert.AreEqual(2L, flattenedDict["[1].Value"]);
             // Note: Date comparison relies on the JsonSerializer settings for RoundtripKind
-            Assert.AreEqual(testDate, Helpers.ParseDateFromIso8601(result["[0].Date"].ToString()));
+            Assert.AreEqual(testDate, Helpers.ParseDateFromIso8601(flattenedDict["[0].Date"].ToString()));
+        }
+
+        [Test]
+        public void FlattenArray_WithListOfSimpleObjectsAndInvalidFlattenFormat_ShouldReturnResultFailure()
+        {
+            // Arrange
+            FlattenFormat flattenFormat = (FlattenFormat)999;
+            var sourceList = new List<SimpleObject>
+            {
+                new() { Name = "Item0", Value = 1, Date = testDate },
+                new() { Name = "Item1", Value = 2, Date = testDate.AddDays(1) }
+            };
+            var token = JToken.FromObject(sourceList);
+
+            // Act
+            var result = FlattenArray(token, flattenFormat);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(string.Format(INVALID_FORMAT_ERROR_MESSAGE, flattenFormat), result.Error);
         }
 
         [Test]
@@ -127,10 +177,28 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = FlattenArray(sourceArray, FlattenFormat.JsonPath);
 
             // Assert
-            Assert.AreEqual(3, result.Count);
-            Assert.AreEqual(10L, result["[0]"]);
-            Assert.AreEqual("ten", result["[1]"]);
-            Assert.IsTrue((bool)result["[2]"]);
+            Assert.IsTrue(result.IsSuccess);
+
+            var flattenedDict = result.Value;
+            Assert.AreEqual(3, flattenedDict.Count);
+            Assert.AreEqual(10L, flattenedDict["[0]"]);
+            Assert.AreEqual("ten", flattenedDict["[1]"]);
+            Assert.IsTrue((bool)flattenedDict["[2]"]);
+        }
+
+        [Test]
+        public void FlattenArray_WithJArrayOfPrimitivesAndInvalidFlattenFormat_ShouldReturnResultFailure()
+        {
+            // Arrange
+            FlattenFormat flattenFormat = (FlattenFormat)999;
+            var sourceArray = new JArray(10, "ten", true);
+
+            // Act
+            var result = FlattenArray(sourceArray, flattenFormat);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual(string.Format(INVALID_FORMAT_ERROR_MESSAGE, flattenFormat), result.Error);
         }
 
         [Test]
@@ -144,8 +212,11 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = Flatten(token);
 
             // Assert
-            Assert.AreEqual(2, result.Count);
-            Assert.AreEqual("Check", result["Name"]);
+            Assert.IsTrue(result.IsSuccess);
+
+            var flattenedDict = result.Value;
+            Assert.AreEqual(2, flattenedDict.Count);
+            Assert.AreEqual("Check", flattenedDict["Name"]);
         }
 
         [Test]
@@ -160,20 +231,26 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = Flatten(token);
 
             // Assert
-            Assert.AreEqual(2, result.Count);
-            Assert.AreEqual("a", result["[0]"]);
-            Assert.AreEqual("b", result["[1]"]);
+            Assert.IsTrue(result.IsSuccess);
+
+            var flattenedDict = result.Value;
+            Assert.AreEqual(2, flattenedDict.Count);
+            Assert.AreEqual("a", flattenedDict["[0]"]);
+            Assert.AreEqual("b", flattenedDict["[1]"]);
         }
 
         [Test]
-        public void Flatten_InvalidToken_ShouldThrowArgumentException()
+        public void Flatten_InvalidToken_ShouldReturnResultFailure()
         {
             // Arrange
             var token = new JValue(123); // JTokenType.Integer, which is neither Object nor Array
 
-            // Act & Assert
-            var ex = Assert.Throws<ArgumentException>(() => Flatten(token));
-            Assert.StringContains(ex.Message, "is neither a valid JSON object nor array");
+            // Act
+            var result = Flatten(token);
+
+            // Assert
+            Assert.IsFalse(result.IsSuccess);
+            Assert.AreEqual($"Provided {nameof(token)} is neither a valid JSON object nor array.", result.Error);
         }
 
         [Test]
@@ -192,26 +269,29 @@ namespace KYS.Library.Tests.HelpersUnitTests
             var result = FlattenArray(token, FlattenFormat.JsonPath);
 
             // Assert
-            Assert.AreEqual(4, result.Count);
+            Assert.IsTrue(result.IsSuccess);
+
+            var flattenedDict = result.Value;
+            Assert.AreEqual(4, flattenedDict.Count);
 
             // The outer array index [0] contains an inner array.
             // The path should be: OuterArray[i] + InnerArrayPath
 
             // Path for '10'
-            Assert.True(result.ContainsKey("[0][0]"));
-            Assert.AreEqual(10L, result["[0][0]"]); // 10 (as long)
+            Assert.True(flattenedDict.ContainsKey("[0][0]"));
+            Assert.AreEqual(10L, flattenedDict["[0][0]"]); // 10 (as long)
 
             // Path for '20'
-            Assert.True(result.ContainsKey("[0][1]"));
-            Assert.AreEqual(20L, result["[0][1]"]);
+            Assert.True(flattenedDict.ContainsKey("[0][1]"));
+            Assert.AreEqual(20L, flattenedDict["[0][1]"]);
 
             // Path for 'a'
-            Assert.True(result.ContainsKey("[1][0]"));
-            Assert.AreEqual("a", result["[1][0]"]);
+            Assert.True(flattenedDict.ContainsKey("[1][0]"));
+            Assert.AreEqual("a", flattenedDict["[1][0]"]);
 
             // Path for 'b'
-            Assert.True(result.ContainsKey("[1][1]"));
-            Assert.AreEqual("b", result["[1][1]"]);
+            Assert.True(flattenedDict.ContainsKey("[1][1]"));
+            Assert.AreEqual("b", flattenedDict["[1][1]"]);
         }
 
         [Theory]
