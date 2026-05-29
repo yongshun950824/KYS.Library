@@ -1,0 +1,31 @@
+name: KYS.EFCore.Library - SonarQube
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.EFCore.Library/**"
+      - "tests/KYS.EFCore.Library.Tests/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "src/KYS.EFCore.Library/**"
+      - "tests/KYS.EFCore.Library.Tests/**"
+
+jobs:
+  scan:
+    uses: ./.github/workflows/reusable-sonar-scan.yml
+    with:
+      tests-project-path: "tests/KYS.EFCore.Library.Tests"
+      lib-project-path: "src/KYS.EFCore.Library"
+      sonar-project-name: "yongshun950824_kys-efcore-library"
+      sonar-org: "yongshun950824"
+      sonar-exclusions: "**/bin/**,**/obj/**,**/Migrations/**,**/Generated/**,**/KYS.Library/**,**/KYS.AspNetCore.Library/**"
+      sonar-coverage-exclusions: "**/KYS.Library/**,**/KYS.AspNetCore.Library/**,**/Generated/**"
+      sonar-cpd-exclusions: "**/Migrations/**,**/Generated/**"
+    secrets:
+      SONAR_TOKEN: ${{ secrets.KYS_EFCORE_LIBRARY_SONAR_TOKEN }}
+    permissions:
+      contents: read
