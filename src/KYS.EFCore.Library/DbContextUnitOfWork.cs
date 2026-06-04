@@ -9,7 +9,7 @@ namespace KYS.EFCore.Library
         where TDbContext : DbContext
     {
         private readonly TDbContext _context;
-        private IDbContextTransaction? _transaction;
+        private IDbContextTransaction _transaction;
         private bool _disposed = false;
 
         public DbContextUnitOfWork(TDbContext context)

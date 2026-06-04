@@ -50,7 +50,7 @@ namespace KYS.EFCore.Library.DBContext
                 {
                     var result = auditEntry.ToActionLog(formatting);
                     if (result.IsFailure)
-                        throw new Exception(result.Error);
+                        throw new InvalidOperationException(result.Error);
 
                     ActionLog.Add(result.Value);
                 }

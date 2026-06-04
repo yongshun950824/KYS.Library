@@ -61,4 +61,70 @@ public class ExplicitUnitOfWorkServiceCollectionsUnitTests
         // Assert that different scopes get different instances
         Assert.AreNotSame(unitOfWork1, unitOfWork2);
     }
+
+    [Test]
+    public void AddExplicitUnitOfWork_ShouldResolveConcreteUnitOfWorkType()
+    {
+        // Arrange
+        var services = new ServiceCollection();
+        services.AddDbContext<TestDbContext>(options => options.UseSqlite("DataSource=:memory:"));
+        services.AddExplicitUnitOfWork<TestDbContext>();
+
+        var serviceProvider = services.BuildServiceProvider();
+
+        // Act
+        var unitOfWork = serviceProvider.GetService<IUnitOfWork>();
+
+        // Assert
+        Assert.IsNotNull(unitOfWork);
+        Assert.IsInstanceOf<DbContextUnitOfWork<TestDbContext>>(unitOfWork);
+    }
+
+    [Test]
+    public void AddExplicitUnitOfWork_WithSameScope_ShouldReturnSameInstance()
+    {
+        // Arrange
+        var services = new ServiceCollection();
+        services.AddDbContext<TestDbContext>(options => options.UseSqlite("DataSource=:memory:"));
+        services.AddExplicitUnitOfWork<TestDbContext>();
+
+        var serviceProvider = services.BuildServiceProvider();
+
+        // Act
+        using var scope = serviceProvider.CreateScope();
+        var unitOfWork1 = scope.ServiceProvider.GetService<IUnitOfWork>();
+        var unitOfWork2 = scope.ServiceProvider.GetService<IUnitOfWork>();
+
+        // Assert
+        Assert.IsNotNull(unitOfWork1);
+        Assert.IsNotNull(unitOfWork2);
+        // Assert that the same scope gets the same instance
+        Assert.AreSame(unitOfWork1, unitOfWork2);
+    }
+
+    [Test]
+    public void AddExplicitUnitOfWork_ShouldUseSameScopeDbContextInstance()
+    {
+        // Arrange
+        var services = new ServiceCollection();
+        services.AddDbContext<TestDbContext>(options => options.UseSqlite("DataSource=:memory:"));
+        services.AddExplicitUnitOfWork<TestDbContext>();
+
+        var serviceProvider = services.BuildServiceProvider();
+
+        // Act
+        using var scope = serviceProvider.CreateScope();
+        var unitOfWork = scope.ServiceProvider.GetService<IUnitOfWork>();
+        var dbContext = scope.ServiceProvider.GetService<TestDbContext>();
+
+        var field = unitOfWork!.GetType().GetField("_context", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        var unitOfWorkDbContext = field!.GetValue(unitOfWork) as TestDbContext;
+
+        // Assert
+        Assert.IsNotNull(unitOfWork);
+        Assert.IsNotNull(dbContext);
+        Assert.IsNotNull(unitOfWorkDbContext);
+        // Assert that the same scope gets the same DbContext instance
+        Assert.AreSame(dbContext, unitOfWorkDbContext);
+    }
 }

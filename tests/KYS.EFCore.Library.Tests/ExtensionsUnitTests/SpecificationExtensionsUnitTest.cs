@@ -7,7 +7,7 @@ using KYS.EFCore.Library.Tests.Infrastructure.Persistence;
 
 namespace KYS.EFCore.Library.Tests.ExtensionsUnitTests;
 
-internal class SpecificationExtensionsUnitTest
+public class SpecificationExtensionsUnitTest
 {
     #region Specification classes
     private sealed class ProductByNameSpecification : Specification<Product>
