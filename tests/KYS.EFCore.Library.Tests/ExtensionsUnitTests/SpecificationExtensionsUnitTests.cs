@@ -7,7 +7,7 @@ using KYS.EFCore.Library.Tests.Infrastructure.Persistence;
 
 namespace KYS.EFCore.Library.Tests.ExtensionsUnitTests;
 
-public class SpecificationExtensionsUnitTest
+public class SpecificationExtensionsUnitTests
 {
     #region Specification classes
     private sealed class ProductByNameSpecification : Specification<Product>
@@ -69,12 +69,16 @@ public class SpecificationExtensionsUnitTest
     }
 
     [Test]
-    public void ApplySpecification_WithValidSpecification_FiltersAndIncludes()
+    public void ApplySpecification_WithValidSpecification_ShouldReturnResultWithFiltersAndIncludes()
     {
+        // Arrange
         var spec = new ProductByNameSpecification("Phone");
 
-        var result = _context.ApplySpecification(spec).ToList();
+        // Act
+        var result = _context.ApplySpecification(spec)
+            .ToList();
 
+        // Assert
         Assert.AreEqual(1, result.Count);
         Assert.AreEqual("Phone", result[0].Name);
         Assert.IsNotNull(result[0].Category);
@@ -82,37 +86,78 @@ public class SpecificationExtensionsUnitTest
     }
 
     [Test]
-    public void ApplySpecification_WithNullSpecification_ThrowsArgumentNullException()
+    public void ApplySpecification_WithNullSpecification_ShouldThrowArgumentNullException()
     {
+        // Act & Assert
         Assert.Throws<ArgumentNullException>(() => _context.ApplySpecification<Product>(null!));
     }
 
     [Test]
-    public void ApplySpecification_WithAndSpecification_ReturnsCorrectResults()
+    public void ApplySpecification_WithAndSpecification_ShouldReturnCorrectResults()
     {
+        // Arrange
         var productSpec = new ProductByNameSpecification("Phone");
         var categorySpec = new ProductByCategoryNameSpecification("Electronics");
 
+        // Act
         var spec = productSpec.And(categorySpec);
-        var result = _context.ApplySpecification(spec).ToList();
+        var result = _context.ApplySpecification(spec)
+            .ToList();
 
+        // Assert
         Assert.AreEqual(1, result.Count);
         Assert.AreEqual("Phone", result[0].Name);
         Assert.AreEqual("Electronics", result[0].Category.Name);
     }
 
     [Test]
-    public void ApplySpecification_WithOrSpecification_ReturnsCorrectResults()
+    public void ApplySpecification_WithOrSpecification_ShouldReturnCorrectResults()
     {
+        // Arrange
         var phoneProductSpec = new ProductByNameSpecification("Phone");
         var bookProductSpec = new ProductByNameSpecification("Book");
 
+        // Act
         var spec = phoneProductSpec.Or(bookProductSpec);
-        var result = _context.ApplySpecification(spec).ToList();
+        var result = _context.ApplySpecification(spec)
+            .ToList();
 
+        // Assert
         Assert.AreEqual(2, result.Count);
         Assert.IsTrue(result.Any(p => p.Name == "Phone"));
         Assert.IsTrue(result.Any(p => p.Name == "Book"));
+    }
+
+    [Test]
+    public void ApplySpecification_WithAsNoTracking_ShouldReturnDetachedEntities()
+    {
+        // Arrange
+        var spec = new ProductByNameSpecification("Phone");
+
+        // Act
+        var result = _context!.ApplySpecification(spec)
+            .ToList();
+
+        // Assert
+        Assert.AreEqual(1, result.Count);
+        Assert.AreEqual(EntityState.Detached, _context!.Entry(result[0]).State);
+    }
+
+    [Test]
+    public void ApplySpecification_WithInclude_ShouldLoadNavigationProperty()
+    {
+        // Arrange
+        var spec = new ProductByNameSpecification("Phone");
+
+        // Act
+        var result = _context!.ApplySpecification(spec)
+            .ToList();
+
+        // Assert
+        Assert.AreEqual(1, result.Count);
+
+        Assert.IsNotNull(result[0].Category);
+        Assert.AreEqual("Electronics", result[0].Category.Name);
     }
 
     [TearDown]

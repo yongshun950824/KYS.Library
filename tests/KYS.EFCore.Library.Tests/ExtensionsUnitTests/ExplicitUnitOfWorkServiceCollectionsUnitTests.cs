@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 
-namespace KYS.EFCore.Library.Tests;
+namespace KYS.EFCore.Library.Tests.ExtensionsUnitTests;
 
 public class ExplicitUnitOfWorkServiceCollectionsUnitTests
 {

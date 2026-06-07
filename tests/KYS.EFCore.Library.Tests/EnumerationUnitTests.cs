@@ -65,36 +65,6 @@ public class EnumerationUnitTests
     }
 
     [Test]
-    public void IEqualityComparer_Equals_WithRightNull_ShouldReturnFalse()
-    {
-        // Arrange
-        IEqualityComparer<Enumeration> comparer = Color.Red;
-
-        // Act & Assert
-        Assert.IsFalse(comparer.Equals(Color.Red, null));
-    }
-
-    [Test]
-    public void IEqualityComparer_Equals_WithDifferentInstance_ShouldReturnFalse()
-    {
-        // Arrange
-        IEqualityComparer<Enumeration> comparer = Color.Red;
-
-        // Act & Assert
-        Assert.IsFalse(comparer.Equals(Color.Red, Color.Green));
-    }
-
-    [Test]
-    public void IEqualityComparer_Equals_WithSameTypeAndId_ShouldReturnTrue()
-    {
-        // Arrange
-        IEqualityComparer<Enumeration> comparer = Color.Red;
-
-        // Act & Assert
-        Assert.IsTrue(comparer.Equals(Color.Red, Color.Red));
-    }
-
-    [Test]
     public void GetHashCode_ShouldReturnSameHashForSameId()
     {
         // Arrange
@@ -186,4 +156,46 @@ public class EnumerationUnitTests
         Assert.IsTrue(nullableColor >= nullableColorTwo);
         Assert.IsFalse(nullableColor != nullableColorTwo);
     }
+
+    #region EnumerationComparer tests
+    [Test]
+    public void EnumerationComparer_Equals_WithRightNull_ShouldReturnFalse()
+    {
+        // Arrange
+        var comparer = new EnumerationComparer();
+
+        // Act & Assert
+        Assert.IsFalse(comparer.Equals(Color.Red, null));
+    }
+
+    [Test]
+    public void EnumerationComparer_Equals_WithDifferentInstance_ShouldReturnFalse()
+    {
+        // Arrange
+        var comparer = new EnumerationComparer();
+
+        // Act & Assert
+        Assert.IsFalse(comparer.Equals(Color.Red, Color.Green));
+    }
+
+    [Test]
+    public void EnumerationComparer_Equals_WithSameTypeAndId_ShouldReturnTrue()
+    {
+        // Arrange
+        var comparer = new EnumerationComparer();
+
+        // Act & Assert
+        Assert.IsTrue(comparer.Equals(Color.Red, Color.Red));
+    }
+
+    [Test]
+    public void EnumerationComparer_GetHashCode_WithSameTypeAndId_ShouldReturnTrue()
+    {
+        // Arrange
+        var comparer = new EnumerationComparer();
+
+        // Act & Assert
+        Assert.AreEqual(comparer.GetHashCode(Color.Red), comparer.GetHashCode(Color.Red));
+    }
+    #endregion
 }

@@ -85,4 +85,15 @@ public class SpecificationUnitTests
 
         Assert.IsTrue(orSpec.IsSatisfiedBy(product));
     }
+
+    [Test]
+    public void Specification_AddIncludeAndAsNoTracking_ShouldSetInternalMetadata()
+    {
+        // Arrange
+        var spec = new ProductByNameSpecification("Phone");
+
+        // Assert
+        Assert.IsTrue(spec.AsNoTracking);
+        Assert.AreEqual(1, spec.Includes.Count);
+    }
 }

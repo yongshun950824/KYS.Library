@@ -1,6 +1,6 @@
 namespace KYS.EFCore.Library.Tests.Domain.Entities;
 
-public class Address : ValueObject
+public class Address : ValueObject, IEquatable<Address>
 {
     public string AddressLine1 { get; }
     public string? AddressLine2 { get; }
@@ -22,8 +22,23 @@ public class Address : ValueObject
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return AddressLine1;
-        yield return AddressLine2;
+        yield return AddressLine2 ?? String.Empty;
         yield return City;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return Equals(obj as Address);
+    }
+
+    public bool Equals(Address? other)
+    {
+        return base.Equals(other);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
     }
 
     #region Relational operators

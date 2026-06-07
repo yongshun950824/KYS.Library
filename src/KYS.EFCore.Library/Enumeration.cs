@@ -7,8 +7,8 @@ using System.Reflection;
 
 namespace KYS.EFCore.Library;
 
-[DebuggerDisplay("Id: {Id} | Name: {Name},nq}}")]
-public class Enumeration : IComparable<Enumeration>, IEquatable<Enumeration>, IEqualityComparer<Enumeration>
+[DebuggerDisplay("Id: {Id} | Name: {Name,nq}")]
+public class Enumeration : IComparable<Enumeration>, IEquatable<Enumeration>
 {
     public string Name { get; private set; }
 
@@ -28,7 +28,17 @@ public class Enumeration : IComparable<Enumeration>, IEquatable<Enumeration>, IE
             .Select(x => x.GetValue(null))
             .Cast<T>();
 
-    public bool Equals(Enumeration other)
+    public override bool Equals(object obj)
+    {
+        if (obj is not Enumeration)
+        {
+            return false;
+        }
+
+        return Equals(obj as Enumeration);
+    }
+
+    public virtual bool Equals(Enumeration other)
     {
         if (other is null)
         {
@@ -43,19 +53,9 @@ public class Enumeration : IComparable<Enumeration>, IEquatable<Enumeration>, IE
         return Id.Equals(other.Id);
     }
 
-    public override bool Equals(object obj)
-    {
-        if (obj is not Enumeration)
-        {
-            return false;
-        }
-
-        return Equals(obj as Enumeration);
-    }
-
     public override int GetHashCode()
     {
-        return GetHashCode(this);
+        return Id.GetHashCode();
     }
 
     public int CompareTo(Enumeration other)
@@ -64,26 +64,6 @@ public class Enumeration : IComparable<Enumeration>, IEquatable<Enumeration>, IE
             return 1;
 
         return Id.CompareTo(other.Id);
-    }
-
-    public bool Equals(Enumeration x, Enumeration y)
-    {
-        if (y is null)
-        {
-            return false;
-        }
-
-        if (ReferenceEquals(x, y))
-        {
-            return true;
-        }
-
-        return x.Id.Equals(y.Id);
-    }
-
-    public int GetHashCode([DisallowNull] Enumeration obj)
-    {
-        return obj.Id.GetHashCode();
     }
 
     #region Relational operators
@@ -105,4 +85,27 @@ public class Enumeration : IComparable<Enumeration>, IEquatable<Enumeration>, IE
     public static bool operator >=(Enumeration left, Enumeration right)
         => left is null ? right is null : left.CompareTo(right) >= 0;
     #endregion
+}
+
+public sealed class EnumerationComparer : EqualityComparer<Enumeration>
+{
+    public override bool Equals(Enumeration x, Enumeration y)
+    {
+        if (y is null)
+        {
+            return false;
+        }
+
+        if (ReferenceEquals(x, y))
+        {
+            return true;
+        }
+
+        return x.Id.Equals(y.Id);
+    }
+
+    public override int GetHashCode([DisallowNull] Enumeration obj)
+    {
+        return obj.Id.GetHashCode();
+    }
 }

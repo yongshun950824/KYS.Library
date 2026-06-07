@@ -39,11 +39,22 @@ public class ValueObjectUnitTests
     }
 
     [Test]
-    public void GetHashCode_SameValues_ShouldHaveSameHashCode()
+    public void Equals_WithNonAddress_ShouldNotBeEqual()
     {
         // Arrange
         var address1 = new Address("123 Main St", "Anytown");
-        var address2 = new Address("123 Main St", "Anytown");
+        object value = new { AddressLine1 = "123 Main St", City = "Anytown" };
+
+        // Act & Assert
+        Assert.IsFalse(address1.Equals(value));
+    }
+
+    [Test]
+    public void GetHashCode_SameValues_ShouldHaveSameHashCode()
+    {
+        // Arrange
+        var address1 = new Address("123 Main St", "Saint Mary Garden", "Anytown");
+        var address2 = new Address("123 Main St", "Saint Mary Garden", "Anytown");
 
         // Act
         var hashCode1 = address1.GetHashCode();
@@ -54,14 +65,13 @@ public class ValueObjectUnitTests
     }
 
     [Test]
-    public void Equals_WithNonAddress_ShouldNotBeEqual()
+    public void GetHashCode_ContainingNullProperty_ShouldReturnHashCode()
     {
         // Arrange
         var address1 = new Address("123 Main St", "Anytown");
-        object value = new { AddressLine1 = "123 Main St", City = "Anytown" };
 
         // Act & Assert
-        Assert.IsFalse(address1.Equals(value));
+        Assert.DoesNotThrow(() => address1.GetHashCode());
     }
 
     [Test]
@@ -106,6 +116,7 @@ public class ValueObjectUnitTests
 
         // Act & Assert
         Assert.IsTrue(address1 == address2);
+        Assert.IsFalse(address1 != address2);
     }
 
     [Test]

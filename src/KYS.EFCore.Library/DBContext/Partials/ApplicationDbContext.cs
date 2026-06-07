@@ -1,7 +1,7 @@
 ﻿using KYS.EFCore.Library.DBContext.Partials;
+using KYS.Library.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +12,8 @@ namespace KYS.EFCore.Library.DBContext
 {
     public partial class ApplicationDbContext
     {
-        public async Task<int> SaveChangesWithAuditAsync(Guid? actionBy = null
-            , Formatting formatting = Formatting.SnakeCase)
+        public async Task<int> SaveChangesWithAuditAsync(Guid? actionBy = null,
+            Formatting? formatting = null)
         {
             ChangeTracker.DetectChanges();
             var auditEntries = OnBeforeSaveChanges(actionBy, formatting);
@@ -22,85 +22,67 @@ namespace KYS.EFCore.Library.DBContext
             return result;
         }
 
-        private List<AuditEntry> OnBeforeSaveChanges(Guid? actionBy, Formatting formatting)
+        private List<AuditEntry> OnBeforeSaveChanges(Guid? actionBy, Formatting? formatting)
         {
-            try
+            var auditEntries = new List<AuditEntry>();
+            foreach (var entry in ChangeTracker.Entries())
             {
-                var auditEntries = new List<AuditEntry>();
-                foreach (var entry in ChangeTracker.Entries())
+                if (!ShouldAuditEntry(entry))
+                    continue;
+
+                var auditEntry = new AuditEntry
                 {
-                    if (!ShouldAuditEntry(entry))
-                        continue;
+                    TableName = entry.Entity.GetType().Name,
+                    UserId = actionBy
+                };
+                auditEntries.Add(auditEntry);
 
-                    var auditEntry = new AuditEntry(entry)
-                    {
-                        TableName = entry.Entity.GetType().Name,
-                        UserId = actionBy
-                    };
-                    auditEntries.Add(auditEntry);
-
-                    foreach (var property in entry.Properties)
-                    {
-                        ProcessProperty(entry, property, auditEntry);
-                    }
-                }
-
-                var noTempPropAuditEntries = auditEntries.Where(e => !e.HasTemporaryProperties).ToList();
-                foreach (var auditEntry in noTempPropAuditEntries)
+                foreach (var property in entry.Properties)
                 {
-                    var result = auditEntry.ToActionLog(formatting);
-                    if (result.IsFailure)
-                        throw new InvalidOperationException(result.Error);
-
-                    ActionLog.Add(result.Value);
+                    ProcessProperty(entry, property, auditEntry);
                 }
-
-                return auditEntries.Where(e => e.HasTemporaryProperties).ToList();
             }
-            catch (Exception ex)
+
+            var noTempPropAuditEntries = auditEntries.Where(e => !e.HasTemporaryProperties).ToList();
+            foreach (var auditEntry in noTempPropAuditEntries)
             {
-                _logger.LogError(ex, "[{Method}] Exception", nameof(OnBeforeSaveChanges));
+                var result = auditEntry.ToActionLog(formatting);
+                if (result.IsFailure)
+                    throw new InvalidOperationException(result.Error);
 
-                throw;
+                ActionLog.Add(result.Value);
             }
+
+            return auditEntries.Where(e => e.HasTemporaryProperties).ToList();
         }
 
-        private async Task OnAfterSaveChangesAsync(List<AuditEntry> auditEntries, Formatting formatting)
+        private async Task OnAfterSaveChangesAsync(List<AuditEntry> auditEntries, Formatting? formatting)
         {
-            try
+            if (auditEntries.IsNullOrEmpty())
+                return;
+
+            foreach (var auditEntry in auditEntries)
             {
-                if (auditEntries == null || auditEntries.Count == 0)
-                    return;
-
-                foreach (var auditEntry in auditEntries)
+                foreach (var prop in auditEntry.TemporaryProperties)
                 {
-                    foreach (var prop in auditEntry.TemporaryProperties)
+                    if (prop.Metadata.IsPrimaryKey())
                     {
-                        if (prop.Metadata.IsPrimaryKey())
-                        {
-                            auditEntry.KeyValues[prop.Metadata.Name] = prop.CurrentValue;
-                        }
-                        else
-                        {
-                            auditEntry.NewValues[prop.Metadata.Name] = prop.CurrentValue;
-                        }
+                        auditEntry.KeyValues[prop.Metadata.Name] = prop.CurrentValue;
                     }
-
-                    var result = auditEntry.ToActionLog(formatting);
-                    if (result.IsFailure)
-                        throw new Exception(result.Error);
-
-                    ActionLog.Add(result.Value);
+                    else
+                    {
+                        auditEntry.NewValues[prop.Metadata.Name] = prop.CurrentValue;
+                    }
                 }
 
-                await base.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "[{Method}] Exception", nameof(OnAfterSaveChangesAsync));
+                var result = auditEntry.ToActionLog(formatting);
+                if (result.IsFailure)
+                    throw new InvalidOperationException(result.Error);
 
-                throw;
+                ActionLog.Add(result.Value);
             }
+
+            await base.SaveChangesAsync();
         }
 
         private static bool ShouldAuditEntry(EntityEntry entry)
@@ -110,7 +92,15 @@ namespace KYS.EFCore.Library.DBContext
 
         private static void ProcessProperty(EntityEntry entry, PropertyEntry property, AuditEntry auditEntry)
         {
-            if (property.IsTemporary)
+            // Treat database-generated properties as temporary. Some providers
+            // (SQLite) may not mark non-PK store-generated columns as
+            // PropertyEntry.IsTemporary; additionally treat properties with
+            // ValueGenerated.OnAdd and no client value as temporary so the
+            // post-save step can capture the generated value.
+            var isStoreGeneratedOnAdd = property.Metadata.ValueGenerated == Microsoft.EntityFrameworkCore.Metadata.ValueGenerated.OnAdd
+                                         && property.CurrentValue == null;
+
+            if (property.IsTemporary || isStoreGeneratedOnAdd)
             {
                 auditEntry.TemporaryProperties.Add(property);
                 return;
@@ -131,20 +121,20 @@ namespace KYS.EFCore.Library.DBContext
             switch (entry.State)
             {
                 case EntityState.Added:
-                    auditEntry.Action = "INSERT";
+                    auditEntry.Action = AuditAction.Insert;
                     auditEntry.NewValues[propertyName] = property.CurrentValue;
                     break;
 
                 case EntityState.Deleted:
-                    auditEntry.Action = "DELETE";
+                    auditEntry.Action = AuditAction.Delete;
                     auditEntry.OldValues[propertyName] = property.OriginalValue;
                     break;
 
                 case EntityState.Modified:
-                    auditEntry.Action = "UPDATE";
+                    auditEntry.Action = AuditAction.Update;
                     if (property.IsModified && !Equals(property.OriginalValue, property.CurrentValue))
                     {
-                        auditEntry.Column = propertyName;
+                        auditEntry.ColumnName = propertyName;
                         auditEntry.OldValues[propertyName] = property.OriginalValue;
                         auditEntry.NewValues[propertyName] = property.CurrentValue;
                     }

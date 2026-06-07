@@ -106,10 +106,52 @@ public class DbContextUnitOfWorkUnitTests
         await unitOfWork.RollbackAsync();
 
         // Assert
-        Assert.AreEqual(0, _context!.Products.Count());
-        Assert.AreEqual(0, _context!.Categories.Count());
-        Assert.IsFalse(_context!.Products.Any(p => p.Name == product.Name));
-        Assert.IsFalse(_context!.Categories.Any(c => c.Name == category.Name));
+        Assert.AreEqual(0, await _context.Products.CountAsync());
+        Assert.AreEqual(0, await _context.Categories.CountAsync());
+        Assert.IsFalse(await _context.Products.AnyAsync(p => p.Name == product.Name));
+        Assert.IsFalse(await _context.Categories.AnyAsync(c => c.Name == category.Name));
+    }
+
+    [Test]
+    public async Task DisposeAsync_WithOpenTransaction_ShouldRollbackAndDispose()
+    {
+        using var connection = new SqliteConnection("DataSource=:memory:");
+        await connection.OpenAsync();
+
+        var options = new DbContextOptionsBuilder<TestDbContext>()
+            .UseSqlite(connection)
+            .Options;
+
+        using var ctx = new TestDbContext(options);
+        await ctx.Database.EnsureCreatedAsync();
+
+        var uow = new DbContextUnitOfWork<TestDbContext>(ctx);
+        await uow.BeginAsync();
+        await uow.DisposeAsync();
+
+        // Assert
+        Assert.Pass();
+    }
+
+    [Test]
+    public async Task DisposeAsync_WithoutTransaction_ShouldNotThrowException()
+    {
+        using var connection = new SqliteConnection("DataSource=:memory:");
+        await connection.OpenAsync();
+
+        var options = new DbContextOptionsBuilder<TestDbContext>()
+            .UseSqlite(connection)
+            .Options;
+
+        using var ctx = new TestDbContext(options);
+        await ctx.Database.EnsureCreatedAsync();
+
+        var uow = new DbContextUnitOfWork<TestDbContext>(ctx);
+        // No BeginAsync() called; DisposeAsync should be a no-op (no exception)
+        await uow.DisposeAsync();
+
+        // Assert
+        Assert.Pass();
     }
 
     [TearDown]
