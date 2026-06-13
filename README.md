@@ -1,6 +1,7 @@
 # KYS.Library
 
 Set of helpers, extension methods, services and validations (attributes) to help the developers not to reinvent the wheel.
+Set of helpers, extension methods, services and validations (attributes) to help the developers not to reinvent the wheel.
 
 ---
 

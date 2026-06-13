@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
-using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace KYS.EFCore.Library
@@ -8,46 +8,40 @@ namespace KYS.EFCore.Library
     public class DbContextUnitOfWork<TDbContext> : IUnitOfWork
         where TDbContext : DbContext
     {
-        private readonly bool _explicitTransaction;
         private readonly TDbContext _context;
-        private DbTransaction transaction;
+        private IDbContextTransaction _transaction;
         private bool _disposed = false;
 
-        public DbContextUnitOfWork(TDbContext context) : this(context, false) { }
-
-        public DbContextUnitOfWork(TDbContext context, bool explicitTransaction)
+        public DbContextUnitOfWork(TDbContext context)
         {
-            _explicitTransaction = explicitTransaction;
             _context = context;
         }
 
         public async Task BeginAsync()
         {
-            if (_explicitTransaction)
-            {
-                await _context.Database.OpenConnectionAsync(); // Open connection
-                var _connection = _context.Database.GetDbConnection();
-                transaction = await _connection.BeginTransactionAsync();
-                await _context.Database.UseTransactionAsync(transaction);
-            }
+            _transaction = await _context.Database.BeginTransactionAsync();
         }
 
         public async Task CommitAsync()
         {
-            if (_explicitTransaction)
+            if (_transaction == null)
             {
-                await transaction.CommitAsync();
-                transaction = null;
+                throw new InvalidOperationException($"{nameof(BeginAsync)}() must be called first.");
             }
+
+            await _context.SaveChangesAsync();
+            await _transaction.CommitAsync();
+            _transaction = null; // Clear the transaction reference after committing
         }
 
         public async Task RollbackAsync()
         {
-            if (_explicitTransaction)
+            if (_transaction == null)
             {
-                await transaction.RollbackAsync();
-                transaction = null;
+                throw new InvalidOperationException($"{nameof(BeginAsync)}() must be called first.");
             }
+
+            await DisposeTransactionAsync();
         }
 
         public void Dispose()
@@ -56,12 +50,10 @@ namespace KYS.EFCore.Library
             GC.SuppressFinalize(this);
         }
 
-        public ValueTask DisposeAsync()
+        public async ValueTask DisposeAsync()
         {
-            Dispose(disposing: true);
+            await DisposeTransactionAsync();
             GC.SuppressFinalize(this);
-
-            return ValueTask.CompletedTask;
         }
 
         protected virtual void Dispose(bool disposing)
@@ -79,16 +71,22 @@ namespace KYS.EFCore.Library
 
         private void DisposeTransaction()
         {
-            if (transaction == null)
+            if (_transaction == null)
                 return;
 
-            transaction.Rollback();
-            transaction = null;
+            _transaction.Rollback(); // Ensure any uncommitted transaction is rolled back before disposing
+            _transaction.Dispose();
+            _transaction = null;
         }
 
-        ~DbContextUnitOfWork()
+        private async Task DisposeTransactionAsync()
         {
-            Dispose(disposing: false);
+            if (_transaction == null)
+                return;
+
+            await _transaction.RollbackAsync(); // Ensure any uncommitted transaction is rolled back before disposing
+            await _transaction.DisposeAsync();
+            _transaction = null;
         }
     }
 }

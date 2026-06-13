@@ -11,7 +11,7 @@ namespace KYS.EFCore.Library.Extensions
             services.AddScoped<IUnitOfWork>(provider =>
             {
                 var context = provider.GetService<TDbContext>();
-                return new DbContextUnitOfWork<TDbContext>(context, true);
+                return new DbContextUnitOfWork<TDbContext>(context);
             });
 
             return services;
