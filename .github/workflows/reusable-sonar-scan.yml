@@ -41,7 +41,7 @@ jobs:
       TESTS_PROJECT: ${{ inputs.tests-project-path }}
       LIB_PROJECT: ${{ inputs.lib-project-path }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
 
@@ -70,7 +70,7 @@ jobs:
     env:
       TESTS_PROJECT: ${{ inputs.tests-project-path }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
 
