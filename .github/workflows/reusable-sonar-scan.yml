@@ -100,7 +100,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_PROJECT_NAME: ${{ inputs.sonar-project-name }}
-          SONAR_SOURCES: ${{ inputs.lib-project-path }}
+          SONAR_INCLUSIONS: ${{ inputs.lib-project-path }}
           SONAR_ORG: ${{ inputs.sonar-org }}
           SONAR_EXCLUSIONS: ${{ inputs.sonar-exclusions }}
           SONAR_COVERAGE_EXCLUSIONS: ${{ inputs.sonar-coverage-exclusions }}
@@ -112,7 +112,7 @@ jobs:
             /o:"$env:SONAR_ORG" `
             /d:sonar.token="$env:SONAR_TOKEN" `
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
-            /d:sonar.sources="$env:SONAR_SOURCES" `
+            /d:sonar.inclusions="$env:SONAR_INCLUSIONS" `
             /d:sonar.exclusions="$env:SONAR_EXCLUSIONS" `
             /d:sonar.coverage.exclusions="$env:SONAR_COVERAGE_EXCLUSIONS" `
             /d:sonar.cpd.exclusions="$env:SONAR_CPD_EXCLUSIONS"
