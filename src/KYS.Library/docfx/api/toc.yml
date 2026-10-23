@@ -59,12 +59,6 @@ items:
   - uid: KYS.Library.Helpers.DomainErrors
     name: DomainErrors
     type: Class
-  - uid: KYS.Library.Helpers.EmailHelper
-    name: EmailHelper
-    type: Class
-  - uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
-    name: EmailHelper.SmtpClientConfig
-    type: Class
   - uid: KYS.Library.Helpers.ExcelHelper
     name: ExcelHelper
     type: Class

@@ -8,8 +8,6 @@ items:
   - KYS.Library.Helpers.CompareOperator.CompareOperatorConstants
   - KYS.Library.Helpers.DataTableHelper
   - KYS.Library.Helpers.DomainErrors
-  - KYS.Library.Helpers.EmailHelper
-  - KYS.Library.Helpers.EmailHelper.SmtpClientConfig
   - KYS.Library.Helpers.ExcelHelper
   - KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet
   - KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat
@@ -77,35 +75,6 @@ references:
   name: DomainErrors
   nameWithType: DomainErrors
   fullName: KYS.Library.Helpers.DomainErrors
-- uid: KYS.Library.Helpers.EmailHelper
-  commentId: T:KYS.Library.Helpers.EmailHelper
-  href: KYS.Library.Helpers.EmailHelper.html
-  name: EmailHelper
-  nameWithType: EmailHelper
-  fullName: KYS.Library.Helpers.EmailHelper
-- uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
-  commentId: T:KYS.Library.Helpers.EmailHelper.SmtpClientConfig
-  parent: KYS.Library.Helpers
-  href: KYS.Library.Helpers.EmailHelper.html
-  name: EmailHelper.SmtpClientConfig
-  nameWithType: EmailHelper.SmtpClientConfig
-  fullName: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
-  spec.csharp:
-  - uid: KYS.Library.Helpers.EmailHelper
-    name: EmailHelper
-    href: KYS.Library.Helpers.EmailHelper.html
-  - name: .
-  - uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
-    name: SmtpClientConfig
-    href: KYS.Library.Helpers.EmailHelper.SmtpClientConfig.html
-  spec.vb:
-  - uid: KYS.Library.Helpers.EmailHelper
-    name: EmailHelper
-    href: KYS.Library.Helpers.EmailHelper.html
-  - name: .
-  - uid: KYS.Library.Helpers.EmailHelper.SmtpClientConfig
-    name: SmtpClientConfig
-    href: KYS.Library.Helpers.EmailHelper.SmtpClientConfig.html
 - uid: KYS.Library.Helpers.ExcelHelper
   commentId: T:KYS.Library.Helpers.ExcelHelper
   href: KYS.Library.Helpers.ExcelHelper.html
@@ -306,31 +275,24 @@ references:
   fullName: KYS.Library.Helpers.XmlHelper
 - uid: KYS.Library.Helpers
   commentId: N:KYS.Library.Helpers
-  href: KYS.html
   name: KYS.Library.Helpers
   nameWithType: KYS.Library.Helpers
   fullName: KYS.Library.Helpers
   spec.csharp:
   - uid: KYS
     name: KYS
-    href: KYS.html
   - name: .
   - uid: KYS.Library
     name: Library
-    href: KYS.Library.html
   - name: .
   - uid: KYS.Library.Helpers
     name: Helpers
-    href: KYS.Library.Helpers.html
   spec.vb:
   - uid: KYS
     name: KYS
-    href: KYS.html
   - name: .
   - uid: KYS.Library
     name: Library
-    href: KYS.Library.html
   - name: .
   - uid: KYS.Library.Helpers
     name: Helpers
-    href: KYS.Library.Helpers.html
