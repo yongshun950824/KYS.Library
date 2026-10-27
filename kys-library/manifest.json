@@ -1,4 +1,5 @@
 {
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
   "source_base_path": "/home/runner/work/KYS.Library/KYS.Library/src/KYS.Library/docfx",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -261,34 +262,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Helpers.DomainErrors",
       "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Helpers.EmailHelper.SmtpClientConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Helpers.EmailHelper.SmtpClientConfig.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Helpers.EmailHelper.SmtpClientConfig",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.EmailHelper.SmtpClientConfig.yml\" sourcestartlinenumber=\"1\">Represents the configuration settings required to initialize and send emails using an SMTP client.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Helpers.EmailHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Helpers.EmailHelper.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Helpers.EmailHelper",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.EmailHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for sending email.\n<br><br>\nTO-DO: <br></p>\n<ol><li>\n            Migrate to service for DI supported. Support different email providers such as SMTP, SendGrid and etc.\n        </li><li>\n            Implement unit tests.\n        </li></ol>\n"
     },
     {
       "type": "ManagedReference",
