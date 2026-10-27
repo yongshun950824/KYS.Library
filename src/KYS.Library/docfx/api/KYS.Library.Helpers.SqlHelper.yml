@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/KYS.Library/Helpers/SQLHelper.cs
-      branch: enhancement/functional_error_handling_and_creational_patterns
+      branch: migrate_system_data_sqlclient_to_microsoft_data_sqlclient
       repo: https://github.com/yongshun950824/KYS.Library
     id: SqlHelper
     path: ../Helpers/SQLHelper.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: src/KYS.Library/Helpers/SQLHelper.cs
-      branch: enhancement/functional_error_handling_and_creational_patterns
+      branch: migrate_system_data_sqlclient_to_microsoft_data_sqlclient
       repo: https://github.com/yongshun950824/KYS.Library
     id: BuildStructuredSqlParameter
     path: ../Helpers/SQLHelper.cs
@@ -106,8 +106,8 @@ items:
     - id: T
       description: ''
     return:
-      type: System.Data.SqlClient.SqlParameter
-      description: The <xref href="System.Data.SqlClient.SqlParameter" data-throw-if-not-resolved="false"></xref> instance for the table-valued parameter.
+      type: Microsoft.Data.SqlClient.SqlParameter
+      description: The <xref href="Microsoft.Data.SqlClient.SqlParameter" data-throw-if-not-resolved="false"></xref> instance for the table-valued parameter.
     content.vb: Public Shared Function BuildStructuredSqlParameter(Of T)(tableTypeName As String, tableTypeColumnName As String, parameterName As String, values As IEnumerable(Of T)) As SqlParameter
   overload: KYS.Library.Helpers.SqlHelper.BuildStructuredSqlParameter*
   exceptions:
@@ -123,34 +123,27 @@ items:
 references:
 - uid: KYS.Library.Helpers
   commentId: N:KYS.Library.Helpers
-  href: KYS.html
   name: KYS.Library.Helpers
   nameWithType: KYS.Library.Helpers
   fullName: KYS.Library.Helpers
   spec.csharp:
   - uid: KYS
     name: KYS
-    href: KYS.html
   - name: .
   - uid: KYS.Library
     name: Library
-    href: KYS.Library.html
   - name: .
   - uid: KYS.Library.Helpers
     name: Helpers
-    href: KYS.Library.Helpers.html
   spec.vb:
   - uid: KYS
     name: KYS
-    href: KYS.html
   - name: .
   - uid: KYS.Library
     name: Library
-    href: KYS.Library.html
   - name: .
   - uid: KYS.Library.Helpers
     name: Helpers
-    href: KYS.Library.Helpers.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -388,14 +381,14 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Data.SqlClient.SqlParameter
-  commentId: T:System.Data.SqlClient.SqlParameter
-  parent: System.Data.SqlClient
+- uid: Microsoft.Data.SqlClient.SqlParameter
+  commentId: T:Microsoft.Data.SqlClient.SqlParameter
+  parent: Microsoft.Data.SqlClient
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.data.sqlclient.sqlparameter
+  href: https://learn.microsoft.com/dotnet/api/microsoft.data.sqlclient.sqlparameter
   name: SqlParameter
   nameWithType: SqlParameter
-  fullName: System.Data.SqlClient.SqlParameter
+  fullName: Microsoft.Data.SqlClient.SqlParameter
 - uid: System.ArgumentException
   commentId: T:System.ArgumentException
   isExternal: true
@@ -456,43 +449,43 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Data.SqlClient
-  commentId: N:System.Data.SqlClient
+- uid: Microsoft.Data.SqlClient
+  commentId: N:Microsoft.Data.SqlClient
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Data.SqlClient
-  nameWithType: System.Data.SqlClient
-  fullName: System.Data.SqlClient
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Data.SqlClient
+  nameWithType: Microsoft.Data.SqlClient
+  fullName: Microsoft.Data.SqlClient
   spec.csharp:
-  - uid: System
-    name: System
+  - uid: Microsoft
+    name: Microsoft
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
+    href: https://learn.microsoft.com/dotnet/api/microsoft
   - name: .
-  - uid: System.Data
+  - uid: Microsoft.Data
     name: Data
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data
+    href: https://learn.microsoft.com/dotnet/api/microsoft.data
   - name: .
-  - uid: System.Data.SqlClient
+  - uid: Microsoft.Data.SqlClient
     name: SqlClient
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data.sqlclient
+    href: https://learn.microsoft.com/dotnet/api/microsoft.data.sqlclient
   spec.vb:
-  - uid: System
-    name: System
+  - uid: Microsoft
+    name: Microsoft
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
+    href: https://learn.microsoft.com/dotnet/api/microsoft
   - name: .
-  - uid: System.Data
+  - uid: Microsoft.Data
     name: Data
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data
+    href: https://learn.microsoft.com/dotnet/api/microsoft.data
   - name: .
-  - uid: System.Data.SqlClient
+  - uid: Microsoft.Data.SqlClient
     name: SqlClient
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.data.sqlclient
+    href: https://learn.microsoft.com/dotnet/api/microsoft.data.sqlclient
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
