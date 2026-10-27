@@ -503,20 +503,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.BaseTranslationService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.BaseTranslationService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.BaseTranslationService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.BaseTranslationService.yml\" sourcestartlinenumber=\"1\">An abstract class for the translation service.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/KYS.Library.Services.BaseTranslator.yml",
       "output": {
         ".html": {
@@ -528,34 +514,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Services.BaseTranslator",
       "Summary": "<p sourcefile=\"api/KYS.Library.Services.BaseTranslator.yml\" sourcestartlinenumber=\"1\">An abstract class for the translation service.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.IBaseTranslationService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.IBaseTranslationService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.IBaseTranslationService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IBaseTranslationService.yml\" sourcestartlinenumber=\"1\">Defines a service contract for language translation.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.IBaseTranslator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.IBaseTranslator.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.IBaseTranslator",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IBaseTranslator.yml\" sourcestartlinenumber=\"1\">Defines a service contract for language translation.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -584,34 +542,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Services.IQrGenerator",
       "Summary": "<p sourcefile=\"api/KYS.Library.Services.IQrGenerator.yml\" sourcestartlinenumber=\"1\">Defines a contract for generating QR code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.IQrGeneratorService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.IQrGeneratorService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.IQrGeneratorService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IQrGeneratorService.yml\" sourcestartlinenumber=\"1\">Defines a contract for generating QR code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.ITranslationService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.ITranslationService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.ITranslationService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ITranslationService.yml\" sourcestartlinenumber=\"1\">Defines a service contract for language translation.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -657,20 +587,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.IZipService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.IZipService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.IZipService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IZipService.yml\" sourcestartlinenumber=\"1\">Define a contract for zipping/unzipping item.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/KYS.Library.Services.LanguageResources.yml",
       "output": {
         ".html": {
@@ -682,20 +598,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Services.LanguageResources",
       "Summary": "<p sourcefile=\"api/KYS.Library.Services.LanguageResources.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for the culture name and its resources.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.MultiResourcesTranslationService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.MultiResourcesTranslationService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.MultiResourcesTranslationService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.MultiResourcesTranslationService.yml\" sourcestartlinenumber=\"1\">A service for transaction with supports multiple resources (file).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -724,34 +626,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Services.QrGenerator",
       "Summary": "<p sourcefile=\"api/KYS.Library.Services.QrGenerator.yml\" sourcestartlinenumber=\"1\">A service for generating the QR code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.QrGeneratorService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.QrGeneratorService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.QrGeneratorService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.QrGeneratorService.yml\" sourcestartlinenumber=\"1\">A service for generating the QR code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.SingleResourceTranslationService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.SingleResourceTranslationService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.SingleResourceTranslationService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.SingleResourceTranslationService.yml\" sourcestartlinenumber=\"1\">A service for translation with support only one resource (file).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -808,34 +682,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Services.ZipFileItem",
       "Summary": "<p sourcefile=\"api/KYS.Library.Services.ZipFileItem.yml\" sourcestartlinenumber=\"1\">Represents the blueprint on the file element to be zipped into a zip file or unzipped from the zip file.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.ZipService.ZipFileItem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.ZipService.ZipFileItem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.ZipService.ZipFileItem",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ZipService.ZipFileItem.yml\" sourcestartlinenumber=\"1\">Represents the blueprint on the file element to be zipped into a zip file or unzipped from the zip file.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.ZipService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.ZipService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.ZipService",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ZipService.yml\" sourcestartlinenumber=\"1\">A service for managing zipping and unzipping file.</p>\n"
     },
     {
       "type": "ManagedReference",
