@@ -11,3 +11,53 @@ updates:
     commit-message:
       prefix: "chore(deps-actions):"
     open-pull-requests-limit: 5
+
+  # Maintain NuGet packages for all projects in .sln
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+    commit-message:
+      prefix: "chore(deps-nuget):"
+    open-pull-requests-limit: 5
+
+    # Bundle related packages into one PR so they stay on the same version
+    groups:
+      ef-core:
+        patterns:
+          - "Microsoft.EntityFrameworkCore*"
+      microsoft-extensions:
+        patterns:
+          - "Microsoft.Extensions.*"
+      skiasharp:
+        patterns:
+          - "SkiaSharp*"
+      zxing:
+        patterns:
+          - "ZXing.Net*"
+      itext:
+        patterns:
+          - "itext7*"
+      test-tooling:
+        patterns:
+          - "NUnit*"
+          - "Microsoft.NET.Test.Sdk"
+          - "coverlet.*"
+          - "Moq"
+
+    # Block major upgrades that need deliberate migration work
+    ignore:
+      # EF Core / Microsoft.Extensions 10.x require .NET 10; you target net8.0
+      - dependency-name: "Microsoft.EntityFrameworkCore*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "Microsoft.Extensions.*"
+        update-types: ["version-update:semver-major"]
+      # Breaking API and/or license changes; handle as part of #2
+      - dependency-name: "EPPlus"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "itext7*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "SkiaSharp*"
+        update-types: ["version-update:semver-major"]
