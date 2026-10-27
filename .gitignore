@@ -368,3 +368,5 @@ lcov.info
 covstats/
 
 **/docfx/_site/
+**/docfx/api/*.yml
+**/docfx/api/.manifest
