@@ -279,9 +279,7 @@ namespace KYS.Library.Services
         public Result<string> DrawAndToBase64()
         {
             return DrawAndToMemoryStream()
-                .Bind(ms => StreamHelper.ToBase64Async(ms)
-                    .GetAwaiter()
-                    .GetResult());
+                .Bind(ms => StreamHelper.ToBase64(ms));
         }
 
         /// <summary>
@@ -291,7 +289,7 @@ namespace KYS.Library.Services
         public Result<string> DrawAndToDataUri()
         {
             return DrawAndToBase64()
-                .Map(base64 => $"data:image/png;base64, {base64}");
+                .Map(base64 => $"data:image/png;base64,{base64}");
         }
 
         /// <summary>
