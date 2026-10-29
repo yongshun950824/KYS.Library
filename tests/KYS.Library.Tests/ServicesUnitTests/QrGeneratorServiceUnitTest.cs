@@ -343,7 +343,7 @@ namespace KYS.Library.Tests.ServicesUnitTests
         public void DrawAndToDataUri_ShouldGenerateQRToDataUri()
         {
             // Arrange
-            string dataUriPrefix = "data:image/png;base64, ";
+            string dataUriPrefix = "data:image/png;base64,";
             QrGenerator qrGeneratorService = QrGenerator.Create(_qrValue).Value;
 
             Result<string> base64StringResult = qrGeneratorService.DrawAndToBase64();

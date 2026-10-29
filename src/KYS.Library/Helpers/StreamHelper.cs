@@ -76,6 +76,23 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <param name="stream">The <see cref="Stream" /> instance.</param>
         /// <returns>A <see cref="Result{T}" /> containing the Base64 string.</returns>
+        public static Result<string> ToBase64(Stream stream)
+        {
+            if (stream == null)
+                return Result.Failure<string>(DomainErrors.CannotBeNull(nameof(stream)));
+
+            using MemoryStream ms = new();
+            stream.CopyTo(ms);
+
+            return Result.Success(ms.ToArray())
+                .Map(bytes => Convert.ToBase64String(bytes));
+        }
+
+        /// <summary>
+        /// Convert <see cref="Stream" /> to a Base64 string.
+        /// </summary>
+        /// <param name="stream">The <see cref="Stream" /> instance.</param>
+        /// <returns>A <see cref="Result{T}" /> containing the Base64 string.</returns>
         public static async Task<Result<string>> ToBase64Async(Stream stream)
         {
             if (stream == null)
