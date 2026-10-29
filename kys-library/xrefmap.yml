@@ -1676,6 +1676,19 @@ references:
   isSpec: "True"
   fullName: KYS.Library.Helpers.StreamHelper.ReadBase64StringToByteArray
   nameWithType: StreamHelper.ReadBase64StringToByteArray
+- uid: KYS.Library.Helpers.StreamHelper.ToBase64(System.IO.Stream)
+  name: ToBase64(Stream)
+  href: api/KYS.Library.Helpers.StreamHelper.html#KYS_Library_Helpers_StreamHelper_ToBase64_System_IO_Stream_
+  commentId: M:KYS.Library.Helpers.StreamHelper.ToBase64(System.IO.Stream)
+  fullName: KYS.Library.Helpers.StreamHelper.ToBase64(System.IO.Stream)
+  nameWithType: StreamHelper.ToBase64(Stream)
+- uid: KYS.Library.Helpers.StreamHelper.ToBase64*
+  name: ToBase64
+  href: api/KYS.Library.Helpers.StreamHelper.html#KYS_Library_Helpers_StreamHelper_ToBase64_
+  commentId: Overload:KYS.Library.Helpers.StreamHelper.ToBase64
+  isSpec: "True"
+  fullName: KYS.Library.Helpers.StreamHelper.ToBase64
+  nameWithType: StreamHelper.ToBase64
 - uid: KYS.Library.Helpers.StreamHelper.ToBase64Async(System.IO.Stream)
   name: ToBase64Async(Stream)
   href: api/KYS.Library.Helpers.StreamHelper.html#KYS_Library_Helpers_StreamHelper_ToBase64Async_System_IO_Stream_
