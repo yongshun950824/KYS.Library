@@ -14,7 +14,7 @@ public class ApiResponseModelUnitTest
         var status = HttpStatusCode.NoContent;
 
         // Act
-        var model = new ApiReponseModel<string>(status);
+        var model = new ApiResponseModel<string>(status);
 
         // Assert
         Assert.AreEqual(status, model.StatusCode);
@@ -30,7 +30,7 @@ public class ApiResponseModelUnitTest
         var data = "Test Data";
 
         // Act
-        var model = new ApiReponseModel<string>(status, data: data);
+        var model = new ApiResponseModel<string>(status, data: data);
 
         // Assert
         Assert.AreEqual(status, model.StatusCode);
@@ -46,7 +46,7 @@ public class ApiResponseModelUnitTest
         var message = "Internal Server Error";
 
         // Act
-        var model = new ApiReponseModel<string>(status, responseMessage: message);
+        var model = new ApiResponseModel<string>(status, responseMessage: message);
 
         // Assert
         Assert.AreEqual(status, model.StatusCode);
@@ -69,7 +69,7 @@ public class ApiResponseModelUnitTest
         };
 
         // Act
-        var model = new ApiReponseModel<ErrorModel>(status, message, data);
+        var model = new ApiResponseModel<ErrorModel>(status, message, data);
 
         // Assert
         Assert.AreEqual(status, model.StatusCode);

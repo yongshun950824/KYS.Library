@@ -6,7 +6,7 @@ namespace KYS.AspNetCore.Library.Models
     /// Represents the blueprint for the base response with status code, response message and data.
     /// </summary>
     /// <typeparam name="T">The type of response data.</typeparam>
-    public class ApiReponseModel<T>
+    public class ApiResponseModel<T>
     {
         /// <summary>
         /// Gets the response status code.
@@ -21,24 +21,24 @@ namespace KYS.AspNetCore.Library.Models
         /// </summary>
         public T Data { get; private set; }
 
-        public ApiReponseModel(HttpStatusCode statusCode)
+        public ApiResponseModel(HttpStatusCode statusCode)
         {
             StatusCode = statusCode;
         }
 
-        public ApiReponseModel(HttpStatusCode statusCode, T data)
+        public ApiResponseModel(HttpStatusCode statusCode, T data)
         {
             StatusCode = statusCode;
             Data = data;
         }
 
-        public ApiReponseModel(HttpStatusCode statusCode, string responseMessage)
+        public ApiResponseModel(HttpStatusCode statusCode, string responseMessage)
         {
             StatusCode = statusCode;
             ResponseMessage = responseMessage;
         }
 
-        public ApiReponseModel(HttpStatusCode statusCode, string responseMessage, T data)
+        public ApiResponseModel(HttpStatusCode statusCode, string responseMessage, T data)
         {
             StatusCode = statusCode;
             ResponseMessage = responseMessage;

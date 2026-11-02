@@ -36,7 +36,7 @@ public class ViewResultHelperUnitTest
         Assert.IsInstanceOf<ViewResult>(result);
         Assert.AreEqual("SuccessView", result.ViewName);
 
-        var model = result.ViewData.Model as ApiReponseModel<TestModel>;
+        var model = result.ViewData.Model as ApiResponseModel<TestModel>;
         Assert.NotNull(model);
         Assert.AreEqual(HttpStatusCode.OK, model!.StatusCode);
         Assert.AreEqual(expectedData.Name, model!.Data.Name);
@@ -65,7 +65,7 @@ public class ViewResultHelperUnitTest
 
         // Assert
         Assert.AreEqual("CustomErrorView", result.ViewName);
-        var model = result.ViewData.Model as ApiReponseModel<TestModel>;
+        var model = result.ViewData.Model as ApiResponseModel<TestModel>;
         Assert.AreEqual(HttpStatusCode.InternalServerError, model!.StatusCode);
         Assert.AreEqual(httpResponse.ReasonPhrase, model!.ResponseMessage);
     }
