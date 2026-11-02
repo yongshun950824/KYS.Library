@@ -111,17 +111,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.yml",
+      "source_relative_path": "api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html"
+          "relative_path": "api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "KYS.AspNetCore.Library.Models.ApiReponseModel<T>",
-      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for the base response with status code, response message and data.</p>\n"
+      "Title": "KYS.AspNetCore.Library.Models.ApiResponseModel<T>",
+      "Summary": "<p sourcefile=\"api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for the base response with status code, response message and data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -169,11 +169,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -202,11 +202,11 @@
       "type": "Toc",
       "source_relative_path": "docs/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "docs/toc.html"
-        },
         ".json": {
           "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
         }
       },
       "version": ""
@@ -225,11 +225,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""

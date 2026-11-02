@@ -145,112 +145,112 @@ references:
   commentId: N:KYS.AspNetCore.Library.Models
   fullName: KYS.AspNetCore.Library.Models
   nameWithType: KYS.AspNetCore.Library.Models
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1
-  name: ApiReponseModel<T>
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html
-  commentId: T:KYS.AspNetCore.Library.Models.ApiReponseModel`1
-  name.vb: ApiReponseModel(Of T)
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T)
-  nameWithType: ApiReponseModel<T>
-  nameWithType.vb: ApiReponseModel(Of T)
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode)
-  name: ApiReponseModel(HttpStatusCode)
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode_
-  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode)
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1
+  name: ApiResponseModel<T>
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html
+  commentId: T:KYS.AspNetCore.Library.Models.ApiResponseModel`1
+  name.vb: ApiResponseModel(Of T)
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T)
+  nameWithType: ApiResponseModel<T>
+  nameWithType.vb: ApiResponseModel(Of T)
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode)
+  name: ApiResponseModel(HttpStatusCode)
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1__ctor_System_Net_HttpStatusCode_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode)
   name.vb: New(HttpStatusCode)
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode)
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode)
-  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode)
-  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode)
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
-  name: ApiReponseModel(HttpStatusCode, string)
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode_System_String_
-  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.ApiResponseModel(System.Net.HttpStatusCode)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).New(System.Net.HttpStatusCode)
+  nameWithType: ApiResponseModel<T>.ApiResponseModel(HttpStatusCode)
+  nameWithType.vb: ApiResponseModel(Of T).New(HttpStatusCode)
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
+  name: ApiResponseModel(HttpStatusCode, string)
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1__ctor_System_Net_HttpStatusCode_System_String_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode,System.String)
   name.vb: New(HttpStatusCode, String)
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, string)
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, String)
-  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, string)
-  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, String)
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
-  name: ApiReponseModel(HttpStatusCode, string, T)
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode_System_String__0_
-  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.ApiResponseModel(System.Net.HttpStatusCode, string)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).New(System.Net.HttpStatusCode, String)
+  nameWithType: ApiResponseModel<T>.ApiResponseModel(HttpStatusCode, string)
+  nameWithType.vb: ApiResponseModel(Of T).New(HttpStatusCode, String)
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
+  name: ApiResponseModel(HttpStatusCode, string, T)
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1__ctor_System_Net_HttpStatusCode_System_String__0_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode,System.String,`0)
   name.vb: New(HttpStatusCode, String, T)
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, string, T)
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, String, T)
-  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, string, T)
-  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, String, T)
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
-  name: ApiReponseModel(HttpStatusCode, T)
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_System_Net_HttpStatusCode__0_
-  commentId: M:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.ApiResponseModel(System.Net.HttpStatusCode, string, T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).New(System.Net.HttpStatusCode, String, T)
+  nameWithType: ApiResponseModel<T>.ApiResponseModel(HttpStatusCode, string, T)
+  nameWithType.vb: ApiResponseModel(Of T).New(HttpStatusCode, String, T)
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
+  name: ApiResponseModel(HttpStatusCode, T)
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1__ctor_System_Net_HttpStatusCode__0_
+  commentId: M:KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor(System.Net.HttpStatusCode,`0)
   name.vb: New(HttpStatusCode, T)
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel(System.Net.HttpStatusCode, T)
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New(System.Net.HttpStatusCode, T)
-  nameWithType: ApiReponseModel<T>.ApiReponseModel(HttpStatusCode, T)
-  nameWithType.vb: ApiReponseModel(Of T).New(HttpStatusCode, T)
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor*
-  name: ApiReponseModel
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1__ctor_
-  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.#ctor
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.ApiResponseModel(System.Net.HttpStatusCode, T)
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).New(System.Net.HttpStatusCode, T)
+  nameWithType: ApiResponseModel<T>.ApiResponseModel(HttpStatusCode, T)
+  nameWithType.vb: ApiResponseModel(Of T).New(HttpStatusCode, T)
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor*
+  name: ApiResponseModel
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1__ctor_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiResponseModel`1.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ApiReponseModel
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).New
-  nameWithType: ApiReponseModel<T>.ApiReponseModel
-  nameWithType.vb: ApiReponseModel(Of T).New
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.ApiResponseModel
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).New
+  nameWithType: ApiResponseModel<T>.ApiResponseModel
+  nameWithType.vb: ApiResponseModel(Of T).New
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.Data
   name: Data
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_Data
-  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.Data
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).Data
-  nameWithType: ApiReponseModel<T>.Data
-  nameWithType.vb: ApiReponseModel(Of T).Data
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data*
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1_Data
+  commentId: P:KYS.AspNetCore.Library.Models.ApiResponseModel`1.Data
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.Data
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).Data
+  nameWithType: ApiResponseModel<T>.Data
+  nameWithType.vb: ApiResponseModel(Of T).Data
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.Data*
   name: Data
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_Data_
-  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.Data
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1_Data_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiResponseModel`1.Data
   isSpec: "True"
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.Data
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).Data
-  nameWithType: ApiReponseModel<T>.Data
-  nameWithType.vb: ApiReponseModel(Of T).Data
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.Data
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).Data
+  nameWithType: ApiResponseModel<T>.Data
+  nameWithType.vb: ApiResponseModel(Of T).Data
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.ResponseMessage
   name: ResponseMessage
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_ResponseMessage
-  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ResponseMessage
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).ResponseMessage
-  nameWithType: ApiReponseModel<T>.ResponseMessage
-  nameWithType.vb: ApiReponseModel(Of T).ResponseMessage
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage*
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1_ResponseMessage
+  commentId: P:KYS.AspNetCore.Library.Models.ApiResponseModel`1.ResponseMessage
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.ResponseMessage
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).ResponseMessage
+  nameWithType: ApiResponseModel<T>.ResponseMessage
+  nameWithType.vb: ApiResponseModel(Of T).ResponseMessage
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.ResponseMessage*
   name: ResponseMessage
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_ResponseMessage_
-  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.ResponseMessage
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1_ResponseMessage_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiResponseModel`1.ResponseMessage
   isSpec: "True"
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.ResponseMessage
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).ResponseMessage
-  nameWithType: ApiReponseModel<T>.ResponseMessage
-  nameWithType.vb: ApiReponseModel(Of T).ResponseMessage
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.ResponseMessage
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).ResponseMessage
+  nameWithType: ApiResponseModel<T>.ResponseMessage
+  nameWithType.vb: ApiResponseModel(Of T).ResponseMessage
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.StatusCode
   name: StatusCode
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_StatusCode
-  commentId: P:KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.StatusCode
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).StatusCode
-  nameWithType: ApiReponseModel<T>.StatusCode
-  nameWithType.vb: ApiReponseModel(Of T).StatusCode
-- uid: KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode*
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1_StatusCode
+  commentId: P:KYS.AspNetCore.Library.Models.ApiResponseModel`1.StatusCode
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.StatusCode
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).StatusCode
+  nameWithType: ApiResponseModel<T>.StatusCode
+  nameWithType.vb: ApiResponseModel(Of T).StatusCode
+- uid: KYS.AspNetCore.Library.Models.ApiResponseModel`1.StatusCode*
   name: StatusCode
-  href: api/KYS.AspNetCore.Library.Models.ApiReponseModel-1.html#KYS_AspNetCore_Library_Models_ApiReponseModel_1_StatusCode_
-  commentId: Overload:KYS.AspNetCore.Library.Models.ApiReponseModel`1.StatusCode
+  href: api/KYS.AspNetCore.Library.Models.ApiResponseModel-1.html#KYS_AspNetCore_Library_Models_ApiResponseModel_1_StatusCode_
+  commentId: Overload:KYS.AspNetCore.Library.Models.ApiResponseModel`1.StatusCode
   isSpec: "True"
-  fullName: KYS.AspNetCore.Library.Models.ApiReponseModel<T>.StatusCode
-  fullName.vb: KYS.AspNetCore.Library.Models.ApiReponseModel(Of T).StatusCode
-  nameWithType: ApiReponseModel<T>.StatusCode
-  nameWithType.vb: ApiReponseModel(Of T).StatusCode
+  fullName: KYS.AspNetCore.Library.Models.ApiResponseModel<T>.StatusCode
+  fullName.vb: KYS.AspNetCore.Library.Models.ApiResponseModel(Of T).StatusCode
+  nameWithType: ApiResponseModel<T>.StatusCode
+  nameWithType.vb: ApiResponseModel(Of T).StatusCode
 - uid: KYS.AspNetCore.Library.TagHelpers
   name: KYS.AspNetCore.Library.TagHelpers
   href: api/KYS.AspNetCore.Library.TagHelpers.html
