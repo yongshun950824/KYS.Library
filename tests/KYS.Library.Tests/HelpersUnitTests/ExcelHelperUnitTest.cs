@@ -349,6 +349,24 @@ public class ExcelHelperUnitTest
         AssertExcel(content, _dt, summaryRowStyle: summaryRowStyle);
     }
 
+    [Test]
+    public void CreateExcelBook_ShouldNotOverrideConsumerLicenseContext()
+    {
+        var originalLicenseContext = ExcelPackage.LicenseContext;
+        try
+        {
+            ExcelPackage.LicenseContext = LicenseContext.Commercial;
+
+            ExcelHelper.CreateExcelBook(_dt);
+
+            Assert.That(ExcelPackage.LicenseContext, Is.EqualTo(LicenseContext.Commercial));
+        }
+        finally
+        {
+            ExcelPackage.LicenseContext = originalLicenseContext;
+        }
+    }
+
     private static void AssertExcel(byte[] bytes,
         DataTable dt,
         int sheetIndex = 0,
