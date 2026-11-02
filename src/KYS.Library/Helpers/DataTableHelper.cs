@@ -55,14 +55,17 @@ namespace KYS.Library.Helpers
         /// </summary>
         /// <param name="dt">The <see cref="DataTable" /> instance.</param>
         /// <param name="headerRowStyle">The style for the header row.</param>
-        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
         /// <returns>A <see cref="Result{T}" /> containing the <see cref="byte[]" /> instance which is the Excel file content.</returns>
+        /// <remarks>
+        /// EPPlus requires a license to be configured by the consuming application
+        /// before use, e.g. <c>ExcelPackage.LicenseContext = LicenseContext.Commercial;</c>
+        /// at startup. This library does not set it.
+        /// </remarks>
         public static Result<byte[]> WriteToExcelFile(DataTable dt,
             ExcelHelper.ExcelRowStyle headerRowStyle = null,
-            List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
-            LicenseContext license = LicenseContext.NonCommercial)
+            List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null)
         {
-            return ExcelHelper.CreateExcelBook(dt, excelColumnFormats, headerRowStyle, license: license);
+            return ExcelHelper.CreateExcelBook(dt, excelColumnFormats, headerRowStyle);
         }
 
         /// <summary>

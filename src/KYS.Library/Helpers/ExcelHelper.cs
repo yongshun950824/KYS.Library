@@ -25,14 +25,17 @@ namespace KYS.Library.Helpers
         /// <param name="headerRowStyle">The style of table header.</param>
         /// <param name="summaryRowStyle">The style of table body.</param>
         /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
-        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
         /// <returns>A <see cref="Result{T}" /> containing a <see cref="byte[]" /> instance which is the Excel file content.</returns>
+        /// <remarks>
+        /// EPPlus requires a license to be configured by the consuming application
+        /// before use, e.g. <c>ExcelPackage.LicenseContext = LicenseContext.Commercial;</c>
+        /// at startup. This library does not set it.
+        /// </remarks>
         public static Result<byte[]> CreateExcelBook(DataSet ds,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
-            List<AdditionalExcelSheet> additionalExcelSheets = null,
-            LicenseContext license = LicenseContext.NonCommercial)
+            List<AdditionalExcelSheet> additionalExcelSheets = null)
         {
             if (ds == null)
                 return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(ds)));
@@ -41,7 +44,6 @@ namespace KYS.Library.Helpers
                 {
                     MemoryStream outputStream = new();
 
-                    ExcelPackage.LicenseContext = license;
                     using ExcelPackage package = new(outputStream);
                     foreach (DataTable dt in ds.Tables)
                     {
@@ -71,8 +73,6 @@ namespace KYS.Library.Helpers
                     }
                     package.Save();
 
-                    outputStream.Position = 0;
-
                     return Result.Success(outputStream.ToArray());
                 },
                 ex => ex.Message)
@@ -87,14 +87,17 @@ namespace KYS.Library.Helpers
         /// <param name="headerRowStyle">The style of table header.</param>
         /// <param name="summaryRowStyle">The style of table body.</param>
         /// <param name="additionalExcelSheets">Additional sheet(s) to be included.</param>
-        /// <param name="license">The license used in <see cref="ExcelPackage" />.</param>
         /// <returns>A <see cref="Result{T}" /> containing a <see cref="byte[]" /> instance which is the Excel file content.</returns>
+        /// <remarks>
+        /// EPPlus requires a license to be configured by the consuming application
+        /// before use, e.g. <c>ExcelPackage.LicenseContext = LicenseContext.Commercial;</c>
+        /// at startup. This library does not set it.
+        /// </remarks>
         public static Result<byte[]> CreateExcelBook(DataTable dt,
             List<ExcelColumnFormat> excelColumnFormats = null,
             ExcelRowStyle headerRowStyle = null,
             ExcelRowStyle summaryRowStyle = null,
-            List<AdditionalExcelSheet> additionalExcelSheets = null,
-            LicenseContext license = LicenseContext.NonCommercial)
+            List<AdditionalExcelSheet> additionalExcelSheets = null)
         {
             if (dt == null)
                 return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(dt)));
@@ -111,8 +114,7 @@ namespace KYS.Library.Helpers
                         excelColumnFormats,
                         headerRowStyle,
                         summaryRowStyle,
-                        additionalExcelSheets,
-                        license);
+                        additionalExcelSheets);
                 },
                 ex => ex.Message)
             .Bind(result => result);
