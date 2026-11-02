@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace KYS.EFCore.Library.Extensions
 {
-    public static class ExplictUnitOfWorkServiceCollections
+    public static class ExplicitUnitOfWorkServiceCollections
     {
         public static IServiceCollection AddExplicitUnitOfWork<TDbContext>(this IServiceCollection services)
             where TDbContext : DbContext

@@ -22,7 +22,7 @@ namespace KYS.AspNetCore.Library.Helpers
         /// <param name="viewName">The name or path of the view to render on a successful API response.</param>
         /// <param name="errorViewName">The name or path of the view to render if the API returns a non-success status code. Defaults to the Shared Error view.</param>
         /// <returns>
-        /// A <see cref="ViewResult"/> containing an <see cref="ApiReponseModel{T}"/> as its model.
+        /// A <see cref="ViewResult"/> containing an <see cref="ApiResponseModel{T}"/> as its model.
         /// </returns>
         /// <remarks>
         /// This method automatically handles:
@@ -48,7 +48,7 @@ namespace KYS.AspNetCore.Library.Helpers
                     ViewName = errorViewName,
                     ViewData = httpContext.CreateViewDataDictionary
                     (
-                        new ApiReponseModel<T>
+                        new ApiResponseModel<T>
                         (
                             response.StatusCode,
                             response.ReasonPhrase,
@@ -65,7 +65,7 @@ namespace KYS.AspNetCore.Library.Helpers
                 ViewName = viewName,
                 ViewData = httpContext.CreateViewDataDictionary
                 (
-                    new ApiReponseModel<T>
+                    new ApiResponseModel<T>
                     (
                         response.StatusCode,
                         JsonConvert.DeserializeObject<T>(respContentString)
