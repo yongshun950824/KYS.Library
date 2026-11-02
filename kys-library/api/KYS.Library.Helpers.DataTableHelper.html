@@ -157,7 +157,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_ReadCSV_System_IO_Stream_" data-uid="KYS.Library.Helpers.DataTableHelper.ReadCSV(System.IO.Stream)">
   ReadCSV(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Read CSV from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> into <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a>.</p>
@@ -196,7 +196,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_ReadCSV_System_String_" data-uid="KYS.Library.Helpers.DataTableHelper.ReadCSV(System.String)">
   ReadCSV(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Read CSV from file into <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a>.</p>
@@ -233,9 +233,9 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <a id="KYS_Library_Helpers_DataTableHelper_WriteToExcelFile_" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToExcelFile*"></a>
 
-  <h3 id="KYS_Library_Helpers_DataTableHelper_WriteToExcelFile_System_Data_DataTable_KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_System_Collections_Generic_List_KYS_Library_Helpers_ExcelHelper_ExcelColumnFormat__OfficeOpenXml_LicenseContext_" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable,KYS.Library.Helpers.ExcelHelper.ExcelRowStyle,System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat},OfficeOpenXml.LicenseContext)">
-  WriteToExcelFile(DataTable, ExcelRowStyle, List&lt;ExcelColumnFormat&gt;, LicenseContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <h3 id="KYS_Library_Helpers_DataTableHelper_WriteToExcelFile_System_Data_DataTable_KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_System_Collections_Generic_List_KYS_Library_Helpers_ExcelHelper_ExcelColumnFormat__" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToExcelFile(System.Data.DataTable,KYS.Library.Helpers.ExcelHelper.ExcelRowStyle,System.Collections.Generic.List{KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat})">
+  WriteToExcelFile(DataTable, ExcelRowStyle, List&lt;ExcelColumnFormat&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Write <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> into Excel file.</p>
@@ -243,7 +243,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result&lt;byte[]&gt; WriteToExcelFile(DataTable dt, ExcelHelper.ExcelRowStyle headerRowStyle = null, List&lt;ExcelHelper.ExcelColumnFormat&gt; excelColumnFormats = null, LicenseContext license = LicenseContext.NonCommercial)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result&lt;byte[]&gt; WriteToExcelFile(DataTable dt, ExcelHelper.ExcelRowStyle headerRowStyle = null, List&lt;ExcelHelper.ExcelColumnFormat&gt; excelColumnFormats = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -256,9 +256,6 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 </dd>
     <dt><code>excelColumnFormats</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="KYS.Library.Helpers.ExcelHelper.html">ExcelHelper</a>.<a class="xref" href="KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.html">ExcelColumnFormat</a>&gt;</dt>
     <dd></dd>
-    <dt><code>license</code> <span class="xref">LicenseContext</span></dt>
-    <dd><p>The license used in <span class="xref">OfficeOpenXml.ExcelPackage</span>.</p>
-</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -274,6 +271,11 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <h4 class="section" id="KYS_Library_Helpers_DataTableHelper_WriteToExcelFile_System_Data_DataTable_KYS_Library_Helpers_ExcelHelper_ExcelRowStyle_System_Collections_Generic_List_KYS_Library_Helpers_ExcelHelper_ExcelColumnFormat___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>EPPlus requires a license to be configured by the consuming application
+before use, e.g. <code>ExcelPackage.LicenseContext = LicenseContext.Commercial;</code>
+at startup. This library does not set it.</p>
+</div>
 
 
 
@@ -282,7 +284,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_WriteToJsonFile_System_Data_DataTable_System_Boolean_" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToJsonFile(System.Data.DataTable,System.Boolean)">
   WriteToJsonFile(DataTable, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Write <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> into JSON file.</p>
@@ -324,7 +326,7 @@ Class DataTableHelper  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="KYS_Library_Helpers_DataTableHelper_WriteToPdfFile_System_Data_DataTable_System_Boolean_iText_Layout_Style_iText_Layout_Style_" data-uid="KYS.Library.Helpers.DataTableHelper.WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)">
   WriteToPdfFile(DataTable, bool, Style, Style)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/yongshun950824/KYS.Library/blob/master/src/KYS.Library/Helpers/DataTableHelper.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Write <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datatable">DataTable</a> into PDF file.</p>
