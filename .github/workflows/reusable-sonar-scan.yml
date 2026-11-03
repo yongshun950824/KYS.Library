@@ -100,7 +100,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_PROJECT_NAME: ${{ inputs.sonar-project-name }}
-          SONAR_INCLUSIONS: ${{ inputs.lib-project-path }}
+          SONAR_INCLUSIONS: "**/${{ inputs.lib-project-path }}/**"
           SONAR_ORG: ${{ inputs.sonar-org }}
           SONAR_EXCLUSIONS: ${{ inputs.sonar-exclusions }}
           SONAR_COVERAGE_EXCLUSIONS: ${{ inputs.sonar-coverage-exclusions }}
