@@ -142,7 +142,7 @@ Alternatively, configure it in `appsettings.json`:
 
 | Metric                  | Badge                               |
 | :---------------------- | :---------------------------------- |
-| **Quality Gate Status** | ![Quality Gate Status][24]][25]     |
+| **Quality Gate Status** | [![Quality Gate Status][24]][25]    |
 | **Coverage**            | [![Coverage][26]][25]               |
 | **Reliability**         | [![Reliability Rating][28]][25]     |
 | **Security**            | [![Security Rating][29]][25]        |
