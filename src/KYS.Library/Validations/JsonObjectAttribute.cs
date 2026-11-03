@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -48,10 +49,14 @@ namespace KYS.Library.Validations
         /// <param name="value">The value of the object to validate.</param>
         /// <param name="validationContext">The <see cref="ValidationContext"/> instance.</param>
         /// <returns>The <see cref="ValidationResult"/> instance containing the result after validation.</returns>
+        /// <exception cref="InvalidOperationException"></exception>
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             try
             {
+                if (value is not null and not string)
+                    throw new InvalidOperationException($"{nameof(JsonObjectAttribute)} can be only applied to string properties.");
+
                 if (IsAllowNullOrEmpty
                     && (value == null || String.IsNullOrEmpty((string)value)))
                     return ValidationResult.Success;
@@ -60,9 +65,9 @@ namespace KYS.Library.Validations
 
                 return ValidationResult.Success;
             }
-            catch
+            catch (JsonReaderException)
             {
-                return new ValidationResult(null);
+                return new ValidationResult(FormatErrorMessage(validationContext.DisplayName));
             }
         }
     }

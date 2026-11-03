@@ -50,22 +50,6 @@ namespace KYS.Library.Tests.ExtensionsUnitTests
         }
 
         [Test]
-        public void ToName_WhenReflectionThrows_ShouldReturnPropertyName()
-        {
-            // Arrange
-            var propMock = new Mock<PropertyInfo>();
-            propMock.Setup(p => p.GetCustomAttributes(typeof(DisplayAttribute), false))
-                    .Throws(new Exception("reflection failed"));
-            propMock.Setup(p => p.Name).Returns("FakeProperty");
-
-            // Act
-            var result = propMock.Object.ToName();
-
-            // Assert
-            Assert.AreEqual("FakeProperty", result);
-        }
-
-        [Test]
         public void ToName_WithDisplayAttributeOnProperty_ShouldReturnDisplayName()
         {
             // Arrange
@@ -115,22 +99,6 @@ namespace KYS.Library.Tests.ExtensionsUnitTests
 
             // Assert
             Assert.AreEqual("PlainMethod", result);
-        }
-
-        [Test]
-        public void ToName_WhenReflectionThrows_ShouldReturnMemberName()
-        {
-            // Arrange
-            var memberMock = new Mock<MemberInfo>();
-            memberMock.Setup(p => p.GetCustomAttributes(typeof(DisplayAttribute), false))
-                    .Throws(new Exception("reflection failed"));
-            memberMock.Setup(p => p.Name).Returns("FakeMember");
-
-            // Act
-            var result = memberMock.Object.ToName();
-
-            // Assert
-            Assert.AreEqual("FakeMember", result);
         }
 
         [Test]

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Newtonsoft.Json;
@@ -131,10 +132,38 @@ namespace KYS.Library.Tests.ValidationsUnitTests
             Assert.AreEqual(expectedErrorMessage, results.FirstOrDefault()?.ErrorMessage);
         }
 
+        [Test]
+        public void JsonObjectAttribute_WithNonStringValue_ShouldThrowException()
+        {
+            // Arrange
+            ValidationWithNonStringModel input = new ValidationWithNonStringModel
+            {
+                Prop = 1
+            };
+            ValidationContext validationContext = new(input);
+            List<ValidationResult> results = [];
+
+            // Act
+            var ex = Assert.Throws<InvalidOperationException>(() =>
+            {
+                Validator.TryValidateObject(input, validationContext, results, true);
+            });
+
+            // Assert
+            Assert.IsInstanceOf<InvalidOperationException>(ex);
+            Assert.That($"{nameof(JsonObjectAttribute)} can be only applied to string properties.", Is.EqualTo(ex.Message));
+        }
+
         public class ValidationModel
         {
             [JsonObject]
             public string Prop { get; set; }
+        }
+
+        public class ValidationWithNonStringModel
+        {
+            [JsonObject]
+            public object Prop { get; set; }
         }
 
         public class ValidationWithAllowNullOrEmptyModel

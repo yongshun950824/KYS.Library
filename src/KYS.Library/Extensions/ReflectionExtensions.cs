@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -19,29 +18,14 @@ namespace KYS.Library.Extensions
         /// </summary>
         /// <param name="propertyInfo">The <see cref="PropertyInfo"/> instance this method extends.</param>
         /// <returns>Property name.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static string ToName(this PropertyInfo propertyInfo)
         {
-            try
-            {
-                DisplayAttribute[] attributes = propertyInfo.GetCustomAttributes<DisplayAttribute>(false)
-                   .ToArray();
+            ArgumentNullException.ThrowIfNull(propertyInfo);
 
-                if (!attributes.IsNullOrEmpty())
-                    return attributes[0].Name;
-
-                DisplayNameAttribute[] displayNameAttributes = propertyInfo
-                    .GetCustomAttributes<DisplayNameAttribute>(false)
-                    .ToArray();
-
-                if (!displayNameAttributes.IsNullOrEmpty())
-                    return displayNameAttributes[0].DisplayName;
-
-                return propertyInfo.Name;
-            }
-            catch
-            {
-                return propertyInfo.Name;
-            }
+            return propertyInfo.GetCustomAttribute<DisplayAttribute>()?.GetName()
+                ?? propertyInfo.GetCustomAttribute<DisplayNameAttribute>()?.DisplayName
+                ?? propertyInfo.Name;
         }
 
         /// <summary>
@@ -51,30 +35,14 @@ namespace KYS.Library.Extensions
         /// </summary>
         /// <param name="memberInfo">The <see cref="MemberInfo"/> instance this method extends.</param>
         /// <returns>Member name.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static string ToName(this MemberInfo memberInfo)
         {
-            try
-            {
-                DisplayAttribute[] displayAttributes = memberInfo
-                    .GetCustomAttributes<DisplayAttribute>()
-                    .ToArray();
+            ArgumentNullException.ThrowIfNull(memberInfo);
 
-                if (!displayAttributes.IsNullOrEmpty())
-                    return displayAttributes[0].Name;
-
-                DisplayNameAttribute[] displayNameAttributes = memberInfo
-                    .GetCustomAttributes<DisplayNameAttribute>()
-                    .ToArray();
-
-                if (!displayNameAttributes.IsNullOrEmpty())
-                    return displayNameAttributes[0].DisplayName;
-
-                return memberInfo.Name;
-            }
-            catch
-            {
-                return memberInfo.Name;
-            }
+            return memberInfo.GetCustomAttribute<DisplayAttribute>()?.GetName()
+                ?? memberInfo.GetCustomAttribute<DisplayNameAttribute>()?.DisplayName
+                ?? memberInfo.Name;
         }
 
         /// <summary>
