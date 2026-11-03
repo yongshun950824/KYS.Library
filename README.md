@@ -1,7 +1,6 @@
 # KYS.Library
 
 Set of helpers, extension methods, services and validations (attributes) to help the developers not to reinvent the wheel.
-Set of helpers, extension methods, services and validations (attributes) to help the developers not to reinvent the wheel.
 
 ---
 
@@ -15,66 +14,29 @@ Set of helpers, extension methods, services and validations (attributes) to help
 
 ---
 
-## Sonar Cloud Stats
+## 🧰 What's Inside
 
-![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)
+| Project                    | Highlights                                                                                                                                                                                                                                  |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **KYS.Library**            | Excel / CSV / PDF export (`ExcelHelper`, `DataTableHelper`, `PdfHelper`), QR code generation (`QrGenerator`), Zip create / extract, translators, SQL, JSON, XML, stream, file and URI helpers, extension methods, and validation attributes |
+| **KYS.AspNetCore.Library** | API response model, security headers middlewares (API / Web), `HttpContext` extensions, view result helper, JSON-to-HTML tag helper                                                                                                         |
+| **KYS.EFCore.Library**     | DDD building blocks (`Entity`, `ValueObject`, `Enumeration`, `IAggregateRoot`), Repository / Unit of Work abstractions, Specification pattern, audit logging, enum description converter                                                    |
 
-### 📦 KYS.Library
+---
 
-[![Quality Gate Status][4]][5] [![Coverage][6]][5]
+## 🧭 Design Conventions
 
-<details>
-<summary>🔍 View Full SonarQube Report</summary>
+Most helpers return `Result` / `Result<T>` from
+[CSharpFunctionalExtensions](https://github.com/vkhorikov/CSharpFunctionalExtensions)
+instead of throwing exceptions. Check `IsSuccess` / `Error`, or chain the calls with `Bind` / `Map`:
 
-| Metric               | Badge                              |
-| :------------------- | :--------------------------------- |
-| **Reliability**      | [![Reliability Rating][8]][5]      |
-| **Security**         | [![Security Rating][9]][5]         |
-| **Vulnerabilities**  | [![Vulnerabilities][10]][5]        |
-| **Technical Debt**   | [![Technical Debt][11]][5]         |
-| **Duplicated Lines** | [![Duplicated Lines (%)][12]][5]   |
-| **Code Smells**      | [![Code Smells][13]][5]            |
-| **Maintainability**  | [![Maintainability Rating][14]][5] |
+```csharp
+Result<string> result = QrGenerator.Create("https://example.com")
+    .Bind(qr => qr.DrawAndToDataUri());
 
-</details>
-
-### 📦 KYS.AspNetCore.Library
-
-[![Quality Gate Status][24]][25] [![Coverage][26]][25]
-
-<details>
-<summary>🔍 View Full SonarQube Report</summary>
-
-| Metric               | Badge                               |
-| :------------------- | :---------------------------------- |
-| **Reliability**      | [![Reliability Rating][28]][25]     |
-| **Security**         | [![Security Rating][29]][25]        |
-| **Vulnerabilities**  | [![Vulnerabilities][30]][25]        |
-| **Technical Debt**   | [![Technical Debt][31]][25]         |
-| **Duplicated Lines** | [![Duplicated Lines (%)][32]][25]   |
-| **Code Smells**      | [![Code Smells][33]][25]            |
-| **Maintainability**  | [![Maintainability Rating][34]][25] |
-
-</details>
-
-### 📦 KYS.EFCore.Library
-
-[![Quality Gate Status][44]][45] [![Coverage][46]][45]
-
-<details>
-<summary>🔍 View Full SonarQube Report</summary>
-
-| Metric               | Badge                               |
-| :------------------- | :---------------------------------- |
-| **Reliability**      | [![Reliability Rating][48]][45]     |
-| **Security**         | [![Security Rating][49]][45]        |
-| **Vulnerabilities**  | [![Vulnerabilities][50]][45]        |
-| **Technical Debt**   | [![Technical Debt][51]][45]         |
-| **Duplicated Lines** | [![Duplicated Lines (%)][52]][45]   |
-| **Code Smells**      | [![Code Smells][53]][45]            |
-| **Maintainability**  | [![Maintainability Rating][54]][45] |
-
-</details>
+if (result.IsFailure)
+    logger.LogWarning(result.Error);
+```
 
 ---
 
@@ -82,7 +44,7 @@ Set of helpers, extension methods, services and validations (attributes) to help
 
 ### 📋 Prerequisites
 
-- **Runtime:** .NET 8.0
+- **SDK:** .NET 8.0
 - **IDE:** Visual Studio 2022 or VS Code
 
 The library is not yet on NuGet (Future Plan), you can include it in your solution via Project Reference:
@@ -97,9 +59,127 @@ The library is not yet on NuGet (Future Plan), you can include it in your soluti
 </ItemGroup>
 ```
 
+---
+
 ## 📖 Usage Examples
 
+### QR code
+
+```csharp
+Result<string> base64 = QrGenerator.Create("https://example.com")
+    .Bind(qr => qr.DrawAndToBase64());
+```
+
+### Excel export
+
+```csharp
+// Requires the EPPlus license to be configured at startup (see Third-party Licenses)
+Result<byte[]> excel = ExcelHelper.CreateExcelBook(dataTable);
+
+if (excel.IsSuccess)
+    File.WriteAllBytes("report.xlsx", excel.Value);
+```
+
 Detailed examples for helpers, extensions, and etc are available in the [Documentation](#projects).
+
+---
+
+## ⚠️ Third-party Licenses
+
+This repository is MIT licensed, but some dependencies are not:
+
+| Dependency | License                                                                      | Used by                                           |
+| :--------- | :--------------------------------------------------------------------------- | :------------------------------------------------ |
+| EPPlus 6   | PolyForm Noncommercial (a commercial license is required for commercial use) | `ExcelHelper`, `DataTableHelper.WriteToExcelFile` |
+| iText 7    | AGPL (commercial license available)                                          | `PdfHelper`, `DataTableHelper.WriteToPdfFile`     |
+
+**EPPlus must be configured by your application** before using the Excel helpers. The library does not set it:
+
+```csharp
+// Program.cs
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // or LicenseContext.Commercial
+```
+
+Alternatively, configure it in `appsettings.json`:
+
+```json
+{
+  "EPPlus": {
+    "ExcelPackage": {
+      "LicenseContext": "Commercial"
+    }
+  }
+}
+```
+
+> Please review the license terms of these dependencies before using this library in a commercial product.
+
+---
+
+## 📊 Sonar Cloud Stats
+
+![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)
+
+<details>
+<summary>📦 KYS.Library — View Full SonarQube Report</summary>
+
+| Metric                  | Badge                              |
+| :---------------------- | :--------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][4]][5]     |
+| **Coverage**            | [![Coverage][6]][5]                |
+| **Reliability**         | [![Reliability Rating][8]][5]      |
+| **Security**            | [![Security Rating][9]][5]         |
+| **Vulnerabilities**     | [![Vulnerabilities][10]][5]        |
+| **Technical Debt**      | [![Technical Debt][11]][5]         |
+| **Duplicated Lines**    | [![Duplicated Lines (%)][12]][5]   |
+| **Code Smells**         | [![Code Smells][13]][5]            |
+| **Maintainability**     | [![Maintainability Rating][14]][5] |
+
+</details>
+
+<details>
+<summary>📦 KYS.AspNetCore.Library — View Full SonarQube Report</summary>
+
+| Metric                  | Badge                               |
+| :---------------------- | :---------------------------------- |
+| **Quality Gate Status** | ![Quality Gate Status][24]][25]     |
+| **Coverage**            | [![Coverage][26]][25]               |
+| **Reliability**         | [![Reliability Rating][28]][25]     |
+| **Security**            | [![Security Rating][29]][25]        |
+| **Vulnerabilities**     | [![Vulnerabilities][30]][25]        |
+| **Technical Debt**      | [![Technical Debt][31]][25]         |
+| **Duplicated Lines**    | [![Duplicated Lines (%)][32]][25]   |
+| **Code Smells**         | [![Code Smells][33]][25]            |
+| **Maintainability**     | [![Maintainability Rating][34]][25] |
+
+</details>
+
+<details>
+<summary>📦 KYS.EFCore.Library — View Full SonarQube Report</summary>
+
+| Metric                  | Badge                               |
+| :---------------------- | :---------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][44]][45]    |
+| **Coverage**            | [![Coverage][46]][45]               |
+| **Reliability**         | [![Reliability Rating][48]][45]     |
+| **Security**            | [![Security Rating][49]][45]        |
+| **Vulnerabilities**     | [![Vulnerabilities][50]][45]        |
+| **Technical Debt**      | [![Technical Debt][51]][45]         |
+| **Duplicated Lines**    | [![Duplicated Lines (%)][52]][45]   |
+| **Code Smells**         | [![Code Smells][53]][45]            |
+| **Maintainability**     | [![Maintainability Rating][54]][45] |
+
+</details>
+
+---
+
+## 📝 Changelog
+
+See [Releases](https://github.com/yongshun950824/KYS.Library/releases) for version history and breaking changes.
+
+## 📄 License
+
+[MIT](LICENSE) — see [Third-party Licenses](#️-third-party-licenses) for dependency terms.
 
 ---
 

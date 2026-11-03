@@ -1,4 +1,4 @@
-name: Build and Publish KYS.AspNetCore.Library DocFX
+name: DocFX - Publish KYS.AspNetCore.Library Documentation
 permissions:
   contents: write
 

@@ -10,17 +10,19 @@ on:
       - master
     paths:
       - "src/KYS.Library/**"
+      - "tests/KYS.Library.Tests/**"
   pull_request:
     branches:
       - master
     paths:
       - "src/KYS.Library/**"
+      - "tests/KYS.Library.Tests/**"
 
 jobs:
   build:
     uses: ./.github/workflows/reusable-dotnet-build.yml
-    with: 
-      library-name: 'KYS.Library'
-      library-project-path: 'src/KYS.Library/KYS.Library.csproj'
-      library-tests-project-path: 'tests/KYS.Library.Tests/KYS.Library.Tests.csproj'
-      dotnet-version: '8.0.x'
+    with:
+      library-name: "KYS.Library"
+      library-project-path: "src/KYS.Library/KYS.Library.csproj"
+      library-tests-project-path: "tests/KYS.Library.Tests/KYS.Library.Tests.csproj"
+      dotnet-version: "8.0.x"

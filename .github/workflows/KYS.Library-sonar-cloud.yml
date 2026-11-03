@@ -1,4 +1,4 @@
-name: KYS.Library - SonarQube
+name: SonarQube - KYS.Library
 
 on:
   workflow_dispatch:
