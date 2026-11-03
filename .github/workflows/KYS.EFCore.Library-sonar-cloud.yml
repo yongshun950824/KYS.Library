@@ -1,4 +1,4 @@
-name: KYS.EFCore.Library - SonarQube
+name: SonarQube - KYS.EFCore.Library
 
 on:
   workflow_dispatch:

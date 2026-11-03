@@ -11,20 +11,20 @@ on:
     paths:
       - "src/KYS.EFCore.Library/**"
       - "src/KYS.Library/**"
-      - "tests/KYS.Library.Tests/**"
+      - "tests/KYS.EFCore.Library.Tests/**"
   pull_request:
     branches:
       - master
     paths:
       - "src/KYS.EFCore.Library/**"
       - "src/KYS.Library/**"
-      - "tests/KYS.Library.Tests/**"
+      - "tests/KYS.EFCore.Library.Tests/**"
 
 jobs:
   build:
     uses: ./.github/workflows/reusable-dotnet-build.yml
-    with: 
-      library-name: 'KYS.EFCore Library'
-      library-project-path: 'src/KYS.EFCore.Library/KYS.EFCore.Library.csproj'
+    with:
+      library-name: "KYS.EFCore Library"
+      library-project-path: "src/KYS.EFCore.Library/KYS.EFCore.Library.csproj"
       library-tests-project-path:
-      dotnet-version: '8.0.x'
+      dotnet-version: "8.0.x"

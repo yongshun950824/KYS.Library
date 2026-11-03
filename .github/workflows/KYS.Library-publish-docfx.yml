@@ -1,4 +1,4 @@
-name: Build and Publish KYS.Library DocFX
+name: DocFX - Publish KYS.Library Documentation
 permissions:
   contents: write
 

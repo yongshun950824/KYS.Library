@@ -1,12 +1,15 @@
 using NUnit.Framework;
 using OfficeOpenXml;
 
-[SetUpFixture]
-public class EpplusLicenseSetup
+namespace KYS.Library.Tests
 {
-    [OneTimeSetUp]
-    public void ConfigureLicense()
+    [SetUpFixture]
+    public class EpplusLicenseSetup
     {
-        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+        [OneTimeSetUp]
+        public void ConfigureLicense()
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+        }
     }
 }
