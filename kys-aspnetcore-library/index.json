@@ -54,16 +54,6 @@
     "title": "Namespace KYS.AspNetCore.Library.TagHelpers | KYS.AspNetCore.Library",
     "summary": "Namespace KYS.AspNetCore.Library.TagHelpers Classes JsonToHtmlTagHelper A tag helper that converts JSON (Object & Array) into Table. Support display data in flatten form. Support generated HTML as a <table> element or Bootstrap Grid."
   },
-  "docs/getting-started.html": {
-    "href": "docs/getting-started.html",
-    "title": "Getting Started | KYS.AspNetCore.Library",
-    "summary": "Getting Started"
-  },
-  "docs/introduction.html": {
-    "href": "docs/introduction.html",
-    "title": "Introduction | KYS.AspNetCore.Library",
-    "summary": "Introduction"
-  },
   "index.html": {
     "href": "index.html",
     "title": "KYS.AspNetCore.Library Documentation | KYS.AspNetCore.Library",
