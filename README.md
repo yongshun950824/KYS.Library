@@ -10,7 +10,7 @@ Set of helpers, extension methods, services and validations (attributes) to help
 | :--------------------------- | :--------------------------------------------- | :-------------: | :------------------------------: | :-------------------: |
 | [KYS.Library][1]             | [![CI - Build KYS.Library][2]][3]              | [View Docs][7]  |  [![Quality Gate Status][4]][5]  |  [![Coverage][6]][5]  |
 | [KYS.AspNetCore.Library][21] | [![CI - Build KYS.AspNetCore Library][22]][23] | [View Docs][27] | [![Quality Gate Status][24]][25] | [![Coverage][26]][25] |
-| [KYS.EFCore.Library][41]     | [![CI - Build KYS.EFCore Library][42]][43]     |   Coming Soon   | [![Quality Gate Status][44]][45] | [![Coverage][46]][45] |
+| [KYS.EFCore.Library][41]     | [![CI - Build KYS.EFCore Library][42]][43]     | [View Docs][47] | [![Quality Gate Status][44]][45] | [![Coverage][46]][45] |
 
 ---
 
