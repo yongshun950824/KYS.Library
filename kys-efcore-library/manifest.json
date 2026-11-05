@@ -1,0 +1,392 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "/home/runner/work/KYS.Library/KYS.Library/src/KYS.EFCore.Library/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.AndSpecification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.AndSpecification-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.AndSpecification<T>",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.AndSpecification-1.yml\" sourcestartlinenumber=\"1\">Specification that is satisfied when both of its operands are satisfied.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter<TEnum>",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter-1.yml\" sourcestartlinenumber=\"1\">Store/map Enum with value from <code>Description</code> attribute in EF Core. <br><br>\nReferences: <br></p>\n<ul><li><a href=\"https://stackoverflow.com/q/78278757\">Stack Overflow question</a></li><li><a href=\"https://dotnetfiddle.net/xJbloZ\">.NET Fiddle Demo</a></li></ul>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Converters.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Converters",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.DBContext.ActionLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.DBContext.ActionLog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.DBContext.ActionLog",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.DBContext.ActionLog.yml\" sourcestartlinenumber=\"1\">Represents a single audit record written by <xref href=\"KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync(System.Nullable%7bSystem.Guid%7d%2cSystem.Nullable%7bKYS.Library.Helpers.FormattingHelper.Formatting%7d)\" data-throw-if-not-resolved=\"false\"></xref>.\n<br><br>\nMapped to the <code>ActionLog</code> table, or <code>action_log</code> (snake_case columns) when the provider is PostgreSQL (Npgsql).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.DBContext.ApplicationDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.DBContext.ApplicationDbContext",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.DBContext.ApplicationDbContext.yml\" sourcestartlinenumber=\"1\">Base <xref href=\"Microsoft.EntityFrameworkCore.DbContext\" data-throw-if-not-resolved=\"false\"></xref> that provides an <xref href=\"KYS.EFCore.Library.DBContext.ActionLog\" data-throw-if-not-resolved=\"false\"></xref> table and\naudit-aware saving through <xref href=\"KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync(System.Nullable%7bSystem.Guid%7d%2cSystem.Nullable%7bKYS.Library.Helpers.FormattingHelper.Formatting%7d)\" data-throw-if-not-resolved=\"false\"></xref>.\n<br><br>\nDerive from this class to add your own <xref href=\"Microsoft.EntityFrameworkCore.DbSet%601\" data-throw-if-not-resolved=\"false\"></xref> properties.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.DBContext.AuditAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.DBContext.AuditAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.DBContext.AuditAction",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.DBContext.AuditAction.yml\" sourcestartlinenumber=\"1\">Specifies the kind of change recorded in an <xref href=\"KYS.EFCore.Library.DBContext.ActionLog\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.DBContext.Partials.AuditEntry",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.yml\" sourcestartlinenumber=\"1\">In-memory representation of the changes made to a single tracked entity, collected by\n<xref href=\"KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync(System.Nullable%7bSystem.Guid%7d%2cSystem.Nullable%7bKYS.Library.Helpers.FormattingHelper.Formatting%7d)\" data-throw-if-not-resolved=\"false\"></xref> and converted to an <xref href=\"KYS.EFCore.Library.DBContext.ActionLog\" data-throw-if-not-resolved=\"false\"></xref>\nthrough <xref href=\"KYS.EFCore.Library.DBContext.Partials.AuditEntry.ToActionLog(System.Nullable%7bKYS.Library.Helpers.FormattingHelper.Formatting%7d)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.DBContext.Partials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.DBContext.Partials.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.DBContext.Partials",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.DBContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.DBContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.DBContext",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.DbContextUnitOfWork-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.DbContextUnitOfWork-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.DbContextUnitOfWork-1.yml\" sourcestartlinenumber=\"1\"><xref href=\"KYS.EFCore.Library.IUnitOfWork\" data-throw-if-not-resolved=\"false\"></xref> implementation that wraps a database transaction of a <xref href=\"Microsoft.EntityFrameworkCore.DbContext\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Entity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Entity-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Entity<TId>",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.Entity-1.yml\" sourcestartlinenumber=\"1\">Base class for domain entities, which are identified by their <xref href=\"KYS.EFCore.Library.Entity%601.Id\" data-throw-if-not-resolved=\"false\"></xref> rather than by their values,\nand which can raise domain events.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Enumeration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Enumeration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Enumeration",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.Enumeration.yml\" sourcestartlinenumber=\"1\">Base class for &quot;smart enums&quot;: strongly typed enumerations with an <xref href=\"KYS.EFCore.Library.Enumeration.Id\" data-throw-if-not-resolved=\"false\"></xref> and a <xref href=\"KYS.EFCore.Library.Enumeration.Name\" data-throw-if-not-resolved=\"false\"></xref>,\nwhich can carry behaviour, unlike a C# <a href=\"https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/enum\">enum</a>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.EnumerationComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.EnumerationComparer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.EnumerationComparer",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.EnumerationComparer.yml\" sourcestartlinenumber=\"1\">Equality comparer that compares <xref href=\"KYS.EFCore.Library.Enumeration\" data-throw-if-not-resolved=\"false\"></xref> values by <xref href=\"KYS.EFCore.Library.Enumeration.Id\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.yml\" sourcestartlinenumber=\"1\">Provides extension methods for registering <xref href=\"KYS.EFCore.Library.IUnitOfWork\" data-throw-if-not-resolved=\"false\"></xref> in an <xref href=\"Microsoft.Extensions.DependencyInjection.IServiceCollection\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Extensions.SpecificationExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Extensions.SpecificationExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Extensions.SpecificationExtensions",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.Extensions.SpecificationExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for querying a <xref href=\"Microsoft.EntityFrameworkCore.DbContext\" data-throw-if-not-resolved=\"false\"></xref> with a <xref href=\"KYS.EFCore.Library.Specification%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.IAggregateRoot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.IAggregateRoot.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.IAggregateRoot",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.IAggregateRoot.yml\" sourcestartlinenumber=\"1\">Marker interface for aggregate roots: the entities through which an aggregate is loaded and persisted.\nOnly aggregate roots can have an <xref href=\"KYS.EFCore.Library.IRepository%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.INotification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.INotification.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.INotification",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.INotification.yml\" sourcestartlinenumber=\"1\">Marker interface for domain events raised by an <xref href=\"KYS.EFCore.Library.Entity%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.IRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.IRepository-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.IRepository<T>",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.IRepository-1.yml\" sourcestartlinenumber=\"1\">Base interface for repositories of an aggregate root.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.IUnitOfWork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.IUnitOfWork.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.IUnitOfWork",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.IUnitOfWork.yml\" sourcestartlinenumber=\"1\">Defines an explicit unit of work: a transaction that is started, then either committed or rolled back.\n<br><br>\nDisposing the unit of work rolls back any transaction that has not been committed.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.OrSpecification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.OrSpecification-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.OrSpecification<T>",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.OrSpecification-1.yml\" sourcestartlinenumber=\"1\">Specification that is satisfied when either of its operands is satisfied.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.Specification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.Specification-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.Specification<T>",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.Specification-1.yml\" sourcestartlinenumber=\"1\">Base class for the Specification pattern: encapsulates a filter criterion for <code class=\"typeparamref\">T</code>,\nplus the related entities to include and whether to track the results.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.ValueObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.ValueObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library.ValueObject",
+      "Summary": "<p sourcefile=\"api/KYS.EFCore.Library.ValueObject.yml\" sourcestartlinenumber=\"1\">Base class for value objects: objects without identity that are equal when all their\nequality components (see <xref href=\"KYS.EFCore.Library.ValueObject.GetEqualityComponents\" data-throw-if-not-resolved=\"false\"></xref>) are equal.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.EFCore.Library.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.EFCore.Library.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.EFCore.Library",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

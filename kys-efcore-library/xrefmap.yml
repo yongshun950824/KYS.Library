@@ -1,0 +1,1449 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: KYS.EFCore.Library
+  name: KYS.EFCore.Library
+  href: api/KYS.EFCore.Library.html
+  commentId: N:KYS.EFCore.Library
+  fullName: KYS.EFCore.Library
+  nameWithType: KYS.EFCore.Library
+- uid: KYS.EFCore.Library.AndSpecification`1
+  name: AndSpecification<T>
+  href: api/KYS.EFCore.Library.AndSpecification-1.html
+  commentId: T:KYS.EFCore.Library.AndSpecification`1
+  name.vb: AndSpecification(Of T)
+  fullName: KYS.EFCore.Library.AndSpecification<T>
+  fullName.vb: KYS.EFCore.Library.AndSpecification(Of T)
+  nameWithType: AndSpecification<T>
+  nameWithType.vb: AndSpecification(Of T)
+- uid: KYS.EFCore.Library.AndSpecification`1.#ctor(KYS.EFCore.Library.Specification{`0},KYS.EFCore.Library.Specification{`0})
+  name: AndSpecification(Specification<T>, Specification<T>)
+  href: api/KYS.EFCore.Library.AndSpecification-1.html#KYS_EFCore_Library_AndSpecification_1__ctor_KYS_EFCore_Library_Specification__0__KYS_EFCore_Library_Specification__0__
+  commentId: M:KYS.EFCore.Library.AndSpecification`1.#ctor(KYS.EFCore.Library.Specification{`0},KYS.EFCore.Library.Specification{`0})
+  name.vb: New(Specification(Of T), Specification(Of T))
+  fullName: KYS.EFCore.Library.AndSpecification<T>.AndSpecification(KYS.EFCore.Library.Specification<T>, KYS.EFCore.Library.Specification<T>)
+  fullName.vb: KYS.EFCore.Library.AndSpecification(Of T).New(KYS.EFCore.Library.Specification(Of T), KYS.EFCore.Library.Specification(Of T))
+  nameWithType: AndSpecification<T>.AndSpecification(Specification<T>, Specification<T>)
+  nameWithType.vb: AndSpecification(Of T).New(Specification(Of T), Specification(Of T))
+- uid: KYS.EFCore.Library.AndSpecification`1.#ctor*
+  name: AndSpecification
+  href: api/KYS.EFCore.Library.AndSpecification-1.html#KYS_EFCore_Library_AndSpecification_1__ctor_
+  commentId: Overload:KYS.EFCore.Library.AndSpecification`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.EFCore.Library.AndSpecification<T>.AndSpecification
+  fullName.vb: KYS.EFCore.Library.AndSpecification(Of T).New
+  nameWithType: AndSpecification<T>.AndSpecification
+  nameWithType.vb: AndSpecification(Of T).New
+- uid: KYS.EFCore.Library.AndSpecification`1.ToExpression
+  name: ToExpression()
+  href: api/KYS.EFCore.Library.AndSpecification-1.html#KYS_EFCore_Library_AndSpecification_1_ToExpression
+  commentId: M:KYS.EFCore.Library.AndSpecification`1.ToExpression
+  fullName: KYS.EFCore.Library.AndSpecification<T>.ToExpression()
+  fullName.vb: KYS.EFCore.Library.AndSpecification(Of T).ToExpression()
+  nameWithType: AndSpecification<T>.ToExpression()
+  nameWithType.vb: AndSpecification(Of T).ToExpression()
+- uid: KYS.EFCore.Library.AndSpecification`1.ToExpression*
+  name: ToExpression
+  href: api/KYS.EFCore.Library.AndSpecification-1.html#KYS_EFCore_Library_AndSpecification_1_ToExpression_
+  commentId: Overload:KYS.EFCore.Library.AndSpecification`1.ToExpression
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.AndSpecification<T>.ToExpression
+  fullName.vb: KYS.EFCore.Library.AndSpecification(Of T).ToExpression
+  nameWithType: AndSpecification<T>.ToExpression
+  nameWithType.vb: AndSpecification(Of T).ToExpression
+- uid: KYS.EFCore.Library.Converters
+  name: KYS.EFCore.Library.Converters
+  href: api/KYS.EFCore.Library.Converters.html
+  commentId: N:KYS.EFCore.Library.Converters
+  fullName: KYS.EFCore.Library.Converters
+  nameWithType: KYS.EFCore.Library.Converters
+- uid: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter`1
+  name: EnumDescriptionMappingConverter<TEnum>
+  href: api/KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter-1.html
+  commentId: T:KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter`1
+  name.vb: EnumDescriptionMappingConverter(Of TEnum)
+  fullName: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter<TEnum>
+  fullName.vb: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter(Of TEnum)
+  nameWithType: EnumDescriptionMappingConverter<TEnum>
+  nameWithType.vb: EnumDescriptionMappingConverter(Of TEnum)
+- uid: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter`1.#ctor
+  name: EnumDescriptionMappingConverter()
+  href: api/KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter-1.html#KYS_EFCore_Library_Converters_EnumDescriptionMappingConverter_1__ctor
+  commentId: M:KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter`1.#ctor
+  name.vb: New()
+  fullName: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter<TEnum>.EnumDescriptionMappingConverter()
+  fullName.vb: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter(Of TEnum).New()
+  nameWithType: EnumDescriptionMappingConverter<TEnum>.EnumDescriptionMappingConverter()
+  nameWithType.vb: EnumDescriptionMappingConverter(Of TEnum).New()
+- uid: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter`1.#ctor*
+  name: EnumDescriptionMappingConverter
+  href: api/KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter-1.html#KYS_EFCore_Library_Converters_EnumDescriptionMappingConverter_1__ctor_
+  commentId: Overload:KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter<TEnum>.EnumDescriptionMappingConverter
+  fullName.vb: KYS.EFCore.Library.Converters.EnumDescriptionMappingConverter(Of TEnum).New
+  nameWithType: EnumDescriptionMappingConverter<TEnum>.EnumDescriptionMappingConverter
+  nameWithType.vb: EnumDescriptionMappingConverter(Of TEnum).New
+- uid: KYS.EFCore.Library.DBContext
+  name: KYS.EFCore.Library.DBContext
+  href: api/KYS.EFCore.Library.DBContext.html
+  commentId: N:KYS.EFCore.Library.DBContext
+  fullName: KYS.EFCore.Library.DBContext
+  nameWithType: KYS.EFCore.Library.DBContext
+- uid: KYS.EFCore.Library.DBContext.ActionLog
+  name: ActionLog
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html
+  commentId: T:KYS.EFCore.Library.DBContext.ActionLog
+  fullName: KYS.EFCore.Library.DBContext.ActionLog
+  nameWithType: ActionLog
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ActionType
+  name: ActionType
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ActionType
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.ActionType
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ActionType
+  nameWithType: ActionLog.ActionType
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ActionType*
+  name: ActionType
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ActionType_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.ActionType
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ActionType
+  nameWithType: ActionLog.ActionType
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ColumnName
+  name: ColumnName
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ColumnName
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.ColumnName
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ColumnName
+  nameWithType: ActionLog.ColumnName
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ColumnName*
+  name: ColumnName
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ColumnName_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.ColumnName
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ColumnName
+  nameWithType: ActionLog.ColumnName
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ColumnNewValue
+  name: ColumnNewValue
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ColumnNewValue
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.ColumnNewValue
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ColumnNewValue
+  nameWithType: ActionLog.ColumnNewValue
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ColumnNewValue*
+  name: ColumnNewValue
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ColumnNewValue_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.ColumnNewValue
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ColumnNewValue
+  nameWithType: ActionLog.ColumnNewValue
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ColumnOldValue
+  name: ColumnOldValue
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ColumnOldValue
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.ColumnOldValue
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ColumnOldValue
+  nameWithType: ActionLog.ColumnOldValue
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ColumnOldValue*
+  name: ColumnOldValue
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ColumnOldValue_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.ColumnOldValue
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ColumnOldValue
+  nameWithType: ActionLog.ColumnOldValue
+- uid: KYS.EFCore.Library.DBContext.ActionLog.CreatedBy
+  name: CreatedBy
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_CreatedBy
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.CreatedBy
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.CreatedBy
+  nameWithType: ActionLog.CreatedBy
+- uid: KYS.EFCore.Library.DBContext.ActionLog.CreatedBy*
+  name: CreatedBy
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_CreatedBy_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.CreatedBy
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.CreatedBy
+  nameWithType: ActionLog.CreatedBy
+- uid: KYS.EFCore.Library.DBContext.ActionLog.CreatedDate
+  name: CreatedDate
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_CreatedDate
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.CreatedDate
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.CreatedDate
+  nameWithType: ActionLog.CreatedDate
+- uid: KYS.EFCore.Library.DBContext.ActionLog.CreatedDate*
+  name: CreatedDate
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_CreatedDate_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.CreatedDate
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.CreatedDate
+  nameWithType: ActionLog.CreatedDate
+- uid: KYS.EFCore.Library.DBContext.ActionLog.Id
+  name: Id
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_Id
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.Id
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.Id
+  nameWithType: ActionLog.Id
+- uid: KYS.EFCore.Library.DBContext.ActionLog.Id*
+  name: Id
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_Id_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.Id
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.Id
+  nameWithType: ActionLog.Id
+- uid: KYS.EFCore.Library.DBContext.ActionLog.RecordValue
+  name: RecordValue
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_RecordValue
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.RecordValue
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.RecordValue
+  nameWithType: ActionLog.RecordValue
+- uid: KYS.EFCore.Library.DBContext.ActionLog.RecordValue*
+  name: RecordValue
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_RecordValue_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.RecordValue
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.RecordValue
+  nameWithType: ActionLog.RecordValue
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ReferenceId
+  name: ReferenceId
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ReferenceId
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.ReferenceId
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ReferenceId
+  nameWithType: ActionLog.ReferenceId
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ReferenceId*
+  name: ReferenceId
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ReferenceId_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.ReferenceId
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ReferenceId
+  nameWithType: ActionLog.ReferenceId
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ReferenceTable
+  name: ReferenceTable
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ReferenceTable
+  commentId: P:KYS.EFCore.Library.DBContext.ActionLog.ReferenceTable
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ReferenceTable
+  nameWithType: ActionLog.ReferenceTable
+- uid: KYS.EFCore.Library.DBContext.ActionLog.ReferenceTable*
+  name: ReferenceTable
+  href: api/KYS.EFCore.Library.DBContext.ActionLog.html#KYS_EFCore_Library_DBContext_ActionLog_ReferenceTable_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ActionLog.ReferenceTable
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ActionLog.ReferenceTable
+  nameWithType: ActionLog.ReferenceTable
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext
+  name: ApplicationDbContext
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html
+  commentId: T:KYS.EFCore.Library.DBContext.ApplicationDbContext
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext
+  nameWithType: ApplicationDbContext
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)
+  name: ApplicationDbContext(DbContextOptions)
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext__ctor_Microsoft_EntityFrameworkCore_DbContextOptions_
+  commentId: M:KYS.EFCore.Library.DBContext.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)
+  name.vb: New(DbContextOptions)
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.ApplicationDbContext(Microsoft.EntityFrameworkCore.DbContextOptions)
+  fullName.vb: KYS.EFCore.Library.DBContext.ApplicationDbContext.New(Microsoft.EntityFrameworkCore.DbContextOptions)
+  nameWithType: ApplicationDbContext.ApplicationDbContext(DbContextOptions)
+  nameWithType.vb: ApplicationDbContext.New(DbContextOptions)
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.#ctor*
+  name: ApplicationDbContext
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext__ctor_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ApplicationDbContext.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.ApplicationDbContext
+  fullName.vb: KYS.EFCore.Library.DBContext.ApplicationDbContext.New
+  nameWithType: ApplicationDbContext.ApplicationDbContext
+  nameWithType.vb: ApplicationDbContext.New
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.ActionLog
+  name: ActionLog
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext_ActionLog
+  commentId: P:KYS.EFCore.Library.DBContext.ApplicationDbContext.ActionLog
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.ActionLog
+  nameWithType: ApplicationDbContext.ActionLog
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.ActionLog*
+  name: ActionLog
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext_ActionLog_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ApplicationDbContext.ActionLog
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.ActionLog
+  nameWithType: ApplicationDbContext.ActionLog
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+  name: OnModelCreating(ModelBuilder)
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext_OnModelCreating_Microsoft_EntityFrameworkCore_ModelBuilder_
+  commentId: M:KYS.EFCore.Library.DBContext.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+  nameWithType: ApplicationDbContext.OnModelCreating(ModelBuilder)
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.OnModelCreating*
+  name: OnModelCreating
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext_OnModelCreating_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ApplicationDbContext.OnModelCreating
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.OnModelCreating
+  nameWithType: ApplicationDbContext.OnModelCreating
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync(System.Nullable{System.Guid},System.Nullable{KYS.Library.Helpers.FormattingHelper.Formatting})
+  name: SaveChangesWithAuditAsync(Guid?, Formatting?)
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext_SaveChangesWithAuditAsync_System_Nullable_System_Guid__System_Nullable_KYS_Library_Helpers_FormattingHelper_Formatting__
+  commentId: M:KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync(System.Nullable{System.Guid},System.Nullable{KYS.Library.Helpers.FormattingHelper.Formatting})
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync(System.Guid?, KYS.Library.Helpers.FormattingHelper.Formatting?)
+  nameWithType: ApplicationDbContext.SaveChangesWithAuditAsync(Guid?, FormattingHelper.Formatting?)
+- uid: KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync*
+  name: SaveChangesWithAuditAsync
+  href: api/KYS.EFCore.Library.DBContext.ApplicationDbContext.html#KYS_EFCore_Library_DBContext_ApplicationDbContext_SaveChangesWithAuditAsync_
+  commentId: Overload:KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.ApplicationDbContext.SaveChangesWithAuditAsync
+  nameWithType: ApplicationDbContext.SaveChangesWithAuditAsync
+- uid: KYS.EFCore.Library.DBContext.AuditAction
+  name: AuditAction
+  href: api/KYS.EFCore.Library.DBContext.AuditAction.html
+  commentId: T:KYS.EFCore.Library.DBContext.AuditAction
+  fullName: KYS.EFCore.Library.DBContext.AuditAction
+  nameWithType: AuditAction
+- uid: KYS.EFCore.Library.DBContext.AuditAction.Delete
+  name: Delete
+  href: api/KYS.EFCore.Library.DBContext.AuditAction.html#KYS_EFCore_Library_DBContext_AuditAction_Delete
+  commentId: F:KYS.EFCore.Library.DBContext.AuditAction.Delete
+  fullName: KYS.EFCore.Library.DBContext.AuditAction.Delete
+  nameWithType: AuditAction.Delete
+- uid: KYS.EFCore.Library.DBContext.AuditAction.Insert
+  name: Insert
+  href: api/KYS.EFCore.Library.DBContext.AuditAction.html#KYS_EFCore_Library_DBContext_AuditAction_Insert
+  commentId: F:KYS.EFCore.Library.DBContext.AuditAction.Insert
+  fullName: KYS.EFCore.Library.DBContext.AuditAction.Insert
+  nameWithType: AuditAction.Insert
+- uid: KYS.EFCore.Library.DBContext.AuditAction.Update
+  name: Update
+  href: api/KYS.EFCore.Library.DBContext.AuditAction.html#KYS_EFCore_Library_DBContext_AuditAction_Update
+  commentId: F:KYS.EFCore.Library.DBContext.AuditAction.Update
+  fullName: KYS.EFCore.Library.DBContext.AuditAction.Update
+  nameWithType: AuditAction.Update
+- uid: KYS.EFCore.Library.DBContext.Partials
+  name: KYS.EFCore.Library.DBContext.Partials
+  href: api/KYS.EFCore.Library.DBContext.Partials.html
+  commentId: N:KYS.EFCore.Library.DBContext.Partials
+  fullName: KYS.EFCore.Library.DBContext.Partials
+  nameWithType: KYS.EFCore.Library.DBContext.Partials
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry
+  name: AuditEntry
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html
+  commentId: T:KYS.EFCore.Library.DBContext.Partials.AuditEntry
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry
+  nameWithType: AuditEntry
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.Action
+  name: Action
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_Action
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.Action
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.Action
+  nameWithType: AuditEntry.Action
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.Action*
+  name: Action
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_Action_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.Action
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.Action
+  nameWithType: AuditEntry.Action
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ColumnName
+  name: ColumnName
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_ColumnName
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.ColumnName
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ColumnName
+  nameWithType: AuditEntry.ColumnName
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ColumnName*
+  name: ColumnName
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_ColumnName_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.ColumnName
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ColumnName
+  nameWithType: AuditEntry.ColumnName
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.HasTemporaryProperties
+  name: HasTemporaryProperties
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_HasTemporaryProperties
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.HasTemporaryProperties
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.HasTemporaryProperties
+  nameWithType: AuditEntry.HasTemporaryProperties
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.HasTemporaryProperties*
+  name: HasTemporaryProperties
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_HasTemporaryProperties_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.HasTemporaryProperties
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.HasTemporaryProperties
+  nameWithType: AuditEntry.HasTemporaryProperties
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.KeyValues
+  name: KeyValues
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_KeyValues
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.KeyValues
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.KeyValues
+  nameWithType: AuditEntry.KeyValues
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.KeyValues*
+  name: KeyValues
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_KeyValues_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.KeyValues
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.KeyValues
+  nameWithType: AuditEntry.KeyValues
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.NewValues
+  name: NewValues
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_NewValues
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.NewValues
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.NewValues
+  nameWithType: AuditEntry.NewValues
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.NewValues*
+  name: NewValues
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_NewValues_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.NewValues
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.NewValues
+  nameWithType: AuditEntry.NewValues
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.OldValues
+  name: OldValues
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_OldValues
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.OldValues
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.OldValues
+  nameWithType: AuditEntry.OldValues
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.OldValues*
+  name: OldValues
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_OldValues_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.OldValues
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.OldValues
+  nameWithType: AuditEntry.OldValues
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TableName
+  name: TableName
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_TableName
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.TableName
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TableName
+  nameWithType: AuditEntry.TableName
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TableName*
+  name: TableName
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_TableName_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.TableName
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TableName
+  nameWithType: AuditEntry.TableName
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TemporaryProperties
+  name: TemporaryProperties
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_TemporaryProperties
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.TemporaryProperties
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TemporaryProperties
+  nameWithType: AuditEntry.TemporaryProperties
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TemporaryProperties*
+  name: TemporaryProperties
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_TemporaryProperties_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.TemporaryProperties
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.TemporaryProperties
+  nameWithType: AuditEntry.TemporaryProperties
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ToActionLog(System.Nullable{KYS.Library.Helpers.FormattingHelper.Formatting})
+  name: ToActionLog(Formatting?)
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_ToActionLog_System_Nullable_KYS_Library_Helpers_FormattingHelper_Formatting__
+  commentId: M:KYS.EFCore.Library.DBContext.Partials.AuditEntry.ToActionLog(System.Nullable{KYS.Library.Helpers.FormattingHelper.Formatting})
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ToActionLog(KYS.Library.Helpers.FormattingHelper.Formatting?)
+  nameWithType: AuditEntry.ToActionLog(FormattingHelper.Formatting?)
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ToActionLog*
+  name: ToActionLog
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_ToActionLog_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.ToActionLog
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.ToActionLog
+  nameWithType: AuditEntry.ToActionLog
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.UserId
+  name: UserId
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_UserId
+  commentId: P:KYS.EFCore.Library.DBContext.Partials.AuditEntry.UserId
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.UserId
+  nameWithType: AuditEntry.UserId
+- uid: KYS.EFCore.Library.DBContext.Partials.AuditEntry.UserId*
+  name: UserId
+  href: api/KYS.EFCore.Library.DBContext.Partials.AuditEntry.html#KYS_EFCore_Library_DBContext_Partials_AuditEntry_UserId_
+  commentId: Overload:KYS.EFCore.Library.DBContext.Partials.AuditEntry.UserId
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DBContext.Partials.AuditEntry.UserId
+  nameWithType: AuditEntry.UserId
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1
+  name: DbContextUnitOfWork<TDbContext>
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html
+  commentId: T:KYS.EFCore.Library.DbContextUnitOfWork`1
+  name.vb: DbContextUnitOfWork(Of TDbContext)
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext)
+  nameWithType: DbContextUnitOfWork<TDbContext>
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext)
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.#ctor(`0)
+  name: DbContextUnitOfWork(TDbContext)
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1__ctor__0_
+  commentId: M:KYS.EFCore.Library.DbContextUnitOfWork`1.#ctor(`0)
+  name.vb: New(TDbContext)
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.DbContextUnitOfWork(TDbContext)
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).New(TDbContext)
+  nameWithType: DbContextUnitOfWork<TDbContext>.DbContextUnitOfWork(TDbContext)
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).New(TDbContext)
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.#ctor*
+  name: DbContextUnitOfWork
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1__ctor_
+  commentId: Overload:KYS.EFCore.Library.DbContextUnitOfWork`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.DbContextUnitOfWork
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).New
+  nameWithType: DbContextUnitOfWork<TDbContext>.DbContextUnitOfWork
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).New
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.BeginAsync
+  name: BeginAsync()
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_BeginAsync
+  commentId: M:KYS.EFCore.Library.DbContextUnitOfWork`1.BeginAsync
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.BeginAsync()
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).BeginAsync()
+  nameWithType: DbContextUnitOfWork<TDbContext>.BeginAsync()
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).BeginAsync()
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.BeginAsync*
+  name: BeginAsync
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_BeginAsync_
+  commentId: Overload:KYS.EFCore.Library.DbContextUnitOfWork`1.BeginAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.BeginAsync
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).BeginAsync
+  nameWithType: DbContextUnitOfWork<TDbContext>.BeginAsync
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).BeginAsync
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.CommitAsync
+  name: CommitAsync()
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_CommitAsync
+  commentId: M:KYS.EFCore.Library.DbContextUnitOfWork`1.CommitAsync
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.CommitAsync()
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).CommitAsync()
+  nameWithType: DbContextUnitOfWork<TDbContext>.CommitAsync()
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).CommitAsync()
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.CommitAsync*
+  name: CommitAsync
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_CommitAsync_
+  commentId: Overload:KYS.EFCore.Library.DbContextUnitOfWork`1.CommitAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.CommitAsync
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).CommitAsync
+  nameWithType: DbContextUnitOfWork<TDbContext>.CommitAsync
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).CommitAsync
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.Dispose
+  name: Dispose()
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_Dispose
+  commentId: M:KYS.EFCore.Library.DbContextUnitOfWork`1.Dispose
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.Dispose()
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).Dispose()
+  nameWithType: DbContextUnitOfWork<TDbContext>.Dispose()
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).Dispose()
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.Dispose(System.Boolean)
+  name: Dispose(bool)
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_Dispose_System_Boolean_
+  commentId: M:KYS.EFCore.Library.DbContextUnitOfWork`1.Dispose(System.Boolean)
+  name.vb: Dispose(Boolean)
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.Dispose(bool)
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).Dispose(Boolean)
+  nameWithType: DbContextUnitOfWork<TDbContext>.Dispose(bool)
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).Dispose(Boolean)
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.Dispose*
+  name: Dispose
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_Dispose_
+  commentId: Overload:KYS.EFCore.Library.DbContextUnitOfWork`1.Dispose
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.Dispose
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).Dispose
+  nameWithType: DbContextUnitOfWork<TDbContext>.Dispose
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).Dispose
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.DisposeAsync
+  name: DisposeAsync()
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_DisposeAsync
+  commentId: M:KYS.EFCore.Library.DbContextUnitOfWork`1.DisposeAsync
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.DisposeAsync()
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).DisposeAsync()
+  nameWithType: DbContextUnitOfWork<TDbContext>.DisposeAsync()
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).DisposeAsync()
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.DisposeAsync*
+  name: DisposeAsync
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_DisposeAsync_
+  commentId: Overload:KYS.EFCore.Library.DbContextUnitOfWork`1.DisposeAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.DisposeAsync
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).DisposeAsync
+  nameWithType: DbContextUnitOfWork<TDbContext>.DisposeAsync
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).DisposeAsync
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.RollbackAsync
+  name: RollbackAsync()
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_RollbackAsync
+  commentId: M:KYS.EFCore.Library.DbContextUnitOfWork`1.RollbackAsync
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.RollbackAsync()
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).RollbackAsync()
+  nameWithType: DbContextUnitOfWork<TDbContext>.RollbackAsync()
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).RollbackAsync()
+- uid: KYS.EFCore.Library.DbContextUnitOfWork`1.RollbackAsync*
+  name: RollbackAsync
+  href: api/KYS.EFCore.Library.DbContextUnitOfWork-1.html#KYS_EFCore_Library_DbContextUnitOfWork_1_RollbackAsync_
+  commentId: Overload:KYS.EFCore.Library.DbContextUnitOfWork`1.RollbackAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.DbContextUnitOfWork<TDbContext>.RollbackAsync
+  fullName.vb: KYS.EFCore.Library.DbContextUnitOfWork(Of TDbContext).RollbackAsync
+  nameWithType: DbContextUnitOfWork<TDbContext>.RollbackAsync
+  nameWithType.vb: DbContextUnitOfWork(Of TDbContext).RollbackAsync
+- uid: KYS.EFCore.Library.Entity`1
+  name: Entity<TId>
+  href: api/KYS.EFCore.Library.Entity-1.html
+  commentId: T:KYS.EFCore.Library.Entity`1
+  name.vb: Entity(Of TId)
+  fullName: KYS.EFCore.Library.Entity<TId>
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId)
+  nameWithType: Entity<TId>
+  nameWithType.vb: Entity(Of TId)
+- uid: KYS.EFCore.Library.Entity`1.AddDomainEvent(KYS.EFCore.Library.INotification)
+  name: AddDomainEvent(INotification)
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_AddDomainEvent_KYS_EFCore_Library_INotification_
+  commentId: M:KYS.EFCore.Library.Entity`1.AddDomainEvent(KYS.EFCore.Library.INotification)
+  fullName: KYS.EFCore.Library.Entity<TId>.AddDomainEvent(KYS.EFCore.Library.INotification)
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).AddDomainEvent(KYS.EFCore.Library.INotification)
+  nameWithType: Entity<TId>.AddDomainEvent(INotification)
+  nameWithType.vb: Entity(Of TId).AddDomainEvent(INotification)
+- uid: KYS.EFCore.Library.Entity`1.AddDomainEvent*
+  name: AddDomainEvent
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_AddDomainEvent_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.AddDomainEvent
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.AddDomainEvent
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).AddDomainEvent
+  nameWithType: Entity<TId>.AddDomainEvent
+  nameWithType.vb: Entity(Of TId).AddDomainEvent
+- uid: KYS.EFCore.Library.Entity`1.ClearDomainEvents
+  name: ClearDomainEvents()
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_ClearDomainEvents
+  commentId: M:KYS.EFCore.Library.Entity`1.ClearDomainEvents
+  fullName: KYS.EFCore.Library.Entity<TId>.ClearDomainEvents()
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).ClearDomainEvents()
+  nameWithType: Entity<TId>.ClearDomainEvents()
+  nameWithType.vb: Entity(Of TId).ClearDomainEvents()
+- uid: KYS.EFCore.Library.Entity`1.ClearDomainEvents*
+  name: ClearDomainEvents
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_ClearDomainEvents_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.ClearDomainEvents
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.ClearDomainEvents
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).ClearDomainEvents
+  nameWithType: Entity<TId>.ClearDomainEvents
+  nameWithType.vb: Entity(Of TId).ClearDomainEvents
+- uid: KYS.EFCore.Library.Entity`1.DomainEvents
+  name: DomainEvents
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_DomainEvents
+  commentId: P:KYS.EFCore.Library.Entity`1.DomainEvents
+  fullName: KYS.EFCore.Library.Entity<TId>.DomainEvents
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).DomainEvents
+  nameWithType: Entity<TId>.DomainEvents
+  nameWithType.vb: Entity(Of TId).DomainEvents
+- uid: KYS.EFCore.Library.Entity`1.DomainEvents*
+  name: DomainEvents
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_DomainEvents_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.DomainEvents
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.DomainEvents
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).DomainEvents
+  nameWithType: Entity<TId>.DomainEvents
+  nameWithType.vb: Entity(Of TId).DomainEvents
+- uid: KYS.EFCore.Library.Entity`1.Equals(KYS.EFCore.Library.Entity{`0})
+  name: Equals(Entity<TId>)
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_Equals_KYS_EFCore_Library_Entity__0__
+  commentId: M:KYS.EFCore.Library.Entity`1.Equals(KYS.EFCore.Library.Entity{`0})
+  name.vb: Equals(Entity(Of TId))
+  fullName: KYS.EFCore.Library.Entity<TId>.Equals(KYS.EFCore.Library.Entity<TId>)
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).Equals(KYS.EFCore.Library.Entity(Of TId))
+  nameWithType: Entity<TId>.Equals(Entity<TId>)
+  nameWithType.vb: Entity(Of TId).Equals(Entity(Of TId))
+- uid: KYS.EFCore.Library.Entity`1.Equals(System.Object)
+  name: Equals(object)
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_Equals_System_Object_
+  commentId: M:KYS.EFCore.Library.Entity`1.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: KYS.EFCore.Library.Entity<TId>.Equals(object)
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).Equals(Object)
+  nameWithType: Entity<TId>.Equals(object)
+  nameWithType.vb: Entity(Of TId).Equals(Object)
+- uid: KYS.EFCore.Library.Entity`1.Equals*
+  name: Equals
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_Equals_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.Equals
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.Equals
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).Equals
+  nameWithType: Entity<TId>.Equals
+  nameWithType.vb: Entity(Of TId).Equals
+- uid: KYS.EFCore.Library.Entity`1.GetHashCode
+  name: GetHashCode()
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_GetHashCode
+  commentId: M:KYS.EFCore.Library.Entity`1.GetHashCode
+  fullName: KYS.EFCore.Library.Entity<TId>.GetHashCode()
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).GetHashCode()
+  nameWithType: Entity<TId>.GetHashCode()
+  nameWithType.vb: Entity(Of TId).GetHashCode()
+- uid: KYS.EFCore.Library.Entity`1.GetHashCode*
+  name: GetHashCode
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_GetHashCode_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.GetHashCode
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.GetHashCode
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).GetHashCode
+  nameWithType: Entity<TId>.GetHashCode
+  nameWithType.vb: Entity(Of TId).GetHashCode
+- uid: KYS.EFCore.Library.Entity`1.Id
+  name: Id
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_Id
+  commentId: P:KYS.EFCore.Library.Entity`1.Id
+  fullName: KYS.EFCore.Library.Entity<TId>.Id
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).Id
+  nameWithType: Entity<TId>.Id
+  nameWithType.vb: Entity(Of TId).Id
+- uid: KYS.EFCore.Library.Entity`1.Id*
+  name: Id
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_Id_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.Id
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.Id
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).Id
+  nameWithType: Entity<TId>.Id
+  nameWithType.vb: Entity(Of TId).Id
+- uid: KYS.EFCore.Library.Entity`1.IsTransient
+  name: IsTransient()
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_IsTransient
+  commentId: M:KYS.EFCore.Library.Entity`1.IsTransient
+  fullName: KYS.EFCore.Library.Entity<TId>.IsTransient()
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).IsTransient()
+  nameWithType: Entity<TId>.IsTransient()
+  nameWithType.vb: Entity(Of TId).IsTransient()
+- uid: KYS.EFCore.Library.Entity`1.IsTransient*
+  name: IsTransient
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_IsTransient_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.IsTransient
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.IsTransient
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).IsTransient
+  nameWithType: Entity<TId>.IsTransient
+  nameWithType.vb: Entity(Of TId).IsTransient
+- uid: KYS.EFCore.Library.Entity`1.RemoveDomainEvent(KYS.EFCore.Library.INotification)
+  name: RemoveDomainEvent(INotification)
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_RemoveDomainEvent_KYS_EFCore_Library_INotification_
+  commentId: M:KYS.EFCore.Library.Entity`1.RemoveDomainEvent(KYS.EFCore.Library.INotification)
+  fullName: KYS.EFCore.Library.Entity<TId>.RemoveDomainEvent(KYS.EFCore.Library.INotification)
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).RemoveDomainEvent(KYS.EFCore.Library.INotification)
+  nameWithType: Entity<TId>.RemoveDomainEvent(INotification)
+  nameWithType.vb: Entity(Of TId).RemoveDomainEvent(INotification)
+- uid: KYS.EFCore.Library.Entity`1.RemoveDomainEvent*
+  name: RemoveDomainEvent
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_RemoveDomainEvent_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.RemoveDomainEvent
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Entity<TId>.RemoveDomainEvent
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).RemoveDomainEvent
+  nameWithType: Entity<TId>.RemoveDomainEvent
+  nameWithType.vb: Entity(Of TId).RemoveDomainEvent
+- uid: KYS.EFCore.Library.Entity`1.op_Equality(KYS.EFCore.Library.Entity{`0},KYS.EFCore.Library.Entity{`0})
+  name: operator ==(Entity<TId>, Entity<TId>)
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_op_Equality_KYS_EFCore_Library_Entity__0__KYS_EFCore_Library_Entity__0__
+  commentId: M:KYS.EFCore.Library.Entity`1.op_Equality(KYS.EFCore.Library.Entity{`0},KYS.EFCore.Library.Entity{`0})
+  name.vb: =(Entity(Of TId), Entity(Of TId))
+  fullName: KYS.EFCore.Library.Entity<TId>.operator ==(KYS.EFCore.Library.Entity<TId>, KYS.EFCore.Library.Entity<TId>)
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).=(KYS.EFCore.Library.Entity(Of TId), KYS.EFCore.Library.Entity(Of TId))
+  nameWithType: Entity<TId>.operator ==(Entity<TId>, Entity<TId>)
+  nameWithType.vb: Entity(Of TId).=(Entity(Of TId), Entity(Of TId))
+- uid: KYS.EFCore.Library.Entity`1.op_Equality*
+  name: operator ==
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_op_Equality_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: KYS.EFCore.Library.Entity<TId>.operator ==
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).=
+  nameWithType: Entity<TId>.operator ==
+  nameWithType.vb: Entity(Of TId).=
+- uid: KYS.EFCore.Library.Entity`1.op_Inequality(KYS.EFCore.Library.Entity{`0},KYS.EFCore.Library.Entity{`0})
+  name: operator !=(Entity<TId>, Entity<TId>)
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_op_Inequality_KYS_EFCore_Library_Entity__0__KYS_EFCore_Library_Entity__0__
+  commentId: M:KYS.EFCore.Library.Entity`1.op_Inequality(KYS.EFCore.Library.Entity{`0},KYS.EFCore.Library.Entity{`0})
+  name.vb: <>(Entity(Of TId), Entity(Of TId))
+  fullName: KYS.EFCore.Library.Entity<TId>.operator !=(KYS.EFCore.Library.Entity<TId>, KYS.EFCore.Library.Entity<TId>)
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).<>(KYS.EFCore.Library.Entity(Of TId), KYS.EFCore.Library.Entity(Of TId))
+  nameWithType: Entity<TId>.operator !=(Entity<TId>, Entity<TId>)
+  nameWithType.vb: Entity(Of TId).<>(Entity(Of TId), Entity(Of TId))
+- uid: KYS.EFCore.Library.Entity`1.op_Inequality*
+  name: operator !=
+  href: api/KYS.EFCore.Library.Entity-1.html#KYS_EFCore_Library_Entity_1_op_Inequality_
+  commentId: Overload:KYS.EFCore.Library.Entity`1.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: KYS.EFCore.Library.Entity<TId>.operator !=
+  fullName.vb: KYS.EFCore.Library.Entity(Of TId).<>
+  nameWithType: Entity<TId>.operator !=
+  nameWithType.vb: Entity(Of TId).<>
+- uid: KYS.EFCore.Library.Enumeration
+  name: Enumeration
+  href: api/KYS.EFCore.Library.Enumeration.html
+  commentId: T:KYS.EFCore.Library.Enumeration
+  fullName: KYS.EFCore.Library.Enumeration
+  nameWithType: Enumeration
+- uid: KYS.EFCore.Library.Enumeration.#ctor(System.Int64,System.String)
+  name: Enumeration(long, string)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration__ctor_System_Int64_System_String_
+  commentId: M:KYS.EFCore.Library.Enumeration.#ctor(System.Int64,System.String)
+  name.vb: New(Long, String)
+  fullName: KYS.EFCore.Library.Enumeration.Enumeration(long, string)
+  fullName.vb: KYS.EFCore.Library.Enumeration.New(Long, String)
+  nameWithType: Enumeration.Enumeration(long, string)
+  nameWithType.vb: Enumeration.New(Long, String)
+- uid: KYS.EFCore.Library.Enumeration.#ctor*
+  name: Enumeration
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration__ctor_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.EFCore.Library.Enumeration.Enumeration
+  fullName.vb: KYS.EFCore.Library.Enumeration.New
+  nameWithType: Enumeration.Enumeration
+  nameWithType.vb: Enumeration.New
+- uid: KYS.EFCore.Library.Enumeration.CompareTo(KYS.EFCore.Library.Enumeration)
+  name: CompareTo(Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_CompareTo_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.CompareTo(KYS.EFCore.Library.Enumeration)
+  fullName: KYS.EFCore.Library.Enumeration.CompareTo(KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.CompareTo(Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.CompareTo*
+  name: CompareTo
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_CompareTo_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.CompareTo
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Enumeration.CompareTo
+  nameWithType: Enumeration.CompareTo
+- uid: KYS.EFCore.Library.Enumeration.Equals(KYS.EFCore.Library.Enumeration)
+  name: Equals(Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_Equals_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.Equals(KYS.EFCore.Library.Enumeration)
+  fullName: KYS.EFCore.Library.Enumeration.Equals(KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.Equals(Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.Equals(System.Object)
+  name: Equals(object)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_Equals_System_Object_
+  commentId: M:KYS.EFCore.Library.Enumeration.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: KYS.EFCore.Library.Enumeration.Equals(object)
+  fullName.vb: KYS.EFCore.Library.Enumeration.Equals(Object)
+  nameWithType: Enumeration.Equals(object)
+  nameWithType.vb: Enumeration.Equals(Object)
+- uid: KYS.EFCore.Library.Enumeration.Equals*
+  name: Equals
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_Equals_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.Equals
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Enumeration.Equals
+  nameWithType: Enumeration.Equals
+- uid: KYS.EFCore.Library.Enumeration.GetAll*
+  name: GetAll
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_GetAll_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.GetAll
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Enumeration.GetAll
+  nameWithType: Enumeration.GetAll
+- uid: KYS.EFCore.Library.Enumeration.GetAll``1
+  name: GetAll<T>()
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_GetAll__1
+  commentId: M:KYS.EFCore.Library.Enumeration.GetAll``1
+  name.vb: GetAll(Of T)()
+  fullName: KYS.EFCore.Library.Enumeration.GetAll<T>()
+  fullName.vb: KYS.EFCore.Library.Enumeration.GetAll(Of T)()
+  nameWithType: Enumeration.GetAll<T>()
+  nameWithType.vb: Enumeration.GetAll(Of T)()
+- uid: KYS.EFCore.Library.Enumeration.GetHashCode
+  name: GetHashCode()
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_GetHashCode
+  commentId: M:KYS.EFCore.Library.Enumeration.GetHashCode
+  fullName: KYS.EFCore.Library.Enumeration.GetHashCode()
+  nameWithType: Enumeration.GetHashCode()
+- uid: KYS.EFCore.Library.Enumeration.GetHashCode*
+  name: GetHashCode
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_GetHashCode_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.GetHashCode
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Enumeration.GetHashCode
+  nameWithType: Enumeration.GetHashCode
+- uid: KYS.EFCore.Library.Enumeration.Id
+  name: Id
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_Id
+  commentId: P:KYS.EFCore.Library.Enumeration.Id
+  fullName: KYS.EFCore.Library.Enumeration.Id
+  nameWithType: Enumeration.Id
+- uid: KYS.EFCore.Library.Enumeration.Id*
+  name: Id
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_Id_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.Id
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Enumeration.Id
+  nameWithType: Enumeration.Id
+- uid: KYS.EFCore.Library.Enumeration.Name
+  name: Name
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_Name
+  commentId: P:KYS.EFCore.Library.Enumeration.Name
+  fullName: KYS.EFCore.Library.Enumeration.Name
+  nameWithType: Enumeration.Name
+- uid: KYS.EFCore.Library.Enumeration.Name*
+  name: Name
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_Name_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.Name
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Enumeration.Name
+  nameWithType: Enumeration.Name
+- uid: KYS.EFCore.Library.Enumeration.ToString
+  name: ToString()
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_ToString
+  commentId: M:KYS.EFCore.Library.Enumeration.ToString
+  fullName: KYS.EFCore.Library.Enumeration.ToString()
+  nameWithType: Enumeration.ToString()
+- uid: KYS.EFCore.Library.Enumeration.ToString*
+  name: ToString
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_ToString_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.ToString
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Enumeration.ToString
+  nameWithType: Enumeration.ToString
+- uid: KYS.EFCore.Library.Enumeration.op_Equality(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name: operator ==(Enumeration, Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_Equality_KYS_EFCore_Library_Enumeration_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.op_Equality(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name.vb: =(Enumeration, Enumeration)
+  fullName: KYS.EFCore.Library.Enumeration.operator ==(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  fullName.vb: KYS.EFCore.Library.Enumeration.=(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.operator ==(Enumeration, Enumeration)
+  nameWithType.vb: Enumeration.=(Enumeration, Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.op_Equality*
+  name: operator ==
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_Equality_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: KYS.EFCore.Library.Enumeration.operator ==
+  fullName.vb: KYS.EFCore.Library.Enumeration.=
+  nameWithType: Enumeration.operator ==
+  nameWithType.vb: Enumeration.=
+- uid: KYS.EFCore.Library.Enumeration.op_GreaterThan(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name: operator >(Enumeration, Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_GreaterThan_KYS_EFCore_Library_Enumeration_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.op_GreaterThan(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name.vb: '>(Enumeration, Enumeration)'
+  fullName: KYS.EFCore.Library.Enumeration.operator >(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  fullName.vb: KYS.EFCore.Library.Enumeration.>(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.operator >(Enumeration, Enumeration)
+  nameWithType.vb: Enumeration.>(Enumeration, Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.op_GreaterThan*
+  name: operator >
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_GreaterThan_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.op_GreaterThan
+  isSpec: "True"
+  name.vb: '>'
+  fullName: KYS.EFCore.Library.Enumeration.operator >
+  fullName.vb: KYS.EFCore.Library.Enumeration.>
+  nameWithType: Enumeration.operator >
+  nameWithType.vb: Enumeration.>
+- uid: KYS.EFCore.Library.Enumeration.op_GreaterThanOrEqual(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name: operator >=(Enumeration, Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_GreaterThanOrEqual_KYS_EFCore_Library_Enumeration_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.op_GreaterThanOrEqual(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name.vb: '>=(Enumeration, Enumeration)'
+  fullName: KYS.EFCore.Library.Enumeration.operator >=(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  fullName.vb: KYS.EFCore.Library.Enumeration.>=(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.operator >=(Enumeration, Enumeration)
+  nameWithType.vb: Enumeration.>=(Enumeration, Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.op_GreaterThanOrEqual*
+  name: operator >=
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_GreaterThanOrEqual_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.op_GreaterThanOrEqual
+  isSpec: "True"
+  name.vb: '>='
+  fullName: KYS.EFCore.Library.Enumeration.operator >=
+  fullName.vb: KYS.EFCore.Library.Enumeration.>=
+  nameWithType: Enumeration.operator >=
+  nameWithType.vb: Enumeration.>=
+- uid: KYS.EFCore.Library.Enumeration.op_Inequality(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name: operator !=(Enumeration, Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_Inequality_KYS_EFCore_Library_Enumeration_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.op_Inequality(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name.vb: <>(Enumeration, Enumeration)
+  fullName: KYS.EFCore.Library.Enumeration.operator !=(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  fullName.vb: KYS.EFCore.Library.Enumeration.<>(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.operator !=(Enumeration, Enumeration)
+  nameWithType.vb: Enumeration.<>(Enumeration, Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.op_Inequality*
+  name: operator !=
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_Inequality_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: KYS.EFCore.Library.Enumeration.operator !=
+  fullName.vb: KYS.EFCore.Library.Enumeration.<>
+  nameWithType: Enumeration.operator !=
+  nameWithType.vb: Enumeration.<>
+- uid: KYS.EFCore.Library.Enumeration.op_LessThan(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name: operator <(Enumeration, Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_LessThan_KYS_EFCore_Library_Enumeration_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.op_LessThan(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name.vb: <(Enumeration, Enumeration)
+  fullName: KYS.EFCore.Library.Enumeration.operator <(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  fullName.vb: KYS.EFCore.Library.Enumeration.<(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.operator <(Enumeration, Enumeration)
+  nameWithType.vb: Enumeration.<(Enumeration, Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.op_LessThan*
+  name: operator <
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_LessThan_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.op_LessThan
+  isSpec: "True"
+  name.vb: <
+  fullName: KYS.EFCore.Library.Enumeration.operator <
+  fullName.vb: KYS.EFCore.Library.Enumeration.<
+  nameWithType: Enumeration.operator <
+  nameWithType.vb: Enumeration.<
+- uid: KYS.EFCore.Library.Enumeration.op_LessThanOrEqual(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name: operator <=(Enumeration, Enumeration)
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_LessThanOrEqual_KYS_EFCore_Library_Enumeration_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.Enumeration.op_LessThanOrEqual(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name.vb: <=(Enumeration, Enumeration)
+  fullName: KYS.EFCore.Library.Enumeration.operator <=(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  fullName.vb: KYS.EFCore.Library.Enumeration.<=(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  nameWithType: Enumeration.operator <=(Enumeration, Enumeration)
+  nameWithType.vb: Enumeration.<=(Enumeration, Enumeration)
+- uid: KYS.EFCore.Library.Enumeration.op_LessThanOrEqual*
+  name: operator <=
+  href: api/KYS.EFCore.Library.Enumeration.html#KYS_EFCore_Library_Enumeration_op_LessThanOrEqual_
+  commentId: Overload:KYS.EFCore.Library.Enumeration.op_LessThanOrEqual
+  isSpec: "True"
+  name.vb: <=
+  fullName: KYS.EFCore.Library.Enumeration.operator <=
+  fullName.vb: KYS.EFCore.Library.Enumeration.<=
+  nameWithType: Enumeration.operator <=
+  nameWithType.vb: Enumeration.<=
+- uid: KYS.EFCore.Library.EnumerationComparer
+  name: EnumerationComparer
+  href: api/KYS.EFCore.Library.EnumerationComparer.html
+  commentId: T:KYS.EFCore.Library.EnumerationComparer
+  fullName: KYS.EFCore.Library.EnumerationComparer
+  nameWithType: EnumerationComparer
+- uid: KYS.EFCore.Library.EnumerationComparer.Equals(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  name: Equals(Enumeration, Enumeration)
+  href: api/KYS.EFCore.Library.EnumerationComparer.html#KYS_EFCore_Library_EnumerationComparer_Equals_KYS_EFCore_Library_Enumeration_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.EnumerationComparer.Equals(KYS.EFCore.Library.Enumeration,KYS.EFCore.Library.Enumeration)
+  fullName: KYS.EFCore.Library.EnumerationComparer.Equals(KYS.EFCore.Library.Enumeration, KYS.EFCore.Library.Enumeration)
+  nameWithType: EnumerationComparer.Equals(Enumeration, Enumeration)
+- uid: KYS.EFCore.Library.EnumerationComparer.Equals*
+  name: Equals
+  href: api/KYS.EFCore.Library.EnumerationComparer.html#KYS_EFCore_Library_EnumerationComparer_Equals_
+  commentId: Overload:KYS.EFCore.Library.EnumerationComparer.Equals
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.EnumerationComparer.Equals
+  nameWithType: EnumerationComparer.Equals
+- uid: KYS.EFCore.Library.EnumerationComparer.GetHashCode(KYS.EFCore.Library.Enumeration)
+  name: GetHashCode(Enumeration)
+  href: api/KYS.EFCore.Library.EnumerationComparer.html#KYS_EFCore_Library_EnumerationComparer_GetHashCode_KYS_EFCore_Library_Enumeration_
+  commentId: M:KYS.EFCore.Library.EnumerationComparer.GetHashCode(KYS.EFCore.Library.Enumeration)
+  fullName: KYS.EFCore.Library.EnumerationComparer.GetHashCode(KYS.EFCore.Library.Enumeration)
+  nameWithType: EnumerationComparer.GetHashCode(Enumeration)
+- uid: KYS.EFCore.Library.EnumerationComparer.GetHashCode*
+  name: GetHashCode
+  href: api/KYS.EFCore.Library.EnumerationComparer.html#KYS_EFCore_Library_EnumerationComparer_GetHashCode_
+  commentId: Overload:KYS.EFCore.Library.EnumerationComparer.GetHashCode
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.EnumerationComparer.GetHashCode
+  nameWithType: EnumerationComparer.GetHashCode
+- uid: KYS.EFCore.Library.Extensions
+  name: KYS.EFCore.Library.Extensions
+  href: api/KYS.EFCore.Library.Extensions.html
+  commentId: N:KYS.EFCore.Library.Extensions
+  fullName: KYS.EFCore.Library.Extensions
+  nameWithType: KYS.EFCore.Library.Extensions
+- uid: KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections
+  name: ExplicitUnitOfWorkServiceCollections
+  href: api/KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.html
+  commentId: T:KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections
+  fullName: KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections
+  nameWithType: ExplicitUnitOfWorkServiceCollections
+- uid: KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork*
+  name: AddExplicitUnitOfWork
+  href: api/KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.html#KYS_EFCore_Library_Extensions_ExplicitUnitOfWorkServiceCollections_AddExplicitUnitOfWork_
+  commentId: Overload:KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork
+  nameWithType: ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork
+- uid: KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: AddExplicitUnitOfWork<TDbContext>(IServiceCollection)
+  href: api/KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.html#KYS_EFCore_Library_Extensions_ExplicitUnitOfWorkServiceCollections_AddExplicitUnitOfWork__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name.vb: AddExplicitUnitOfWork(Of TDbContext)(IServiceCollection)
+  fullName: KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork<TDbContext>(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName.vb: KYS.EFCore.Library.Extensions.ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork(Of TDbContext)(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork<TDbContext>(IServiceCollection)
+  nameWithType.vb: ExplicitUnitOfWorkServiceCollections.AddExplicitUnitOfWork(Of TDbContext)(IServiceCollection)
+- uid: KYS.EFCore.Library.Extensions.SpecificationExtensions
+  name: SpecificationExtensions
+  href: api/KYS.EFCore.Library.Extensions.SpecificationExtensions.html
+  commentId: T:KYS.EFCore.Library.Extensions.SpecificationExtensions
+  fullName: KYS.EFCore.Library.Extensions.SpecificationExtensions
+  nameWithType: SpecificationExtensions
+- uid: KYS.EFCore.Library.Extensions.SpecificationExtensions.ApplySpecification*
+  name: ApplySpecification
+  href: api/KYS.EFCore.Library.Extensions.SpecificationExtensions.html#KYS_EFCore_Library_Extensions_SpecificationExtensions_ApplySpecification_
+  commentId: Overload:KYS.EFCore.Library.Extensions.SpecificationExtensions.ApplySpecification
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Extensions.SpecificationExtensions.ApplySpecification
+  nameWithType: SpecificationExtensions.ApplySpecification
+- uid: KYS.EFCore.Library.Extensions.SpecificationExtensions.ApplySpecification``1(Microsoft.EntityFrameworkCore.DbContext,KYS.EFCore.Library.Specification{``0})
+  name: ApplySpecification<TEntity>(DbContext, Specification<TEntity>)
+  href: api/KYS.EFCore.Library.Extensions.SpecificationExtensions.html#KYS_EFCore_Library_Extensions_SpecificationExtensions_ApplySpecification__1_Microsoft_EntityFrameworkCore_DbContext_KYS_EFCore_Library_Specification___0__
+  commentId: M:KYS.EFCore.Library.Extensions.SpecificationExtensions.ApplySpecification``1(Microsoft.EntityFrameworkCore.DbContext,KYS.EFCore.Library.Specification{``0})
+  name.vb: ApplySpecification(Of TEntity)(DbContext, Specification(Of TEntity))
+  fullName: KYS.EFCore.Library.Extensions.SpecificationExtensions.ApplySpecification<TEntity>(Microsoft.EntityFrameworkCore.DbContext, KYS.EFCore.Library.Specification<TEntity>)
+  fullName.vb: KYS.EFCore.Library.Extensions.SpecificationExtensions.ApplySpecification(Of TEntity)(Microsoft.EntityFrameworkCore.DbContext, KYS.EFCore.Library.Specification(Of TEntity))
+  nameWithType: SpecificationExtensions.ApplySpecification<TEntity>(DbContext, Specification<TEntity>)
+  nameWithType.vb: SpecificationExtensions.ApplySpecification(Of TEntity)(DbContext, Specification(Of TEntity))
+- uid: KYS.EFCore.Library.IAggregateRoot
+  name: IAggregateRoot
+  href: api/KYS.EFCore.Library.IAggregateRoot.html
+  commentId: T:KYS.EFCore.Library.IAggregateRoot
+  fullName: KYS.EFCore.Library.IAggregateRoot
+  nameWithType: IAggregateRoot
+- uid: KYS.EFCore.Library.INotification
+  name: INotification
+  href: api/KYS.EFCore.Library.INotification.html
+  commentId: T:KYS.EFCore.Library.INotification
+  fullName: KYS.EFCore.Library.INotification
+  nameWithType: INotification
+- uid: KYS.EFCore.Library.IRepository`1
+  name: IRepository<T>
+  href: api/KYS.EFCore.Library.IRepository-1.html
+  commentId: T:KYS.EFCore.Library.IRepository`1
+  name.vb: IRepository(Of T)
+  fullName: KYS.EFCore.Library.IRepository<T>
+  fullName.vb: KYS.EFCore.Library.IRepository(Of T)
+  nameWithType: IRepository<T>
+  nameWithType.vb: IRepository(Of T)
+- uid: KYS.EFCore.Library.IRepository`1.UnitOfWork
+  name: UnitOfWork
+  href: api/KYS.EFCore.Library.IRepository-1.html#KYS_EFCore_Library_IRepository_1_UnitOfWork
+  commentId: P:KYS.EFCore.Library.IRepository`1.UnitOfWork
+  fullName: KYS.EFCore.Library.IRepository<T>.UnitOfWork
+  fullName.vb: KYS.EFCore.Library.IRepository(Of T).UnitOfWork
+  nameWithType: IRepository<T>.UnitOfWork
+  nameWithType.vb: IRepository(Of T).UnitOfWork
+- uid: KYS.EFCore.Library.IRepository`1.UnitOfWork*
+  name: UnitOfWork
+  href: api/KYS.EFCore.Library.IRepository-1.html#KYS_EFCore_Library_IRepository_1_UnitOfWork_
+  commentId: Overload:KYS.EFCore.Library.IRepository`1.UnitOfWork
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.IRepository<T>.UnitOfWork
+  fullName.vb: KYS.EFCore.Library.IRepository(Of T).UnitOfWork
+  nameWithType: IRepository<T>.UnitOfWork
+  nameWithType.vb: IRepository(Of T).UnitOfWork
+- uid: KYS.EFCore.Library.IUnitOfWork
+  name: IUnitOfWork
+  href: api/KYS.EFCore.Library.IUnitOfWork.html
+  commentId: T:KYS.EFCore.Library.IUnitOfWork
+  fullName: KYS.EFCore.Library.IUnitOfWork
+  nameWithType: IUnitOfWork
+- uid: KYS.EFCore.Library.IUnitOfWork.BeginAsync
+  name: BeginAsync()
+  href: api/KYS.EFCore.Library.IUnitOfWork.html#KYS_EFCore_Library_IUnitOfWork_BeginAsync
+  commentId: M:KYS.EFCore.Library.IUnitOfWork.BeginAsync
+  fullName: KYS.EFCore.Library.IUnitOfWork.BeginAsync()
+  nameWithType: IUnitOfWork.BeginAsync()
+- uid: KYS.EFCore.Library.IUnitOfWork.BeginAsync*
+  name: BeginAsync
+  href: api/KYS.EFCore.Library.IUnitOfWork.html#KYS_EFCore_Library_IUnitOfWork_BeginAsync_
+  commentId: Overload:KYS.EFCore.Library.IUnitOfWork.BeginAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.IUnitOfWork.BeginAsync
+  nameWithType: IUnitOfWork.BeginAsync
+- uid: KYS.EFCore.Library.IUnitOfWork.CommitAsync
+  name: CommitAsync()
+  href: api/KYS.EFCore.Library.IUnitOfWork.html#KYS_EFCore_Library_IUnitOfWork_CommitAsync
+  commentId: M:KYS.EFCore.Library.IUnitOfWork.CommitAsync
+  fullName: KYS.EFCore.Library.IUnitOfWork.CommitAsync()
+  nameWithType: IUnitOfWork.CommitAsync()
+- uid: KYS.EFCore.Library.IUnitOfWork.CommitAsync*
+  name: CommitAsync
+  href: api/KYS.EFCore.Library.IUnitOfWork.html#KYS_EFCore_Library_IUnitOfWork_CommitAsync_
+  commentId: Overload:KYS.EFCore.Library.IUnitOfWork.CommitAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.IUnitOfWork.CommitAsync
+  nameWithType: IUnitOfWork.CommitAsync
+- uid: KYS.EFCore.Library.IUnitOfWork.RollbackAsync
+  name: RollbackAsync()
+  href: api/KYS.EFCore.Library.IUnitOfWork.html#KYS_EFCore_Library_IUnitOfWork_RollbackAsync
+  commentId: M:KYS.EFCore.Library.IUnitOfWork.RollbackAsync
+  fullName: KYS.EFCore.Library.IUnitOfWork.RollbackAsync()
+  nameWithType: IUnitOfWork.RollbackAsync()
+- uid: KYS.EFCore.Library.IUnitOfWork.RollbackAsync*
+  name: RollbackAsync
+  href: api/KYS.EFCore.Library.IUnitOfWork.html#KYS_EFCore_Library_IUnitOfWork_RollbackAsync_
+  commentId: Overload:KYS.EFCore.Library.IUnitOfWork.RollbackAsync
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.IUnitOfWork.RollbackAsync
+  nameWithType: IUnitOfWork.RollbackAsync
+- uid: KYS.EFCore.Library.OrSpecification`1
+  name: OrSpecification<T>
+  href: api/KYS.EFCore.Library.OrSpecification-1.html
+  commentId: T:KYS.EFCore.Library.OrSpecification`1
+  name.vb: OrSpecification(Of T)
+  fullName: KYS.EFCore.Library.OrSpecification<T>
+  fullName.vb: KYS.EFCore.Library.OrSpecification(Of T)
+  nameWithType: OrSpecification<T>
+  nameWithType.vb: OrSpecification(Of T)
+- uid: KYS.EFCore.Library.OrSpecification`1.#ctor(KYS.EFCore.Library.Specification{`0},KYS.EFCore.Library.Specification{`0})
+  name: OrSpecification(Specification<T>, Specification<T>)
+  href: api/KYS.EFCore.Library.OrSpecification-1.html#KYS_EFCore_Library_OrSpecification_1__ctor_KYS_EFCore_Library_Specification__0__KYS_EFCore_Library_Specification__0__
+  commentId: M:KYS.EFCore.Library.OrSpecification`1.#ctor(KYS.EFCore.Library.Specification{`0},KYS.EFCore.Library.Specification{`0})
+  name.vb: New(Specification(Of T), Specification(Of T))
+  fullName: KYS.EFCore.Library.OrSpecification<T>.OrSpecification(KYS.EFCore.Library.Specification<T>, KYS.EFCore.Library.Specification<T>)
+  fullName.vb: KYS.EFCore.Library.OrSpecification(Of T).New(KYS.EFCore.Library.Specification(Of T), KYS.EFCore.Library.Specification(Of T))
+  nameWithType: OrSpecification<T>.OrSpecification(Specification<T>, Specification<T>)
+  nameWithType.vb: OrSpecification(Of T).New(Specification(Of T), Specification(Of T))
+- uid: KYS.EFCore.Library.OrSpecification`1.#ctor*
+  name: OrSpecification
+  href: api/KYS.EFCore.Library.OrSpecification-1.html#KYS_EFCore_Library_OrSpecification_1__ctor_
+  commentId: Overload:KYS.EFCore.Library.OrSpecification`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.EFCore.Library.OrSpecification<T>.OrSpecification
+  fullName.vb: KYS.EFCore.Library.OrSpecification(Of T).New
+  nameWithType: OrSpecification<T>.OrSpecification
+  nameWithType.vb: OrSpecification(Of T).New
+- uid: KYS.EFCore.Library.OrSpecification`1.ToExpression
+  name: ToExpression()
+  href: api/KYS.EFCore.Library.OrSpecification-1.html#KYS_EFCore_Library_OrSpecification_1_ToExpression
+  commentId: M:KYS.EFCore.Library.OrSpecification`1.ToExpression
+  fullName: KYS.EFCore.Library.OrSpecification<T>.ToExpression()
+  fullName.vb: KYS.EFCore.Library.OrSpecification(Of T).ToExpression()
+  nameWithType: OrSpecification<T>.ToExpression()
+  nameWithType.vb: OrSpecification(Of T).ToExpression()
+- uid: KYS.EFCore.Library.OrSpecification`1.ToExpression*
+  name: ToExpression
+  href: api/KYS.EFCore.Library.OrSpecification-1.html#KYS_EFCore_Library_OrSpecification_1_ToExpression_
+  commentId: Overload:KYS.EFCore.Library.OrSpecification`1.ToExpression
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.OrSpecification<T>.ToExpression
+  fullName.vb: KYS.EFCore.Library.OrSpecification(Of T).ToExpression
+  nameWithType: OrSpecification<T>.ToExpression
+  nameWithType.vb: OrSpecification(Of T).ToExpression
+- uid: KYS.EFCore.Library.Specification`1
+  name: Specification<T>
+  href: api/KYS.EFCore.Library.Specification-1.html
+  commentId: T:KYS.EFCore.Library.Specification`1
+  name.vb: Specification(Of T)
+  fullName: KYS.EFCore.Library.Specification<T>
+  fullName.vb: KYS.EFCore.Library.Specification(Of T)
+  nameWithType: Specification<T>
+  nameWithType.vb: Specification(Of T)
+- uid: KYS.EFCore.Library.Specification`1.AddInclude(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})
+  name: AddInclude(Expression<Func<T, object>>)
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_AddInclude_System_Linq_Expressions_Expression_System_Func__0_System_Object___
+  commentId: M:KYS.EFCore.Library.Specification`1.AddInclude(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})
+  name.vb: AddInclude(Expression(Of Func(Of T, Object)))
+  fullName: KYS.EFCore.Library.Specification<T>.AddInclude(System.Linq.Expressions.Expression<System.Func<T, object>>)
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).AddInclude(System.Linq.Expressions.Expression(Of System.Func(Of T, Object)))
+  nameWithType: Specification<T>.AddInclude(Expression<Func<T, object>>)
+  nameWithType.vb: Specification(Of T).AddInclude(Expression(Of Func(Of T, Object)))
+- uid: KYS.EFCore.Library.Specification`1.AddInclude*
+  name: AddInclude
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_AddInclude_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.AddInclude
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.AddInclude
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).AddInclude
+  nameWithType: Specification<T>.AddInclude
+  nameWithType.vb: Specification(Of T).AddInclude
+- uid: KYS.EFCore.Library.Specification`1.And(KYS.EFCore.Library.Specification{`0})
+  name: And(Specification<T>)
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_And_KYS_EFCore_Library_Specification__0__
+  commentId: M:KYS.EFCore.Library.Specification`1.And(KYS.EFCore.Library.Specification{`0})
+  name.vb: And(Specification(Of T))
+  fullName: KYS.EFCore.Library.Specification<T>.And(KYS.EFCore.Library.Specification<T>)
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).And(KYS.EFCore.Library.Specification(Of T))
+  nameWithType: Specification<T>.And(Specification<T>)
+  nameWithType.vb: Specification(Of T).And(Specification(Of T))
+- uid: KYS.EFCore.Library.Specification`1.And*
+  name: And
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_And_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.And
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.And
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).And
+  nameWithType: Specification<T>.And
+  nameWithType.vb: Specification(Of T).And
+- uid: KYS.EFCore.Library.Specification`1.ApplyAsNoTracking
+  name: ApplyAsNoTracking()
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_ApplyAsNoTracking
+  commentId: M:KYS.EFCore.Library.Specification`1.ApplyAsNoTracking
+  fullName: KYS.EFCore.Library.Specification<T>.ApplyAsNoTracking()
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).ApplyAsNoTracking()
+  nameWithType: Specification<T>.ApplyAsNoTracking()
+  nameWithType.vb: Specification(Of T).ApplyAsNoTracking()
+- uid: KYS.EFCore.Library.Specification`1.ApplyAsNoTracking*
+  name: ApplyAsNoTracking
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_ApplyAsNoTracking_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.ApplyAsNoTracking
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.ApplyAsNoTracking
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).ApplyAsNoTracking
+  nameWithType: Specification<T>.ApplyAsNoTracking
+  nameWithType.vb: Specification(Of T).ApplyAsNoTracking
+- uid: KYS.EFCore.Library.Specification`1.AsNoTracking
+  name: AsNoTracking
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_AsNoTracking
+  commentId: P:KYS.EFCore.Library.Specification`1.AsNoTracking
+  fullName: KYS.EFCore.Library.Specification<T>.AsNoTracking
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).AsNoTracking
+  nameWithType: Specification<T>.AsNoTracking
+  nameWithType.vb: Specification(Of T).AsNoTracking
+- uid: KYS.EFCore.Library.Specification`1.AsNoTracking*
+  name: AsNoTracking
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_AsNoTracking_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.AsNoTracking
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.AsNoTracking
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).AsNoTracking
+  nameWithType: Specification<T>.AsNoTracking
+  nameWithType.vb: Specification(Of T).AsNoTracking
+- uid: KYS.EFCore.Library.Specification`1.Includes
+  name: Includes
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_Includes
+  commentId: P:KYS.EFCore.Library.Specification`1.Includes
+  fullName: KYS.EFCore.Library.Specification<T>.Includes
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).Includes
+  nameWithType: Specification<T>.Includes
+  nameWithType.vb: Specification(Of T).Includes
+- uid: KYS.EFCore.Library.Specification`1.Includes*
+  name: Includes
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_Includes_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.Includes
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.Includes
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).Includes
+  nameWithType: Specification<T>.Includes
+  nameWithType.vb: Specification(Of T).Includes
+- uid: KYS.EFCore.Library.Specification`1.IsSatisfiedBy(`0)
+  name: IsSatisfiedBy(T)
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_IsSatisfiedBy__0_
+  commentId: M:KYS.EFCore.Library.Specification`1.IsSatisfiedBy(`0)
+  fullName: KYS.EFCore.Library.Specification<T>.IsSatisfiedBy(T)
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).IsSatisfiedBy(T)
+  nameWithType: Specification<T>.IsSatisfiedBy(T)
+  nameWithType.vb: Specification(Of T).IsSatisfiedBy(T)
+- uid: KYS.EFCore.Library.Specification`1.IsSatisfiedBy*
+  name: IsSatisfiedBy
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_IsSatisfiedBy_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.IsSatisfiedBy
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.IsSatisfiedBy
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).IsSatisfiedBy
+  nameWithType: Specification<T>.IsSatisfiedBy
+  nameWithType.vb: Specification(Of T).IsSatisfiedBy
+- uid: KYS.EFCore.Library.Specification`1.Or(KYS.EFCore.Library.Specification{`0})
+  name: Or(Specification<T>)
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_Or_KYS_EFCore_Library_Specification__0__
+  commentId: M:KYS.EFCore.Library.Specification`1.Or(KYS.EFCore.Library.Specification{`0})
+  name.vb: Or(Specification(Of T))
+  fullName: KYS.EFCore.Library.Specification<T>.Or(KYS.EFCore.Library.Specification<T>)
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).Or(KYS.EFCore.Library.Specification(Of T))
+  nameWithType: Specification<T>.Or(Specification<T>)
+  nameWithType.vb: Specification(Of T).Or(Specification(Of T))
+- uid: KYS.EFCore.Library.Specification`1.Or*
+  name: Or
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_Or_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.Or
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.Or
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).Or
+  nameWithType: Specification<T>.Or
+  nameWithType.vb: Specification(Of T).Or
+- uid: KYS.EFCore.Library.Specification`1.ToExpression
+  name: ToExpression()
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_ToExpression
+  commentId: M:KYS.EFCore.Library.Specification`1.ToExpression
+  fullName: KYS.EFCore.Library.Specification<T>.ToExpression()
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).ToExpression()
+  nameWithType: Specification<T>.ToExpression()
+  nameWithType.vb: Specification(Of T).ToExpression()
+- uid: KYS.EFCore.Library.Specification`1.ToExpression*
+  name: ToExpression
+  href: api/KYS.EFCore.Library.Specification-1.html#KYS_EFCore_Library_Specification_1_ToExpression_
+  commentId: Overload:KYS.EFCore.Library.Specification`1.ToExpression
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.Specification<T>.ToExpression
+  fullName.vb: KYS.EFCore.Library.Specification(Of T).ToExpression
+  nameWithType: Specification<T>.ToExpression
+  nameWithType.vb: Specification(Of T).ToExpression
+- uid: KYS.EFCore.Library.ValueObject
+  name: ValueObject
+  href: api/KYS.EFCore.Library.ValueObject.html
+  commentId: T:KYS.EFCore.Library.ValueObject
+  fullName: KYS.EFCore.Library.ValueObject
+  nameWithType: ValueObject
+- uid: KYS.EFCore.Library.ValueObject.EqualOperator(KYS.EFCore.Library.ValueObject,KYS.EFCore.Library.ValueObject)
+  name: EqualOperator(ValueObject, ValueObject)
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_EqualOperator_KYS_EFCore_Library_ValueObject_KYS_EFCore_Library_ValueObject_
+  commentId: M:KYS.EFCore.Library.ValueObject.EqualOperator(KYS.EFCore.Library.ValueObject,KYS.EFCore.Library.ValueObject)
+  fullName: KYS.EFCore.Library.ValueObject.EqualOperator(KYS.EFCore.Library.ValueObject, KYS.EFCore.Library.ValueObject)
+  nameWithType: ValueObject.EqualOperator(ValueObject, ValueObject)
+- uid: KYS.EFCore.Library.ValueObject.EqualOperator*
+  name: EqualOperator
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_EqualOperator_
+  commentId: Overload:KYS.EFCore.Library.ValueObject.EqualOperator
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.ValueObject.EqualOperator
+  nameWithType: ValueObject.EqualOperator
+- uid: KYS.EFCore.Library.ValueObject.Equals(System.Object)
+  name: Equals(object)
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_Equals_System_Object_
+  commentId: M:KYS.EFCore.Library.ValueObject.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: KYS.EFCore.Library.ValueObject.Equals(object)
+  fullName.vb: KYS.EFCore.Library.ValueObject.Equals(Object)
+  nameWithType: ValueObject.Equals(object)
+  nameWithType.vb: ValueObject.Equals(Object)
+- uid: KYS.EFCore.Library.ValueObject.Equals*
+  name: Equals
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_Equals_
+  commentId: Overload:KYS.EFCore.Library.ValueObject.Equals
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.ValueObject.Equals
+  nameWithType: ValueObject.Equals
+- uid: KYS.EFCore.Library.ValueObject.GetEqualityComponents
+  name: GetEqualityComponents()
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_GetEqualityComponents
+  commentId: M:KYS.EFCore.Library.ValueObject.GetEqualityComponents
+  fullName: KYS.EFCore.Library.ValueObject.GetEqualityComponents()
+  nameWithType: ValueObject.GetEqualityComponents()
+- uid: KYS.EFCore.Library.ValueObject.GetEqualityComponents*
+  name: GetEqualityComponents
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_GetEqualityComponents_
+  commentId: Overload:KYS.EFCore.Library.ValueObject.GetEqualityComponents
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.ValueObject.GetEqualityComponents
+  nameWithType: ValueObject.GetEqualityComponents
+- uid: KYS.EFCore.Library.ValueObject.GetHashCode
+  name: GetHashCode()
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_GetHashCode
+  commentId: M:KYS.EFCore.Library.ValueObject.GetHashCode
+  fullName: KYS.EFCore.Library.ValueObject.GetHashCode()
+  nameWithType: ValueObject.GetHashCode()
+- uid: KYS.EFCore.Library.ValueObject.GetHashCode*
+  name: GetHashCode
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_GetHashCode_
+  commentId: Overload:KYS.EFCore.Library.ValueObject.GetHashCode
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.ValueObject.GetHashCode
+  nameWithType: ValueObject.GetHashCode
+- uid: KYS.EFCore.Library.ValueObject.NotEqualOperator(KYS.EFCore.Library.ValueObject,KYS.EFCore.Library.ValueObject)
+  name: NotEqualOperator(ValueObject, ValueObject)
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_NotEqualOperator_KYS_EFCore_Library_ValueObject_KYS_EFCore_Library_ValueObject_
+  commentId: M:KYS.EFCore.Library.ValueObject.NotEqualOperator(KYS.EFCore.Library.ValueObject,KYS.EFCore.Library.ValueObject)
+  fullName: KYS.EFCore.Library.ValueObject.NotEqualOperator(KYS.EFCore.Library.ValueObject, KYS.EFCore.Library.ValueObject)
+  nameWithType: ValueObject.NotEqualOperator(ValueObject, ValueObject)
+- uid: KYS.EFCore.Library.ValueObject.NotEqualOperator*
+  name: NotEqualOperator
+  href: api/KYS.EFCore.Library.ValueObject.html#KYS_EFCore_Library_ValueObject_NotEqualOperator_
+  commentId: Overload:KYS.EFCore.Library.ValueObject.NotEqualOperator
+  isSpec: "True"
+  fullName: KYS.EFCore.Library.ValueObject.NotEqualOperator
+  nameWithType: ValueObject.NotEqualOperator
