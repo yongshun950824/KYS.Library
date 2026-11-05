@@ -2,16 +2,43 @@
 
 namespace KYS.EFCore.Library.DBContext
 {
+    /// <summary>
+    /// Base <see cref="DbContext"/> that provides an <see cref="DBContext.ActionLog"/> table and
+    /// audit-aware saving through <see cref="SaveChangesWithAuditAsync"/>.
+    /// <br /><br />
+    /// Derive from this class to add your own <see cref="DbSet{TEntity}"/> properties.
+    /// </summary>
+    /// <remarks>
+    /// The <see cref="DBContext.ActionLog"/> mapping is provider-aware: when the database provider name contains
+    /// <c>Npgsql</c>, snake_case table/column/index names and PostgreSQL column types are used;
+    /// otherwise PascalCase names and provider-default column types are used (e.g. for SQLite in tests).
+    /// </remarks>
     public partial class ApplicationDbContext : DbContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApplicationDbContext"/> class.
+        /// </summary>
+        /// <param name="options">The options to be used by the <see cref="DbContext"/>.</param>
         public ApplicationDbContext(DbContextOptions options)
             : base(options)
         {
 
         }
 
+        /// <summary>
+        /// Gets or sets the audit records written by <see cref="SaveChangesWithAuditAsync"/>.
+        /// </summary>
         public virtual DbSet<ActionLog> ActionLog { get; set; }
 
+        /// <summary>
+        /// Configures the <see cref="DBContext.ActionLog"/> entity mapping (table, index, column names and types)
+        /// based on the current database provider.
+        /// </summary>
+        /// <param name="modelBuilder">The builder used to construct the model for this context.</param>
+        /// <remarks>
+        /// Derived contexts that override this method should call <c>base.OnModelCreating(modelBuilder)</c>
+        /// so that the <see cref="DBContext.ActionLog"/> mapping is kept.
+        /// </remarks>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Provider-aware mapping: keep Postgres-specific mappings when running

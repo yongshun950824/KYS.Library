@@ -1,0 +1,22 @@
+name: DocFX - Publish KYS.EFCore.Library Documentation
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.EFCore.Library/**"
+
+jobs:
+  build-docs:
+    uses: ./.github/workflows/reusable-publish-docfx.yml
+    with:
+      library-name: kys-efcore-library
+      docfx-project: src/KYS.EFCore.Library/docfx
+      docfx-publish-dir: ./src/KYS.EFCore.Library/docfx/_site
+      dotnet-version:
+    permissions:
+      contents: write
