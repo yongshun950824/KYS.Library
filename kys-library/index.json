@@ -274,16 +274,6 @@
     "title": "Namespace KYS.Library.Validations | KYS.Library",
     "summary": "Namespace KYS.Library.Validations Classes BooleanRequireAttribute EnumerableRequireAttribute Validation attribute for checking the IEnumerable field is neither null or empty. JsonObjectAttribute Validation attribute for checking the provided value is a valid JSON object. RequiredIfAttribute Validation attribute for performing the required validation on the current property when other property fulfills the specific value. RequiredIfComparisonAttribute RequiredIfAttribute attribute v2 supported for comparing the value with operator. When the value from the other property is compared and fulfilled the statement for the configured formula: <other property's value> <operator> <matchedValue> , represents the current property is mandatory. Usage: [RequiredIfComparison( otherPropertyName: nameof(PropertyOne), matchedValue: 1, operator: CompareOperator.CompareOperatorConstants.NotEqual)] Test case"
   },
-  "docs/getting-started.html": {
-    "href": "docs/getting-started.html",
-    "title": "Getting Started | KYS.Library",
-    "summary": "Getting Started"
-  },
-  "docs/introduction.html": {
-    "href": "docs/introduction.html",
-    "title": "Introduction | KYS.Library",
-    "summary": "Introduction"
-  },
   "index.html": {
     "href": "index.html",
     "title": "KYS.Library Documentation | KYS.Library",
