@@ -9,6 +9,10 @@ Set of helpers, extension methods, services and validations (attributes) to help
 | Project                      | Build                                          |  Documentation  |           Quality Gate           |       Coverage        |
 | :--------------------------- | :--------------------------------------------- | :-------------: | :------------------------------: | :-------------------: |
 | [KYS.Library][1]             | [![CI - Build KYS.Library][2]][3]              | [View Docs][7]  |  [![Quality Gate Status][4]][5]  |  [![Coverage][6]][5]  |
+| [KYS.Library.Excel][61]      | [![CI - Build KYS.Library.Excel][62]][63]      | [View Docs][67] | [![Quality Gate Status][64]][65] | [![Coverage][66]][65] |
+| [KYS.Library.Pdf][81]      | [![CI - Build KYS.Library.Pdf][82]][83]      | [View Docs][87] | [![Quality Gate Status][84]][85] | [![Coverage][86]][85] |
+| [KYS.Library.Qr][101]      | [![CI - Build KYS.Library.Qr][102]][103]      | [View Docs][107] | [![Quality Gate Status][104]][105] | [![Coverage][106]][105] |
+| [KYS.Library.Zip][121]      | [![CI - Build KYS.Library.Zip][122]][123]      | [View Docs][127] | [![Quality Gate Status][124]][125] | [![Coverage][126]][125] |
 | [KYS.AspNetCore.Library][21] | [![CI - Build KYS.AspNetCore Library][22]][23] | [View Docs][27] | [![Quality Gate Status][24]][25] | [![Coverage][26]][25] |
 | [KYS.EFCore.Library][41]     | [![CI - Build KYS.EFCore Library][42]][43]     | [View Docs][47] | [![Quality Gate Status][44]][45] | [![Coverage][46]][45] |
 
@@ -16,9 +20,13 @@ Set of helpers, extension methods, services and validations (attributes) to help
 
 ## 🧰 What's Inside
 
-| Project                    | Highlights                                                                                                                                                                                                                                  |
-| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **KYS.Library**            | Excel / CSV / PDF export (`ExcelHelper`, `DataTableHelper`, `PdfHelper`), QR code generation (`QrGenerator`), Zip create / extract, translators, SQL, JSON, XML, stream, file and URI helpers, extension methods, and validation attributes |
+| Project                    | Highlights                                                                                                                                                                                                                                 |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **KYS.Library**            | DataTable/file/stream/JSON/XML/SQL/URI helpers, translation services, validation attributes, and extension methods                                                                                                                           |
+| **KYS.Library.Excel**      | DataSet/DataTable to Excel export (`ExcelHelper`, `ExcelDataTableHelper`), column formatting, row styles, and multi-sheet support with EPPlus                                                                                                 |
+| **KYS.Library.Pdf**        | HTML-to-PDF conversion, PDF password lock/unlock support, and DataTable-to-PDF rendering with styling via iText                                                                                                                               |
+| **KYS.Library.Qr**         | QR code generation from text/value input, optional logo embedding, and image/data URI output via ZXing + SkiaSharp                                                                                                                           |
+| **KYS.Library.Zip**        | ZIP archive creation/extraction, optional password protection, and file-item packaging through `ZipCreator` and `ZipExtractor`                                                                                                            |
 | **KYS.AspNetCore.Library** | API response model, security headers middlewares (API / Web), `HttpContext` extensions, view result helper, JSON-to-HTML tag helper                                                                                                         |
 | **KYS.EFCore.Library**     | DDD building blocks (`Entity`, `ValueObject`, `Enumeration`, `IAggregateRoot`), Repository / Unit of Work abstractions, Specification pattern, audit logging, enum description converter                                                    |
 
@@ -90,8 +98,8 @@ This repository is MIT licensed, but some dependencies are not:
 
 | Dependency | License                                                                      | Used by                                           |
 | :--------- | :--------------------------------------------------------------------------- | :------------------------------------------------ |
-| EPPlus 6   | PolyForm Noncommercial (a commercial license is required for commercial use) | `ExcelHelper`, `DataTableHelper.WriteToExcelFile` |
-| iText 7    | AGPL (commercial license available)                                          | `PdfHelper`, `DataTableHelper.WriteToPdfFile`     |
+| EPPlus 6   | PolyForm Noncommercial (a commercial license is required for commercial use) | `ExcelHelper`, `ExcelDataTableHelper.WriteToExcelFile` |
+| iText 7    | AGPL (commercial license available)                                          | `PdfHelper`, `PdfDataTableHelper.WriteToPdfFile`     |
 
 **EPPlus must be configured by your application** before using the Excel helpers. The library does not set it:
 
@@ -134,6 +142,74 @@ Alternatively, configure it in `appsettings.json`:
 | **Duplicated Lines**    | [![Duplicated Lines (%)][12]][5]   |
 | **Code Smells**         | [![Code Smells][13]][5]            |
 | **Maintainability**     | [![Maintainability Rating][14]][5] |
+
+</details>
+
+<details>
+<summary>📦 KYS.Library.Excel — View Full SonarQube Report</summary>
+
+| Metric                  | Badge                              |
+| :---------------------- | :--------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][64]][65]     |
+| **Coverage**            | [![Coverage][66]][65]                |
+| **Reliability**         | [![Reliability Rating][68]][65]      |
+| **Security**            | [![Security Rating][69]][65]         |
+| **Vulnerabilities**     | [![Vulnerabilities][70]][65]        |
+| **Technical Debt**      | [![Technical Debt][71]][65]         |
+| **Duplicated Lines**    | [![Duplicated Lines (%)][72]][65]   |
+| **Code Smells**         | [![Code Smells][73]][65]            |
+| **Maintainability**     | [![Maintainability Rating][74]][65] |
+
+</details>
+
+<details>
+<summary>📦 KYS.Library.Pdf — View Full SonarQube Report</summary>
+
+| Metric                  | Badge                              |
+| :---------------------- | :--------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][84]][85]     |
+| **Coverage**            | [![Coverage][86]][85]                |
+| **Reliability**         | [![Reliability Rating][88]][85]      |
+| **Security**            | [![Security Rating][89]][85]         |
+| **Vulnerabilities**     | [![Vulnerabilities][90]][85]        |
+| **Technical Debt**      | [![Technical Debt][91]][85]         |
+| **Duplicated Lines**    | [![Duplicated Lines (%)][92]][85]   |
+| **Code Smells**         | [![Code Smells][93]][85]            |
+| **Maintainability**     | [![Maintainability Rating][94]][85] |
+
+</details>
+
+<details>
+<summary>📦 KYS.Library.Qr — View Full SonarQube Report</summary>
+
+| Metric                  | Badge                              |
+| :---------------------- | :--------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][104]][105]     |
+| **Coverage**            | [![Coverage][106]][105]                |
+| **Reliability**         | [![Reliability Rating][108]][85]      |
+| **Security**            | [![Security Rating][109]][105]         |
+| **Vulnerabilities**     | [![Vulnerabilities][110]][105]        |
+| **Technical Debt**      | [![Technical Debt][111]][105]         |
+| **Duplicated Lines**    | [![Duplicated Lines (%)][112]][105]   |
+| **Code Smells**         | [![Code Smells][113]][105]            |
+| **Maintainability**     | [![Maintainability Rating][114]][105] |
+
+</details>
+
+<details>
+<summary>📦 KYS.Library.Zip — View Full SonarQube Report</summary>
+
+| Metric                  | Badge                              |
+| :---------------------- | :--------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][124]][125]     |
+| **Coverage**            | [![Coverage][126]][125]                |
+| **Reliability**         | [![Reliability Rating][128]][85]      |
+| **Security**            | [![Security Rating][129]][125]         |
+| **Vulnerabilities**     | [![Vulnerabilities][130]][125]        |
+| **Technical Debt**      | [![Technical Debt][131]][125]         |
+| **Duplicated Lines**    | [![Duplicated Lines (%)][132]][125]   |
+| **Code Smells**         | [![Code Smells][133]][125]            |
+| **Maintainability**     | [![Maintainability Rating][134]][125] |
 
 </details>
 
@@ -225,3 +301,59 @@ See [Releases](https://github.com/yongshun950824/KYS.Library/releases) for versi
 [52]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-efcore-library&metric=duplicated_lines_density
 [53]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-efcore-library&metric=code_smells
 [54]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-efcore-library&metric=sqale_rating
+[61]: https://github.com/yongshun950824/KYS.Library/tree/master/src/KYS.Library.Excel
+[62]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Excel-build.yml/badge.svg
+[63]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Excel-build.yml
+[64]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=alert_status
+[65]: https://sonarcloud.io/project/overview?id=yongshun950824_kys-library-excel
+[66]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=coverage
+[67]: https://yongshun950824.github.io/KYS.Library/kys-library-excel/index.html
+[68]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=reliability_rating
+[69]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=security_rating
+[70]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=vulnerabilities
+[71]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=sqale_index
+[72]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=duplicated_lines_density
+[73]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=code_smells
+[74]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-excel&metric=sqale_rating
+[81]: https://github.com/yongshun950824/KYS.Library/tree/master/src/KYS.Library.Pdf
+[82]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Pdf-build.yml/badge.svg
+[83]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Pdf-build.yml
+[84]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=alert_status
+[85]: https://sonarcloud.io/project/overview?id=yongshun950824_kys-library-pdf
+[86]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=coverage
+[87]: https://yongshun950824.github.io/KYS.Library/kys-library-pdf/index.html
+[88]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=reliability_rating
+[89]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=security_rating
+[90]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=vulnerabilities
+[91]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=sqale_index
+[92]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=duplicated_lines_density
+[93]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=code_smells
+[94]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-pdf&metric=sqale_rating
+[101]: https://github.com/yongshun950824/KYS.Library/tree/master/src/KYS.Library.Qr
+[102]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Qr-build.yml/badge.svg
+[103]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Qr-build.yml
+[104]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=alert_status
+[105]: https://sonarcloud.io/project/overview?id=yongshun950824_kys-library-qr
+[106]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=coverage
+[107]: https://yongshun950824.github.io/KYS.Library/kys-library-qr/index.html
+[108]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=reliability_rating
+[109]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=security_rating
+[110]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=vulnerabilities
+[111]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=sqale_index
+[112]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=duplicated_lines_density
+[113]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=code_smells
+[114]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-qr&metric=sqale_rating
+[121]: https://github.com/yongshun950824/KYS.Library/tree/master/src/KYS.Library.Zip
+[122]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Zip-build.yml/badge.svg
+[123]: https://github.com/yongshun950824/KYS.Library/actions/workflows/KYS.Library.Zip-build.yml
+[124]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=alert_status
+[125]: https://sonarcloud.io/project/overview?id=yongshun950824_kys-library-zip
+[126]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=coverage
+[127]: https://yongshun950824.github.io/KYS.Library/kys-library-zip/index.html
+[128]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=reliability_rating
+[129]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=security_rating
+[130]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=vulnerabilities
+[131]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=sqale_index
+[132]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=duplicated_lines_density
+[133]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=code_smells
+[134]: https://sonarcloud.io/api/project_badges/measure?project=yongshun950824_kys-library-zip&metric=sqale_rating

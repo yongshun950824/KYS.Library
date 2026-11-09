@@ -1,0 +1,30 @@
+name: CI - Build KYS.Library.Excel
+permissions:
+  contents: read
+  pull-requests: read
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Excel/**"
+      - "tests/KYS.Library.Excel.Tests/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Excel/**"
+      - "tests/KYS.Library.Excel.Tests/**"
+
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-dotnet-build.yml
+    with:
+      library-name: "KYS.Library.Excel"
+      library-project-path: "src/KYS.Library.Excel/KYS.Library.Excel.csproj"
+      library-tests-project-path: "tests/KYS.Library.Excel.Tests/KYS.Library.Excel.Tests.csproj"
+      dotnet-version: "8.0.x"

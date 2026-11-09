@@ -1,0 +1,30 @@
+name: CI - Build KYS.Library.Qr
+permissions:
+  contents: read
+  pull-requests: read
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Qr/**"
+      - "tests/KYS.Library.Qr.Tests/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Qr/**"
+      - "tests/KYS.Library.Qr.Tests/**"
+
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-dotnet-build.yml
+    with:
+      library-name: "KYS.Library.Qr"
+      library-project-path: "src/KYS.Library.Qr/KYS.Library.Qr.csproj"
+      library-tests-project-path: "tests/KYS.Library.Qr.Tests/KYS.Library.Qr.Tests.csproj"
+      dotnet-version: "8.0.x"

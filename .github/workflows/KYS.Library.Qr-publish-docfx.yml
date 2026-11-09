@@ -1,0 +1,22 @@
+name: DocFX - Publish KYS.Library.Qr Documentation
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Qr/**"
+
+jobs:
+  build-docs:
+    uses: ./.github/workflows/reusable-publish-docfx.yml
+    with:
+      library-name: kys-library-qr
+      docfx-project: src/KYS.Library.Qr/docfx
+      docfx-publish-dir: ./src/KYS.Library.Qr/docfx/_site
+      dotnet-version:
+    permissions:
+      contents: write
