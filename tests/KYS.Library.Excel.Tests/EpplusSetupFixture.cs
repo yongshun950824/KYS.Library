@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using OfficeOpenXml;
 
-namespace KYS.Library.Tests
+namespace KYS.Library.Excel.Tests
 {
     [SetUpFixture]
     public class EpplusLicenseSetup

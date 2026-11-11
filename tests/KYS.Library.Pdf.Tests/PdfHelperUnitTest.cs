@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using iText.Kernel.Exceptions;
 using KYS.Library.Helpers;
-using NUnit.Framework;
+using KYS.Library.Pdf.Helpers;
 
-namespace KYS.Library.Tests.HelpersUnitTests;
+namespace KYS.Library.Pdf.Tests.HelpersUnitTests;
 
 public class PdfHelperUnitTest
 {
@@ -41,7 +38,7 @@ public class PdfHelperUnitTest
     public void IsPasswordProtected_WithProtectedPdf_ShouldReturnTrue()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_protectedPdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act
@@ -55,7 +52,7 @@ public class PdfHelperUnitTest
     public void IsPasswordProtected_WithUnprotectedPdf_ShouldReturnTrue()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_pdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act
@@ -69,7 +66,7 @@ public class PdfHelperUnitTest
     public void LockPdfDocument_WithoutPassword_ShouldThrowException()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_pdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -80,7 +77,7 @@ public class PdfHelperUnitTest
     public void LockPdfDocument_ShouldLockPdf()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_pdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -96,7 +93,7 @@ public class PdfHelperUnitTest
     public void UnlockPdfDocument_WithoutPassword_ShouldThrowException()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_pdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -107,7 +104,7 @@ public class PdfHelperUnitTest
     public void UnlockPdfDocument_WithWrongPassword_ShouldThrowException()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_protectedPdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -118,7 +115,7 @@ public class PdfHelperUnitTest
     public void UnlockPdfDocument_WithNotProtectedPdf_ShouldReturnByteArray()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_pdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -134,7 +131,7 @@ public class PdfHelperUnitTest
     public void UnlockPdfDocument_WithProtectedPdf_ShouldReturnByteArray()
     {
         // Arrange
-        using MemoryStream ms = FileHelper.LoadFileToMemoryStreamCore(_protectedPdfFilePath);
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert

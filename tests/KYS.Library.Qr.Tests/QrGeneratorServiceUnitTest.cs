@@ -1,11 +1,8 @@
-﻿using System;
-using System.IO;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using KYS.Library.Extensions;
-using KYS.Library.Services;
-using NUnit.Framework;
+using KYS.Library.Qr.Services;
 
-namespace KYS.Library.Tests.ServicesUnitTests
+namespace KYS.Library.Qr.Tests.ServicesUnitTests
 {
     public class QrGeneratorServiceUnitTest
     {

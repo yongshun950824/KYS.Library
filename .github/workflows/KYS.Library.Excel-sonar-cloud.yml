@@ -1,0 +1,28 @@
+name: SonarQube - KYS.Library.Excel
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Excel/**"
+      - "tests/KYS.Library.Excel.Tests/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "src/KYS.Library.Excel/**"
+      - "tests/KYS.Library.Excel.Tests/**"
+
+jobs:
+  scan:
+    uses: ./.github/workflows/reusable-sonar-scan.yml
+    with:
+      tests-project-path: "tests/KYS.Library.Excel.Tests"
+      lib-project-path: "src/KYS.Library.Excel"
+      sonar-project-name: "yongshun950824_kys-library-excel"
+      sonar-org: "yongshun950824"
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    permissions:
+      contents: read
