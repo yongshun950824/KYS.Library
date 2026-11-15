@@ -1,4 +1,4 @@
-namespace KYS.Library.Zip;
+namespace KYS.Library.Zip.Models;
 
 /// <summary>
 /// Represents the blueprint on the file element to be zipped into a zip file or unzipped from the zip file.

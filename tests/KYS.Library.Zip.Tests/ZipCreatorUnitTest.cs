@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using KYS.Library.Helpers;
+using KYS.Library.Zip.Models;
 using KYS.Library.Zip.Services;
 using NUnit.Framework;
 

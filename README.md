@@ -6,29 +6,29 @@ Set of helpers, extension methods, services and validations (attributes) to help
 
 ## Projects
 
-| Project                      | Build                                          |  Documentation  |           Quality Gate           |       Coverage        |
-| :--------------------------- | :--------------------------------------------- | :-------------: | :------------------------------: | :-------------------: |
-| [KYS.Library][1]             | [![CI - Build KYS.Library][2]][3]              | [View Docs][7]  |  [![Quality Gate Status][4]][5]  |  [![Coverage][6]][5]  |
-| [KYS.Library.Excel][61]      | [![CI - Build KYS.Library.Excel][62]][63]      | [View Docs][67] | [![Quality Gate Status][64]][65] | [![Coverage][66]][65] |
-| [KYS.Library.Pdf][81]      | [![CI - Build KYS.Library.Pdf][82]][83]      | [View Docs][87] | [![Quality Gate Status][84]][85] | [![Coverage][86]][85] |
-| [KYS.Library.Qr][101]      | [![CI - Build KYS.Library.Qr][102]][103]      | [View Docs][107] | [![Quality Gate Status][104]][105] | [![Coverage][106]][105] |
-| [KYS.Library.Zip][121]      | [![CI - Build KYS.Library.Zip][122]][123]      | [View Docs][127] | [![Quality Gate Status][124]][125] | [![Coverage][126]][125] |
-| [KYS.AspNetCore.Library][21] | [![CI - Build KYS.AspNetCore Library][22]][23] | [View Docs][27] | [![Quality Gate Status][24]][25] | [![Coverage][26]][25] |
-| [KYS.EFCore.Library][41]     | [![CI - Build KYS.EFCore Library][42]][43]     | [View Docs][47] | [![Quality Gate Status][44]][45] | [![Coverage][46]][45] |
+| Project                      | Build                                          |  Documentation   |            Quality Gate            |        Coverage         |
+| :--------------------------- | :--------------------------------------------- | :--------------: | :--------------------------------: | :---------------------: |
+| [KYS.Library][1]             | [![CI - Build KYS.Library][2]][3]              |  [View Docs][7]  |   [![Quality Gate Status][4]][5]   |   [![Coverage][6]][5]   |
+| [KYS.Library.Excel][61]      | [![CI - Build KYS.Library.Excel][62]][63]      | [View Docs][67]  |  [![Quality Gate Status][64]][65]  |  [![Coverage][66]][65]  |
+| [KYS.Library.Pdf][81]        | [![CI - Build KYS.Library.Pdf][82]][83]        | [View Docs][87]  |  [![Quality Gate Status][84]][85]  |  [![Coverage][86]][85]  |
+| [KYS.Library.Qr][101]        | [![CI - Build KYS.Library.Qr][102]][103]       | [View Docs][107] | [![Quality Gate Status][104]][105] | [![Coverage][106]][105] |
+| [KYS.Library.Zip][121]       | [![CI - Build KYS.Library.Zip][122]][123]      | [View Docs][127] | [![Quality Gate Status][124]][125] | [![Coverage][126]][125] |
+| [KYS.AspNetCore.Library][21] | [![CI - Build KYS.AspNetCore Library][22]][23] | [View Docs][27]  |  [![Quality Gate Status][24]][25]  |  [![Coverage][26]][25]  |
+| [KYS.EFCore.Library][41]     | [![CI - Build KYS.EFCore Library][42]][43]     | [View Docs][47]  |  [![Quality Gate Status][44]][45]  |  [![Coverage][46]][45]  |
 
 ---
 
 ## 🧰 What's Inside
 
-| Project                    | Highlights                                                                                                                                                                                                                                 |
-| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **KYS.Library**            | DataTable/file/stream/JSON/XML/SQL/URI helpers, translation services, validation attributes, and extension methods                                                                                                                           |
-| **KYS.Library.Excel**      | DataSet/DataTable to Excel export (`ExcelHelper`, `ExcelDataTableHelper`), column formatting, row styles, and multi-sheet support with EPPlus                                                                                                 |
-| **KYS.Library.Pdf**        | HTML-to-PDF conversion, PDF password lock/unlock support, and DataTable-to-PDF rendering with styling via iText                                                                                                                               |
-| **KYS.Library.Qr**         | QR code generation from text/value input, optional logo embedding, and image/data URI output via ZXing + SkiaSharp                                                                                                                           |
-| **KYS.Library.Zip**        | ZIP archive creation/extraction, optional password protection, and file-item packaging through `ZipCreator` and `ZipExtractor`                                                                                                            |
-| **KYS.AspNetCore.Library** | API response model, security headers middlewares (API / Web), `HttpContext` extensions, view result helper, JSON-to-HTML tag helper                                                                                                         |
-| **KYS.EFCore.Library**     | DDD building blocks (`Entity`, `ValueObject`, `Enumeration`, `IAggregateRoot`), Repository / Unit of Work abstractions, Specification pattern, audit logging, enum description converter                                                    |
+| Project                    | Highlights                                                                                                                                                                               |
+| :------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **KYS.Library**            | DataTable/file/stream/JSON/XML/SQL/URI helpers, translation services, validation attributes, and extension methods                                                                       |
+| **KYS.Library.Excel**      | DataSet/DataTable to Excel export (`ExcelHelper`, `ExcelDataTableHelper`), column formatting, row styles, and multi-sheet support with EPPlus                                            |
+| **KYS.Library.Pdf**        | HTML-to-PDF conversion, PDF password lock/unlock support, and DataTable-to-PDF rendering with styling via iText                                                                          |
+| **KYS.Library.Qr**         | QR code generation from text/value input, optional logo embedding, and image/data URI output via ZXing + SkiaSharp                                                                       |
+| **KYS.Library.Zip**        | ZIP archive creation/extraction, optional password protection, and file-item packaging through `ZipCreator` and `ZipExtractor`                                                           |
+| **KYS.AspNetCore.Library** | API response model, security headers middlewares (API / Web), `HttpContext` extensions, view result helper, JSON-to-HTML tag helper                                                      |
+| **KYS.EFCore.Library**     | DDD building blocks (`Entity`, `ValueObject`, `Enumeration`, `IAggregateRoot`), Repository / Unit of Work abstractions, Specification pattern, audit logging, enum description converter |
 
 ---
 
@@ -39,6 +39,8 @@ Most helpers return `Result` / `Result<T>` from
 instead of throwing exceptions. Check `IsSuccess` / `Error`, or chain the calls with `Bind` / `Map`:
 
 ```csharp
+using KYS.Library.Qr;
+
 Result<string> result = QrGenerator.Create("https://example.com")
     .Bind(qr => qr.DrawAndToDataUri());
 
@@ -74,6 +76,8 @@ The library is not yet on NuGet (Future Plan), you can include it in your soluti
 ### QR code
 
 ```csharp
+using KYS.Library.Qr;
+
 Result<string> base64 = QrGenerator.Create("https://example.com")
     .Bind(qr => qr.DrawAndToBase64());
 ```
@@ -82,6 +86,8 @@ Result<string> base64 = QrGenerator.Create("https://example.com")
 
 ```csharp
 // Requires the EPPlus license to be configured at startup (see Third-party Licenses)
+using KYS.Library.Excel;
+
 Result<byte[]> excel = ExcelHelper.CreateExcelBook(dataTable);
 
 if (excel.IsSuccess)
@@ -96,10 +102,10 @@ Detailed examples for helpers, extensions, and etc are available in the [Documen
 
 This repository is MIT licensed, but some dependencies are not:
 
-| Dependency | License                                                                      | Used by                                           |
-| :--------- | :--------------------------------------------------------------------------- | :------------------------------------------------ |
+| Dependency | License                                                                      | Used by                                                |
+| :--------- | :--------------------------------------------------------------------------- | :----------------------------------------------------- |
 | EPPlus 6   | PolyForm Noncommercial (a commercial license is required for commercial use) | `ExcelHelper`, `ExcelDataTableHelper.WriteToExcelFile` |
-| iText 7    | AGPL (commercial license available)                                          | `PdfHelper`, `PdfDataTableHelper.WriteToPdfFile`     |
+| iText 7    | AGPL (commercial license available)                                          | `PdfHelper`, `PdfDataTableHelper.WriteToPdfFile`       |
 
 **EPPlus must be configured by your application** before using the Excel helpers. The library does not set it:
 
@@ -148,12 +154,12 @@ Alternatively, configure it in `appsettings.json`:
 <details>
 <summary>📦 KYS.Library.Excel — View Full SonarQube Report</summary>
 
-| Metric                  | Badge                              |
-| :---------------------- | :--------------------------------- |
-| **Quality Gate Status** | [![Quality Gate Status][64]][65]     |
-| **Coverage**            | [![Coverage][66]][65]                |
-| **Reliability**         | [![Reliability Rating][68]][65]      |
-| **Security**            | [![Security Rating][69]][65]         |
+| Metric                  | Badge                               |
+| :---------------------- | :---------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][64]][65]    |
+| **Coverage**            | [![Coverage][66]][65]               |
+| **Reliability**         | [![Reliability Rating][68]][65]     |
+| **Security**            | [![Security Rating][69]][65]        |
 | **Vulnerabilities**     | [![Vulnerabilities][70]][65]        |
 | **Technical Debt**      | [![Technical Debt][71]][65]         |
 | **Duplicated Lines**    | [![Duplicated Lines (%)][72]][65]   |
@@ -165,12 +171,12 @@ Alternatively, configure it in `appsettings.json`:
 <details>
 <summary>📦 KYS.Library.Pdf — View Full SonarQube Report</summary>
 
-| Metric                  | Badge                              |
-| :---------------------- | :--------------------------------- |
-| **Quality Gate Status** | [![Quality Gate Status][84]][85]     |
-| **Coverage**            | [![Coverage][86]][85]                |
-| **Reliability**         | [![Reliability Rating][88]][85]      |
-| **Security**            | [![Security Rating][89]][85]         |
+| Metric                  | Badge                               |
+| :---------------------- | :---------------------------------- |
+| **Quality Gate Status** | [![Quality Gate Status][84]][85]    |
+| **Coverage**            | [![Coverage][86]][85]               |
+| **Reliability**         | [![Reliability Rating][88]][85]     |
+| **Security**            | [![Security Rating][89]][85]        |
 | **Vulnerabilities**     | [![Vulnerabilities][90]][85]        |
 | **Technical Debt**      | [![Technical Debt][91]][85]         |
 | **Duplicated Lines**    | [![Duplicated Lines (%)][92]][85]   |
@@ -182,12 +188,12 @@ Alternatively, configure it in `appsettings.json`:
 <details>
 <summary>📦 KYS.Library.Qr — View Full SonarQube Report</summary>
 
-| Metric                  | Badge                              |
-| :---------------------- | :--------------------------------- |
-| **Quality Gate Status** | [![Quality Gate Status][104]][105]     |
-| **Coverage**            | [![Coverage][106]][105]                |
-| **Reliability**         | [![Reliability Rating][108]][85]      |
-| **Security**            | [![Security Rating][109]][105]         |
+| Metric                  | Badge                                 |
+| :---------------------- | :------------------------------------ |
+| **Quality Gate Status** | [![Quality Gate Status][104]][105]    |
+| **Coverage**            | [![Coverage][106]][105]               |
+| **Reliability**         | [![Reliability Rating][108]][105]     |
+| **Security**            | [![Security Rating][109]][105]        |
 | **Vulnerabilities**     | [![Vulnerabilities][110]][105]        |
 | **Technical Debt**      | [![Technical Debt][111]][105]         |
 | **Duplicated Lines**    | [![Duplicated Lines (%)][112]][105]   |
@@ -199,12 +205,12 @@ Alternatively, configure it in `appsettings.json`:
 <details>
 <summary>📦 KYS.Library.Zip — View Full SonarQube Report</summary>
 
-| Metric                  | Badge                              |
-| :---------------------- | :--------------------------------- |
-| **Quality Gate Status** | [![Quality Gate Status][124]][125]     |
-| **Coverage**            | [![Coverage][126]][125]                |
-| **Reliability**         | [![Reliability Rating][128]][85]      |
-| **Security**            | [![Security Rating][129]][125]         |
+| Metric                  | Badge                                 |
+| :---------------------- | :------------------------------------ |
+| **Quality Gate Status** | [![Quality Gate Status][124]][125]    |
+| **Coverage**            | [![Coverage][126]][125]               |
+| **Reliability**         | [![Reliability Rating][128]][125]     |
+| **Security**            | [![Security Rating][129]][125]        |
 | **Vulnerabilities**     | [![Vulnerabilities][130]][125]        |
 | **Technical Debt**      | [![Technical Debt][131]][125]         |
 | **Duplicated Lines**    | [![Duplicated Lines (%)][132]][125]   |

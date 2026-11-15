@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using KYS.Library.Helpers;
+using KYS.Library.Zip.Models;
 using KYS.Library.Zip.Services;
 using NUnit.Framework;
 
@@ -16,7 +17,7 @@ public class ZipExtractorUnitTest
     [SetUp]
     public void SetUp()
     {
-        _resourcePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "logo.png");
+        _resourcePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources");
         _outDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "OutDir");
         Directory.CreateDirectory(_outDirectoryPath);
 
@@ -24,7 +25,7 @@ public class ZipExtractorUnitTest
         string[] resourceFileNames = ["logo.png", "sample.txt"];
         foreach (string fileName in resourceFileNames)
         {
-            using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_resourcePath));
+            using MemoryStream ms = new MemoryStream(File.ReadAllBytes(Path.Combine(_resourcePath, fileName)));
 
             _fileItems.Add(new ZipFileItem
             {
@@ -35,7 +36,7 @@ public class ZipExtractorUnitTest
     }
 
     [Test]
-    public void Unzip_WithNonExistentFile_ShouldThrowException()
+    public void Unzip_WithNonExistentFile_ShouldReturnResultFailure()
     {
         // Arrange
         string zipFileName = $"invalid.zip";
@@ -117,7 +118,7 @@ public class ZipExtractorUnitTest
     }
 
     [Test]
-    public void Unzip_WithEncryptedZipFileAndNoPassword_ShouldThrowException()
+    public void Unzip_WithEncryptedZipFileAndNoPassword_ShouldReturnResultFailure()
     {
         // Arrange
         string zipFileName = $"Sample zip_{DateTime.Now:yyyyMMdd_HHmm}.zip";

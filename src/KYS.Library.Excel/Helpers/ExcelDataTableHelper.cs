@@ -14,6 +14,7 @@ public static class ExcelDataTableHelper
     /// </summary>
     /// <param name="dt">The <see cref="DataTable" /> instance.</param>
     /// <param name="headerRowStyle">The style for the header row.</param>
+    /// <param name="excelColumnFormats">The list of columns with the format to be displayed.</param>
     /// <returns>A <see cref="Result{T}" /> containing the <see cref="byte[]" /> instance which is the Excel file content.</returns>
     /// <remarks>
     /// EPPlus requires a license to be configured by the consuming application

@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using CSharpFunctionalExtensions;
 using ICSharpCode.SharpZipLib.Zip;
-using KYS.Library.Helpers;
+using KYS.Library.Zip.Models;
 
 namespace KYS.Library.Zip.Services;
 

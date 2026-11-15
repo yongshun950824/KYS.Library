@@ -3,6 +3,7 @@ using CSharpFunctionalExtensions;
 using ICSharpCode.SharpZipLib.Zip;
 using KYS.Library.Extensions;
 using KYS.Library.Helpers;
+using KYS.Library.Zip.Models;
 
 namespace KYS.Library.Zip.Services;
 
@@ -99,8 +100,8 @@ public class ZipCreator : IZipCreator
     /// </returns>
     public Result<byte[]> Zip()
     {
-        using FileStream fs = File.Create(FileName);
-        ZipOutputStream zipOStream = new(fs);
+        using MemoryStream ms = new();
+        using ZipOutputStream zipOStream = new(ms) { IsStreamOwner = false };
 
         if (!String.IsNullOrEmpty(Password))
             zipOStream.Password = Password;
@@ -109,17 +110,11 @@ public class ZipCreator : IZipCreator
         {
             ZipEntry entry = new(item.Name);
             zipOStream.PutNextEntry(entry);
-
             zipOStream.Write(item.Contents, 0, item.Contents.Length);
+            zipOStream.CloseEntry();
         }
 
         zipOStream.Finish();
-
-        MemoryStream ms = new();
-        fs.Position = 0;
-        fs.CopyTo(ms);
-
-        zipOStream.Close();
 
         return Result.Success(ms.ToArray());
     }
@@ -145,9 +140,7 @@ public class ZipCreator : IZipCreator
                 MemoryStream ms = new(zipBytes);
                 ms.Seek(0, SeekOrigin.Begin);
 
-                FileHelper.WriteFile(ms, Path.Combine(destDirPath, FileName));
-
-                return Result.Success();
+                return FileHelper.WriteFile(ms, Path.Combine(destDirPath, FileName));
             });
     }
 
