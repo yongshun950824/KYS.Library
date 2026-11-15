@@ -9,15 +9,15 @@ namespace KYS.Library.Excel.Models;
 /// </summary>
 public class AdditionalExcelSheet
 {
-    private DataTable _dataTable;
+    private DataTable? _dataTable;
     /// <summary>
     /// Gets or sets the <see cref="DataTable"/> instance. 
     /// </summary>
-    public DataTable DataTable
+    public required DataTable DataTable
     {
         get
         {
-            return _dataTable;
+            return _dataTable ?? throw new InvalidOperationException("DataTable has not been initialized."); ;
         }
         set
         {
@@ -26,18 +26,21 @@ public class AdditionalExcelSheet
             _dataTable = value;
         }
     }
+
     /// <summary>
     /// Gets or sets the column(s) and its customization.
     /// </summary>
-    public List<ExcelColumnFormat> ExcelColumnFormats { get; set; } = null;
+    public List<ExcelColumnFormat>? ExcelColumnFormats { get; set; } = null;
+
     /// <summary>
     /// Gets or sets the header row style.
     /// </summary>
     public ExcelRowStyle HeaderRowStyle { get; set; } = ExcelRowStyle.DefaultHeaderRowStyle;
+
     /// <summary>
     /// Gets or sets the summary (bottom) row style.
     /// </summary>
-    public ExcelRowStyle SummaryRowStyle { get; set; } = null;
+    public ExcelRowStyle? SummaryRowStyle { get; set; } = null;
 
     [SuppressMessage("Usage", "S3236:Caller information parameters should not be explicitly provided",
         Justification = "Property setters always pass 'value', so nameof(DataTable) is clearer.")]

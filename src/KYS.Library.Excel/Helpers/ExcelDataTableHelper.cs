@@ -22,8 +22,8 @@ public static class ExcelDataTableHelper
     /// at startup. This library does not set it.
     /// </remarks>
     public static Result<byte[]> WriteToExcelFile(DataTable dt,
-        ExcelRowStyle headerRowStyle = null,
-        List<ExcelColumnFormat> excelColumnFormats = null)
+        ExcelRowStyle? headerRowStyle = null,
+        List<ExcelColumnFormat>? excelColumnFormats = null)
     {
         return ExcelHelper.CreateExcelBook(dt, excelColumnFormats, headerRowStyle);
     }

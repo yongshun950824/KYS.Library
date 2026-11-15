@@ -7,10 +7,10 @@ namespace KYS.Library.Pdf.Tests.HelpersUnitTests;
 
 public class PdfHelperUnitTest
 {
-    private string _pdfFilePath;
-    private string _protectedPdfFilePath;
-    private string _htmlContent;
-    private List<string> _montserratFontFiles;
+    private string? _pdfFilePath;
+    private string? _protectedPdfFilePath;
+    private string? _htmlContent;
+    private List<string>? _montserratFontFiles;
 
     [SetUp]
     public void Setup()
@@ -38,7 +38,7 @@ public class PdfHelperUnitTest
     public void IsPasswordProtected_WithProtectedPdf_ShouldReturnTrue()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act
@@ -52,7 +52,7 @@ public class PdfHelperUnitTest
     public void IsPasswordProtected_WithUnprotectedPdf_ShouldReturnTrue()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act
@@ -66,18 +66,20 @@ public class PdfHelperUnitTest
     public void LockPdfDocument_WithoutPassword_ShouldThrowException()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
         Assert.Throws<ArgumentNullException>(() => PdfHelper.LockPdfDocument(bytes, null));
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
     }
 
     [Test]
     public void LockPdfDocument_ShouldLockPdf()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -93,18 +95,20 @@ public class PdfHelperUnitTest
     public void UnlockPdfDocument_WithoutPassword_ShouldThrowException()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
         Assert.Throws<ArgumentNullException>(() => PdfHelper.UnlockPdfDocument(bytes, null));
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
     }
 
     [Test]
     public void UnlockPdfDocument_WithWrongPassword_ShouldThrowException()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -115,7 +119,7 @@ public class PdfHelperUnitTest
     public void UnlockPdfDocument_WithNotProtectedPdf_ShouldReturnByteArray()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_pdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -131,7 +135,7 @@ public class PdfHelperUnitTest
     public void UnlockPdfDocument_WithProtectedPdf_ShouldReturnByteArray()
     {
         // Arrange
-        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath));
+        using MemoryStream ms = new MemoryStream(File.ReadAllBytes(_protectedPdfFilePath!));
         byte[] bytes = StreamHelper.ToByteArray(ms);
 
         // Act & Assert
@@ -147,7 +151,7 @@ public class PdfHelperUnitTest
     public void ConvertHtmlToPdf_WithDefault_ShouldReturnMemoryStream()
     {
         // Act
-        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent);
+        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent!);
 
         // Assert
         Assert.That(ms, Is.Not.Null);
@@ -161,7 +165,7 @@ public class PdfHelperUnitTest
     public void ConvertHtmlToPdf_WithCustomFonts_ShouldReturnMemoryStream()
     {
         // Act
-        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent, importCustomFontFamilyFilePaths: _montserratFontFiles);
+        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent!, importCustomFontFamilyFilePaths: _montserratFontFiles);
 
         // Assert
         Assert.That(ms, Is.Not.Null);
@@ -175,7 +179,7 @@ public class PdfHelperUnitTest
     public void ConvertHtmlToPdf_WithDisableRegisterSystemFonts_ShouldReturnMemoryStream()
     {
         // Act
-        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent, registerSystemFonts: false);
+        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent!, registerSystemFonts: false);
 
         // Assert
         Assert.That(ms, Is.Not.Null);
@@ -189,7 +193,7 @@ public class PdfHelperUnitTest
     public void ConvertHtmlToPdf_WithDisableRegisterStandardPdfFonts_ShouldReturnMemoryStream()
     {
         // Act
-        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent, registerStandardPdfFonts: false);
+        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent!, registerStandardPdfFonts: false);
 
         // Assert
         Assert.That(ms, Is.Not.Null);
@@ -203,7 +207,7 @@ public class PdfHelperUnitTest
     public void ConvertHtmlToPdf_WithDisableRegisterShippedFonts_ShouldReturnMemoryStream()
     {
         // Act
-        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent, registerShippedFonts: false);
+        using var ms = PdfHelper.ConvertHtmlToPdf(_htmlContent!, registerShippedFonts: false);
 
         // Assert
         Assert.That(ms, Is.Not.Null);

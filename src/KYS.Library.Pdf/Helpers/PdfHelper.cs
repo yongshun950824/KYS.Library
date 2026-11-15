@@ -31,13 +31,13 @@ public static class PdfHelper
         bool registerStandardPdfFonts = true,
         bool registerShippedFonts = true,
         bool registerSystemFonts = true,
-        List<string> importCustomFontFamilyFilePaths = null)
+        List<string>? importCustomFontFamilyFilePaths = null)
     {
         MemoryStream ms = new MemoryStream();
         using var pdfWriter = new PdfWriter(ms);
         pdfWriter.SetCloseStream(false);
 
-        ConverterProperties converterProperties = GetPdfConverterProperties(registerStandardPdfFonts,
+        ConverterProperties? converterProperties = GetPdfConverterProperties(registerStandardPdfFonts,
             registerShippedFonts,
             registerSystemFonts,
             importCustomFontFamilyFilePaths);
@@ -124,7 +124,7 @@ public static class PdfHelper
     /// <returns>Byte array for the unlocked PDF file.</returns>
     /// <exception cref="ArgumentException"></exception>
     /// <exception cref="ArgumentNullException"></exception>
-    public static byte[] LockPdfDocument(byte[] source, string ownerPass, string userPass = null)
+    public static byte[] LockPdfDocument(byte[] source, string ownerPass, string? userPass = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(ownerPass);
 
@@ -166,10 +166,10 @@ public static class PdfHelper
     /// <param name="registerSystemFonts"><c>Boolean</c> indicates the system font families are imported.</param>
     /// <param name="importCustomFontFamilyFilePaths">List of the custom font family file paths.</param>
     /// <returns><c>ConverterProperties</c> instance to be used for <c>HtmlConverter.ConvertToPdf</c> method.</returns>
-    private static ConverterProperties GetPdfConverterProperties(bool registerStandardPdfFonts = true,
+    private static ConverterProperties? GetPdfConverterProperties(bool registerStandardPdfFonts = true,
         bool registerShippedFonts = true,
         bool registerSystemFonts = true,
-        List<string> importCustomFontFilePaths = null)
+        List<string>? importCustomFontFilePaths = null)
     {
         if (registerStandardPdfFonts
             && registerShippedFonts

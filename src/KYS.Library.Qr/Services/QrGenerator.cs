@@ -16,7 +16,7 @@ public class QrGenerator : IQrGenerator
     private readonly string _value;
     private readonly int _width;
     private readonly int _height;
-    private readonly string _logoPath;
+    private readonly string? _logoPath;
     private readonly int? _logoWidth;
     private readonly int? _logoHeight;
     private readonly int _margin;
@@ -158,7 +158,7 @@ public class QrGenerator : IQrGenerator
     /// <summary>
     /// Gets the path for the logo image which the logo will be attached in the QR code.
     /// </summary>
-    public string LogoPath { get { return _logoPath; } }
+    public string? LogoPath { get { return _logoPath; } }
     /// <summary>
     /// Gets the width for the generated logo.
     /// </summary>
@@ -175,13 +175,13 @@ public class QrGenerator : IQrGenerator
     /// <summary>
     /// Gets the <see cref="SKBitmap"/>instance for the QR code.
     /// </summary>
-    public SKBitmap QRCode { get; private set; }
+    private SKBitmap QRCode { get; set; }
 
     /// <summary>
     /// Draw QR code.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the <see cref="SKBitmap"/> instance for the QR code.</returns>
-    public Result<SKBitmap> Draw()
+    public Result<SKBitmap> Generate()
     {
         if (QRCode != null)
             return Result.Success(QRCode);
@@ -208,7 +208,7 @@ public class QrGenerator : IQrGenerator
             var logo = SKImage.FromEncodedData(_logoPath);
             SKBitmap logoBitmap = SKBitmap.FromImage(logo);
 
-            SKBitmap overlay = logoBitmap.Resize(new SKImageInfo(_logoWidth.Value, _logoHeight.Value),
+            SKBitmap overlay = logoBitmap.Resize(new SKImageInfo(_logoWidth!.Value, _logoHeight!.Value),
                 SKFilterQuality.High);
 
             int deltaHeight = barcodeBitmap.Height - overlay.Height;
@@ -227,9 +227,9 @@ public class QrGenerator : IQrGenerator
     /// Draw QR code into a <see cref="MemoryStream"/> instance.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the <see cref="MemoryStream"/> instance containing the QR code.</returns>
-    public Result<MemoryStream> DrawAndToMemoryStream()
+    public Result<MemoryStream> GenerateAsPng()
     {
-        return Draw()
+        return Generate()
             .Bind(ToMemoryStream);
     }
 
@@ -237,9 +237,9 @@ public class QrGenerator : IQrGenerator
     /// Draw the QR code and generate a Base64 string.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the Base64 string for the QR code.</returns>
-    public Result<string> DrawAndToBase64()
+    public Result<string> GenerateAsBase64()
     {
-        return DrawAndToMemoryStream()
+        return GenerateAsPng()
             .Bind(ms => StreamHelper.ToBase64(ms));
     }
 
@@ -247,9 +247,9 @@ public class QrGenerator : IQrGenerator
     /// Draw the QR code and generate a data URI string.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the data URI string for the QR code.</returns>
-    public Result<string> DrawAndToDataUri()
+    public Result<string> GenerateAsDataUri()
     {
-        return DrawAndToBase64()
+        return GenerateAsBase64()
             .Map(base64 => $"data:image/png;base64,{base64}");
     }
 
@@ -258,7 +258,7 @@ public class QrGenerator : IQrGenerator
     /// </summary>
     /// <returns>A <see cref="Result"/> indicating success or failure.</returns>
     /// <param name="filePath">The path for the QR code to be saved.</param>
-    public Result DrawAndToFile(string filePath)
+    public Result SaveAsPng(string filePath)
     {
         if (String.IsNullOrWhiteSpace(filePath))
             return Result.Failure($"Invalid {nameof(filePath)}.");
@@ -266,7 +266,7 @@ public class QrGenerator : IQrGenerator
         if (!filePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
             filePath += ".png";
 
-        return Draw()
+        return Generate()
             .Bind(bitmap => ToFile(bitmap, filePath));
     }
 

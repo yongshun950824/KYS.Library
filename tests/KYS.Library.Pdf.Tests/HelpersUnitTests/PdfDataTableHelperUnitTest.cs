@@ -3,7 +3,7 @@ using iText.Layout;
 using iText.Layout.Properties;
 using KYS.Library.Extensions;
 using KYS.Library.Helpers;
-using PdfDataTableHelper = KYS.Library.Pdf.Helpers.PdfDataTableHelper;
+using KYS.Library.Pdf.Helpers;
 
 namespace KYS.Library.Pdf.Tests.HelpersUnitTests;
 
@@ -15,14 +15,10 @@ public class PdfDataTableHelperUnitTest
         new Student { Id = 1, Name = "Ali" },
         new Student { Id = 2, Name = "Bob" }
     };
-    private const char SEPARATOR = ';';
-    private string _csvFilePath;
 
     [SetUp]
     public void Setup()
     {
-        _csvFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "DataTableHelper", "data.csv");
-
         if (_dt.IsNullOrEmpty())
         {
             _dt.Columns.Add(nameof(Student.Id), typeof(int));
@@ -116,7 +112,7 @@ public class PdfDataTableHelperUnitTest
 
     private class Student
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public required int Id { get; set; }
+        public required string Name { get; set; }
     }
 }

@@ -26,8 +26,8 @@ public static class PdfDataTableHelper
     /// <returns>A <see cref="Result{T}" /> containing the <see cref="byte[]" /> instance which is the PDF file content.</returns>
     public static Result<byte[]> WriteToPdfFile(DataTable dt,
         bool printHeaders = true,
-        Style tableHeaderStyle = null,
-        Style tableBodyStyle = null)
+        Style? tableHeaderStyle = null,
+        Style? tableBodyStyle = null)
     {
         if (dt == null)
             return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(dt)));
@@ -60,8 +60,8 @@ public static class PdfDataTableHelper
 
     private static Table DataTableToPdfTable(DataTable dt,
         bool printHeaders = true,
-        Style headerStyle = null,
-        Style bodyStyle = null)
+        Style? headerStyle = null,
+        Style? bodyStyle = null)
     {
         Table table = new Table(dt.Columns.Count)
             .SetWidth(UnitValue.CreatePercentValue(100));

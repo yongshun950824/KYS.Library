@@ -29,10 +29,10 @@ public static class ExcelHelper
     /// at startup. This library does not set it.
     /// </remarks>
     public static Result<byte[]> CreateExcelBook(DataSet ds,
-        List<ExcelColumnFormat> excelColumnFormats = null,
-        ExcelRowStyle headerRowStyle = null,
-        ExcelRowStyle summaryRowStyle = null,
-        List<AdditionalExcelSheet> additionalExcelSheets = null)
+        List<ExcelColumnFormat>? excelColumnFormats = null,
+        ExcelRowStyle? headerRowStyle = null,
+        ExcelRowStyle? summaryRowStyle = null,
+        List<AdditionalExcelSheet>? additionalExcelSheets = null)
     {
         if (ds == null)
             return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(ds)));
@@ -56,7 +56,7 @@ public static class ExcelHelper
 
                 if (!additionalExcelSheets.IsNullOrEmpty())
                 {
-                    foreach (AdditionalExcelSheet sheet in additionalExcelSheets)
+                    foreach (AdditionalExcelSheet sheet in additionalExcelSheets!)
                     {
                         // Avoid updating original source datatable
                         DataTable copiedDt = sheet.DataTable.Copy();
@@ -91,10 +91,10 @@ public static class ExcelHelper
     /// at startup. This library does not set it.
     /// </remarks>
     public static Result<byte[]> CreateExcelBook(DataTable dt,
-        List<ExcelColumnFormat> excelColumnFormats = null,
-        ExcelRowStyle headerRowStyle = null,
-        ExcelRowStyle summaryRowStyle = null,
-        List<AdditionalExcelSheet> additionalExcelSheets = null)
+        List<ExcelColumnFormat>? excelColumnFormats = null,
+        ExcelRowStyle? headerRowStyle = null,
+        ExcelRowStyle? summaryRowStyle = null,
+        List<AdditionalExcelSheet>? additionalExcelSheets = null)
     {
         if (dt == null)
             return Result.Failure<byte[]>(DomainErrors.CannotBeNull(nameof(dt)));
@@ -119,9 +119,9 @@ public static class ExcelHelper
 
     private static void CreateExcelWorksheet(ExcelPackage package,
         DataTable dt,
-        List<ExcelColumnFormat> excelColumnFormats = null,
-        ExcelRowStyle headerRowStyle = null,
-        ExcelRowStyle summaryRowStyle = null)
+        List<ExcelColumnFormat>? excelColumnFormats = null,
+        ExcelRowStyle? headerRowStyle = null,
+        ExcelRowStyle? summaryRowStyle = null)
     {
         bool hasHeader = true;
 
@@ -131,11 +131,11 @@ public static class ExcelHelper
         if (!excelColumnFormats.IsNullOrEmpty())
         {
             DataView dv = dt.DefaultView;
-            dt = dv.ToTable(true, excelColumnFormats.Select(x => x.ColumnName).ToArray());
+            dt = dv.ToTable(true, excelColumnFormats!.Select(x => x.ColumnName).ToArray());
 
             foreach (DataColumn col in dt.Columns)
             {
-                var excelColumnFormat = excelColumnFormats.FirstOrDefault(x => x.ColumnName == col.ColumnName
+                var excelColumnFormat = excelColumnFormats!.FirstOrDefault(x => x.ColumnName == col.ColumnName
                     && !String.IsNullOrEmpty(x.DisplayedColumnName));
                 if (excelColumnFormat != null)
                 {
@@ -192,7 +192,7 @@ public static class ExcelHelper
 
     private static void ApplyColumnFormats(ExcelWorksheet worksheet,
         DataTable dt,
-        List<ExcelColumnFormat> excelColumnFormats,
+        List<ExcelColumnFormat>? excelColumnFormats,
         int totalRow,
         bool hasHeader = true)
     {

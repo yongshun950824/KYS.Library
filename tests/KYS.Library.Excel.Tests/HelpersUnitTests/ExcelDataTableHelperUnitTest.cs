@@ -1,13 +1,12 @@
 using System.Data;
 using System.Drawing;
+using KYS.Library.Excel.Helpers;
+using KYS.Library.Excel.Options;
 using KYS.Library.Extensions;
 using KYS.Library.Helpers;
 using NUnit.Framework;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using ExcelDataTableHelper = KYS.Library.Excel.Helpers.ExcelDataTableHelper;
-using DomainErrors = KYS.Library.Helpers.DomainErrors;
-using KYS.Library.Excel.Options;
 
 namespace KYS.Library.Excel.Tests.HelpersUnitTests;
 
@@ -17,16 +16,12 @@ public class ExcelDataTableHelperUnitTest
     private readonly List<Student> _studentList = new()
     {
         new Student { Id = 1, Name = "Ali" },
-        new Student {  Id = 2, Name = "Bob" }
+        new Student { Id = 2, Name = "Bob" }
     };
-    private const char SEPARATOR = ';';
-    private string _csvFilePath;
 
     [SetUp]
     public void Setup()
     {
-        _csvFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "DataTableHelper", "data.csv");
-
         if (_dt.IsNullOrEmpty())
         {
             _dt.Columns.Add(nameof(Student.Id), typeof(int));
@@ -48,7 +43,9 @@ public class ExcelDataTableHelperUnitTest
     public void WriteToExcelFile_WithNullDataTable_ShouldReturnResultFailure()
     {
         // Act & Assert
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
         var result = ExcelDataTableHelper.WriteToExcelFile(null);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
         // Assert
         Assert.IsFalse(result.IsSuccess);
@@ -136,8 +133,8 @@ public class ExcelDataTableHelperUnitTest
 
     private void AssertExcel(byte[] bytes,
         string sheetName,
-        List<ExcelColumnFormat> excelColumnFormats = null,
-        ExcelRowStyle headerRowStyle = null)
+        List<ExcelColumnFormat>? excelColumnFormats = null,
+        ExcelRowStyle? headerRowStyle = null)
     {
         using MemoryStream ms = StreamHelper.ToMemoryStream(bytes).Value;
         using ExcelPackage package = new(ms);
@@ -160,11 +157,11 @@ public class ExcelDataTableHelperUnitTest
 
         if (!excelColumnFormats.IsNullOrEmpty())
         {
-            Assert.That(worksheet.Cells[2, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats[0].HorizontalAlignment));
-            Assert.That(worksheet.Cells[2, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats[0].Format));
+            Assert.That(worksheet.Cells[2, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats![0].HorizontalAlignment));
+            Assert.That(worksheet.Cells[2, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats![0].Format));
 
-            Assert.That(worksheet.Cells[3, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats[0].HorizontalAlignment));
-            Assert.That(worksheet.Cells[3, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats[0].Format));
+            Assert.That(worksheet.Cells[3, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats![0].HorizontalAlignment));
+            Assert.That(worksheet.Cells[3, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats![0].Format));
         }
 
         if (headerRowStyle != null)
@@ -181,7 +178,7 @@ public class ExcelDataTableHelperUnitTest
 
     private class Student
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public required int Id { get; set; }
+        public required string Name { get; set; }
     }
 }
