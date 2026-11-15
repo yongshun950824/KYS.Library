@@ -8,7 +8,10 @@
           "files": ["**/*.csproj"]
         }
       ],
-      "dest": "api"
+      "dest": "api",
+      "properties": {
+        "visibility": "public"
+      }
     }
   ],
   "build": {

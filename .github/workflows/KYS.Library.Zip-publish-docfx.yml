@@ -1,0 +1,22 @@
+name: DocFX - Publish KYS.Library.Zip Documentation
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Zip/**"
+
+jobs:
+  build-docs:
+    uses: ./.github/workflows/reusable-publish-docfx.yml
+    with:
+      library-name: kys-library-zip
+      docfx-project: src/KYS.Library.Zip/docfx
+      docfx-publish-dir: ./src/KYS.Library.Zip/docfx/_site
+      dotnet-version:
+    permissions:
+      contents: write

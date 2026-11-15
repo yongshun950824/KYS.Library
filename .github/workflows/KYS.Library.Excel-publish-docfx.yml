@@ -1,0 +1,22 @@
+name: DocFX - Publish KYS.Library.Excel Documentation
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Excel/**"
+
+jobs:
+  build-docs:
+    uses: ./.github/workflows/reusable-publish-docfx.yml
+    with:
+      library-name: kys-library-excel
+      docfx-project: src/KYS.Library.Excel/docfx
+      docfx-publish-dir: ./src/KYS.Library.Excel/docfx/_site
+      dotnet-version:
+    permissions:
+      contents: write

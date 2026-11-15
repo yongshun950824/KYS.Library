@@ -1,0 +1,30 @@
+name: CI - Build KYS.Library.Zip
+permissions:
+  contents: read
+  pull-requests: read
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Zip/**"
+      - "tests/KYS.Library.Zip.Tests/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Zip/**"
+      - "tests/KYS.Library.Zip.Tests/**"
+
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-dotnet-build.yml
+    with:
+      library-name: "KYS.Library.Zip"
+      library-project-path: "src/KYS.Library.Zip/KYS.Library.Zip.csproj"
+      library-tests-project-path: "tests/KYS.Library.Zip.Tests/KYS.Library.Zip.Tests.csproj"
+      dotnet-version: "8.0.x"

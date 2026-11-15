@@ -1,0 +1,30 @@
+name: CI - Build KYS.Library.Pdf
+permissions:
+  contents: read
+  pull-requests: read
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Pdf/**"
+      - "tests/KYS.Library.Pdf.Tests/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library/**"
+      - "src/KYS.Library.Pdf/**"
+      - "tests/KYS.Library.Pdf.Tests/**"
+
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-dotnet-build.yml
+    with:
+      library-name: "KYS.Library.Pdf"
+      library-project-path: "src/KYS.Library.Pdf/KYS.Library.Pdf.csproj"
+      library-tests-project-path: "tests/KYS.Library.Pdf.Tests/KYS.Library.Pdf.Tests.csproj"
+      dotnet-version: "8.0.x"

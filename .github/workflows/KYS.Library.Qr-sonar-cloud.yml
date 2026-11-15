@@ -1,0 +1,28 @@
+name: SonarQube - KYS.Library.Qr
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Qr/**"
+      - "tests/KYS.Library.Qr.Tests/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "src/KYS.Library.Qr/**"
+      - "tests/KYS.Library.Qr.Tests/**"
+
+jobs:
+  scan:
+    uses: ./.github/workflows/reusable-sonar-scan.yml
+    with:
+      tests-project-path: "tests/KYS.Library.Qr.Tests"
+      lib-project-path: "src/KYS.Library.Qr"
+      sonar-project-name: "yongshun950824_kys-library-qr"
+      sonar-org: "yongshun950824"
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    permissions:
+      contents: read
