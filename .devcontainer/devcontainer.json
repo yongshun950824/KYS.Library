@@ -1,8 +1,8 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+ "image": "mcr.microsoft.com/devcontainers/universal:5-linux",
   "features": {
     "ghcr.io/devcontainers/features/dotnet:2": {
-      "version": "8.0"
+      "version": "10.0"
     }
   },
   "customizations": {
@@ -12,12 +12,16 @@
         "ms-dotnettools.csharp",
         "ms-dotnettools.dotnet-interactive",
         "GitHub.copilot",
-        "esbenp.prettier-vscode" 
+        "esbenp.prettier-vscode"
       ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
       }
     }
+  },
+  "containerEnv": {
+    "DOTNET_NOLOGO": "true",
+    "DOTNET_CLI_TELEMETRY_OPTOUT": "true"
   }
 }

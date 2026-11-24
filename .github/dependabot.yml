@@ -12,7 +12,7 @@ updates:
       prefix: "chore(deps-actions):"
     open-pull-requests-limit: 5
 
-  # Maintain NuGet packages for all projects in .sln
+  # Maintain NuGet packages for all projects in .slnx
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:

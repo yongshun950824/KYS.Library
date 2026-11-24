@@ -12,6 +12,8 @@ on:
       - "src/KYS.AspNetCore.Library/**"
       - "src/KYS.Library/**"
       - "tests/KYS.AspNetCore.Library.Tests/**"
+      - "Directory.Build.props"
+      - "Directory.Packages.props"
   pull_request:
     branches:
       - master
@@ -19,12 +21,14 @@ on:
       - "src/KYS.AspNetCore.Library/**"
       - "src/KYS.Library/**"
       - "tests/KYS.AspNetCore.Library.Tests/**"
+      - "Directory.Build.props"
+      - "Directory.Packages.props"
 
 jobs:
   build:
     uses: ./.github/workflows/reusable-dotnet-build.yml
-    with: 
-      library-name: 'KYS.AspNetCore Library'
-      library-project-path: 'src/KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj'
+    with:
+      library-name: "KYS.AspNetCore Library"
+      library-project-path: "src/KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj"
       library-tests-project-path:
-      dotnet-version: '8.0.x'
+      dotnet-version: "8.0.x"
