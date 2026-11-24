@@ -8,11 +8,13 @@ on:
     paths:
       - "src/KYS.Library.Qr/**"
       - "tests/KYS.Library.Qr.Tests/**"
+      - "Directory.Build.props"
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - "src/KYS.Library.Qr/**"
       - "tests/KYS.Library.Qr.Tests/**"
+      - "Directory.Build.props"
 
 jobs:
   scan:

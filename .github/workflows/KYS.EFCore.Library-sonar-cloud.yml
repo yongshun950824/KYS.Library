@@ -8,11 +8,13 @@ on:
     paths:
       - "src/KYS.EFCore.Library/**"
       - "tests/KYS.EFCore.Library.Tests/**"
+      - "Directory.Build.props"
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - "src/KYS.EFCore.Library/**"
       - "tests/KYS.EFCore.Library.Tests/**"
+      - "Directory.Build.props"
 
 jobs:
   scan:
