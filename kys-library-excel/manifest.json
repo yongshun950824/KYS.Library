@@ -1,0 +1,168 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "/home/runner/work/KYS.Library/KYS.Library/src/KYS.Library.Excel/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Helpers.ExcelDataTableHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Helpers.ExcelDataTableHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Helpers.ExcelDataTableHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Excel.Helpers.ExcelDataTableHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for <xref href=\"System.Data.DataTable\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Helpers.ExcelHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Helpers.ExcelHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Helpers.ExcelHelper",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Excel.Helpers.ExcelHelper.yml\" sourcestartlinenumber=\"1\">Provide utitlity methods for the Excel file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Helpers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Helpers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Models.AdditionalExcelSheet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Models.AdditionalExcelSheet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Models.AdditionalExcelSheet",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Excel.Models.AdditionalExcelSheet.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for adding and customizing additional sheet(s) to the Excel worksheet.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Options.ExcelColumnFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Options.ExcelColumnFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Options.ExcelColumnFormat",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Excel.Options.ExcelColumnFormat.yml\" sourcestartlinenumber=\"1\">Represent the blueprint for customizing the column to be displayed in the Excel sheet.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Options.ExcelRowStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Options.ExcelRowStyle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Options.ExcelRowStyle",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Excel.Options.ExcelRowStyle.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for customizing the style for whole row.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Excel.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Excel.Options.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Excel.Options",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
