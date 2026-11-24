@@ -1,0 +1,28 @@
+name: SonarQube - KYS.Library.Pdf
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Pdf/**"
+      - "tests/KYS.Library.Pdf.Tests/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "src/KYS.Library.Pdf/**"
+      - "tests/KYS.Library.Pdf.Tests/**"
+
+jobs:
+  scan:
+    uses: ./.github/workflows/reusable-sonar-scan.yml
+    with:
+      tests-project-path: "tests/KYS.Library.Pdf.Tests"
+      lib-project-path: "src/KYS.Library.Pdf"
+      sonar-project-name: "yongshun950824_kys-library-pdf"
+      sonar-org: "yongshun950824"
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    permissions:
+      contents: read

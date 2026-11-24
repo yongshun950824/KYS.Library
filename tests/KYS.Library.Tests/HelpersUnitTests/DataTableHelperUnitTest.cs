@@ -1,18 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using iText.Layout;
-using iText.Layout.Properties;
 using KYS.Library.Extensions;
 using KYS.Library.Helpers;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
 
 namespace KYS.Library.Tests.HelpersUnitTests;
 
@@ -231,7 +226,7 @@ public class DataTableHelperUnitTest
     public void ReadCSV_WithStream_ShouldReturnDataTable()
     {
         // Arrange
-        var stream = FileHelper.LoadFileToMemoryStreamCore(_csvFilePath);
+        var stream = new MemoryStream(File.ReadAllBytes(_csvFilePath));
 
         // Act
         var result = DataTableHelper.ReadCSV(stream);
@@ -242,215 +237,6 @@ public class DataTableHelperUnitTest
         DataTable dt = result.Value;
         Assert.IsTrue(dt.Rows.Count > 0);
         Assert.IsTrue(dt.Columns.Count > 0);
-    }
-
-    [Test]
-    public void WriteToExcelFile_WithNullDataTable_ShouldReturnResultFailure()
-    {
-        // Act & Assert
-        var result = DataTableHelper.WriteToExcelFile(null);
-
-        // Assert
-        Assert.IsFalse(result.IsSuccess);
-        Assert.AreEqual(DomainErrors.CannotBeNull("dt"), result.Error);
-    }
-
-    [Test]
-    public void WriteToExcelFile_ShouldReturnByteArray()
-    {
-        // Arrange
-        string sheetName = "sample";
-        _dt.TableName = sheetName;
-
-        // Act
-        var result = DataTableHelper.WriteToExcelFile(_dt);
-
-        // Assert
-        Assert.IsTrue(result.IsSuccess);
-
-        var content = result.Value;
-        Assert.IsNotNull(content);
-        Assert.That(content.Length, Is.GreaterThan(0));
-
-        AssertExcel(content, sheetName);
-    }
-
-    [Test]
-    public void WriteToExcelFile_WithExcelColumnFormats_ShouldReturnByteArray()
-    {
-        // Arrange
-        string sheetName = "sample";
-        _dt.TableName = sheetName;
-        var excelColumnFormats = new List<ExcelHelper.ExcelColumnFormat>
-        {
-            new()
-            {
-                ColumnName = nameof(Student.Id),
-                Format = "0",
-                HorizontalAlignment = ExcelHorizontalAlignment.Right
-            },
-            new()
-            {
-                ColumnName = nameof(Student.Name)
-            }
-        };
-
-        // Act
-        var result = DataTableHelper.WriteToExcelFile(_dt, excelColumnFormats: excelColumnFormats);
-
-        // Assert
-        Assert.IsTrue(result.IsSuccess);
-
-        var content = result.Value;
-        Assert.IsNotNull(content);
-        Assert.That(content.Length, Is.GreaterThan(0));
-
-        AssertExcel(content, sheetName, excelColumnFormats: excelColumnFormats);
-    }
-
-    [Test]
-    public void WriteToExcelFile_WithExcelHeaderStyle_ShouldReturnByteArray()
-    {
-        // Arrange
-        string sheetName = "sample";
-        _dt.TableName = sheetName;
-        var headerRowStyle = new ExcelHelper.ExcelRowStyle
-        {
-            Bold = true,
-            PatternType = ExcelFillStyle.LightUp,
-            BackgroundColor = Color.DarkBlue
-        };
-
-        // Act
-        var result = DataTableHelper.WriteToExcelFile(_dt, headerRowStyle: headerRowStyle);
-
-        // Assert
-        Assert.IsTrue(result.IsSuccess);
-
-        var content = result.Value;
-        Assert.IsNotNull(result);
-        Assert.That(content.Length, Is.GreaterThan(0));
-
-        AssertExcel(content, sheetName, headerRowStyle: headerRowStyle);
-    }
-
-    [Test]
-    public void WriteToPdfFile_WithNullDataTable_ShouldReturnResultFailure()
-    {
-        // Act
-        var result = DataTableHelper.WriteToPdfFile(null);
-
-        // Assert
-        Assert.IsFalse(result.IsSuccess);
-        Assert.AreEqual(DomainErrors.CannotBeNull("dt"), result.Error);
-    }
-
-    [Test]
-    public void WriteToPdfFile_WithEmptyDataTable_ShouldReturnByteArray()
-    {
-        // Act
-        var result = DataTableHelper.WriteToPdfFile(new DataTable());
-
-        // Assert
-        Assert.IsTrue(result.IsSuccess);
-
-        var content = result.Value;
-        Assert.IsNotNull(content);
-        Assert.That(content.Length, Is.GreaterThan(0));
-    }
-
-    [Test]
-    public void WriteToPdfFile_ShouldReturnByteArray()
-    {
-        // Act
-        var result = DataTableHelper.WriteToPdfFile(_dt);
-
-        // Assert
-        Assert.IsTrue(result.IsSuccess);
-
-        var content = result.Value;
-        Assert.IsNotNull(content);
-        Assert.That(content.Length, Is.GreaterThan(0));
-    }
-
-    [Test]
-    public void WriteToPdfFile_WithExcludeHeaderColumn_ShouldReturnByteArray()
-    {
-        // Act
-        var result = DataTableHelper.WriteToPdfFile(_dt, printHeaders: false);
-
-        // Assert
-        Assert.IsTrue(result.IsSuccess);
-
-        var content = result.Value;
-        Assert.IsNotNull(content);
-        Assert.That(content.Length, Is.GreaterThan(0));
-    }
-
-    [Test]
-    public void WriteToPdfFile_WithTableBodyStyle_ShouldReturnByteArray()
-    {
-        // Arrange
-        Style tableBodyStyle = new Style()
-            .SetBackgroundColor(iText.Kernel.Colors.ColorConstants.WHITE)
-            .SetFontSize(11)
-            .SetFontColor(iText.Kernel.Colors.ColorConstants.BLACK)
-            .SetTextAlignment(TextAlignment.LEFT);
-
-        // Act
-        var result = DataTableHelper.WriteToPdfFile(_dt, tableBodyStyle: tableBodyStyle);
-
-        // Assert
-        Assert.IsTrue(result.IsSuccess);
-
-        var content = result.Value;
-        Assert.IsNotNull(content);
-        Assert.That(content.Length, Is.GreaterThan(0));
-    }
-
-    private void AssertExcel(byte[] bytes,
-        string sheetName,
-        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
-        ExcelHelper.ExcelRowStyle headerRowStyle = null)
-    {
-        using MemoryStream ms = StreamHelper.ToMemoryStream(bytes).Value;
-        using ExcelPackage package = new(ms);
-        var worksheet = package.Workbook.Worksheets[0];
-
-        // Sheet name assertion
-        Assert.AreEqual(sheetName, worksheet.Name);
-
-        // Data column assertion
-        string columnOneName = _dt.Columns[0].ColumnName;
-        string columnTwoName = _dt.Columns[1].ColumnName;
-        DataRow rowOne = _dt.Rows[0];
-        DataRow rowTwo = _dt.Rows[1];
-
-        Assert.That(worksheet.Cells[2, 1].GetValue<int>(), Is.EqualTo(rowOne[columnOneName]));
-        Assert.That(worksheet.Cells[2, 2].GetValue<string>(), Is.EqualTo(rowOne[columnTwoName]));
-
-        Assert.That(worksheet.Cells[3, 1].GetValue<int>(), Is.EqualTo(rowTwo[columnOneName]));
-        Assert.That(worksheet.Cells[3, 2].GetValue<string>(), Is.EqualTo(rowTwo[columnTwoName]));
-
-        if (!excelColumnFormats.IsNullOrEmpty())
-        {
-            Assert.That(worksheet.Cells[2, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats[0].HorizontalAlignment));
-            Assert.That(worksheet.Cells[2, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats[0].Format));
-
-            Assert.That(worksheet.Cells[3, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats[0].HorizontalAlignment));
-            Assert.That(worksheet.Cells[3, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats[0].Format));
-        }
-
-        if (headerRowStyle != null)
-        {
-            Assert.AreEqual(worksheet.Cells[1, 1].Style.Font.Bold, headerRowStyle.Bold);
-            Assert.AreEqual(worksheet.Cells[1, 1].Style.Fill.PatternType, headerRowStyle.PatternType);
-            Assert.AreEqual(worksheet.Cells[1, 1].Style.Fill.BackgroundColor.Rgb, headerRowStyle.BackgroundColor.ToArgb().ToString("X"));
-
-            Assert.AreEqual(worksheet.Cells[1, 2].Style.Font.Bold, headerRowStyle.Bold);
-            Assert.AreEqual(worksheet.Cells[1, 2].Style.Fill.PatternType, headerRowStyle.PatternType);
-            Assert.AreEqual(worksheet.Cells[1, 2].Style.Fill.BackgroundColor.Rgb, headerRowStyle.BackgroundColor.ToArgb().ToString("X"));
-        }
     }
 
     private class Student

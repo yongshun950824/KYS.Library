@@ -1,0 +1,22 @@
+name: DocFX - Publish KYS.Library.Pdf Documentation
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Pdf/**"
+
+jobs:
+  build-docs:
+    uses: ./.github/workflows/reusable-publish-docfx.yml
+    with:
+      library-name: kys-library-pdf
+      docfx-project: src/KYS.Library.Pdf/docfx
+      docfx-publish-dir: ./src/KYS.Library.Pdf/docfx/_site
+      dotnet-version:
+    permissions:
+      contents: write

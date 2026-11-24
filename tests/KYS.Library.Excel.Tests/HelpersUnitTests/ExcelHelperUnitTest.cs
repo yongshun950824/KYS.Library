@@ -1,14 +1,14 @@
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.IO;
+using KYS.Library.Excel.Helpers;
+using KYS.Library.Excel.Models;
+using KYS.Library.Excel.Options;
 using KYS.Library.Extensions;
 using KYS.Library.Helpers;
 using NUnit.Framework;
 using OfficeOpenXml;
 
-namespace KYS.Library.Tests.HelpersUnitTests;
+namespace KYS.Library.Excel.Tests;
 
 public class ExcelHelperUnitTest
 {
@@ -16,7 +16,7 @@ public class ExcelHelperUnitTest
     private readonly List<Student> _studentList =
     [
         new Student { Id = 1, Name = "Ali", Age = 10 },
-        new Student {  Id = 2, Name = "Bob", Age = 11 }
+        new Student { Id = 2, Name = "Bob", Age = 11 }
     ];
     private readonly DataTable _dtTwo = new();
     private readonly List<Student> _studentTwoList =
@@ -71,7 +71,9 @@ public class ExcelHelperUnitTest
     public void CreateExcelBook_WithNullDataSet_ShouldReturnResultFailure()
     {
         // Act
-        var result = ExcelHelper.CreateExcelBook((DataSet)null);
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+        var result = ExcelHelper.CreateExcelBook(ds: null);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
         // Assert
         Assert.IsFalse(result.IsSuccess);
@@ -105,7 +107,9 @@ public class ExcelHelperUnitTest
     public void CreateExcelBook_WithNullDataTable_ShouldReturnResultFailure()
     {
         // Act & Assert
-        var result = ExcelHelper.CreateExcelBook((DataTable)null);
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+        var result = ExcelHelper.CreateExcelBook(dt: null);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
         // Assert
         Assert.IsFalse(result.IsSuccess);
@@ -137,15 +141,15 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats =
+        List<ExcelColumnFormat> excelColumnFormats =
         [
-            new ExcelHelper.ExcelColumnFormat
+            new ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Id),
                 Format = "0",
                 HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Right
             },
-            new ExcelHelper.ExcelColumnFormat
+            new ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Name)
             }
@@ -170,16 +174,16 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        List<ExcelHelper.ExcelColumnFormat> excelColumnsFormat =
+        List<ExcelColumnFormat> excelColumnsFormat =
         [
-            new ExcelHelper.ExcelColumnFormat
+            new ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Id),
                 DisplayedColumnName = "Student ID",
                 Format = "0",
                 HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Right
             },
-            new ExcelHelper.ExcelColumnFormat
+            new ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Name),
                 DisplayedColumnName = "Full Name"
@@ -205,19 +209,19 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats =
+        List<ExcelColumnFormat> excelColumnFormats =
         [
-            new ExcelHelper.ExcelColumnFormat
+            new ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Id),
                 Format = "0",
                 HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Right
             },
-            new ExcelHelper.ExcelColumnFormat
+            new ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Name)
             },
-            new ExcelHelper.ExcelColumnFormat
+            new ExcelColumnFormat
             {
                 ColumnName = nameof(Student.Age),
                 HasSumColumn = true
@@ -246,20 +250,22 @@ public class ExcelHelperUnitTest
         // Act & Assert
         var ex = Assert.Throws<ArgumentNullException>(() =>
         {
-            List<ExcelHelper.AdditionalExcelSheet> additionalExcelSheets =
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+            List<AdditionalExcelSheet> additionalExcelSheets =
             [
-                new ExcelHelper.AdditionalExcelSheet
+                new AdditionalExcelSheet
                 {
                     DataTable = null
                 }
             ];
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
             ExcelHelper.CreateExcelBook(_dt, additionalExcelSheets: additionalExcelSheets);
         });
 
         // Assert
         Assert.IsInstanceOf<ArgumentNullException>(ex);
-        Assert.AreEqual(new ArgumentNullException("DataTable").Message, ex.Message);
+        Assert.AreEqual(new ArgumentNullException("DataTable").Message, ex!.Message);
     }
 
     [Test]
@@ -269,9 +275,9 @@ public class ExcelHelperUnitTest
         _dt.TableName = "sample";
 
         _dtTwo.TableName = "sample-2";
-        List<ExcelHelper.AdditionalExcelSheet> additionalExcelSheets =
+        List<AdditionalExcelSheet> additionalExcelSheets =
         [
-            new ExcelHelper.AdditionalExcelSheet
+            new AdditionalExcelSheet
             {
                 DataTable = _dtTwo
             }
@@ -304,7 +310,7 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        ExcelHelper.ExcelRowStyle headerRowStyle = new()
+        ExcelRowStyle headerRowStyle = new()
         {
             BackgroundColor = Color.DarkBlue,
             FontColor = Color.White,
@@ -330,7 +336,7 @@ public class ExcelHelperUnitTest
         // Arrange
         _dt.TableName = "sample";
 
-        ExcelHelper.ExcelRowStyle summaryRowStyle = new()
+        ExcelRowStyle summaryRowStyle = new()
         {
             BackgroundColor = Color.ForestGreen,
             FontColor = Color.Black
@@ -370,9 +376,9 @@ public class ExcelHelperUnitTest
     private static void AssertExcel(byte[] bytes,
         DataTable dt,
         int sheetIndex = 0,
-        List<ExcelHelper.ExcelColumnFormat> excelColumnFormats = null,
-        ExcelHelper.ExcelRowStyle headerRowStyle = null,
-        ExcelHelper.ExcelRowStyle summaryRowStyle = null)
+        List<ExcelColumnFormat>? excelColumnFormats = null,
+        ExcelRowStyle? headerRowStyle = null,
+        ExcelRowStyle? summaryRowStyle = null)
     {
         using MemoryStream ms = StreamHelper.ToMemoryStream(bytes).Value;
         using ExcelPackage package = new(ms);
@@ -395,11 +401,11 @@ public class ExcelHelperUnitTest
 
         if (!excelColumnFormats.IsNullOrEmpty())
         {
-            Assert.That(worksheet.Cells[2, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats[0].HorizontalAlignment));
-            Assert.That(worksheet.Cells[2, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats[0].Format));
+            Assert.That(worksheet.Cells[2, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats![0].HorizontalAlignment));
+            Assert.That(worksheet.Cells[2, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats![0].Format));
 
-            Assert.That(worksheet.Cells[3, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats[0].HorizontalAlignment));
-            Assert.That(worksheet.Cells[3, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats[0].Format));
+            Assert.That(worksheet.Cells[3, 1].Style.HorizontalAlignment, Is.EqualTo(excelColumnFormats![0].HorizontalAlignment));
+            Assert.That(worksheet.Cells[3, 1].Style.Numberformat.Format, Is.EqualTo(excelColumnFormats![0].Format));
 
             int colIndex = 1;
             foreach (var format in excelColumnFormats)
@@ -447,8 +453,8 @@ public class ExcelHelperUnitTest
 
     private class Student
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
+        public required int Id { get; set; }
+        public required string Name { get; set; }
+        public required int Age { get; set; } = 0;
     }
 }

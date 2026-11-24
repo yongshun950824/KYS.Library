@@ -1,0 +1,28 @@
+name: SonarQube - KYS.Library.Zip
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/KYS.Library.Zip/**"
+      - "tests/KYS.Library.Zip.Tests/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "src/KYS.Library.Zip/**"
+      - "tests/KYS.Library.Zip.Tests/**"
+
+jobs:
+  scan:
+    uses: ./.github/workflows/reusable-sonar-scan.yml
+    with:
+      tests-project-path: "tests/KYS.Library.Zip.Tests"
+      lib-project-path: "src/KYS.Library.Zip"
+      sonar-project-name: "yongshun950824_kys-library-zip"
+      sonar-org: "yongshun950824"
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    permissions:
+      contents: read

@@ -20,9 +20,6 @@ on:
         required: false
         type: string
         default: "**/bin/**,**/obj/**,**/Migrations/**,**/Generated/**"
-      sonar-coverage-exclusions:
-        required: false
-        type: string
       sonar-cpd-exclusions:
         required: false
         type: string
@@ -103,7 +100,6 @@ jobs:
           SONAR_INCLUSIONS: "**/${{ inputs.lib-project-path }}/**"
           SONAR_ORG: ${{ inputs.sonar-org }}
           SONAR_EXCLUSIONS: ${{ inputs.sonar-exclusions }}
-          SONAR_COVERAGE_EXCLUSIONS: ${{ inputs.sonar-coverage-exclusions }}
           SONAR_CPD_EXCLUSIONS: ${{ inputs.sonar-cpd-exclusions }}
         shell: pwsh
         run: |
@@ -114,7 +110,6 @@ jobs:
             /d:sonar.coverageReportPaths="TestResults/sonar/Cobertura.Sonar.xml" `
             /d:sonar.inclusions="$env:SONAR_INCLUSIONS" `
             /d:sonar.exclusions="$env:SONAR_EXCLUSIONS" `
-            /d:sonar.coverage.exclusions="$env:SONAR_COVERAGE_EXCLUSIONS" `
             /d:sonar.cpd.exclusions="$env:SONAR_CPD_EXCLUSIONS"
 
       - name: Run tests with coverage (OpenCover)
