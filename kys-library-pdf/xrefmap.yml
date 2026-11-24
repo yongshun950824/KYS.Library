@@ -1,0 +1,107 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: KYS.Library.Pdf.Helpers
+  name: KYS.Library.Pdf.Helpers
+  href: api/KYS.Library.Pdf.Helpers.html
+  commentId: N:KYS.Library.Pdf.Helpers
+  fullName: KYS.Library.Pdf.Helpers
+  nameWithType: KYS.Library.Pdf.Helpers
+- uid: KYS.Library.Pdf.Helpers.PdfDataTableHelper
+  name: PdfDataTableHelper
+  href: api/KYS.Library.Pdf.Helpers.PdfDataTableHelper.html
+  commentId: T:KYS.Library.Pdf.Helpers.PdfDataTableHelper
+  fullName: KYS.Library.Pdf.Helpers.PdfDataTableHelper
+  nameWithType: PdfDataTableHelper
+- uid: KYS.Library.Pdf.Helpers.PdfDataTableHelper.WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)
+  name: WriteToPdfFile(DataTable, bool, Style?, Style?)
+  href: api/KYS.Library.Pdf.Helpers.PdfDataTableHelper.html#KYS_Library_Pdf_Helpers_PdfDataTableHelper_WriteToPdfFile_System_Data_DataTable_System_Boolean_iText_Layout_Style_iText_Layout_Style_
+  commentId: M:KYS.Library.Pdf.Helpers.PdfDataTableHelper.WriteToPdfFile(System.Data.DataTable,System.Boolean,iText.Layout.Style,iText.Layout.Style)
+  name.vb: WriteToPdfFile(DataTable, Boolean, Style, Style)
+  fullName: KYS.Library.Pdf.Helpers.PdfDataTableHelper.WriteToPdfFile(System.Data.DataTable, bool, iText.Layout.Style?, iText.Layout.Style?)
+  fullName.vb: KYS.Library.Pdf.Helpers.PdfDataTableHelper.WriteToPdfFile(System.Data.DataTable, Boolean, iText.Layout.Style, iText.Layout.Style)
+  nameWithType: PdfDataTableHelper.WriteToPdfFile(DataTable, bool, Style?, Style?)
+  nameWithType.vb: PdfDataTableHelper.WriteToPdfFile(DataTable, Boolean, Style, Style)
+- uid: KYS.Library.Pdf.Helpers.PdfDataTableHelper.WriteToPdfFile*
+  name: WriteToPdfFile
+  href: api/KYS.Library.Pdf.Helpers.PdfDataTableHelper.html#KYS_Library_Pdf_Helpers_PdfDataTableHelper_WriteToPdfFile_
+  commentId: Overload:KYS.Library.Pdf.Helpers.PdfDataTableHelper.WriteToPdfFile
+  isSpec: "True"
+  fullName: KYS.Library.Pdf.Helpers.PdfDataTableHelper.WriteToPdfFile
+  nameWithType: PdfDataTableHelper.WriteToPdfFile
+- uid: KYS.Library.Pdf.Helpers.PdfHelper
+  name: PdfHelper
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html
+  commentId: T:KYS.Library.Pdf.Helpers.PdfHelper
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper
+  nameWithType: PdfHelper
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.ConvertHtmlToPdf(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})
+  name: ConvertHtmlToPdf(string, bool, bool, bool, List<string>?)
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_ConvertHtmlToPdf_System_String_System_Boolean_System_Boolean_System_Boolean_System_Collections_Generic_List_System_String__
+  commentId: M:KYS.Library.Pdf.Helpers.PdfHelper.ConvertHtmlToPdf(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String})
+  name.vb: ConvertHtmlToPdf(String, Boolean, Boolean, Boolean, List(Of String))
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.ConvertHtmlToPdf(string, bool, bool, bool, System.Collections.Generic.List<string>?)
+  fullName.vb: KYS.Library.Pdf.Helpers.PdfHelper.ConvertHtmlToPdf(String, Boolean, Boolean, Boolean, System.Collections.Generic.List(Of String))
+  nameWithType: PdfHelper.ConvertHtmlToPdf(string, bool, bool, bool, List<string>?)
+  nameWithType.vb: PdfHelper.ConvertHtmlToPdf(String, Boolean, Boolean, Boolean, List(Of String))
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.ConvertHtmlToPdf*
+  name: ConvertHtmlToPdf
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_ConvertHtmlToPdf_
+  commentId: Overload:KYS.Library.Pdf.Helpers.PdfHelper.ConvertHtmlToPdf
+  isSpec: "True"
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.ConvertHtmlToPdf
+  nameWithType: PdfHelper.ConvertHtmlToPdf
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected(System.Byte[])
+  name: IsPasswordProtected(byte[])
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_IsPasswordProtected_System_Byte___
+  commentId: M:KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected(System.Byte[])
+  name.vb: IsPasswordProtected(Byte())
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected(byte[])
+  fullName.vb: KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected(Byte())
+  nameWithType: PdfHelper.IsPasswordProtected(byte[])
+  nameWithType.vb: PdfHelper.IsPasswordProtected(Byte())
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  name: IsPasswordProtected(PdfReader)
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_IsPasswordProtected_iText_Kernel_Pdf_PdfReader_
+  commentId: M:KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected(iText.Kernel.Pdf.PdfReader)
+  nameWithType: PdfHelper.IsPasswordProtected(PdfReader)
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected*
+  name: IsPasswordProtected
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_IsPasswordProtected_
+  commentId: Overload:KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected
+  isSpec: "True"
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.IsPasswordProtected
+  nameWithType: PdfHelper.IsPasswordProtected
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.LockPdfDocument(System.Byte[],System.String,System.String)
+  name: LockPdfDocument(byte[], string, string?)
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_LockPdfDocument_System_Byte___System_String_System_String_
+  commentId: M:KYS.Library.Pdf.Helpers.PdfHelper.LockPdfDocument(System.Byte[],System.String,System.String)
+  name.vb: LockPdfDocument(Byte(), String, String)
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.LockPdfDocument(byte[], string, string?)
+  fullName.vb: KYS.Library.Pdf.Helpers.PdfHelper.LockPdfDocument(Byte(), String, String)
+  nameWithType: PdfHelper.LockPdfDocument(byte[], string, string?)
+  nameWithType.vb: PdfHelper.LockPdfDocument(Byte(), String, String)
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.LockPdfDocument*
+  name: LockPdfDocument
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_LockPdfDocument_
+  commentId: Overload:KYS.Library.Pdf.Helpers.PdfHelper.LockPdfDocument
+  isSpec: "True"
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.LockPdfDocument
+  nameWithType: PdfHelper.LockPdfDocument
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.UnlockPdfDocument(System.Byte[],System.String)
+  name: UnlockPdfDocument(byte[], string)
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_UnlockPdfDocument_System_Byte___System_String_
+  commentId: M:KYS.Library.Pdf.Helpers.PdfHelper.UnlockPdfDocument(System.Byte[],System.String)
+  name.vb: UnlockPdfDocument(Byte(), String)
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.UnlockPdfDocument(byte[], string)
+  fullName.vb: KYS.Library.Pdf.Helpers.PdfHelper.UnlockPdfDocument(Byte(), String)
+  nameWithType: PdfHelper.UnlockPdfDocument(byte[], string)
+  nameWithType.vb: PdfHelper.UnlockPdfDocument(Byte(), String)
+- uid: KYS.Library.Pdf.Helpers.PdfHelper.UnlockPdfDocument*
+  name: UnlockPdfDocument
+  href: api/KYS.Library.Pdf.Helpers.PdfHelper.html#KYS_Library_Pdf_Helpers_PdfHelper_UnlockPdfDocument_
+  commentId: Overload:KYS.Library.Pdf.Helpers.PdfHelper.UnlockPdfDocument
+  isSpec: "True"
+  fullName: KYS.Library.Pdf.Helpers.PdfHelper.UnlockPdfDocument
+  nameWithType: PdfHelper.UnlockPdfDocument
