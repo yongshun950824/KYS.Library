@@ -265,62 +265,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.AdditionalExcelSheet.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for adding and customizing additional sheet(s) to the Excel worksheet.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.ExcelColumnFormat.yml\" sourcestartlinenumber=\"1\">Represent the blueprint for customizing the column to be displayed in the Excel sheet.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Helpers.ExcelHelper.ExcelRowStyle",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.ExcelRowStyle.yml\" sourcestartlinenumber=\"1\">Represents the blueprint for customizing the style for whole row.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Helpers.ExcelHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Helpers.ExcelHelper.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Helpers.ExcelHelper",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.ExcelHelper.yml\" sourcestartlinenumber=\"1\">Provide utitlity methods for the Excel file.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/KYS.Library.Helpers.ExpressionBuilder.yml",
       "output": {
         ".html": {
@@ -416,20 +360,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Helpers.JsonHelper",
       "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.JsonHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for the JSON.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Helpers.PdfHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Helpers.PdfHelper.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Helpers.PdfHelper",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Helpers.PdfHelper.yml\" sourcestartlinenumber=\"1\">Provide utility methods for the PDF file.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -531,20 +461,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.IQrGenerator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.IQrGenerator.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.IQrGenerator",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IQrGenerator.yml\" sourcestartlinenumber=\"1\">Defines a contract for generating QR code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/KYS.Library.Services.ITranslator.yml",
       "output": {
         ".html": {
@@ -556,34 +472,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Services.ITranslator",
       "Summary": "<p sourcefile=\"api/KYS.Library.Services.ITranslator.yml\" sourcestartlinenumber=\"1\">Defines a service contract for language translation.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.IZipCreator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.IZipCreator.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.IZipCreator",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IZipCreator.yml\" sourcestartlinenumber=\"1\">Define a contract for zipping item.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.IZipExtractor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.IZipExtractor.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.IZipExtractor",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.IZipExtractor.yml\" sourcestartlinenumber=\"1\">Define a contract for unzipping item.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -615,20 +503,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.QrGenerator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.QrGenerator.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.QrGenerator",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.QrGenerator.yml\" sourcestartlinenumber=\"1\">A service for generating the QR code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/KYS.Library.Services.SingleResourceTranslator.yml",
       "output": {
         ".html": {
@@ -640,48 +514,6 @@
       "IsMRef": true,
       "Title": "KYS.Library.Services.SingleResourceTranslator",
       "Summary": "<p sourcefile=\"api/KYS.Library.Services.SingleResourceTranslator.yml\" sourcestartlinenumber=\"1\">A service for translation with support only one resource (file).</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.ZipCreator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.ZipCreator.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.ZipCreator",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ZipCreator.yml\" sourcestartlinenumber=\"1\">A service for managing zipping and unzipping file.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.ZipExtractor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.ZipExtractor.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.ZipExtractor",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/KYS.Library.Services.ZipFileItem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/KYS.Library.Services.ZipFileItem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "KYS.Library.Services.ZipFileItem",
-      "Summary": "<p sourcefile=\"api/KYS.Library.Services.ZipFileItem.yml\" sourcestartlinenumber=\"1\">Represents the blueprint on the file element to be zipped into a zip file or unzipped from the zip file.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -785,11 +617,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
-        },
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -808,11 +640,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
