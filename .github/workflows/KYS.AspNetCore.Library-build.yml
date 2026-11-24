@@ -31,4 +31,4 @@ jobs:
       library-name: "KYS.AspNetCore Library"
       library-project-path: "src/KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj"
       library-tests-project-path:
-      dotnet-version: "8.0.x"
+      dotnet-version: "10.0.x"

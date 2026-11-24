@@ -17,6 +17,6 @@ jobs:
       library-name: kys-efcore-library
       docfx-project: src/KYS.EFCore.Library/docfx
       docfx-publish-dir: ./src/KYS.EFCore.Library/docfx/_site
-      dotnet-version:
+      dotnet-version: "10.0.x"
     permissions:
       contents: write

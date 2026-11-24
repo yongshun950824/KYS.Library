@@ -17,6 +17,6 @@ jobs:
       library-name: kys-library-pdf
       docfx-project: src/KYS.Library.Pdf/docfx
       docfx-publish-dir: ./src/KYS.Library.Pdf/docfx/_site
-      dotnet-version:
+      dotnet-version: "10.0.x"
     permissions:
       contents: write

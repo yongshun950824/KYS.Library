@@ -49,7 +49,6 @@ updates:
 
     # Block major upgrades that need deliberate migration work
     ignore:
-      # EF Core / Microsoft.Extensions 10.x require .NET 10; you target net8.0
       - dependency-name: "Microsoft.EntityFrameworkCore*"
         update-types: ["version-update:semver-major"]
       - dependency-name: "Microsoft.Extensions.*"

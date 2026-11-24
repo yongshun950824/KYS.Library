@@ -17,6 +17,6 @@ jobs:
       library-name: kys-library-excel
       docfx-project: src/KYS.Library.Excel/docfx
       docfx-publish-dir: ./src/KYS.Library.Excel/docfx/_site
-      dotnet-version:
+      dotnet-version: "10.0.x"
     permissions:
       contents: write

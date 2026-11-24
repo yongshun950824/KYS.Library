@@ -17,6 +17,6 @@ jobs:
       library-name: kys-aspnetcore-library
       docfx-project: src/KYS.AspNetCore.Library/docfx
       docfx-publish-dir: ./src/KYS.AspNetCore.Library/docfx/_site
-      dotnet-version:
+      dotnet-version: "10.0.x"
     permissions:
       contents: write

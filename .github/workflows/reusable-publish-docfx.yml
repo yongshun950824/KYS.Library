@@ -15,7 +15,7 @@ on:
       dotnet-version:
         required: false
         type: string
-        default: "8.0.x"
+        default: "10.0.x"
 
 jobs:
   build-docs:
