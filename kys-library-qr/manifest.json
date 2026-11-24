@@ -1,0 +1,126 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "/home/runner/work/KYS.Library/KYS.Library/src/KYS.Library.Qr/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Qr.Models.QrCodeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Qr.Models.QrCodeRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Qr.Models.QrCodeRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Qr.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Qr.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Qr.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Qr.Services.IQrGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Qr.Services.IQrGenerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Qr.Services.IQrGenerator",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Qr.Services.IQrGenerator.yml\" sourcestartlinenumber=\"1\">Defines a contract for generating QR code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Qr.Services.QrGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Qr.Services.QrGenerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Qr.Services.QrGenerator",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Qr.Services.QrGenerator.yml\" sourcestartlinenumber=\"1\">A service for generating the QR code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Qr.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Qr.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Qr.Services",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
