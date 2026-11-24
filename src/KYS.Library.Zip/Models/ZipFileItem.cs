@@ -5,15 +5,15 @@ namespace KYS.Library.Zip.Models;
 /// </summary>
 public sealed class ZipFileItem
 {
-    private string _name;
+    private string _name = null!;
     /// <summary>
     /// Gets the file name.
     /// </summary>
-    public string Name
+    public required string Name
     {
         get
         {
-            // Replace name with "/" to "_", "/" will treat as directory
+            // Replace '/' character to '_', '/' will treat as directory
             return _name.Replace("/", "_");
         }
         set { _name = value; }
@@ -22,5 +22,5 @@ public sealed class ZipFileItem
     /// <summary>
     /// Gets or sets the file content to be included in the zip file or extracted from the zip file.
     /// </summary>
-    public byte[] Contents { get; set; }
+    public required byte[] Contents { get; set; }
 }

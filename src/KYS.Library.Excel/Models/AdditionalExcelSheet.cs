@@ -17,7 +17,7 @@ public class AdditionalExcelSheet
     {
         get
         {
-            return _dataTable ?? throw new InvalidOperationException("DataTable has not been initialized."); ;
+            return _dataTable ?? throw new InvalidOperationException("DataTable has not been initialized.");
         }
         set
         {

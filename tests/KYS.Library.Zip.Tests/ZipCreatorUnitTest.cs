@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using KYS.Library.Helpers;
-using KYS.Library.Zip.Models;
+﻿using KYS.Library.Zip.Models;
 using KYS.Library.Zip.Services;
-using NUnit.Framework;
 
 namespace KYS.Library.Zip.Tests.ServicesUnitTests;
 
 public class ZipCreatorUnitTest
 {
-    private string _resourcePath;
-    private string _outDirectoryPath;
-    private List<ZipFileItem> _fileItems;
+    private string _resourcePath = null!;
+    private string _outDirectoryPath = null!;
+    private List<ZipFileItem> _fileItems = null!;
 
     [SetUp]
     public void SetUp()
@@ -51,7 +46,7 @@ public class ZipCreatorUnitTest
 
         // Assert
         Assert.IsInstanceOf<ArgumentException>(ex);
-        Assert.That(nameof(ZipCreator.FileName), Is.EqualTo(ex.ParamName));
+        Assert.That(nameof(ZipCreator.FileName), Is.EqualTo(ex?.ParamName));
     }
 
     [Test]
@@ -88,7 +83,7 @@ public class ZipCreatorUnitTest
 
         // Assert
         Assert.IsInstanceOf<ArgumentException>(ex);
-        Assert.That(expectedEx.Message, Is.EqualTo(ex.Message));
+        Assert.That(expectedEx.Message, Is.EqualTo(ex?.Message));
     }
 
     [Test]
@@ -103,14 +98,14 @@ public class ZipCreatorUnitTest
             ZipCreator zipService = new()
             {
                 FileName = "Sample.zip",
-                FileItems = null
+                FileItems = null!
             };
             zipService.Zip();
         });
 
         // Assert
         Assert.IsInstanceOf<ArgumentException>(ex);
-        Assert.That(expectedEx.Message, Is.EqualTo(ex.Message));
+        Assert.That(expectedEx.Message, Is.EqualTo(ex?.Message));
     }
 
     [Test]
@@ -130,7 +125,7 @@ public class ZipCreatorUnitTest
 
         // Assert
         Assert.IsInstanceOf<ArgumentException>(ex);
-        Assert.That(nameof(ZipCreator.Password), Is.EqualTo(ex.ParamName));
+        Assert.That(nameof(ZipCreator.Password), Is.EqualTo(ex?.ParamName));
     }
 
     [Test]

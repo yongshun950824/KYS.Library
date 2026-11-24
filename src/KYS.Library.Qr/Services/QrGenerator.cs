@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using KYS.Library.Helpers;
+using KYS.Library.Qr.Models;
 using SkiaSharp;
 using ZXing;
 using ZXing.Common;
@@ -13,185 +14,22 @@ namespace KYS.Library.Qr.Services;
 /// </summary>
 public class QrGenerator : IQrGenerator
 {
-    private readonly string _value;
-    private readonly int _width;
-    private readonly int _height;
-    private readonly string? _logoPath;
-    private readonly int? _logoWidth;
-    private readonly int? _logoHeight;
-    private readonly int _margin;
-
-    private static readonly int _defaultWidth = 200;
-    private static readonly int _defaultHeight = 200;
-    private static readonly int _defaultMargin = 0;
-    private static readonly int _defaultLogoRatio = 5;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="QrGenerator"/> class.
-    /// </summary>
-    /// <param name="value">The value to be included in the QR code.</param>
-    /// <param name="width">The width for the generated QR code image.</param>
-    /// <param name="height">The height for the generated QR code image.</param>
-    /// <param name="margin">The margin for the generated QR code image.</param>
-    private QrGenerator(string value, int width, int height, int margin)
-    {
-        _value = value;
-        _width = width;
-        _height = height;
-        _margin = margin;
-    }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="QrGenerator"/> class.
-    /// </summary>
-    /// <param name="value">The value to be included in the QR code.</param>
-    /// <param name="logoPath">The path for the logo image which the logo will be attached in the QR code.</param>
-    /// <param name="width">The width for the generated QR code image.</param>
-    /// <param name="height">The height for the generated QR code image.</param>
-    /// <param name="margin">The margin for the generated QR code image.</param>
-    /// <param name="logoWidth">The width for the generated logo.</param>
-    /// <param name="logoHeight">The height for the generated logo.</param>
-    private QrGenerator(string value, string logoPath, int width, int height, int margin, int logoWidth, int logoHeight)
-        : this(value, width, height, margin)
-    {
-        _logoPath = logoPath;
-        _logoWidth = logoWidth;
-        _logoHeight = logoHeight;
-    }
-
-    /// <summary>
-    /// Creates a new instance of the <see cref="QrGenerator"/> class with the specified value and default width, height and margin.
-    /// </summary>
-    /// <param name="value">The value to be included in the QR code.</param>
-    /// <returns>A <see cref="Result{T}"/> containing the created QR generator instance.</returns>
-    public static Result<QrGenerator> Create(string value)
-    {
-        return Create(value, _defaultWidth, _defaultHeight, _defaultMargin);
-    }
-
-    /// <summary>
-    /// Creates a new instance of the <see cref="QrGenerator"/> class with the specified value and default width, height and margin.
-    /// </summary>
-    /// <param name="value">The value to be included in the QR code.</param>
-    /// <param name="width">The width for the generated QR code image.</param>
-    /// <param name="height">The height for the generated QR code image.</param>
-    /// <param name="margin">The margin for the generated QR code image.</param>
-    /// <returns>A <see cref="Result{T}"/> containing the created QR generator instance.</returns>
-    public static Result<QrGenerator> Create(string value, int width, int height, int margin)
-    {
-        if (String.IsNullOrWhiteSpace(value))
-            return Result.Failure<QrGenerator>($"Invalid {nameof(value)}.");
-
-        if (width <= 0)
-            return Result.Failure<QrGenerator>($"Invalid {nameof(width)}.");
-
-        if (height <= 0)
-            return Result.Failure<QrGenerator>($"Invalid {nameof(height)}.");
-
-        if (margin < 0)
-            return Result.Failure<QrGenerator>($"Invalid {nameof(margin)}.");
-
-        return Result.Success(new QrGenerator(value, width, height, margin));
-    }
-
-    /// <summary>
-    /// Creates a new instance of the <see cref="QrGenerator"/> class with the specified value and logo path, and default width, height and margin.
-    /// </summary>
-    /// <param name="value">The value to be included in the QR code.</param>
-    /// <param name="logoPath">The path for the logo image which the logo will be attached in the QR code.</param>
-    /// <returns>A <see cref="Result{T}"/> containing the created QR generator instance.</returns>
-    public static Result<QrGenerator> CreateWithLogo(string value, string logoPath)
-    {
-        int width = _defaultWidth;
-        int height = _defaultHeight;
-        int margin = _defaultMargin;
-        int logoWidth = width / _defaultLogoRatio;
-        int logoHeight = height / _defaultLogoRatio;
-
-        return CreateWithLogo(value, logoPath, width, height, margin, logoWidth, logoHeight);
-    }
-
-    /// <summary>
-    /// Creates a new instance of the <see cref="QrGenerator"/> class with the specified value, logo path, width, height and margin, and default logo width and height.
-    /// </summary>
-    /// <param name="value">The value to be included in the QR code.</param>
-    /// <param name="logoPath">The path for the logo image which the logo will be attached in the QR code.</param>
-    /// <param name="width">The width for the generated QR code image.</param>
-    /// <param name="height">The height for the generated QR code image.</param>
-    /// <param name="margin">The margin for the generated QR code image.</param>
-    /// <param name="logoWidth">The width for the generated logo.</param>
-    /// <param name="logoHeight">The height for the generated logo.</param>
-    /// <returns>A <see cref="Result{T}"/> containing the created QR generator instance.</returns>
-    public static Result<QrGenerator> CreateWithLogo(string value, string logoPath, int width, int height, int margin, int logoWidth, int logoHeight)
-    {
-        return Create(value, width, height, margin)
-            .Bind(service =>
-            {
-                if (String.IsNullOrWhiteSpace(logoPath))
-                    return Result.Failure<QrGenerator>($"Invalid {nameof(logoPath)}.");
-
-                if (!File.Exists(logoPath))
-                    return Result.Failure<QrGenerator>($"File not found: {nameof(logoPath)}.");
-
-                if (width <= logoWidth)
-                    return Result.Failure<QrGenerator>("Provided logo width must be smaller than QR code width.");
-
-                if (height <= logoHeight)
-                    return Result.Failure<QrGenerator>("Provided logo height must be smaller than QR code height.");
-
-                return Result.Success(new QrGenerator(value, logoPath, width, height, margin, logoWidth, logoHeight));
-            });
-    }
-
-    /// <summary>
-    /// Gets the value to be included in the QR code.
-    /// </summary>
-    public string Value { get { return _value; } }
-    /// <summary>
-    /// Gets the width for the generated QR code image.
-    /// </summary>
-    public int Width { get { return _width; } }
-    /// <summary>
-    /// Gets the height for the generated QR code image.
-    /// </summary>
-    public int Height { get { return _height; } }
-    /// <summary>
-    /// Gets the path for the logo image which the logo will be attached in the QR code.
-    /// </summary>
-    public string? LogoPath { get { return _logoPath; } }
-    /// <summary>
-    /// Gets the width for the generated logo.
-    /// </summary>
-    public int? LogoWidth { get { return _logoWidth; } }
-    /// <summary>
-    /// Gets the height for the generated logo.
-    /// </summary>
-    public int? LogoHeight { get { return _logoHeight; } }
-    /// <summary>
-    /// Gets the margin for the generated QR code image.
-    /// </summary>
-    public int Margin { get { return _margin; } }
-
-    /// <summary>
-    /// Gets the <see cref="SKBitmap"/>instance for the QR code.
-    /// </summary>
-    private SKBitmap QRCode { get; set; }
+    internal const double DEFAULT_LOGO_AREA_RATIO = 0.22;
+    internal const double MIN_LOGO_AREA_RATIO = 0.01;
+    internal const double MAX_LOGO_AREA_RATIO = 0.09;
 
     /// <summary>
     /// Draw QR code.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the <see cref="SKBitmap"/> instance for the QR code.</returns>
-    public Result<SKBitmap> Generate()
+    public Result<SKBitmap> Generate(QrCodeRequest request)
     {
-        if (QRCode != null)
-            return Result.Success(QRCode);
-
         var encodingOptions = new EncodingOptions
         {
-            Width = _width,
-            Height = _height,
+            Width = request.Width,
+            Height = request.Height,
             Hints = { { EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H } },
-            Margin = _margin
+            Margin = request.Margin
         };
 
         var writer = new ZXing.SkiaSharp.BarcodeWriter()
@@ -200,15 +38,20 @@ public class QrGenerator : IQrGenerator
             Options = encodingOptions
         };
 
-        var barcodeBitmap = writer.Write(_value);
+        var barcodeBitmap = writer.Write(request.Value);
 
         #region Add logo into QR
-        if (!String.IsNullOrEmpty(_logoPath))
+        if (!String.IsNullOrEmpty(request.LogoPath))
         {
-            var logo = SKImage.FromEncodedData(_logoPath);
+            var logoDimensionResult = ValidateLogoDimension(request);
+            if (logoDimensionResult.IsFailure)
+                return Result.Failure<SKBitmap>(logoDimensionResult.Error);
+
+            var logoDimension = logoDimensionResult.Value;
+            var logo = SKImage.FromEncodedData(request.LogoPath);
             SKBitmap logoBitmap = SKBitmap.FromImage(logo);
 
-            SKBitmap overlay = logoBitmap.Resize(new SKImageInfo(_logoWidth!.Value, _logoHeight!.Value),
+            SKBitmap overlay = logoBitmap.Resize(new SKImageInfo(logoDimension.LogoWidth, logoDimension.LogoHeight),
                 SKFilterQuality.High);
 
             int deltaHeight = barcodeBitmap.Height - overlay.Height;
@@ -219,7 +62,6 @@ public class QrGenerator : IQrGenerator
         }
         #endregion
 
-        QRCode = barcodeBitmap;
         return Result.Success(barcodeBitmap);
     }
 
@@ -227,9 +69,9 @@ public class QrGenerator : IQrGenerator
     /// Draw QR code into a <see cref="MemoryStream"/> instance.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the <see cref="MemoryStream"/> instance containing the QR code.</returns>
-    public Result<MemoryStream> GenerateAsPng()
+    public Result<MemoryStream> GenerateAsPng(QrCodeRequest request)
     {
-        return Generate()
+        return Generate(request)
             .Bind(ToMemoryStream);
     }
 
@@ -237,19 +79,19 @@ public class QrGenerator : IQrGenerator
     /// Draw the QR code and generate a Base64 string.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the Base64 string for the QR code.</returns>
-    public Result<string> GenerateAsBase64()
+    public Result<string> GenerateAsBase64(QrCodeRequest request)
     {
-        return GenerateAsPng()
-            .Bind(ms => StreamHelper.ToBase64(ms));
+        return GenerateAsPng(request)
+            .Bind(StreamHelper.ToBase64);
     }
 
     /// <summary>
     /// Draw the QR code and generate a data URI string.
     /// </summary>
     /// <returns>A <see cref="Result{T}"/> containing the data URI string for the QR code.</returns>
-    public Result<string> GenerateAsDataUri()
+    public Result<string> GenerateAsDataUri(QrCodeRequest request)
     {
-        return GenerateAsBase64()
+        return GenerateAsBase64(request)
             .Map(base64 => $"data:image/png;base64,{base64}");
     }
 
@@ -258,7 +100,7 @@ public class QrGenerator : IQrGenerator
     /// </summary>
     /// <returns>A <see cref="Result"/> indicating success or failure.</returns>
     /// <param name="filePath">The path for the QR code to be saved.</param>
-    public Result SaveAsPng(string filePath)
+    public Result SaveAsPng(QrCodeRequest request, string filePath)
     {
         if (String.IsNullOrWhiteSpace(filePath))
             return Result.Failure($"Invalid {nameof(filePath)}.");
@@ -266,7 +108,7 @@ public class QrGenerator : IQrGenerator
         if (!filePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
             filePath += ".png";
 
-        return Generate()
+        return Generate(request)
             .Bind(bitmap => ToFile(bitmap, filePath));
     }
 
@@ -288,5 +130,53 @@ public class QrGenerator : IQrGenerator
         ms.Seek(0, SeekOrigin.Begin);
 
         return Result.Success(ms);
+    }
+
+    private static Result<(int LogoWidth, int LogoHeight)> ValidateLogoDimension(QrCodeRequest request)
+    {
+        if (!request.LogoWidth.HasValue || !request.LogoHeight.HasValue)
+        {
+            return Result.Success((
+                (int)(request.Width * DEFAULT_LOGO_AREA_RATIO),
+                (int)(request.Height * DEFAULT_LOGO_AREA_RATIO)
+            ));
+        }
+
+        int logoW = request.LogoWidth.Value;
+        int logoH = request.LogoHeight.Value;
+
+        // Check Aspect Ratio (prevent extreme rectangles from hitting corner markers)
+        double aspectRatio = (double)Math.Max(logoW, logoH) / Math.Min(logoW, logoH);
+        if (aspectRatio > 2.5)
+        {
+            return Result.Failure<(int, int)>("Logo aspect ratio is too wide or tall. Keep it closer to a square.");
+        }
+
+        double areaRatio = GetLogoAreaRatio(request);
+
+        // Check Minimum Size
+        if (areaRatio < MIN_LOGO_AREA_RATIO)
+        {
+            return Result.Failure<(int, int)>("Logo is too small and may not be visible.");
+        }
+
+        // Check Maximum Size
+        if (areaRatio > MAX_LOGO_AREA_RATIO)
+        {
+            return Result.Failure<(int, int)>($"Logo is too large ({areaRatio:P1} of QR area). Keep it under {MAX_LOGO_AREA_RATIO:P0} for reliable scanning.");
+        }
+
+        return Result.Success((logoW, logoH));
+    }
+
+    internal static double GetLogoAreaRatio(QrCodeRequest request)
+    {
+        int logoW = request.LogoWidth!.Value;
+        int logoH = request.LogoHeight!.Value;
+
+        double qrArea = (double)request.Width * request.Height;
+        double logoArea = (double)logoW * logoH;
+
+        return logoArea / qrArea;
     }
 }

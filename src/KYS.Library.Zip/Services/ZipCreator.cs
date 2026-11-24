@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using ICSharpCode.SharpZipLib.Zip;
 using KYS.Library.Extensions;
 using KYS.Library.Helpers;
@@ -12,9 +11,9 @@ namespace KYS.Library.Zip.Services;
 /// </summary>
 public class ZipCreator : IZipCreator
 {
-    private string _fileName;
-    private string _password;
-    private List<ZipFileItem> _fileItems;
+    private string _fileName = null!;
+    private string? _password;
+    private List<ZipFileItem> _fileItems = [];
 
     /// <summary>
     /// Gets or sets the file name.
@@ -37,7 +36,7 @@ public class ZipCreator : IZipCreator
     /// <summary>
     /// Gets or sets the password for the zip file.
     /// </summary>
-    public string Password
+    public string? Password
     {
         get { return _password; }
         set
@@ -103,7 +102,7 @@ public class ZipCreator : IZipCreator
         using MemoryStream ms = new();
         using ZipOutputStream zipOStream = new(ms) { IsStreamOwner = false };
 
-        if (!String.IsNullOrEmpty(Password))
+        if (!string.IsNullOrEmpty(Password))
             zipOStream.Password = Password;
 
         foreach (var item in FileItems)
@@ -131,7 +130,7 @@ public class ZipCreator : IZipCreator
     /// </returns>
     public Result ZipAndToFile(string destDirPath)
     {
-        if (String.IsNullOrWhiteSpace(destDirPath))
+        if (string.IsNullOrWhiteSpace(destDirPath))
             return Result.Failure($"{nameof(destDirPath)} must be provided.");
 
         return Zip()
@@ -145,18 +144,19 @@ public class ZipCreator : IZipCreator
     }
 
     #region Helper methods
-    [SuppressMessage("Usage", "S3236:Caller information parameters should not be explicitly provided",
-        Justification = "Property setters always pass 'value', so nameof(FileName) is clearer.")]
-    private static void ValidateFileName(string value)
+    private static void ValidateFileName(string FileName)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(FileName));  //NOSONAR
+        ArgumentException.ThrowIfNullOrWhiteSpace(FileName);
     }
 
-    [SuppressMessage("Usage", "S3236:Caller information parameters should not be explicitly provided",
-        Justification = "Property setters always pass 'value', so nameof(Password) is clearer.")]
-    private static void ValidatePassword(string value)
+    private static void ValidatePassword(string? Password)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(Password));  //NOSONAR
+        if (Password is not null && string.IsNullOrWhiteSpace(Password))
+        {
+            throw new ArgumentException(
+                "Password cannot be empty or whitespace. Pass null to omit it.",
+                nameof(Password));
+        }
     }
     #endregion
 }

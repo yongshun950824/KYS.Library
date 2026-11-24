@@ -40,7 +40,9 @@ public class PdfDataTableHelperUnitTest
     public void WriteToPdfFile_WithNullDataTable_ShouldReturnResultFailure()
     {
         // Act
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
         var result = PdfDataTableHelper.WriteToPdfFile(null);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 
         // Assert
         Assert.IsFalse(result.IsSuccess);

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using KYS.Library.Helpers;
-using KYS.Library.Zip.Models;
+﻿using KYS.Library.Zip.Models;
 using KYS.Library.Zip.Services;
-using NUnit.Framework;
 
 namespace KYS.Library.Zip.Tests.ServicesUnitTests;
 
 public class ZipExtractorUnitTest
 {
-    private string _resourcePath;
-    private string _outDirectoryPath;
-    private List<ZipFileItem> _fileItems;
+    private string _resourcePath = null!;
+    private string _outDirectoryPath = null!;
+    private List<ZipFileItem> _fileItems = null!;
 
     [SetUp]
     public void SetUp()
@@ -33,6 +28,55 @@ public class ZipExtractorUnitTest
                 Contents = ms.ToArray()
             });
         }
+    }
+
+    [Test]
+    public void ZipExtractor_WithPasswordIsNull_ShouldAllow()
+    {
+        // Arrange & Act
+        ZipExtractor unzipService = new ZipExtractor
+        {
+            Password = null
+        };
+
+        // Assert
+        Assert.IsNotNull(unzipService);
+    }
+
+    [Test]
+    public void ZipExtractor_WithPasswordIsEmptyString_ShouldThrowException()
+    {
+        // Arrange & Act
+        var ex = Assert.Catch<ArgumentException>(() =>
+        {
+            ZipExtractor unzipService = new ZipExtractor
+            {
+                Password = ""
+            };
+        });
+
+        // Assert
+        Assert.IsInstanceOf<ArgumentException>(ex);
+        Assert.StringStartsWith("Password cannot be empty or whitespace. Pass null to omit it.", ex!.Message);
+        Assert.AreEqual(nameof(ZipExtractor.Password), ex?.ParamName);
+    }
+
+    [Test]
+    public void ZipExtractor_WithPasswordIsWhitespaceString_ShouldThrowException()
+    {
+        // Arrange & Act
+        var ex = Assert.Catch<ArgumentException>(() =>
+        {
+            ZipExtractor unzipService = new ZipExtractor
+            {
+                Password = " "
+            };
+        });
+
+        // Assert
+        Assert.IsInstanceOf<ArgumentException>(ex);
+        Assert.StringStartsWith("Password cannot be empty or whitespace. Pass null to omit it.", ex!.Message);
+        Assert.AreEqual(nameof(ZipExtractor.Password), ex?.ParamName);
     }
 
     [Test]

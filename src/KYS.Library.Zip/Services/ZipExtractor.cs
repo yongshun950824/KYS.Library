@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using CSharpFunctionalExtensions;
 using ICSharpCode.SharpZipLib.Zip;
 using KYS.Library.Zip.Models;
@@ -10,9 +9,9 @@ namespace KYS.Library.Zip.Services;
 /// </summary>
 public class ZipExtractor : IZipExtractor
 {
-    private string _fileName;
-    private string _password;
-    private List<ZipFileItem> _fileItems;
+    private string _fileName = null!;
+    private string? _password;
+    private List<ZipFileItem> _fileItems = [];
 
     /// <summary>
     /// Gets or sets the file name.
@@ -29,7 +28,7 @@ public class ZipExtractor : IZipExtractor
     /// <summary>
     /// Gets or sets the password for the zip file.
     /// </summary>
-    public string Password
+    public string? Password
     {
         get { return _password; }
         set
@@ -70,7 +69,7 @@ public class ZipExtractor : IZipExtractor
 
         return Result.Try(() =>
         {
-            if (!String.IsNullOrEmpty(Password))
+            if (Password is not null)
                 fastZip.Password = Password;
 
             fastZip.ExtractZip(srcFilePath, destDirPath, null);
@@ -90,11 +89,14 @@ public class ZipExtractor : IZipExtractor
     }
 
     #region Helper methods
-    [SuppressMessage("Usage", "S3236:Caller information parameters should not be explicitly provided",
-        Justification = "Property setters always pass 'value', so nameof(Password) is clearer.")]
-    private static void ValidatePassword(string value)
+    private static void ValidatePassword(string? Password)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(value, nameof(Password));  //NOSONAR
+        if (Password is not null && string.IsNullOrWhiteSpace(Password))
+        {
+            throw new ArgumentException(
+                "Password cannot be empty or whitespace. Pass null to omit it.",
+                nameof(Password));
+        }
     }
     #endregion
 }
