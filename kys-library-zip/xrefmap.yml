@@ -1,0 +1,276 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: KYS.Library.Zip.Models
+  name: KYS.Library.Zip.Models
+  href: api/KYS.Library.Zip.Models.html
+  commentId: N:KYS.Library.Zip.Models
+  fullName: KYS.Library.Zip.Models
+  nameWithType: KYS.Library.Zip.Models
+- uid: KYS.Library.Zip.Models.ZipFileItem
+  name: ZipFileItem
+  href: api/KYS.Library.Zip.Models.ZipFileItem.html
+  commentId: T:KYS.Library.Zip.Models.ZipFileItem
+  fullName: KYS.Library.Zip.Models.ZipFileItem
+  nameWithType: ZipFileItem
+- uid: KYS.Library.Zip.Models.ZipFileItem.Contents
+  name: Contents
+  href: api/KYS.Library.Zip.Models.ZipFileItem.html#KYS_Library_Zip_Models_ZipFileItem_Contents
+  commentId: P:KYS.Library.Zip.Models.ZipFileItem.Contents
+  fullName: KYS.Library.Zip.Models.ZipFileItem.Contents
+  nameWithType: ZipFileItem.Contents
+- uid: KYS.Library.Zip.Models.ZipFileItem.Contents*
+  name: Contents
+  href: api/KYS.Library.Zip.Models.ZipFileItem.html#KYS_Library_Zip_Models_ZipFileItem_Contents_
+  commentId: Overload:KYS.Library.Zip.Models.ZipFileItem.Contents
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Models.ZipFileItem.Contents
+  nameWithType: ZipFileItem.Contents
+- uid: KYS.Library.Zip.Models.ZipFileItem.Name
+  name: Name
+  href: api/KYS.Library.Zip.Models.ZipFileItem.html#KYS_Library_Zip_Models_ZipFileItem_Name
+  commentId: P:KYS.Library.Zip.Models.ZipFileItem.Name
+  fullName: KYS.Library.Zip.Models.ZipFileItem.Name
+  nameWithType: ZipFileItem.Name
+- uid: KYS.Library.Zip.Models.ZipFileItem.Name*
+  name: Name
+  href: api/KYS.Library.Zip.Models.ZipFileItem.html#KYS_Library_Zip_Models_ZipFileItem_Name_
+  commentId: Overload:KYS.Library.Zip.Models.ZipFileItem.Name
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Models.ZipFileItem.Name
+  nameWithType: ZipFileItem.Name
+- uid: KYS.Library.Zip.Services
+  name: KYS.Library.Zip.Services
+  href: api/KYS.Library.Zip.Services.html
+  commentId: N:KYS.Library.Zip.Services
+  fullName: KYS.Library.Zip.Services
+  nameWithType: KYS.Library.Zip.Services
+- uid: KYS.Library.Zip.Services.IZipCreator
+  name: IZipCreator
+  href: api/KYS.Library.Zip.Services.IZipCreator.html
+  commentId: T:KYS.Library.Zip.Services.IZipCreator
+  fullName: KYS.Library.Zip.Services.IZipCreator
+  nameWithType: IZipCreator
+- uid: KYS.Library.Zip.Services.IZipCreator.Zip
+  name: Zip()
+  href: api/KYS.Library.Zip.Services.IZipCreator.html#KYS_Library_Zip_Services_IZipCreator_Zip
+  commentId: M:KYS.Library.Zip.Services.IZipCreator.Zip
+  fullName: KYS.Library.Zip.Services.IZipCreator.Zip()
+  nameWithType: IZipCreator.Zip()
+- uid: KYS.Library.Zip.Services.IZipCreator.Zip*
+  name: Zip
+  href: api/KYS.Library.Zip.Services.IZipCreator.html#KYS_Library_Zip_Services_IZipCreator_Zip_
+  commentId: Overload:KYS.Library.Zip.Services.IZipCreator.Zip
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.IZipCreator.Zip
+  nameWithType: IZipCreator.Zip
+- uid: KYS.Library.Zip.Services.IZipCreator.ZipAndToFile(System.String)
+  name: ZipAndToFile(string)
+  href: api/KYS.Library.Zip.Services.IZipCreator.html#KYS_Library_Zip_Services_IZipCreator_ZipAndToFile_System_String_
+  commentId: M:KYS.Library.Zip.Services.IZipCreator.ZipAndToFile(System.String)
+  name.vb: ZipAndToFile(String)
+  fullName: KYS.Library.Zip.Services.IZipCreator.ZipAndToFile(string)
+  fullName.vb: KYS.Library.Zip.Services.IZipCreator.ZipAndToFile(String)
+  nameWithType: IZipCreator.ZipAndToFile(string)
+  nameWithType.vb: IZipCreator.ZipAndToFile(String)
+- uid: KYS.Library.Zip.Services.IZipCreator.ZipAndToFile*
+  name: ZipAndToFile
+  href: api/KYS.Library.Zip.Services.IZipCreator.html#KYS_Library_Zip_Services_IZipCreator_ZipAndToFile_
+  commentId: Overload:KYS.Library.Zip.Services.IZipCreator.ZipAndToFile
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.IZipCreator.ZipAndToFile
+  nameWithType: IZipCreator.ZipAndToFile
+- uid: KYS.Library.Zip.Services.IZipExtractor
+  name: IZipExtractor
+  href: api/KYS.Library.Zip.Services.IZipExtractor.html
+  commentId: T:KYS.Library.Zip.Services.IZipExtractor
+  fullName: KYS.Library.Zip.Services.IZipExtractor
+  nameWithType: IZipExtractor
+- uid: KYS.Library.Zip.Services.IZipExtractor.Unzip(System.String,System.String)
+  name: Unzip(string, string)
+  href: api/KYS.Library.Zip.Services.IZipExtractor.html#KYS_Library_Zip_Services_IZipExtractor_Unzip_System_String_System_String_
+  commentId: M:KYS.Library.Zip.Services.IZipExtractor.Unzip(System.String,System.String)
+  name.vb: Unzip(String, String)
+  fullName: KYS.Library.Zip.Services.IZipExtractor.Unzip(string, string)
+  fullName.vb: KYS.Library.Zip.Services.IZipExtractor.Unzip(String, String)
+  nameWithType: IZipExtractor.Unzip(string, string)
+  nameWithType.vb: IZipExtractor.Unzip(String, String)
+- uid: KYS.Library.Zip.Services.IZipExtractor.Unzip*
+  name: Unzip
+  href: api/KYS.Library.Zip.Services.IZipExtractor.html#KYS_Library_Zip_Services_IZipExtractor_Unzip_
+  commentId: Overload:KYS.Library.Zip.Services.IZipExtractor.Unzip
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.IZipExtractor.Unzip
+  nameWithType: IZipExtractor.Unzip
+- uid: KYS.Library.Zip.Services.ZipCreator
+  name: ZipCreator
+  href: api/KYS.Library.Zip.Services.ZipCreator.html
+  commentId: T:KYS.Library.Zip.Services.ZipCreator
+  fullName: KYS.Library.Zip.Services.ZipCreator
+  nameWithType: ZipCreator
+- uid: KYS.Library.Zip.Services.ZipCreator.#ctor
+  name: ZipCreator()
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator__ctor
+  commentId: M:KYS.Library.Zip.Services.ZipCreator.#ctor
+  name.vb: New()
+  fullName: KYS.Library.Zip.Services.ZipCreator.ZipCreator()
+  fullName.vb: KYS.Library.Zip.Services.ZipCreator.New()
+  nameWithType: ZipCreator.ZipCreator()
+  nameWithType.vb: ZipCreator.New()
+- uid: KYS.Library.Zip.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Zip.Models.ZipFileItem})
+  name: ZipCreator(string, List<ZipFileItem>)
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator__ctor_System_String_System_Collections_Generic_List_KYS_Library_Zip_Models_ZipFileItem__
+  commentId: M:KYS.Library.Zip.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Zip.Models.ZipFileItem})
+  name.vb: New(String, List(Of ZipFileItem))
+  fullName: KYS.Library.Zip.Services.ZipCreator.ZipCreator(string, System.Collections.Generic.List<KYS.Library.Zip.Models.ZipFileItem>)
+  fullName.vb: KYS.Library.Zip.Services.ZipCreator.New(String, System.Collections.Generic.List(Of KYS.Library.Zip.Models.ZipFileItem))
+  nameWithType: ZipCreator.ZipCreator(string, List<ZipFileItem>)
+  nameWithType.vb: ZipCreator.New(String, List(Of ZipFileItem))
+- uid: KYS.Library.Zip.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Zip.Models.ZipFileItem},System.String)
+  name: ZipCreator(string, List<ZipFileItem>, string)
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator__ctor_System_String_System_Collections_Generic_List_KYS_Library_Zip_Models_ZipFileItem__System_String_
+  commentId: M:KYS.Library.Zip.Services.ZipCreator.#ctor(System.String,System.Collections.Generic.List{KYS.Library.Zip.Models.ZipFileItem},System.String)
+  name.vb: New(String, List(Of ZipFileItem), String)
+  fullName: KYS.Library.Zip.Services.ZipCreator.ZipCreator(string, System.Collections.Generic.List<KYS.Library.Zip.Models.ZipFileItem>, string)
+  fullName.vb: KYS.Library.Zip.Services.ZipCreator.New(String, System.Collections.Generic.List(Of KYS.Library.Zip.Models.ZipFileItem), String)
+  nameWithType: ZipCreator.ZipCreator(string, List<ZipFileItem>, string)
+  nameWithType.vb: ZipCreator.New(String, List(Of ZipFileItem), String)
+- uid: KYS.Library.Zip.Services.ZipCreator.#ctor*
+  name: ZipCreator
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator__ctor_
+  commentId: Overload:KYS.Library.Zip.Services.ZipCreator.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: KYS.Library.Zip.Services.ZipCreator.ZipCreator
+  fullName.vb: KYS.Library.Zip.Services.ZipCreator.New
+  nameWithType: ZipCreator.ZipCreator
+  nameWithType.vb: ZipCreator.New
+- uid: KYS.Library.Zip.Services.ZipCreator.FileItems
+  name: FileItems
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_FileItems
+  commentId: P:KYS.Library.Zip.Services.ZipCreator.FileItems
+  fullName: KYS.Library.Zip.Services.ZipCreator.FileItems
+  nameWithType: ZipCreator.FileItems
+- uid: KYS.Library.Zip.Services.ZipCreator.FileItems*
+  name: FileItems
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_FileItems_
+  commentId: Overload:KYS.Library.Zip.Services.ZipCreator.FileItems
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipCreator.FileItems
+  nameWithType: ZipCreator.FileItems
+- uid: KYS.Library.Zip.Services.ZipCreator.FileName
+  name: FileName
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_FileName
+  commentId: P:KYS.Library.Zip.Services.ZipCreator.FileName
+  fullName: KYS.Library.Zip.Services.ZipCreator.FileName
+  nameWithType: ZipCreator.FileName
+- uid: KYS.Library.Zip.Services.ZipCreator.FileName*
+  name: FileName
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_FileName_
+  commentId: Overload:KYS.Library.Zip.Services.ZipCreator.FileName
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipCreator.FileName
+  nameWithType: ZipCreator.FileName
+- uid: KYS.Library.Zip.Services.ZipCreator.Password
+  name: Password
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_Password
+  commentId: P:KYS.Library.Zip.Services.ZipCreator.Password
+  fullName: KYS.Library.Zip.Services.ZipCreator.Password
+  nameWithType: ZipCreator.Password
+- uid: KYS.Library.Zip.Services.ZipCreator.Password*
+  name: Password
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_Password_
+  commentId: Overload:KYS.Library.Zip.Services.ZipCreator.Password
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipCreator.Password
+  nameWithType: ZipCreator.Password
+- uid: KYS.Library.Zip.Services.ZipCreator.Zip
+  name: Zip()
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_Zip
+  commentId: M:KYS.Library.Zip.Services.ZipCreator.Zip
+  fullName: KYS.Library.Zip.Services.ZipCreator.Zip()
+  nameWithType: ZipCreator.Zip()
+- uid: KYS.Library.Zip.Services.ZipCreator.Zip*
+  name: Zip
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_Zip_
+  commentId: Overload:KYS.Library.Zip.Services.ZipCreator.Zip
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipCreator.Zip
+  nameWithType: ZipCreator.Zip
+- uid: KYS.Library.Zip.Services.ZipCreator.ZipAndToFile(System.String)
+  name: ZipAndToFile(string)
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_ZipAndToFile_System_String_
+  commentId: M:KYS.Library.Zip.Services.ZipCreator.ZipAndToFile(System.String)
+  name.vb: ZipAndToFile(String)
+  fullName: KYS.Library.Zip.Services.ZipCreator.ZipAndToFile(string)
+  fullName.vb: KYS.Library.Zip.Services.ZipCreator.ZipAndToFile(String)
+  nameWithType: ZipCreator.ZipAndToFile(string)
+  nameWithType.vb: ZipCreator.ZipAndToFile(String)
+- uid: KYS.Library.Zip.Services.ZipCreator.ZipAndToFile*
+  name: ZipAndToFile
+  href: api/KYS.Library.Zip.Services.ZipCreator.html#KYS_Library_Zip_Services_ZipCreator_ZipAndToFile_
+  commentId: Overload:KYS.Library.Zip.Services.ZipCreator.ZipAndToFile
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipCreator.ZipAndToFile
+  nameWithType: ZipCreator.ZipAndToFile
+- uid: KYS.Library.Zip.Services.ZipExtractor
+  name: ZipExtractor
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html
+  commentId: T:KYS.Library.Zip.Services.ZipExtractor
+  fullName: KYS.Library.Zip.Services.ZipExtractor
+  nameWithType: ZipExtractor
+- uid: KYS.Library.Zip.Services.ZipExtractor.FileItems
+  name: FileItems
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_FileItems
+  commentId: P:KYS.Library.Zip.Services.ZipExtractor.FileItems
+  fullName: KYS.Library.Zip.Services.ZipExtractor.FileItems
+  nameWithType: ZipExtractor.FileItems
+- uid: KYS.Library.Zip.Services.ZipExtractor.FileItems*
+  name: FileItems
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_FileItems_
+  commentId: Overload:KYS.Library.Zip.Services.ZipExtractor.FileItems
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipExtractor.FileItems
+  nameWithType: ZipExtractor.FileItems
+- uid: KYS.Library.Zip.Services.ZipExtractor.FileName
+  name: FileName
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_FileName
+  commentId: P:KYS.Library.Zip.Services.ZipExtractor.FileName
+  fullName: KYS.Library.Zip.Services.ZipExtractor.FileName
+  nameWithType: ZipExtractor.FileName
+- uid: KYS.Library.Zip.Services.ZipExtractor.FileName*
+  name: FileName
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_FileName_
+  commentId: Overload:KYS.Library.Zip.Services.ZipExtractor.FileName
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipExtractor.FileName
+  nameWithType: ZipExtractor.FileName
+- uid: KYS.Library.Zip.Services.ZipExtractor.Password
+  name: Password
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_Password
+  commentId: P:KYS.Library.Zip.Services.ZipExtractor.Password
+  fullName: KYS.Library.Zip.Services.ZipExtractor.Password
+  nameWithType: ZipExtractor.Password
+- uid: KYS.Library.Zip.Services.ZipExtractor.Password*
+  name: Password
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_Password_
+  commentId: Overload:KYS.Library.Zip.Services.ZipExtractor.Password
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipExtractor.Password
+  nameWithType: ZipExtractor.Password
+- uid: KYS.Library.Zip.Services.ZipExtractor.Unzip(System.String,System.String)
+  name: Unzip(string, string)
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_Unzip_System_String_System_String_
+  commentId: M:KYS.Library.Zip.Services.ZipExtractor.Unzip(System.String,System.String)
+  name.vb: Unzip(String, String)
+  fullName: KYS.Library.Zip.Services.ZipExtractor.Unzip(string, string)
+  fullName.vb: KYS.Library.Zip.Services.ZipExtractor.Unzip(String, String)
+  nameWithType: ZipExtractor.Unzip(string, string)
+  nameWithType.vb: ZipExtractor.Unzip(String, String)
+- uid: KYS.Library.Zip.Services.ZipExtractor.Unzip*
+  name: Unzip
+  href: api/KYS.Library.Zip.Services.ZipExtractor.html#KYS_Library_Zip_Services_ZipExtractor_Unzip_
+  commentId: Overload:KYS.Library.Zip.Services.ZipExtractor.Unzip
+  isSpec: "True"
+  fullName: KYS.Library.Zip.Services.ZipExtractor.Unzip
+  nameWithType: ZipExtractor.Unzip

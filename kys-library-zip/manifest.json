@@ -1,0 +1,154 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "/home/runner/work/KYS.Library/KYS.Library/src/KYS.Library.Zip/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Zip.Models.ZipFileItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Zip.Models.ZipFileItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Zip.Models.ZipFileItem",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Zip.Models.ZipFileItem.yml\" sourcestartlinenumber=\"1\">Represents the blueprint on the file element to be zipped into a zip file or unzipped from the zip file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Zip.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Zip.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Zip.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Zip.Services.IZipCreator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Zip.Services.IZipCreator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Zip.Services.IZipCreator",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Zip.Services.IZipCreator.yml\" sourcestartlinenumber=\"1\">Define a contract for zipping item.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Zip.Services.IZipExtractor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Zip.Services.IZipExtractor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Zip.Services.IZipExtractor",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Zip.Services.IZipExtractor.yml\" sourcestartlinenumber=\"1\">Define a contract for unzipping item.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Zip.Services.ZipCreator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Zip.Services.ZipCreator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Zip.Services.ZipCreator",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Zip.Services.ZipCreator.yml\" sourcestartlinenumber=\"1\">A service for zipping file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Zip.Services.ZipExtractor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Zip.Services.ZipExtractor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Zip.Services.ZipExtractor",
+      "Summary": "<p sourcefile=\"api/KYS.Library.Zip.Services.ZipExtractor.yml\" sourcestartlinenumber=\"1\">A service for unzipping file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KYS.Library.Zip.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KYS.Library.Zip.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "KYS.Library.Zip.Services",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
