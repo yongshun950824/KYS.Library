@@ -12,10 +12,10 @@
 		</AssemblyAttribute>
 
 		<PackageReference Include="CSharpFunctionalExtensions" Version="3.7.0" />
-		<PackageReference Include="SkiaSharp" Version="2.88.9" />
+		<PackageReference Include="SkiaSharp" Version="4.154.0" />
 		<PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.9" />
-		<PackageReference Include="ZXing.Net" Version="0.16.9" />
-		<PackageReference Include="ZXing.Net.Bindings.SkiaSharp" Version="0.16.13" />
+		<PackageReference Include="ZXing.Net" Version="0.16.11" />
+		<PackageReference Include="ZXing.Net.Bindings.SkiaSharp" Version="0.16.25" />
   </ItemGroup>
 
   <ItemGroup>
