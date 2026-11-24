@@ -54,8 +54,8 @@ if (result.IsFailure)
 
 ### 📋 Prerequisites
 
-- **SDK:** .NET 8.0
-- **IDE:** Visual Studio 2022 or VS Code
+- **SDK:** .NET SDK 10.0.200 or newer (projects target .NET 10.0)
+- **IDE:** Visual Studio 2022 17.12 or newer, or VS Code
 
 The library is not yet on NuGet (Future Plan), you can include it in your solution via Project Reference:
 

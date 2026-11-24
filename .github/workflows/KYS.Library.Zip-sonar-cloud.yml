@@ -8,11 +8,13 @@ on:
     paths:
       - "src/KYS.Library.Zip/**"
       - "tests/KYS.Library.Zip.Tests/**"
+      - "Directory.Build.props"
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - "src/KYS.Library.Zip/**"
       - "tests/KYS.Library.Zip.Tests/**"
+      - "Directory.Build.props"
 
 jobs:
   scan:

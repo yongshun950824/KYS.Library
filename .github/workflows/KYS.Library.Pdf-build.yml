@@ -12,6 +12,8 @@ on:
       - "src/KYS.Library/**"
       - "src/KYS.Library.Pdf/**"
       - "tests/KYS.Library.Pdf.Tests/**"
+      - "Directory.Build.props"
+      - "Directory.Packages.props"
   pull_request:
     branches:
       - master
@@ -19,6 +21,8 @@ on:
       - "src/KYS.Library/**"
       - "src/KYS.Library.Pdf/**"
       - "tests/KYS.Library.Pdf.Tests/**"
+      - "Directory.Build.props"
+      - "Directory.Packages.props"
 
 jobs:
   build:
@@ -27,4 +31,4 @@ jobs:
       library-name: "KYS.Library.Pdf"
       library-project-path: "src/KYS.Library.Pdf/KYS.Library.Pdf.csproj"
       library-tests-project-path: "tests/KYS.Library.Pdf.Tests/KYS.Library.Pdf.Tests.csproj"
-      dotnet-version: "8.0.x"
+      dotnet-version: "10.0.x"

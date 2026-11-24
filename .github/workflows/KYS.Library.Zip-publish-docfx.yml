@@ -17,6 +17,6 @@ jobs:
       library-name: kys-library-zip
       docfx-project: src/KYS.Library.Zip/docfx
       docfx-publish-dir: ./src/KYS.Library.Zip/docfx/_site
-      dotnet-version:
+      dotnet-version: "10.0.x"
     permissions:
       contents: write

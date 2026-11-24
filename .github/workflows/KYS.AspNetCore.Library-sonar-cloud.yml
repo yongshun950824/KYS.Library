@@ -8,11 +8,13 @@ on:
     paths:
       - "src/KYS.AspNetCore.Library/**"
       - "tests/KYS.AspNetCore.Library.Tests/**"
+      - "Directory.Build.props"
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - "src/KYS.AspNetCore.Library/**"
       - "tests/KYS.AspNetCore.Library.Tests/**"
+      - "Directory.Build.props"
 
 jobs:
   scan:

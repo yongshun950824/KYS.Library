@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/KYS.AspNetCore.Library/KYS.AspNetCore.Library.csproj" />
+    <Project Path="src/KYS.EFCore.Library/KYS.EFCore.Library.csproj" />
+    <Project Path="src/KYS.Library.Excel/KYS.Library.Excel.csproj" />
+    <Project Path="src/KYS.Library.Pdf/KYS.Library.Pdf.csproj" />
+    <Project Path="src/KYS.Library.Qr/KYS.Library.Qr.csproj" />
+    <Project Path="src/KYS.Library.Zip/KYS.Library.Zip.csproj" />
+    <Project Path="src/KYS.Library/KYS.Library.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/KYS.AspNetCore.Library.Tests/KYS.AspNetCore.Library.Tests.csproj" />
+    <Project Path="tests/KYS.EFCore.Library.Tests/KYS.EFCore.Library.Tests.csproj" />
+    <Project Path="tests/KYS.Library.Excel.Tests/KYS.Library.Excel.Tests.csproj" />
+    <Project Path="tests/KYS.Library.Pdf.Tests/KYS.Library.Pdf.Tests.csproj" />
+    <Project Path="tests/KYS.Library.Qr.Tests/KYS.Library.Qr.Tests.csproj" />
+    <Project Path="tests/KYS.Library.Tests/KYS.Library.Tests.csproj" />
+    <Project Path="tests/KYS.Library.Zip.Tests/KYS.Library.Zip.Tests.csproj" />
+  </Folder>
+</Solution>

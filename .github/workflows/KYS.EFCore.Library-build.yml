@@ -12,6 +12,8 @@ on:
       - "src/KYS.EFCore.Library/**"
       - "src/KYS.Library/**"
       - "tests/KYS.EFCore.Library.Tests/**"
+      - "Directory.Build.props"
+      - "Directory.Packages.props"
   pull_request:
     branches:
       - master
@@ -19,6 +21,8 @@ on:
       - "src/KYS.EFCore.Library/**"
       - "src/KYS.Library/**"
       - "tests/KYS.EFCore.Library.Tests/**"
+      - "Directory.Build.props"
+      - "Directory.Packages.props"
 
 jobs:
   build:
@@ -27,4 +31,4 @@ jobs:
       library-name: "KYS.EFCore Library"
       library-project-path: "src/KYS.EFCore.Library/KYS.EFCore.Library.csproj"
       library-tests-project-path:
-      dotnet-version: "8.0.x"
+      dotnet-version: "10.0.x"
