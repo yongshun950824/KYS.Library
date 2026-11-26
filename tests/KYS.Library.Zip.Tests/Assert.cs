@@ -10,7 +10,7 @@
         /// <param name="actual">Actual value to be compared</param>
         public static void StringStartsWith(string expected, string actual)
         {
-            That(() => actual.StartsWith(expected), Is.True, null, null);
+            That(() => actual.StartsWith(expected), Is.True);
         }
     }
 }

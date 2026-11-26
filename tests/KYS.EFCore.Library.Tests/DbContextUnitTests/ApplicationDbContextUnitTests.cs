@@ -280,14 +280,14 @@ public class ApplicationDbContextUnitTests
     }
 
     [Test]
-    public void SaveChangesWithAuditAsync_WithInvalidFormatting_ShouldThrowInvalidOperationException()
+    public async Task SaveChangesWithAuditAsync_WithInvalidFormatting_ShouldThrowInvalidOperationException()
     {
         // Arrange
         var category = new Category { Name = "Electronics" };
         _context!.Categories.Add(category);
 
         // Act & Assert
-        var exception = Assert.ThrowsAsync<InvalidOperationException>(
+        var exception = await Assert.ThrowsAsync<InvalidOperationException>(
             async () => await _context.SaveChangesWithAuditAsync(Guid.NewGuid(), (Formatting)999)
         );
 

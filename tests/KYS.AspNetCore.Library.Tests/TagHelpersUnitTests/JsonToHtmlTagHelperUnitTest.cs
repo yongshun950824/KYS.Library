@@ -209,7 +209,7 @@ public partial class JsonToHtmlTagHelperUnitTest
     }
 
     [Test]
-    public void ProcessAsync_WithInvalidValue_ShouldThrowException()
+    public async Task ProcessAsync_WithInvalidValue_ShouldThrowException()
     {
         // Arrange
         var jsonInput = "Invalid value";
@@ -223,7 +223,7 @@ public partial class JsonToHtmlTagHelperUnitTest
         var output = CreateTagHelperOutput("json-to-html");
 
         // Act
-        var ex = Assert.CatchAsync(async () => await helper.ProcessAsync(context, output));
+        var ex = await Assert.CatchAsync(async () => await helper.ProcessAsync(context, output));
 
         // Assert
         Assert.IsNotNull(ex);

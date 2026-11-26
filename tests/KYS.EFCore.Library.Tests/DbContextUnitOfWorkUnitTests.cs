@@ -44,7 +44,7 @@ public class DbContextUnitOfWorkUnitTests
         using var unitOfWork = new DbContextUnitOfWork<TestDbContext>(_context!);
 
         // Act
-        var exception = Assert.ThrowsAsync<InvalidOperationException>(async () => await unitOfWork.CommitAsync());
+        var exception = await Assert.ThrowsAsync<InvalidOperationException>(async () => await unitOfWork.CommitAsync());
 
         // Assert
         Assert.AreEqual($"{nameof(DbContextUnitOfWork<TestDbContext>.BeginAsync)}() must be called first.", exception?.Message);
@@ -81,7 +81,7 @@ public class DbContextUnitOfWorkUnitTests
         using var unitOfWork = new DbContextUnitOfWork<TestDbContext>(_context!);
 
         // Act
-        var exception = Assert.ThrowsAsync<InvalidOperationException>(async () => await unitOfWork.RollbackAsync());
+        var exception = await Assert.ThrowsAsync<InvalidOperationException>(async () => await unitOfWork.RollbackAsync());
 
         // Assert
         Assert.AreEqual($"{nameof(DbContextUnitOfWork<TestDbContext>.BeginAsync)}() must be called first.", exception?.Message);

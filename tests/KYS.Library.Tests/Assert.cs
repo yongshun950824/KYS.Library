@@ -21,23 +21,19 @@ namespace KYS.Library.Tests
         /// <param name="actual">Part of string</param>
         public static void StringContains(string expected, string actual)
         {
-            That(() => expected.Contains(actual), Is.True, null, null);
+            That(() => expected.Contains(actual), Is.True);
         }
 
         public static void BeEquilaventTo(object expected, object actual)
         {
             That(() => JsonSerializer.Serialize(actual, _serializerOptions),
-                Is.EqualTo(JsonSerializer.Serialize(expected, _serializerOptions)).IgnoreCase,
-                null,
-                null);
+                Is.EqualTo(JsonSerializer.Serialize(expected, _serializerOptions)).IgnoreCase);
         }
 
         public static void NotEquilaventTo(object expected, object actual)
         {
             That(() => JsonSerializer.Serialize(actual, _serializerOptions),
-                Is.Not.EqualTo(JsonSerializer.Serialize(expected, _serializerOptions)).IgnoreCase,
-                null,
-                null);
+                Is.Not.EqualTo(JsonSerializer.Serialize(expected, _serializerOptions)).IgnoreCase);
         }
     }
 }
