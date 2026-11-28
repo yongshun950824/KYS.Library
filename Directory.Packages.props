@@ -7,7 +7,7 @@
     <PackageVersion Include="coverlet.collector" Version="10.1.1" />
     <PackageVersion Include="coverlet.msbuild" Version="10.1.1" />
     <PackageVersion Include="CSharpFunctionalExtensions" Version="3.7.0" />
-    <PackageVersion Include="CsvHelper" Version="33.1.0" />
+    <PackageVersion Include="CsvHelper" Version="34.1.0" />
     <PackageVersion Include="EPPlus" Version="6.2.19" />
     <PackageVersion Include="itext7" Version="7.2.7" />
     <PackageVersion Include="itext7.pdfhtml" Version="4.0.5" />
